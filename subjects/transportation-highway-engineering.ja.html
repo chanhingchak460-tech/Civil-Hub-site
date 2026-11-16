@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>交通・道路工学 — Civil Hub</title>
+<meta name="description" content="道路は、幾何構造、舗装、交通挙動が期待される速度と一致しなければならない経路の階層として設計される。このページでは、線形、視距、舗装、交通流を一つの設計ストーリーに結びつける。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/transportation-highway-engineering.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="交通・道路工学 — Civil Hub">
+<meta property="og:description" content="道路は、幾何構造、舗装、交通挙動が期待される速度と一致しなければならない経路の階層として設計される。このページでは、線形、視距、舗装、交通流を一つの設計ストーリーに結びつける。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/transportation-highway-engineering.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="transportation-highway-engineering.html" data-alt-zh-hant="transportation-highway-engineering.zh-Hant.html" data-alt-ja="transportation-highway-engineering.ja.html" data-alt-ko="transportation-highway-engineering.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">交通・道路工学</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">コア</p>
+          <h1>交通・道路工学</h1>
+          <p class="subject-sub">道路設計、交通流、舗装、安全性</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>コア</li><li><b data-i18n="subject.read">Read</b>11 分</li><li><b data-i18n="subject.sections">Sections</b>10</li><li><b data-i18n="subject.formulas">Formulas</b>10</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M56 170 H298" stroke="currentColor" stroke-width="1.2"/><path d="M86 170 V64" stroke="currentColor" stroke-width="1.6"/><path d="M78 64 H190" stroke="currentColor" stroke-width="1.6"/><path d="M86 64 L160 40" stroke="currentColor" stroke-width="1.3"/><path d="M160 40 V86" stroke="var(--faint)" stroke-width="1"/><path d="M152 86 h16 v10 h-16 z" stroke="currentColor" stroke-width="1.1"/><path d="M86 110 H190" stroke="var(--line)" stroke-width="1.1"/><path d="M210 170 V112 H282 V170" stroke="currentColor" stroke-width="1.4"/><path d="M222 128 H270" stroke="var(--line)" stroke-width="1"/><path d="M222 146 H270" stroke="var(--line)" stroke-width="1"/><text x="170" y="192" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">SITE & CRANE</text></svg>
+          <figcaption>Site operations — crane and frame</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">道路階層と設計管理</a></li><li><a href="#sec-2">設計速度と幾何学的整合性</a></li><li><a href="#sec-3">停止視距と追越視距</a></li><li><a href="#sec-4">平面線形と片勾配</a></li><li><a href="#sec-5">縦断線形：勾配と曲線</a></li><li><a href="#sec-6">舗装構造と路床</a></li><li><a href="#sec-7">設計交通量と四乗則</a></li><li><a href="#sec-8">アスファルト混合物と配合設計</a></li><li><a href="#sec-9">マーシャル手順の全体像</a></li><li><a href="#sec-10">交通流、交差点、安全</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">道路は、幾何構造、舗装、交通挙動が期待される速度と一致しなければならない経路の階層として設計される。このページでは、線形、視距、舗装、交通流を一つの設計ストーリーに結びつける。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="transportation-highway-engineering" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>道路階層と設計管理</h2>
+  <div class="body"><p>道路ネットワークは機能によって組織される：</p>
+<ul>
+<li><strong>主要道路または幹線道路</strong>は、アクセスを制限して高速で長距離交通を担う。</li>
+<li><strong>二次道路</strong>は地区を結ぶ。</li>
+<li><strong>分配道路</strong>は交通を近隣地区に分散させる。</li>
+<li><strong>局部道路</strong>は低速で沿道アクセスを提供する。</li>
+</ul>
+<p>重要なトレードオフは<strong>モビリティ</strong>と<strong>アクセス</strong>の間にある。高速路線に接続するすべての私道や側道は衝突点を増やすため、上位クラスではアクセスが意図的に制限される。</p>
+<p>標識、標示、交差点は、運転者に自分がどのクラスの道路にいるかを伝え、速度と挙動が期待に一致するようにすべきである。一つの道路で機能を混在させることが、ほとんどの安全と容量の問題の始まりである。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>設計速度と幾何学的整合性</h2>
+  <div class="body"><p><strong>設計速度</strong>は幾何設計の基準として選ばれる速度であり、最小半径、片勾配、視距、縦断曲線長を定める。運転者は幾何構造を読み取り、快適と感じる速度に落ち着くため、道路はその速度で信頼できるものでなければならない。</p>
+<p><strong>幾何学的整合性</strong>は、個々の要素よりも重要である。長い直線の後に急カーブが続くと、カーブに過大な速度で進入してしまうため、要素は徐々に変化させるべきである。</p>
+<p>横断面も同じ論理に従う：車道幅員、緊急停車帯、歩行者用の路肩、縁石、そして路面を排水するための片勾配または横断勾配である。</p></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>停止視距と追越視距</h2>
+  <div class="body"><p><strong>停止視距</strong>（SSD）は、設計速度で予期しない物体の手前で停止するために運転者が必要とする距離である。反応距離と制動距離の和である：</p>
+<p><code>SSD = 0.278 V t + V² / [254 (f + G)]</code></p>
+<p>ここで<code>V</code>はkm/h、反応時間<code>t</code>は秒、縦断摩擦係数<code>f</code>、勾配<code>G</code>は小数である。上り勾配は制動距離を短縮し、下り勾配は延長するため、検査には最も急な下り勾配を用いる。</p>
+<p><strong>追越視距</strong>はさらに長い。追越し操作では、追い越して安全に戻るのに十分な距離を見通す必要があるからである。確保できない場合、道路は安全な追越し場所を提供するか、追越し禁止の標示をすべきである。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">停止視距</span>
+      <div class="formula-expr formula-math">\[SSD = 0.278Vt + \frac{V^2}{254(f + G)}\]</div>
+      <span class="formula-note">Vはkm/h、tは秒、Gは上りを正とする</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>平面線形と片勾配</h2>
+  <div class="body"><p>平面線形は直線、円曲線、<strong>緩和曲線</strong>の連続である。半径<code>R</code>の円曲線では、片勾配<code>e</code>と横摩擦<code>f</code>が合力として遠心力と釣り合う：</p>
+<p><code>e + f = V² / (127 R)</code></p>
+<p>ここで<code>V</code>はkm/h、<code>R</code>はメートルである。したがって必要な片勾配は速度の二乗に比例して増加し、半径が大きくなるにつれて減少する。</p>
+<p><strong>緩和曲線</strong>は曲率の変化を緩和し、片勾配を徐々に適用できるようにし、運転者に操舵の時間を与える。急カーブではわずかに拡幅される。長い車両の後輪が前輪の内側を通るからである。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">片勾配の釣り合い</span>
+      <div class="formula-expr formula-math">\[e + f = \frac{V^2}{127R}\]</div>
+      <span class="formula-note">eとfは無次元比、Vはkm/h、Rはメートル</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>縦断線形：勾配と曲線</h2>
+  <div class="body"><p>縦断線形は勾配と放物線曲線を用いる。最大勾配は制限される。長い上り勾配は大型車を減速させ、急な下り勾配はブレーキに過負荷をかけるからである。凸曲線では、曲線が運転者の視線より下に路面を保たなければならない。</p>
+<p>視距<code>S</code>が曲線長<code>L</code>より短い場合、</p>
+<p><code>L = A S² / 647</code></p>
+<p>ここで<code>A</code>はパーセントで表した勾配の代数変化である。視距が曲線より長い場合、<code>L = 2S − 647/A</code>である。</p>
+<p>凹曲線は快適性と前照灯視距によって支配され、<code>L = A V² / 395</code>のような基準を用いる。比<code>K = L/A</code>は設計速度に対する最小値を超えるべきである。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">凸曲線、視距が曲線より短い場合</span>
+      <div class="formula-expr formula-math">\[L = \frac{A S^2}{647}\]</div>
+      <span class="formula-note">Aはパーセントで表した勾配変化、Sはメートルで表した視距</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">凹曲線の快適性基準</span>
+      <div class="formula-expr formula-math">\[L = \frac{A V^2}{395}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>舗装構造と路床</h2>
+  <div class="body"><p>舗装は車輪荷重を層を通して分散し、路床が支持できる応力を受けさせる。<strong>たわみ性舗装</strong>は粒状路盤と下層路盤の上のアスファルト表層を用い、<strong>剛性舗装</strong>は曲げで荷重を担うコンクリートスラブを用いるため、目地と荷重伝達装置が必要である。</p>
+<p>路床の強度は通常、<strong>カリフォルニア支持力比</strong>によって特徴づけられる。これは締固めた供試体の貫入抵抗を標準砕石曲線と比較したものである：</p>
+<p><code>CBR = (P / P_standard) × 100%</code>。CBR、設計交通量、排水が一緒に層厚を決める。</p>
+<p>水は路床を弱め、粒状層から細粒分をポンピングし、わだち掘れを加速するため、横断勾配と側溝が構造を保護する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">カリフォルニア支持力比</span>
+      <div class="formula-expr formula-math">\[CBR = \frac{P}{P_{standard}} \times 100\%\]</div>
+      <span class="formula-note">Pは貫入抵抗力、P_standardは同じ貫入量における標準荷重</span>
+    </div></div><div class="table-wrap"><table><caption>たわみ性舗装と剛性舗装の比較</caption><thead><tr><th scope='col'>特徴</th><th scope='col'>たわみ性舗装</th><th scope='col'>剛性舗装</th></tr></thead><tbody><tr><td>荷重支持</td><td>粒状層が荷重を分散</td><td>コンクリートスラブが梁として曲げる</td></tr><tr><td>表層</td><td>アスファルト、加熱施工</td><td>コンクリート、型枠またはスリップフォーム施工</td></tr><tr><td>目地</td><td>少ない、主に施工目地</td><td>ダウエルバーとタイバーを備えた規則的な目地</td></tr><tr><td>補修</td><td>影響範囲を迅速にパッチング</td><td>パネルを切断して交換、より遅い</td></tr><tr><td>典型的用途</td><td>ほとんどの都市および地方道路</td><td>重交通および弱い路床</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>設計交通量と四乗則</h2>
+  <div class="body"><p>舗装厚は、それが担うべき<strong>交通量</strong>によって決まり、<strong>等価標準軸荷重</strong>（ESAL）で表される。異なる重量の軸は、<strong>四乗則</strong>を通じて標準80 kN軸の損傷に換算される：</p>
+<p><code>RDF = (P / 80)⁴</code></p>
+<p>したがって160 kNの軸は80 kN軸の16倍の損傷を引き起こし、軽荷重の軸はほとんど損傷を与えない。</p>
+<p>設計供用期間、交通量の伸び、車両の軸荷重分布が組み合わされて設計ESAL数となり、層厚はその数と路床CBRおよび排水から決まる。</p>
+<p>覚えておくべき残酷な非線形性である：20%の過積載は損傷をほぼ2倍にする。だからこそ計量所の取締りは舗装の保護であり、官僚主義ではない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">相対損傷係数</span>
+      <div class="formula-expr formula-math">\[\mathrm{RDF} = \left(\frac{P}{80}\right)^4\]</div>
+      <span class="formula-note">PはkNで表した軸荷重、80 kNは標準軸</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>アスファルト混合物と配合設計</h2>
+  <div class="body"><p>アスファルト混合物は、アスファルトで結合された粒度調整骨材である：</p>
+<ul>
+<li><strong>密粒度</strong>混合物は不透水性で強いが、騒音が大きい。</li>
+<li><strong>開粒度</strong>混合物は水を排水し、スプレーと騒音を低減する。</li>
+<li><strong>ストーンマスチックアスファルト</strong>は粗骨材骨格を用いてわだち掘れ抵抗性を高める。</li>
+</ul>
+<p><strong>マーシャル配合設計</strong>は、安定性とフローのバランスをとり、空隙率（VTM）、鉱物骨材空隙率（VMA）、および結合材で満たされた空隙の割合を確認して最適結合材量を選ぶ：</p>
+<p><code>VTM = (G_mm − G_mb) / G_mm × 100%</code>。結合材が多すぎるとブリーディングし、少なすぎると混合物が乾燥して透水性になる。</p>
+<p>温間混合物技術は製造温度を下げ、燃料使用と排出を削減する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">混合物全体の空隙率</span>
+      <div class="formula-expr formula-math">\[VTM = \frac{G_{mm} - G_{mb}}{G_{mm}} \times 100\%\]</div>
+      <span class="formula-note">G_mmは理論最大密度、G_mbは締固めた供試体のかさ密度</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>マーシャル手順の全体像</h2>
+  <div class="body"><p>マーシャル法は暗記する価値のある固定された9段階の手順である：</p>
+<ul>
+<li>結合材量の範囲にわたって直径約101.5 mm、高さ63.5 mmの供試体を作製する — 約155 °Cで混合し、135–140 °Cで片面50回、毎分60回の打撃で締固める。</li>
+<li>空中、水中、飽和表面乾燥状態で質量を測定してかさ密度を求め、空隙率と骨材空隙構造を計算する：</li>
+</ul>
+<p><code>VMA = VTM + Vb</code></p>
+<p>ここでVTMは空隙率、Vbは結合材体積率であり、結合材充填率は<code>VFB = (VMA − VTM) / VMA × 100%</code>である。</p>
+<ul>
+<li>60 °Cの水浴後、各供試体を50.8 mm/minで圧裂する：ピーク荷重が<strong>マーシャル安定度</strong>、破壊時の変形が<strong>フロー</strong>である。</li>
+<li>安定度、フロー、密度、VTM、VMAを結合材量に対してプロットし、最適結合材量を最大安定度、最大密度、目標空隙率（約4%）を与える含有量の平均として求める。</li>
+<li>最後に曲線に再入力して混合物が仕様を満たすことを確認する；そうでなければ再設計する。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">鉱物骨材空隙率</span>
+      <div class="formula-expr formula-math">\[\mathrm{VMA} = \mathrm{VTM} + V_b\]</div>
+      <span class="formula-note">VTMは空隙率、Vbは結合材体積、すべて混合物体積に対するパーセント</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">結合材充填空隙率</span>
+      <div class="formula-expr formula-math">\[\mathrm{VFB} = \frac{\mathrm{VMA} - \mathrm{VTM}}{\mathrm{VMA}} \times 100\%\]</div>
+      <span class="formula-note">VMAとVTMはともにパーセント</span>
+    </div></div><div class="table-wrap"><table><caption>密粒度アスファルト混合物のマーシャル目標値の目安（仕様が優先）</caption><thead><tr><th scope='col'>特性</th><th scope='col'>典型的目標値</th></tr></thead><tbody><tr><td>安定度</td><td>少なくとも約8 kN</td></tr><tr><td>フロー</td><td>約2–4 mm</td></tr><tr><td>空隙率（VTM）</td><td>3–5%</td></tr><tr><td>鉱物骨材空隙率（VMA）</td><td>約13–15%以上</td></tr><tr><td>結合材充填空隙率（VFB）</td><td>約65–78%</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>交通流、交差点、安全</h2>
+  <div class="body"><p>交通流は流量<code>q</code>、密度<code>k</code>、空間平均速度<code>v</code>を結びつける：</p>
+<p><code>q = k v</code>。密度が上昇すると流量は増加し、道路が<strong>容量</strong>に達するまで続く；それを超えると渋滞が発生し、流量と速度の両方が崩壊する。<strong>サービス水準</strong>は自由流から強制流までの状態を等級付けする。</p>
+<p>交差点は主要な制約である：</p>
+<ul>
+<li><strong>平面交差点</strong>は安価だが、すべての転向交通が衝突点となる。</li>
+<li><strong>立体交差</strong>は土地と構造物のコストと引き換えに衝突を除去する。</li>
+<li>交通島は車両を規定の経路に導き、転向を予測可能にする。</li>
+</ul>
+<p>安全は設計に組み込まれる：交差点の見通し線、寛容な路側余裕、すべり抵抗性舗装、設計段階での<strong>道路交通安全監査</strong>である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">基本的な交通流関係</span>
+      <div class="formula-expr formula-math">\[q = k v\]</div>
+      <span class="formula-note">qは毎時車両数、kは每キロメートル車両数で表した密度、vはkm/hで表した空間平均速度</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>設計速度</dt><dd>幾何設計の基準として用いられる速度で、半径、片勾配、視距、凸曲線長を定める。</dd></div><div class="term"><dt>停止視距</dt><dd>危険物の手前で停止するために運転者が前方に見通すべき距離で、反応距離と制動距離の和に等しい。</dd></div><div class="term"><dt>片勾配</dt><dd>水平曲線に適用される横断勾配で、重力が遠心力の釣り合いを助けるようにする。</dd></div><div class="term"><dt>カリフォルニア支持力比</dt><dd>締固めた土または粒状材料の貫入抵抗を標準砕石曲線と比較したもの。</dd></div><div class="term"><dt>サービス水準</dt><dd>自由流から強制流までの交通状態を等級付けした記述。</dd></div><div class="term"><dt>鉱物骨材空隙率</dt><dd>締固めたアスファルト混合物中の骨材粒子間の空隙空間で、結合材と空気に利用可能なもの。</dd></div><div class="term"><dt>マーシャル安定度</dt><dd>60 °Cで半径方向に圧裂した締固めたアスファルト供試体が担うピーク荷重で、フローとともに結合材量の選択に用いられる。</dd></div><div class="term"><dt>等価標準軸荷重</dt><dd>異なる重量の軸を四乗則を通じて標準80 kN軸の損傷に換算する設計交通量の尺度。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>視距と凸曲線長</h2>
+        <p class="problem">地方道路の設計速度は80 km/hである。運転者の反応時間は2.5 s、縦断摩擦係数は0.35である。最も急な下り勾配では勾配が−3%である。停止視距を計算し、次に+3%から−3%への勾配変化に必要な凸曲線長を求めよ。</p>
+        <ol><li>反応距離：0.278 × 80 × 2.5 = 55.6 m。</li><li>制動距離：V²/[254(f + G)] = 80²/[254 × (0.35 − 0.03)] = 6400/81.3 = 78.7 m。</li><li>停止視距 = 55.6 + 78.7 = 134.3 m。</li><li>勾配変化はA = 3 − (−3) = 6%である。</li><li>曲線が視距より長いと仮定する：L = A S²/647 = 6 × 134.3²/647 = 167 m。</li><li>仮定を確認する：134.3 m &lt; 167 mであるから、凸曲線は確かに視距より長く、用いた式は正しい。</li><li>K = L/A = 167/6 = 27.8 m/%で確認する。この速度の通常の最小値約30 m/%に近いため、曲線を切り上げる。</li></ol>
+        <div class="answer"><b>Answer</b>約170 mの凸曲線を設ける；停止視距は134 mであり、凸曲線長を支配する。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>縦断曲線上に視線を描き、SがLより長いか短いかを述べ、対応する式を選ぶ。</li><li>単位を整然と保つ：片勾配の式ではVはkm/h、Rはメートル、eとfは単なる比である。</li><li>配合設計では、VMA、VTM、結合材充填空隙率を一緒に報告する；一つの数値だけでは混合物を記述できない。</li><li>交差点タイプを比較するときは、基準なしに利点を列挙するのではなく、衝突点を数える。</li><li>マーシャル法の問題では、安定度、フロー、密度、VTM、VMAの5つの曲線をすべてプロットし、仕様を確認する前に3つの結合材量の平均として最適値を読み取る。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q01</span><span>停止視距は何で構成されるか：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>反応距離と前照灯距離</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>緩和長と曲線長</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>制動距離と追越距離</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>反応距離と制動距離</span></button></div>
+    <div class="quiz-explain"><b>Why</b>運転者はまず反応しながら走行し、次に制動するため、2つの成分が加算される。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>同じ水平半径で設計速度を2倍にすると、必要なe + fの値は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>2倍になる</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>4倍になる</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>半分になる</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>変わらない</span></button></div>
+    <div class="quiz-explain"><b>Why</b>e + f = V²/(127R)であるから、必要な釣り合いは速度の二乗に比例して増加する。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>締固めた混合物がVMA = 15%、VTM = 4%である。結合材で満たされた空隙の割合は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>26.7%</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>62.5%</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>73.3%</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>88.0%</span></button></div>
+    <div class="quiz-explain"><b>Why</b>(VMA − VTM)/VMA × 100 = (15 − 4)/15 × 100 = 73.3%。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>追越視距が停止視距より長いのはなぜか：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>追越し側の道路が常に狭いから</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>追越し中は反応時間が増加するから</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>追越し時に車はよりゆっくり制動するから</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>運転者が加速し、追い越し、安全に戻るのに十分な距離を見通す必要があるから</span></button></div>
+    <div class="quiz-explain"><b>Why</b>操作には時間がかかり2車線を覆うため、運転者は制動距離をはるかに超えて見通す必要がある。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q05</span><span>CBR試験で、2.5 mm貫入時の力と比較される標準荷重は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>19.96 kN</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>132.4 kN</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1.32 kN</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>13.24 kN</span></button></div>
+    <div class="quiz-explain"><b>Why</b>標準砕石荷重は2.5 mmで13.24 kN、5 mmで19.96 kNであり、高い方のパーセントがCBRである。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>80 kN標準軸と比較して、160 kN軸による舗装損傷は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>16倍</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>2倍</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>4倍</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>8倍</span></button></div>
+    <div class="quiz-explain"><b>Why</b>損傷は(P/80)⁴に従うため、軸荷重を2倍にすると損傷は2⁴ = 16倍になる。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="design-of-transport-infrastructure.ja.html"><span>Core</span><b>交通インフラ設計</b></a><a class="related-card" href="traffic-surveys-planning.ja.html"><span>Professional</span><b>交通調査と交通計画</b></a><a class="related-card" href="transport-operations-management.ja.html"><span>Professional</span><b>交通運用とマネジメント</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="design-of-concrete-structures.ja.html"><small>Previous</small><b>コンクリート構造設計</b></a><a class="next" href="geotechnical-design.ja.html"><small>Next</small><b>地盤工学設計</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">SSDは反応距離と制動距離の和。</p><p class="margin-note">下り勾配は制動距離を延長する — その方向を確認せよ。</p><p class="margin-note">q = k v：渋滞は高密度と低速度を意味する。</p><p class="margin-note">交差点は衝突が存在する場所。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

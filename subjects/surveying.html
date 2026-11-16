@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engineering Surveying — Civil Hub</title>
+<meta name="description" content="How positions and heights are measured, computed and set out on site: levelling, traverse adjustment, coordinates, total stations, GNSS and curves. It is t">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/surveying.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="Engineering Surveying — Civil Hub">
+<meta property="og:description" content="How positions and heights are measured, computed and set out on site: levelling, traverse adjustment, coordinates, total stations, GNSS and curves. It is t">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/surveying.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="surveying.html" data-alt-zh-hant="surveying.zh-Hant.html" data-alt-ja="surveying.ja.html" data-alt-ko="surveying.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">Engineering Surveying</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Core</p>
+          <h1>Engineering Surveying</h1>
+          <p class="subject-sub">Measuring, computing and setting out the ground</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Core</li><li><b data-i18n="subject.read">Read</b>12 min</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>20</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="176" cy="36" r="5" stroke="var(--accent)" stroke-width="1.4"/><path d="M176 41 V80" stroke="currentColor" stroke-width="1.3"/><path d="M176 62 l-30 34 M176 62 l30 34 M176 62 l-3 40" stroke="currentColor" stroke-width="1.2"/><path d="M40 168 H300" stroke="var(--line)" stroke-width="1"/><path d="M72 92 l104 76 M92 96 l120 72" stroke="var(--faint)" stroke-width="1"/><path d="M118 128 q10 10 4 22" stroke="var(--accent)" stroke-width="1"/><text x="132" y="152" font-family="var(--mono)" font-size="8" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">θ</text><text x="70" y="186" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">A</text><text x="264" y="186" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">B</text></svg>
+          <figcaption>Traverse geometry — angles and measured lines</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">Control first, then detail</a></li><li><a href="#sec-2">Levelling: the book must balance</a></li><li><a href="#sec-3">Angles, bearings and the whole-circle convention</a></li><li><a href="#sec-4">Traverse computation in a fixed order</a></li><li><a href="#sec-5">Choosing a field method</a></li><li><a href="#sec-6">Total stations, EDM and GNSS</a></li><li><a href="#sec-7">Curves and setting out</a></li><li><a href="#sec-8">Errors, closure and the paper trail</a></li><li><a href="#sec-9">Areas and volumes from coordinates and offsets</a></li><li><a href="#sec-10">The two-peg test in practice</a></li><li><a href="#sec-11">Setting out curves by tangential angles</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">How positions and heights are measured, computed and set out on site: levelling, traverse adjustment, coordinates, total stations, GNSS and curves. It is the subject that turns ground observations into numbers you can build from.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="surveying" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>Control first, then detail</h2>
+  <div class="body"><p>Every survey fixes new points relative to points already known. The known ones form the <strong>control</strong>; everything else is <strong>detail</strong>. Control is denser and more accurate than the work hanging off it, because every later measurement inherits its error.</p>
+<p>The working rule is <strong>whole to part</strong>: build the frame — horizontal stations with coordinates, benchmarks with reduced levels — then fill in detail from that frame. Coordinates need an origin and heights need a datum, so both must be stated. A survey that starts from detail and works upwards has no way to check itself.</p>
+<p><strong>Accuracy</strong> is how close a result is to the truth; <strong>precision</strong> is how repeatable it is. A tight cluster of readings away from the truth is precise but biased.</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Levelling: the book must balance</h2>
+  <div class="body"><p>Levelling measures height differences. Set the instrument between two staffs; its line of sight defines a <strong>height of collimation</strong>. The first reading after a setup is a <strong>back sight</strong> onto a point of known level; <strong>intermediate sights</strong> locate points between changes; a <strong>fore sight</strong> is the last reading before the instrument moves. The staff then stays as a <strong>change point</strong>, so it must sit on something stable.</p>
+<p>Two booking conventions dominate:<br />
+- <strong>Height of collimation</strong> method: add the back sight to the known level once, then subtract every other reading from that height.<br />
+- <strong>Rise and fall</strong> method: compares consecutive readings and is slower, but it checks every intermediate sight.</p>
+<p>Balance back and fore sight distances to cancel collimation and curvature, keep sights short, and avoid readings below about half a metre.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Height of collimation</span>
+      <div class="formula-expr formula-math">\[\mathrm{HI} = \mathrm{RL} + \mathrm{BS}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Rise and fall</span>
+      <div class="formula-expr formula-math">\[\text{rise} = \mathrm{BS} - \mathrm{FS}\]</div>
+      <span class="formula-note">a negative result is a fall</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>Angles, bearings and the whole-circle convention</h2>
+  <div class="body"><p>Directions are measured clockwise from north. A <strong>whole-circle bearing</strong> runs from 0° to 360°; a <strong>reduced bearing</strong> quotes the same direction from north or south towards east or west. Turning a sight line clockwise from the back station to the forward station gives an <strong>angle to the right</strong>, the convention most data loggers expect.</p>
+<p>Angles in a closed polygon form a fixed sum, so the gap between measured and theoretical sum is an <strong>angular misclosure</strong>. Interior angles of an n-sided figure add to (n − 2) × 180°.</p>
+<p>Carrying bearings onward is bookkeeping: take the back bearing of the previous leg (forward bearing ± 180°), add the angle to the right, and subtract 360° if needed.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Interior angle sum</span>
+      <div class="formula-expr formula-math">\[\sum \theta = (n - 2) \times 180^{\circ}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Bearing transfer</span>
+      <div class="formula-expr formula-math">\[\mathrm{WCB}_{\text{next}} = \mathrm{WCB}_{\text{back}} + \theta_{\text{right}}\]</div>
+      <span class="formula-note">WCB_back is the previous bearing ± 180°</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Traverse computation in a fixed order</h2>
+  <div class="body"><p>A traverse measures angles and distances along a chain of stations. Compute in sequence:<br />
+- adjust the angles<br />
+- carry bearings through the figure<br />
+- convert each leg into north and east components called <strong>latitude</strong> and <strong>departure</strong><br />
+- add them to test closure<br />
+- distribute the remainder</p>
+<p>Angular misclosure is spread equally over the angles because each was observed with equal effort. The vector sum of the coordinate errors is the <strong>linear misclosure</strong>, and its size relative to total length is the <strong>relative precision</strong>.</p>
+<p>The <strong>Bowditch</strong> (compass) rule shares coordinate corrections in proportion to leg length, so short legs move little. That weighting suits comparable angular and distance error; stronger distances call for another weighting.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Angular misclosure</span>
+      <div class="formula-expr formula-math">\[e_\theta = \sum \theta_{\text{measured}} - (n - 2) \times 180^{\circ}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Latitude and departure</span>
+      <div class="formula-expr formula-math">\[\Delta N = d \cdot \cos \theta, \quad \Delta E = d \cdot \sin \theta\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Bowditch correction</span>
+      <div class="formula-expr formula-math">\[C = -\frac{e\,d_i}{\sum d}\]</div>
+      <span class="formula-note">e is the closure in that component</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Choosing a field method</h2>
+  <div class="body"><p>Different tasks ask for different geometry. Radiation is quick when one station sees everything; intersection needs no occupation of the target; a traverse builds new control; GNSS suits open ground but dislikes canopy and reflection.</p></div><div class="table-wrap"><table><caption>Field methods compared</caption><thead><tr><th scope='col'>Method</th><th scope='col'>What it gives</th><th scope='col'>Best use</th><th scope='col'>Watch for</th></tr></thead><tbody><tr><td>Radiation</td><td>detail from one station</td><td>open sites</td><td>hidden points</td></tr><tr><td>Intersection</td><td>unoccupied point</td><td>banks, unsafe objects</td><td>narrow cut</td></tr><tr><td>Resection</td><td>station position</td><td>free stationing</td><td>poor geometry</td></tr><tr><td>Traverse</td><td>new control stations</td><td>corridors, built-up areas</td><td>angular and linear closure</td></tr><tr><td>Static GNSS</td><td>high-precision control</td><td>open sky, long baselines</td><td>obstruction, multipath</td></tr><tr><td>RTK GNSS</td><td>detail and setting out</td><td>open sites, fast work</td><td>datum transform, canopy</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>Total stations, EDM and GNSS</h2>
+  <div class="body"><p>A <strong>total station</strong> combines an electronic theodolite, an EDM and a computer. The EDM times a modulated signal to obtain a slope distance, then corrects it for atmospheric conditions, instrument and reflector constants, and cyclic error. Horizontal distance follows from the slope distance and the zenith angle, and heights come from the same observation once instrument and target heights are accounted for.</p>
+<p><strong>GNSS</strong> measures ranges to satellites. Code (pseudorange) solutions give metres; carrier-phase solutions reach centimetres after the <strong>integer ambiguity</strong> is resolved, provided two receivers observe together — static for control, RTK for detail.</p>
+<p>GNSS positions refer to a global reference frame rather than the local grid, so transformation and an independent height check belong in the method.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Join distance and bearing</span>
+      <div class="formula-expr formula-math">\[d = \sqrt{\Delta N^2 + \Delta E^2}, \quad \theta = \arctan\left(\frac{\Delta E}{\Delta N}\right)\]</div>
+      <span class="formula-note">check the quadrant before quoting θ</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Trigonometric heighting</span>
+      <div class="formula-expr formula-math">\[H_B = H_A + i + d \cdot \cos z - t\]</div>
+      <span class="formula-note">i instrument height, t target height</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Curves and setting out</h2>
+  <div class="body"><p>Horizontal alignment joins straights with <strong>circular curves</strong>, often with transition curves of varying radius between them. For a curve of radius R and deflection angle θ, the tangent length fixes where it begins and ends, and the arc length gives the <strong>through chainage</strong> along the centre line.</p>
+<p>Setting out by <strong>tangential angles</strong> rests on a simple fact: the angle between the tangent and a chord equals half the angle that chord subtends at the centre. <strong>Vertical curves</strong> join gradients as parabolas, with length set by stopping sight distance through a K value.</p>
+<p>Setting out places the design on the ground from control, normally by coordinates: occupy a control station, orient to a reference object, then turn off calculated bearings and distances. Never set out from a point that was itself set out.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Tangent length</span>
+      <div class="formula-expr formula-math">\[T = R \cdot \tan\left(\frac{\theta}{2}\right)\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Circular curve length</span>
+      <div class="formula-expr formula-math">\[L = R \cdot \theta_{\mathrm{rad}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Vertical curve length</span>
+      <div class="formula-expr formula-math">\[L = K \cdot A\]</div>
+      <span class="formula-note">A is the change of gradient, in percent</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>Errors, closure and the paper trail</h2>
+  <div class="body"><p>Errors are not the same as mistakes. A <strong>blunder</strong> is a gross mistake — a transposed digit, a misread staff — and redundancy finds it; adjustment must not hide it. <strong>Systematic</strong> errors repeat with the same sign and are corrected or cancelled by procedure; <strong>random</strong> errors scatter and shrink by averaging.</p>
+<p>Two-peg tests, face-left and face-right observation, and balanced sights make these behaviours predictable. Every survey needs an accuracy statement, usually a closure compared with an allowable value.</p>
+<p>Record enough redundant measurements to catch a blunder, and keep field sheets in ink so the computation stays traceable.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Allowable misclosure</span>
+      <div class="formula-expr formula-math">\[E_{\text{allow}} = c \cdot \sqrt{n}\]</div>
+      <span class="formula-note">c depends on the accuracy order required</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Relative precision</span>
+      <div class="formula-expr formula-math">\[1 : \frac{\sum d}{e}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Areas and volumes from coordinates and offsets</h2>
+  <div class="body"><p>Areas come from coordinates or offsets. The <strong>double area</strong> formula sums cross products around the polygon, taking coordinates in order and closing the last point on the first. For an irregular boundary, offsets at even spacing are integrated by the <strong>trapezoidal rule</strong>, or by <strong>Simpson's rule</strong>, which fits parabolic arcs and needs an odd number of offsets.</p>
+<p>Earthwork volumes follow from cross-sectional areas: the end-areas method averages two sections and multiplies by the length, and the prismoidal formula refines it when the mid-section area is known. For deep excavations, spot levels on a grid are averaged with corner, edge and interior points weighted 1, 2 and 4 times.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Double area from coordinates</span>
+      <div class="formula-expr formula-math">\[2A = \left|\sum E_i (N_{i+1} - N_{i-1})\right|\]</div>
+      <span class="formula-note">sum round the closed polygon in order</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Trapezoidal rule</span>
+      <div class="formula-expr formula-math">\[A \approx d\left(\frac{h_1}{2} + h_2 + \cdots + h_{n-1} + \frac{h_n}{2}\right)\]</div>
+      <span class="formula-note">d the common offset spacing</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Simpson&#x27;s rule</span>
+      <div class="formula-expr formula-math">\[A \approx \frac{d}{3}\left(h_1 + h_n + 4\sum h_{\mathrm{even}} + 2\sum h_{\mathrm{odd}}\right)\]</div>
+      <span class="formula-note">requires an odd number of offsets</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">End areas volume</span>
+      <div class="formula-expr formula-math">\[V = \frac{L (A_1 + A_2)}{2}\]</div>
+      <span class="formula-note">mean cross-sectional area times length</span>
+    </div></div><div class="table-wrap"><table><caption>Area and volume rules compared</caption><thead><tr><th scope='col'>Rule</th><th scope='col'>Fits</th><th scope='col'>Watch for</th></tr></thead><tbody><tr><td>Coordinates (double area)</td><td>straight-sided parcels</td><td>list points in order and close the figure</td></tr><tr><td>Trapezoidal</td><td>any offset spacing</td><td>underestimates curved boundaries</td></tr><tr><td>Simpson&#x27;s</td><td>smooth irregular boundaries</td><td>offsets must be odd in number, spacing equal</td></tr><tr><td>End areas</td><td>uniform sections</td><td>overestimates when areas vary non-linearly</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>The two-peg test in practice</h2>
+  <div class="body"><p>Levelling assumes the line of sight is horizontal; a <strong>collimation error</strong> tilts it. The two-peg test finds that tilt.</p>
+<p>Set pegs roughly 30–40 m apart and set up midway between them; the true height difference survives even with a tilted line of sight because both distances are equal. Then set up a few metres beyond one peg and read both staffs again; the difference between the two apparent differences is the collimation error over one peg spacing, so the instrument is adjusted or the readings corrected.</p>
+<p>Balanced back and fore sight distances achieve the same cancellation on every route, which is why it is a standing rule of precise levelling.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Collimation error from the two-peg test</span>
+      <div class="formula-expr formula-math">\[e = (a_2 - b_2) - (a_1 - b_1)\]</div>
+      <span class="formula-note">difference between the near-setup and mid-setup apparent height differences</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>Setting out curves by tangential angles</h2>
+  <div class="body"><p>A circular curve is set out from the tangent by <strong>tangential angles</strong>: the angle at the tangent point between the tangent and any chord equals half the angle that chord subtends at the centre.</p>
+<p>For a full chord c on radius R the tangential angle is c/(2R) radians; successive chords accumulate, so each point is set by turning the running total from the tangent and laying the chord distance. Transition curves are set out the same way using chords of varying radius — the arithmetic is identical, only the radius changes along the curve.</p>
+<p>The method checks itself at the far tangent point, where the total deflection must equal half the deflection angle.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Tangential angle</span>
+      <div class="formula-expr formula-math">\[\delta = \frac{c}{2R}\]</div>
+      <span class="formula-note">radians; multiply by 180/π for degrees</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Control</dt><dd>The network of stations with known coordinates and heights from which all other work is referenced.</dd></div><div class="term"><dt>Reduced level</dt><dd>The height of a point above or below the stated vertical datum.</dd></div><div class="term"><dt>Whole-circle bearing</dt><dd>Direction measured clockwise from north, quoted between 0° and 360°.</dd></div><div class="term"><dt>Angular misclosure</dt><dd>The difference between the measured sum of angles in a closed figure and its theoretical sum.</dd></div><div class="term"><dt>Bowditch rule</dt><dd>An adjustment that distributes coordinate misclosure in proportion to the length of each traverse leg.</dd></div><div class="term"><dt>Integer ambiguity</dt><dd>The unknown whole number of carrier wavelengths between a satellite and a receiver, resolved to reach centimetre positions.</dd></div><div class="term"><dt>Through chainage</dt><dd>Distance measured along a route centre line from a fixed origin, used to reference any point on it.</dd></div><div class="term"><dt>Two-peg test</dt><dd>A levelling check that quantifies collimation error by comparing height differences observed from midway between two pegs and from near one of them.</dd></div><div class="term"><dt>Tangential angle</dt><dd>The angle between the tangent and a chord to a curve point, equal to half the central angle subtended by that chord.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Closing and adjusting a four-station traverse</h2>
+        <p class="problem">A closed-loop traverse runs A, B, C, D and back to A. The four angles to the right each measured 90°00′02″. The bearing of AB is fixed at 090°00′00″ and measurements give AB = 100.010 m, BC = 60.000 m, CD = 99.990 m and DA = 60.000 m. Adjust the angles, compute the bearings and coordinates, then apply a Bowditch adjustment. Point A is fixed at N 1000.000 m, E 500.000 m.</p>
+        <ol><li>Measured angle sum = 4 × 90°00′02″ = 360°00′08″. Theoretical sum = (4 − 2) × 180° = 360°00′00″, so the angular misclosure is +8″. Allowable 20″√4 = 40″, so the work passes.</li><li>Distribute −8″ equally: correction −2″ per angle. Every adjusted angle is exactly 90°00′00″, which suggests one systematic source rather than random scatter.</li><li>Carry bearings: WCB_BC = 090° + 90° = 180°, WCB_CD = 270°, WCB_DA = 000°.</li><li>Resolve legs: ΔN = d cos θ and ΔE = d sin θ. Latitudes: BC = −60.000, DA = +60.000, others zero, so ΣΔN = 0. Departures: AB = +100.010, CD = −99.990, so ΣΔE = +0.020 m.</li><li>Linear misclosure = √(0² + 0.020²) = 0.020 m over a total length of 320.000 m, a relative precision of 1 : 16 000. Correction to each departure = −0.020 × d / 320: AB −0.00625 m, BC −0.00375 m, CD −0.00625 m, DA −0.00375 m.</li><li>Corrected departures: AB +100.00375, BC −0.00375, CD −99.99625, DA −0.00375, summing to zero. Corrected latitudes are unchanged and also sum to zero.</li><li>Add the corrected components to the coordinates: B (1000.000, 600.004), C (940.000, 600.000), D (940.000, 500.004), closing back on A at (1000.000, 500.000).</li><li>Sanity check: the closing coordinates reproduce A exactly after rounding, and the misclosure was carried by legs parallel to the departing direction, which is what a distance-dependent error should look like.</li></ol>
+        <div class="answer"><b>Answer</b>Angular misclosure +8″ (within 40″ allowable) adjusted to zero; linear misclosure 20 mm, precision about 1 : 16 000, removed by Bowditch; the adjusted loop closes on A at N 1000.000 m, E 500.000 m.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>Do the booking check before computing: ΣBS − ΣFS must equal the difference between the first and last reduced levels.</li><li>For any traverse, always compute angular misclosure first; bearings cannot be trusted until the angles are closed.</li><li>Keep a consistent axis order: N before E, and derive bearings from atan2(ΔE, ΔN), not the other way round.</li><li>State the allowable misclosure and compare with it explicitly; an uncompared closure earns few marks even if the arithmetic is right.</li><li>Area questions with coordinates: write the double-area table with N and E columns and cross-multiply — one sign slip reverses the polygon&#x27;s handedness, not just the area.</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Hong Kong 1980 Geodetic Datum and HK1980 Grid parameters</h3>
+  <p class="ref-table-intro">Defining parameters of the HK80 datum and the local HK1980 Grid, a Transverse Mercator system used for cadastral, engineering and large-scale mapping in Hong Kong. They are the constants entered into coordinate transformations and checks.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Parameter</th><th scope='col'>Value</th><th scope='col'>Notes</th></tr></thead><tbody><tr><td>Geodetic datum</td><td>Hong Kong 1980 (HK80)</td><td>Local datum for HK1980 Grid coordinates</td></tr><tr><td>Reference ellipsoid</td><td>International Hayford (1910); a = 6 378 388 m, 1/f = 297.0</td><td>Semi-major axis and flattening</td></tr><tr><td>Datum origin (Trigonometrical Zero)</td><td>22° 18&#x27; 12.82&quot; N, 114° 10&#x27; 18.75&quot; E</td><td>Old trig station at the Hong Kong Observatory</td></tr><tr><td>Map projection</td><td>Transverse Mercator</td><td>Conformal cylindrical projection</td></tr><tr><td>Projection origin (old Trig 2, Patridge Hill)</td><td>22° 18&#x27; 43.68&quot; N, 114° 10&#x27; 42.80&quot; E</td><td>Reference station for the grid origin</td></tr><tr><td>Grid coordinates of the projection origin</td><td>819 069.80 mN, 836 694.05 mE</td><td>Northing and easting of the origin</td></tr><tr><td>Scale factor</td><td>Unity (1.0) along the central meridian</td><td>At old Trig 2; the UTM grids in Hong Kong use 0.9996</td></tr></tbody></table></div>
+  <p class="ref-table-note">Parameters from the Datum Parameters and Projection Parameters tables in the Explanatory Notes on Geodetic Datums in Hong Kong, Survey and Mapping Office, Lands Department (1995, minor revision 2023).</p>
+  <p class="ref-table-caveat">Revision summary only. Use the current transformation parameters, projection formulae and worked examples published by the Survey and Mapping Office; the grid coordinates quoted refer to the projection origin, not to any local benchmark.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q01</span><span>In the height of collimation method, the reduced level of an intermediate point is found by:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Adding the back sight to the intermediate sight</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Averaging the back sight and fore sight</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Adding the intermediate sight to the known level</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Subtracting the intermediate sight from the height of collimation</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The collimation height is the level of the line of sight, so every staff reading is subtracted from it to reach the ground point.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>A closed traverse has five interior angles summing to 540°00′40″. What is the angular misclosure?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>−40″</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>+40″</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>+1°40′</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Zero, because (5 − 2) × 180° = 540°</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The theoretical sum is (5 − 2) × 180° = 540°00′00″, so measured minus theoretical is +40″.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>Under the Bowditch rule, the correction applied to a traverse leg is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Proportional to the bearing of the leg</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Equal for every leg regardless of length</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Larger on short legs than on long legs</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Proportional to the leg length</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Bowditch shares the misclosure in proportion to distance, so a short leg receives a proportionally small correction.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>Which GNSS observable is capable of centimetre-level survey positions?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Pseudorange from the C/A code</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Doppler shift of the carrier</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Carrier phase with the integer ambiguity resolved</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The broadcast almanac</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Code ranges give metres; carrier phase is measured to a few millimetres and becomes a precise range once the whole-cycle ambiguity is fixed.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q05</span><span>Simpson&#x27;s rule for area computation requires the number of offsets to be:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Odd</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Any number, as long as the spacing is equal</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>A multiple of four</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Even</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Simpson&#x27;s rule fits parabolic arcs in pairs of intervals, so the number of offsets (including the two ends) must be odd.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>In the two-peg test, the level is first set up midway between the pegs so that:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Collimation error cancels out of the observed height difference</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The readings are as large as possible</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The staffs can be read without a change point</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Refraction and curvature cancel</span></button></div>
+    <div class="quiz-explain"><b>Why</b>With equal sight lengths a tilted line of sight contaminates both readings equally, so the true height difference survives.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-geology.html"><span>Core</span><b>Engineering Geology</b></a><a class="related-card" href="construction-introduction.html"><span>Core</span><b>Introduction to Construction</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="soil-mechanics.html"><small>Previous</small><b>Soil Mechanics</b></a><a class="next" href="integrated-project-quality.html"><small>Next</small><b>Integrated Project &amp; Quality Management</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Survey and Mapping Office, Lands Department. (2023). <i>Explanatory Notes on Geodetic Datums in Hong Kong (minor revision 2023)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.geodetic.gov.hk/common/data/pdf/explanatorynotes.pdf" rel="noopener">https://www.geodetic.gov.hk/common/data/pdf/explanatorynotes.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">Control first — detail never checks itself.</p><p class="margin-note">Rise and fall checks every intermediate sight.</p><p class="margin-note">Adjust angles before you touch coordinates.</p><p class="margin-note">Balance sights to cancel curvature and collimation.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

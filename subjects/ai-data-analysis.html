@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI &amp; Data Analysis — Civil Hub</title>
+<meta name="description" content="Data is only as good as the questions asked of it. This page covers describing a dataset, fitting and judging a regression line, and spotting the quality p">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/ai-data-analysis.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="AI &amp; Data Analysis — Civil Hub">
+<meta property="og:description" content="Data is only as good as the questions asked of it. This page covers describing a dataset, fitting and judging a regression line, and spotting the quality p">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/ai-data-analysis.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="ai-data-analysis.html" data-alt-zh-hant="ai-data-analysis.zh-Hant.html" data-alt-ja="ai-data-analysis.ja.html" data-alt-ko="ai-data-analysis.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">AI &amp; Data Analysis</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Computing</p>
+          <h1>AI &amp; Data Analysis</h1>
+          <p class="subject-sub">Finding patterns in data and reading them honestly</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Computing</li><li><b data-i18n="subject.read">Read</b>8 min</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>12</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">Data before models</a></li><li><a href="#sec-2">Summarising a dataset</a></li><li><a href="#sec-3">Correlation is neither a slope nor a cause</a></li><li><a href="#sec-4">Fitting a line by least squares</a></li><li><a href="#sec-5">Judging the fit</a></li><li><a href="#sec-6">Testing a model honestly</a></li><li><a href="#sec-7">Data-quality pitfalls</a></li><li><a href="#sec-8">Source, bias, inference (SBI)</a></li><li><a href="#sec-9">Classification: a score becomes a decision</a></li><li><a href="#sec-10">Feature engineering and scaling</a></li><li><a href="#sec-11">Baselines and honest comparison</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">Data is only as good as the questions asked of it. This page covers describing a dataset, fitting and judging a regression line, and spotting the quality problems that make a confident answer wrong.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="ai-data-analysis" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>Data before models</h2>
+  <div class="body"><p>Analysis begins with what was recorded, not what software can do. Each <strong>variable</strong> is a measured property — compressive strength, chloride content, delay in minutes — and its type sets the legal arithmetic:</p>
+<ul>
+<li>nominal labels can only be counted</li>
+<li>ordinal ranks ordered</li>
+<li>interval values subtracted</li>
+<li>only ratio scales have a true zero</li>
+</ul>
+<p>Most engineering data are a <strong>sample</strong> from a larger population, so every summary is an estimate. Ask how rows were selected; a convenient sample measures the sampling method as much as the subject.</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Summarising a dataset</h2>
+  <div class="body"><p>The first pass is descriptive and cheap: centre, spread and shape. The <strong>mean</strong> is the balance point, the <strong>median</strong> the middle value, and the <strong>mode</strong> the most frequent category. Spread is reported as the standard deviation, which shares the data's units, or the coefficient of variation, which is dimensionless and comparable across variables. Skew drags the mean towards the long tail while the median barely moves, which is why repair costs and rainfall are quoted as medians; keep the sample size beside any summary.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Sample mean</span>
+      <div class="formula-expr formula-math">\[\bar{x} = \frac{\sum x_i}{n}\]</div>
+      <span class="formula-note">n observations</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Sample standard deviation</span>
+      <div class="formula-expr formula-math">\[s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n - 1}}\]</div>
+      <span class="formula-note">n − 1 corrects for sample size</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Coefficient of variation</span>
+      <div class="formula-expr formula-math">\[\mathrm{CV} = \frac{s}{\bar{x}}\]</div>
+      <span class="formula-note">dimensionless</span>
+    </div></div><div class="table-wrap"><table><caption>Four summary statistics and where each one misleads</caption><thead><tr><th scope='col'>Statistic</th><th scope='col'>What it summarises</th><th scope='col'>Where it misleads</th></tr></thead><tbody><tr><td>Mean</td><td>Balance point of all values</td><td>Pulled by extreme values</td></tr><tr><td>Median</td><td>Middle value once ranked</td><td>Ignores the size of most values</td></tr><tr><td>Standard deviation</td><td>Typical distance from the mean</td><td>Assumes a symmetric spread</td></tr><tr><td>Coefficient of variation</td><td>Spread relative to the mean</td><td>Unstable near a zero mean</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>Correlation is neither a slope nor a cause</h2>
+  <div class="body"><p>Plot first. Two variables can follow a clear curve and still return a correlation near zero, because the Pearson coefficient r measures only linear association. It is unit-free, runs from −1 to +1, and is not a slope: r = 0.9 does not tell you how much y changes per unit of x. Correlation is not causation either. A third factor can drive both variables, the causal arrow may run backwards, or the sample may be selected on the outcome. Randomisation, a control group or a natural experiment licenses a causal sentence.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Pearson correlation coefficient</span>
+      <div class="formula-expr formula-math">\[r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \cdot \sum (y_i - \bar{y})^2}}\]</div>
+      <span class="formula-note">−1 ≤ r ≤ +1; it detects linear association only</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Fitting a line by least squares</h2>
+  <div class="body"><p>A simple linear regression fits ŷ = a + b x by choosing the line that minimises the sum of squared vertical gaps between each observation and the line. Squaring treats positive and negative misses alike and punishes large misses hardest, so one outlier can tilt the fit. The slope b is the predicted change in y per one-unit increase in x. The intercept a is the prediction at x = 0, which is often outside the measured range and physically meaningless. Quote both with units, and never present an extrapolated prediction as if it had been measured.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Least squares slope</span>
+      <div class="formula-expr formula-math">\[b = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^2}\]</div>
+      <span class="formula-note">the change in y per unit change in x</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Intercept</span>
+      <div class="formula-expr formula-math">\[a = \bar{y} - b\,\bar{x}\]</div>
+      <span class="formula-note">the fitted line is ŷ = a + b x</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Judging the fit</h2>
+  <div class="body"><p>The coefficient of determination R² is the share of the variation in y that the model accounts for: 1 means every point lies on the line, 0 means the model is no better than predicting the mean. It says nothing about whether the form of the model is right — a curve fitted over a narrow range can still score well. Residual plots are the honest test. A pattern means the model is misspecified, a funnel means the variance changes with x, and a handful of very large residuals flags influential points. Report typical error, not just R².</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Coefficient of determination</span>
+      <div class="formula-expr formula-math">\[R^2 = 1 - \frac{\mathrm{SS}_{\mathrm{res}}}{\mathrm{SS}_{\mathrm{tot}}}\]</div>
+      <span class="formula-note">SS_res = Σ(yᵢ − ŷᵢ)² and SS_tot = Σ(yᵢ − ȳ)²</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>Testing a model honestly</h2>
+  <div class="body"><p>A model is useful only if it performs on data it has not seen. Split off a <strong>test set</strong> before tuning, or cross-validate when the sample is small; otherwise the model can memorise the training rows and appear excellent. For a numeric prediction, report the mean absolute error or the root mean square error, both in the units of y; the root mean square penalises large misses more heavily. A low error on a well-chosen test set is evidence; a low error on the training set is arithmetic.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Root mean square error</span>
+      <div class="formula-expr formula-math">\[\mathrm{RMSE} = \sqrt{\frac{1}{n} \sum (y_i - \hat{y}_i)^2}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Data-quality pitfalls</h2>
+  <div class="body"><p>Most modelling failures are data failures. <strong>Missing values</strong> may be missing for a reason — a sensor that saturates above a threshold — so deleting incomplete rows quietly changes the population being described. <strong>Outliers</strong> deserve investigation: a transcription error is a correction, but a genuine extreme is information. <strong>Leakage</strong> happens when a predictor contains information that would not exist at prediction time, giving superb test scores and a useless deployed model. Check units, duplicates, rounding that hides variation, and row order. A model trained on the future is not a forecast.</p></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>Source, bias, inference (SBI)</h2>
+  <div class="body"><p>Three questions keep an analysis honest. <strong>Source</strong>: who collected the numbers, with what instrument, and under what conditions? <strong>Bias</strong>: which part of the story does this sample systematically miss — a capped sensor, a convenient site, a category collapsed into "other"? <strong>Inference</strong>: how far does the evidence actually stretch, and what uncertainty belongs beside the estimate? The last question is the one exam answers forget. A slope fitted to ten points supports a direction and a rough magnitude, not a precise forecast: state the sample size, the residual error and the fitted range.</p></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Classification: a score becomes a decision</h2>
+  <div class="body"><p>When the outcome is a category — defective or sound, pass or fail — the model outputs a score and a threshold turns it into a decision. <strong>Logistic regression</strong> squeezes a linear score through the sigmoid so the output is a probability; a threshold of 0.5 is a default, not a law, and moving it trades one error against the other. Judge a classifier with a <strong>confusion matrix</strong>, not accuracy alone. <strong>Precision</strong> is the share of flagged cases that are genuinely positive, and <strong>recall</strong> is the share of genuine positives that were found; they punish opposite mistakes. On imbalanced data, a model that never flags anything scores high accuracy and finds nothing.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Logistic probability</span>
+      <div class="formula-expr formula-math">\[p = \frac{1}{1 + e^{-s}}, \quad s = b_0 + b_1 x_1 + \cdots\]</div>
+      <span class="formula-note">the linear score s is mapped to a probability between 0 and 1</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Precision and recall</span>
+      <div class="formula-expr formula-math">\[\mathrm{precision} = \frac{TP}{TP + FP}, \quad \mathrm{recall} = \frac{TP}{TP + FN}\]</div>
+      <span class="formula-note">TP, FP and FN come from the confusion matrix</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>Feature engineering and scaling</h2>
+  <div class="body"><p>The columns you hand a model are half the model. <strong>Standardisation</strong> centres a variable at zero and rescales it to unit standard deviation, which stops one large-numbered variable from dominating the fit; a log transform tames right-skewed variables such as costs and concentrations; one-hot encoding turns a nominal category into indicator columns. Scale and encode using statistics computed from the <strong>training set only</strong>, then apply the identical transform to the test set. Scaling on all the data first quietly leaks the test set into training and flatters every result.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Standardisation</span>
+      <div class="formula-expr formula-math">\[z = \frac{x - \mu}{\sigma}\]</div>
+      <span class="formula-note">μ and σ are the training-set mean and standard deviation</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>Fit the transform on training data only</b>
+  Compute means, standard deviations and category levels from the training split, then reuse them on the test set; otherwise the evaluation is optimistic.
+</div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>Baselines and honest comparison</h2>
+  <div class="body"><p>No model is good or bad in the abstract; it is good or bad against a <strong>baseline</strong>. Before fitting anything, score the simplest defensible alternative — the historical mean, the previous period's value, or a one-rule classifier — on the same test set and report it beside the model. Compare candidates on the identical split with the identical metric, and prefer the <strong>mean absolute error</strong> when the units should be read literally: it reports the typical miss directly, where the root mean square error magnifies rare large ones. A model that cannot beat a trivial baseline is not an improvement, however clever it is.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Mean absolute error</span>
+      <div class="formula-expr formula-math">\[\mathrm{MAE} = \frac{1}{n} \sum |y_i - \hat{y}_i|\]</div>
+      <span class="formula-note">the typical error in the units of y</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Residual</dt><dd>The vertical gap between an observed value and the value predicted by the fitted model.</dd></div><div class="term"><dt>Coefficient of determination</dt><dd>The proportion of the variation in the response that the fitted model explains.</dd></div><div class="term"><dt>Least squares</dt><dd>The fitting rule that chooses parameters by minimising the sum of squared residuals.</dd></div><div class="term"><dt>Sample</dt><dd>The subset of a population that was actually measured, and from which estimates are made.</dd></div><div class="term"><dt>Outlier</dt><dd>An observation far from the rest of the data, which may be a recording error or a genuine extreme.</dd></div><div class="term"><dt>Data leakage</dt><dd>Using a predictor that contains information unavailable at the moment a prediction must be made.</dd></div><div class="term"><dt>Confusion matrix</dt><dd>A table of true positives, false positives, false negatives and true negatives that shows where a classifier errs.</dd></div><div class="term"><dt>Standardisation</dt><dd>Rescaling a variable to zero mean and unit standard deviation, usually with statistics taken from the training set.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Fitting strength against curing time</h2>
+        <p class="problem">A small trial measures concrete strength y (MPa) after x days of curing at five ages: (1, 10), (2, 12), (3, 15), (4, 18), (5, 20). Fit a least squares line, find R², and interpret the slope.</p>
+        <ol><li>Summaries: Σx = 15 so x̄ = 3 days; Σy = 75 so ȳ = 15 MPa.</li><li>Deviations from the mean give Σ(xᵢ − x̄)² = 4 + 1 + 0 + 1 + 4 = 10 and Σ(xᵢ − x̄)(yᵢ − ȳ) = 10 + 3 + 0 + 3 + 10 = 26.</li><li>Slope: b = 26 / 10 = 2.60 MPa per day. Intercept: a = ȳ − b x̄ = 15 − 2.60 × 3 = 7.2 MPa, so ŷ = 7.2 + 2.60x.</li><li>Predictions are 9.8, 12.4, 15.0, 17.6 and 20.2 MPa, giving residuals 0.2, −0.4, 0, 0.4 and −0.2. Then SS_res = 0.40 and SS_tot = 25 + 9 + 0 + 9 + 25 = 68.</li><li>R² = 1 − 0.40/68 = 0.994, so the line accounts for 99.4% of the variation in strength over these five ages.</li></ol>
+        <div class="answer"><b>Answer</b>ŷ = 7.2 + 2.60x (MPa), with R² = 0.994. Each extra day is associated with about 2.6 MPa more predicted strength, but with five points and a range of only 1–5 days the line should not be extrapolated to a 28-day design strength.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>Give the slope units (y-units per x-unit) and the intercept units — a bare number loses the mark.</li><li>Never describe R² as accuracy: it is the share of variation explained, not a percentage of correct predictions.</li><li>Plot the data and then the residuals before defending any fit; a pattern in the residuals means the model is wrong.</li><li>State the fitted range and the sample size, and say when a prediction is an extrapolation.</li><li>Report a naive baseline on the same test set before claiming any model is good; a score is only meaningful relative to something.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>A regression predicts concrete strength from curing time and reports R² = 0.02. The most accurate reading is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The relationship must be causal</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The model predicts strength with 2% accuracy</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>About 2% of the variation in strength is explained by curing time</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The slope is wrong by 2%</span></button></div>
+    <div class="quiz-explain"><b>Why</b>R² is a share of variance, not a percentage of correct predictions; here the line is barely better than predicting the mean.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>A least squares fit of strength against curing time gives b = 2.6 MPa per day. Which sentence is correct?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Each extra day is associated with 2.6 MPa more predicted strength</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Strength increases by 2.6% per day</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>After five days the strength is 2.6 MPa</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Each extra day of curing causes an extra 2.6 MPa</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The slope is a predicted change per unit of x; association is not proof of cause, and the slope is not a percentage.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>A model predicts 28-day strength using a ductility test recorded after the concrete was poured, and scores superbly on both training and test data. The most likely fault is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>A units mismatch between MPa and kN</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Too few predictor variables</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Overfitting, because the score is too good</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Data leakage, because the predictor would not be available when the prediction is needed</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Leakage lets information from the future into the predictors; the model looks excellent but cannot be used at prediction time.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>For right-skewed repair-cost data, which pair best describes a typical value and its spread?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Mode and range</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Mean and coefficient of variation</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Mean and standard deviation</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Median and interquartile range</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The median and interquartile range are resistant to the long tail, while the mean and standard deviation are pulled by it.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>A defect detector is run on 400 panels: it flags 60, of which 45 are genuinely defective, and 25 genuine defects go unflagged. Its precision is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>45/400</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>45/60</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>45/70</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>60/400</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Precision is the share of flagged panels that were really defective: TP/(TP + FP) = 45/60 = 0.75.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>A team standardises its variables using the mean and standard deviation of the full dataset before splitting. The likely consequence is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The model will underfit</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The slope becomes the correlation</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Nothing; standardisation cannot change results</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Test information leaks into training, making the evaluation optimistic</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Computing the transform on all rows lets the test set influence the training pipeline, inflating the reported performance.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-statistics.html"><span>Core</span><b>Engineering Statistics</b></a><a class="related-card" href="programming-fundamentals.html"><span>Computing</span><b>Programming Fundamentals</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="structural-mechanics.html"><small>Previous</small><b>Structural Mechanics</b></a><a class="next" href="air-noise-pollution.html"><small>Next</small><b>Air &amp; Noise Pollution</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">Plot first, fit second.</p><p class="margin-note">r is not a slope.</p><p class="margin-note">A high R² does not make the model right.</p><p class="margin-note">Ask where each number came from.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

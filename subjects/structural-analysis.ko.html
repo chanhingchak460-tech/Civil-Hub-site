@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>구조 해석 — Civil Hub</title>
+<meta name="description" content="실제 골조의 힘과 변위를 구하는 방법: 정정성, 가상일, 영향선, 모멘트 분배법 및 강성법. 구조물의 스케치를 엔지니어가 입증할 수 있는 숫자로 바꾼다.">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/structural-analysis.ko.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="구조 해석 — Civil Hub">
+<meta property="og:description" content="실제 골조의 힘과 변위를 구하는 방법: 정정성, 가상일, 영향선, 모멘트 분배법 및 강성법. 구조물의 스케치를 엔지니어가 입증할 수 있는 숫자로 바꾼다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/structural-analysis.ko.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="structural-analysis.html" data-alt-zh-hant="structural-analysis.zh-Hant.html" data-alt-ja="structural-analysis.ja.html" data-alt-ko="structural-analysis.ko.html" data-page-lang="ko" data-root="../" data-total="42" data-page="library" data-content-lang="ko">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">구조 해석</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">핵심</p>
+          <h1>구조 해석</h1>
+          <p class="subject-sub">프레임, 영향선, 강성 및 실제 구조물의 거동</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>핵심</li><li><b data-i18n="subject.read">Read</b>11 분</li><li><b data-i18n="subject.sections">Sections</b>10</li><li><b data-i18n="subject.formulas">Formulas</b>13</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M80 160 V64 H260 V160" stroke="currentColor" stroke-width="1.7"/><path d="M70 160 h20 M250 160 h20" stroke="currentColor" stroke-width="1.2"/><path d="M80 160 l-8 12 h16 z M260 160 l-8 12 h16 z" stroke="currentColor" stroke-width="1"/><path d="M80 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M220 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M104 100 q-20 14 0 28" stroke="var(--accent)" stroke-width="1"/><path d="M236 100 q20 14 0 28" stroke="var(--accent)" stroke-width="1"/><text x="170" y="44" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PORTAL FRAME</text></svg>
+          <figcaption>Portal frame — bending moments at the joints</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">정정성과 안정성</a></li><li><a href="#sec-2">가상일과 단위하중법</a></li><li><a href="#sec-3">유연도법</a></li><li><a href="#sec-4">영향선</a></li><li><a href="#sec-5">모멘트 분배법</a></li><li><a href="#sec-6">강성법</a></li><li><a href="#sec-7">평면 트러스의 강성 해석</a></li><li><a href="#sec-8">골조 거동과 횡변위</a></li><li><a href="#sec-9">컴퓨터 모델 검증</a></li><li><a href="#sec-10">해석에서 설계로</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">실제 골조의 힘과 변위를 구하는 방법: 정정성, 가상일, 영향선, 모멘트 분배법 및 강성법. 구조물의 스케치를 엔지니어가 입증할 수 있는 숫자로 바꾼다.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="structural-analysis" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>정정성과 안정성</h2>
+  <div class="body"><p>평형은 각 평면 자유물체에 대해 세 개의 독립적인 방정식을 제공한다. 부재, 절점 및 반력 성분을 세어보라: 강절 골조의 정적 부정정 차수는 D_s = 3m + r − 3j이다.</p>
+<ul>
+<li>D_s = 0: 반력은 평형으로부터 구해진다.</li>
+<li>D_s &gt; 0: 그만큼의 여력이 남는다.</li>
+<li>D_s &lt; 0: 메커니즘을 경고한다.</li>
+<li>내부 힌지는 차수를 감소시킨다.</li>
+</ul>
+<p>정정성은 산술이지 안정성의 증명이 아니다. 평행 지지부나 한 점에서 만나는 반력은 정정 구조물을 자유롭게 움직일 수 있게 남길 수 있으므로, 먼저 메커니즘을 스케치하라.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">평면 골조의 정적 부정정 차수</span>
+      <div class="formula-expr formula-math">\[D_s = 3m + r - 3j\]</div>
+      <span class="formula-note">m 부재, r 반력 성분, j 절점; D_s &lt; 0은 메커니즘을 나타냄</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>가상일과 단위하중법</h2>
+  <div class="body"><p>단위하중법은 한 번에 하나의 변위를 구한다. 필요한 점과 방향에 가상 단위하중을 적용하고, 내부 가상 힘을 결정한 다음, 구조물 전체에 걸쳐 가상 및 실제 작용의 곱을 합산한다.</p>
+<ul>
+<li>골조의 경우: Σ∫ M m / (EI) ds.</li>
+<li>트러스의 경우: Σ n N L / (A E).</li>
+</ul>
+<p>부호는 가정된 가상 방향을 따른다: 음의 결과는 변위가 단위하중과 반대 방향임을 의미한다. 선택한 점에서 컴퓨터 결과를 확인하는 데 이상적이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">단위하중법, 골조</span>
+      <div class="formula-expr formula-math">\[\Delta = \sum \int \frac{M m}{E I}\,\mathrm{d}s\]</div>
+      <span class="formula-note">M과 m은 실제 및 가상 휨모멘트</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">단위하중법, 트러스</span>
+      <div class="formula-expr formula-math">\[\Delta = \sum \frac{n N L}{A E}\]</div>
+      <span class="formula-note">n과 N은 가상 및 실제 축력</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>유연도법</h2>
+  <div class="body"><p>유연도(힘)법은 지지부나 내부 작용을 제거하여 정정 <strong>해방 구조물</strong>이 남을 때까지 부정정 구조물을 처리한다. 미지수는 여력 X이며, 해방의 대가는 해방 구조물이 실제 구조물처럼 거동하도록 만들어야 한다는 것이다.</p>
+<p>적합성은 누락된 방정식을 제공한다: 각 해방 좌표에서의 변위는 적용 하중과 여력에 의해 발생하며, 실제 값(보통 0)과 같아야 한다. 행렬 형태로 <code>f X + D = 0</code>이며, 여기서 <code>f_ij</code>는 j에서의 단위 여력에 의한 i 좌표에서의 변위이고 <code>D</code>는 하중만에 의한 해당 위치에서의 변위이다. 각 계수는 가상일로부터 구해진다.</p>
+<p><strong>도식 곱셈</strong>을 사용할 때는 모멘트 도식을 면적과 도심이 알려진 단순한 형상으로 분할하라. 휨모멘트 도식의 기울기는 전단력과 같으므로, 절점에서 기울기가 변하는 도식은 분해되어야 한다 — 하나의 상상된 형상이 아닌 포물선과 삼각형으로.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">행렬 형태의 적합성 방정식</span>
+      <div class="formula-expr formula-math">\[\mathbf{f}\,\mathbf{X} + \mathbf{D} = 0\]</div>
+      <span class="formula-note">f 유연도 행렬, X 여력, D 하중 하에서 해방 구조물의 변위</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">유연도 계수</span>
+      <div class="formula-expr formula-math">\[f_{ij} = \sum \int \frac{m_i m_j}{E I}\,\mathrm{d}s\]</div>
+      <span class="formula-note">m_i와 m_j는 i와 j에서의 단위 여력에 의한 휨모멘트</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>영향선</h2>
+  <div class="body"><p>영향선은 단위하중이 구조물을 가로질러 이동할 때 하나의 응답(반력, 전단력, 모멘트 또는 변위)이 어떻게 변하는지를 보여준다. 선이 알려지면, 어떤 하중 열차도 중첩으로 처리된다: 각 하중에 그 아래의 종거를 곱하고 더하라. 하중을 가장 큰 종거 위에 배치하면 지배적인 위치를 얻을 수 있으며, 이것이 교량과 크레인 거더에 적합한 이유이다.</p>
+<p>뮐러-브레슬라우 원리는 형상을 직접 제공한다: 관심 점에서 구조물을 해방하고, 응답 방향으로 단위 변위 또는 회전을 부과하면, 결과적인 처짐 형상이 영향선이 된다. 단순 지지보의 경우, 모멘트 영향선은 단면 아래에서 종거 a b / L을 갖는다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">단순 지지보의 모멘트 영향 종거</span>
+      <div class="formula-expr formula-math">\[y = \frac{a b}{L}\]</div>
+      <span class="formula-note">a, b는 단면에서 지지부까지 측정; L은 경간</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>모멘트 분배법</h2>
+  <div class="body"><p>모멘트 분배법은 연립방정식 없이 절점별로 부정정 보와 골조를 해결한다. 모든 절점을 고정하고, 부재 하중으로부터 고정단 모멘트를 작성한 다음, 한 번에 하나의 절점을 해방한다. 불균형 모멘트는 강성에 비례하여 부재 간에 분배되며, 일부는 고정된 먼 단부로 전달된다; 전달이 무시할 수 있을 때까지 반복하라.</p>
+<ul>
+<li>일정한 EI에 대해, 강성은 먼 단부가 고정일 때 4EI/L이고 핀일 때 3EI/L이다.</li>
+<li>전달 계수는 고정단에 대해 0.5이고 핀단에 대해 0이다.</li>
+</ul>
+<p>처음부터 부호 규약을 정하라: 절점의 한쪽에서의 헌칭은 다른 쪽에서의 새깅이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">분배 계수</span>
+      <div class="formula-expr formula-math">\[\mathrm{DF} = \frac{k}{\sum k}\]</div>
+      <span class="formula-note">k = 고정 먼 단부의 경우 4EI/L, 핀 먼 단부의 경우 3EI/L</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">전달 계수</span>
+      <div class="formula-expr formula-math">\[C = 0.5\]</div>
+      <span class="formula-note">일정 EI, 먼 단부 고정; 핀단으로의 전달 없음</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>강성법</h2>
+  <div class="body"><p>강성법은 절점 변위를 미지수로 취한다. 각 부재는 국부 축에서의 강성 행렬로 설명되며, 행렬은 전역 축으로 회전되어 K u = F로 조립된다. 부재 하중은 등가 절점 힘이 되고, 방정식은 u에 대해 풀리며, 부재 단부 힘은 부재 변위로부터 구해진다.</p>
+<p>손으로 작성하면, 같은 아이디어가 경사변위 방정식이다: M_AB = (4EI/L) θ_A + (2EI/L) θ_B + FEM_AB. 이는 임의의 기하학적 형상과 지지 조건을 처리할 수 있으므로 골조 해석 소프트웨어의 기초가 된다; 모델은 지지부와 물성만큼만 좋다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">조립된 강성 방정식</span>
+      <div class="formula-expr formula-math">\[\mathbf{K}\,\mathbf{u} = \mathbf{F}\]</div>
+      <span class="formula-note">K 전역 강성 행렬, u 절점 변위, F 적용 절점 힘</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">경사변위 방정식</span>
+      <div class="formula-expr formula-math">\[M_{AB} = \frac{4 E I}{L}\theta_A + \frac{2 E I}{L}\theta_B + \mathrm{FEM}_{AB}\]</div>
+      <span class="formula-note">θ는 라디안; FEM은 부재 하중에 의한 고정단 모멘트</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>평면 트러스의 강성 해석</h2>
+  <div class="body"><p>평면 트러스의 경우 강성법은 깔끔한 절차가 된다. 각 부재는 축 강성 <code>EA/L</code>을 가진 바이며, 그 단부 힘은 바 축을 따라 분해된 단부 변위의 차이에 의존한다. 전역 좌표에서 부재 강성 행렬은 <code>k = (EA/L) [[c², cs], [cs, s²]]</code>이며, 여기서 <code>c = cos α</code>이고 <code>s = sin α</code>는 각도 α로 기울어진 바에 대한 것이다.</p>
+<p>조립은 각 2 × 2 행렬을 부재의 두 절점의 자유도에서 전역 K에 더한다; 지지부는 구속된 행과 열을 삭제하여 부과된다. 절점 변위에 대해 <code>K u = F</code>를 풀고, 각 부재력을 <code>N = (EA/L) [c s] (u_B − u_A)</code>로 복원하라. 여기서 양수 값은 인장을 의미한다. 인장 규약을 명시하지 않은 트러스 해는 완성되지 않은 것이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">평면 트러스의 부재 강성 행렬</span>
+      <div class="formula-expr formula-math">\[k = \frac{EA}{L}\begin{bmatrix} c^2 &amp; cs \\ cs &amp; s^2 \end{bmatrix}\]</div>
+      <span class="formula-note">c = cos α, s = sin α; 전역 x–y 좌표에서 2 × 2</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">단부 변위로부터의 부재력</span>
+      <div class="formula-expr formula-math">\[N = \frac{EA}{L}\begin{bmatrix} c &amp; s \end{bmatrix}\left(\mathbf{u}_B - \mathbf{u}_A\right)\]</div>
+      <span class="formula-note">양수 N은 인장; u_A와 u_B는 절점 변위 벡터</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>골조 거동과 횡변위</h2>
+  <div class="body"><p>강절 골조는 기둥과 보를 함께 휨으로써 횡하중에 저항한다. 골조가 병진할 수 있으면, 횡변위는 모멘트에 추가되고 구조물은 횡변위 민감성이 된다; 채움벽, 브레이싱 또는 코어는 해석 범주를 바꿀 수 있으므로 포함되어야 한다. 횡변위 골조는 2차 해석 또는 증폭 모멘트가 필요하다. P-Δ 효과는 높이와 축하중에 따라 증가하기 때문이다.</p>
+<p>예비 치수 결정을 위해, 포털법은 각 기둥의 중간 높이와 각 보의 중간 경간에 변곡점이 있다고 가정하므로, 층 전단력은 기둥 간에 분배된다. 이는 스케치이지 설계 방법은 아니지만, 초기에 큰 불균형을 잡아낸다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">고정단 기둥의 횡강성</span>
+      <div class="formula-expr formula-math">\[K_{\mathrm{lat}} \approx \sum \frac{12 E I_c}{h^3}\]</div>
+      <span class="formula-note">초기 추정; 보 구속은 유효 값을 감소시킴</span>
+    </div></div><div class="table-wrap"><table><caption>해석 방법 선택</caption><thead><tr><th scope='col'>방법</th><th scope='col'>미지수</th><th scope='col'>적합한 대상</th><th scope='col'>주의할 점</th></tr></thead><tbody><tr><td>단위하중 / 가상일</td><td>하나의 변위</td><td>한 점에서의 처짐 검토</td><td>한 번에 한 점</td></tr><tr><td>모멘트 분배법</td><td>절점 회전</td><td>연속보, 소규모 골조</td><td>절점이 많거나 횡변위 시 느림</td></tr><tr><td>강성 행렬</td><td>절점 변위</td><td>모든 골조의 컴퓨터 해석</td><td>모델 오류, 단위 및 해방</td></tr><tr><td>2차 해석</td><td>P-Δ를 포함한 변위</td><td>세장하거나 횡변위 골조</td><td>현실적인 불완전성 필요</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>컴퓨터 모델 검증</h2>
+  <div class="body"><p>소프트웨어는 모델이 타당하든 아니든 숫자를 반환한다. 출력을 사용하기 전에 단위와 축, 지지부와 해방, 단면 방향을 확인하라.</p>
+<ul>
+<li>적용 하중의 합이 반력의 합과 같은지 확인하라.</li>
+<li>모든 핀에서 모멘트가 0으로 돌아오는지 확인하라.</li>
+<li>처짐 형상이 구속 조건과 일치하는지 확인하라.</li>
+<li>강성 행렬이 거의 특이하다는 경고는 보통 자유 절점이나 메커니즘을 의미한다.</li>
+<li>한 부재를 손으로 검증하라 — 평형, 표준 공식 또는 알려진 영향선.</li>
+<li>메쉬를 세분화하고 답이 변하는지 확인하라; 무관한 세분화로 변하는 결과는 수렴되지 않은 것이다.</li>
+</ul></div>
+<div class="callout callout--warning">
+  <b>도식은 닫혀야 한다</b>
+  핀에서 0으로 돌아오지 않는 휨모멘트 도식은 부호 오류, 해방 오류 또는 불균형 하중의 증거이다.
+</div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>해석에서 설계로</h2>
+  <div class="body"><p>해석은 작용을 제공하지, 판정을 제공하지 않는다. 하중 케이스를 조합하고, 각 부재를 따라 효과의 포락선을 취하며, 강도, 안정성 및 사용성을 별도로 검토하라. 세장하거나 횡변위 민감한 골조에는 2차 효과가 포함되어야 하며, 이동 하중은 지배 위치를 찾기 위해 영향선 또는 영향면이 필요하다.</p>
+<p>모든 숫자 뒤에 있는 하중 조합, 부호 규약 및 단위를 기록하라. 단면 설계는 이 세 가지 모두에 의존하기 때문이다. 깔끔하고 추적 가능한 설계 작용 세트가 구조 해석의 진정한 산출물이다.</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>정적 부정정 차수</dt><dd>평형만으로 결정할 수 있는 것 이상의 미지 반력 또는 부재력의 수.</dd></div><div class="term"><dt>영향선</dt><dd>단위하중이 구조물을 가로질러 이동할 때 하나의 응답을 나타내는 도식.</dd></div><div class="term"><dt>뮐러-브레슬라우 원리</dt><dd>응답에 대한 영향선은 해당 응답 방향으로 단위 변위 또는 회전에 의해 발생하는 처짐 형상이다.</dd></div><div class="term"><dt>분배 계수</dt><dd>불균형 절점 모멘트 중 한 부재가 부담하는 몫으로, 강성에 비례한다.</dd></div><div class="term"><dt>전달 계수</dt><dd>분배된 모멘트가 부재의 먼 단부로 전달되는 비율; 일정 EI와 고정 먼 단부의 경우 0.5.</dd></div><div class="term"><dt>횡변위 골조</dt><dd>절점의 횡방향 병진이 구속되지 않아 2차 효과를 고려해야 하는 골조.</dd></div><div class="term"><dt>유연도 계수</dt><dd>다른 곳의 단위 여력 힘에 의해 한 해방 좌표에서 발생하는 변위로, 적합성 방정식을 구성하는 데 사용된다.</dd></div><div class="term"><dt>도식 곱셈</dt><dd>단순 휨모멘트 도식의 면적에 도심에서의 종거를 곱하여 가상일 적분을 평가하는 것.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>모멘트 분배법에 의한 2경간 연속보</h2>
+        <p class="problem">연속보 ABC는 두 개의 동일한 6.0 m 경간을 가지며, 일정한 EI이고, 두 경간 모두에 12 kN/m의 등분포 하중을 받는다. 중앙 지지부 B에서의 헌칭 모멘트, 세 개의 수직 반력, 그리고 경간 AB에서의 최대 새깅 모멘트를 구하라.</p>
+        <ol><li>먼 단부가 핀인 각 경간에 대한 B에서의 고정단 모멘트: w L² / 8 = 12 × 6.0² / 8 = 54 kNm 헌칭.</li><li>B에서의 분배 계수: 두 경간 모두 강성 3EI/L을 가지므로 각 계수는 0.5이다. 두 경간의 고정단 모멘트는 절점에서 반대 회전 방향으로 작용하므로, 순 불균형 모멘트는 0이고 분배나 전달이 필요 없다.</li><li>따라서 지지 모멘트는 M_B = 54 kNm 헌칭이다. 경간 AB의 경우: R_A = wL/2 − M_B/L = 36 − 9 = 27 kN; 이 경간에서 B의 반력은 36 + 9 = 45 kN이고, 다른 경간도 동일하게 더해지므로 R_B = 90 kN이다.</li><li>수직 평형 검토: 27 + 90 + 27 = 144 kN = 12 × 12 m. 정확하다.</li><li>AB에서 최대 새깅 모멘트는 전단력이 0인 곳, A에서 x = 27/12 = 2.25 m에서 발생한다: M = 27 × 2.25 − 12 × 2.25²/2 = 30.4 kNm.</li></ol>
+        <div class="answer"><b>Answer</b>M_B = 54 kNm 헌칭, R_A = R_C = 27 kN, R_B = 90 kN, 경간 AB의 최대 새깅 모멘트는 A에서 2.25 m 지점에서 30.4 kNm이다.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>방법을 선택하기 전에 부정정 차수를 세고 처짐 형상을 스케치하라; 방법은 습관이 아니라 구조물에서 나온다.</li><li>가상일 문제에서는 가상 시스템을 진정으로 가상으로 유지하고 그 부호를 답까지 전달하라; 음의 변위는 오류가 아니라 방향이다.</li><li>영향선의 경우 먼저 임계점에서의 종거를 구하라; 최대 효과는 하중 곱하기 종거의 단순 중첩이다.</li><li>컴퓨터 해석이 주어지면 설계 검토에 어떤 출력을 사용하기 전에 반력과 모멘트 도식을 확인하는 데 2분을 투자하라.</li><li>힘법 해에서 유연도 행렬을 작성하기 전에 해방 구조물과 모든 단위 여력 모멘트 도식을 그려라; 대부분의 오류는 그 도식들 사이의 부호 오류이다.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>양단이 고정된 단일 경간 보의 정적 부정정 차수는:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>1</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>2</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>3</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>6</span></button></div>
+    <div class="quiz-explain"><b>Why</b>6개의 반력 성분이 작용하고 3개의 평형 방정식을 사용할 수 있으므로 부정정 차수는 6 − 3 = 3이다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>단위하중법은 다음으로부터 변위를 결정한다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>전단력 도식의 면적</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>실제 힘과 실제 강성의 곱</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>가상 내부 힘과 실제 변형의 곱의 합</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>휨모멘트 도식의 기울기</span></button></div>
+    <div class="quiz-explain"><b>Why</b>가상 단위하중은 실제 변형에 대해 일을 하여 변위를 Σ∫Mm/EI 또는 ΣnNL/AE로 직접 제공한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>뮐러-브레슬라우 원리에 따르면, 지지부에서의 수직 반력에 대한 영향선은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>지지부에 단위하중이 작용할 때의 휨모멘트 도식</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>반력 방향으로 지지부에 단위 변위를 부과하여 생성된 처짐 형상</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>중앙 경간에 단위하중이 작용할 때의 전단력 도식</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>부재의 곡률 도식</span></button></div>
+    <div class="quiz-explain"><b>Why</b>지지부를 해방하고 반력 방향으로 단위 변위를 부과하면 반력 영향선과 동일한 처짐 형상이 생성된다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>일정 EI를 가진 모멘트 분배법에서, 절점에서 고정 먼 단부로의 전달 계수는:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.25</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.5</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>1.0</span></button></div>
+    <div class="quiz-explain"><b>Why</b>먼 단부가 고정되고 부재가 일정 EI를 가질 때 적용 모멘트의 절반이 전달되며, 핀단으로는 전달되지 않는다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q05</span><span>유연도법에서 미지 여력 힘의 수는 다음에 해당한다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>부재 수</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>지지 반력 수</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>구조물의 절점 수</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>정적 부정정 차수</span></button></div>
+    <div class="quiz-explain"><b>Why</b>각 해방은 평형을 넘어서는 하나의 미지수를 제거하므로, 여력은 부정정 차수와 일대일로 대응한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>단순 지지보에서 중앙 경간 하중 시험으로 하중 P와 처짐 δ를 얻었다. 동일한 하중이 두 배의 처짐을 발생시켰다면, 역산된 탄성 계수는:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>변화 없음</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>두 배</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>4분의 1</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>절반</span></button></div>
+    <div class="quiz-explain"><b>Why</b>E = PL³/(48δI)이므로, δ가 두 배가 되면 계산된 탄성 계수는 절반이 된다.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="structural-mechanics.ko.html"><span>Core</span><b>구조 역학</b></a><a class="related-card" href="advanced-structural-mechanics.ko.html"><span>Core</span><b>고급 구조 역학</b></a><a class="related-card" href="design-of-steel-structures.ko.html"><span>Core</span><b>강구조 설계</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="integrated-project-quality.ko.html"><small>Previous</small><b>통합 프로젝트 및 품질 관리</b></a><a class="next" href="construction-management.ko.html"><small>Next</small><b>건설 관리</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">D_s &gt; 0은 적합성이 필요함을 의미한다.</p><p class="margin-note">영향선은 이동 하중을 위한 것이다.</p><p class="margin-note">한 번에 하나의 절점을 해방하라.</p><p class="margin-note">소프트웨어 출력은 검증이 아니다.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

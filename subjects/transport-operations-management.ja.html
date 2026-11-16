@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>交通運用とマネジメント — Civil Hub</title>
+<meta name="description" content="ネットワークは一度作られるが、毎日運用される。このページでは、サービスがどのようにダイヤ編成され、輸送力と信頼性がどのように測定され、運賃設定と需要管理が誰がいつ移動するかをどのように形作るかを扱う。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/transport-operations-management.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="交通運用とマネジメント — Civil Hub">
+<meta property="og:description" content="ネットワークは一度作られるが、毎日運用される。このページでは、サービスがどのようにダイヤ編成され、輸送力と信頼性がどのように測定され、運賃設定と需要管理が誰がいつ移動するかをどのように形作るかを扱う。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/transport-operations-management.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="transport-operations-management.html" data-alt-zh-hant="transport-operations-management.zh-Hant.html" data-alt-ja="transport-operations-management.ja.html" data-alt-ko="transport-operations-management.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">交通運用とマネジメント</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">専門</p>
+          <h1>交通運用とマネジメント</h1>
+          <p class="subject-sub">交通システムの運用、ダイヤ編成、料金設定</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>専門</li><li><b data-i18n="subject.read">Read</b>8 分</li><li><b data-i18n="subject.sections">Sections</b>10</li><li><b data-i18n="subject.formulas">Formulas</b>10</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M60 104 L210 88 L286 104 L210 112 L182 104" stroke="currentColor" stroke-width="1.4"/><path d="M150 96 L172 62 L184 64 L170 98" stroke="currentColor" stroke-width="1.2"/><path d="M40 156 L300 132 M60 170 L300 150" stroke="var(--line)" stroke-width="1"/><path d="M64 158 h30 M120 154 h22 M180 148 h26 M240 142 h20" stroke="var(--faint)" stroke-width="1.2"/><circle cx="272" cy="52" r="26" stroke="var(--accent)" stroke-width="1.1"/><text x="170" y="188" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">FLIGHT & AIRPORTS</text></svg>
+          <figcaption>Flight path and runway approach</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">運用とは供給と需要の一致である</a></li><li><a href="#sec-2">ヘッドウェイが最重要変数である</a></li><li><a href="#sec-3">車両数は往復時間から決まる</a></li><li><a href="#sec-4">信号、現示、サイクル</a></li><li><a href="#sec-5">停車時間と停留所の運用</a></li><li><a href="#sec-6">乗務員と車両のスケジューリング</a></li><li><a href="#sec-7">信頼性：定時性より規則性</a></li><li><a href="#sec-8">運賃設定と需要管理</a></li><li><a href="#sec-9">性能指標が行動を駆動する</a></li><li><a href="#sec-10">混乱の管理</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">ネットワークは一度作られるが、毎日運用される。このページでは、サービスがどのようにダイヤ編成され、輸送力と信頼性がどのように測定され、運賃設定と需要管理が誰がいつ移動するかをどのように形作るかを扱う。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="transport-operations-management" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>運用とは供給と需要の一致である</h2>
+  <div class="body"><p>交通システムは、ダイヤに従って運用される物理的なネットワークである。<strong>供給</strong>とは事業者が提供できるものであり、車両、運転士、線路、ホームの空間などである。<strong>需要</strong>とは人々がいつどこへ移動したいかであり、それはめったに滑らかではない。</p>
+<p>運用とは、この二つを毎日すり合わせることである。三つの意思決定が支配的である。<br />
+- <strong>サービス計画</strong> — 路線、停留所、運行頻度を設定する。<br />
+- <strong>ダイヤ</strong> — 計画を車両と乗務員の勤務に変換する。<br />
+- <strong>運行管理</strong> — 交通、天候、インシデントによって計画が崩れたときに、リアルタイムで計画を調整する。</p>
+<p>優れた運用は、ダイヤが約束する内容だけでなく、乗客が経験するもの — 待ち時間、混雑、信頼性 — によって評価される。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>ヘッドウェイが最重要変数である</h2>
+  <div class="body"><p>運行頻度とヘッドウェイは同じ事実の二つの見方である。ヘッドウェイ <code>h</code> 秒のサービスは、1時間あたり <code>3600/h</code> 台の車両を運行する。</p>
+<p>400秒ごとに1台のバスが実用輸送力102人を運ぶなら、その路線は1方向あたり1時間に約918席を提供する。それを超える需要は、車両を増やすか、より大きな車両にするか、需要管理を行わなければ運べない。</p>
+<p>ヘッドウェイは乗客のコストも決める。到着がランダムに分散している場合、期待待ち時間はヘッドウェイの半分であるため、12分のヘッドウェイを6分に短縮すると、平均トリップから3分が除かれる。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">運行頻度とヘッドウェイ</span>
+      <div class="formula-expr formula-math">\[f = \frac{3600}{h}\]</div>
+      <span class="formula-note">f は1時間あたりの車両数、h は秒</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">路線輸送力</span>
+      <div class="formula-expr formula-math">\[C = f \cdot c\]</div>
+      <span class="formula-note">c は1車両の実用輸送力（乗客数）</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">ランダム到着時の平均待ち時間</span>
+      <div class="formula-expr formula-math">\[E[w] = \frac{h}{2}\]</div>
+      <span class="formula-note">乗客がダイヤを確認せずに到着する場合</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>車両数は往復時間から決まる</h2>
+  <div class="body"><p>必要な車両数は、往復時間をヘッドウェイで割って切り上げたものである。戻るのに60分かかる路線で400秒のヘッドウェイを維持するには、9台の車両を営業運転に就かせる必要がある。</p>
+<p>これが、長い路線での小さな遅延が高くつく理由である。<strong>折り返し時間</strong>と回復時間を往復時間の中に収めなければ、ダイヤを守れない。</p>
+<p>乗務員にも同じ算術が必要である。運転士の勤務は連続運転時間と休息に関する法的制限を守らなければならないため、ダイヤは車両の動きだけでなく勤務ブロックから組み立てられる。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">一定ヘッドウェイでの車両数</span>
+      <div class="formula-expr formula-math">\[N = \left\lceil \frac{T_{\mathrm{round}}}{h} \right\rceil\]</div>
+      <span class="formula-note">T_round は折り返し時間を含む往復時間で、h と同じ単位</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>信号、現示、サイクル</h2>
+  <div class="body"><p>信号交差点は、空間ではなく時間で交通の流れをやりくりする。交錯する流れは別々の<strong>現示</strong>で通行する。現示計画は、どの流れが同時に青になるかを示し、<strong>サイクル長</strong>はパターンが繰り返されるまでの間隔である。青時間の配分は、各現示の開始とクリアに費やす<strong>損失時間</strong>を差し引いたうえで、サイクルを現示に分ける。</p>
+<p>停止線での輸送力は、<strong>飽和交通流率</strong> — 青時間中に1車線が流せる1時間あたりの最大車両数 — に、サイクルのうち青である割合を掛けたもので決まる。輸送力が不足する車線は次のサイクルへと渋滞が伸びるため、総青時間だけでなく配分が遅延を決める。</p>
+<p>観測されるサイクルは青時間の合計と等しくないことが多い。現地で測定せよ。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">信号交差点の車線輸送力</span>
+      <div class="formula-expr formula-math">\[Q = s \times \frac{g}{c}\]</div>
+      <span class="formula-note">s は飽和交通流率（台/時）、g は有効青時間、c はサイクル長で同じ単位</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">飽和交通流率</span>
+      <div class="formula-expr formula-math">\[s = \frac{3600}{h_s}\]</div>
+      <span class="formula-note">h_s は飽和車頭時間（秒）で、直進車線では1車両あたり約1.8〜2.2秒</span>
+    </div></div>
+<div class="callout callout--tip">
+  <b>サイクルは路側で読む</b>
+  観測した青時間を合計すると、黄・全赤時間や損失時間を見落とす。サイクル長は直接観測しなければならず、歩行者現示は独自の現示を追加する。
+</div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>停車時間と停留所の運用</h2>
+  <div class="body"><p>停留所では、ドアの開閉サイクルがトリップの中で最も混雑する部分を支配する。<strong>停車時間</strong>はドアが開いてから閉じるまでの間隔である。降車と乗車の乗客は可能な限り並行して動くため、二つの流れのうち長い方にドアの開閉時間を加えたものが停車時間を決める。</p>
+<p>停車時間が重要であるのは、それが乗客数に比例して増えるからである。乗車客が1人増えるごとにおおよそ一定の時間がかかり、混雑した停留所では停車時間がその停留所の容量を支配する。</p>
+<p>運賃媒体が違いを生む。スマートカードや開放乗車は現金や車内での切符販売より速いため、乗車率は定数ではなく設計変数である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">停車時間</span>
+      <div class="formula-expr formula-math">\[D = \max(t_{\text{alight}}, t_{\text{board}}) + t_{\text{doors}}\]</div>
+      <span class="formula-note">t_alight と t_board は二つの乗客流の時間、t_doors はドアの開閉サイクル</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>乗務員と車両のスケジューリング</h2>
+  <div class="body"><p>車両と運転士は別々にスケジュールされる。車両の運用ブロックは車庫から車庫まで走り、乗務員の勤務は出勤から退勤までで、連続運転、休憩、拘束時間に関する法的制限を守らなければならないため、勤務が車両ブロックと等しくなることはめったにない。乗務員交代地点は、トリップを逃さずに乗務員が交代できる場所に選ばれる。</p>
+<p>必要な勤務数は、総営業時間を実用的な勤務長で割って切り上げたものであり、規則、分割勤務、手当のすべてが含まれる。</p>
+<p>優れた勤務設計は、有給の非運転時間を小さく保つ。なぜなら、乗務員はほとんどのネットワークで最大の運営コストだからである。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">乗務員勤務数</span>
+      <div class="formula-expr formula-math">\[N_d = \left\lceil \frac{T_{\text{platform}}}{T_{\text{duty}}} \right\rceil\]</div>
+      <span class="formula-note">T_platform は総有給営業時間、T_duty は休憩を含む実用的な勤務長</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>信頼性：定時性より規則性</h2>
+  <div class="body"><p>高頻度のサービスでは、誰もダイヤを確認しない。すぐに車両が来ることを期待しており、問題となるのは車両間の間隔である。1台が遅れると、より多くの乗客を集め、停車時間が長くなり、さらに遅れ、後ろの車両が追いつく。この<strong>バンチング</strong>は、長い待ち時間の後にほぼ空の車両が2台続く状況を生む。</p>
+<p>そのため事業者は、定時運行率や混雑率と並んで、<strong>超過待ち時間</strong> — 完全に規則的なサービスが与える待ち時間を超えた待ち時間 — を追跡する。</p>
+<p>運行管理地点で車両を停留させることで間隔を回復できるが、長く停留しすぎるとすでに乗っている乗客を遅らせる。</p></div><div class="table-wrap"><table><caption>性能指標とそれぞれが隠しうるもの</caption><thead><tr><th scope='col'>指標</th><th scope='col'>捉えるもの</th><th scope='col'>隠しうるもの</th></tr></thead><tbody><tr><td>定時運行率</td><td>許容範囲内での出発</td><td>定時に見せるために早発できる</td></tr><tr><td>ヘッドウェイ規則性</td><td>車両の間隔がどれだけ均等か</td><td>規則的な路線での低い平均速度</td></tr><tr><td>超過待ち時間</td><td>乗客が実際に感じる遅れ</td><td>総旅行時間と混雑</td></tr><tr><td>混雑率</td><td>車両がどれだけ満員で走るか</td><td>車両間の不均等な負荷</td></tr><tr><td>運賃収入率</td><td>運賃で賄われる運営コストの割合</td><td>サービス品質と社会的価値</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>運賃設定と需要管理</h2>
+  <div class="body"><p>交通需要は価格に反応するが、一様ではない。<strong>価格弾力性</strong>は、運賃や料金の1パーセント変化に対する需要のパーセント変化を測る。短期的な自動車通勤は非弾力的である一方、オフピークや任意のトリップはより反応する。ピーク料金、混雑課金、駐車料金はすべて、最も柔軟なトリップを狙っている。</p>
+<p>運賃はサービスを賄わなければならない。<strong>運賃収入率</strong>は運賃収入を運営コストと比較する。1.0を超えればサービスは自立し、下回ればその差は補助金を必要とする。</p>
+<p>補助金は失敗ではない。それは、運賃だけでは捉えられないネットワークと社会的便益の対価である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">需要の価格弾力性</span>
+      <div class="formula-expr formula-math">\[E = \frac{\%\Delta Q}{\%\Delta P}\]</div>
+      <span class="formula-note">通常は負であり、|E| &lt; 1 は非弾力的</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">運賃収入率</span>
+      <div class="formula-expr formula-math">\[\mathrm{CR} = \frac{R}{C}\]</div>
+      <span class="formula-note">R は運賃収入、C は同じ期間の運営コスト</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>性能指標が行動を駆動する</h2>
+  <div class="body"><p>すべての事業者は測定するものを最適化するため、指標は慎重に選ばなければならない。終点での定時出発の目標は早発によって達成できる。混雑率の目標は輸送力を削減することで達成できる。</p>
+<p>したがって、<strong>重要業績評価指標</strong>は乗客、事業者、公的財布の間でバランスが取れていなければならない。<br />
+- 待ち時間<br />
+- 信頼性<br />
+- 混雑<br />
+- 車両キロあたりコスト<br />
+- 安全性<br />
+- 収入</p>
+<p>比較可能なネットワークとのベンチマークが目標を誠実に保つ。数値は、その定義、サンプル、期間が付随して初めて意味を持つ。</p></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>混乱の管理</h2>
+  <div class="body"><p>インシデントは例外ではなく通常である。運行管理室は、予見可能な各障害に対する計画を必要とする。<br />
+- 道路の閉鎖<br />
+- 車両の故障<br />
+- 信号の故障<br />
+- 厳しい気象</p>
+<p>計画は、誰が決定するか、乗客に何を伝えるか、車両をどのように折り返すか、サービスをどのようにダイヤに戻すかを定める。</p>
+<p><strong>回復時間</strong>は、インシデント後に吸収される予定外の余裕である。少なすぎれば小さな遅延が波及し、多すぎればダイヤが資源を浪費する。リアルタイム情報と事業者間共通乗車券は、計画が崩れたときの乗客への害を減らす。</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>ヘッドウェイ</dt><dd>同じ地点を連続する車両が通過する間の時間間隔で、通常は秒で表す。</dd></div><div class="term"><dt>混雑率</dt><dd>車内の乗客数を車両の定員で割ったもの。実用的な設計値はしばしば0.85である。</dd></div><div class="term"><dt>折り返し時間</dt><dd>トリップ終了時に回復、乗務員交代、車両の折り返しのために予定される時間。</dd></div><div class="term"><dt>バンチング</dt><dd>高頻度路線で均等な間隔が失われること。遅れた車両が乗客を集め、後ろの車両がそれに追いつく。</dd></div><div class="term"><dt>運賃収入率</dt><dd>運賃収入を運営コストで割ったもの。1未満の値は補助金が必要であることを意味する。</dd></div><div class="term"><dt>超過待ち時間</dt><dd>同じヘッドウェイで完全に規則的なサービスが与える待ち時間を超えた平均待ち時間。</dd></div><div class="term"><dt>飽和交通流率</dt><dd>青時間中に信号車線が流せる最大交通量（1時間あたりの車両数）で、飽和車頭時間によって決まる。</dd></div><div class="term"><dt>現示</dt><dd>信号サイクルの一部で、定義された非交錯の流れの組が青になる期間。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>ピーク時間帯のバス路線の車両数</h2>
+        <p class="problem">片方向のピーク需要が1時間あたり900人で、往復時間が60分の路線で運ばなければならない。各バスの定員は120人で、事業者は混雑率0.85を計画している。必要な運行頻度、ヘッドウェイ、車両数、輸送力の確認を求めよ。</p>
+        <ol><li>バス1台あたりの実用輸送力 = 120 × 0.85 = 102人。</li><li>必要な運行頻度 = 900 / 102 = 8.8台/時で、1時間あたり9便に切り上げる。</li><li>ヘッドウェイ = 3600 / 9 = 400秒、つまり6分40秒。</li><li>車両数 = 往復時間 / ヘッドウェイ = 3600 / 400 = 9台で、切り上げは正確である。</li><li>輸送力の確認：9台 × 102席 = 1時間あたり918席で、需要900をわずかに上回る。バス1台あたりの実際の負荷は900 / 9 = 100人（定員120人中）で、混雑率は0.83。</li><li>妥当性確認：平均待ち時間は h/2 = 200秒、約3分20秒で、高頻度のフィーダー路線として現実的である。</li></ol>
+        <div class="answer"><b>Answer</b>400秒のヘッドウェイで1時間あたり9台、営業運転に9台の車両を就かせる。提供輸送力918席/時は需要900をほとんど余裕なく賄うため、車両が1台失われるとサービスが過負荷になる。信頼性の余裕か、より大きな車両が賢明であろう。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>選択肢を比較する前に、すべてのヘッドウェイを運行頻度に変換せよ。3600をヘッドウェイで割った数が輸送力に掛ける数である。</li><li>車両数は切り上げよ。決して切り下げてはならない。端数の車両はヘッドウェイに隙間を残す。</li><li>信頼性について問われたら、定時性と規則性を区別し、どちらの指標を意味するかを明示せよ。</li><li>信号の輸送力の答えは三つの数 — 飽和交通流率、青時間、サイクル長 — から組み立てられるので、いずれかを示す前に Q = s × g/c を書け。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>ある路線が1時間あたり9便運行している。そのヘッドウェイに最も近いものはどれか。</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>12分00秒</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>4分00秒</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>6分40秒</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>9分00秒</span></button></div>
+    <div class="quiz-explain"><b>Why</b>ヘッドウェイ = 3600 / 9 = 400秒、つまり6分40秒である。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>乗客がランダムに到着する場合、ヘッドウェイ10分で運行するサービスの期待待ち時間はどれか。</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>5分</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>10分</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>2分</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>0分</span></button></div>
+    <div class="quiz-explain"><b>Why</b>ランダム到着では平均待ち時間はヘッドウェイの半分なので、10 / 2 = 5分である。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>運賃収入率が0.6であることは何を意味するか。</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>予定されたサービスの60パーセントしか運行されなかった</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>乗客の60パーセントが運賃を支払った</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>運賃が運営コストの60パーセントを賄うため、補助金が必要である</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>運賃が運営コストを60パーセント上回る</span></button></div>
+    <div class="quiz-explain"><b>Why</b>この比率は運賃収入を運営コストで割ったものなので、0.6は40パーセントの差を他の財源から賄う必要があることを意味する。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>高頻度路線でのバンチングが最も直接的に増やすものはどれか。</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>車両の輸送力</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>運賃収入率</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>車両あたりの収入</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>乗客の平均待ち時間</span></button></div>
+    <div class="quiz-explain"><b>Why</b>車両がバンチングすると車両間の間隔が広がり、乗客は長いヘッドウェイに到着するため、ダイヤ上の運行頻度が変わらなくても平均待ち時間が増加する。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>停止線の車線で飽和交通流率が1 800台/時、サイクル長が90秒、有効青時間が36秒である。その輸送力はどれか。</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>450台/時</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>720台/時</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1 800台/時</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>4 500台/時</span></button></div>
+    <div class="quiz-explain"><b>Why</b>輸送力は飽和交通流率に青時間比を掛けたものである。1 800 × 36/90 = 720台/時。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>混雑した停留所で降車に25秒、乗車に40秒、ドアの開閉サイクルに4秒かかる。停車時間はおよそどれか。</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>65秒</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>69秒</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>29秒</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>44秒</span></button></div>
+    <div class="quiz-explain"><b>Why</b>降車と乗車は並行して進むため、長い方の流れが時間を決める。40 + 4 = 44秒。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="transportation-highway-engineering.ja.html"><span>Core</span><b>交通・道路工学</b></a><a class="related-card" href="traffic-surveys-planning.ja.html"><span>Professional</span><b>交通調査と交通計画</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="data-structures-algorithms.ja.html"><small>Previous</small><b>データ構造とアルゴリズム</b></a><a class="next" href="hydraulics-hydrology.ja.html"><small>Next</small><b>水理学と水文学</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">運行頻度は3600をヘッドウェイで割ったもの。まず変換せよ。</p><p class="margin-note">ヘッドウェイの半分がランダム到着時の待ち時間である。</p><p class="margin-note">バンチング：先頭の車両が乗客を集める。</p><p class="margin-note">1未満の比率は誰か他の者が支払うことを意味する。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

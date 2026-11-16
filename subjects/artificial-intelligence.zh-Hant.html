@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>人工智能 — Civil Hub</title>
+<meta name="description" content="人工智能是建構能夠感知、推理和學習的系統的工程學科。本頁涵蓋搜尋、知識表示、學習、神經網絡、生成模型，以及如何誠實地評估它們。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/artificial-intelligence.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="人工智能 — Civil Hub">
+<meta property="og:description" content="人工智能是建構能夠感知、推理和學習的系統的工程學科。本頁涵蓋搜尋、知識表示、學習、神經網絡、生成模型，以及如何誠實地評估它們。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/artificial-intelligence.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="artificial-intelligence.html" data-alt-zh-hant="artificial-intelligence.zh-Hant.html" data-alt-ja="artificial-intelligence.ja.html" data-alt-ko="artificial-intelligence.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">人工智能</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">計算</p>
+          <h1>人工智能</h1>
+          <p class="subject-sub">工程中的搜尋、學習與生成模型</p>
+          <ul class="subject-facts"><li><b>類型</b>計算</li><li><b>閱讀</b>9 分鐘</li><li><b>章節</b>11</li><li><b>公式</b>8</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">人工智能對工程師的要求</a></li><li><a href="#sec-2">搜尋：從目標到路徑</a></li><li><a href="#sec-3">知識表示</a></li><li><a href="#sec-4">機器學習：學習映射</a></li><li><a href="#sec-5">神經網絡與深度學習</a></li><li><a href="#sec-6">生成模型</a></li><li><a href="#sec-7">評估是設計的一部分</a></li><li><a href="#sec-8">負責任的人工智能與專業判斷</a></li><li><a href="#sec-9">提示工程</a></li><li><a href="#sec-10">生成媒體：圖像、音頻和視頻</a></li><li><a href="#sec-11">代碼生成及其局限</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">人工智能是建構能夠感知、推理和學習的系統的工程學科。本頁涵蓋搜尋、知識表示、學習、神經網絡、生成模型，以及如何誠實地評估它們。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="artificial-intelligence" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>人工智能對工程師的要求</h2>
+  <div class="body"><p>人工智能並非單一演算法，而是一系列在不確定性下採取行動的方法。經典框架將<strong>感知</strong>、<strong>推理</strong>、<strong>學習</strong>和<strong>行動</strong>分開，並追問系統必須決定甚麼、能夠觀察甚麼，以及出錯的代價是甚麼。</p>
+<p>大多數已部署的人工智能都是<strong>窄義</strong>的：擅長單一任務，無法轉移。這是設計範圍而非缺陷，把它寫下來是第一個工程決定。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>搜尋：從目標到路徑</h2>
+  <div class="body"><p>許多問題都以<strong>狀態空間</strong>表述：狀態、動作、起點、目標和每步成本。</p>
+<ul>
+<li><strong>廣度優先</strong>搜尋找到最少步數。</li>
+<li>深度優先節省記憶體但可能漫遊。</li>
+<li>均勻成本搜尋先擴展最便宜的前綴。</li>
+<li><strong>A*</strong> 加入剩餘成本的啟發式估計。</li>
+</ul>
+<p>如果啟發式從不高估——即它是<strong>可採納的</strong>——A* 會返回最低成本路徑而無需探索一切。啟發式就是整個設計：太弱幾乎等於盲目，過於樂觀則失去最優性。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">A* 評估函數</span>
+      <div class="formula-expr formula-math">\[f(n) = g(n) + h(n)\]</div>
+      <span class="formula-note">g 是從起點的成本，h 是到目標的估計成本</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>知識表示</h2>
+  <div class="body"><p>推理系統需要一個可操作的世界的模型。</p>
+<ul>
+<li><strong>邏輯</strong>表示事實和規則，並機械地推導結論。</li>
+<li><strong>框架</strong>和語義網絡圍繞物件分組屬性。</li>
+<li><strong>本體</strong>和知識圖譜固定共享詞彙，使不同系統對同一術語有相同含義。</li>
+</ul>
+<p>工程知識是混亂和不確定的。概率模型、帶置信度的規則和明確假設記錄了未知的事物，這與已知的事物同樣重要。</p></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>機器學習：學習映射</h2>
+  <div class="body"><p>監督模型使用例子學習從特徵到標籤的映射。數據分為訓練集、驗證集和測試集；測試集只在最後觸碰一次，以估計<strong>泛化</strong>。</p>
+<p>擬合訓練數據但在新數據上失敗的模型是<strong>過擬合</strong>。補救方法是紀律而非複雜性：具代表性的數據、正則化、更簡單的模型，以及不會悄悄調整測試分數的驗證循環。始終報告一個樸素基線。</p></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>神經網絡與深度學習</h2>
+  <div class="body"><p>單個人工神經元計算其輸入的加權和加上偏置，並將結果通過非線性<strong>激活函數</strong>。堆疊層表示複雜關係。</p>
+<p>訓練調整權重以減少<strong>損失</strong>，通常通過梯度下降，並由<strong>反向傳播</strong>為每個權重提供梯度。</p>
+<p>深度有幫助，因為早期層學習一般特徵，後期層將它們組合。它也令優化更難、數據需求更大、行為更難解釋。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">人工神經元</span>
+      <div class="formula-expr formula-math">\[a = \varphi\left(\sum_i w_i x_i + b\right)\]</div>
+      <span class="formula-note">φ 是非線性激活，例如 ReLU 或 sigmoid</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">梯度下降更新</span>
+      <div class="formula-expr formula-math">\[w \leftarrow w - \eta \frac{\partial L}{\partial w}\]</div>
+      <span class="formula-note">η 是學習率；梯度來自反向傳播</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>生成模型</h2>
+  <div class="body"><p><strong>生成模型</strong>學習其訓練數據的分佈並產生新樣本。</p>
+<ul>
+<li>大型語言模型從前面的詞元預測下一個詞元，因此生成是重複預測。</li>
+<li><strong>擴散</strong>模型在訓練中向數據添加噪聲，並在採樣時學習逆轉該過程。</li>
+</ul>
+<p>生成是採樣，不是回憶。這解釋了流暢性和<strong>幻覺</strong>：一個看似合理的續寫並非真實的續寫。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">自迴歸生成</span>
+      <div class="formula-expr formula-math">\[p(x_1, \ldots, x_T) = \prod_{t=1}^{T} p(x_t \mid x_{&lt;t})\]</div>
+      <span class="formula-note">序列的概率逐個詞元建立</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>評估是設計的一部分</h2>
+  <div class="body"><p>模型的優劣取決於判斷它的證據。誠實地分割數據，保留一個留出集，並選擇與錯誤成本匹配的指標。</p>
+<p>在缺陷檢測中，<strong>精確率</strong>問有多少被標記的缺陷是真實的，而<strong>召回率</strong>問有多少真實缺陷被捕捉；一個總是說無缺陷的高準確度模型是無用的。</p>
+<p>評估還涵蓋延遲、對輸入偏移的穩健性、校準和測試數據洩漏。生成輸出需要基於評分標準的人工評估，標準須事先固定。</p></div><div class="table-wrap"><table><caption>評估指標及每個指標可能隱藏的失敗</caption><thead><tr><th scope='col'>指標</th><th scope='col'>回答的問題</th><th scope='col'>隱藏的失敗</th></tr></thead><tbody><tr><td>準確度</td><td>總體有多少案例被正確標記</td><td>在罕見類別上的失敗</td></tr><tr><td>精確率</td><td>在被標記的案例中，有多少是正確的</td><td>漏掉的真陽性</td></tr><tr><td>召回率</td><td>在真實案例中，有多少被找到</td><td>誤報</td></tr><tr><td>F1 分數</td><td>精確率和召回率的平衡</td><td>真陰性，以及每個錯誤的成本</td></tr><tr><td>校準</td><td>預測概率是否與結果匹配</td><td>自信但錯誤的答案</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>負責任的人工智能與專業判斷</h2>
+  <div class="body"><p>部署人工智能是具有後果的專業行為。</p>
+<ul>
+<li><strong>問責</strong>仍屬於工程師，即使建議是由模型提出的。</li>
+<li>訓練數據中的偏見會變成決策中的偏見。</li>
+<li>個人數據需要合法依據。</li>
+<li>生成的內容可能侵犯權利或被誤認為證據。</li>
+</ul>
+<p>控制措施在安全工程中很熟悉：記錄數據和模型，在將使用它的群體上測試，為高風險輸出保留人類決策點，部署後監控，並能夠解釋和撤回系統。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">決策的預期成本</span>
+      <div class="formula-expr formula-math">\[E[\text{cost}] = p_{fp} C_{fp} + p_{fn} C_{fn}\]</div>
+      <span class="formula-note">決策閾值應反映兩種錯誤的相對成本</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>提示工程</h2>
+  <div class="body"><p>語言模型的輸出質量由其<strong>提示</strong>決定：生成前給出的指令、上下文和例子。</p>
+<ul>
+<li>有效的提示對任務和受眾具體明確。</li>
+<li>提供數據和例子，而非模糊的提示。</li>
+<li>指明所需的輸出格式。</li>
+<li>描述要做甚麼，而非不要做甚麼。</li>
+<li>給模型一個角色——審閱者、導師、現場工程師——框定它將使用的詞彙。</li>
+</ul>
+<p><strong>思維鏈提示</strong>要求模型在回答前逐步推理，這可測量地改善算術和多步推理。<strong>溫度</strong>控制採樣隨機性：低值重複最可能的詞元，給出確定、安全的輸出；高值以流暢性換取多樣性和幻覺。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">溫度縮放的 softmax</span>
+      <div class="formula-expr formula-math">\[p(w_i) = \frac{e^{z_i/T}}{\sum_j e^{z_j/T}}\]</div>
+      <span class="formula-note">T → 0 選擇最可能的詞元；較大的 T 使分佈更平坦</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>生成媒體：圖像、音頻和視頻</h2>
+  <div class="body"><p><strong>擴散</strong>模型通過學習逆轉一個逐漸添加噪聲的過程來生成圖像：採樣從純噪聲開始，在文本描述或其他條件的引導下逐步去噪。音頻模型將同樣的想法應用於波形或頻譜圖，用於語音和音樂，而視頻生成還必須保持連續幀的一致性。</p>
+<p>默認將生成的媒體視為無證據：合成面孔和聲音製作成本低廉，人們難以察覺。驗證依賴於來源——水印、簽名元數據和檢測工具——以及流程控制如標籤，而非要求觀眾識別假貨。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">擴散訓練目標</span>
+      <div class="formula-expr formula-math">\[L = \mathbb{E}\left\lVert \varepsilon - \varepsilon_\theta(x_t, t) \right\rVert^2\]</div>
+      <span class="formula-note">網絡學習預測添加到損壞樣本中的噪聲 ε</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>代碼生成及其局限</h2>
+  <div class="body"><p>大型語言模型從自然語言、部分程序或執行例子編寫代碼，編碼助手結合製表符補全與基於聊天的編輯。</p>
+<ul>
+<li>擅長樣板代碼、正則表達式和測試腳手架。</li>
+<li>在上下文長、庫不常見或正確答案依賴模型從未見過的事實時較弱。</li>
+</ul>
+<p><strong>pass@k</strong> 是標準度量：k 次生成嘗試中至少一次通過所有提供測試的概率。因此評估的優劣取決於測試套件——能編譯的代碼仍可能是錯的。像審查人類代碼一樣審查生成的代碼：運行測試，檢查幻覺的庫函數，並為任何涉及安全的內容保留人類負責人。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Pass@k</span>
+      <div class="formula-expr formula-math">\[\text{pass@}k = 1 - (1 - p)^k\]</div>
+      <span class="formula-note">p 是一個樣本通過的機會；更多嘗試提高機率但消耗算力</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>幻覺的 API</b>
+  生成的代碼可能調用不存在的函數或庫；在信任它之前在測試框架中運行，並且永遠不要將憑證或私人數據粘貼到公共模型中。
+</div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>可採納啟發式</dt><dd>剩餘成本的估計從不超過真實成本，這使 A* 搜尋保持最優。</dd></div><div class="term"><dt>過擬合</dt><dd>過於緊密地擬合訓練數據，以致在新的、未見數據上的性能下降。</dd></div><div class="term"><dt>精確率</dt><dd>模型標記的案例中真正為陽性的比例。</dd></div><div class="term"><dt>幻覺</dt><dd>流暢、看似合理但缺乏支持或虛假的生成內容。</dd></div><div class="term"><dt>擴散模型</dt><dd>一種生成模型，學習逆轉逐漸加噪的過程以產生樣本。</dd></div><div class="term"><dt>泛化</dt><dd>模型未經訓練的數據上的性能，用留出測試集估計。</dd></div><div class="term"><dt>提示工程</dt><dd>設計指令、上下文和例子，使語言模型產生所需的輸出。</dd></div><div class="term"><dt>溫度</dt><dd>一種採樣參數，縮放詞元概率；低值確定性高，高值更多樣。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>解讀缺陷檢測器的混淆矩陣</h2>
+        <p class="problem">一個視覺模型在 500 張檢測圖像上測試。它正確標記 92 塊缺陷面板，正確清除 362 塊完好面板。它錯誤標記 18 塊完好面板，漏掉 28 塊缺陷面板。計算準確度、精確率和召回率，並說明為何單獨的準確度會誤導。</p>
+        <ol><li>混淆矩陣：TP = 92，FP = 18，FN = 28，TN = 362，總計 500 張圖像。</li><li>準確度 = (TP + TN) / 總數 = (92 + 362) / 500 = 454 / 500 = 0.908，即 90.8%。</li><li>精確率 = TP / (TP + FP) = 92 / 110 = 0.836，即 83.6%。</li><li>召回率 = TP / (TP + FN) = 92 / 120 = 0.767，即 76.7%。</li><li>F1 = 2PR / (P + R) = 2 × 0.836 × 0.767 / (1.603) = 0.80。</li><li>基線檢查：一個總是說完好的模型得分 380 / 500 = 76% 準確度，卻檢測不到任何東西，因此在不平衡集上單獨的準確度會美化模型。</li></ol>
+        <div class="answer"><b>Answer</b>準確度為 90.8%，精確率 83.6%，召回率 76.7%，F1 約為 0.80。約四分之一的缺陷面板被漏掉，因此對於安全相關的檢測任務，應移動閾值以提高召回率，並權衡誤報成本與漏檢缺陷成本。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>在討論任何搜尋演算法之前，寫下狀態空間、動作和一步的成本。</li><li>將精確率和召回率與數據集和分割一起引用；單獨的數字毫無意義。</li><li>在負責任人工智能問題中，保留一個具名的人類負責人，並說明監督步驟的位置。</li><li>在生成任何東西之前固定評估標準，並盲評生成輸出；質量的印象不是指標。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q01</span><span>可採納啟發式保證 A* 搜尋：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>從不擴展超過一個節點</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>返回最低成本路徑</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>比任何其他搜尋運行得更快</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>無需目標測試即可找到路徑</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>如果啟發式從不高估剩餘成本，A* 不會被誤導而丟棄更便宜的路徑，因此保持最優。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>一個分類器在訓練數據上得分 99%，在測試集上得分 62%。這最好描述為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>欠擬合</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>過擬合</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>測試集數據洩漏</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>完美校準的模型</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>訓練和測試性能之間的大差距是過擬合的特徵；模型記憶而非泛化。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>擴散模型通過以下方式生成樣本：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>應用一組固定的手寫規則</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>按標籤對訓練數據排序</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>檢索最近的訓練例子</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>逆轉向數據添加噪聲的過程</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>擴散模型學習去噪；採樣從噪聲開始，逐步逆轉訓練損壞。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>何時應使用測試集？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>訓練前選擇特徵</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>僅當訓練集太小時</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>每次訓練運行後以指導調參</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>一次，用於泛化的最終估計</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>反覆使用測試集會將信息洩漏到模型選擇中並誇大報告的性能；驗證數據應指導調參。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q05</span><span>提高語言模型的採樣溫度會使其輸出：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>更多樣且更不確定</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>更長但其他方面相同</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>保證事實正確</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>生成更快</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>溫度使詞元概率分佈更平坦，因此不太可能的詞元更常被採樣，輸出變得更為多樣。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>哪種提示做法最直接改善多步推理答案？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>要求模型在最終答案前逐步推理</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>用全大寫寫請求</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>重複問題兩次</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>省略例子以免模型有偏見</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>思維鏈提示展示中間推理，減少算術和多步任務中的錯誤。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.zh-Hant.html"><span>Computing</span><b>人工智能與數據分析</b></a><a class="related-card" href="machine-learning.zh-Hant.html"><span>Computing</span><b>機器學習</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="service-learning.zh-Hant.html"><small>上一頁</small><b>服務學習</b></a><a class="next" href="design-of-transport-infrastructure.zh-Hant.html"><small>下一頁</small><b>運輸基礎設施設計</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">A* 僅在 h 從不高估時最優。</p><p class="margin-note">測試數據只觸碰一次。</p><p class="margin-note">幻覺是自信的續寫。</p><p class="margin-note">準確度隱藏罕見失敗。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

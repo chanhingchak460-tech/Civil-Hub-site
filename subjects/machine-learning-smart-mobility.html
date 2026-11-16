@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Machine Learning for Smart Mobility — Civil Hub</title>
+<meta name="description" content="Learning from mobility data: regression for speeds, classification for road signs, and neural networks that must generalise. The page covers the training l">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/machine-learning-smart-mobility.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="Machine Learning for Smart Mobility — Civil Hub">
+<meta property="og:description" content="Learning from mobility data: regression for speeds, classification for road signs, and neural networks that must generalise. The page covers the training l">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/machine-learning-smart-mobility.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="machine-learning-smart-mobility.html" data-alt-zh-hant="machine-learning-smart-mobility.zh-Hant.html" data-alt-ja="machine-learning-smart-mobility.ja.html" data-alt-ko="machine-learning-smart-mobility.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">Machine Learning for Smart Mobility</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Computing</p>
+          <h1>Machine Learning for Smart Mobility</h1>
+          <p class="subject-sub">Learning from mobility data with regression, classification and neural networks</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Computing</li><li><b data-i18n="subject.read">Read</b>10 min</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>9</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">What a mobility model predicts</a></li><li><a href="#sec-2">Regression: fitting a line to movement</a></li><li><a href="#sec-3">Classification, labels and the split</a></li><li><a href="#sec-4">Overfitting is the default failure</a></li><li><a href="#sec-5">Neural networks: stacked transformations</a></li><li><a href="#sec-6">Convolutional networks for road signs</a></li><li><a href="#sec-7">Evaluation that matches the decision</a></li><li><a href="#sec-8">Mobility data is personal data</a></li><li><a href="#sec-9">Object detection: boxes and IoU</a></li><li><a href="#sec-10">Sequence models for trajectory prediction</a></li><li><a href="#sec-11">Fine-tuning a pretrained detector</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">Learning from mobility data: regression for speeds, classification for road signs, and neural networks that must generalise. The page covers the training loop, honest evaluation, and the privacy questions that come with location records.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="machine-learning-smart-mobility" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>What a mobility model predicts</h2>
+  <div class="body"><p>Smart mobility turns sensor records into forecasts: link speed in fifteen minutes, the class of a road sign in a camera frame, the path a pedestrian will take next.</p>
+<p>The first decision is the <strong>task type</strong>, because it fixes the labels, the loss function and the evaluation.</p>
+<ul>
+<li><strong>Supervised learning</strong>: every example pairs a feature vector <code>x</code> with a known target <code>y</code>.</li>
+<li><strong>Regression</strong>: predicts a number.</li>
+<li><strong>Classification</strong>: predicts a category.</li>
+<li><strong>Unsupervised</strong> methods find structure without targets, such as clustering similar journeys.</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Regression: fitting a line to movement</h2>
+  <div class="body"><p>A linear model predicts a target as a weighted sum of inputs, <code>ŷ = w · x + b</code>. Training chooses weights that make predictions close to the observed values, usually by minimising the <strong>mean squared error</strong>.</p>
+<p>Squaring punishes large misses hardest — sensible for speed forecasts, where wild errors matter most.</p>
+<p>The loss is a surface in weight space. <strong>Gradient descent</strong> steps downhill, using the derivative for direction and a learning rate for step size.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Linear regression model</span>
+      <div class="formula-expr formula-math">\[\hat{y} = \mathbf{w}\cdot\mathbf{x} + b\]</div>
+      <span class="formula-note">x features, w weights, b bias</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Mean squared error</span>
+      <div class="formula-expr formula-math">\[\mathrm{MSE} = \frac{1}{n}\sum (y_i - \hat{y}_i)^2\]</div>
+      <span class="formula-note">n training examples</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Gradient descent update</span>
+      <div class="formula-expr formula-math">\[w \leftarrow w - \eta \frac{\partial L}{\partial w}\]</div>
+      <span class="formula-note">η is the learning rate</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>Classification, labels and the split</h2>
+  <div class="body"><p>A classifier outputs a score for each class, converted into a probability by a <strong>sigmoid</strong> for two classes or a <strong>softmax</strong> across several. The predicted label is the highest score, and the surface where two scores tie is the decision boundary.</p>
+<p>Before any tuning, hold back a <strong>test set</strong> that the model never sees. A model scored on its own training rows is only being checked for memory.</p>
+<p>For small datasets, <strong>cross-validation</strong> rotates the holdout so that every row is tested once.</p></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Overfitting is the default failure</h2>
+  <div class="body"><p>Training loss almost always falls as capacity grows; validation loss is the honest signal. When validation loss bottoms out and then rises while training loss keeps falling, the model has begun to fit noise.</p>
+<p>That gap is <strong>overfitting</strong>; a model too simple for the pattern is <strong>underfitting</strong>, and both losses stay high.</p>
+<p>Controls include:<br />
+- fewer features or layers<br />
+- <strong>regularisation</strong> that penalises large weights<br />
+- augmentation that enlarges the effective dataset<br />
+- early stopping at the validation minimum</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Regularised loss</span>
+      <div class="formula-expr formula-math">\[L = \mathrm{loss} + \lambda \sum w_i^2\]</div>
+      <span class="formula-note">λ sets the strength of the penalty</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Neural networks: stacked transformations</h2>
+  <div class="body"><p>A neuron computes a weighted sum of its inputs, adds a bias and passes the result through a non-linear <strong>activation</strong> such as ReLU. Stacking layers lets the network build its own <strong>features</strong>: early layers detect simple patterns, later ones combine them.</p>
+<p><strong>Backpropagation</strong> applies the chain rule to find how each weight affected the loss, and an optimiser updates all weights together. Mini-batches trade noisy gradients for speed, and one pass over the data is an <strong>epoch</strong>.</p>
+<p>Without non-linearity, stacked linear layers collapse into one linear map.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Neuron output</span>
+      <div class="formula-expr formula-math">\[a = f(Wx + b)\]</div>
+      <span class="formula-note">f is a non-linear activation such as ReLU</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>Convolutional networks for road signs</h2>
+  <div class="body"><p>A camera image is a grid of pixels, and flattening it destroys neighbourhood structure. A <strong>convolutional layer</strong> slides small learnable filters across the image, sharing weights at every position, so an edge detector learnt in one corner works in every corner. <strong>Pooling</strong> compresses the feature map and adds tolerance to small shifts.</p>
+<p>Road-sign datasets are often small and imbalanced, so <strong>transfer learning</strong> is standard:<br />
+- start from a network trained on a large image collection<br />
+- freeze the early layers<br />
+- retrain the final layer for the sign classes</p>
+<p>Augmentation — rotation, brightness and crop — widens the training set.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Convolution output size</span>
+      <div class="formula-expr formula-math">\[n_{\mathrm{out}} = \frac{n_{\mathrm{in}} - k + 2p}{s} + 1\]</div>
+      <span class="formula-note">k filter size, p padding, s stride</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Evaluation that matches the decision</h2>
+  <div class="body"><p>Accuracy misleads when classes are imbalanced: a detector that never predicts the rare give-way sign can still score 95%.</p>
+<p>A <strong>confusion matrix</strong> separates the error types, and <strong>precision</strong> and <strong>recall</strong> score them differently — precision asks how many detections were right, recall how many real signs were found.</p>
+<p>For speed, report <strong>MAE</strong> in the data's units and <strong>RMSE</strong>, which penalises big misses; <strong>MAPE</strong> explodes near zero speeds. State the test set, the baseline and the per-class results.</p></div><div class="table-wrap"><table><caption>Metrics for mobility tasks and what each one hides</caption><thead><tr><th scope='col'>Metric</th><th scope='col'>Task</th><th scope='col'>Reads as</th><th scope='col'>Hides</th></tr></thead><tbody><tr><td>Accuracy</td><td>Classification</td><td>Share of labels correct</td><td>A rare class can be ignored</td></tr><tr><td>Precision</td><td>Detection</td><td>Share of detections that are right</td><td>Missed signs are not counted</td></tr><tr><td>Recall</td><td>Detection</td><td>Share of real signs found</td><td>False alarms are not counted</td></tr><tr><td>MAE and RMSE</td><td>Regression</td><td>Average error, and error with big misses emphasised</td><td>RMSE is dominated by outliers</td></tr><tr><td>MAPE</td><td>Regression</td><td>Average percentage error</td><td>Unstable near zero speeds</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>Mobility data is personal data</h2>
+  <div class="body"><p>A trajectory identifies a person once it is joined to a home or a workplace. Aggregate before release, strip identifiers from the pipeline, and treat fine-grained location as sensitive by default.</p>
+<p>Training data also carries <strong>bias</strong>: cameras cover some roads better than others, and labels record who was observed rather than who was there. A model taught to imitate enforcement patterns will reproduce them.</p>
+<p>Document the data's provenance, keep a human in the loop, and monitor deployed predictions for drift and unequal error, not just average accuracy.</p></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Object detection: boxes and IoU</h2>
+  <div class="body"><p>Detecting a road sign means predicting a bounding box and a class for it. Two boxes rarely coincide exactly, so detections are scored by the <strong>intersection over union</strong>: the shared area divided by the combined area.</p>
+<p>A prediction counts as a hit when its IoU with the ground-truth box exceeds a threshold, commonly 0.5. Counting hits per class gives <strong>average precision</strong>, and the mean over classes is the headline detector metric.</p>
+<p>Report the IoU threshold beside it — a detector that scores well at 0.5 can collapse at 0.75, and the stricter threshold is the one that matters for safety.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Intersection over union</span>
+      <div class="formula-expr formula-math">\[\mathrm{IoU} = \frac{\mathrm{area}(A \cap B)}{\mathrm{area}(A \cup B)}\]</div>
+      <span class="formula-note">between 0 and 1; above about 0.5 the prediction matches the ground truth</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>Sequence models for trajectory prediction</h2>
+  <div class="body"><p>A trajectory is a sequence of positions, and the past steps are the features. <strong>Temporal convolutional networks</strong> use causal convolutions with growing dilation so a layer can see far into the history without an explosion of parameters; <strong>transformer</strong> encoders instead attend directly across time steps. Both map the observed path into a hidden state that a final layer turns into the next positions.</p>
+<p>Train with a loss suited to the data: plain mean absolute error is robust, and the <strong>Smooth L1</strong> loss behaves like L1 for large errors but like squared error near zero, giving smooth gradients during fine adjustment while resisting outliers.</p>
+<p>Evaluate on held-out scenes with MAE and RMSE in metres.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Smooth L1 loss</span>
+      <div class="formula-expr formula-math">\[L(x) = \begin{cases} 0.5 x^2 &amp; |x| &lt; 1 \\ |x| - 0.5 &amp; \text{otherwise} \end{cases}\]</div>
+      <span class="formula-note">x is the prediction error; quadratic near zero, linear far away</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Dilated convolution</span>
+      <div class="formula-expr formula-math">\[\text{dilation } d: \quad y_t = \sum_k w_k x_{t - dk}\]</div>
+      <span class="formula-note">stacking layers with d = 1, 2, 4, … widens the receptive field</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>Fine-tuning a pretrained detector</h2>
+  <div class="body"><p>Mobility datasets are rarely large enough to train a detector from scratch, so the standard route is <strong>transfer learning</strong>: start from a backbone pretrained on a large general image collection, swap its classification head for the new classes, and train only that head while the early layers stay <strong>frozen</strong>. Frozen layers keep their learned features and receive no gradient updates.</p>
+<p>Once the head converges, unfreeze the later backbone layers at a much smaller learning rate so the features adapt without wrecking what was learned.</p>
+<p><strong>Augmentation</strong> — horizontal flips, colour jitter, resizing and normalisation — expands the effective dataset and teaches invariance. Preprocess test images with the same pipeline as training, or the model sees a different data distribution than it learned.</p></div>
+<div class="callout callout--tip">
+  <b>Freeze first, unfreeze late</b>
+  Train the new head with the backbone frozen, then unfreeze with a learning rate about ten times smaller; jumping straight to full fine-tuning often destroys useful features.
+</div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Supervised learning</dt><dd>Learning a mapping from labelled examples, where each input is paired with the correct output.</dd></div><div class="term"><dt>Overfitting</dt><dd>Fitting the noise in the training data so closely that performance on unseen data falls.</dd></div><div class="term"><dt>Validation set</dt><dd>Data held aside from training and used to compare model choices before the final test.</dd></div><div class="term"><dt>Convolutional layer</dt><dd>A layer that applies shared learnable filters across an image to build translation-tolerant features.</dd></div><div class="term"><dt>Transfer learning</dt><dd>Reusing a model trained on a large dataset as the starting point for a smaller, related task.</dd></div><div class="term"><dt>Recall</dt><dd>The share of real positive cases that the model successfully finds.</dd></div><div class="term"><dt>Intersection over union</dt><dd>The shared area between a predicted and a ground-truth box divided by their union, the standard match measure in object detection.</dd></div><div class="term"><dt>Fine-tuning</dt><dd>Continuing to train a pretrained model on a new, related dataset, often with early layers frozen.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Error on a held-out speed forecast</h2>
+        <p class="problem">A model predicts link speed in km/h at five successive intervals. Observed speeds are 60, 55, 70, 65 and 80; predicted speeds are 58, 58, 66, 65 and 74. Find the MAE and RMSE, and compare both with a baseline that always predicts the training mean of 66 km/h.</p>
+        <ol><li>Errors (observed − predicted): 2, −3, 4, 0 and 6 km/h.</li><li>MAE = (2 + 3 + 4 + 0 + 6) / 5 = 15 / 5 = 3.0 km/h.</li><li>Squared errors: 4, 9, 16, 0 and 36, summing to 65. RMSE = √(65/5) = √13 ≈ 3.6 km/h.</li><li>Baseline errors from 66 km/h: −6, −11, 4, −1 and 14, so its MAE = 36/5 = 7.2 km/h.</li><li>Baseline RMSE = √((36 + 121 + 16 + 1 + 196)/5) = √74 ≈ 8.6 km/h.</li><li>Sanity check: the model beats the baseline on both metrics, and RMSE exceeds MAE because the 6 km/h miss is weighted heavily.</li></ol>
+        <div class="answer"><b>Answer</b>MAE = 3.0 km/h and RMSE ≈ 3.6 km/h, against baseline values of 7.2 km/h and 8.6 km/h. The forecast is better than the baseline on this sample, but five intervals are too few to claim a general improvement.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>Name the task first: regression and classification need different losses and different metrics.</li><li>Report each test-set metric with its units and a baseline; accuracy alone rarely answers the question asked.</li><li>For an imbalanced class, quote precision and recall rather than overall accuracy.</li><li>When fine-tuning, freeze the backbone for the first passes and drop the learning rate by about ten times when you unfreeze it.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>A team keeps adjusting hyperparameters until accuracy on the held-out test set stops improving. The main problem with this procedure is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The test set is no longer independent, so its score is optimistic</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Accuracy cannot be computed for classification</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Hyperparameters never affect accuracy</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The model will certainly underfit</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Repeatedly scoring on the test set leaks its information into the model choices; hyperparameters belong on a validation split.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>During training, training loss keeps falling while validation loss bottoms out and then rises. This pattern indicates:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Data leakage in the validation set</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Underfitting, because training loss is low</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Overfitting, because the model now fits noise rather than signal</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>A learning rate that is too small</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The widening gap between falling training loss and rising validation loss is the classic sign that the model has started to memorise noise.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>Weight sharing in a convolutional layer helps road-sign recognition mainly because:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>It removes the need for a non-linear activation</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>It guarantees 100% test accuracy</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The same learnt filter can detect a feature anywhere in the image</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>It reduces the number of training images needed to zero</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Sharing one filter across positions makes the detector translation-tolerant and greatly reduces the parameter count compared with a dense layer.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q04</span><span>A stop-sign detector has 96% accuracy but never predicts the rare give-way class. The most useful next report is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Per-class precision, recall and the confusion matrix</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Training loss for the final epoch</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The number of parameters in the network</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Overall accuracy only</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Accuracy hides the ignored class; per-class precision, recall and a confusion matrix show which classes the model actually finds.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>A predicted box and a ground-truth box overlap over an area of 30 px², and their union covers 60 px². The intersection over union is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>2.0</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.5</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.33</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>30</span></button></div>
+    <div class="quiz-explain"><b>Why</b>IoU is the shared area over the combined area: 30/60 = 0.5, the usual threshold for counting a detection as a hit.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q06</span><span>Smooth L1 loss is preferred over plain L1 for trajectory prediction mainly because:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>It penalises outliers more than L2</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>It is quadratic for small errors, giving stable gradients during fine adjustment</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>It always produces smaller losses</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>It removes the need for a learning rate</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Smooth L1 is quadratic near zero and linear for large errors, combining stable fine-tuning with robustness to outlier positions.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.html"><span>Computing</span><b>AI &amp; Data Analysis</b></a><a class="related-card" href="artificial-intelligence.html"><span>Computing</span><b>Artificial Intelligence</b></a><a class="related-card" href="machine-learning.html"><span>Computing</span><b>Machine Learning</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="quantitative-methods.html"><small>Previous</small><b>Quantitative Methods for Engineers</b></a><a class="next" href="professional-english.html"><small>Next</small><b>Professional English</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">Split before you tune.</p><p class="margin-note">Validation loss is the honest signal.</p><p class="margin-note">MSE punishes the big misses.</p><p class="margin-note">Location records are personal data.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>강구조 설계 — Civil Hub</title>
+<meta name="description" content="강재 부재와 접합부가 극한한계상태와 사용성한계상태에서 어떻게 검토되는지: 단면 분류, 휨, 전단, 좌굴, 용접 및 볼트. 단면표, 설계기준, 계산기가 만나는 지점이다.">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-steel-structures.ko.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="강구조 설계 — Civil Hub">
+<meta property="og:description" content="강재 부재와 접합부가 극한한계상태와 사용성한계상태에서 어떻게 검토되는지: 단면 분류, 휨, 전단, 좌굴, 용접 및 볼트. 단면표, 설계기준, 계산기가 만나는 지점이다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-steel-structures.ko.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="design-of-steel-structures.html" data-alt-zh-hant="design-of-steel-structures.zh-Hant.html" data-alt-ja="design-of-steel-structures.ja.html" data-alt-ko="design-of-steel-structures.ko.html" data-page-lang="ko" data-root="../" data-total="42" data-page="library" data-content-lang="ko">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">강구조 설계</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">핵심</p>
+          <h1>강구조 설계</h1>
+          <p class="subject-sub">한계 상태 설계, 단면 성능 및 접합부 검토</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>핵심</li><li><b data-i18n="subject.read">Read</b>12 분</li><li><b data-i18n="subject.sections">Sections</b>10</li><li><b data-i18n="subject.formulas">Formulas</b>15</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M80 160 V64 H260 V160" stroke="currentColor" stroke-width="1.7"/><path d="M70 160 h20 M250 160 h20" stroke="currentColor" stroke-width="1.2"/><path d="M80 160 l-8 12 h16 z M260 160 l-8 12 h16 z" stroke="currentColor" stroke-width="1"/><path d="M80 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M220 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M104 100 q-20 14 0 28" stroke="var(--accent)" stroke-width="1"/><path d="M236 100 q20 14 0 28" stroke="var(--accent)" stroke-width="1"/><text x="170" y="44" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PORTAL FRAME</text></svg>
+          <figcaption>Portal frame — bending moments at the joints</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">두 개의 숫자와 안전율</a></li><li><a href="#sec-2">강재, 강도 및 세장비</a></li><li><a href="#sec-3">단면 분류</a></li><li><a href="#sec-4">인장재: 총단면적, 순단면적 및 유효단면적</a></li><li><a href="#sec-5">휨과 전단</a></li><li><a href="#sec-6">횡-비틀림 좌굴</a></li><li><a href="#sec-7">압축재</a></li><li><a href="#sec-8">접합부: 볼트와 용접</a></li><li><a href="#sec-9">사용성, 화재 및 내구성</a></li><li><a href="#sec-10">한 번에 수행하는 전체 보 검토</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">강재 부재와 접합부가 극한한계상태와 사용성한계상태에서 어떻게 검토되는지: 단면 분류, 휨, 전단, 좌굴, 용접 및 볼트. 단면표, 설계기준, 계산기가 만나는 지점이다.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="design-of-steel-structures" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>두 개의 숫자와 안전율</h2>
+  <div class="body"><p>한계상태설계는 계수하중 효과와 계수저항을 비교하여 저항이 더 커야 한다고 요구한다: E_d ≤ R_d.</p>
+<ul>
+<li>하중계수는 고정하중, 적재하중, 풍하중의 불확실성을 포괄하고, 재료계수는 항복강도와 제작을 포괄한다.</li>
+<li>극한한계상태는 강도, 안정성, 화재를 포함하고, 사용성한계상태는 처짐, 진동, 내구성을 포함한다.</li>
+<li>목표는 설계수명 동안 작고 알려진 파괴 확률이지, 위험 제로가 아니다.</li>
+<li>연성과 견고성이 중요하다: 파괴 전에 경고하는 구조물이 더 안전하다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">한계상태 검토</span>
+      <div class="formula-expr formula-math">\[E_d \le R_d\]</div>
+      <span class="formula-note">R_d는 설계저항</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>강재, 강도 및 세장비</h2>
+  <div class="body"><p>강재는 등급으로 지정된다 — S275, S355, S460 — 여기서 숫자는 해당 두께에 대한 최소 항복강도(N/mm²)이다. 계산에 사용되는 설계강도는 p_y = f_y / γ_M이다.</p>
+<ul>
+<li>강재는 강성이 크고, 강하며, 연성이다; 연성은 힘의 재분배를 허용하고 파괴 전에 가시적인 경고를 준다.</li>
+<li>압연과 용접으로 인한 잔류응력은 압축항복하중을 감소시키지 않지만, 강성을 감소시키고 좌굴을 앞당긴다.</li>
+<li>인성은 두꺼운 단면과 저온에서 중요하므로, 충격 부등급이 사양서에 포함되어야 한다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">설계강도</span>
+      <div class="formula-expr formula-math">\[p_y = \frac{f_y}{\gamma_M}\]</div>
+      <span class="formula-note">γ_M은 재료계수로 1.0에 가깝다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>단면 분류</h2>
+  <div class="body"><p>국부좌굴은 각 판요소가 얼마나 세장한지에 달려 있다. 폭-두께비 b/T는 ε의 배수로 쓰인 한계와 비교되며, 여기서 ε = √(275/p_y)이고 275 N/mm²는 기준 항복강도이다.</p>
+<ul>
+<li>Class 1 소성: 소성힌지를 형성하고 회전할 수 있다.</li>
+<li>Class 2 조밀: 소성모멘트에 도달하지만 회전은 거의 없다.</li>
+<li>Class 3 반조밀: 최외곽 섬유에서만 항복에 도달한다.</li>
+<li>Class 4 세장: 항복 전에 국부좌굴한다.</li>
+<li>전체 단면은 그 요소들 중 가장 나쁜 등급을 따른다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">세장비 계수</span>
+      <div class="formula-expr formula-math">\[\varepsilon = \sqrt{\frac{275}{p_y}}\]</div>
+      <span class="formula-note">p_y는 N/mm² 단위; b/T에 대한 한계는 ε의 배수로 쓰인다</span>
+    </div></div><div class="table-wrap"><table><caption>네 가지 단면 등급</caption><thead><tr><th scope='col'>등급</th><th scope='col'>국부 거동</th><th scope='col'>휨저항</th></tr></thead><tbody><tr><td>1 소성</td><td>소성힌지 형성 및 회전</td><td>M_c = p_y S</td></tr><tr><td>2 조밀</td><td>소성모멘트 도달, 회전 거의 없음</td><td>M_c = p_y S</td></tr><tr><td>3 반조밀</td><td>최외곽 섬유에서만 항복</td><td>M_c = p_y Z</td></tr><tr><td>4 세장</td><td>항복 전 국부좌굴</td><td>유효단면 특성</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>인장재: 총단면적, 순단면적 및 유효단면적</h2>
+  <div class="body"><p>인장은 가장 명확한 강재 검토이다 — 좌굴이 없고 단지 면적 곱하기 강도일 뿐이다 — 하지만 상세 설계는 미묘하다. <strong>총단면적</strong> A_g는 전체 단면이고; <strong>순단면적</strong> A_n은 볼트 구멍을 제거하며; <strong>유효단면적</strong> A_e는 <strong>전단지연</strong>에 대해 추가로 감소한다: 볼트가 앵글의 한 다리만 연결할 때, 돌출 다리는 접합부에서가 아니라 코너를 통해 점진적으로 하중에 합류한다.</p>
+<ul>
+<li>한 다리를 통해 볼트로 연결된 단일 앵글: <code>A_n = A_g − 0.3 a₂</code>, 여기서 a₂는 연결되지 않은 다리의 면적이다.</li>
+<li>접합부를 공유하는 이중 앵글: <code>A_n = A_g − 0.15 a₂</code>.</li>
+<li>유효단면적: <code>A_e = K_e A_n</code>, S355 강재의 경우 K_e는 약 1.1이다.</li>
+<li>65 × 65 앵글에 대한 인장 시험에서 돌출 다리를 가로질러 변형률이 급격히 떨어졌다 — 전단지연이 가시화된 것이다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">순단면적, 한 다리를 통해 볼트로 연결된 단일 앵글</span>
+      <div class="formula-expr formula-math">\[A_n = A_g - 0.3\,a_2\]</div>
+      <span class="formula-note">a₂는 연결되지 않은 (돌출) 다리의 면적</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">순단면적, 이중 앵글</span>
+      <div class="formula-expr formula-math">\[A_n = A_g - 0.15\,a_2\]</div>
+      <span class="formula-note">더 작은 공제는 등을 맞댄 쌍에서 더 나은 하중 전달을 인식한다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">유효단면적</span>
+      <div class="formula-expr formula-math">\[A_e = K_e A_n\]</div>
+      <span class="formula-note">K_e는 S355의 경우 약 1.1; 용량은 p_y A_e로부터 따른다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>휨과 전단</h2>
+  <div class="body"><p>Class 1 또는 2 단면의 휨저항은 소성모멘트 M_c = p_y S이며, 여기서 S는 소성단면계수이다. Class 3 단면은 대신 탄성계수 Z를 사용하고, Class 4 단면은 유효계수를 사용한다.</p>
+<ul>
+<li>전단은 주로 웨브에 의해 부담된다: V_c = 0.6 p_y A_v, 여기서 A_v는 전단면적이다.</li>
+<li>전단력이 전단저항의 약 60%를 초과하면, 손실된 전단면적에 대해 모멘트 용량을 감소시켜야 한다.</li>
+<li>집중하중은 또한 웨브 지압과 웨브 좌굴 검토가 필요하며, 웨브가 너무 얇은 곳에는 스티프너를 둔다.</li>
+<li>처짐은 계수 없는 하중을 사용하는 별도의 사용성 검토이다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">휨저항, Class 1 또는 2</span>
+      <div class="formula-expr formula-math">\[M_c = p_y S\]</div>
+      <span class="formula-note">Class 3 단면에는 Z를 사용</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">전단저항</span>
+      <div class="formula-expr formula-math">\[V_c = 0.6\,p_y A_v\]</div>
+      <span class="formula-note">전단면적, 주로 웨브</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>횡-비틀림 좌굴</h2>
+  <div class="body"><p>구속되지 않은 보는 강축에 대해 휨을 받지만, 압축플랜지는 옆으로 이동하려 한다. 플랜지가 변위되고 단면이 비틀리면, 보는 소성모멘트보다 훨씬 낮은 하중에서 횡-비틀림 좌굴로 파괴된다.</p>
+<p>저항은 M_b = χ_LT M_c이며, 여기서 감소계수 χ_LT는 세장비 λ_LT가 증가함에 따라 감소한다.</p>
+<ul>
+<li>세장비는 구속점 사이의 유효길이, 비틀림 및 뒤틀림 강성, 하중 높이에 따라 달라진다.</li>
+<li>상부 플랜지에 작용하는 하중은 불안정화하고; 하부 플랜지에 작용하는 하중은 안정화한다.</li>
+<li>등가균일모멘트계수는 구속점 사이의 비균일 모멘트를 고려한다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">좌굴저항모멘트</span>
+      <div class="formula-expr formula-math">\[M_b = \chi_{LT} M_c\]</div>
+      <span class="formula-note">횡-비틀림 좌굴에 대해 소성모멘트를 감소시킨다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>압축재</h2>
+  <div class="body"><p>충실한 기둥은 응력이 설계강도에 도달하면 압괴되므로, 그 용량은 p_y A_g에 가깝다. 세장한 기둥은 먼저 좌굴하고, 용량은 항복강도, 오일러 좌굴응력, 불완전성 매개변수 사이의 Perry-Robertson 관계로부터 나온다.</p>
+<ul>
+<li>실제 기둥은 초기 휨, 잔류응력, 편심을 가지며, 이것이 좌굴곡선이 경험적으로 보정되는 이유이다.</li>
+<li>유효길이 L_E = K L은 단부 구속과 프레임 횡변위를 반영한다; 세장비는 λ = L_E / r이며, 구속이 방지하지 않는 한 약축에 대한 회전반경을 사용한다.</li>
+<li>횡변위 프레임의 기둥은 물리적 길이보다 더 긴 것처럼 거동한다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">오일러 좌굴응력</span>
+      <div class="formula-expr formula-math">\[p_E = \frac{\pi^2 E}{\lambda^2}\]</div>
+      <span class="formula-note">λ는 세장비 L_E / r; p_E는 p_y와 비교된다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">압축저항</span>
+      <div class="formula-expr formula-math">\[P_c = p_c A_g\]</div>
+      <span class="formula-note">p_c는 좌굴곡선으로부터의 압축강도로, p_y보다 낮다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>접합부: 볼트와 용접</h2>
+  <div class="body"><p>접합부는 부재력을 전달하며 종종 강재 프레임의 비용을 지배한다. 단순 접합부는 전단과 회전에 대해 설계되고; 모멘트 접합부는 또한 휨을 전달해야 한다.</p>
+<ul>
+<li>볼트는 전단, 지압, 인열, 블록전단에 대해 검토되며, 볼트 그룹은 비틀림을 받을 수도 있다.</li>
+<li>볼트 전단저항은 V_s = p_s A_s이며, 해당 파괴면의 전단면적을 사용한다.</li>
+<li>필릿 용접은 목두께를 통해 힘을 전달한다: 다리 크기 s에 대해 목두께는 0.7s이고, 단위길이당 저항은 0.7 s p_w이다.</li>
+<li>용접 기호, 최소 길이, 연단거리는 상세 설계 요구사항이다; 제작할 수 없는 접합부는 설계가 아니다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">볼트 전단저항</span>
+      <div class="formula-expr formula-math">\[V_s = p_s A_s\]</div>
+      <span class="formula-note">A_s는 파괴면의 전단면적; p_s는 전단강도</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">필릿 용접 단위길이당 저항</span>
+      <div class="formula-expr formula-math">\[P_w = 0.7\,s\,p_w\]</div>
+      <span class="formula-note">s는 다리 크기; 0.7s는 목두께</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>사용성, 화재 및 내구성</h2>
+  <div class="body"><p>처짐 한계는 마감재와 쾌적성을 보호한다; 한계는 경간의 분수로 표현되며 계수 없는 하중으로 검토된다. 장경간 바닥은 또한 진동 검토가 필요하며, 일반적으로 고유진동수를 수 헤르츠 이상으로 유지한다.</p>
+<ul>
+<li>내화성능은 인트루메슨트 코팅, 보드 또는 콘크리트 충전으로 제공된다; 요구되는 시간은 건물의 용도와 높이에 따라 달라진다.</li>
+<li>부식 방지는 노출 환경을 따른다: 일반 조건에서는 아연도금 또는 도장, 해안이나 산업 분위기에서는 더 많은 보호.</li>
+<li>물 고임을 피하고 점검을 허용하는 상세 설계는 유지보수보다 저렴하다.</li>
+<li>강재 구조물은 부재의 집합이 아니라 — 브레이싱, 접합부, 견고성 타이를 포함한 — 시스템이다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">처짐, 등분포하중을 받는 단순보</span>
+      <div class="formula-expr formula-math">\[\delta = \frac{5 w L^4}{384 E I}\]</div>
+      <span class="formula-note">사용성 하중, 계수 없음; E는 N/mm², I는 mm⁴</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>한 번에 수행하는 전체 보 검토</h2>
+  <div class="body"><p>현실적인 보 설계는 고정된 순서이다. 부하면적에서 보에 하중을 재하한다: 슬래브 자중 2.94 kPa와 적재하중 3.0 kPa인 바닥은 극한한계상태에서 <code>1.4G + 1.6Q = 8.92 kPa</code>로 조합된다. 슬래브 형상비가 하중 경로를 결정한다 — 장변이 단변의 약 두 배를 초과하면 일방향, 그렇지 않으면 이방향으로 삼각형 또는 사다리꼴 반력이 보에 작용한다.</p>
+<ul>
+<li>단면 등급 검토 (<code>ε = √(275/p_y)</code>를 b/T 및 d/t 한계와 비교).</li>
+<li>휨 검토 (<code>M_c = p_y S</code>).</li>
+<li>전단 검토 (<code>V_c = 0.6 p_y A_v</code>).</li>
+<li>구속되지 않은 보의 경우, 구속 길이에서 좌굴저항 M_b를 검토한다.</li>
+<li>사용성으로 마무리: 계수 없는 적재하중 하의 처짐을 경간/360과 같은 한계와 비교하고, 바닥의 경우 기본진동수를 약 3–5 Hz 이상으로 유지하는 진동 검토.</li>
+</ul>
+<p>순서를 고정하면 전형적인 누락 — 휨은 통과하지만 횡구속이 검증되지 않은 보 — 을 방지할 수 있다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">고유진동수, 단순보</span>
+      <div class="formula-expr formula-math">\[f = \frac{\pi}{2 L^2}\sqrt{\frac{E I}{m}}\]</div>
+      <span class="formula-note">m은 바닥을 포함한 단위길이당 질량; f를 약 3–5 Hz 이상으로 유지</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>한계상태설계</dt><dd>극한 및 사용성 조건 모두에 대해 계수하중 효과를 계수저항과 비교하는 설계.</dd></div><div class="term"><dt>설계강도</dt><dd>항복강도를 재료계수로 나눈 값으로, 부재 검토에서 응력 한계로 사용된다.</dd></div><div class="term"><dt>단면 분류</dt><dd>판요소의 세장비에 따라 단면을 소성, 조밀, 반조밀 또는 세장으로 그룹화하는 것.</dd></div><div class="term"><dt>소성단면계수</dt><dd>등면적축에 대한 단면 면적의 1차 모멘트로, 설계강도를 곱하면 소성모멘트가 된다.</dd></div><div class="term"><dt>횡-비틀림 좌굴</dt><dd>구속되지 않은 보가 압축플랜지의 측방향 변위와 비틀림에 의해 파괴되는 것.</dd></div><div class="term"><dt>유효길이</dt><dd>횡구속점 사이의 부재 좌굴 길이로, 단부 조건과 프레임 횡변위에 대해 조정된다.</dd></div><div class="term"><dt>전단지연</dt><dd>연결된 단면에 걸쳐 축력이 불균일하게 분포하는 현상으로, 돌출 부분이 접합부를 통해서만 하중에 합류하기 때문이다.</dd></div><div class="term"><dt>뒤틀림 상수</dt><dd>비균일 비틀림에 대한 저항을 측정하는 단면 특성으로, 보가 횡-비틀림 좌굴 중 비틀릴 때 동원된다.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>바닥보의 휨, 전단 및 처짐</h2>
+        <p class="problem">경간 7.5 m의 단순보가 극한 등분포하중 30 kN/m와 사용 등분포하중 20 kN/m를 받는다. 단면은 Class 1이며 소성계수 S = 1500 cm³, 전단면적 A_v = 3500 mm², 단면2차모멘트 I = 3.6 × 10⁸ mm⁴이다. 설계강도 p_y = 355 N/mm²이고 E = 205 kN/mm²이다. 휨, 전단 및 처짐을 경간/360 한계에 대해 검토하라.</p>
+        <ol><li>최대 휨모멘트: M = w L² / 8 = 30 × 7.5² / 8 = 210.9 kNm.</li><li>휨저항: M_c = p_y S = 355 × 1 500 000 = 532.5 × 10⁶ Nmm = 532.5 kNm. 210.9 &lt; 532.5 kNm이므로, 휨은 약 40% 활용률로 적절하다.</li><li>최대 전단: V = w L / 2 = 30 × 7.5 / 2 = 112.5 kN. 전단저항: V_c = 0.6 p_y A_v = 0.6 × 355 × 3500 = 745.5 kN. 112.5 &lt; 745.5 kN이므로, 전단은 적절하고 모멘트-전단 감소가 필요 없다.</li><li>사용하중에 대한 처짐: δ = 5 w L⁴ / (384 E I) = 5 × 20 × 7500⁴ / (384 × 205 000 × 3.6 × 10⁸) = 11.2 mm. 한계는 L/360 = 20.8 mm이므로, 처짐도 적절하다.</li><li>세 가지 검토 모두 통과한다. 휨이 가장 높은 활용률을 보이므로 더 가벼운 단면을 시도할 수 있지만, 횡-비틀림 좌굴과 접합부 설계는 별도로 검증해야 한다.</li></ol>
+        <div class="answer"><b>Answer</b>휨 211 kNm &lt; 533 kNm, 전단 113 kN &lt; 746 kN, 처짐 11.2 mm &lt; 20.8 mm이므로 보는 이 검토들에 대해 적절하다. 휨이 지배적인 검토이다.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>용량을 계산하기 전에 단면을 분류하라; 등급이 소성계수, 탄성계수 또는 유효특성을 사용할지 결정한다.</li><li>S와 Z를 혼동하지 말라: S는 소성설계용, Z는 탄성설계용이며, 이들을 혼용하는 것은 흔한 감점 요인이다.</li><li>횡-비틀림 좌굴이 실제 보를 종종 지배하므로, 단면이 적절하다고 선언하기 전에 구속 간격을 확인하라.</li><li>처짐에는 계수 없는 하중을, 강도에는 계수 하중을 사용하라; 각 줄에서 어떤 세트를 사용하는지 명시하라.</li><li>LTB 문제에서는 공식을 사용하기 전에 구속 위치와 하중이 걸리는 위치를 나열하라; 둘 다 유효길이와 답을 바꾼다.</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Design strength py of structural steel to BS EN grades</h3>
+  <p class="ref-table-intro">Design strength py used in the Hong Kong steel code. It is the yield strength divided by the material factor for the steel class and capped by the tensile strength divided by a second factor, so the tabulated value falls as the element gets thicker.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Steel grade</th><th scope='col'>Thickness t (mm)</th><th scope='col'>Design strength py (N/mm²)</th></tr></thead><tbody><tr><td>S235</td><td>t ≤ 16</td><td>235</td></tr><tr><td>S275</td><td>t ≤ 16</td><td>275</td></tr><tr><td>S275</td><td>16 &lt; t ≤ 40</td><td>265</td></tr><tr><td>S355</td><td>t ≤ 16</td><td>355</td></tr><tr><td>S355</td><td>16 &lt; t ≤ 40</td><td>345</td></tr><tr><td>S355</td><td>40 &lt; t ≤ 63</td><td>335</td></tr><tr><td>S460</td><td>t ≤ 16</td><td>460</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 3.2 of the Code of Practice for the Structural Use of Steel 2011 (2023 Edition). For Class 1 steel the material factors are γm1 = 1.0 and γm2 = 1.1 (Table 4.1); the thickness of the thickest element governs the grade classification.</p>
+  <p class="ref-table-caveat">Revision summary only. Values depend on the steel class, the product standard and the governing thickness, and normal-strength and high-strength steels are treated separately; check the current steel code for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q01</span><span>사용하중에서 보의 처짐은 다음에서 검토된다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>계수 없는 하중을 사용한 극한한계상태</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>계수하중을 사용한 사용성한계상태</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>계수하중을 사용한 극한한계상태</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>계수 없는 하중을 사용한 사용성한계상태</span></button></div>
+    <div class="quiz-explain"><b>Why</b>처짐은 사용성 조건이므로, 계수 없는 고정하중과 적재하중으로 검토된다.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>웨브 폭-두께비가 Class 3 한계를 초과하는 단면은 다음과 같이 분류된다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Class 3 반조밀</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Class 4 세장</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Class 1 소성</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Class 2 조밀</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Class 4 단면은 항복에 도달하기 전에 국부좌굴하며 유효단면 특성을 사용하여 검토해야 한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>강재 보의 횡-비틀림 좌굴은 다음 경우에 가장 발생하기 쉽다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>압축플랜지가 연속적으로 구속될 때</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>압축플랜지가 긴 경간에 걸쳐 구속되지 않을 때</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>보가 매우 짧고 충실할 때</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>하중이 하부 플랜지에 작용할 때</span></button></div>
+    <div class="quiz-explain"><b>Why</b>압축플랜지는 측방향 변위와 비틀림이 자유로워야 한다; 긴 비구속 길이가 이 파괴 모드를 임계로 만든다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>다리 크기 s인 필릿 용접의 목두께는:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.85 s</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>s</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.5 s</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>0.7 s</span></button></div>
+    <div class="quiz-explain"><b>Why</b>목두께는 다리에 대해 45°로 측정되어 0.7s가 되며, 용접 저항은 그 목두께에 걸쳐 작용한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q05</span><span>한 다리를 통해 볼트로 연결된 단일 앵글 인장재의 순단면적은 전단지연에 대해 다음과 같이 감소된다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>돌출 다리 면적의 0.3배</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>총면적의 0.5배</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>전혀 감소하지 않음</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>돌출 다리 면적의 0.15배</span></button></div>
+    <div class="quiz-explain"><b>Why</b>단일 앵글의 경우 공제는 0.3 a₂이다; 접합부를 공유하는 이중 앵글은 더 작은 0.15 a₂ 공제를 받는다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>횡-비틀림 좌굴 시험에서 작용 하중을 상부 플랜지에서 하부 플랜지로 이동시키면 하중은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>완전한 횡구속과 동등하다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>불안정화되어 좌굴 하중을 낮춘다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>안정화되어 좌굴 하중을 높인다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>좌굴은 단면에만 의존하므로 무관하다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>하부 플랜지 하중은 보가 좌굴할 때 복원 비틀림을 발생시키는 반면, 상부 플랜지 하중은 비틀림을 증가시켜 더 심각한 경우이다.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="structural-mechanics.ko.html"><span>Core</span><b>구조 역학</b></a><a class="related-card" href="structural-analysis.ko.html"><span>Core</span><b>구조 해석</b></a><a class="related-card" href="construction-materials.ko.html"><span>Core</span><b>건설 재료</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="construction-management.ko.html"><small>Previous</small><b>건설 관리</b></a><a class="next" href="quantitative-methods.ko.html"><small>Next</small><b>공학도를 위한 정량적 방법</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2023). <i>Code of Practice for the Structural Use of Steel 2011 (2023 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/SUOS2011.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/SUOS2011.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">Class 4는 유효단면 특성이 필요하다.</p><p class="margin-note">소성에는 S, 탄성에는 Z — 혼용하지 말 것.</p><p class="margin-note">구속 간격이 LTB 검토를 결정한다.</p><p class="margin-note">용접 목두께는 0.7 × 다리.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

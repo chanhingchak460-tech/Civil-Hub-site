@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>數據結構與演算法 — Civil Hub</title>
+<meta name="description" content="選擇資料結構，其實就係一個關於成本嘅決定。呢頁會講陣列、鏈結串列、堆疊、佇列、雜湊表、樹同圖，然後講排序、搜尋，以及用嚟比較佢哋嘅 Big-O 語言。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/data-structures-algorithms.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="數據結構與演算法 — Civil Hub">
+<meta property="og:description" content="選擇資料結構，其實就係一個關於成本嘅決定。呢頁會講陣列、鏈結串列、堆疊、佇列、雜湊表、樹同圖，然後講排序、搜尋，以及用嚟比較佢哋嘅 Big-O 語言。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/data-structures-algorithms.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="data-structures-algorithms.html" data-alt-zh-hant="data-structures-algorithms.zh-Hant.html" data-alt-ja="data-structures-algorithms.ja.html" data-alt-ko="data-structures-algorithms.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">數據結構與演算法</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">計算</p>
+          <h1>數據結構與演算法</h1>
+          <p class="subject-sub">選擇合適的結構並衡量其成本</p>
+          <ul class="subject-facts"><li><b>類型</b>計算</li><li><b>閱讀</b>10 分鐘</li><li><b>章節</b>12</li><li><b>公式</b>9</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="44" y="34" width="252" height="136" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M44 58 H296" stroke="var(--line)" stroke-width="1"/><circle cx="58" cy="46" r="2.5" fill="var(--accent)" stroke="none"/><path d="M64 78 h76" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 93 h120" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 108 h60" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 123 h144" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 138 h96" stroke="var(--faint)" stroke-width="1.2"/><text x="64" y="160" font-family="var(--mono)" font-size="7" fill="currentColor" stroke="none" text-anchor="start" letter-spacing="0.18em">> RUN</text><path d="M118 155 h10" stroke="var(--accent)" stroke-width="1.4"/></svg>
+          <figcaption>A short program — input, logic, output</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">結構係演算法嘅一部分</a></li><li><a href="#sec-2">陣列同鏈結串列</a></li><li><a href="#sec-3">堆疊同佇列</a></li><li><a href="#sec-4">雜湊表</a></li><li><a href="#sec-5">樹同堆</a></li><li><a href="#sec-6">平衡同旋轉</a></li><li><a href="#sec-7">圖同點樣行佢哋</a></li><li><a href="#sec-8">貪心演算法同最短路徑</a></li><li><a href="#sec-9">排序、搜尋同 Big-O</a></li><li><a href="#sec-10">增長率同主定理</a></li><li><a href="#sec-11">遞迴同時間與記憶體嘅取捨</a></li><li><a href="#sec-12">拓撲次序同環偵測</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">選擇資料結構，其實就係一個關於成本嘅決定。呢頁會講陣列、鏈結串列、堆疊、佇列、雜湊表、樹同圖，然後講排序、搜尋，以及用嚟比較佢哋嘅 Big-O 語言。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="data-structures-algorithms" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>結構係演算法嘅一部分</h2>
+  <div class="body"><p><strong>抽象資料型別</strong>係一份合約：講明有咩操作同埋佢哋嘅意義，但唔承諾點樣實作。<strong>資料結構</strong>係履行呢份合約嘅其中一種方式，而每種實作都要犧牲啲嘢——用時間換記憶體，或者用通用性換速度。</p>
+<ul>
+<li>搵一個值存唔存在：喺未排序嘅陣列做線性掃描，喺已排序嘅陣列做對數搜尋，喺雜湊表做平均常數時間查詢。</li>
+<li>寫程式之前，先講清楚程式最常做嘅操作係邊啲。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>陣列同鏈結串列</h2>
+  <div class="body"><p>陣列將元素存放喺連續記憶體，所以索引係常數時間嘅算術運算，但喺中間插入就要將後面嘅嘢全部移位。<strong>鏈結串列</strong>存放互相指向嘅節點：喺已知節點插入係常數時間，但要去到位置 <code>k</code> 就要行 <code>k</code> 個節點，而且每一步都可能 miss cache。</p>
+<ul>
+<li>需要索引讀取同迭代就用陣列；需要拼接同重排而唔使隨機存取就用串列。</li>
+<li><strong>動態陣列</strong>透過容量倍增嚟攤銷擴張成本，令附加操作平均係 O(1)。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>堆疊同佇列</h2>
+  <div class="body"><p><strong>堆疊</strong>係後入先出：喺同一端 push 同 pop。佢模擬嵌套結構——函式呼叫、括號配對、深度優先遍歷、復原歷史。<strong>佇列</strong>係先入先出：喺尾 enqueue，喺頭 dequeue。佢模擬公平服務同廣度優先遍歷，例如按距離起點嘅遠近去探索道路網絡。</p>
+<ul>
+<li>普通陣列佇列會隨住前端推進而浪費空間；<strong>環形緩衝區</strong>可以重用返。</li>
+<li><strong>雙端佇列</strong>可以喺兩端都以常數時間操作。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>雜湊表</h2>
+  <div class="body"><p><strong>雜湊表</strong>透過計算 <code>h(key)</code> 將鍵映射到桶，目標係平均常數時間嘅查詢、插入同刪除。碰撞無可避免；<strong>分離鏈結</strong>喺每個桶存一條串列，而<strong>開放定址</strong>就按固定序列探測其他槽位。</p>
+<ul>
+<li>效能取決於<strong>負載因子</strong>，即已存鍵數同桶數嘅比率。</li>
+<li>細表同差嘅雜湊函式會令預期 O(1) 變成 O(n)。</li>
+<li>永遠唔好依賴迭代次序，負載因子過咗門檻就要倍增容量並重新雜湊。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">負載因子</span>
+      <div class="formula-expr formula-math">\[\alpha = \frac{n}{m}\]</div>
+      <span class="formula-note">m 個桶入面有 n 個鍵；將 α 保持喺大約 0.75 以下</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>樹同堆</h2>
+  <div class="body"><p><strong>二元搜尋樹</strong>將較細嘅鍵放左邊、較大嘅鍵放右邊，所以搜尋成本等於樹高：平衡時係 O(log n)，退化時係 O(n)。<strong>平衡樹</strong>喺插入時重新平衡，保證對數高度。</p>
+<ul>
+<li><strong>堆</strong>只維持部分次序——最小堆入面每個父節點都細過佢嘅子節點——咁就已經夠用嚟做優先佇列。</li>
+<li>Push 同 pop 成本係 O(log n)，讀取極值成本係 O(1)，而個結構住喺一個平坦陣列入面。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>平衡同旋轉</h2>
+  <div class="body"><p>搜尋樹只有喺保持<strong>平衡</strong>時先係對數。<strong>AVL 樹</strong>喺每個節點都要求兩棵子樹嘅高度相差唔超過一；當插入破壞咗呢條規則，就用<strong>旋轉</strong>修復。</p>
+<ul>
+<li>單旋轉修復外側偏重嘅形狀，雙旋轉就修復內側之字形嘅形狀。</li>
+<li>旋轉係局部嘅指標手術：常數時間，但必須更新父連結同儲存嘅高度。</li>
+<li><strong>紅黑樹</strong>將規則放寬成一種著色方案，每次插入最多只需要常數次旋轉。</li>
+<li>考試時，先講出不變量，再做旋轉，最後更新元數據。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">AVL 平衡因子</span>
+      <div class="formula-expr formula-math">\[\mathrm{BF} = h_L - h_R \in \{-1, 0, +1\}\]</div>
+      <span class="formula-note">插入或刪除可能會破壞佢；一或兩次旋轉就可以修復</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">堆陣列索引</span>
+      <div class="formula-expr formula-text">children of i: 2i + 1 and 2i + 2; parent: (i − 1) // 2</div>
+      <span class="formula-note">二元堆嘅零基陣列佈局</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>圖同點樣行佢哋</h2>
+  <div class="body"><p>圖係頂點加邊，邊可以帶權重代表距離或行車時間。</p>
+<ul>
+<li><strong>鄰接表</strong>為每個頂點儲存鄰居，適合稀疏網絡。</li>
+<li><strong>鄰接矩陣</strong>用 n² 記憶體，以常數時間回答「有冇邊？」，適合稠密網絡。</li>
+<li><strong>廣度優先搜尋</strong>按層探索，當每條邊權重相同時可以搵到最短路徑。</li>
+<li><strong>深度優先搜尋</strong>沿一條分支行到盡，揭示環、連通分量同拓撲次序。</li>
+<li>帶權最短路徑需要 Dijkstra 演算法，佢用優先佇列擴展最便宜嘅未訪問頂點。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>貪心演算法同最短路徑</h2>
+  <div class="body"><p><strong>貪心</strong>演算法承諾局部最佳選擇，而且唔會回頭。當問題具備最優子結構加上安全嘅貪心選擇時就有效：活動選擇保留最早完結嘅相容活動，Huffman 編碼就反覆合併最罕見嘅兩個符號。</p>
+<ul>
+<li>Dijkstra 演算法係貪心鬆弛：反覆確定已知距離最細嘅未確定頂點，然後鬆弛佢嘅邊。</li>
+<li>佢要求非負權重；有負邊就用 Bellman–Ford，佢將每條邊鬆弛 n−1 次，並喺多一次遍歷中偵測負環。</li>
+<li>被要求論證貪心演算法時，講出選擇同埋點解佢係安全。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">邊鬆弛</span>
+      <div class="formula-expr formula-math">\[d[v] = \min(d[v],\; d[u] + w(u,v))\]</div>
+      <span class="formula-note">u 已確定，u→v 係權重為 w 嘅邊</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>排序、搜尋同 Big-O</h2>
+  <div class="body"><p><strong>Big-O</strong> 描述成本點樣隨輸入規模增長，忽略常數同低階項。佢係一套增長率嘅語言，唔係秒錶：O(n²) 排序喺細陣列上可能贏 O(n log n) 排序，因為佢嘅額外開銷較細。</p>
+<ul>
+<li>比較排序唔可以快過 Ω(n log n)。</li>
+<li>合併排序保證 O(n log n) 而且穩定，但需要額外記憶體。</li>
+<li>快速排序實際好快，但喺惡意樞軸下會退化到 O(n²)。</li>
+<li>插入排序喺近乎已排序嘅資料上表現極佳。</li>
+<li><strong>二元搜尋</strong>每一步將範圍減半，所以只需要對數次比較。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">二元搜尋比較次數</span>
+      <div class="formula-expr formula-math">\[C \le \lceil \log_2 n \rceil + 1\]</div>
+      <span class="formula-note">對於 n 個元素嘅已排序陣列</span>
+    </div></div><div class="table-wrap"><table><caption>常見操作嘅成本同各自喺幾時退化</caption><thead><tr><th scope='col'>操作</th><th scope='col'>結構</th><th scope='col'>典型成本</th><th scope='col'>幾時退化</th></tr></thead><tbody><tr><td>按索引存取</td><td>陣列</td><td>O(1)</td><td>索引超出陣列範圍</td></tr><tr><td>喺頭部插入</td><td>鏈結串列</td><td>O(1)</td><td>要先搵到嗰個節點</td></tr><tr><td>按鍵查詢</td><td>雜湊表</td><td>平均 O(1)</td><td>負載因子高或者聚集</td></tr><tr><td>搜尋</td><td>平衡搜尋樹</td><td>O(log n)</td><td>棵樹退化</td></tr><tr><td>排序</td><td>合併排序</td><td>O(n log n)</td><td>合併需要額外記憶體</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>增長率同主定理</h2>
+  <div class="body"><p>遞迴式描述分治成本，而<strong>主定理</strong>透過比較分割合併嘅工作量同葉子嘅工作量，解決常見形狀。</p>
+<ul>
+<li>當合併項主導，總量就係合併成本。</li>
+<li>當葉子主導，就係葉子成本。</li>
+<li>當兩者平衡，答案就多一個對數因子。</li>
+<li>陷阱係符號而唔係代數：O 係上界，Ω 係下界，Θ 係兩者，而佢哋描述嘅係增長類別，唔係具體執行時間。</li>
+<li>考試前練習排序 log n、√n、n、n log n、n² 同 2ⁿ 等類別，並用細案例檢查每個答案。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">主定理形狀</span>
+      <div class="formula-expr formula-math">\[T(n) = aT(n/b) + f(n)\]</div>
+      <span class="formula-note">將 f(n) 同 n^(log_b a) 比較；邊個增長得快就決定總量</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>唔好硬套主定理</b>
+  佢只適用於 T(n) = aT(n/b) + f(n) 形狀、子問題大小相等嘅遞迴式。對於唔規則嘅分割，改為畫遞迴樹並將各層加總。
+</div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>遞迴同時間與記憶體嘅取捨</h2>
+  <div class="body"><p><strong>遞迴</strong>函式透過喺更細嘅輸入上呼叫自己嚟解決問題；每次呼叫都會喺呼叫堆疊加一個框架，所以深度就係記憶體。遞迴式 <code>T(n) = 2T(n/2) + O(n)</code> 解得 O(n log n)，而帶重複子問題嘅分支遞迴式可以指數爆炸。</p>
+<ul>
+<li><strong>動態規劃</strong>透過將每個子問題只存一次嚟消除呢種爆炸。</li>
+<li>記憶化保留由上而下嘅遞迴並快取結果；由下而上嘅形式就按依賴次序填表。</li>
+<li>兩者都用記憶體換時間，所以實作之前要檢查遞迴式有冇重複工作。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">分治遞迴式</span>
+      <div class="formula-expr formula-math">\[T(n) = 2T(n/2) + O(n) \rightarrow O(n\log n)\]</div>
+      <span class="formula-note">兩個等大嘅半邊加線性工作</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">動態規劃遞迴式</span>
+      <div class="formula-expr formula-math">\[r(n) = \max_{1 \le i \le n} (p(i) + r(n-i))\]</div>
+      <span class="formula-note">每個子問題只解一次</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-12">
+  <h2><span class="sec-num">12</span>拓撲次序同環偵測</h2>
+  <div class="body"><p><strong>有向無環圖</strong>（DAG）模擬有前置條件嘅任務，而<strong>拓撲次序</strong>將頂點排成一列，令每條邊都指向前方。</p>
+<ul>
+<li>Kahn 演算法反覆移除入度為零嘅頂點；如果過程停低而仲有頂點剩返，個圖就含有環。</li>
+<li>深度優先搜尋透過反轉完成時間得出相同次序。</li>
+<li>每當要證明一個程式、一組依賴或者一個裝配序列可行，就會出現環偵測同拓撲排序。</li>
+<li>排程問題方面，先畫優先圖，計入度，再模擬佇列——得出嘅次序係其中一個有效答案，未必係唯一。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">In-degree update</span>
+      <div class="formula-expr formula-text">for each edge u→v: indegree[v] = indegree[v] − 1</div>
+      <span class="formula-note">after removing u; any vertex reaching zero joins the queue</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>抽象資料型別</dt><dd>對操作同佢哋行為嘅規格說明，獨立於任何實作。</dd></div><div class="term"><dt>負載因子</dt><dd>已存鍵數除以桶數；佢控制雜湊表嘅效能。</dd></div><div class="term"><dt>二元搜尋樹</dt><dd>較細嘅鍵喺左邊、較大嘅鍵喺右邊嘅樹，以樹高時間搜尋。</dd></div><div class="term"><dt>堆</dt><dd>父節點同子節點之間維持部分次序嘅樹，用嚟實作優先佇列。</dd></div><div class="term"><dt>Big-O</dt><dd>演算法成本隨輸入規模增長嘅漸近上界，忽略常數因子。</dd></div><div class="term"><dt>動態規劃</dt><dd>透過儲存同重用重疊子問題嘅答案嚟解決問題。</dd></div><div class="term"><dt>AVL 樹</dt><dd>一種自平衡二元搜尋樹，其節點嘅左右子樹高度相差唔超過一。</dd></div><div class="term"><dt>拓撲次序</dt><dd>DAG 頂點嘅線性排序，令每條邊都由較早嘅頂點指向較後嘅頂點。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>插入有鏈結嘅雜湊表</h2>
+        <p class="problem">一個雜湊表有 m = 7 個桶，用 h(k) = k mod 7 同分離鏈結，並按次序插入鍵 25、38、41、7、52、61、33 同 14，每個都前置到佢嘅鏈。展示最終表格、佢嘅負載因子，以及搵 38 同 61 所需嘅比較次數。</p>
+        <ol><li>每個鍵嘅桶索引：25 → 4，38 → 3，41 → 6，7 → 0，52 → 3，61 → 5，33 → 5，14 → 0。</li><li>按次序插入並前置：桶 4 存 25；桶 3 變成 52 → 38；桶 6 存 41。</li><li>桶 5 變成 33 → 61，因為 61 喺 33 之前插入，而前置會將新鍵放喺最前。桶 0 出於同樣原因變成 14 → 7。</li><li>最終鏈：桶 0：14 → 7；桶 3：52 → 38；桶 4：25；桶 5：33 → 61；桶 6：41；桶 1 同 2 係空嘅。</li><li>負載因子 α = 8/7 ≈ 1.14，所以平均鏈長過一個節點，而最長鏈有兩個節點。</li><li>搵 38：探測桶 3，比較 52（唔中），然後 38（中），所以兩次比較。搵 61：探測桶 5，比較 33，然後 61，都係兩次比較。</li></ol>
+        <div class="answer"><b>Answer</b>鏈係 14 → 7（桶 0）、52 → 38（3）、25（4）、33 → 61（5）同 41（6）；桶 1 同 2 係空嘅。負載因子係 8/7 ≈ 1.14，而兩個搜尋都係兩次比較。因子大過 1 就值得擴張表格並重新雜湊，咁就可以恢復預期 O(1) 行為。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>最壞情況同平均情況要分開講；雜湊表只係平均 O(1)。</li><li>用結構之前先講出不變量——堆次序、搜尋樹次序、已排序陣列——因為每個操作都依賴佢。</li><li>遞迴方面，先寫遞迴式，然後求解或者引用主定理；唔好從程式碼猜增長率。</li><li>Dijkstra 方面，畫距離表並按確定次序剔頂點；頂點未確定之前永遠唔好由佢鬆弛。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>一個有鏈結嘅雜湊表喺 m 個桶入面有 n 個鍵。佢最壞情況嘅查詢成本係：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>O(n)，因為所有鍵可能碰撞到同一條鏈</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>O(n log n)，因為雜湊需要排序</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>O(1)，因為雜湊總係直接搵到個桶</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>O(log n)，因為每條鏈都保持排序</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>有好嘅雜湊函式同低負載因子時平均情況係 O(1)，但最壞情況會退化到掃描一條有 n 個鍵嘅鏈。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>邊種結構最自然用嚟實作圖嘅廣度優先搜尋？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>堆疊</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>佇列</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>二元搜尋樹</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>最大堆</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>BFS 按頂點被發現嘅次序訪問佢哋，所以先入先出嘅佇列可以令邊界保持正確次序。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>記憶化加快遞迴演算法，主要因為佢：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>消除對基本情況嘅需要</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>減少每次遞迴呼叫嘅深度</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>儲存每個重疊子問題嘅答案並重用</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>遞迴之前先排序輸入</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>重複子問題只解一次並快取，可以將指數工作變成多項式工作，代價係記憶體。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q04</span><span>二元搜尋只可以應用喺陣列當：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>陣列唔含重複值</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>陣列已排序</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>陣列以鏈結串列儲存</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>陣列長度係 2 嘅冪</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>二元搜尋根據次序比較捨棄一半範圍，所以資料必須已排序；有重複值都冇問題，長度亦唔需要係 2 嘅冪。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>Dijkstra 演算法只喺以下情況有效：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>個圖以鄰接矩陣儲存</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>冇負環存在</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>每條邊權重都係非負</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>個圖係一棵樹</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>Dijkstra 依賴已確定嘅距離之後永遠唔會改善，負邊可以破壞呢點；Bellman–Ford 就處理負權重。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>Kahn 演算法喺未輸出所有頂點之前就停低。呢個證明：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>個圖含有環</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>個圖唔連通</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>個圖有負邊權重</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>個圖係一棵樹</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>Kahn 演算法移除入度為零嘅頂點；如果仲有剩，佢哋喺環入面互相等待，所以冇拓撲次序存在。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="programming-fundamentals.zh-Hant.html"><span>Computing</span><b>程式設計基礎</b></a><a class="related-card" href="ai-data-analysis.zh-Hant.html"><span>Computing</span><b>人工智能與數據分析</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="professional-english.zh-Hant.html"><small>上一頁</small><b>專業英語</b></a><a class="next" href="transport-operations-management.zh-Hant.html"><small>下一頁</small><b>運輸營運與管理</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">先講操作，再講結構。</p><p class="margin-note">雜湊表只係平均 O(1)。</p><p class="margin-note">平衡即對數；退化即線性。</p><p class="margin-note">遞迴深度要花堆疊記憶體。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>工程測量 — Civil Hub</title>
+<meta name="description" content="如何在現場量度、計算及放樣位置與高程：水準測量、導線調整、坐標、全站儀、GNSS 及曲線。這是一門把地面觀測轉化為可供施工的數字的學科。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/surveying.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="工程測量 — Civil Hub">
+<meta property="og:description" content="如何在現場量度、計算及放樣位置與高程：水準測量、導線調整、坐標、全站儀、GNSS 及曲線。這是一門把地面觀測轉化為可供施工的數字的學科。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/surveying.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="surveying.html" data-alt-zh-hant="surveying.zh-Hant.html" data-alt-ja="surveying.ja.html" data-alt-ko="surveying.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">工程測量</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">核心</p>
+          <h1>工程測量</h1>
+          <p class="subject-sub">量度、計算與實地放樣</p>
+          <ul class="subject-facts"><li><b>類型</b>核心</li><li><b>閱讀</b>12 分鐘</li><li><b>章節</b>11</li><li><b>公式</b>20</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="176" cy="36" r="5" stroke="var(--accent)" stroke-width="1.4"/><path d="M176 41 V80" stroke="currentColor" stroke-width="1.3"/><path d="M176 62 l-30 34 M176 62 l30 34 M176 62 l-3 40" stroke="currentColor" stroke-width="1.2"/><path d="M40 168 H300" stroke="var(--line)" stroke-width="1"/><path d="M72 92 l104 76 M92 96 l120 72" stroke="var(--faint)" stroke-width="1"/><path d="M118 128 q10 10 4 22" stroke="var(--accent)" stroke-width="1"/><text x="132" y="152" font-family="var(--mono)" font-size="8" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">θ</text><text x="70" y="186" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">A</text><text x="264" y="186" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">B</text></svg>
+          <figcaption>Traverse geometry — angles and measured lines</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">先做控制，再做細部</a></li><li><a href="#sec-2">水準測量：記錄簿必須平衡</a></li><li><a href="#sec-3">角度、方位角與全圓方位角慣例</a></li><li><a href="#sec-4">按固定次序進行導線計算</a></li><li><a href="#sec-5">選擇外業方法</a></li><li><a href="#sec-6">全站儀、EDM 與 GNSS</a></li><li><a href="#sec-7">曲線與放樣</a></li><li><a href="#sec-8">誤差、閉合與記錄追溯</a></li><li><a href="#sec-9">由坐標及支距計算面積與體積</a></li><li><a href="#sec-10">兩樁測試實務</a></li><li><a href="#sec-11">以切線角放樣曲線</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      <li><a href="#design-reference">設計參考</a></li>
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">如何在現場量度、計算及放樣位置與高程：水準測量、導線調整、坐標、全站儀、GNSS 及曲線。這是一門把地面觀測轉化為可供施工的數字的學科。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="surveying" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>先做控制，再做細部</h2>
+  <div class="body"><p>每項測量都以已知點為基準來確定新點。已知點構成<strong>控制</strong>；其餘一切都是<strong>細部</strong>。控制網比依附其上的工作更密集、更精確，因為之後每一項量度都會繼承它的誤差。</p>
+<p>工作原則是<strong>由整體到局部</strong>：先建立框架——有坐標的水平測站、有折算高程的水準點——然後從該框架填充細部。坐標需要原點，高程需要基準，因此兩者都必須說明。由細部開始向上推的測量無法自我檢查。</p>
+<p><strong>準確度</strong>是結果與真值的接近程度；<strong>精密度</strong>是可重複的程度。一組緊密但偏離真值的讀數是精密但有偏差的。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>水準測量：記錄簿必須平衡</h2>
+  <div class="body"><p>水準測量量度高差。將儀器置於兩支水準尺之間；其視線定義一個<strong>視線高程</strong>。每次設站後的第一個讀數是對已知高程點的<strong>後視</strong>；<strong>中間視</strong>確定轉點之間的點；<strong>前視</strong>是儀器移動前的最後一個讀數。該水準尺隨後成為<strong>轉點</strong>，因此必須置於穩固的地方。</p>
+<p>兩種記錄方式最為常用：<br />
+- <strong>視線高程</strong>法：將後視加至已知高程一次，然後從該高程減去其餘每個讀數。<br />
+- <strong>升降</strong>法：比較連續讀數，較慢，但可檢查每個中間視。</p>
+<p>平衡後視與前視距離以抵消視線及曲率影響，保持視線短，並避免讀數低於約半米。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">視線高程</span>
+      <div class="formula-expr formula-math">\[\mathrm{HI} = \mathrm{RL} + \mathrm{BS}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">升降</span>
+      <div class="formula-expr formula-math">\[\text{rise} = \mathrm{BS} - \mathrm{FS}\]</div>
+      <span class="formula-note">負值結果即為降</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>角度、方位角與全圓方位角慣例</h2>
+  <div class="body"><p>方向由北起順時針量度。<strong>全圓方位角</strong>由 0° 至 360°；<strong>象限角</strong>以同一方向由北或南向東或西表示。由後視站順時針轉至前視站所得的<strong>右角</strong>，是大多數數據記錄儀所預期的慣例。</p>
+<p>閉合多邊形的角度有固定總和，因此實測與理論總和之差即為<strong>角度閉合差</strong>。n 邊形的內角和為 (n − 2) × 180°。</p>
+<p>傳遞方位角是記錄工作：取上一段的後方位角（前方位角 ± 180°），加上右角，必要時減去 360°。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">內角和</span>
+      <div class="formula-expr formula-math">\[\sum \theta = (n - 2) \times 180^{\circ}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">方位角傳遞</span>
+      <div class="formula-expr formula-math">\[\mathrm{WCB}_{\text{next}} = \mathrm{WCB}_{\text{back}} + \theta_{\text{right}}\]</div>
+      <span class="formula-note">WCB_back 為前一條方位角 ± 180°</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>按固定次序進行導線計算</h2>
+  <div class="body"><p>導線沿一串測站量度角度與距離。按次序計算：<br />
+- 調整角度<br />
+- 在圖形中傳遞方位角<br />
+- 將每段轉換為北及東分量，稱為<strong>緯距</strong>及<strong>經距</strong><br />
+- 相加以檢驗閉合<br />
+- 分配餘差</p>
+<p>角度閉合差平均分配至各角，因為每個角都以同等功夫觀測。坐標誤差的向量和為<strong>線性閉合差</strong>，其相對於總長度的大小為<strong>相對精度</strong>。</p>
+<p><strong>Bowditch</strong>（羅盤）法則按段長比例分配坐標改正，因此短段移動較少。此加權適合角度與距離誤差相若的情況；距離較強時需要另一種加權。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">角度閉合差</span>
+      <div class="formula-expr formula-math">\[e_\theta = \sum \theta_{\text{measured}} - (n - 2) \times 180^{\circ}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">緯距與經距</span>
+      <div class="formula-expr formula-math">\[\Delta N = d \cdot \cos \theta, \quad \Delta E = d \cdot \sin \theta\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Bowditch 改正</span>
+      <div class="formula-expr formula-math">\[C = -\frac{e\,d_i}{\sum d}\]</div>
+      <span class="formula-note">e 為該分量的閉合差</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>選擇外業方法</h2>
+  <div class="body"><p>不同任務要求不同的幾何。一個測站能看到一切時，輻射法快捷；交會法無需佔據目標；導線建立新控制；GNSS 適合空曠地面，但不喜歡樹冠及反射。</p></div><div class="table-wrap"><table><caption>外業方法比較</caption><thead><tr><th scope='col'>方法</th><th scope='col'>所得成果</th><th scope='col'>最佳用途</th><th scope='col'>注意事項</th></tr></thead><tbody><tr><td>輻射法</td><td>由一個測站取得細部</td><td>空曠場地</td><td>隱蔽點</td></tr><tr><td>交會法</td><td>無需佔據的點</td><td>岸邊、不安全物體</td><td>狹窄切割</td></tr><tr><td>後方交會</td><td>測站位置</td><td>自由設站</td><td>幾何條件差</td></tr><tr><td>導線</td><td>新控制測站</td><td>走廊、已建設區</td><td>角度及線性閉合</td></tr><tr><td>靜態 GNSS</td><td>高精度控制</td><td>開闊天空、長基線</td><td>遮擋、多路徑</td></tr><tr><td>RTK GNSS</td><td>細部及放樣</td><td>空曠場地、快速工作</td><td>基準轉換、樹冠</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>全站儀、EDM 與 GNSS</h2>
+  <div class="body"><p><strong>全站儀</strong>結合電子經緯儀、EDM 及電腦。EDM 計時調制訊號以取得斜距，然後就大氣條件、儀器及反射器常數、週期誤差作出改正。水平距離由斜距及天頂角得出，高程則在計入儀器高及目標高後由同一觀測得出。</p>
+<p><strong>GNSS</strong> 量度至衛星的距離。碼（偽距）解算給出米級；載波相位解算在<strong>整數模糊度</strong>確定後可達厘米級，前提是兩部接收機同時觀測——靜態用於控制，RTK 用於細部。</p>
+<p>GNSS 位置參照全球參考框架而非本地格網，因此方法中應包括轉換及獨立高程檢查。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">連線距離與方位角</span>
+      <div class="formula-expr formula-math">\[d = \sqrt{\Delta N^2 + \Delta E^2}, \quad \theta = \arctan\left(\frac{\Delta E}{\Delta N}\right)\]</div>
+      <span class="formula-note">引用 θ 前先檢查象限</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">三角高程</span>
+      <div class="formula-expr formula-math">\[H_B = H_A + i + d \cdot \cos z - t\]</div>
+      <span class="formula-note">i 儀器高，t 目標高</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>曲線與放樣</h2>
+  <div class="body"><p>水平線形以<strong>圓曲線</strong>連接直線，通常之間設有半徑變化的緩和曲線。對於半徑 R、偏角 θ 的曲線，切線長確定其起訖位置，弧長給出沿中心線的<strong>累積鏈距</strong>。</p>
+<p>以<strong>切線角</strong>放樣基於一個簡單事實：切線與弦之間的角度等於該弦在圓心所對的角的一半。<strong>豎曲線</strong>以拋物線連接坡度，長度由停車視距透過 K 值確定。</p>
+<p>放樣從控制點把設計置於地面，通常按坐標：佔據控制站，定向至參考物，然後轉出計算方位角及距離。切勿從本身是放樣所得的點再放樣。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">切線長</span>
+      <div class="formula-expr formula-math">\[T = R \cdot \tan\left(\frac{\theta}{2}\right)\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">圓曲線長</span>
+      <div class="formula-expr formula-math">\[L = R \cdot \theta_{\mathrm{rad}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">豎曲線長</span>
+      <div class="formula-expr formula-math">\[L = K \cdot A\]</div>
+      <span class="formula-note">A 為坡度變化，以百分比計</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>誤差、閉合與記錄追溯</h2>
+  <div class="body"><p>誤差與錯誤並不相同。<strong>粗差</strong>是嚴重錯誤——數字調位、讀尺錯誤——多餘觀測可找出它；調整不應掩蓋它。<strong>系統性</strong>誤差以相同符號重複出現，可透過程序改正或抵消；<strong>隨機</strong>誤差分散並透過平均而縮小。</p>
+<p>兩樁測試、盤左盤右觀測及平衡視線使這些行為可預測。每項測量都需要精度聲明，通常是閉合差與容許值的比較。</p>
+<p>記錄足夠的多餘量度以捕捉粗差，並以墨水保存外業記錄表，使計算保持可追溯。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">容許閉合差</span>
+      <div class="formula-expr formula-math">\[E_{\text{allow}} = c \cdot \sqrt{n}\]</div>
+      <span class="formula-note">c 取決於所需的精度等級</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">相對精度</span>
+      <div class="formula-expr formula-math">\[1 : \frac{\sum d}{e}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>由坐標及支距計算面積與體積</h2>
+  <div class="body"><p>面積可由坐標或支距得出。<strong>倍面積</strong>公式沿多邊形求叉積之和，按次序取坐標並以最後一點閉合至第一點。對於不規則邊界，等間距支距以<strong>梯形法則</strong>積分，或以<strong>辛普森法則</strong>積分，後者擬合拋物弧並需要奇數個支距。</p>
+<p>土方體積由橫截面面積得出：端面積法取兩截面平均乘以長度，棱柱體公式在中截面面積已知時加以修正。對於深開挖，格網上的散點高程以角點、邊點及內點分別加權 1、2 及 4 倍平均。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">由坐標求倍面積</span>
+      <div class="formula-expr formula-math">\[2A = \left|\sum E_i (N_{i+1} - N_{i-1})\right|\]</div>
+      <span class="formula-note">按次序繞閉合多邊形求和</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">梯形法則</span>
+      <div class="formula-expr formula-math">\[A \approx d\left(\frac{h_1}{2} + h_2 + \cdots + h_{n-1} + \frac{h_n}{2}\right)\]</div>
+      <span class="formula-note">d 為共同支距間距</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">辛普森法則</span>
+      <div class="formula-expr formula-math">\[A \approx \frac{d}{3}\left(h_1 + h_n + 4\sum h_{\mathrm{even}} + 2\sum h_{\mathrm{odd}}\right)\]</div>
+      <span class="formula-note">需要奇數個支距</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">端面積體積</span>
+      <div class="formula-expr formula-math">\[V = \frac{L (A_1 + A_2)}{2}\]</div>
+      <span class="formula-note">平均橫截面面積乘以長度</span>
+    </div></div><div class="table-wrap"><table><caption>面積與體積法則比較</caption><thead><tr><th scope='col'>法則</th><th scope='col'>適用</th><th scope='col'>注意事項</th></tr></thead><tbody><tr><td>坐標（倍面積）</td><td>直邊地塊</td><td>按次序列出點並閉合圖形</td></tr><tr><td>梯形</td><td>任何支距間距</td><td>低估彎曲邊界</td></tr><tr><td>辛普森</td><td>平滑不規則邊界</td><td>支距數目必須為奇數，間距相等</td></tr><tr><td>端面積</td><td>均勻截面</td><td>面積非線性變化時高估</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>兩樁測試實務</h2>
+  <div class="body"><p>水準測量假設視線水平；<strong>視線誤差</strong>使其傾斜。兩樁測試找出該傾斜。</p>
+<p>設置兩樁相距約 30–40 米，並在兩者中間設站；即使視線傾斜，真實高差仍能保留，因為兩段距離相等。然後在一個樁外數米設站，再次讀取兩支水準尺；兩個視高差之差即為一個樁距的視線誤差，因此調整儀器或改正讀數。</p>
+<p>平衡後視與前視距離在每條路線上達到同樣的抵消，這就是精密水準測量的常設規則。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">兩樁測試的視線誤差</span>
+      <div class="formula-expr formula-math">\[e = (a_2 - b_2) - (a_1 - b_1)\]</div>
+      <span class="formula-note">近站與中站視高差之差</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>以切線角放樣曲線</h2>
+  <div class="body"><p>圓曲線由切線以<strong>切線角</strong>放樣：切點處切線與任何弦之間的角度等於該弦在圓心所對的角的一半。</p>
+<p>對於半徑 R 上的整弦 c，切線角為 c/(2R) 弧度；連續弦累加，因此每個點以從切線轉出累計總角並量出弦距來設定。緩和曲線以半徑變化的弦按同樣方式放樣——算術相同，只是沿曲線半徑改變。</p>
+<p>該方法在遠端切點自我檢查，總偏角必須等於偏角的一半。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">切線角</span>
+      <div class="formula-expr formula-math">\[\delta = \frac{c}{2R}\]</div>
+      <span class="formula-note">弧度；乘以 180/π 得度數</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>控制</dt><dd>具有已知坐標及高程的測站網絡，所有其他工作均以此為參照。</dd></div><div class="term"><dt>折算高程</dt><dd>一點在指定垂直基準以上或以下的高度。</dd></div><div class="term"><dt>全圓方位角</dt><dd>由北起順時針量度的方向，以 0° 至 360° 表示。</dd></div><div class="term"><dt>角度閉合差</dt><dd>閉合圖形中實測角度總和與其理論總和之差。</dd></div><div class="term"><dt>Bowditch 法則</dt><dd>按每段導線長度比例分配坐標閉合差的調整方法。</dd></div><div class="term"><dt>整數模糊度</dt><dd>衛星與接收機之間載波波長的未知整數，確定後可達厘米級位置。</dd></div><div class="term"><dt>累積鏈距</dt><dd>沿路線中心線由固定原點量度的距離，用以標示線上任何點。</dd></div><div class="term"><dt>兩樁測試</dt><dd>水準測量檢查，透過比較在兩樁中間及近其中一樁觀測所得的高差，量化視線誤差。</dd></div><div class="term"><dt>切線角</dt><dd>切線與至曲線點的弦之間的角度，等於該弦所對圓心角的一半。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>閉合及調整四站導線</h2>
+        <p class="problem">一條閉合環形導線依次經過 A、B、C、D 並返回 A。四個右角各量得 90°00′02″。AB 的方位角固定為 090°00′00″，量度得 AB = 100.010 米、BC = 60.000 米、CD = 99.990 米及 DA = 60.000 米。調整角度，計算方位角及坐標，然後應用 Bowditch 調整。A 點固定於 N 1000.000 米、E 500.000 米。</p>
+        <ol><li>實測角度總和 = 4 × 90°00′02″ = 360°00′08″。理論總和 = (4 − 2) × 180° = 360°00′00″，因此角度閉合差為 +8″。容許值 20″√4 = 40″，因此工作合格。</li><li>平均分配 −8″：每角改正 −2″。每個調整後角度均為 90°00′00″，這暗示單一系統性來源而非隨機分散。</li><li>傳遞方位角：WCB_BC = 090° + 90° = 180°，WCB_CD = 270°，WCB_DA = 000°。</li><li>分解各段：ΔN = d cos θ 及 ΔE = d sin θ。緯距：BC = −60.000，DA = +60.000，其餘為零，因此 ΣΔN = 0。經距：AB = +100.010，CD = −99.990，因此 ΣΔE = +0.020 米。</li><li>線性閉合差 = √(0² + 0.020²) = 0.020 米，總長 320.000 米，相對精度為 1 : 16 000。每個經距的改正 = −0.020 × d / 320：AB −0.00625 米，BC −0.00375 米，CD −0.00625 米，DA −0.00375 米。</li><li>改正後經距：AB +100.00375，BC −0.00375，CD −99.99625，DA −0.00375，總和為零。改正後緯距不變，總和亦為零。</li><li>將改正後分量加至坐標：B (1000.000, 600.004)，C (940.000, 600.000)，D (940.000, 500.004)，閉合返回 A (1000.000, 500.000)。</li><li>合理性檢查：四捨五入後閉合坐標完全重現 A，而閉合差由平行於偏離方向的段承擔，這正是與距離相關誤差應有的表現。</li></ol>
+        <div class="answer"><b>Answer</b>角度閉合差 +8″（在 40″ 容許值內）調整至零；線性閉合差 20 毫米，精度約 1 : 16 000，以 Bowditch 消除；調整後環線閉合於 A，N 1000.000 米、E 500.000 米。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>計算前先做記錄檢查：ΣBS − ΣFS 必須等於首個與最後一個折算高程之差。</li><li>任何導線都應先計算角度閉合差；角度未閉合前，方位角不可信。</li><li>保持一致的軸次序：N 先於 E，並以 atan2(ΔE, ΔN) 求方位角，而非反過來。</li><li>說明容許閉合差並明確比較；未比較的閉合差即使算術正確也得分甚少。</li><li>坐標面積題：寫出含 N 及 E 欄的倍面積表並交叉相乘——一個符號錯誤會反轉多邊形的手性，而不只是面積。</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Hong Kong 1980 Geodetic Datum and HK1980 Grid parameters</h3>
+  <p class="ref-table-intro">Defining parameters of the HK80 datum and the local HK1980 Grid, a Transverse Mercator system used for cadastral, engineering and large-scale mapping in Hong Kong. They are the constants entered into coordinate transformations and checks.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Parameter</th><th scope='col'>Value</th><th scope='col'>Notes</th></tr></thead><tbody><tr><td>Geodetic datum</td><td>Hong Kong 1980 (HK80)</td><td>Local datum for HK1980 Grid coordinates</td></tr><tr><td>Reference ellipsoid</td><td>International Hayford (1910); a = 6 378 388 m, 1/f = 297.0</td><td>Semi-major axis and flattening</td></tr><tr><td>Datum origin (Trigonometrical Zero)</td><td>22° 18&#x27; 12.82&quot; N, 114° 10&#x27; 18.75&quot; E</td><td>Old trig station at the Hong Kong Observatory</td></tr><tr><td>Map projection</td><td>Transverse Mercator</td><td>Conformal cylindrical projection</td></tr><tr><td>Projection origin (old Trig 2, Patridge Hill)</td><td>22° 18&#x27; 43.68&quot; N, 114° 10&#x27; 42.80&quot; E</td><td>Reference station for the grid origin</td></tr><tr><td>Grid coordinates of the projection origin</td><td>819 069.80 mN, 836 694.05 mE</td><td>Northing and easting of the origin</td></tr><tr><td>Scale factor</td><td>Unity (1.0) along the central meridian</td><td>At old Trig 2; the UTM grids in Hong Kong use 0.9996</td></tr></tbody></table></div>
+  <p class="ref-table-note">Parameters from the Datum Parameters and Projection Parameters tables in the Explanatory Notes on Geodetic Datums in Hong Kong, Survey and Mapping Office, Lands Department (1995, minor revision 2023).</p>
+  <p class="ref-table-caveat">Revision summary only. Use the current transformation parameters, projection formulae and worked examples published by the Survey and Mapping Office; the grid coordinates quoted refer to the projection origin, not to any local benchmark.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q01</span><span>在視線高程法中，中間點的折算高程是這樣求得的：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>將後視加至中間視</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>取後視與前視的平均</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>將中間視加至已知高程</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>從視線高程減去中間視</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>視線高程是視線的高程，因此從中減去每個水準尺讀數即得地面點。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>一條閉合導線有五個內角，總和為 540°00′40″。角度閉合差是多少？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>−40″</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>+40″</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>+1°40′</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>零，因為 (5 − 2) × 180° = 540°</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>理論總和為 (5 − 2) × 180° = 540°00′00″，因此實測減理論為 +40″。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>在 Bowditch 法則下，施加於導線段的改正是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>與該段方位角成比例</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>每段相等，不論長度</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>短段大於長段</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>與段長成比例</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>Bowditch 按距離比例分配閉合差，因此短段獲得比例上較小的改正。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>哪種 GNSS 觀測量能達到厘米級測量位置？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>C/A 碼的偽距</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>載波的都卜勒頻移</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>已確定整數模糊度的載波相位</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>廣播曆書</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>碼距給出米級；載波相位量度至數毫米，在確定整週模糊度後成為精確距離。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q05</span><span>辛普森面積計算法要求支距數目為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>奇數</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>任何數目，只要間距相等</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>四的倍數</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>偶數</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>辛普森法則以成對區間擬合拋物弧，因此支距數目（包括兩端）必須為奇數。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>在兩樁測試中，水準儀首先置於兩樁中間，目的是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>使視線誤差從觀測高差中抵消</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>使讀數盡量大</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>無需轉點即可讀取水準尺</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>抵消折射及曲率</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>視線長度相等時，傾斜視線同等污染兩個讀數，因此真實高差得以保留。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-geology.zh-Hant.html"><span>Core</span><b>工程地質學</b></a><a class="related-card" href="construction-introduction.zh-Hant.html"><span>Core</span><b>建造概論</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="soil-mechanics.zh-Hant.html"><small>上一頁</small><b>土力學</b></a><a class="next" href="integrated-project-quality.zh-Hant.html"><small>下一頁</small><b>綜合項目與品質管理</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2>參考文獻</h2>
+  <ol class="reference-list">
+    <li>Survey and Mapping Office, Lands Department. (2023). <i>Explanatory Notes on Geodetic Datums in Hong Kong (minor revision 2023)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.geodetic.gov.hk/common/data/pdf/explanatorynotes.pdf" rel="noopener">https://www.geodetic.gov.hk/common/data/pdf/explanatorynotes.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">先做控制——細部永遠不能自我檢查。</p><p class="margin-note">升降法檢查每個中間視。</p><p class="margin-note">先調整角度，再處理坐標。</p><p class="margin-note">平衡視線以抵消曲率及視線誤差。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

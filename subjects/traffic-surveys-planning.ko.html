@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>교통 조사 및 교통 계획 — Civil Hub</title>
+<meta name="description" content="이동이 어떻게 측정되고 예측되는지를 다룹니다. 분류별 교통량 조사와 기종점 조사, 표본추출 및 확장, 4단계 수요 모델, 네트워크 배정, 그리고 예측의 현실성을 결정하는 토지이용 피드백을 포함합니다.">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/traffic-surveys-planning.ko.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="교통 조사 및 교통 계획 — Civil Hub">
+<meta property="og:description" content="이동이 어떻게 측정되고 예측되는지를 다룹니다. 분류별 교통량 조사와 기종점 조사, 표본추출 및 확장, 4단계 수요 모델, 네트워크 배정, 그리고 예측의 현실성을 결정하는 토지이용 피드백을 포함합니다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/traffic-surveys-planning.ko.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="traffic-surveys-planning.html" data-alt-zh-hant="traffic-surveys-planning.zh-Hant.html" data-alt-ja="traffic-surveys-planning.ja.html" data-alt-ko="traffic-surveys-planning.ko.html" data-page-lang="ko" data-root="../" data-total="42" data-page="library" data-content-lang="ko">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">교통 조사 및 교통 계획</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">전문</p>
+          <h1>교통 조사 및 교통 계획</h1>
+          <p class="subject-sub">이동의 측정과 그에 대한 계획</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>전문</li><li><b data-i18n="subject.read">Read</b>9 분</li><li><b data-i18n="subject.sections">Sections</b>10</li><li><b data-i18n="subject.formulas">Formulas</b>10</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="176" cy="36" r="5" stroke="var(--accent)" stroke-width="1.4"/><path d="M176 41 V80" stroke="currentColor" stroke-width="1.3"/><path d="M176 62 l-30 34 M176 62 l30 34 M176 62 l-3 40" stroke="currentColor" stroke-width="1.2"/><path d="M40 168 H300" stroke="var(--line)" stroke-width="1"/><path d="M72 92 l104 76 M92 96 l120 72" stroke="var(--faint)" stroke-width="1"/><path d="M118 128 q10 10 4 22" stroke="var(--accent)" stroke-width="1"/><text x="132" y="152" font-family="var(--mono)" font-size="8" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">θ</text><text x="70" y="186" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">A</text><text x="264" y="186" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">B</text></svg>
+          <figcaption>Traverse geometry — angles and measured lines</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">계획은 증거의 연쇄</a></li><li><a href="#sec-2">계수와 인터뷰</a></li><li><a href="#sec-3">표본추출, 확장 및 오차</a></li><li><a href="#sec-4">통행 발생과 기종점 행렬</a></li><li><a href="#sec-5">통행 발생 모델</a></li><li><a href="#sec-6">분포와 수단 선택</a></li><li><a href="#sec-7">배정과 네트워크 평형</a></li><li><a href="#sec-8">배정 네트워크 구축</a></li><li><a href="#sec-9">주차 조사와 회전율</a></li><li><a href="#sec-10">토지이용, 검증 및 판단</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">이동이 어떻게 측정되고 예측되는지를 다룹니다. 분류별 교통량 조사와 기종점 조사, 표본추출 및 확장, 4단계 수요 모델, 네트워크 배정, 그리고 예측의 현실성을 결정하는 토지이용 피드백을 포함합니다.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="traffic-surveys-planning" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>계획은 증거의 연쇄</h2>
+  <div class="body"><p>교통 계획은 수요가 도래하기 전에 인프라와 서비스의 규모를 정할 수 있도록, 얼마나 많은 사람이 어디로 어떤 수단을 이용해 어떤 링크를 따라 이동할지를 예측합니다. 고전적인 <strong>4단계 모델</strong>은 통행 발생, 통행 분포, 수단 선택, 배정 순으로 진행됩니다.</p>
+<p>각 단계는 서로 다른 종류의 데이터를 필요로 하며, 시작 단계의 오류는 끝 단계의 영리한 모델로 고쳐지지 않습니다. 전략 계획은 수십 년 앞을, 전술 계획은 몇 년 앞을, 운영 계획은 한 계절 앞을 내다봅니다.</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>계수와 인터뷰</h2>
+  <div class="body"><p>기본 도구는 <strong>분류별 교통량 조사</strong>로, 일정 기간 동안 차량 유형과 방향별로 통행량을 기록합니다. 조사는 수동, 임시 자동(튜브, 루프, 레이더) 또는 영구적으로 수행될 수 있으며, 단기 조사는 계수를 사용하여 대표적인 하루로 확장됩니다.</p>
+<p><strong>기종점</strong> 조사는 통행이 어디서 시작되고 끝나는지를 묻습니다: 노변 인터뷰, 번호판 매칭, GPS 추적 또는 이동통신 네트워크 데이터. 속도 조사는 지점 속도 또는 통행 시간을 측정하고, 주차 조사는 누적량과 주차 시간을 기록합니다.</p></div><div class="table-wrap"><table><caption>조사 방법 선택</caption><thead><tr><th scope='col'>방법</th><th scope='col'>측정 항목</th><th scope='col'>장점</th><th scope='col'>한계</th></tr></thead><tbody><tr><td>분류별 교통량 조사</td><td>차량 유형별 통행량</td><td>저렴하고 반복 가능</td><td>기종점 정보 없음</td></tr><tr><td>노변 인터뷰</td><td>기종점 및 통행 목적</td><td>계획 질문에 답함</td><td>비용 높음; 정지 차량에 편향</td></tr><tr><td>번호판 매칭</td><td>기종점 및 통행 시간</td><td>대규모 표본, 인터뷰 불필요</td><td>프라이버시 제한; 번호판 오류</td></tr><tr><td>플로팅 카</td><td>통행 시간 및 지체</td><td>전체 경로, 실제 교통</td><td>소규모 표본; 관측자 효과</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>표본추출, 확장 및 오차</h2>
+  <div class="body"><p>어떤 조사도 모든 것을 세지 않습니다. 표본은 모집단으로 확장되므로 <strong>확장 계수</strong>는 표본추출 오차를 함께 전달합니다. 표본추출 오차는 표본 크기의 제곱근에 반비례하므로, 표본을 네 배로 늘리면 오차가 절반으로 줄어듭니다.</p>
+<p>커버리지 편향은 무작위 오차보다 더 나쁩니다 — 평일 첨두시간만 세거나 인터뷰에 응한 운전자만 세는 것은 선택된 집단을 측정하는 것입니다. 중립적인 월과 중립적인 요일이 중요하며, 공휴일은 제외됩니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">비율에 대한 표본 크기</span>
+      <div class="formula-expr formula-math">\[n = \frac{z^2 p (1 - p)}{e^2}\]</div>
+      <span class="formula-note">95% 신뢰도에서 z ≈ 1.96, p는 예상 비율, e는 오차 한계</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>통행 발생과 기종점 행렬</h2>
+  <div class="body"><p>통행 발생은 가구 규모, 소득, 차량 보유 여부별 조사 데이터나 회귀분석을 통해 가구나 개발이 얼마나 많은 통행을 발생시키는지 추정합니다. 출력은 <strong>통행 행렬</strong>입니다: 행은 출발지, 열은 도착지이며, 대각선은 존 내부 통행을 나타냅니다.</p>
+<p>행렬은 표본에서 모집단으로 확장되고, 행과 열의 합계가 통제 합계와 일치하도록 균형이 맞춰집니다. 조닝이 너무 거칠거나 잘못된 위치에 있으면 하류의 모든 것이 왜곡됩니다.</p></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>통행 발생 모델</h2>
+  <div class="body"><p>통행 발생은 <strong>카테고리 분석</strong> — 각 규모 또는 소득 계층의 가구나 개인당 평균 통행률 — 또는 가구 특성에 대해 통행을 적합시키는 <strong>회귀분석</strong>으로 추정됩니다. 전형적인 모델은 일일 통행을 가구 규모와 차량 보유에 회귀시켜 상수와 각 설명변수에 대한 계수를 제공합니다.</p>
+<p>계수는 사실이 아니라 하나의 조사에 적합된 것이며 그 편향을 물려받습니다. 작고 대표성이 없는 표본은 정밀해 보이지만 체계적으로 틀린 통행률을 만듭니다. 사용 전에 도시 전체의 대규모 통행 조사와 적합된 통행률을 비교하고, 단위 — 가구당 일일 통행 — 를 모든 계수에 붙여 두십시오.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">선형 통행 발생 모델</span>
+      <div class="formula-expr formula-math">\[T = a + b_1 X_1 + b_2 X_2 + \dots\]</div>
+      <span class="formula-note">T는 가구 또는 개인당 통행, X는 설명변수, 계수는 최소제곱법으로 적합</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">카테고리 통행률</span>
+      <div class="formula-expr formula-math">\[r = \frac{T}{H}\]</div>
+      <span class="formula-note">T는 카테고리 표본의 통행, H는 가구 또는 개인; T_i = r × H_i로 적용</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>정밀한 적합이 정확한 것은 아니다</b>
+  작고 동질적인 표본은 회귀선에 아름답게 적합되지만 모집단을 잘못 대표합니다 — 예측에 사용하기 전에 항상 대규모 통행 조사와 통행률을 검증하십시오.
+</div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>분포와 수단 선택</h2>
+  <div class="body"><p>통행 분포는 발생된 통행이 어디로 가는지를 결정합니다. <strong>중력 모델</strong>은 도착지의 매력도에 비례하고 도달 비용에 반비례하여 통행을 배분하며, 억제 함수는 관측된 통행에 대해 보정됩니다.</p>
+<p>수단 선택은 <strong>일반화 비용</strong> — 시간, 요금, 대기, 편안함, 신뢰성을 결합 — 을 사용하여 각 흐름을 자가용, 대중교통, 도보로 나눕니다. 로짓 모델은 각 옵션의 효용을 확률로 변환하므로, 작은 비용 변화는 전부 아니면 전무의 전환이 아니라 점진적인 이동을 만듭니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">중력 모델</span>
+      <div class="formula-expr formula-math">\[T_{ij} = \frac{P_i A_j f(c_{ij})}{\sum_k A_k f(c_{ik})}\]</div>
+      <span class="formula-note">T_ij는 i에서 j로의 통행, P_i는 발생, A_j는 유인, f는 비용 c의 억제 함수</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">로짓 수단 분담률</span>
+      <div class="formula-expr formula-math">\[P_m = \frac{e^{U_m}}{\sum_k e^{U_k}}\]</div>
+      <span class="formula-note">U는 수단의 효용, 종종 음의 일반화 비용</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>배정과 네트워크 평형</h2>
+  <div class="body"><p>배정은 행렬을 노드, 링크, 존, 중심점 연결선의 네트워크에 부하합니다. 통행 시간은 흐름에 따라 증가하므로, <strong>BPR</strong> 곡선과 같은 용량-지체 함수가 각 링크에 적용됩니다.</p>
+<p>전부 아니면 전무 배정은 혼잡을 무시하고 최단 경로에 과부하를 줍니다; 평형 배정은 어떤 운전자도 경로를 바꿔서 개선할 수 없을 때까지 흐름을 분산시키며, 이것이 Wardrop의 사용자 평형입니다. SATURN이나 EMME 같은 소프트웨어는 그 상태를 향해 반복 계산하며, 결과는 교통량 조사와 대조하여 확인해야 합니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">BPR 용량-지체 함수</span>
+      <div class="formula-expr formula-math">\[t = t_0 \left[1 + \alpha \left(\frac{v}{c}\right)^\beta\right]\]</div>
+      <span class="formula-note">t₀는 자유류 시간, v는 흐름, c는 용량; α ≈ 0.15, β ≈ 4가 일반적인 기본값</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>배정 네트워크 구축</h2>
+  <div class="body"><p>배정 소프트웨어는 수학보다 먼저 코딩된 네트워크가 필요합니다. 존은 <strong>중심점 연결선</strong>으로 노드에 연결되고, 노드는 자유류 속도, 용량, 길이를 가진 링크로 결합되며, 통행 행렬이 존에 부착됩니다.</p>
+<p>각 요소는 코딩 오류가 숨는 곳입니다: 뒤집힌 일방통행, 누락된 연결선, 용량 0은 조용히 답을 왜곡합니다. 워크플로가 규율입니다: 네트워크 구축, 컴파일, 행렬 로드, 배정 실행, 그런 다음 결과를 교통량 조사와 GEH 통계량에 대조하여 믿기 전에 확인합니다. 계획 대안도 같은 방식으로 테스트됩니다 — 대안을 코딩하고, 배정하고, 직관이 아닌 기준 사례와 비교하십시오.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">배정 워크플로</span>
+      <div class="formula-expr formula-text">code network → compile → load matrix → assign → validate against counts</div>
+      <span class="formula-note">모든 단계에 확인이 필요하며, 결과는 그 뒤의 코딩만큼만 좋습니다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>주차 조사와 회전율</h2>
+  <div class="body"><p>주차 조사는 <strong>누적량</strong> — 특정 시점에 주차된 차량 수 — 과 <strong>주차 시간</strong>, 각 주차의 길이를 측정합니다. 누적량은 차량이 도착하고 떠남에 따라 변하며, 첨두 누적량이 주차 공급 규모를 정합니다. 주차 시간은 단기 체류 쇼퍼와 장기 체류 통근자를 구분하며, 두 집단은 다른 정책을 필요로 합니다.</p>
+<p><strong>회전율</strong>은 일정 기간 동안 하나의 주차 공간이 서비스한 서로 다른 차량의 수입니다: 회전율이 높은 단기 공간은 많은 사용자를 서비스하고, 회전율이 낮은 공간은 한 통근자를 하루 종일 서비스합니다. 단속, 요금, 시간 제한은 모두 이 둘 사이의 격차를 겨냥합니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">주차 누적량</span>
+      <div class="formula-expr formula-math">\[A_t = A_{t-1} + \mathrm{arrivals}_t - \mathrm{departures}_t\]</div>
+      <span class="formula-note">조사 기간 동안 추적하여 첨두를 찾음</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">주차 회전율</span>
+      <div class="formula-expr formula-math">\[U = \frac{V}{S}\]</div>
+      <span class="formula-note">V는 기간 동안 주차된 차량, S는 공간; 예: 100개 공간에 400대 차량이면 회전율 4</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>토지이용, 검증 및 판단</h2>
+  <div class="body"><p>교통과 토지이용은 서로를 형성합니다. 더 빠른 링크는 접근성을 높이고, 이는 개발을 유인하며, 이는 교통을 발생시킵니다: <strong>유도 수요</strong>. 이 피드백을 무시하는 모델은 수요를 고정으로 가정하여 도로 계획을 실제보다 좋게 보이게 합니다.</p>
+<p>검증은 모델링된 흐름을 교통량 조사와 비교하며, 종종 규모에 둔감하고 적용하기 쉬운 <strong>GEH</strong> 통계량을 사용합니다. 계획가들은 또한 불확실성을 보고하고, 시나리오를 테스트하며, 틀렸을 때의 비용을 누가 부담하는지 묻습니다. 계획은 미래에 대한 측정이 아니라 미래에 대한 논증이기 때문입니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">GEH 통계량</span>
+      <div class="formula-expr formula-math">\[\mathrm{GEH} = \sqrt{\frac{2 (M - C)^2}{M + C}}\]</div>
+      <span class="formula-note">M은 모델링된 흐름, C는 계수된 흐름; 5 미만은 양호, 10 초과는 문제 신호</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>분류별 교통량 조사</dt><dd>차량 유형, 방향, 시간대별로 통행량을 기록하는 교통량 조사.</dd></div><div class="term"><dt>기종점 행렬</dt><dd>출발지 존과 도착지 존 간의 통행을 나타내는 표.</dd></div><div class="term"><dt>확장 계수</dt><dd>표본 조사를 모집단 또는 대표적인 하루로 확장하는 승수.</dd></div><div class="term"><dt>BPR 함수</dt><dd>흐름 대 용량 비율의 함수로 링크 통행 시간을 제공하는 용량-지체 관계.</dd></div><div class="term"><dt>중력 모델</dt><dd>출발지 발생과 도착지 유인에 따라 흐름이 증가하고 통행 비용에 따라 감소하는 통행 분포 모델.</dd></div><div class="term"><dt>GEH 통계량</dt><dd>모델링된 흐름과 계수된 흐름의 차이를 측정하는 규모 독립적 지표로, 5가 일반적인 허용 기준.</dd></div><div class="term"><dt>통행률</dt><dd>가구, 개인 또는 차량당 평균 통행 수로, 카테고리 분석에서 존 합계를 확장하는 데 사용.</dd></div><div class="term"><dt>주차 회전율</dt><dd>일정 기간 동안 하나의 주차 공간이 서비스한 차량 수, 즉 주차된 차량 수 대 공간 수의 비율.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>모델링된 링크를 교통량 조사와 대조하기</h2>
+        <p class="problem">한 링크의 자유류 시간은 5.0분이고 용량은 5,000대/시입니다. 모델은 α = 0.15, β = 4를 사용하여 4,500대/시를 배정합니다. 관측된 교통량은 3,800대/시입니다. 모델링된 통행 시간과 GEH 통계량을 구하고, 이 링크에 대한 모델을 판단하십시오.</p>
+        <ol><li>v/c = 4,500 / 5,000 = 0.9를 계산하면 (v/c)^4 = 0.6561입니다.</li><li>BPR 적용: t = 5.0 × (1 + 0.15 × 0.6561) = 5.0 × 1.0984 = 5.49분.</li><li>GEH = √[2 × (4,500 − 3,800)² / (4,500 + 3,800)] = √(980,000 / 8,300) = √118.1 = 10.9.</li><li>일반적인 범위와 비교: 5 미만은 허용, 5에서 10은 조사 필요, 10 초과는 불량 적합을 나타냄.</li><li>예측을 사용하기 전에 링크 주변의 존 부하, 중심점 연결선, 네트워크 코딩을 조사하십시오.</li></ol>
+        <div class="answer"><b>Answer</b>모델링된 통행 시간은 5.49분이고 GEH = 10.9이므로, 이 링크는 일반적인 검증 범위를 통과하지 못합니다. 모델이 여기서 흐름을 과다 배정하고 있으며, 계획을 평가하기 전에 원인을 찾아야 합니다.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>방법보다 조사의 목적을 먼저 진술하십시오: 기종점 질문은 아무리 정확한 분류별 교통량 조사로도 답할 수 없습니다.</li><li>확장 및 표본추출 문제에서는 공식을 쓰고, 대입하고, 커버리지 편향에 대해 논평하십시오 — 무작위 오차만이 전부인 경우는 드뭅니다.</li><li>네트워크 문제에서는 평형을 논하기 전에 v/c와 용량-지체 함수를 확인하십시오. 평형 결과는 링크 곡선에 달려 있기 때문입니다.</li><li>모든 통행 발생 계수의 단위 — 가구당 일일 통행 — 를 명시하십시오. 일일, 주간, 연간 비율 사이를 전환하다가 점수를 잃기 때문입니다.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>통행이 어디서 시작되고 끝나는지를 직접 측정하는 조사는?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>주차 누적량 조사</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>교차로에서의 분류별 교통량 조사</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>번호판 매칭 또는 노변 인터뷰 조사</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>지점 속도 조사</span></button></div>
+    <div class="quiz-explain"><b>Why</b>개별 통행을 추적하거나 질문하는 방법만이 기종점 패턴을 제공합니다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>BPR 함수에서 통행 시간이 흐름에 따라 증가하는 이유는:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>용량이 고정되어 있고 v/c 비율이 증가하기 때문</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>자유류 속도가 통행량에 따라 증가하기 때문</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>부하 시 링크가 짧아지기 때문</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>지수 β가 음수이기 때문</span></button></div>
+    <div class="quiz-explain"><b>Why</b>(v/c)^β 항은 흐름이 용량에 접근함에 따라 커져 자유류 시간 위의 지체를 증가시킵니다.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>모델링된 흐름과 관측된 흐름 사이의 GEH 값 12는 보통 다음을 의미합니다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>교통량 조사와 모델이 정상 오차 내에서 일치함</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>링크 적합이 불량하여 조사가 필요함</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>GEH가 0이 될 때까지 조사를 반복해야 함</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>모델이 비정상적으로 정확함</span></button></div>
+    <div class="quiz-explain"><b>Why</b>10을 초과하는 값은 일반적으로 불량 적합으로 처리되어 모델과 데이터를 점검하게 합니다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q04</span><span>표본 크기를 네 배로 늘리면 표준 표본추출 오차는 약 몇 배로 줄어듭니까?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>2</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>4</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>8</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>16</span></button></div>
+    <div class="quiz-explain"><b>Why</b>오차는 1/√n에 비례하므로, 표본이 네 배가 되면 오차는 절반이 됩니다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q05</span><span>회귀 통행 발생 모델이 T = 1.2 + 2.4 H를 제공하며, H는 가구 규모(인원)입니다. 평균 3.1인 300가구의 존은 약 얼마의 통행을 발생시킵니까?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>864 통행</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>8 640 통행</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1 110 통행</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2 590 통행</span></button></div>
+    <div class="quiz-explain"><b>Why</b>가구당: 1.2 + 2.4 × 3.1 = 8.64 통행, 300가구는 총 약 2 590 통행을 발생시킵니다.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q06</span><span>80개 공간의 주차장이 07:00에서 19:00 사이에 240대의 차량을 서비스합니다. 회전율은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.33</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>3</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>8</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>19 200</span></button></div>
+    <div class="quiz-explain"><b>Why</b>회전율은 주차된 차량 수를 공간 수로 나눈 값입니다: 240 / 80 = 기간 동안 공간당 3대.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="transport-operations-management.ko.html"><span>Professional</span><b>교통 운영 및 관리</b></a><a class="related-card" href="design-of-transport-infrastructure.ko.html"><span>Core</span><b>교통 인프라 설계</b></a><a class="related-card" href="transportation-highway-engineering.ko.html"><span>Core</span><b>교통 및 도로 공학</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="ai-iot.ko.html"><small>Previous</small><b>AIoT</b></a><a class="next" href="infrastructure-management.ko.html"><small>Next</small><b>인프라 관리</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">교통량 조사는 흐름을, 인터뷰는 출발지를 제공한다.</p><p class="margin-note">확장은 오차도 함께 곱한다.</p><p class="margin-note">평형을 믿기 전에 v/c를 확인하라.</p><p class="margin-note">GEH 5 미만이 안심 구간이다.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

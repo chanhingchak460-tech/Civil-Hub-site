@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fluid Mechanics — Civil Hub</title>
+<meta name="description" content="How fluids at rest and in motion push on structures, and how water moves through pipes, channels and machines. Hydrostatics, buoyancy, Bernoulli, momentum,">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/fluid-mechanics.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="Fluid Mechanics — Civil Hub">
+<meta property="og:description" content="How fluids at rest and in motion push on structures, and how water moves through pipes, channels and machines. Hydrostatics, buoyancy, Bernoulli, momentum,">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/fluid-mechanics.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="fluid-mechanics.html" data-alt-zh-hant="fluid-mechanics.zh-Hant.html" data-alt-ja="fluid-mechanics.ja.html" data-alt-ko="fluid-mechanics.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">Fluid Mechanics</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Core</p>
+          <h1>Fluid Mechanics</h1>
+          <p class="subject-sub">Pressure, flow and forces on bodies in water</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Core</li><li><b data-i18n="subject.read">Read</b>12 min</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>18</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M40 84 H300 M40 132 H300" stroke="currentColor" stroke-width="1.5"/><path d="M40 84 V132 M300 84 V132" stroke="currentColor" stroke-width="1.5"/><path d="M56 96 q40 -10 80 0 t80 0 t60 0" stroke="var(--accent)" stroke-width="1" opacity="0.85"/><path d="M56 106 q40 -10 80 0 t80 0 t60 0" stroke="var(--accent)" stroke-width="1" opacity="0.6699999999999999"/><path d="M56 118 q40 -10 80 0 t80 0 t60 0" stroke="var(--accent)" stroke-width="1" opacity="0.49"/><path d="M64 70 v10 M64 74 l-4 4 M64 74 l4 4" stroke="var(--faint)" stroke-width="1"/><text x="40" y="58" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">P₁</text><text x="310" y="58" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="end" letter-spacing="0.18em">P₂</text><text x="170" y="168" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PIPE FLOW</text></svg>
+          <figcaption>Pipe flow — pressure drop along the section</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">What makes a fluid a fluid</a></li><li><a href="#sec-2">Pressure in a fluid at rest</a></li><li><a href="#sec-3">Forces on submerged surfaces</a></li><li><a href="#sec-4">Buoyancy and floating stability</a></li><li><a href="#sec-5">Continuity and the energy equation</a></li><li><a href="#sec-6">Momentum and forces on bodies</a></li><li><a href="#sec-7">Pipe flow, friction and minor losses</a></li><li><a href="#sec-8">Boundary layers, separation and drag</a></li><li><a href="#sec-9">Weirs: discharge from the upstream level</a></li><li><a href="#sec-10">The venturi meter as a working gauge</a></li><li><a href="#sec-11">Floating stability in numbers</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">How fluids at rest and in motion push on structures, and how water moves through pipes, channels and machines. Hydrostatics, buoyancy, Bernoulli, momentum, friction losses and boundary layers form one connected toolkit for water engineering.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="fluid-mechanics" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>What makes a fluid a fluid</h2>
+  <div class="body"><p>A fluid deforms continuously under shear, however small the shear. Two properties dominate: density ρ, the mass per unit volume, and <strong>dynamic viscosity</strong> μ, the resistance to shearing. For a Newtonian fluid the shear stress is proportional to the velocity gradient, with μ as the constant.</p>
+<p>Water near room temperature has ρ ≈ 998 kg/m³ and μ ≈ 1.0 × 10⁻³ Pa·s; air is about 1.2 kg/m³ and 1.8 × 10⁻⁵ Pa·s. <strong>Kinematic viscosity</strong> ν = μ/ρ is convenient because it appears directly in the Reynolds number.</p>
+<p>A real fluid sticks to a solid surface — the no-slip condition — so velocity is zero at the wall. That one fact creates the boundary layer and most of the friction in engineering.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Newtonian shear stress</span>
+      <div class="formula-expr formula-math">\[\tau = \mu \frac{\mathrm{d}u}{\mathrm{d}y}\]</div>
+      <span class="formula-note">velocity gradient du/dy</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Kinematic viscosity</span>
+      <div class="formula-expr formula-math">\[\nu = \frac{\mu}{\rho}\]</div>
+      <span class="formula-note">units of m²/s</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Pressure in a fluid at rest</h2>
+  <div class="body"><p>Pressure acts equally in all directions in a fluid at rest, and depth sets its value: p = p₀ + ρ g h below a free surface. The same fluid at the same depth has the same pressure whatever the container's shape.</p>
+<p>A manometer reads a pressure difference as a column height, and <strong>pressure head</strong> p/(ρg), quoted in metres of water, keeps the arithmetic in the same units as elevation.</p>
+<p>A hydraulic jack uses the same principle: modest pressure over a small piston, multiplied by a much larger area.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Hydrostatic pressure</span>
+      <div class="formula-expr formula-math">\[p = p_0 + \rho g h\]</div>
+      <span class="formula-note">below the free surface</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>Forces on submerged surfaces</h2>
+  <div class="body"><p>The force on a plane surface is the pressure at its centroid times its area: F = ρ g h̄ A, where h̄ is the depth of the centroid. On a horizontal base this is pressure times area; on a vertical gate the pressure grows with depth, so the resultant acts lower.</p>
+<p>That point is the <strong>centre of pressure</strong>, y_cp = y_c + I_x/(y_c A), with y measured along the plane from the free surface. For a rectangular gate of depth d and width b, I_x = b d³/12.</p>
+<p>Keep the dry side in the balance. A gate with water on one side and air on the other feels a net force, and that difference is what the hinge must resist.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Force on a plane surface</span>
+      <div class="formula-expr formula-math">\[F = \rho g \bar{h} A\]</div>
+      <span class="formula-note">depth of the centroid</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Centre of pressure</span>
+      <div class="formula-expr formula-math">\[y_{cp} = y_c + \frac{I_x}{y_c A}\]</div>
+      <span class="formula-note">always below the centroid</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Buoyancy and floating stability</h2>
+  <div class="body"><p>Archimedes: the buoyant force equals the weight of fluid displaced, F_B = ρ_fluid g V_displaced, acting through the centroid of the displaced volume. A body denser than the fluid sinks until the displaced weight balances it; a floating body displaces exactly its own weight.</p>
+<p>Floating upright is a separate question. When the body tilts, the centre of buoyancy moves and the weight and buoyancy forces form a couple. The <strong>metacentric height</strong> GM measures that restoring effect: positive is stable, negative capsizes.</p>
+<p>Wide, shallow hulls are stable; narrow, tall ones are not.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Buoyant force</span>
+      <div class="formula-expr formula-math">\[F_B = \rho_{\text{fluid}} g V_{\text{displaced}}\]</div>
+      <span class="formula-note">at the displaced centroid</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Continuity and the energy equation</h2>
+  <div class="body"><p>Mass is conserved. For steady, incompressible flow through a changing area, Q = A₁V₁ = A₂V₂, so a constriction speeds the fluid up and a wider section slows it down.</p>
+<p><strong>Bernoulli's equation</strong> relates pressure, velocity and elevation along a streamline for steady, frictionless flow: p/(ρg) + V²/(2g) + z = constant. Each term is a head in metres — pressure, velocity and elevation head.</p>
+<p>It explains the venturi meter (higher throat velocity, lower pressure) and the pitot tube, which turns velocity head into a pressure difference. It fails wherever losses or pumps matter, which is most real pipework.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Continuity</span>
+      <div class="formula-expr formula-math">\[Q = A_1 V_1 = A_2 V_2\]</div>
+      <span class="formula-note">steady, incompressible</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Bernoulli equation</span>
+      <div class="formula-expr formula-math">\[\frac{p}{\rho g} + \frac{V^2}{2g} + z = \text{constant}\]</div>
+      <span class="formula-note">along a streamline, no losses</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>Momentum and forces on bodies</h2>
+  <div class="body"><p>Bernoulli gives pressures; <strong>momentum</strong> gives forces. For a steady stream, the net force on the fluid equals its rate of change of momentum, ΣF = ρQ(V_out − V_in), treated as vectors. The same force acts in reverse on whatever turns the flow — a bend, reducer or vane.</p>
+<p>A jet on a plate is the standard case: a flat plate stopping the jet normally feels F = ρQV, while a hemispherical cup turning it through 180° feels about twice that, which is why Pelton wheels use a split bucket. Measured forces fall short because the jet spreads and the flow is never perfectly steady.</p>
+<p>For a pipe bend the same balance gives the anchor force, often dominated by the pressure term.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Momentum balance</span>
+      <div class="formula-expr formula-math">\[\sum F = \rho Q (V_{\text{out}} - V_{\text{in}})\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Force of a jet on a vane</span>
+      <div class="formula-expr formula-math">\[F = \rho Q V (1 - \cos \theta)\]</div>
+      <span class="formula-note">90° flat plate, 180° cup</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Pipe flow, friction and minor losses</h2>
+  <div class="body"><p>Real pipes lose energy to friction. The <strong>Reynolds number</strong> Re = ρVD/μ decides the regime: below about 2000 the flow is laminar, above about 4000 turbulent, with a transition between.</p>
+<p>Laminar flow has f = 64/Re; turbulent f depends on Re and relative roughness, read from the <strong>Moody chart</strong> or the Colebrook equation. The <strong>Darcy–Weisbach</strong> equation turns f into a head loss, h_f = f L V²/(2gD). Because V is squared, doubling the flow rate roughly quadruples the loss — the most useful fact in pipe design.</p>
+<p>Fittings, bends and valves add <strong>minor losses</strong>, h_m = K V²/(2g). A long pipeline is dominated by friction; a compact plant often by fittings.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Reynolds number</span>
+      <div class="formula-expr formula-math">\[\mathrm{Re} = \frac{\rho V D}{\mu} = \frac{V D}{\nu}\]</div>
+      <span class="formula-note">inertia over viscosity</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Darcy–Weisbach head loss</span>
+      <div class="formula-expr formula-math">\[h_f = \frac{f L V^2}{2 g D}\]</div>
+      <span class="formula-note">not the Fanning factor</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Minor loss</span>
+      <div class="formula-expr formula-math">\[h_m = \frac{K V^2}{2g}\]</div>
+      <span class="formula-note">empirical, per fitting</span>
+    </div></div><div class="table-wrap"><table><caption>Pipe-flow relations at a glance</caption><thead><tr><th scope='col'>Quantity</th><th scope='col'>Relation</th><th scope='col'>Use</th></tr></thead><tbody><tr><td>Laminar friction factor</td><td>f = 64/Re</td><td>Re below about 2000</td></tr><tr><td>Friction head loss</td><td>h_f = f L V²/(2gD)</td><td>long straight pipe</td></tr><tr><td>Minor loss</td><td>h_m = K V²/(2g)</td><td>fittings and valves</td></tr><tr><td>Pump head</td><td>H = Δ(p/ρg + V²/2g + z) + losses</td><td>energy line</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>Boundary layers, separation and drag</h2>
+  <div class="body"><p>At a solid boundary the no-slip condition creates a <strong>boundary layer</strong> where velocity rises from zero at the wall to the free-stream value. It begins thin and laminar, grows along the surface, and beyond a critical Reynolds number turns turbulent — thicker, but with faster fluid near the wall.</p>
+<p>A boundary layer cannot follow a sharp adverse pressure gradient, so it separates and leaves a low-pressure wake. <strong>Drag</strong> combines friction on the surface with pressure drag from that wake: C_D = F/(½ρV²A).</p>
+<p>Streamlining delays separation and cuts pressure drag; a blunt body is dominated by it. The same ideas explain weir flow, where crest shape controls how the nappe springs clear.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Drag coefficient</span>
+      <div class="formula-expr formula-math">\[C_D = \frac{F}{\frac{1}{2} \rho V^2 A}\]</div>
+      <span class="formula-note">A is the frontal area</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Weirs: discharge from the upstream level</h2>
+  <div class="body"><p>A sharp-crested weir turns the upstream water level into a flow measurement. For a rectangular notch of width b, Q = (2/3) C_d √(2g) b h^{3/2}; for a V-notch of total angle α, Q = (8/15) C_d √(2g) tan(α/2) h^{5/2}, with h measured from the crest or vertex.</p>
+<p>The edges must be sharp so the <strong>nappe</strong> springs clear; a clinging nappe invalidates the rating. Calibration plots log Q against log h: the slope should read 1.5 or 2.5 respectively, and the intercept gives the discharge coefficient.</p>
+<p>A 90° notch passes less water than a 60° notch at the same head — narrowing the angle raises sensitivity for small flows.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Rectangular weir discharge</span>
+      <div class="formula-expr formula-math">\[Q = \frac{2}{3} C_d \sqrt{2g}\, b\, h^{3/2}\]</div>
+      <span class="formula-note">h above the crest, b the notch width</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">V-notch weir discharge</span>
+      <div class="formula-expr formula-math">\[Q = \frac{8}{15} C_d \sqrt{2g} \tan\frac{\alpha}{2}\, h^{5/2}\]</div>
+      <span class="formula-note">α the total notch angle, h from the vertex</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>The venturi meter as a working gauge</h2>
+  <div class="body"><p>A venturi meters flow from a measured pressure drop. With upstream area A₁ and throat area A₂, the ideal discharge follows from continuity and Bernoulli; friction and contraction fold into the <strong>coefficient of discharge</strong> C_d, typically 0.92–0.99, so Q = C_d A₂ √[2g Δh / (1 − (A₂/A₁)²)] with Δh the piezometric head drop.</p>
+<p>The laboratory calibration plotted Q against √Δh and read C_d ≈ 0.96 from the slope, constant across the flow range.</p>
+<p>Piezometer tubes along the meter map the pressure drop and show most of it recovering in the diffuser.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Venturi discharge</span>
+      <div class="formula-expr formula-math">\[Q = C_d A_2 \sqrt{\frac{2 g \Delta h}{1 - (A_2/A_1)^2}}\]</div>
+      <span class="formula-note">Δh piezometric head difference between inlet and throat</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>Floating stability in numbers</h2>
+  <div class="body"><p>Stability of a floating body is quantified by the <strong>metacentric height</strong> GM = I/V − BG, where I is the second moment of the waterplane area, V the displaced volume and BG the height of the centre of gravity above the centre of buoyancy. Positive GM means the metacentre sits above G and small heels restore; negative GM capsizes.</p>
+<p>A rectangular barge 10 m by 4 m displacing 100 m³ has I/V = (10 × 4³/12)/100 = 0.53 m, so G must stay within about half a metre above B.</p>
+<p>Wide, shallow hulls forgive; tall, narrow loads do not.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Metacentric height</span>
+      <div class="formula-expr formula-math">\[\mathrm{GM} = \frac{I}{V} - \mathrm{BG}\]</div>
+      <span class="formula-note">positive for stable equilibrium</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Viscosity</dt><dd>A fluid&#x27;s resistance to shearing, measured as the proportionality between shear stress and velocity gradient.</dd></div><div class="term"><dt>Centre of pressure</dt><dd>The point on a submerged surface through which the resultant hydrostatic force acts; it lies below the centroid.</dd></div><div class="term"><dt>Metacentric height</dt><dd>The distance between the centre of gravity and the metacentre; positive values make a floating body stable.</dd></div><div class="term"><dt>Reynolds number</dt><dd>The dimensionless ratio ρVD/μ that predicts whether flow is laminar or turbulent.</dd></div><div class="term"><dt>Darcy friction factor</dt><dd>The dimensionless factor f in the Darcy–Weisbach equation, a function of Reynolds number and relative roughness.</dd></div><div class="term"><dt>Boundary layer</dt><dd>The thin region next to a surface where velocity rises from zero at the wall to the free-stream value.</dd></div><div class="term"><dt>Coefficient of discharge</dt><dd>The ratio of actual to theoretical flow through a meter or weir, folding in contraction and friction; typically 0.92–0.99 for a venturi.</dd></div><div class="term"><dt>Nappe</dt><dd>The sheet of water springing clear over a weir crest; a clinging nappe means the weir is not properly ventilated and its rating fails.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Friction head loss in a water main</h2>
+        <p class="problem">Water with kinematic viscosity ν = 1.0 × 10⁻⁶ m²/s flows at 0.050 m³/s through a 150 mm diameter steel pipe 200 m long. Take the Darcy friction factor as 0.020. Find the velocity, check the Reynolds number, compute the friction head loss, and state the pressure drop it represents.</p>
+        <ol><li>Cross-sectional area: A = πD²/4 = π × 0.15²/4 = 0.01767 m².</li><li>Velocity: V = Q/A = 0.050/0.01767 = 2.83 m/s.</li><li>Reynolds number: Re = VD/ν = (2.83 × 0.15)/(1.0 × 10⁻⁶) = 4.2 × 10⁵, well above 4000, so the flow is turbulent and f = 0.020 is plausible.</li><li>Friction head loss: h_f = f L V²/(2gD) = (0.020 × 200 × 2.83²)/(2 × 9.81 × 0.15) = 32.0/2.94 = 10.9 m.</li><li>Pressure drop: Δp = ρ g h_f = 1000 × 9.81 × 10.9 = 1.07 × 10⁵ Pa ≈ 107 kPa.</li></ol>
+        <div class="answer"><b>Answer</b>The velocity is 2.83 m/s and Re ≈ 4.2 × 10⁵, so the flow is turbulent. The friction head loss is about 10.9 m, equivalent to a pressure drop of roughly 107 kPa. That is about 5.4 m of head per 100 m of pipe, high but believable at this velocity.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>Sketch the free body and mark the pressure on both sides of a gate; forgetting the dry side is the commonest error.</li><li>Check the Reynolds number before choosing a friction law — quoting 64/Re for a turbulent flow loses marks immediately.</li><li>In Bernoulli questions, state the assumptions (steady, incompressible, frictionless, along a streamline) and where losses enter the energy line.</li><li>Keep units consistent: convert mm to m, and remember that head in metres converts to pressure through ρg.</li><li>Weir and venturi calibration questions want a log–log or √Δh plot, not a table of numbers — quote the expected slope (1.5 or 2.5) and compare before reading off the coefficient.</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Manning roughness coefficient n for pipes and channels</h3>
+  <p class="ref-table-intro">Values of Manning&#x27;s n used with the Manning equation V = (1/n) R^(2/3) S^(1/2) to estimate velocity, and hence discharge, in pipes, culverts and open channels. The Best-to-Bad range shows how much judgement the choice of roughness needs.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Surface / channel type</th><th scope='col'>Best</th><th scope='col'>Good</th><th scope='col'>Fair</th><th scope='col'>Bad</th></tr></thead><tbody><tr><td>Uncoated cast-iron pipe</td><td>0.012</td><td>0.013</td><td>0.014</td><td>0.015</td></tr><tr><td>Concrete pipe</td><td>0.012</td><td>0.013</td><td>0.015</td><td>0.016</td></tr><tr><td>Vitrified sewer pipe</td><td>0.010</td><td>0.013</td><td>0.015</td><td>0.017</td></tr><tr><td>Brick in cement mortar; brick sewers</td><td>0.012</td><td>0.013</td><td>0.015</td><td>0.017</td></tr><tr><td>Neat cement surfaces</td><td>0.010</td><td>0.011</td><td>0.012</td><td>0.013</td></tr><tr><td>Earth canals, straight and uniform</td><td>0.017</td><td>0.020</td><td>0.0225</td><td>0.025</td></tr><tr><td>Clean straight natural stream, full stage, no rifts or deep pools</td><td>0.025</td><td>0.0275</td><td>0.030</td><td>0.033</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 13 of the Stormwater Drainage Manual (5th Edition, January 2018, incorporating Corrigenda No. 1/2022 and No. 2/2024), which credits Brater and King (1976). n is in s/m^(1/3).</p>
+  <p class="ref-table-caveat">Revision summary only. Roughness grows with age, sediment and vegetation, and the table is a guide rather than a design value; verify and justify n against the current manual for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>A vertical rectangular gate is lowered so that its centroid is twice as deep. The total hydrostatic force on it:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Doubles</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Quadruples</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Halves</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Stays the same</span></button></div>
+    <div class="quiz-explain"><b>Why</b>F = ρgh̄A and the area is unchanged, so doubling the centroid depth doubles the force.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>In a horizontal venturi meter carrying a steady incompressible flow, the pressure at the throat is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The same, because the pipe is horizontal</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Zero at the throat</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Higher than upstream, because the area is smaller</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Lower than upstream, because the velocity is higher</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Continuity gives a higher velocity at the smaller throat, and Bernoulli converts that rise in velocity head into a fall in pressure.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>If the flow rate in a turbulent pipe doubles while the friction factor stays roughly constant, the friction head loss becomes:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The same</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Twice as large</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>About four times as large</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Half as large</span></button></div>
+    <div class="quiz-explain"><b>Why</b>h_f ∝ V² and V doubles with Q, so the head loss rises by a factor of about four.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>A ship floats in equilibrium. The buoyant force acting on it equals:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The pressure at the keel multiplied by the deck area</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Zero, because the vessel is in equilibrium</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The weight of the water displaced by the harbour</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The total weight of the vessel and everything on board</span></button></div>
+    <div class="quiz-explain"><b>Why</b>A floating body displaces water whose weight equals the total weight of the vessel and its contents, so the buoyant force balances that total weight.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>For a sharp-crested V-notch weir, the discharge scales with the head h as:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>h^{3/2}</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>h^{5/2}</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>h²</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>h^{1/2}</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Q = (8/15) C_d √(2g) tan(α/2) h^{5/2}, so the V-notch follows a 5/2 power law — steeper than the rectangular weir&#x27;s 3/2.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>A floating body has its centre of gravity 0.2 m above the centre of buoyancy, and I/V = 0.6 m. Its metacentric height is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>−0.2 m</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.2 m</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.4 m</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>0.8 m</span></button></div>
+    <div class="quiz-explain"><b>Why</b>GM = I/V − BG = 0.6 − 0.2 = 0.4 m, positive, so small angles of heel are restored and the body is stable.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="soil-mechanics.html"><span>Core</span><b>Soil Mechanics</b></a><a class="related-card" href="engineering-geology.html"><span>Core</span><b>Engineering Geology</b></a><a class="related-card" href="air-noise-pollution.html"><span>Environmental</span><b>Air &amp; Noise Pollution</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="data-analytics-r.html"><small>Previous</small><b>Data Analytics with R</b></a><a class="next" href="soil-mechanics.html"><small>Next</small><b>Soil Mechanics</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Drainage Services Department. (2018). <i>Stormwater Drainage Manual: Planning, Design and Management (5th Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.dsd.gov.hk/EN/Files/Technical_Manual/technical_manuals/SDM_2018_5th.pdf" rel="noopener">https://www.dsd.gov.hk/EN/Files/Technical_Manual/technical_manuals/SDM_2018_5th.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">Same depth, same pressure — tank shape is irrelevant.</p><p class="margin-note">Check Re before choosing a friction law.</p><p class="margin-note">h_f grows with V² in turbulent flow.</p><p class="margin-note">Streamlining reduces pressure drag, not friction drag.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

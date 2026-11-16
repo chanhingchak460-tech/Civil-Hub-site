@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>머신러닝 — Civil Hub</title>
+<meta name="description" content="모델이 데이터에서 패턴을 학습하는 방법과 그 모델이 얼마나 좋은지 판단하는 방법을 다룹니다. 회귀, 분류, 검증, 실제 질문에 맞는 지표, 과적합, 신경망, 그리고 모델 배포의 윤리를 포함합니다.">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/machine-learning.ko.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="머신러닝 — Civil Hub">
+<meta property="og:description" content="모델이 데이터에서 패턴을 학습하는 방법과 그 모델이 얼마나 좋은지 판단하는 방법을 다룹니다. 회귀, 분류, 검증, 실제 질문에 맞는 지표, 과적합, 신경망, 그리고 모델 배포의 윤리를 포함합니다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/machine-learning.ko.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="machine-learning.html" data-alt-zh-hant="machine-learning.zh-Hant.html" data-alt-ja="machine-learning.ja.html" data-alt-ko="machine-learning.ko.html" data-page-lang="ko" data-root="../" data-total="42" data-page="library" data-content-lang="ko">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">머신러닝</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">컴퓨팅</p>
+          <h1>머신러닝</h1>
+          <p class="subject-sub">데이터로부터 학습하는 모델과 그 평가 방법</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>컴퓨팅</li><li><b data-i18n="subject.read">Read</b>9 분</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>10</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">학습은 함수를 적합시키는 것</a></li><li><a href="#sec-2">회귀와 분류</a></li><li><a href="#sec-3">훈련: 손실과 기울기</a></li><li><a href="#sec-4">검증과 누출</a></li><li><a href="#sec-5">질문에 맞는 지표</a></li><li><a href="#sec-6">과적합과 정규화</a></li><li><a href="#sec-7">신경망</a></li><li><a href="#sec-8">윤리와 배포</a></li><li><a href="#sec-9">트리 앙상블: 테이블 데이터의 챔피언</a></li><li><a href="#sec-10">정직하게 수행하는 하이퍼파라미터 튜닝</a></li><li><a href="#sec-11">비지도 학습: 군집화와 PCA</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">모델이 데이터에서 패턴을 학습하는 방법과 그 모델이 얼마나 좋은지 판단하는 방법을 다룹니다. 회귀, 분류, 검증, 실제 질문에 맞는 지표, 과적합, 신경망, 그리고 모델 배포의 윤리를 포함합니다.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="machine-learning" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>학습은 함수를 적합시키는 것</h2>
+  <div class="body"><p>머신러닝은 규칙을 직접 작성하는 대신 예시로부터 함수를 적합시킵니다.</p>
+<ul>
+<li><strong>지도 학습</strong>: 각 예시에 레이블이 붙습니다. 회귀는 숫자를, 분류는 범주를 예측합니다.</li>
+<li><strong>비지도</strong> 방법은 레이블 없이 구조를 찾습니다 — 군집화, 차원 축소.</li>
+<li><strong>강화</strong> 학습은 보상으로부터 행동을 학습합니다.</li>
+</ul>
+<p>추정치는 표본의 품질을 넘어설 수 없습니다. 편향되었거나 대표성이 없는 데이터는 배포 시 틀리지만 확신에 찬 모델을 만들어냅니다.</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>회귀와 분류</h2>
+  <div class="body"><p>선형 회귀는 최소제곱법으로 수치 결과에 직선을 적합시키며, 오차항은 직선이 설명하지 못하는 부분을 모읍니다. 예/아니오 결정의 경우 로지스틱 회귀는 선형 점수를 <strong>시그모이드</strong>에 통과시켜 0과 1 사이의 확률을 제공합니다.</p>
+<p>점수는 0에서 경계를 정의하며, 출력은 판정이 아니라 확률입니다. 임계값이 이를 클래스로 변환하며, 거짓 양성과 거짓 음성 사이에서 균형을 맞춥니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">선형 회귀</span>
+      <div class="formula-expr formula-math">\[y = \beta_0 + \beta_1 x + \varepsilon\]</div>
+      <span class="formula-note">ε는 직선이 설명하지 못하는 y의 부분</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">로지스틱(시그모이드) 모델</span>
+      <div class="formula-expr formula-math">\[p = \frac{1}{1 + e^{-s}}, \quad s = w \cdot x + b\]</div>
+      <span class="formula-note">p는 확률이며, 클래스는 선택된 임계값에서 결정됨</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>훈련: 손실과 기울기</h2>
+  <div class="body"><p>훈련은 예측이 레이블에 가까워지도록 매개변수를 선택합니다.</p>
+<ul>
+<li><strong>손실 함수</strong>는 차이를 측정합니다 — 회귀에는 제곱 오차, 분류에는 교차 엔트로피.</li>
+<li><strong>경사 하강법</strong>은 손실의 기울기에 반대 방향으로 각 가중치를 조금씩 조정합니다.</li>
+<li>학습률은 핵심 선택입니다: 너무 작으면 훈련이 느려지고, 너무 크면 손실이 요동치거나 발산합니다.</li>
+<li>미니배치는 잡음이 있는 기울기를 속도와 맞바꿉니다. 데이터를 한 번 통과하는 것이 에포크입니다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">경사 하강법 업데이트</span>
+      <div class="formula-expr formula-math">\[w \leftarrow w - \eta \frac{\partial L}{\partial w}\]</div>
+      <span class="formula-note">η는 학습률이며, 각 단계는 기울기의 반대 방향</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>검증과 누출</h2>
+  <div class="body"><p>모델이 학습한 데이터로 채점하는 것은 자기 숙제를 스스로 채점하는 것과 같습니다. 훈련, 검증, 테스트 세트로 나누고, 훈련으로 적합시키고, 검증으로 하이퍼파라미터를 선택하며, 테스트 세트는 마지막에 한 번만 사용합니다. <strong>k-겹 교차 검증</strong>은 검증 폴드를 돌려 추정치가 모든 행을 사용하도록 합니다.</p>
+<p><strong>누출</strong>은 조용한 킬러입니다: 분할 전 스케일링, 세트 간 중복 레코드, 또는 결과 이후에 기록된 특성. 시간 순서가 있는 데이터는 무작위가 아니라 시간에 따라 분할해야 합니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">층화 분할 및 적합</span>
+      <div class="formula-expr formula-text">X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.2, stratify=y)
+model.fit(X_tr, y_tr)
+score = model.score(X_te, y_te)</div>
+      <span class="formula-note">stratify는 두 부분에서 클래스 균형을 유지하며, 훈련 행에만 적합함</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>질문에 맞는 지표</h2>
+  <div class="body"><p>정확도는 첫 번째 지표이며 종종 잘못된 지표입니다. 1,000건 중 60건이 양성인 경우, 항상 아니오라고 말하는 모델은 94% 정확도를 기록하며 아무것도 잡아내지 못합니다.</p>
+<ul>
+<li><strong>혼동 행렬</strong>은 진양성, 거짓 양성, 거짓 음성, 진음성을 분리하며, 여기서 <strong>정밀도</strong>와 <strong>재현율</strong>이 나옵니다.</li>
+<li><strong>F1</strong>은 둘의 균형을 맞추며, ROC-AUC는 모든 임계값에서의 순위 품질을 측정합니다.</li>
+<li>회귀 지표는 다릅니다: RMSE는 큰 오차에 페널티를 주고, MAE는 원래 단위를 유지하며, R²는 설명된 변동입니다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">정밀도와 재현율</span>
+      <div class="formula-expr formula-math">\[\mathrm{precision} = \frac{TP}{TP + FP}, \quad \mathrm{recall} = \frac{TP}{TP + FN}\]</div>
+      <span class="formula-note">정밀도는 거짓 경보에, 재현율은 놓친 양성에 페널티를 줌</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">F1 점수</span>
+      <div class="formula-expr formula-math">\[F_1 = \frac{2 \cdot \mathrm{precision} \cdot \mathrm{recall}}{\mathrm{precision} + \mathrm{recall}}\]</div>
+      <span class="formula-note">조화 평균이므로 어느 한쪽이 나쁘면 전체가 낮아짐</span>
+    </div></div><div class="table-wrap"><table><caption>분류 지표와 각 지표의 함정</caption><thead><tr><th scope='col'>지표</th><th scope='col'>답하는 질문</th><th scope='col'>단독 사용 시 함정</th></tr></thead><tbody><tr><td>정확도</td><td>전체 사례 중 정답 비율</td><td>다수 클래스에 의해 지배됨</td></tr><tr><td>정밀도</td><td>플래그된 것 중 실제로 맞은 비율</td><td>놓친 양성을 무시함</td></tr><tr><td>재현율</td><td>실제 양성 중 찾아낸 비율</td><td>거짓 경보를 무시함</td></tr><tr><td>F1</td><td>둘의 균형</td><td>각 오류 유형의 비용을 숨김</td></tr><tr><td>ROC-AUC</td><td>임계값 전반의 순위 품질</td><td>선택된 임계값에서의 결정이 없음</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>과적합과 정규화</h2>
+  <div class="body"><p><strong>과적합</strong>은 패턴이 아니라 훈련 세트를 학습하는 것입니다: 훈련 오차는 계속 줄어들지만 검증 오차는 증가합니다. 이는 데이터 양에 비해 모델이 너무 유연하기 때문에 발생합니다.</p>
+<p>해결책은 더 많은 데이터, 더 단순한 모델, 또는 큰 가중치에 페널티를 추가하는 <strong>정규화</strong>입니다. 드롭아웃, 조기 종료, 증강은 다른 형태의 제약입니다. 과소적합은 반대의 실패이며, 패턴을 표현할 수 없는 모델은 아무리 튜닝해도 고쳐지지 않습니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">정규화 손실 (L2)</span>
+      <div class="formula-expr formula-math">\[L_{\mathrm{reg}} = L + \lambda \sum w^2\]</div>
+      <span class="formula-note">λ는 큰 가중치에 대한 페널티 강도를 제어함</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>신경망</h2>
+  <div class="body"><p>신경망은 가중 합과 비선형 활성화의 층을 쌓습니다. 깊이는 선형 모델이 표현할 수 없는 상호작용을 표현할 수 있게 합니다. ReLU는 일반적인 활성화 함수이며, <strong>역전파</strong>는 경사 하강법에 필요한 기울기를 계산합니다.</p>
+<p>합성곱 층은 이미지의 국소 구조를 활용하고, 시퀀스 모델은 순서가 있는 데이터를 처리합니다. 신경망은 고전 모델보다 더 많은 데이터와 연산이 필요하며, 해석이 어렵다는 점은 결정이 사람에게 영향을 미칠 때 중요합니다.</p></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>윤리와 배포</h2>
+  <div class="body"><p>좋은 테스트 점수가 배포 허가가 되는 것은 아닙니다. 훈련 데이터에 누가 대표되는지, 오류가 집단별로 불균등하게 발생하는지, 누가 결정에 이의를 제기할 수 있는지 물어야 합니다.</p>
+<p><strong>분포 이동</strong>은 훈련 후 세상이 변한다는 뜻이므로 성능이 저하되며 모니터링해야 합니다. 데이터, 지표, 한계를 문서화하고, 오류 비용이 높은 곳에서는 인간을 루프에 유지하십시오. 모델은 시스템의 구성 요소이며, 책임은 시스템이 집니다.</p></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>트리 앙상블: 테이블 데이터의 챔피언</h2>
+  <div class="body"><p><strong>결정 트리</strong>는 단순한 임계값 질문으로 데이터를 분할하고 잎에서 평균 또는 다수결을 예측합니다. 트리는 쉽게 과적합되므로 앙상블은 많은 트리를 모읍니다: <strong>랜덤 포레스트</strong>는 부트스트랩 표본과 무작위 특성 부분집합으로 트리를 키우고, <strong>그래디언트 부스팅</strong>은 트리를 순차적으로 구축하며 각 트리는 지금까지 앙상블의 오차에 적합됩니다.</p>
+<p>테이블 데이터 — 공학에서 흔한 측정값 표 — 의 경우 XGBoost와 LightGBM 같은 부스팅 트리가 보통 가장 먼저 시도할 모델입니다: 결측값과 혼합 단위를 처리하고, 튜닝이 적게 필요하며, 대부분의 작고 중간 크기 테이블에서 심층 신경망을 능가합니다. 주요 조정 대상은 학습률, 트리 깊이, 트리 수이며, 작은 학습률과 많은 트리가 기본 레시피입니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">부스팅 앙상블</span>
+      <div class="formula-expr formula-math">\[\hat{y} = \sum_{m=1}^{M} \eta \, h_m(x)\]</div>
+      <span class="formula-note">각 트리 h_m은 남은 오차에 적합되며, η는 학습률</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>정직하게 수행하는 하이퍼파라미터 튜닝</h2>
+  <div class="body"><p>하이퍼파라미터 — 깊이, 학습률, 정규화 강도 — 는 시행으로 선택되며, 각 시행은 채점에 사용된 데이터의 정보를 소비합니다. 테스트 세트가 아니라 <strong>검증</strong> 폴드에서 튜닝하십시오: 테스트 세트를 반복 사용하면 그것이 훈련 절차의 일부가 되어 최종 점수가 더 이상 편향되지 않은 추정치가 아닙니다.</p>
+<ul>
+<li><strong>교차 검증</strong>이 핵심 도구입니다: 훈련 데이터를 폴드로 나누고, 하나를 제외한 모두로 훈련하고, 남겨둔 폴드로 검증하며 돌립니다.</li>
+<li>클래스가 불균형하면 <strong>층화</strong> 폴드를 사용하여 각 폴드가 동일한 클래스 비율을 유지하도록 하십시오.</li>
+<li>최고 점수 대신 폴드 점수의 평균과 분산을 보고하십시오.</li>
+<li>모델 결과가 중요할 때는 전체 탐색을 중첩 교차 검증의 외부 루프로 감싸십시오.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">층화 k-겹 탐색</span>
+      <div class="formula-expr formula-text">skf = StratifiedKFold(n_splits=5, shuffle=True)
+grid = GridSearchCV(pipe, param_grid, cv=skf, scoring=&#x27;f1&#x27;)
+grid.fit(X_train, y_train)
+final_score = grid.score(X_test, y_test)</div>
+      <span class="formula-note">튜닝은 훈련 데이터의 폴드만 사용하며, 테스트 세트는 한 번만 사용됨</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>테스트 세트는 접촉하는 순간 소모됩니다</b>
+  테스트 세트를 본 후 내린 모든 결정 — 임계값, 특성, 모델 계열 — 은 그 점수를 낙관적으로 만듭니다. 정확히 한 번만 볼 수 있도록 계획하십시오.
+</div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>비지도 학습: 군집화와 PCA</h2>
+  <div class="body"><p>레이블이 없으면 모델은 구조를 찾습니다.</p>
+<ul>
+<li><strong>k-평균</strong> 군집화는 각 점을 가장 가까운 중심에 할당하고 할당이 변하지 않을 때까지 중심을 재계산합니다. 군집 내 제곱 거리를 최소화하므로 군집 수 k는 모델링 선택이며, 목적 함수 대 k의 엘보 플롯은 군집 추가가 더 이상 이득이 없는 지점을 제안합니다.</li>
+<li><strong>주성분 분석</strong>은 최대 분산 방향을 찾아 데이터를 그 방향으로 투영하여, 상관된 많은 열을 소수의 성분으로 압축합니다. 유지된 분산 비율은 투영이 보존하는 것을 측정하며, 누적 비율이 평탄해지면 성분을 버립니다.</li>
+</ul>
+<p>군집화 결과는 탐색적입니다 — 점수를 인용하기보다는 하류 목적에 대해 검증하십시오.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">k-평균 목적 함수</span>
+      <div class="formula-expr formula-math">\[\mathrm{SSE} = \sum_j \sum_{x \in C_j} \lVert x - \mu_j \rVert^2\]</div>
+      <span class="formula-note">각 점에서 군집 중심까지의 제곱 거리 합</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>지도 학습</dt><dd>입력에서 알려진 레이블로의 매핑을 학습하는 것으로, 숫자에는 회귀, 범주에는 분류를 포함합니다.</dd></div><div class="term"><dt>과적합</dt><dd>훈련 데이터에 너무 밀접하게 적합되어 모델이 새 데이터에서 성능이 나쁜 것.</dd></div><div class="term"><dt>정밀도</dt><dd>플래그된 사례 중 실제로 양성인 비율로, TP를 TP 더하기 FP로 나눈 값.</dd></div><div class="term"><dt>재현율</dt><dd>실제 양성 중 모델이 찾아낸 비율로, TP를 TP 더하기 FN으로 나눈 값.</dd></div><div class="term"><dt>교차 검증</dt><dd>훈련 데이터를 반복 분할하여 각 부분이 한 번씩 검증 역할을 하게 함으로써 더 안정적인 성능 추정치를 제공하는 것.</dd></div><div class="term"><dt>정규화</dt><dd>모델 복잡성이나 큰 가중치에 대한 페널티로 과적합을 줄이는 것.</dd></div><div class="term"><dt>분포 이동</dt><dd>배포 시 보이는 데이터가 훈련 데이터와 달라져 성능이 저하되는 것.</dd></div><div class="term"><dt>앙상블 학습</dt><dd>트리 같은 많은 기본 모델을 결합하여 분산이나 편향을 줄이고 예측을 개선하는 것.</dd></div><div class="term"><dt>군집화</dt><dd>레이블이 없는 데이터를 같은 그룹의 점들이 다른 그룹의 점들보다 서로 더 유사하도록 그룹화하는 것.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>스크리닝 모델의 혼동 행렬 읽기</h2>
+        <p class="problem">한 모델이 1,000건의 구조물 점검을 스크리닝합니다. 실제로 60개 부품이 결함이 있습니다. 모델은 50개 부품을 플래그하며, 그중 40개는 실제로 결함이고 10개는 아니며, 20개 결함 부품은 놓칩니다. 정확도, 정밀도, 재현율, F1을 계산하고 어떤 지표가 결정을 이끌어야 하는지 말하십시오.</p>
+        <ol><li>개수를 표시합니다: TP = 40, FP = 10, FN = 20, TN = 930.</li><li>정확도 = (TP + TN) / 전체 = (40 + 930) / 1000 = 0.97.</li><li>정밀도 = TP / (TP + FP) = 40 / 50 = 0.80.</li><li>재현율 = TP / (TP + FN) = 40 / 60 = 0.667.</li><li>F1 = 2 × 0.80 × 0.667 / (0.80 + 0.667) = 0.727.</li></ol>
+        <div class="answer"><b>Answer</b>정확도는 97%, 정밀도는 0.80, 재현율은 0.67, F1은 0.73입니다. 대표 정확도는 결함 세 개 중 하나를 놓친다는 사실을 숨기므로 재현율이 결정을 이끌어야 합니다: 더 많은 결함을 찾기 위해 임계값을 낮추고 더 많은 거짓 경보를 감수하며, 두 지표를 함께 보고하십시오.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>분류 지표를 계산하기 전에 혼동 행렬을 그리십시오. 산술이 더 쉽고 오류가 보입니다.</li><li>질문이 실제로 필요로 하는 지표를 명명하고, 정확도가 왜 오해를 부를지 한 문장으로 설명하십시오.</li><li>검증 점수가 비정상적으로 좋아 보이면 결과로 보고하기 전에 누출을 확인하십시오.</li><li>테이블 형식의 공학 데이터에는 신경망보다 그래디언트 부스팅 트리를 먼저 적합시키십시오. 보통 더 강하고 튜닝이 적게 필요합니다.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>양성이 3%뿐인 데이터셋에서 모델이 97% 정확도를 보고합니다. 주요 위험은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>정확도가 다수 클래스에 의해 지배되어 놓친 양성을 숨김</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>모델이 확실히 과적합됨</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>테스트 세트가 너무 컸음</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>정밀도가 재현율과 같아야 함</span></button></div>
+    <div class="quiz-explain"><b>Why</b>모든 곳에서 다수 클래스를 예측하면 양성을 찾지 못하면서도 높은 정확도를 얻으므로 정밀도와 재현율이 필요합니다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>최종적이고 편향되지 않은 성능 추정치를 제공하는 데 사용해야 하는 데이터셋은?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>모든 데이터를 결합한 것</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>훈련 세트</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>튜닝에 사용된 검증 세트</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>마지막에 한 번 사용하는 테스트 세트</span></button></div>
+    <div class="quiz-explain"><b>Why</b>검증으로 튜닝하면 정보가 누출되며, 남겨둔 테스트 세트만 깨끗한 추정치를 제공합니다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q03</span><span>훈련 손실은 계속 줄어들지만 검증 손실은 증가합니다. 이는 다음을 나타냅니다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>과적합</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>완벽하게 일반화하는 모델</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>학습률이 너무 작음</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>과소적합</span></button></div>
+    <div class="quiz-explain"><b>Why</b>모델이 훈련 데이터를 암기하고 일반화를 잃고 있으며, 이것이 과적합의 특징입니다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>경사 하강법 학습률이 너무 크면 보통 다음을 유발합니다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>테스트 세트가 훈련으로 누출됨</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>특성이 표준화됨</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>손실이 진동하거나 발산함</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>전역 최소값으로 더 빠르게 수렴함</span></button></div>
+    <div class="quiz-explain"><b>Why</b>각 단계가 최소값을 지나치므로 손실이 안정되지 않고 요동치거나 증가합니다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>그래디언트 부스팅이 랜덤 포레스트와 주로 다른 점은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>트리들이 서로 특성을 공유하지 않음</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>결측값을 처리할 수 없음</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>각 새 트리가 지금까지 앙상블의 오차에 적합됨</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>학습률을 절대 사용하지 않음</span></button></div>
+    <div class="quiz-explain"><b>Why</b>부스팅은 트리를 순차적으로 키우며 각 트리가 이전 앙상블이 남긴 잔차를 교정하는 반면, 포레스트는 트리를 독립적으로 키웁니다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>k-평균 군집화는 점을 군집에 다음과 같이 할당합니다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>절대 변하지 않는 무작위 할당으로</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>점이 도착한 순서로</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>지도 분류기가 예측한 레이블로</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>각 반복에서 재계산되는 가장 가까운 중심으로</span></button></div>
+    <div class="quiz-explain"><b>Why</b>각 반복은 모든 점을 가장 가까운 중심에 할당한 다음, 중심을 할당된 점들의 평균으로 이동합니다.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.ko.html"><span>Computing</span><b>AI와 데이터 분석</b></a><a class="related-card" href="artificial-intelligence.ko.html"><span>Computing</span><b>인공지능</b></a><a class="related-card" href="machine-learning-smart-mobility.ko.html"><span>Computing</span><b>스마트 모빌리티를 위한 머신러닝</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="infrastructure-management.ko.html"><small>Previous</small><b>인프라 관리</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">훈련 데이터로 절대 테스트하지 마십시오.</p><p class="margin-note">정확도는 불균형을 숨깁니다.</p><p class="margin-note">정규화하거나 단순화하십시오. 더 많은 데이터가 더 좋습니다.</p><p class="margin-note">모델은 배포 후 성능이 저하됩니다.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

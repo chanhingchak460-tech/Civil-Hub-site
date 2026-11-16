@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>上級構造力学 — Civil Hub</title>
+<meta name="description" content="対称でも円形でもない部材の荷重経路：主軸、せん断中心、反りねじり、実柱の安定性。なぜチャンネルがねじれるのか、なぜ細長い支柱が降伏荷重以下で座屈するのかを説明する。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/advanced-structural-mechanics.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="上級構造力学 — Civil Hub">
+<meta property="og:description" content="対称でも円形でもない部材の荷重経路：主軸、せん断中心、反りねじり、実柱の安定性。なぜチャンネルがねじれるのか、なぜ細長い支柱が降伏荷重以下で座屈するのかを説明する。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/advanced-structural-mechanics.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="advanced-structural-mechanics.html" data-alt-zh-hant="advanced-structural-mechanics.zh-Hant.html" data-alt-ja="advanced-structural-mechanics.ja.html" data-alt-ko="advanced-structural-mechanics.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">上級構造力学</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">コア</p>
+          <h1>上級構造力学</h1>
+          <p class="subject-sub">曲げ、せん断中心、ねじり、座屈</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>コア</li><li><b data-i18n="subject.read">Read</b>14 分</li><li><b data-i18n="subject.sections">Sections</b>10</li><li><b data-i18n="subject.formulas">Formulas</b>22</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M80 160 V64 H260 V160" stroke="currentColor" stroke-width="1.7"/><path d="M70 160 h20 M250 160 h20" stroke="currentColor" stroke-width="1.2"/><path d="M80 160 l-8 12 h16 z M260 160 l-8 12 h16 z" stroke="currentColor" stroke-width="1"/><path d="M80 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M220 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M104 100 q-20 14 0 28" stroke="var(--accent)" stroke-width="1"/><path d="M236 100 q20 14 0 28" stroke="var(--accent)" stroke-width="1"/><text x="170" y="44" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PORTAL FRAME</text></svg>
+          <figcaption>Portal frame — bending moments at the joints</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">対称性は例外である</a></li><li><a href="#sec-2">慣性乗積と主軸</a></li><li><a href="#sec-3">非対称曲げにおける応力</a></li><li><a href="#sec-4">せん断流とせん断中心</a></li><li><a href="#sec-5">円形軸を超えたねじり</a></li><li><a href="#sec-6">支柱と有効長</a></li><li><a href="#sec-7">不完全性とSouthwellプロット</a></li><li><a href="#sec-8">近道としてのエネルギー法</a></li><li><a href="#sec-9">塑性曲げと形状係数</a></li><li><a href="#sec-10">反りねじりとバイモーメント</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">対称でも円形でもない部材の荷重経路：主軸、せん断中心、反りねじり、実柱の安定性。なぜチャンネルがねじれるのか、なぜ細長い支柱が降伏荷重以下で座屈するのかを説明する。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="advanced-structural-mechanics" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>対称性は例外である</h2>
+  <div class="body"><p>教科書の断面は通常対称であるため、荷重面と中立軸は直交し、2つの曲げ方向は別々に扱える。実際の部材はそれほど従順ではない：不等辺山形鋼、偏心荷重を受けるチャンネル、Z形パーリン、クレーン軌道はすべて、どちらの図心軸にも一致しない方向に曲がる。</p>
+<p>連成は<strong>慣性乗積</strong> I_xy = ∫xy dA に起因し、これは面積が4つの象限にどのように広がっているかを測る。これがゼロのとき、一方の軸まわりの曲げは他方の座標で定義される点に応力を生じず、単純な曲げ応力式が適用できる。ゼロでないとき、中立軸は傾く。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">慣性乗積</span>
+      <div class="formula-expr formula-math">\[I_{xy} = \int x\,y\,\mathrm{d}A\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>慣性乗積と主軸</h2>
+  <div class="body"><p>長方形から構成される断面では、I_xy は各部分を A_i x̄_i ȳ_i として合計する。長方形は自身の図心軸まわりには寄与しないからである。二重対称断面では I_xy = 0 であり、1つの対称軸を持つ断面もその軸対に関してはゼロである。</p>
+<p><strong>主軸</strong>とは、I_xy がゼロになる図心軸である。それらを見つけるのは主応力と同じ代数である：角度は tan 2θ_p = 2I_xy/(I_y − I_x) に従い、主二次モーメントは2つの極値の間にある。角度を代入し直して、どの軸がどの値を持つか確認する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">主軸角度</span>
+      <div class="formula-expr formula-math">\[\tan 2\theta_p = \frac{2 I_{xy}}{I_y - I_x}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">主二次モーメント</span>
+      <div class="formula-expr formula-math">\[I_{u,v} = \frac{I_x + I_y}{2} \pm \sqrt{\left(\frac{I_x - I_y}{2}\right)^2 + I_{xy}^2}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>非対称曲げにおける応力</h2>
+  <div class="body"><p>図心軸 x と y を用いると、ある点の垂直応力は以下の式で与えられ、両モーメントは正の象限に引張を生じるとき正とする。分母は決して負にならない。I_x I_y ≥ I_xy² だからである。</p>
+<p>σ = 0 と置くと中立軸が得られる：それは図心を通るが、その傾きはどちらの軸とも無関係である。極値応力は自動的に x または y で最も遠い隅にあるわけではないので、すべての隅を確認する。主軸に関しては連成が消え、おなじみの形 σ = M_v u/I_v + M_u v/I_u に戻る。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">非対称曲げ応力</span>
+      <div class="formula-expr formula-math">\[\sigma = \frac{(M_y I_x - M_x I_{xy})\,x + (M_x I_y - M_y I_{xy})\,y}{I_x I_y - I_{xy}^2}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>せん断流とせん断中心</h2>
+  <div class="body"><p>横せん断は一様ではない。薄肉断面では、壁のどこかで切断し、切断面より先の面積に作用する軸方向力の釣り合いを考える：<strong>せん断流</strong>は q = VQ/I であり、Q はその面積の曲げ軸まわりの一次モーメント、壁応力は q を厚さで割ったものである。</p>
+<p>チャンネルでは、フランジとウェブのせん断流が合成されて1つの鉛直力となり、その作用線は図心ではない。横荷重がねじりを生じない点が<strong>せん断中心</strong>であり、純粋に幾何学的性質である。チャンネルの場合、ウェブの外側、フランジから離れた側にあり、ウェブ中心線から e = 3b²/(h + 6b) の位置にある。ここで b はフランジ幅、h はフランジ中心線間のせいである。等辺山形鋼のせん断中心はかかと付近にある。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">せん断流</span>
+      <div class="formula-expr formula-math">\[q = \frac{V Q}{I}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">チャンネルのせん断中心</span>
+      <div class="formula-expr formula-math">\[e = \frac{3 b^2}{h + 6 b}\]</div>
+      
+    </div></div><div class="table-wrap"><table><caption>一般的な薄肉断面のせん断中心</caption><thead><tr><th scope='col'>断面</th><th scope='col'>慣性乗積</th><th scope='col'>せん断中心</th></tr></thead><tbody><tr><td>二重対称I形断面</td><td>ゼロ</td><td>図心</td></tr><tr><td>チャンネル（1つの対称軸）</td><td>対称軸に関してゼロ</td><td>ウェブの外側、フランジと反対側</td></tr><tr><td>等辺山形鋼</td><td>非ゼロ</td><td>脚のかかと付近</td></tr><tr><td>Z形断面（点対称）</td><td>一般に非ゼロ</td><td>図心</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>円形軸を超えたねじり</h2>
+  <div class="body"><p>円形軸は反りなしでねじれるため、τ = Tr/J と θ = TL/GJ は厳密である。他の断面は<strong>反り</strong>を生じる：平面断面は平面を保たず、単純ねじり式は成り立たない。中実非円形棒は図心に最も近い境界で最大せん断応力に達し、その値は係数表から求める。</p>
+<p><strong>閉薄肉管</strong>は循環するせん断流によってねじりを伝えるため、τ = T/(2A_m t)、J = 4A_m²/∮(ds/t) である。ここで A_m は壁中心線で囲まれた面積である。開断面は流れの閉路がなく、はるかに弱く、J ≈ Σ(1/3)bt³ である。同じ質量の開チャンネルよりも箱形の方がねじりにはるかに強い理由がここにある。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Bredtせん断応力</span>
+      <div class="formula-expr formula-math">\[\tau = \frac{T}{2 A_m t}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">閉管の定数</span>
+      <div class="formula-expr formula-math">\[J = \frac{4 A_m^2}{\oint \frac{\mathrm{d}s}{t}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">開断面の定数</span>
+      <div class="formula-expr formula-math">\[J \approx \sum \frac{1}{3} b t^3\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>支柱と有効長</h2>
+  <div class="body"><p>完全にまっすぐで中心荷重を受ける柱は、<strong>オイラー荷重</strong>に達するまでまっすぐである：P_cr = π²EI/(KL)²。ここで KL は端部条件で決まる有効長である。K はピン–ピンで1.0、固定–ピンで0.7、固定–固定で0.5、固定–自由で2.0である。この荷重を超えると直線形状は不安定になり、小さな外乱は成長する。</p>
+<p>支配パラメータは細長比 λ = KL/r であり、r = √(I/A) は曲げ軸まわりの断面二次半径である。ずんぐりした柱は座屈する前に降伏し、細長い柱は降伏応力よりはるかに低い応力で座屈する。断面は弱い軸と同じ強さしかない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">オイラー座屈荷重</span>
+      <div class="formula-expr formula-math">\[P_{cr} = \frac{\pi^2 E I}{(K L)^2}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">細長比</span>
+      <div class="formula-expr formula-math">\[\lambda = \frac{K L}{r}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>不完全性とSouthwellプロット</h2>
+  <div class="body"><p>実在の柱は完全にまっすぐでも完全に中心荷重でもない。初期たわみ δ₀ は軸荷重によって増幅され、中央高さのたわみは δ_max = δ₀/[1 − P/P_cr] となり、最外縁繊維は降伏を超えずに P/A と Pδ_max/Z を加えなければならない。</p>
+<p>したがって破壊はオイラー荷重より低い荷重で訪れる：柱は自身の増大するたわみによって降伏に追い込まれ、<strong>Perry–Robertson</strong>法はこれを同時に解く。<strong>Southwellプロット</strong>は不安定に達しない試験からオイラー荷重を抽出する：測定たわみを荷重で割ったものをたわみに対してプロットすると、傾き 1/P_cr の直線が得られる。座屈は剛性の漸進的な喪失である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">たわみ増幅</span>
+      <div class="formula-expr formula-math">\[\delta_{\max} = \frac{\delta_0}{1 - P/P_{cr}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Southwellプロット</span>
+      <div class="formula-expr formula-math">\[\frac{\delta}{P} = \frac{\delta}{P_{cr}} + \frac{\delta_0}{P_{cr}}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>近道としてのエネルギー法</h2>
+  <div class="body"><p>ひずみエネルギーは変形の仕事を蓄える：曲げでは U = ∫M²/(2EI) ds であり、軸力、せん断、ねじりでも同様の積分がある。<strong>Castiglianoの定理</strong>は荷重方向の変位を Δ = ∂U/∂P として与え、微分方程式を積分せずに曲線部材や不静定部材を扱える。</p>
+<p><strong>単位荷重法</strong>は同じ考えの代数的形式である：変位を求めたい位置に単位荷重を作用させ、それが生じる内部モーメント m を求め、1·Δ = ∫Mm/(EI) ds とする。座屈荷重もエネルギーから導かれ、支柱がたわむときの軸荷重の仕事を蓄えられる曲げエネルギーと等置する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">曲げひずみエネルギー</span>
+      <div class="formula-expr formula-math">\[U = \int \frac{M^2}{2 E I}\,\mathrm{d}s\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Castiglianoの定理</span>
+      <div class="formula-expr formula-math">\[\Delta = \frac{\partial U}{\partial P}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">単位荷重法</span>
+      <div class="formula-expr formula-math">\[1 \cdot \Delta = \int \frac{M m}{E I}\,\mathrm{d}s\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>塑性曲げと形状係数</h2>
+  <div class="body"><p>最外縁繊維が最初に降伏に達すると、弾性理論は破壊と言う — しかし断面はまだ荷重を支える。降伏が内側に広がるにつれて耐力は増大し、断面全体が f_y に達する：<strong>塑性モーメント</strong>は M_p = f_y S であり、S は塑性断面係数、等面積軸まわりの面積一次モーメントである。長方形では S = bh²/4 に対し弾性 Z = bh²/6 なので、<strong>形状係数</strong> M_p/M_y は1.5である；I形断面は1.1–1.2付近である。</p>
+<p><strong>塑性ヒンジ</strong>は M が M_p に達し、一定モーメントで自由に回転する箇所に形成され、部材を機構に変える。この再分配が塑性設計の基礎である：崩壊荷重は最初の降伏点ではなく、機構の幾何学から求まる。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">降伏モーメントと塑性モーメント</span>
+      <div class="formula-expr formula-math">\[M_y = f_y Z, \quad M_p = f_y S\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">塑性断面係数、長方形</span>
+      <div class="formula-expr formula-math">\[S = \frac{b h^2}{4}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">形状係数</span>
+      <div class="formula-expr formula-math">\[\frac{M_p}{M_y} = \frac{S}{Z}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>反りねじりとバイモーメント</h2>
+  <div class="body"><p>ねじりを受ける開薄肉断面は平面を保たない：フランジは横方向に曲がり、その結果生じるフランジ応力は<strong>反り応力</strong>であり、<strong>バイモーメント</strong>で表される。全トルクはSt Venant部分と反り部分に分かれ、T = T_sv + T_w であり、T_sv = G J θ′、T_w = −E I_w θ″′ である。ここで I_w は反り定数で、長さの6乗の単位を持つ。I形断面では I_w ≈ I_f h²/2 であり、I_f は片方のフランジの断面二次モーメントである。</p>
+<p>端部拘束はすべてを変える：ねじり拘束された梁はトルクの多くを反りによって伝えるため、単純な τ = Tr/J の値は開断面では大きく非保守的になり得る。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">トルクの分割</span>
+      <div class="formula-expr formula-math">\[T = T_{sv} + T_w\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">反りトルク</span>
+      <div class="formula-expr formula-math">\[T_w = -E I_w \theta&#x27;&#x27;&#x27;\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">反り定数、I形断面</span>
+      <div class="formula-expr formula-math">\[I_w \approx \frac{I_f h^2}{2}\]</div>
+      
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>慣性乗積</dt><dd>断面にわたる ∫xy dA の積分；非ゼロは図心軸が主軸でなく、一方の軸まわりの曲げが他方に関連する応力を生じることを意味する。</dd></div><div class="term"><dt>主軸</dt><dd>慣性乗積がゼロになる一対の図心軸であり、どちらの軸まわりの曲げも相互連成を生じない。</dd></div><div class="term"><dt>せん断中心</dt><dd>横荷重がねじりを生じないために通過しなければならない断面内の点；材料に依存しない幾何学的性質。</dd></div><div class="term"><dt>せん断流</dt><dd>薄壁に沿った単位長さあたりのせん断力、q = VQ/I。合成せん断力とせん断中心の位置を求めるのに用いる。</dd></div><div class="term"><dt>反り</dt><dd>ねじりを受ける非円形断面の面外変形。壁に沿ってせん断ひずみが変化することによって生じる。</dd></div><div class="term"><dt>有効長</dt><dd>座屈する支柱の変曲点間の距離 KL。端部固定条件から選ばれる。</dd></div><div class="term"><dt>Perry–Robertson法</dt><dd>弾性座屈と最外縁繊維の降伏を組み合わせて、不完全な支柱の破壊を予測する柱の手法。</dd></div><div class="term"><dt>Southwellプロット</dt><dd>柱の試験における荷重に対するたわみの比をたわみに対してプロットしたグラフ；その傾きは限界座屈荷重の逆数を与える。</dd></div><div class="term"><dt>塑性断面係数</dt><dd>等面積軸まわりの面積一次モーメント；降伏応力を掛けると塑性モーメントが得られる。</dd></div><div class="term"><dt>バイモーメント</dt><dd>拘束された反りによって生じる自己平衡的な一対のフランジモーメント；部材に沿ったその勾配が反りトルクを与える。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>チャンネルのせん断中心と偏心荷重によるねじり</h2>
+        <p class="problem">薄肉チャンネルはフランジ幅 b = 75 mm（ウェブ中心線から測定）、フランジ中心線間のせい h = 200 mm、厚さ t = 6 mm である。長さ2.0 mの部材の図心を通して5 kNの鉛直荷重が作用する。せん断中心、偏心荷重によるトルク、St Venantねじれ角を求めよ（G = 79 GPa）。</p>
+        <ol><li>曲げ軸まわりの断面二次モーメント：I_x = t h³/12 + 2 b t (h/2)² = 6 × 200³/12 + 2 × 75 × 6 × 100² = 4.0 × 10⁶ + 9.0 × 10⁶ = 13.0 × 10⁶ mm⁴。</li><li>ウェブ中心線からのせん断中心の偏心：e = 3b²/(h + 6b) = 3 × 75²/(200 + 450) = 16 875/650 = 26.0 mm、ウェブのフランジと反対側。</li><li>フランジ側への図心の偏心：A = t h + 2 b t = 1200 + 900 = 2100 mm²、よって x̄ = (2 b t)(b/2)/A = 33 750/2100 = 16.1 mm。したがって図心荷重はせん断中心から 26.0 + 16.1 = 42.1 mm の位置にある。</li><li>せん断中心まわりのトルク：T = V × e = 5000 N × 0.0421 m = 210 N·m = 210 500 N·mm。</li><li>開断面のねじり定数：J ≈ Σ(1/3) b t³ = (1/3)(200 + 75 + 75)(6³) = 25 200 mm⁴。</li><li>ねじれ角：θ = T L/(G J) = (210 500 × 2000)/(79 000 × 25 200) = 0.212 rad、約12°。</li><li>妥当性確認：2 mで12°は屋根部材として許容できない。これがチャンネルをせん断中心を通して載荷するか、シートで拘束するか、閉断面箱に置き換える理由である。反り拘束はこの推定値を減らすが、ゼロにはならない。</li></ol>
+        <div class="answer"><b>Answer</b>せん断中心はウェブ中心線から26.0 mm、フランジと反対側にある。図心荷重はそれに対して0.21 kN·mのトルクを作用させ、St Venantねじれは約0.21 rad（12°）であり、開断面には拘束またはせん断中心を通る荷重経路が必要であることを確認する。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>非対称曲げの式に代入する前に、M_x と M_y の符号規約を明記する。失点のほとんどは符号の誤りであり、代数ではない。</li><li>薄肉断面では、まずせん断流の経路をスケッチする：自由縁では流れはゼロから始まり、角は合力が出会う場所である。</li><li>ねじりの問題では、式を書く前に断面が閉か開かを述べる。剛性の差は甚大である。</li><li>支柱では、オイラー荷重と降伏荷重の両方を示し、与えられた細長比に対してどちらが支配するかを述べる。</li><li>ねじりを受ける開断面では、J と並べて反り定数を示す。端部拘束により反りトルクが支配項になり得る。</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Design strength py of structural steel to BS EN grades</h3>
+  <p class="ref-table-intro">Design strength py used in the Hong Kong steel code. It is the yield strength divided by the material factor for the steel class and capped by the tensile strength divided by a second factor, so the tabulated value falls as the element gets thicker.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Steel grade</th><th scope='col'>Thickness t (mm)</th><th scope='col'>Design strength py (N/mm²)</th></tr></thead><tbody><tr><td>S235</td><td>t ≤ 16</td><td>235</td></tr><tr><td>S275</td><td>t ≤ 16</td><td>275</td></tr><tr><td>S275</td><td>16 &lt; t ≤ 40</td><td>265</td></tr><tr><td>S355</td><td>t ≤ 16</td><td>355</td></tr><tr><td>S355</td><td>16 &lt; t ≤ 40</td><td>345</td></tr><tr><td>S355</td><td>40 &lt; t ≤ 63</td><td>335</td></tr><tr><td>S460</td><td>t ≤ 16</td><td>460</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 3.2 of the Code of Practice for the Structural Use of Steel 2011 (2023 Edition). For Class 1 steel the material factors are γm1 = 1.0 and γm2 = 1.1 (Table 4.1); the thickness of the thickest element governs the grade classification.</p>
+  <p class="ref-table-caveat">Revision summary only. Values depend on the steel class, the product standard and the governing thickness, and normal-strength and high-strength steels are treated separately; check the current steel code for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>断面が非ゼロの慣性乗積を持つ。その曲げ挙動について正しい記述はどれか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>一方の図心軸まわりの曲げは、他方の座標がゼロの点に応力を生じる</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>中立軸は荷重面に平行でなければならない</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>断面は曲げモーメントを支えられない</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>最大応力は常に図心から最も遠い隅に生じる</span></button></div>
+    <div class="quiz-explain"><b>Why</b>I_xy を介した連成により、x 軸まわりのモーメントは y だけでなく x にも依存する応力を生じ、中立軸は幾何軸から傾く。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>チャンネル断面が鉛直荷重を受ける。そのせん断中心はどこにあるか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>ウェブと上フランジの接合部</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>図心</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>ウェブの外側、フランジと反対側</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>フランジ内、ウェブと先端の中間</span></button></div>
+    <div class="quiz-explain"><b>Why</b>チャンネルではフランジのせん断流が偶力を作り、合成せん断力をウェブの外側、フランジと反対側の e = 3b²/(h + 6b) の位置に押し出す。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q03</span><span>同じ質量と同じ囲まれた面積を持つ2つの部材、一方は閉管、他方は開チャンネルである。同じトルクに対して、ねじれが小さいのはどちらか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>閉管、せん断流が循環できるから</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>両方とも同じねじれ、ねじりは面積だけに依存するから</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>材料の弾性係数なしでは決められない</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>開チャンネル、壁が補剛されていないから</span></button></div>
+    <div class="quiz-explain"><b>Why</b>閉管は循環するBredtせん断流によってねじりを伝え、J = 4A_m²/∮(ds/t) を与える；開断面は J ≈ Σbt³/3 で、桁違いに小さい。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q04</span><span>長さ L のピン–ピン支柱のオイラー荷重が P である。両端を固定にし、他は何も変えない場合、オイラー荷重はおよそいくらになるか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>4P</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>P/2</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>P</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2P</span></button></div>
+    <div class="quiz-explain"><b>Why</b>有効長は L から 0.5L に減少し、P_cr は 1/(KL)² に比例するので、荷重は 1/0.5² = 4 倍になる。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>長方形断面の弾性断面係数 Z = bh²/6、塑性断面係数 S = bh²/4 である。その形状係数は？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>1.0</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>1.25</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1.5</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2.0</span></button></div>
+    <div class="quiz-explain"><b>Why</b>形状係数は S/Z = (bh²/4)/(bh²/6) = 6/4 = 1.5 であり、塑性モーメントが初降伏モーメントの1.5倍であることを意味する。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>せん断中心の実験で、チャンネルのせん断中心はどの載荷位置として見つけられるか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>荷重ハンガーが板を把持しなくなる</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>2つの隅のダイヤルゲージが等しく反対のたわみを読む</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>荷重を加えた後、両方のゲージがゼロに戻る</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>測定たわみが最大になる</span></button></div>
+    <div class="quiz-explain"><b>Why</b>せん断中心を通る荷重はねじりなしの曲げを生じるため、2つの隅の回転ゲージはゼロを読む。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="structural-mechanics.ja.html"><span>Core</span><b>構造力学</b></a><a class="related-card" href="construction-materials.ja.html"><span>Core</span><b>建設材料</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="aviation-studies.ja.html"><small>Previous</small><b>航空とインフラ</b></a><a class="next" href="programming-fundamentals.ja.html"><small>Next</small><b>プログラミング基礎</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2023). <i>Code of Practice for the Structural Use of Steel 2011 (2023 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/SUOS2011.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/SUOS2011.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">I_xy ≠ 0：軸は主軸ではない。</p><p class="margin-note">薄壁の自由縁：せん断流はゼロから始まる。</p><p class="margin-note">開断面はねじりに弱い — 箱形にせよ。</p><p class="margin-note">支柱は圧壊ではなく曲げで破壊する。</p><p class="margin-note">Southwellの傾き = 1/P_cr。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>土質力学 — Civil Hub</title>
+<meta name="description" content="土は三相材料であり、その強度と沈下は有効応力、排水条件、応力履歴に依存する。本ページでは、基礎および斜面設計の基盤となる相関関係、分類試験、圧密理論、せん断強度を結びつける。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/soil-mechanics.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="土質力学 — Civil Hub">
+<meta property="og:description" content="土は三相材料であり、その強度と沈下は有効応力、排水条件、応力履歴に依存する。本ページでは、基礎および斜面設計の基盤となる相関関係、分類試験、圧密理論、せん断強度を結びつける。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/soil-mechanics.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="soil-mechanics.html" data-alt-zh-hant="soil-mechanics.zh-Hant.html" data-alt-ja="soil-mechanics.ja.html" data-alt-ko="soil-mechanics.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">土質力学</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">コア</p>
+          <h1>土質力学</h1>
+          <p class="subject-sub">有効応力、圧密、せん断強度、土圧</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>コア</li><li><b data-i18n="subject.read">Read</b>13 分</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>21</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M60 128 H280" stroke="currentColor" stroke-width="1.6"/><path d="M92 128 V104 H248 V128" stroke="currentColor" stroke-width="1.5"/><path d="M120 60 V100 M148 60 V100 M176 60 V100 M204 60 V100 M232 60 V100" stroke="var(--accent)" stroke-width="1.1"/><path d="M120 56 l4 6 4 -6 M148 56 l4 6 4 -6 M176 56 l4 6 4 -6 M204 56 l4 6 4 -6 M232 56 l4 6 4 -6" stroke="var(--accent)" stroke-width="1"/><path d="M36 140 H304" stroke="var(--line)" stroke-width="1"/><path d="M44 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M66 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M88 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M110 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M132 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M154 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M176 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M198 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M220 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M242 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M264 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M286 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M170 128 C140 146 126 160 126 176 M170 128 C200 146 214 160 214 176" stroke="var(--line)" stroke-width="1.1"/><text x="170" y="190" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">STRESS BULB</text></svg>
+          <figcaption>Footing pressure — the stress bulb below</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">三相の全体像</a></li><li><a href="#sec-2">分類とアッターベルグ限界</a></li><li><a href="#sec-3">締固め</a></li><li><a href="#sec-4">有効応力と浸透</a></li><li><a href="#sec-5">圧密と沈下</a></li><li><a href="#sec-6">せん断強度とモール・クーロン</a></li><li><a href="#sec-7">擁壁に作用する土圧</a></li><li><a href="#sec-8">支持力と斜面安定</a></li><li><a href="#sec-9">透水性：定水位試験と変水位試験</a></li><li><a href="#sec-10">圧密試験の読み取り：t90 からの c_v</a></li><li><a href="#sec-11">三軸試験：UU、CU、CD</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">土は三相材料であり、その強度と沈下は有効応力、排水条件、応力履歴に依存する。本ページでは、基礎および斜面設計の基盤となる相関関係、分類試験、圧密理論、せん断強度を結びつける。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="soil-mechanics" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>三相の全体像</h2>
+  <div class="body"><p>土は粒子の骨格であり、空隙には水と空気が存在する。間隙体積は V_v = V_w + V_a であり、相関関係はこれらの体積と重量を比較する。</p>
+<ul>
+<li>間隙比 e = V_v/V_s は緩さの度合いを表し、間隙率 n = e/(1+e) は体積分率として同じ考え方を表す。</li>
+<li>含水比 w = W_w/W_s は水の質量を固体の質量と比較し、飽和度 S_r = V_w/V_v は空隙がどの程度満たされているかを示す。</li>
+<li>比重 G_s は石英粒子で約2.65である。</li>
+<li>単位体積重量は相図から導かれ、湿潤単位体積重量 γ = (G_s + e S_r) γ_w/(1+e)、乾燥単位体積重量 γ_d = γ/(1+w) = G_s γ_w/(1+e) となる。</li>
+</ul>
+<p>一貫性を保つことで後の誤りを防げる。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">間隙比</span>
+      <div class="formula-expr formula-math">\[e = \frac{V_v}{V_s}\]</div>
+      <span class="formula-note">固体の体積に対する間隙の体積</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">乾燥単位体積重量</span>
+      <div class="formula-expr formula-math">\[\gamma_d = \frac{G_s \gamma_w}{1 + e}\]</div>
+      <span class="formula-note">γ/(1+w) とも表される</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>分類とアッターベルグ限界</h2>
+  <div class="body"><p>粗粒土はふるい分析で、細粒土は比重計試験で分類される。粒径加積曲線から D₁₀、D₃₀、D₆₀ が得られ、均等係数 C_u = D₆₀/D₁₀ が求められる。高い値は良好な粒度分布を持つ土を意味する。</p>
+<p>細粒土では、<strong>アッターベルグ限界</strong>が挙動の変化する含水比を示す。</p>
+<ul>
+<li>液性限界 LL は土が流動しなくなる含水比である（フォールコーン試験で20 mmのコーン貫入）。</li>
+<li>塑性限界 PL は3 mmの土ひもが崩れる含水比である。</li>
+<li>塑性指数 PI = LL − PL は塑性挙動の範囲を表す。</li>
+</ul>
+<p>高い PI は圧縮性の高い粘土を示し、塑性図はシルトと粘土を区別する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">塑性指数</span>
+      <div class="formula-expr formula-math">\[\mathrm{PI} = \mathrm{LL} - \mathrm{PL}\]</div>
+      <span class="formula-note">塑性範囲の幅</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">均等係数</span>
+      <div class="formula-expr formula-math">\[C_u = \frac{D_{60}}{D_{10}}\]</div>
+      <span class="formula-note">粒径加積曲線の広がり</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>締固め</h2>
+  <div class="body"><p>締固めは空気を追い出すことで土を密にし、通常はローラーで行う。室内プロクター試験はいくつかの含水比で試料を締固め、乾燥密度を含水比に対してプロットし、<strong>最適含水比</strong>でピークとなる曲線を得る。</p>
+<p>乾燥しすぎると粒子同士が噛み合い、湿りすぎると水が土が本来満たすべき空隙を占める。</p>
+<p>締固めは強度と支持力を高め、沈下と透水性を低減する。そのため盛土は薄層で敷きならされ、単に投下されるのではなく、指定された相対締固め度まで締固められる。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">相対締固め度</span>
+      <div class="formula-expr formula-math">\[\mathrm{RC} = \frac{\gamma_d(\text{field})}{\gamma_d(\text{max, lab})}\]</div>
+      <span class="formula-note">通常は百分率で指定される</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>有効応力と浸透</h2>
+  <div class="body"><p>強度と沈下は<strong>有効応力</strong>によって支配される：σ' = σ − u。ここで σ は上方の土と水の重量による全応力、u は間隙水圧である。同じ全応力でも間隙水圧が異なれば挙動は全く異なる。</p>
+<ul>
+<li>地下水位以下では u = ρ_w g h であり、有効応力は水中単位体積重量 γ' = γ_sat − γ_w を用いる。</li>
+<li>地下水位以上では、毛管水が負の間隙水圧を生じ、一時的に σ' を高めることがある。</li>
+<li>浸透は力を付加する。ダルシーの法則は v = k i および q = k i A を与え、動水勾配は i = Δh/L である。</li>
+<li>上向き浸透が水中重量に近づくと有効応力はゼロになる：<strong>限界動水勾配</strong>は i_c = (G_s − 1)/(1 + e) であり、これを超えると土は沸騰し、パイピングが始まりうる。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">有効応力</span>
+      <div class="formula-expr formula-math">\[\sigma&#x27; = \sigma - u\]</div>
+      <span class="formula-note">骨格が担う応力</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">ダルシーの法則</span>
+      <div class="formula-expr formula-math">\[v = k i\]</div>
+      <span class="formula-note">透水係数</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">限界動水勾配</span>
+      <div class="formula-expr formula-math">\[i_c = \frac{G_s - 1}{1 + e}\]</div>
+      <span class="formula-note">有効応力がゼロになる</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>圧密と沈下</h2>
+  <div class="body"><p>圧密は、過剰間隙水圧が消散するにつれて生じる飽和粘土の時間依存の圧縮である。荷重は最初は水が担い、排水が進むと圧力が土骨格に移り、間隙比が低下して沈下が生じる。</p>
+<p>圧密試験（オエドメーター試験）は試料を段階的に載荷し、間隙比を対数圧力に対してプロットする。正規圧密線の勾配が圧縮指数 C_c であり、先行圧密圧力はこれまでに受けた最大応力を示す。<strong>過圧密比</strong> OCR はその応力と現在の応力を比較し、過圧密の粘土ははるかに小さく沈下する。</p>
+<p>沈下は s_c = C_c H/(1 + e₀) · log₁₀((σ'₀ + Δσ)/σ'₀) に従い、その速度は圧密係数 c_v に依存する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">一次元沈下</span>
+      <div class="formula-expr formula-math">\[s_c = \frac{C_c H}{1 + e_0} \log_{10}\left(\frac{\sigma&#x27;_0 + \Delta \sigma}{\sigma&#x27;_0}\right)\]</div>
+      <span class="formula-note">層厚</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>せん断強度とモール・クーロン</h2>
+  <div class="body"><p>せん断強度は粒子間の滑りに対する抵抗である。<strong>モール・クーロン</strong>の破壊基準は τ_f = c' + σ' tan φ' であり、c' は有効粘着力、φ' は有効内部摩擦角、σ' は破壊面上の有効垂直応力である。</p>
+<ul>
+<li>τ_f を σ' に対してプロットすると、切片が c'、勾配が tan φ' となる。</li>
+<li>破壊時のモール円はその包絡線に接し、破壊面は最大主応力面と 45° + φ'/2 の角度をなす。</li>
+<li>緩い砂の φ' は約30°、密な砂ではより大きい。</li>
+<li>飽和軟弱粘土を非排水でせん断すると φ_u = 0 のように振る舞い、その強度は非排水せん断強度 s_u である。</li>
+<li>直接せん断箱は強制的な面に沿って試料をせん断し、三軸試験は制御された拘束圧の下で円柱試料に載荷し、間隙水圧を測定できるため、全応力パラメータと有効応力パラメータの両方が得られる。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">モール・クーロン基準</span>
+      <div class="formula-expr formula-math">\[\tau_f = c&#x27; + \sigma&#x27; \tan \varphi&#x27;\]</div>
+      <span class="formula-note">排水条件、有効応力形式</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>擁壁に作用する土圧</h2>
+  <div class="body"><p>壁背後の土圧は壁の変位量に依存する。変位がない場合、土は静止状態にあり、σ'_h = K₀ σ'_v で K₀ ≈ 1 − sin φ' である。</p>
+<ul>
+<li>壁が外側に変位すると、土は <strong>主働</strong> 状態に達し、K_a = tan²(45° − φ'/2) となる。</li>
+<li>壁を土に押し込むと <strong>受働</strong> 抵抗が発揮され、K_p = tan²(45° + φ'/2) となり、通常は数倍大きい。</li>
+<li>水圧は別途加算しなければならない。</li>
+</ul>
+<p>排水できない壁は間隙水圧を蓄積し、土骨格はそれを感じない。これが破壊の一般的な原因である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">主働土圧係数</span>
+      <div class="formula-expr formula-math">\[K_a = \tan^2\left(45^{\circ} - \frac{\varphi&#x27;}{2}\right)\]</div>
+      <span class="formula-note">壁が土から離れる方向に移動</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">受働土圧係数</span>
+      <div class="formula-expr formula-math">\[K_p = \tan^2\left(45^{\circ} + \frac{\varphi&#x27;}{2}\right)\]</div>
+      <span class="formula-note">壁が土に押し込まれる</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>支持力と斜面安定</h2>
+  <div class="body"><p>基礎は下部の土がせん断破壊するときに破壊する。支持力方程式は3つの項を組み合わせる：q_ult = c N_c + q N_q + 0.5 γ B N_γ。ここで N 係数は φ' に依存し、q は基礎底面位置の上載圧である。許容圧力は q_ult を約3の<strong>安全率</strong>で除したものである。</p>
+<p>斜面は駆動せん断が利用可能な強度を超えると破壊する。安定性は FoS = 抵抗/駆動 である。</p>
+<p>排水が最も強力な手段である：地下水位を下げると有効応力が増加し、間隙水圧が低下する。多くの斜面崩壊が豪雨後に発生するのはこのためである。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">支持力</span>
+      <div class="formula-expr formula-math">\[q_{\text{ult}} = c N_c + q N_q + 0.5 \gamma B N_\gamma\]</div>
+      <span class="formula-note">N 係数は φ&#x27; から求める</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">安全率</span>
+      <div class="formula-expr formula-math">\[\mathrm{FoS} = \frac{\text{resisting shear}}{\text{driving shear}}\]</div>
+      <span class="formula-note">設計では1.5から3</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>透水性：定水位試験と変水位試験</h2>
+  <div class="body"><p><strong>定水位</strong>試験は粗粒土に適する：長さ L、断面積 A の円筒を通る水位差 Δh の下での定常流を採取し、時間を計測すると k = QL/(A Δh t) が得られる。粗砂の室内試験では、温度補正 k₂₀ = k_T η_T/η₂₀ の後、k₂₀ ≈ 7.9 × 10⁻³ m/s が得られた。</p>
+<p>細粒土は通水量が少なすぎて計測できないため、<strong>変水位</strong>試験では断面積 a のスタンドパイプが試料を通して排水するのを観察する：k = (a L)/(A t) ln(h₁/h₂)。風化花崗岩と風化火山岩の試料では 1.8 × 10⁻⁸ および 5.8 × 10⁻⁸ m/s が得られた。これは砂より9桁遅く、排水設計には土の性質を知る必要がある理由である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">定水位透水係数</span>
+      <div class="formula-expr formula-math">\[k = \frac{Q L}{A \Delta h t}\]</div>
+      <span class="formula-note">時間 t の間に採取した定常流量</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">変水位透水係数</span>
+      <div class="formula-expr formula-math">\[k = \frac{a L}{A t} \ln\frac{h_1}{h_2}\]</div>
+      <span class="formula-note">a はスタンドパイプの断面積、h₁ と h₂ は初期と最終の水位</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">温度補正</span>
+      <div class="formula-expr formula-math">\[k_{20} = k_T \frac{\eta_T}{\eta_{20}}\]</div>
+      <span class="formula-note">標準20 °Cの値への粘度補正</span>
+    </div></div><div class="table-wrap"><table><caption>典型的な透水係数</caption><thead><tr><th scope='col'>土</th><th scope='col'>k (m/s)</th><th scope='col'>適する試験</th></tr></thead><tbody><tr><td>きれいな礫</td><td>10⁻² – 1</td><td>定水位</td></tr><tr><td>粗砂（室内）</td><td>7.9 × 10⁻³</td><td>定水位</td></tr><tr><td>細砂</td><td>10⁻⁵ – 10⁻³</td><td>定水位または変水位</td></tr><tr><td>シルト</td><td>10⁻⁸ – 10⁻⁵</td><td>変水位</td></tr><tr><td>風化花崗岩（室内）</td><td>1.8 × 10⁻⁸</td><td>変水位</td></tr><tr><td>粘土</td><td>10⁻⁹ 未満</td><td>変水位またはオエドメーター</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>圧密試験の読み取り：t90 からの c_v</h2>
+  <div class="body"><p>沈下の大きさは C_c から求まるが、速度には<strong>圧密係数</strong> c_v が必要である。圧縮量を時間の平方根に対してプロットする：初期の読みは直線上にあり、そのゼロへの外挿が補正原点を与え、横軸が1.15倍大きい第2の直線が曲線と <strong>t90</strong>（90%圧密に要する時間）で交わる。</p>
+<p>次に c_v = T_v H²/t90 で、T_90 = 0.848、H は排水距離である（両面排水では試料高さの半分）。</p>
+<p>関連する<strong>体積圧縮係数</strong>は単位応力増加あたりの沈下を結びつけ、室内では粘土が硬くなるにつれて高い圧力段階で t90 が小さくなった。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">圧密係数</span>
+      <div class="formula-expr formula-math">\[c_v = \frac{T_v H^2}{t_{90}}\]</div>
+      <span class="formula-note">H は最長排水距離</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">90%圧密時の時間係数</span>
+      <div class="formula-expr formula-math">\[T_{90} = 0.848\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">体積圧縮係数</span>
+      <div class="formula-expr formula-math">\[m_v = \frac{\Delta e}{(1 + e_0) \Delta \sigma&#x27;}\]</div>
+      <span class="formula-note">単位有効応力増加あたりの体積ひずみ</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>三軸試験：UU、CU、CD</h2>
+  <div class="body"><p>三軸セルは排水を制御し、それが3つの標準試験を区別する。</p>
+<ul>
+<li><strong>非圧密非排水（UU）</strong>：どの段階でも排水しないため、迅速かつ安価である。飽和粘土では φ_u ≈ 0 となり、強度は非排水せん断強度 s_u = (σ₁ − σ₃)/2 であり、非排水条件にのみ有効である。</li>
+<li><strong>圧密非排水（CU）</strong>：試料はセル圧力下で圧密され、その後間隙水圧を測定しながら非排水でせん断されるため、有効応力パラメータ c′ と φ′ が得られる。</li>
+<li><strong>圧密排水（CD）</strong>：全過程で排水し、ゆっくりせん断するため、砂および粘土の長期挙動に対する真の排水強度が得られる。</li>
+</ul>
+<p>粒状土の室内CD試験では c′ = 0、φ′ ≈ 40° が得られた。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">非排水せん断強度、UU</span>
+      <div class="formula-expr formula-math">\[s_u = \frac{\sigma_1 - \sigma_3}{2}\]</div>
+      <span class="formula-note">全応力における破壊モール円の半径</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>間隙比</dt><dd>間隙の体積を固体の体積で除したもので、土の緩さや密実さの基本的な尺度。</dd></div><div class="term"><dt>塑性指数</dt><dd>細粒土が塑性的に挙動する含水比の範囲で、LL − PL に等しい。</dd></div><div class="term"><dt>有効応力</dt><dd>全応力から間隙水圧を引いたもの。土骨格が担う応力であり、強度と圧縮を支配する。</dd></div><div class="term"><dt>過圧密比</dt><dd>過去の最大有効応力を現在の有効応力で除したもので、粘土がどの程度予圧密されたかを示す。</dd></div><div class="term"><dt>圧縮指数</dt><dd>オエドメーター試験から得られる間隙比対対数圧力プロット上の正規圧密線の勾配。</dd></div><div class="term"><dt>安全率</dt><dd>利用可能なせん断抵抗と破壊を引き起こすのに必要なせん断応力の比。</dd></div><div class="term"><dt>圧密係数</dt><dd>圧密層内で過剰間隙水圧が消散し沈下が進行する速さを支配するパラメータ c_v。</dd></div><div class="term"><dt>変水位試験</dt><dd>細粒土の透水試験で、スタンドパイプが試料を通して排水し、水位の時間的低下から k を求めるもの。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>新しい盛土下の粘土層の沈下</h2>
+        <p class="problem">厚さ4.0 mの正規圧密粘土層は初期間隙比1.10、圧縮指数0.35である。中央深さでの初期有効鉛直応力は100 kPaである。盛土は一様な応力増加40 kPaを加える。この層の最終圧密沈下量を推定せよ。</p>
+        <ol><li>沈下の式は s_c = [C_c H/(1 + e₀)] · log₁₀[(σ&#x27;₀ + Δσ)/σ&#x27;₀] である。</li><li>値を代入する：s_c = [0.35 × 4.0/(1 + 1.10)] × log₁₀[(100 + 40)/100]。</li><li>係数は 1.40/2.10 = 0.6667 m である。</li><li>応力比は 140/100 = 1.40 で、log₁₀(1.40) = 0.1461 である。</li><li>したがって s_c = 0.6667 × 0.1461 = 0.0974 m ≈ 97 mm である。</li><li>妥当性確認：軟弱な正規圧密粘土に40%の応力増加で100 mm未満は妥当である。層厚が2倍なら沈下も約2倍になる。</li></ol>
+        <div class="answer"><b>Answer</b>最終圧密沈下量は約97 mmで、過剰間隙水圧の消散に伴い時間をかけて到達する。大きさだけでなく速度も、構造物の不同変位に対する許容値と照査しなければならない。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>強度や沈下の計算を行う前に、土層断面を描き、各層境界での全応力、間隙水圧、有効応力を計算せよ。</li><li>試験が全応力パラメータか有効応力パラメータかを明記せよ。せん断強度の誤りの多くは両者を混同することから生じる。</li><li>沈下の問題では、大きさと排水距離の両方を示せ。層厚と透水性が沈下の速さを支配するためである。</li><li>単位を確認せよ：応力は kPa、単位体積重量は kN/m³、層厚は m である。1000倍の桁違いが入りやすい。</li><li>t90 には時間の平方根プロットと1.15オフセット線を用いよ。生の曲線上の推測した一次圧密終了点から c_v を求めるのは典型的な失点である。</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Presumed allowable bearing pressure for foundations on sands and gravels</h3>
+  <p class="ref-table-intro">Presumed allowable vertical bearing pressures for shallow foundations on non-cohesive soils, used for preliminary footing sizing once the soil category has been established from SPT results and description.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Soil category</th><th scope='col'>Description</th><th scope='col'>SPT N value</th><th scope='col'>Presumed allowable bearing pressure (kPa)</th></tr></thead><tbody><tr><td>4(a)</td><td>Very dense; requires pick for excavation</td><td>&gt; 50</td><td>500</td></tr><tr><td>4(b)</td><td>Dense; requires pick for excavation, 50 mm peg hard to drive</td><td>30 - 50</td><td>300</td></tr><tr><td>4(c)</td><td>Medium dense</td><td>10 - 30</td><td>100</td></tr><tr><td>4(d)</td><td>Loose; can be excavated with a spade, 50 mm peg easily driven</td><td>4 - 10</td><td>&lt; 100</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 1 of GEO Technical Guidance Note No. 53 (Issue 2, dated 17 April 2026). The presumed values assume founding at least 1 m below ground surface, groundwater not higher than 1 m below ground, granular material that is siliceous and non-crushable, and a maximum total settlement of 30 mm.</p>
+  <p class="ref-table-caveat">Revision summary only. Settlement and serviceability must be assessed, and foundations larger than 6 m or with different groundwater or founding conditions need separate bearing capacity and settlement checks; verify against the current guidance for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>飽和土中の点における有効応力は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>地下水位に依存しない</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>全応力に間隙水圧を加えたもの</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>全応力から間隙水圧を引いたもの</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>常に間隙水圧に等しい</span></button></div>
+    <div class="quiz-explain"><b>Why</b>σ&#x27; = σ − u であり、強度と圧縮を支配するのはこの有効応力であり、全応力だけではない。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>ある土の液性限界が45%、塑性限界が20%である。塑性指数は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.25%</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>2.25%</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>25%</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>65%</span></button></div>
+    <div class="quiz-explain"><b>Why</b>PI = LL − PL = 45 − 20 = 25% であり、塑性範囲の幅である。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q03</span><span>オエドメーター試験は飽和粘土試料の圧縮を測定する。間隙比対対数圧力プロットの正規圧密線上の勾配は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>圧縮指数</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>均等係数</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>透水係数</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>圧密係数</span></button></div>
+    <div class="quiz-explain"><b>Why</b>その勾配は圧縮指数 C_c であり、沈下式に用いられる。c_v は大きさではなく速度を表す。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>粘土中の斜面の安全率を最も高める変化は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>間隙水圧を増加させる</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>地下水位を上げる</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>地下水位を下げて斜面を排水する</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>天端に重量を加える</span></button></div>
+    <div class="quiz-explain"><b>Why</b>排水は間隙水圧を下げ、有効応力を高め、すべり面に沿った利用可能なせん断強度を増加させる。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>変水位試験でスタンドパイプの水位が1.20 mから0.60 mに低下した。透水係数の計算には：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>水位差0.60 mを直接使う</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>比 h₁/h₂ の自然対数を使う</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>水位比の平方根を使う</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>経過時間のみを使う</span></button></div>
+    <div class="quiz-explain"><b>Why</b>変水位透水係数は k = (aL/At) ln(h₁/h₂) であるため、初期と最終の水位比の対数が入り、差ではない。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>飽和粘土の非圧密非排水三軸試験は、全応力で表すと：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>φ_u ≈ 0 および s_u = (σ₁ − σ₃)/2</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>真の有効応力パラメータ c′ と φ′</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>使用可能な強度パラメータはない</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>排水試験と同じ結果</span></button></div>
+    <div class="quiz-explain"><b>Why</b>圧密も排水もないため、破壊包絡線は全応力で水平となる：φ_u ≈ 0 で、強度は非排水せん断強度である。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-geology.ja.html"><span>Core</span><b>応用地質学</b></a><a class="related-card" href="fluid-mechanics.ja.html"><span>Core</span><b>流体力学</b></a><a class="related-card" href="construction-materials.ja.html"><span>Core</span><b>建設材料</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="fluid-mechanics.ja.html"><small>Previous</small><b>流体力学</b></a><a class="next" href="surveying.ja.html"><small>Next</small><b>測量学</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Geotechnical Engineering Office, Civil Engineering and Development Department. (2026). <i>GEO Technical Guidance Note No. 53: Supplementary Guidelines for Foundation Design and Construction (Issue 2)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.cedd.gov.hk/filemanager/eng/content_427/TGN%2053_Issue%202.pdf" rel="noopener">https://www.cedd.gov.hk/filemanager/eng/content_427/TGN%2053_Issue%202.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">有効応力が重要である。</p><p class="margin-note">全応力、間隙水圧、次に σ′。</p><p class="margin-note">排水は強度を高める。</p><p class="margin-note">水がほとんどの斜面崩壊の背後にある。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

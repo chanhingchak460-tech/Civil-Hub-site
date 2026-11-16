@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>人工知能 — Civil Hub</title>
+<meta name="description" content="人工知能とは、知覚し、推論し、学習するシステムを構築する工学である。このページでは、探索、知識表現、学習、ニューラルネットワーク、生成モデル、そしてそれらを誠実に評価する方法を扱う。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/artificial-intelligence.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="人工知能 — Civil Hub">
+<meta property="og:description" content="人工知能とは、知覚し、推論し、学習するシステムを構築する工学である。このページでは、探索、知識表現、学習、ニューラルネットワーク、生成モデル、そしてそれらを誠実に評価する方法を扱う。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/artificial-intelligence.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="artificial-intelligence.html" data-alt-zh-hant="artificial-intelligence.zh-Hant.html" data-alt-ja="artificial-intelligence.ja.html" data-alt-ko="artificial-intelligence.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">人工知能</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">計算</p>
+          <h1>人工知能</h1>
+          <p class="subject-sub">工学における探索、学習、生成モデル</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>計算</li><li><b data-i18n="subject.read">Read</b>9 分</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>8</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">AIがエンジニアに問いかけるもの</a></li><li><a href="#sec-2">探索：目標から経路へ</a></li><li><a href="#sec-3">知識表現</a></li><li><a href="#sec-4">機械学習：写像を学習する</a></li><li><a href="#sec-5">ニューラルネットワークと深層学習</a></li><li><a href="#sec-6">生成モデル</a></li><li><a href="#sec-7">評価は設計の一部である</a></li><li><a href="#sec-8">責任あるAIと専門的判断</a></li><li><a href="#sec-9">プロンプトエンジニアリング</a></li><li><a href="#sec-10">生成メディア：画像、音声、動画</a></li><li><a href="#sec-11">コード生成とその限界</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">人工知能とは、知覚し、推論し、学習するシステムを構築する工学である。このページでは、探索、知識表現、学習、ニューラルネットワーク、生成モデル、そしてそれらを誠実に評価する方法を扱う。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="artificial-intelligence" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>AIがエンジニアに問いかけるもの</h2>
+  <div class="body"><p>AIは単一のアルゴリズムではなく、不確実性のもとで行動するための手法群である。古典的な枠組みでは<strong>知覚</strong>、<strong>推論</strong>、<strong>学習</strong>、<strong>行動</strong>を分け、システムが何を決定しなければならないか、何を観測できるか、誤った場合にどれだけのコストがかかるかを問う。</p>
+<p>実運用されているAIのほとんどは<strong>狭い</strong>AIである。一つのタスクには優れるが、転用はできない。これは欠陥ではなく設計上の範囲であり、それを明文化することが最初のエンジニアリング上の決定である。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>探索：目標から経路へ</h2>
+  <div class="body"><p>多くの問題は<strong>状態空間</strong>として定式化される。すなわち状態、行動、開始状態、目標、そして1ステップあたりのコストである。</p>
+<ul>
+<li><strong>幅優先</strong>探索は最小のステップ数を見つける。</li>
+<li>深さ優先探索はメモリを節約するが、迷走することがある。</li>
+<li>一様コスト探索は最も安い接頭辞を最初に展開する。</li>
+<li><strong>A*</strong>は残りコストのヒューリスティック推定を加える。</li>
+</ul>
+<p>ヒューリスティックが決して過大評価しない場合、つまり<strong>許容的</strong>であれば、A*はすべてを探索することなく最小コストの経路を返す。ヒューリスティックこそが設計のすべてである。弱すぎればほぼ盲目になり、楽観的すぎれば最適性を失う。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">A*の評価関数</span>
+      <div class="formula-expr formula-math">\[f(n) = g(n) + h(n)\]</div>
+      <span class="formula-note">gは開始状態からのコスト、hは目標までの推定コスト</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>知識表現</h2>
+  <div class="body"><p>推論システムには、操作可能な世界のモデルが必要である。</p>
+<ul>
+<li><strong>論理</strong>は事実と規則を表現し、機械的に結論を導出する。</li>
+<li><strong>フレーム</strong>や意味ネットワークはオブジェクトの周りに属性をまとめる。</li>
+<li><strong>オントロジー</strong>や知識グラフは共有語彙を定め、異なるシステムが同じ用語で同じ意味を指すようにする。</li>
+</ul>
+<p>エンジニアリングの知識は雑然として不確実である。確率モデル、信頼度を伴う規則、明示的な仮定は、何が未知であるかを記録する。これは何が既知であるかと同じくらい重要である。</p></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>機械学習：写像を学習する</h2>
+  <div class="body"><p>教師ありモデルは、例を用いて特徴量からラベルへの写像を学習する。データは訓練、検証、テストの各集合に分割され、テスト集合は<strong>汎化</strong>を推定するために最後に一度だけ触れられる。</p>
+<p>訓練データには適合するが新しいデータでは失敗するモデルは<strong>過学習</strong>である。対策は複雑さではなく規律である。すなわち代表的なデータ、正則化、より単純なモデル、そしてテストスコアを密かに調整しない検証ループである。常に単純なベースラインを報告すること。</p></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>ニューラルネットワークと深層学習</h2>
+  <div class="body"><p>単一の人工ニューロンは、入力の重み付き和にバイアスを加え、その結果を非線形の<strong>活性化関数</strong>に通して計算する。層を積み重ねることで複雑な関係を表現できる。</p>
+<p>訓練は<strong>損失</strong>を減らすように重みを調整する。通常は勾配降下法により、<strong>誤差逆伝播</strong>が各重みの勾配を供給する。</p>
+<p>深さが役立つのは、初期の層が一般的な特徴を学習し、後の層がそれらを組み合わせるからである。一方で最適化は難しくなり、データ需要は増し、挙動は解釈しにくくなる。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">人工ニューロン</span>
+      <div class="formula-expr formula-math">\[a = \varphi\left(\sum_i w_i x_i + b\right)\]</div>
+      <span class="formula-note">φはReLUやシグモイドなどの非線形活性化関数</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">勾配降下法の更新</span>
+      <div class="formula-expr formula-math">\[w \leftarrow w - \eta \frac{\partial L}{\partial w}\]</div>
+      <span class="formula-note">ηは学習率、勾配は誤差逆伝播から得られる</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>生成モデル</h2>
+  <div class="body"><p><strong>生成モデル</strong>は訓練データの分布を学習し、新しいサンプルを生成する。</p>
+<ul>
+<li>大規模言語モデルは先行するトークンから次のトークンを予測するため、生成は予測の繰り返しである。</li>
+<li><strong>拡散</strong>モデルは訓練時にデータにノイズを加え、サンプリング時にその過程を逆転させることを学習する。</li>
+</ul>
+<p>生成は想起ではなくサンプリングである。それが流暢さと<strong>ハルシネーション</strong>の両方を説明する。もっともらしい続きは真実の続きではない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Autoregressive generation</span>
+      <div class="formula-expr formula-math">\[p(x_1, \ldots, x_T) = \prod_{t=1}^{T} p(x_t \mid x_{&lt;t})\]</div>
+      <span class="formula-note">the probability of a sequence is built one token at a time</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>評価は設計の一部である</h2>
+  <div class="body"><p>モデルの良し悪しは、それを判断するために用いる証拠の質に等しい。データを誠実に分割し、ホールドアウト集合を確保し、誤りのコストに合った指標を選ぶこと。</p>
+<p>欠陥検出では、<strong>適合率</strong>はフラグを立てた欠陥のうち実際に本物だった割合を問い、<strong>再現率</strong>は実際の欠陥のうち検出できた割合を問う。常に「欠陥なし」と言う高精度モデルは役に立たない。</p>
+<p>評価はまた、レイテンシ、入力の変化に対する頑健性、キャリブレーション、テストデータの漏洩も対象とする。生成出力には、事前に基準を定めたルーブリックに基づく人間の評価が必要である。</p></div><div class="table-wrap"><table><caption>評価指標と、それぞれが隠しうる失敗</caption><thead><tr><th scope='col'>指標</th><th scope='col'>答える問い</th><th scope='col'>隠される失敗</th></tr></thead><tbody><tr><td>精度</td><td>全体でどれだけのケースが正しくラベル付けされたか</td><td>稀なクラスでの失敗</td></tr><tr><td>適合率</td><td>フラグを立てたケースのうちどれだけが正しかったか</td><td>真陽性の見逃し</td></tr><tr><td>再現率</td><td>真のケースのうちどれだけが見つかったか</td><td>誤警報</td></tr><tr><td>F1スコア</td><td>適合率と再現率のバランス</td><td>真陰性、および各誤りのコスト</td></tr><tr><td>キャリブレーション</td><td>予測確率が結果と一致するか</td><td>自信があるが誤った回答</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>責任あるAIと専門的判断</h2>
+  <div class="body"><p>AIの導入は結果を伴う専門的な行為である。</p>
+<ul>
+<li><strong>説明責任</strong>は、モデルが提案を行った場合でもエンジニアに残る。</li>
+<li>訓練データのバイアスは意思決定のバイアスになる。</li>
+<li>個人データには適法な根拠が必要である。</li>
+<li>生成コンテンツは権利を侵害したり、証拠と誤認されたりする可能性がある。</li>
+</ul>
+<p>管理策は安全工学でおなじみのものである。データとモデルを文書化し、実際に使用する母集団でテストし、高リスクの出力には人間の判断点を設け、導入後も監視し、システムを説明・撤回できるようにすること。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">意思決定の期待コスト</span>
+      <div class="formula-expr formula-math">\[E[\text{cost}] = p_{fp} C_{fp} + p_{fn} C_{fn}\]</div>
+      <span class="formula-note">決定しきい値は2つの誤りの相対コストを反映すべきである</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>プロンプトエンジニアリング</h2>
+  <div class="body"><p>言語モデルの出力品質は<strong>プロンプト</strong>、すなわち生成前に与える指示、文脈、例によって決まる。</p>
+<ul>
+<li>効果的なプロンプトはタスクと対象読者について具体的である。</li>
+<li>曖昧なヒントではなく、データと例を提供する。</li>
+<li>望ましい出力形式を明示する。</li>
+<li>してはいけないことではなく、代わりに何をすべきかを記述する。</li>
+<li>モデルに役割（レビュアー、チューター、現場エンジニア）を与えると、使用する語彙の枠組みが定まる。</li>
+</ul>
+<p><strong>思考の連鎖プロンプティング</strong>は、答える前に中間ステップを踏むようモデルに求めるもので、算術や多段階推論を測定可能なほど改善する。<strong>温度</strong>はサンプリングのランダム性を制御する。低い値は最も確率の高いトークンを繰り返し、決定的で安全な出力を与える。高い値は流暢さと引き換えに多様性とハルシネーションを増やす。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">温度スケーリング付きソフトマックス</span>
+      <div class="formula-expr formula-math">\[p(w_i) = \frac{e^{z_i/T}}{\sum_j e^{z_j/T}}\]</div>
+      <span class="formula-note">T → 0 は最も確率の高いトークンを選び、Tが大きいほど分布は平坦になる</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>生成メディア：画像、音声、動画</h2>
+  <div class="body"><p><strong>拡散</strong>モデルは、徐々にノイズを加える過程を逆転させることを学習することで画像を生成する。サンプリングは純粋なノイズから始まり、テキスト記述などの条件付けに導かれながら段階的にノイズを除去する。音声モデルは同じ考え方を波形やスペクトログラムに適用して音声や音楽を生成し、動画生成ではさらに連続するフレームの一貫性を保つ必要がある。</p>
+<p>生成メディアは原則として証拠性のないものとして扱うこと。合成された顔や声は作るのが安価で、人間には検出しにくい。検証は来歴、すなわちウォーターマーク、署名付きメタデータ、検出ツールに依存し、またラベリングなどのプロセス管理にも依存する。視聴者に偽物を見抜くよう求めることに依存してはならない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">拡散モデルの訓練目的関数</span>
+      <div class="formula-expr formula-math">\[L = \mathbb{E}\left\lVert \varepsilon - \varepsilon_\theta(x_t, t) \right\rVert^2\]</div>
+      <span class="formula-note">ネットワークは劣化したサンプルに加えられたノイズεを予測することを学習する</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>コード生成とその限界</h2>
+  <div class="body"><p>大規模言語モデルは自然言語、部分的なプログラム、実行例からコードを書き、コーディングアシスタントはタブ補完とチャットベースの編集を組み合わせる。</p>
+<ul>
+<li>定型コード、正規表現、テストの足場づくりは得意である。</li>
+<li>文脈が長い場合、ライブラリがマイナーな場合、正解がモデルの見たことのない事実に依存する場合は苦手である。</li>
+</ul>
+<p><strong>pass@k</strong>は標準的な尺度である。すなわち、k回の生成試行のうち少なくとも1回が提供されたすべてのテストに合格する確率である。したがって評価の質はテストスイートの質に等しい。コンパイルが通るコードでも誤っていることはある。生成コードは人間のコードとまったく同じようにレビューすること。テストを実行し、存在しないライブラリ関数のハルシネーションを確認し、安全に関わるものには人間の責任者を置くこと。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Pass@k</span>
+      <div class="formula-expr formula-math">\[\text{pass@}k = 1 - (1 - p)^k\]</div>
+      <span class="formula-note">pは1つのサンプルが合格する確率、試行を増やすと確率は上がるが計算コストがかかる</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>ハルシネーションされたAPI</b>
+  生成コードは存在しない関数やライブラリを呼び出すことがある。信頼する前にテストハーネスで実行し、認証情報や非公開データを公開モデルに貼り付けないこと。
+</div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>許容的ヒューリスティック</dt><dd>残りコストの推定値が真のコストを決して超えないもの。これによりA*探索の最適性が保たれる。</dd></div><div class="term"><dt>過学習</dt><dd>訓練データに過度に適合し、新しい未見のデータでの性能が低下すること。</dd></div><div class="term"><dt>適合率</dt><dd>モデルがフラグを立てたケースのうち、実際に陽性である割合。</dd></div><div class="term"><dt>ハルシネーション</dt><dd>流暢でもっともらしいが、裏付けのない、または虚偽の生成コンテンツ。</dd></div><div class="term"><dt>拡散モデル</dt><dd>徐々にノイズを加える過程を逆転させることを学習し、サンプルを生成する生成モデル。</dd></div><div class="term"><dt>汎化</dt><dd>モデルが訓練されていないデータでの性能。ホールドアウトしたテスト集合で推定する。</dd></div><div class="term"><dt>プロンプトエンジニアリング</dt><dd>言語モデルが望ましい出力を生成するように、指示、文脈、例を設計すること。</dd></div><div class="term"><dt>温度</dt><dd>トークン確率をスケーリングするサンプリングパラメータ。低い値は決定的、高い値はより多様になる。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>欠陥検出器の混同行列を読む</h2>
+        <p class="problem">ある画像モデルを500枚の検査画像でテストした。92枚の欠陥パネルを正しくフラグし、362枚の良品を正しく合格とした。18枚の良品を誤ってフラグし、28枚の欠陥パネルを見逃した。精度、適合率、再現率を計算し、精度だけがなぜ誤解を招くかを述べよ。</p>
+        <ol><li>混同行列：TP = 92、FP = 18、FN = 28、TN = 362、合計500枚。</li><li>精度 = (TP + TN) / 合計 = (92 + 362) / 500 = 454 / 500 = 0.908、すなわち90.8パーセント。</li><li>適合率 = TP / (TP + FP) = 92 / 110 = 0.836、すなわち83.6パーセント。</li><li>再現率 = TP / (TP + FN) = 92 / 120 = 0.767、すなわち76.7パーセント。</li><li>F1 = 2PR / (P + R) = 2 × 0.836 × 0.767 / (1.603) = 0.80。</li><li>ベースラインの確認：常に良品と言うモデルは何も検出しないまま380 / 500 = 76パーセントの精度を出す。したがって不均衡な集合では精度だけではモデルを過大評価する。</li></ol>
+        <div class="answer"><b>Answer</b>精度は90.8パーセント、適合率は83.6パーセント、再現率は76.7パーセントで、F1は約0.80である。欠陥パネルの約4枚に1枚を見逃しているため、安全に関わる検査タスクでは再現率を上げるようにしきい値を動かし、誤警報のコストを見逃しコストと比較検討すべきである。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>探索アルゴリズムを論じる前に、状態空間、行動、1ステップのコストを書き下すこと。</li><li>適合率と再現率はデータセットと分割とともに示すこと。どちらの数値も単独では意味を持たない。</li><li>責任あるAIの問いでは、名前のある人間に説明責任を負わせ、監視ステップがどこにあるかを明示すること。</li><li>何かを生成する前に評価ルーブリックを定め、生成出力をそれに照らしてブラインドで採点すること。品質の印象は指標ではない。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q01</span><span>許容的ヒューリスティックはA*探索が次のことを保証する：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>ノードを1つしか展開しない</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>最小コストの経路を返す</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>他のどの探索よりも速く実行される</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>目標テストなしで経路を見つける</span></button></div>
+    <div class="quiz-explain"><b>Why</b>ヒューリスティックが残りコストを決して過大評価しなければ、A*はより安い経路を誤って捨てることはないため、最適性が保たれる。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>ある分類器が訓練データで99パーセント、テスト集合で62パーセントのスコアを出した。これは最も適切には次のように記述される：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>未学習（アンダーフィッティング）</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>過学習</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>テスト集合へのデータ漏洩</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>完全にキャリブレーションされたモデル</span></button></div>
+    <div class="quiz-explain"><b>Why</b>訓練性能とテスト性能の大きな差は過学習の特徴である。モデルは汎化せず暗記したのである。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>拡散モデルがサンプルを生成する方法は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>手書きの固定規則集合を適用する</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>訓練データをラベルで並べ替える</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>最も近い訓練例を検索する</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>データにノイズを加える過程を逆転させる</span></button></div>
+    <div class="quiz-explain"><b>Why</b>拡散モデルはノイズ除去を学習する。サンプリングはノイズから始まり、訓練時の劣化過程を段階的に逆転させる。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>テスト集合はいつ使うべきか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>特徴量を選ぶために訓練前に</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>訓練集合が小さすぎる場合にのみ</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>調整を導くために毎回の訓練後に</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>汎化の最終推定のために一度だけ</span></button></div>
+    <div class="quiz-explain"><b>Why</b>テスト集合を繰り返し使うとモデル選択に情報が漏れ、報告される性能が水増しされる。調整には検証データを使うべきである。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q05</span><span>言語モデルのサンプリング温度を上げると、その出力は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>より多様で決定的でなくなる</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>長くなるがそれ以外は同一になる</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>事実であることが保証される</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>生成が速くなる</span></button></div>
+    <div class="quiz-explain"><b>Why</b>温度はトークン確率分布を平坦にするため、確率の低いトークンがより頻繁にサンプリングされ、出力は多様になる。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>多段階推論の回答を最も直接的に改善するプロンプトの実践はどれか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>最終回答の前にステップを踏むようモデルに求める</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>要求をすべて大文字で書く</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>質問を2回繰り返す</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>モデルが偏らないよう例を省く</span></button></div>
+    <div class="quiz-explain"><b>Why</b>思考の連鎖プロンプティングは中間推論を示すため、算術や多段階タスクでの誤りが減る。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.ja.html"><span>Computing</span><b>AIとデータ分析</b></a><a class="related-card" href="machine-learning.ja.html"><span>Computing</span><b>機械学習</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="service-learning.ja.html"><small>Previous</small><b>サービスラーニング</b></a><a class="next" href="design-of-transport-infrastructure.ja.html"><small>Next</small><b>交通インフラ設計</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">A*が最適なのはhが決して過大評価しない場合のみ。</p><p class="margin-note">テストデータには一度だけ触れる。</p><p class="margin-note">ハルシネーションは自信に満ちた続きである。</p><p class="margin-note">精度は稀な失敗を隠す。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

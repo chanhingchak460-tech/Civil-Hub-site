@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>智慧出行機器學習 — Civil Hub</title>
+<meta name="description" content="從出行數據中學習：用迴歸預測速度、用分類識別路牌，以及必須能泛化的神經網絡。本頁涵蓋訓練循環、誠實的評估，以及位置記錄所帶來的私隱問題。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/machine-learning-smart-mobility.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="智慧出行機器學習 — Civil Hub">
+<meta property="og:description" content="從出行數據中學習：用迴歸預測速度、用分類識別路牌，以及必須能泛化的神經網絡。本頁涵蓋訓練循環、誠實的評估，以及位置記錄所帶來的私隱問題。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/machine-learning-smart-mobility.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="machine-learning-smart-mobility.html" data-alt-zh-hant="machine-learning-smart-mobility.zh-Hant.html" data-alt-ja="machine-learning-smart-mobility.ja.html" data-alt-ko="machine-learning-smart-mobility.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">智慧出行機器學習</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">計算</p>
+          <h1>智慧出行機器學習</h1>
+          <p class="subject-sub">以迴歸、分類與神經網絡從出行數據中學習</p>
+          <ul class="subject-facts"><li><b>類型</b>計算</li><li><b>閱讀</b>10 分鐘</li><li><b>章節</b>11</li><li><b>公式</b>9</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">出行模型預測甚麼</a></li><li><a href="#sec-2">迴歸：為移動擬合一條直線</a></li><li><a href="#sec-3">分類、標籤與數據劃分</a></li><li><a href="#sec-4">過擬合是默認的失敗模式</a></li><li><a href="#sec-5">神經網絡：堆疊的變換</a></li><li><a href="#sec-6">用於路牌的卷積網絡</a></li><li><a href="#sec-7">與決策相匹配的評估</a></li><li><a href="#sec-8">出行數據是個人數據</a></li><li><a href="#sec-9">物體檢測：邊界框與 IoU</a></li><li><a href="#sec-10">用於軌跡預測的序列模型</a></li><li><a href="#sec-11">微調預訓練檢測器</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">從出行數據中學習：用迴歸預測速度、用分類識別路牌，以及必須能泛化的神經網絡。本頁涵蓋訓練循環、誠實的評估，以及位置記錄所帶來的私隱問題。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="machine-learning-smart-mobility" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>出行模型預測甚麼</h2>
+  <div class="body"><p>智慧出行將感測器記錄轉化為預測：十五分鐘後的路段速度、相機畫面中路牌的類別、行人下一步會走的路徑。</p>
+<p>第一個決定是<strong>任務類型</strong>，因為它決定了標籤、損失函數和評估方式。</p>
+<ul>
+<li><strong>監督式學習</strong>：每個樣本將特徵向量 <code>x</code> 與已知目標 <code>y</code> 配對。</li>
+<li><strong>迴歸</strong>：預測一個數值。</li>
+<li><strong>分類</strong>：預測一個類別。</li>
+<li><strong>非監督式</strong>方法在沒有目標的情況下尋找結構，例如將相似的行程聚類。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>迴歸：為移動擬合一條直線</h2>
+  <div class="body"><p>線性模型將目標預測為輸入的加權和，<code>ŷ = w · x + b</code>。訓練會選擇使預測值接近觀測值的權重，通常通過最小化<strong>均方誤差</strong>來實現。</p>
+<p>平方會最嚴厲地懲罰大的誤差——這對速度預測是合理的，因為大的誤差影響最大。</p>
+<p>損失是權重空間中的一個曲面。<strong>梯度下降</strong>沿下坡方向邁步，使用導數確定方向，使用學習率確定步長。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">線性迴歸模型</span>
+      <div class="formula-expr formula-math">\[\hat{y} = \mathbf{w}\cdot\mathbf{x} + b\]</div>
+      <span class="formula-note">x 為特徵，w 為權重，b 為偏置</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">均方誤差</span>
+      <div class="formula-expr formula-math">\[\mathrm{MSE} = \frac{1}{n}\sum (y_i - \hat{y}_i)^2\]</div>
+      <span class="formula-note">n 為訓練樣本數</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">梯度下降更新</span>
+      <div class="formula-expr formula-math">\[w \leftarrow w - \eta \frac{\partial L}{\partial w}\]</div>
+      <span class="formula-note">η 為學習率</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>分類、標籤與數據劃分</h2>
+  <div class="body"><p>分類器為每個類別輸出一個分數，對於兩類問題通過 <strong>sigmoid</strong> 轉換為概率，對於多類問題通過 <strong>softmax</strong> 轉換。預測標籤是分數最高的類別，兩個分數相等處的曲面即為決策邊界。</p>
+<p>在任何調參之前，保留一個模型從未見過的<strong>測試集</strong>。在自身訓練行上評分的模型只是在檢查記憶能力。</p>
+<p>對於小數據集，<strong>交叉驗證</strong>輪換保留集，使每一行都恰好被測試一次。</p></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>過擬合是默認的失敗模式</h2>
+  <div class="body"><p>隨著容量增長，訓練損失幾乎總會下降；驗證損失才是誠實的信號。當驗證損失觸底然後上升，而訓練損失繼續下降時，模型已開始擬合噪聲。</p>
+<p>這種差距就是<strong>過擬合</strong>；模型對於模式來說過於簡單則是<strong>欠擬合</strong>，此時兩種損失都保持高位。</p>
+<p>控制方法包括：<br />
+- 減少特徵或層數<br />
+- 懲罰大權重的<strong>正則化</strong><br />
+- 擴大有效數據集的數據增強<br />
+- 在驗證最小值處早停</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">正則化損失</span>
+      <div class="formula-expr formula-math">\[L = \mathrm{loss} + \lambda \sum w_i^2\]</div>
+      <span class="formula-note">λ 設定懲罰的強度</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>神經網絡：堆疊的變換</h2>
+  <div class="body"><p>一個神經元計算其輸入的加權和，加上偏置，並將結果通過非線性<strong>激活函數</strong>（如 ReLU）。堆疊層讓網絡構建自己的<strong>特徵</strong>：早期層檢測簡單模式，後期層將它們組合起來。</p>
+<p><strong>反向傳播</strong>應用鏈式法則來找出每個權重如何影響損失，優化器則一起更新所有權重。小批量以噪聲梯度換取速度，對數據的一次完整遍歷稱為一個<strong>epoch</strong>。</p>
+<p>沒有非線性，堆疊的線性層會坍縮成一個線性映射。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">神經元輸出</span>
+      <div class="formula-expr formula-math">\[a = f(Wx + b)\]</div>
+      <span class="formula-note">f 為非線性激活函數，如 ReLU</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>用於路牌的卷積網絡</h2>
+  <div class="body"><p>相機圖像是像素的網格，將其展平會破壞鄰域結構。<strong>卷積層</strong>在圖像上滑動小的可學習濾波器，在每個位置共享權重，因此在一個角落學到的邊緣檢測器在每個角落都有效。<strong>池化</strong>壓縮特徵圖並增加對小位移的容忍度。</p>
+<p>路牌數據集通常小而類別不平衡，因此<strong>遷移學習</strong>是標準做法：<br />
+- 從在大規模圖像集合上訓練的網絡開始<br />
+- 凍結早期層<br />
+- 為路牌類別重新訓練最終層</p>
+<p>數據增強——旋轉、亮度和裁剪——擴大了訓練集。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">卷積輸出尺寸</span>
+      <div class="formula-expr formula-math">\[n_{\mathrm{out}} = \frac{n_{\mathrm{in}} - k + 2p}{s} + 1\]</div>
+      <span class="formula-note">k 為濾波器大小，p 為填充，s 為步長</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>與決策相匹配的評估</h2>
+  <div class="body"><p>當類別不平衡時，準確率會產生誤導：一個從不預測罕見讓路標誌的檢測器仍可獲得 95% 的分數。</p>
+<p><strong>混淆矩陣</strong>區分錯誤類型，<strong>精確率</strong>和<strong>召回率</strong>以不同方式對它們評分——精確率問有多少檢測是正確的，召回率問找到了多少真實標誌。</p>
+<p>對於速度，報告以數據單位表示的 <strong>MAE</strong> 和懲罰大誤差的 <strong>RMSE</strong>；<strong>MAPE</strong> 在接近零速度時會爆炸。說明測試集、基線和每類結果。</p></div><div class="table-wrap"><table><caption>出行任務的指標及每個指標所隱藏的信息</caption><thead><tr><th scope='col'>指標</th><th scope='col'>任務</th><th scope='col'>解讀為</th><th scope='col'>隱藏</th></tr></thead><tbody><tr><td>準確率</td><td>分類</td><td>正確標籤的比例</td><td>可能忽略罕見類別</td></tr><tr><td>精確率</td><td>檢測</td><td>檢測中正確的比例</td><td>未計入漏掉的標誌</td></tr><tr><td>召回率</td><td>檢測</td><td>找到的真實標誌比例</td><td>未計入誤報</td></tr><tr><td>MAE 和 RMSE</td><td>迴歸</td><td>平均誤差，以及強調大誤差的誤差</td><td>RMSE 受異常值主導</td></tr><tr><td>MAPE</td><td>迴歸</td><td>平均百分比誤差</td><td>在接近零速度時不穩定</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>出行數據是個人數據</h2>
+  <div class="body"><p>一旦軌跡與家庭或工作地點關聯，就能識別個人。在發布前進行聚合，從流程中移除標識符，並默認將精細位置視為敏感信息。</p>
+<p>訓練數據還帶有<strong>偏差</strong>：相機對某些道路的覆蓋優於其他道路，標籤記錄的是誰被觀察到，而不是誰在那裡。一個被教導模仿執法模式的模型會複製這些模式。</p>
+<p>記錄數據的來源，保持人在迴路中，並監控部署後的預測是否存在漂移和不平等誤差，而不僅僅是平均準確率。</p></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>物體檢測：邊界框與 IoU</h2>
+  <div class="body"><p>檢測路牌意味著為其預測一個邊界框和一個類別。兩個框很少完全重合，因此檢測通過<strong>交併比</strong>評分：共享面積除以合併面積。</p>
+<p>當預測與真實框的 IoU 超過閾值（通常為 0.5）時，該預測計為一次命中。按類別計算命中數得到<strong>平均精確率</strong>，各類別的平均值即為檢測器的主要指標。</p>
+<p>在其旁邊報告 IoU 閾值——在 0.5 下得分良好的檢測器在 0.75 下可能崩潰，而更嚴格的閾值對安全至關重要。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">交併比</span>
+      <div class="formula-expr formula-math">\[\mathrm{IoU} = \frac{\mathrm{area}(A \cap B)}{\mathrm{area}(A \cup B)}\]</div>
+      <span class="formula-note">介於 0 和 1 之間；約 0.5 以上預測與真實匹配</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>用於軌跡預測的序列模型</h2>
+  <div class="body"><p>軌跡是位置的序列，過去的步驟是特徵。<strong>時間卷積網絡</strong>使用因果卷積和增長的膨脹率，使一層能看到很遠的歷史而不會導致參數爆炸；<strong>transformer</strong> 編碼器則直接跨時間步進行注意力計算。兩者都將觀察到的路徑映射到一個隱藏狀態，最終層將其轉換為下一個位置。</p>
+<p>使用適合數據的損失進行訓練：普通的平均絕對誤差是穩健的，而 <strong>Smooth L1</strong> 損失在大誤差時表現得像 L1，在接近零時表現得像平方誤差，在微調期間提供平滑梯度同時抵抗異常值。</p>
+<p>在保留場景上以米為單位用 MAE 和 RMSE 評估。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Smooth L1 損失</span>
+      <div class="formula-expr formula-math">\[L(x) = \begin{cases} 0.5 x^2 &amp; |x| &lt; 1 \\ |x| - 0.5 &amp; \text{otherwise} \end{cases}\]</div>
+      <span class="formula-note">x 為預測誤差；接近零時為二次，遠離時為線性</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">膨脹卷積</span>
+      <div class="formula-expr formula-math">\[\text{dilation } d: \quad y_t = \sum_k w_k x_{t - dk}\]</div>
+      <span class="formula-note">堆疊 d = 1, 2, 4, … 的層可擴大感受野</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>微調預訓練檢測器</h2>
+  <div class="body"><p>出行數據集很少大到足以從頭訓練檢測器，因此標準路線是<strong>遷移學習</strong>：從在大規模通用圖像集合上預訓練的主幹網絡開始，將其分類頭替換為新類別，僅訓練該頭部，而早期層保持<strong>凍結</strong>。凍結層保留其學習到的特徵，不接收梯度更新。</p>
+<p>一旦頭部收斂，以更小的學習率解凍後期主幹層，使特徵適應而不破壞已學到的內容。</p>
+<p><strong>數據增強</strong>——水平翻轉、顏色抖動、調整大小和歸一化——擴展有效數據集並教導不變性。使用與訓練相同的流程預處理測試圖像，否則模型看到的數據分佈與其學習時不同。</p></div>
+<div class="callout callout--tip">
+  <b>先凍結，後解凍</b>
+  在凍結主幹的情況下訓練新頭部，然後以約小十倍的學習率解凍；直接跳到完全微調通常會破壞有用的特徵。
+</div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>監督式學習</dt><dd>從標記樣本中學習映射，每個輸入都與正確輸出配對。</dd></div><div class="term"><dt>過擬合</dt><dd>過於緊密地擬合訓練數據中的噪聲，導致在未見數據上的性能下降。</dd></div><div class="term"><dt>驗證集</dt><dd>從訓練中保留的數據，用於在最終測試前比較模型選擇。</dd></div><div class="term"><dt>卷積層</dt><dd>在圖像上應用共享的可學習濾波器以構建平移容忍特徵的層。</dd></div><div class="term"><dt>遷移學習</dt><dd>將在大數據集上訓練的模型作為較小相關任務的起點重用。</dd></div><div class="term"><dt>召回率</dt><dd>模型成功找到的真實正例的比例。</dd></div><div class="term"><dt>交併比</dt><dd>預測框與真實框之間的共享面積除以它們的並集，是物體檢測中的標準匹配度量。</dd></div><div class="term"><dt>微調</dt><dd>在新的相關數據集上繼續訓練預訓練模型，通常凍結早期層。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>保留速度預測的誤差</h2>
+        <p class="problem">一個模型在五個連續區間預測路段速度（km/h）。觀測速度為 60、55、70、65 和 80；預測速度為 58、58、66、65 和 74。求 MAE 和 RMSE，並與始終預測訓練均值 66 km/h 的基線進行比較。</p>
+        <ol><li>誤差（觀測 − 預測）：2、−3、4、0 和 6 km/h。</li><li>MAE = (2 + 3 + 4 + 0 + 6) / 5 = 15 / 5 = 3.0 km/h。</li><li>平方誤差：4、9、16、0 和 36，總和為 65。RMSE = √(65/5) = √13 ≈ 3.6 km/h。</li><li>基線誤差（從 66 km/h）：−6、−11、4、−1 和 14，因此其 MAE = 36/5 = 7.2 km/h。</li><li>基線 RMSE = √((36 + 121 + 16 + 1 + 196)/5) = √74 ≈ 8.6 km/h。</li><li>合理性檢查：模型在兩個指標上都優於基線，且 RMSE 大於 MAE，因為 6 km/h 的誤差被重點加權。</li></ol>
+        <div class="answer"><b>Answer</b>MAE = 3.0 km/h，RMSE ≈ 3.6 km/h，而基線值為 7.2 km/h 和 8.6 km/h。在此樣本上預測優於基線，但五個區間太少，不足以聲稱普遍改善。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>首先命名任務：迴歸和分類需要不同的損失和不同的指標。</li><li>報告每個測試集指標時附上單位和基線；僅憑準確率很少能回答所問的問題。</li><li>對於不平衡類別，引用精確率和召回率而非總體準確率。</li><li>微調時，在最初的幾輪中凍結主幹，並在解凍時將學習率降低約十倍。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>一個團隊不斷調整超參數，直到保留測試集上的準確率不再提高。此程序的主要問題是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>測試集不再獨立，因此其分數過於樂觀</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>分類無法計算準確率</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>超參數從不影響準確率</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>模型肯定會欠擬合</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>反覆在測試集上評分會將其信息洩漏到模型選擇中；超參數應在驗證集上調整。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>在訓練期間，訓練損失持續下降，而驗證損失觸底然後上升。這種模式表明：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>驗證集中的數據洩漏</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>欠擬合，因為訓練損失低</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>過擬合，因為模型現在擬合噪聲而非信號</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>學習率太小</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>訓練損失下降與驗證損失上升之間不斷擴大的差距是模型開始記憶噪聲的典型跡象。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>卷積層中的權重共享有助於路牌識別，主要因為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>它消除了對非線性激活的需求</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>它保證 100% 的測試準確率</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>同一個學習到的濾波器可以檢測圖像中任何位置的特徵</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>它將所需訓練圖像數量減少到零</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>在位置間共享一個濾波器使檢測器具有平移容忍性，並與全連接層相比大大減少了參數數量。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q04</span><span>一個停車標誌檢測器有 96% 的準確率，但從不預測罕見的讓路類別。最有用的下一份報告是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>每類精確率、召回率和混淆矩陣</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>最後一個 epoch 的訓練損失</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>網絡中的參數數量</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>僅總體準確率</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>準確率隱藏了被忽略的類別；每類精確率、召回率和混淆矩陣顯示模型實際找到了哪些類別。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>一個預測框和一個真實框的重疊面積為 30 px²，它們的並集覆蓋 60 px²。交併比為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>2.0</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.5</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.33</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>30</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>IoU 是共享面積除以合併面積：30/60 = 0.5，這是將檢測計為命中的常用閾值。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q06</span><span>在軌跡預測中，Smooth L1 損失優於普通 L1 的主要原因是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>它比 L2 更嚴厲地懲罰異常值</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>它對小誤差是二次的，在微調期間提供穩定梯度</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>它總是產生更小的損失</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>它消除了對學習率的需求</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>Smooth L1 在接近零時是二次的，在大誤差時是線性的，結合了穩定的微調和對異常位置的魯棒性。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.zh-Hant.html"><span>Computing</span><b>人工智能與數據分析</b></a><a class="related-card" href="artificial-intelligence.zh-Hant.html"><span>Computing</span><b>人工智能</b></a><a class="related-card" href="machine-learning.zh-Hant.html"><span>Computing</span><b>機器學習</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="quantitative-methods.zh-Hant.html"><small>上一頁</small><b>工程師定量方法</b></a><a class="next" href="professional-english.zh-Hant.html"><small>下一頁</small><b>專業英語</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">先劃分再調參。</p><p class="margin-note">驗證損失是誠實的信號。</p><p class="margin-note">MSE 懲罰大誤差。</p><p class="margin-note">位置記錄是個人數據。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

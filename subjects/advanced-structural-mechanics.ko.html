@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>고급 구조 역학 — Civil Hub</title>
+<meta name="description" content="대칭도 원형도 아닌 부재의 하중 경로: 주축, 전단중심, 뒤틀림 비틀림, 그리고 실제 기둥의 안정성. 채널이 왜 비틀리는지, 세장한 스트럿이 왜 항복 하중보다 낮은 하중에서 좌굴하는지를 설명한다.">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/advanced-structural-mechanics.ko.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="고급 구조 역학 — Civil Hub">
+<meta property="og:description" content="대칭도 원형도 아닌 부재의 하중 경로: 주축, 전단중심, 뒤틀림 비틀림, 그리고 실제 기둥의 안정성. 채널이 왜 비틀리는지, 세장한 스트럿이 왜 항복 하중보다 낮은 하중에서 좌굴하는지를 설명한다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/advanced-structural-mechanics.ko.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="advanced-structural-mechanics.html" data-alt-zh-hant="advanced-structural-mechanics.zh-Hant.html" data-alt-ja="advanced-structural-mechanics.ja.html" data-alt-ko="advanced-structural-mechanics.ko.html" data-page-lang="ko" data-root="../" data-total="42" data-page="library" data-content-lang="ko">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">고급 구조 역학</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">핵심</p>
+          <h1>고급 구조 역학</h1>
+          <p class="subject-sub">휨, 전단 중심, 비틀림 및 좌굴</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>핵심</li><li><b data-i18n="subject.read">Read</b>14 분</li><li><b data-i18n="subject.sections">Sections</b>10</li><li><b data-i18n="subject.formulas">Formulas</b>22</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M80 160 V64 H260 V160" stroke="currentColor" stroke-width="1.7"/><path d="M70 160 h20 M250 160 h20" stroke="currentColor" stroke-width="1.2"/><path d="M80 160 l-8 12 h16 z M260 160 l-8 12 h16 z" stroke="currentColor" stroke-width="1"/><path d="M80 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M220 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M104 100 q-20 14 0 28" stroke="var(--accent)" stroke-width="1"/><path d="M236 100 q20 14 0 28" stroke="var(--accent)" stroke-width="1"/><text x="170" y="44" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PORTAL FRAME</text></svg>
+          <figcaption>Portal frame — bending moments at the joints</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">대칭은 예외이다</a></li><li><a href="#sec-2">관성곱과 주축</a></li><li><a href="#sec-3">비대칭 휨의 응력</a></li><li><a href="#sec-4">전단흐름과 전단중심</a></li><li><a href="#sec-5">원형 축을 넘어선 비틀림</a></li><li><a href="#sec-6">스트럿과 유효길이</a></li><li><a href="#sec-7">불완전성과 사우스웰 플롯</a></li><li><a href="#sec-8">지름길로서의 에너지 방법</a></li><li><a href="#sec-9">소성 휨과 형상계수</a></li><li><a href="#sec-10">뒤틀림 비틀림과 바이모멘트</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">대칭도 원형도 아닌 부재의 하중 경로: 주축, 전단중심, 뒤틀림 비틀림, 그리고 실제 기둥의 안정성. 채널이 왜 비틀리는지, 세장한 스트럿이 왜 항복 하중보다 낮은 하중에서 좌굴하는지를 설명한다.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="advanced-structural-mechanics" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>대칭은 예외이다</h2>
+  <div class="body"><p>교과서 단면은 보통 대칭이므로 하중 평면과 중립축이 수직을 유지하고 두 휨 방향을 따로 다룰 수 있다. 실제 부재는 그렇게 순순하지 않다: 부등변 ㄱ형강, 편심으로 재하된 채널, Z-퍼린, 크레인 레일은 모두 도심축 어느 것과도 일치하지 않는 방향으로 휨이 발생한다.</p>
+<p>이 결합은 <strong>관성곱</strong> I_xy = ∫xy dA에서 비롯되며, 이는 단면적이 네 사분면에 어떻게 분포하는지를 나타낸다. 이 값이 0이면 한 축에 대한 휨은 다른 좌표로 정의되는 점에서 응력을 일으키지 않으며 단순 휨 공식이 적용된다. 0이 아니면 중립축이 기울어진다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">관성곱</span>
+      <div class="formula-expr formula-math">\[I_{xy} = \int x\,y\,\mathrm{d}A\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>관성곱과 주축</h2>
+  <div class="body"><p>직사각형으로 구성된 단면에서 I_xy는 각 부분을 A_i x̄_i ȳ_i로 합산한다. 직사각형은 자기 도심축에 대해서는 아무 기여도 하지 않기 때문이다. 이중 대칭 단면은 I_xy = 0이며, 대칭축이 하나인 단면도 그 축 쌍에 대해서는 0이다.</p>
+<p><strong>주축</strong>은 I_xy가 소멸하는 도심축이다. 이를 찾는 것은 주응력과 같은 대수이다: 각도는 tan 2θ_p = 2I_xy/(I_y − I_x)를 따르고, 주 2차 모멘트는 두 극값 사이에 있다. 각도를 다시 대입하여 어느 축이 어느 값을 갖는지 확인한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">주축 각도</span>
+      <div class="formula-expr formula-math">\[\tan 2\theta_p = \frac{2 I_{xy}}{I_y - I_x}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">주 2차 모멘트</span>
+      <div class="formula-expr formula-math">\[I_{u,v} = \frac{I_x + I_y}{2} \pm \sqrt{\left(\frac{I_x - I_y}{2}\right)^2 + I_{xy}^2}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>비대칭 휨의 응력</h2>
+  <div class="body"><p>도심축 x와 y를 사용할 때, 한 점에서의 수직응력은 아래 공식으로 주어지며, 두 모멘트는 양의 사분면에 인장을 일으킬 때 양으로 취한다. 분모는 결코 음수가 되지 않는데, I_x I_y ≥ I_xy²이기 때문이다.</p>
+<p>σ = 0으로 두면 중립축이 나온다: 중립축은 도심을 지나지만 그 기울기는 어느 축과도 무관하다. 최대 응력은 자동으로 x나 y 방향으로 가장 먼 모서리에 생기지 않으므로 모든 모서리를 확인해야 한다. 주축에 대해서는 결합이 소멸하고 익숙한 형태가 돌아오며, σ = M_v u/I_v + M_u v/I_u가 된다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">비대칭 휨 응력</span>
+      <div class="formula-expr formula-math">\[\sigma = \frac{(M_y I_x - M_x I_{xy})\,x + (M_x I_y - M_y I_{xy})\,y}{I_x I_y - I_{xy}^2}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>전단흐름과 전단중심</h2>
+  <div class="body"><p>횡방향 전단은 균일하지 않다. 얇은 벽 단면에서는 벽을 어딘가에서 자르고 절단 너머 면적에 작용하는 종방향 힘을 평형시킨다: <strong>전단흐름</strong>은 q = VQ/I이며, 여기서 Q는 그 면적의 휨축에 대한 1차 모멘트이고 벽 응력은 q를 두께로 나눈 값이다.</p>
+<p>채널의 경우 플랜지와 웨브의 흐름이 합쳐져 하나의 수직 힘이 되며, 그 작용선은 도심이 아니다. 횡하중이 비틀림을 일으키지 않는 점이 <strong>전단중심</strong>이며, 이는 순전히 기하학적 성질이다. 채널의 경우 웨브 중심선에서 플랜지 반대쪽으로 e = 3b²/(h + 6b)만큼 떨어진 웨브 바깥에 위치하며, b는 플랜지 폭, h는 플랜지 중심선 사이의 깊이이다. 등변 ㄱ형강은 전단중심이 발꿈치 근처에 있다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">전단흐름</span>
+      <div class="formula-expr formula-math">\[q = \frac{V Q}{I}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">채널의 전단중심</span>
+      <div class="formula-expr formula-math">\[e = \frac{3 b^2}{h + 6 b}\]</div>
+      
+    </div></div><div class="table-wrap"><table><caption>일반적인 얇은 벽 단면의 전단중심</caption><thead><tr><th scope='col'>단면</th><th scope='col'>관성곱</th><th scope='col'>전단중심</th></tr></thead><tbody><tr><td>이중 대칭 I형 단면</td><td>0</td><td>도심</td></tr><tr><td>채널 (대칭축 1개)</td><td>대칭축에 대해 0</td><td>웨브 바깥, 플랜지 반대쪽</td></tr><tr><td>등변 ㄱ형강</td><td>0이 아님</td><td>레그의 발꿈치 근처</td></tr><tr><td>Z형 단면 (점대칭)</td><td>일반적으로 0이 아님</td><td>도심</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>원형 축을 넘어선 비틀림</h2>
+  <div class="body"><p>원형 축은 뒤틀림 없이 비틀리므로 τ = Tr/J와 θ = TL/GJ는 정확하다. 다른 단면은 <strong>뒤틀린다</strong>: 평면 단면이 평면을 유지하지 못하고 단순 비틀림 공식이 성립하지 않는다. 비원형 중실 봉은 도심에 가장 가까운 경계에서 최대 전단응력에 도달하며, 그 값은 계수표에서 취한다.</p>
+<p><strong>폐쇄 얇은 벽 튜브</strong>는 순환하는 전단흐름으로 비틀림을 지지하므로 τ = T/(2A_m t)이고 J = 4A_m²/∮(ds/t)이며, A_m은 벽 중심선이 둘러싼 면적이다. 개방 단면은 흐름이 순환할 폐경로가 없어 훨씬 약하며 J ≈ Σ(1/3)bt³이다. 그래서 같은 질량의 개방 채널보다 박스가 비틀림에 훨씬 잘 저항한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">브레트 전단응력</span>
+      <div class="formula-expr formula-math">\[\tau = \frac{T}{2 A_m t}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">폐쇄 튜브 상수</span>
+      <div class="formula-expr formula-math">\[J = \frac{4 A_m^2}{\oint \frac{\mathrm{d}s}{t}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">개방 단면 상수</span>
+      <div class="formula-expr formula-math">\[J \approx \sum \frac{1}{3} b t^3\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>스트럿과 유효길이</h2>
+  <div class="body"><p>완전히 곧고 중심 재하된 기둥은 <strong>오일러 하중</strong>에 도달할 때까지 곧게 유지된다: P_cr = π²EI/(KL)²이며, KL은 단부 조건에 의해 정해지는 유효길이이다. K는 핀–핀에서 1.0, 고정–핀에서 0.7, 고정–고정에서 0.5, 고정–자유에서 2.0이다. 그 하중을 넘으면 곧은 형상은 불안정해지고 작은 교란도 커진다.</p>
+<p>지배 매개변수는 세장비 λ = KL/r이며, r = √(I/A)는 휨축에 대한 회전반경이다. 뭉툭한 기둥은 좌굴 전에 항복하고, 세장한 기둥은 항복응력보다 훨씬 낮은 응력에서 좌굴한다. 단면은 약한 축만큼만 강하다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">오일러 좌굴 하중</span>
+      <div class="formula-expr formula-math">\[P_{cr} = \frac{\pi^2 E I}{(K L)^2}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">세장비</span>
+      <div class="formula-expr formula-math">\[\lambda = \frac{K L}{r}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>불완전성과 사우스웰 플롯</h2>
+  <div class="body"><p>실제 기둥은 완전히 곧거나 완전히 중심 재하되지 않는다. 초기 휨 δ₀는 축하중에 의해 증폭되어 중간 높이 처짐은 δ_max = δ₀/[1 − P/P_cr]이 되며, 최외곽 섬유는 항복을 넘지 않으면서 P/A와 Pδ_max/Z를 더해야 한다.</p>
+<p>따라서 파괴는 오일러 하중보다 낮게 온다: 기둥은 스스로 커지는 처짐에 의해 항복으로 몰리며, <strong>페리–로버트슨</strong> 방법은 이를 함께 푼다. <strong>사우스웰 플롯</strong>은 불안정에 도달하지 않는 시험에서 오일러 하중을 추출한다: 측정 처짐을 하중으로 나눈 값을 처짐에 대해 도시하면 기울기 1/P_cr인 직선이 된다. 좌굴은 점진적인 강성 상실이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">처짐 증폭</span>
+      <div class="formula-expr formula-math">\[\delta_{\max} = \frac{\delta_0}{1 - P/P_{cr}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">사우스웰 플롯</span>
+      <div class="formula-expr formula-math">\[\frac{\delta}{P} = \frac{\delta}{P_{cr}} + \frac{\delta_0}{P_{cr}}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>지름길로서의 에너지 방법</h2>
+  <div class="body"><p>변형 에너지는 변형의 일을 저장한다: 휨의 경우 U = ∫M²/(2EI) ds이며, 축력, 전단, 비틀림에도 유사한 적분이 있다. <strong>카스틸리아노 정리</strong>는 하중 방향의 변위를 Δ = ∂U/∂P로 주며, 이는 미분방정식을 적분하지 않고도 곡선 부재와 부정정 부재를 다룰 수 있게 한다.</p>
+<p><strong>단위하중법</strong>은 같은 아이디어를 대수적 형태로 표현한 것이다: 변위를 구하려는 곳에 단위하중을 가하고, 그것이 만드는 내부 모멘트 m을 구한 뒤 1·Δ = ∫Mm/(EI) ds를 적용한다. 좌굴 하중도 에너지로부터 유도되며, 스트럿이 휠 때 축하중이 한 일을 저장된 휨 에너지와 같게 두면 된다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">휨 변형 에너지</span>
+      <div class="formula-expr formula-math">\[U = \int \frac{M^2}{2 E I}\,\mathrm{d}s\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">카스틸리아노 정리</span>
+      <div class="formula-expr formula-math">\[\Delta = \frac{\partial U}{\partial P}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">단위하중법</span>
+      <div class="formula-expr formula-math">\[1 \cdot \Delta = \int \frac{M m}{E I}\,\mathrm{d}s\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>소성 휨과 형상계수</h2>
+  <div class="body"><p>최외곽 섬유가 처음 항복에 도달하면 탄성 이론은 파괴라고 말하지만, 단면은 여전히 하중을 지지한다. 항복이 안쪽으로 퍼지면서 전체 단면이 f_y에 도달할 때까지 용량이 증가한다: <strong>소성 모멘트</strong>는 M_p = f_y S이며, S는 소성 단면계수, 즉 등면적축에 대한 면적 1차 모멘트이다. 직사각형의 경우 S = bh²/4이고 탄성 Z = bh²/6이므로 <strong>형상계수</strong> M_p/M_y는 1.5이며, I형 단면은 약 1.1–1.2이다.</p>
+<p><strong>소성 힌지</strong>는 M이 M_p에 도달하고 일정 모멘트에서 자유롭게 회전하는 곳에 형성되어 부재를 기구로 만든다. 이러한 재분배가 소성 설계의 기초이다: 붕괴 하중은 첫 항복점이 아니라 기구 기하학에서 나온다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">항복 및 소성 모멘트</span>
+      <div class="formula-expr formula-math">\[M_y = f_y Z, \quad M_p = f_y S\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">소성 단면계수, 직사각형</span>
+      <div class="formula-expr formula-math">\[S = \frac{b h^2}{4}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">형상계수</span>
+      <div class="formula-expr formula-math">\[\frac{M_p}{M_y} = \frac{S}{Z}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>뒤틀림 비틀림과 바이모멘트</h2>
+  <div class="body"><p>비틀림을 받는 개방 얇은 벽 단면은 평면을 유지하지 못한다: 플랜지가 옆으로 휘고, 그 결과 생기는 플랜지 응력이 <strong>뒤틀림 응력</strong>이며 <strong>바이모멘트</strong>로 설명된다. 총 토크는 세인트버냉과 뒤틀림 부분으로 나뉘며, T = T_sv + T_w이고 T_sv = G J θ′, T_w = −E I_w θ″′이며, I_w는 뒤틀림 상수로 길이의 6제곱 단위를 갖는다. I형 단면의 경우 I_w ≈ I_f h²/2이며, I_f는 한 플랜지의 2차 모멘트이다.</p>
+<p>단부 구속이 모든 것을 바꾼다: 비틀림 구속된 보는 토크의 상당 부분을 뒤틀림으로 지지하므로, 단순 τ = Tr/J 값은 개방 단면에서 심하게 비안전할 수 있다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">토크 분배</span>
+      <div class="formula-expr formula-math">\[T = T_{sv} + T_w\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">뒤틀림 토크</span>
+      <div class="formula-expr formula-math">\[T_w = -E I_w \theta&#x27;&#x27;&#x27;\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">뒤틀림 상수, I형 단면</span>
+      <div class="formula-expr formula-math">\[I_w \approx \frac{I_f h^2}{2}\]</div>
+      
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>관성곱</dt><dd>단면에 대한 적분 ∫xy dA; 0이 아니면 도심축이 주축이 아니며 한 축에 대한 휨이 다른 축과 관련된 응력을 유발한다.</dd></div><div class="term"><dt>주축</dt><dd>관성곱이 0이 되는 도심축 쌍으로, 어느 축에 대한 휨도 교차 결합을 일으키지 않는다.</dd></div><div class="term"><dt>전단중심</dt><dd>횡하중이 비틀림을 일으키지 않으려면 통과해야 하는 단면 내의 점; 재료와 무관한 기하학적 성질이다.</dd></div><div class="term"><dt>전단흐름</dt><dd>얇은 벽을 따라 단위 길이당 전단력, q = VQ/I로, 합성 전단과 전단중심을 찾는 데 사용된다.</dd></div><div class="term"><dt>뒤틀림</dt><dd>비틀림을 받는 비원형 단면의 면외 왜곡으로, 벽 주위에서 전단변형률이 변하기 때문에 발생한다.</dd></div><div class="term"><dt>유효길이</dt><dd>좌굴 스트럿의 변곡점 사이 거리 KL로, 단부 고정 조건에 따라 선택된다.</dd></div><div class="term"><dt>페리–로버트슨 방법</dt><dd>탄성 좌굴과 최외곽 섬유의 항복을 결합하여 불완전 스트럿의 파괴를 예측하는 기둥 해석법.</dd></div><div class="term"><dt>사우스웰 플롯</dt><dd>기둥 시험에서 처짐을 하중으로 나눈 값을 처짐에 대해 그린 그래프; 기울기가 임계 좌굴 하중의 역수를 준다.</dd></div><div class="term"><dt>소성 단면계수</dt><dd>등면적축에 대한 면적 1차 모멘트; 항복응력을 곱하면 소성 모멘트가 된다.</dd></div><div class="term"><dt>바이모멘트</dt><dd>구속된 뒤틀림에 의해 발생하는 자기평형 플랜지 모멘트 쌍; 부재를 따른 그 구배가 뒤틀림 토크를 준다.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>채널의 전단중심과 편심 하중에 의한 비틀림</h2>
+        <p class="problem">얇은 벽 채널은 웨브 중심선에서 측정한 플랜지 폭 b = 75 mm, 플랜지 중심선 사이 깊이 h = 200 mm, 두께 t = 6 mm이다. 5 kN의 수직하중이 길이 2.0 m 부재의 도심을 통과하여 작용한다. 전단중심, 편심 하중에 의한 토크, 세인트버냉 비틀림각을 구하라 (G = 79 GPa).</p>
+        <ol><li>휨축에 대한 2차 모멘트: I_x = t h³/12 + 2 b t (h/2)² = 6 × 200³/12 + 2 × 75 × 6 × 100² = 4.0 × 10⁶ + 9.0 × 10⁶ = 13.0 × 10⁶ mm⁴.</li><li>웨브 중심선으로부터 전단중심 편차: e = 3b²/(h + 6b) = 3 × 75²/(200 + 450) = 16 875/650 = 26.0 mm, 플랜지 반대쪽 웨브 면에 위치한다.</li><li>플랜지 쪽으로의 도심 편차: A = t h + 2 b t = 1200 + 900 = 2100 mm²이므로 x̄ = (2 b t)(b/2)/A = 33 750/2100 = 16.1 mm. 따라서 도심 하중은 전단중심에서 26.0 + 16.1 = 42.1 mm 떨어져 있다.</li><li>전단중심에 대한 토크: T = V × e = 5000 N × 0.0421 m = 210 N·m = 210 500 N·mm.</li><li>개방 단면 비틀림 상수: J ≈ Σ(1/3) b t³ = (1/3)(200 + 75 + 75)(6³) = 25 200 mm⁴.</li><li>비틀림각: θ = T L/(G J) = (210 500 × 2000)/(79 000 × 25 200) = 0.212 rad, 약 12°.</li><li>검토: 2 m에 걸쳐 12°는 지붕 부재로 허용할 수 없으므로, 채널은 전단중심을 통해 재하되거나, 시트로 구속되거나, 폐쇄 박스로 대체된다. 뒤틀림 구속은 이 추정치를 줄이겠지만 0으로 만들지는 않는다.</li></ol>
+        <div class="answer"><b>Answer</b>전단중심은 웨브 중심선에서 26.0 mm 떨어져 플랜지 반대쪽에 있다. 도심 하중은 그에 대해 0.21 kN·m의 토크를 가하며, 세인트버냉 비틀림은 약 0.21 rad (12°)로, 개방 단면에는 구속 또는 전단중심을 통과하는 하중 경로가 필요함을 확인해 준다.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>비대칭 휨 공식에 대입하기 전에 M_x와 M_y의 부호 규약을 명시하라; 대부분의 감점은 대수가 아니라 부호 오류이다.</li><li>모든 얇은 벽 단면에 대해 먼저 전단흐름 경로를 스케치하라: 자유단은 흐름 0에서 시작하고, 모서리는 합성력이 만나는 곳이다.</li><li>비틀림 문제에서는 공식을 쓰기 전에 단면이 폐쇄인지 개방인지 말하라; 강성 차이가 막대하다.</li><li>스트럿의 경우 오일러 하중과 항복 하중을 모두 제시한 뒤, 주어진 세장비에 대해 어느 것이 지배하는지 말하라.</li><li>비틀림을 받는 개방 단면의 경우 J와 함께 뒤틀림 상수를 제시하라 — 단부 구속은 뒤틀림 토크를 지배 항으로 만들 수 있다.</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Design strength py of structural steel to BS EN grades</h3>
+  <p class="ref-table-intro">Design strength py used in the Hong Kong steel code. It is the yield strength divided by the material factor for the steel class and capped by the tensile strength divided by a second factor, so the tabulated value falls as the element gets thicker.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Steel grade</th><th scope='col'>Thickness t (mm)</th><th scope='col'>Design strength py (N/mm²)</th></tr></thead><tbody><tr><td>S235</td><td>t ≤ 16</td><td>235</td></tr><tr><td>S275</td><td>t ≤ 16</td><td>275</td></tr><tr><td>S275</td><td>16 &lt; t ≤ 40</td><td>265</td></tr><tr><td>S355</td><td>t ≤ 16</td><td>355</td></tr><tr><td>S355</td><td>16 &lt; t ≤ 40</td><td>345</td></tr><tr><td>S355</td><td>40 &lt; t ≤ 63</td><td>335</td></tr><tr><td>S460</td><td>t ≤ 16</td><td>460</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 3.2 of the Code of Practice for the Structural Use of Steel 2011 (2023 Edition). For Class 1 steel the material factors are γm1 = 1.0 and γm2 = 1.1 (Table 4.1); the thickness of the thickest element governs the grade classification.</p>
+  <p class="ref-table-caveat">Revision summary only. Values depend on the steel class, the product standard and the governing thickness, and normal-strength and high-strength steels are treated separately; check the current steel code for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>한 단면의 관성곱이 0이 아니다. 그 휨 거동에 대한 올바른 설명은?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>한 도심축에 대한 휨은 다른 좌표가 0인 점에서 응력을 일으킨다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>중립축은 하중 평면과 평행해야 한다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>단면은 휨 모멘트를 지지할 수 없다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>최대 응력은 항상 도심에서 가장 먼 모서리에 발생한다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>I_xy를 통한 결합은 x에 대한 모멘트가 y뿐 아니라 x에 따라서도 변하는 응력을 일으키며, 중립축이 기하학적 축에서 기울어짐을 의미한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>채널 단면이 수직하중을 받는다. 그 전단중심은 어디에 있는가?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>웨브와 상부 플랜지의 접합부</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>도심</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>웨브 바깥, 플랜지 반대쪽</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>플랜지 내부, 웨브와 끝단의 중간</span></button></div>
+    <div class="quiz-explain"><b>Why</b>채널의 경우 플랜지 전단흐름이 우력을 형성하여 합성 전단을 웨브 바깥, 플랜지 반대쪽으로 밀어내며, e = 3b²/(h + 6b)에 위치한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q03</span><span>질량과 둘러싼 면적이 같은 두 부재가 있다. 하나는 폐쇄 튜브, 다른 하나는 개방 채널이다. 같은 토크에 대해 어느 것이 덜 비틀리는가?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>폐쇄 튜브, 전단흐름이 순환할 수 있기 때문</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>비틀림은 면적에만 의존하므로 둘 다 동일하게 비틀린다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>재료 탄성계수 없이는 결정할 수 없다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>개방 채널, 벽이 보강되지 않았기 때문</span></button></div>
+    <div class="quiz-explain"><b>Why</b>폐쇄 튜브는 순환하는 브레트 전단흐름으로 비틀림을 지지하여 J = 4A_m²/∮(ds/t)를 주며, 개방 단면은 J ≈ Σbt³/3으로 수백 배 작다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q04</span><span>길이 L의 핀–핀 스트럿의 오일러 하중이 P이다. 양단을 고정으로 만들고 다른 것은 바꾸지 않으면 오일러 하중은 대략 얼마가 되는가?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>4P</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>P/2</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>P</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2P</span></button></div>
+    <div class="quiz-explain"><b>Why</b>유효길이가 L에서 0.5L로 줄고 P_cr은 1/(KL)²에 비례하므로 하중은 1/0.5² = 4배 증가한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>직사각형 단면의 탄성 단면계수 Z = bh²/6이고 소성 단면계수 S = bh²/4이다. 형상계수는?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>1.0</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>1.25</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1.5</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2.0</span></button></div>
+    <div class="quiz-explain"><b>Why</b>형상계수는 S/Z = (bh²/4)/(bh²/6) = 6/4 = 1.5이며, 소성 모멘트가 첫 항복 모멘트보다 1.5배임을 의미한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>전단중심 실험에서 채널의 전단중심은 어떤 재하 위치로 찾는가?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>하중 걸이가 더 이상 판을 잡지 않을 때</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>두 모서리 다이얼 게이지가 같고 반대 방향 처짐을 읽을 때</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>하중을 가한 후 두 게이지가 모두 0으로 돌아올 때</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>측정 처짐이 최대일 때</span></button></div>
+    <div class="quiz-explain"><b>Why</b>전단중심을 통과하는 하중은 비틀림 없이 휨을 일으키므로 두 모서리의 회전 게이지는 0을 읽는다.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="structural-mechanics.ko.html"><span>Core</span><b>구조 역학</b></a><a class="related-card" href="construction-materials.ko.html"><span>Core</span><b>건설 재료</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="aviation-studies.ko.html"><small>Previous</small><b>항공 및 인프라</b></a><a class="next" href="programming-fundamentals.ko.html"><small>Next</small><b>프로그래밍 기초</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2023). <i>Code of Practice for the Structural Use of Steel 2011 (2023 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/SUOS2011.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/SUOS2011.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">I_xy ≠ 0: 축이 주축이 아니다.</p><p class="margin-note">얇은 벽의 자유단: 전단흐름은 0에서 시작한다.</p><p class="margin-note">개방 단면은 비틀림에 취약하다 — 박스로 보강하라.</p><p class="margin-note">스트럿은 압괴가 아니라 휨으로 파괴된다.</p><p class="margin-note">사우스웰 기울기 = 1/P_cr.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

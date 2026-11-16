@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>鋼構造設計 — Civil Hub</title>
+<meta name="description" content="鋼部材と接合部が終局限界状態および使用限界状態でどのように検討されるか：断面分類、曲げ、せん断、座屈、溶接、ボルト。断面表、設計基準、計算機が出会う場所である。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-steel-structures.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="鋼構造設計 — Civil Hub">
+<meta property="og:description" content="鋼部材と接合部が終局限界状態および使用限界状態でどのように検討されるか：断面分類、曲げ、せん断、座屈、溶接、ボルト。断面表、設計基準、計算機が出会う場所である。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-steel-structures.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="design-of-steel-structures.html" data-alt-zh-hant="design-of-steel-structures.zh-Hant.html" data-alt-ja="design-of-steel-structures.ja.html" data-alt-ko="design-of-steel-structures.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">鋼構造設計</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">コア</p>
+          <h1>鋼構造設計</h1>
+          <p class="subject-sub">限界状態設計、断面耐力、接合部の検討</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>コア</li><li><b data-i18n="subject.read">Read</b>12 分</li><li><b data-i18n="subject.sections">Sections</b>10</li><li><b data-i18n="subject.formulas">Formulas</b>15</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M80 160 V64 H260 V160" stroke="currentColor" stroke-width="1.7"/><path d="M70 160 h20 M250 160 h20" stroke="currentColor" stroke-width="1.2"/><path d="M80 160 l-8 12 h16 z M260 160 l-8 12 h16 z" stroke="currentColor" stroke-width="1"/><path d="M80 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M220 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M104 100 q-20 14 0 28" stroke="var(--accent)" stroke-width="1"/><path d="M236 100 q20 14 0 28" stroke="var(--accent)" stroke-width="1"/><text x="170" y="44" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PORTAL FRAME</text></svg>
+          <figcaption>Portal frame — bending moments at the joints</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">2つの数値と安全率</a></li><li><a href="#sec-2">鋼、強度、細長比</a></li><li><a href="#sec-3">断面分類</a></li><li><a href="#sec-4">引張部材：全断面積、純断面積、有効断面積</a></li><li><a href="#sec-5">曲げとせん断</a></li><li><a href="#sec-6">横ねじれ座屈</a></li><li><a href="#sec-7">圧縮部材</a></li><li><a href="#sec-8">接合部：ボルトと溶接</a></li><li><a href="#sec-9">使用性、火災、耐久性</a></li><li><a href="#sec-10">1回で行う完全な梁の検討</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">鋼部材と接合部が終局限界状態および使用限界状態でどのように検討されるか：断面分類、曲げ、せん断、座屈、溶接、ボルト。断面表、設計基準、計算機が出会う場所である。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="design-of-steel-structures" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>2つの数値と安全率</h2>
+  <div class="body"><p>限界状態設計では、係数化した荷重効果と係数化した抵抗を比較し、抵抗の方が大きいことを要求する：E_d ≤ R_d。</p>
+<ul>
+<li>荷重係数は固定荷重、積載荷重、風荷重の不確実性をカバーし、材料係数は降伏強度と製作をカバーする。</li>
+<li>終局限界状態は強度、安定性、火災をカバーし、使用限界状態はたわみ、振動、耐久性をカバーする。</li>
+<li>目標は設計供用期間中の小さく既知の破壊確率であり、リスクゼロではない。</li>
+<li>靭性とロバスト性が重要である：破壊前に警告する構造物の方が安全である。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">限界状態の検討</span>
+      <div class="formula-expr formula-math">\[E_d \le R_d\]</div>
+      <span class="formula-note">R_d は設計抵抗</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>鋼、強度、細長比</h2>
+  <div class="body"><p>鋼は鋼種で指定される — S275、S355、S460 — ここで数値はその板厚における最小降伏強度（N/mm²）である。計算に用いる設計強度は p_y = f_y / γ_M である。</p>
+<ul>
+<li>鋼は剛性が高く、強く、延性がある；延性は力の再分配を可能にし、破断前に目に見える警告を与える。</li>
+<li>圧延と溶接による残留応力は圧縮降伏荷重を減らさないが、剛性を低下させ座屈を早める。</li>
+<li>厚肉断面や低温では靭性が重要であるため、シャルピー衝撃試験のサブグレードを仕様に含めるべきである。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">設計強度</span>
+      <div class="formula-expr formula-math">\[p_y = \frac{f_y}{\gamma_M}\]</div>
+      <span class="formula-note">γ_M は材料係数で、1.0 に近い</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>断面分類</h2>
+  <div class="body"><p>局部座屈は各板要素がどれだけ細長いかに依存する。幅厚比 b/T は ε の倍数として表された限界値と比較される。ここで ε = √(275/p_y) であり、275 N/mm² は基準降伏強度である。</p>
+<ul>
+<li>クラス1 塑性：塑性ヒンジを形成し回転できる。</li>
+<li>クラス2 コンパクト：塑性モーメントに達するが回転は小さい。</li>
+<li>クラス3 セミコンパクト：最外縁のみ降伏に達する。</li>
+<li>クラス4 細長：降伏前に局部座屈する。</li>
+<li>断面全体はその要素のうち最も悪いクラスを取る。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">細長比係数</span>
+      <div class="formula-expr formula-math">\[\varepsilon = \sqrt{\frac{275}{p_y}}\]</div>
+      <span class="formula-note">p_y は N/mm²；b/T の限界値は ε の倍数として表される</span>
+    </div></div><div class="table-wrap"><table><caption>4つの断面クラス</caption><thead><tr><th scope='col'>クラス</th><th scope='col'>局部的挙動</th><th scope='col'>曲げ抵抗</th></tr></thead><tbody><tr><td>1 塑性</td><td>塑性ヒンジが形成され回転する</td><td>M_c = p_y S</td></tr><tr><td>2 コンパクト</td><td>塑性モーメントに達し、回転は小さい</td><td>M_c = p_y S</td></tr><tr><td>3 セミコンパクト</td><td>最外縁のみ降伏</td><td>M_c = p_y Z</td></tr><tr><td>4 細長</td><td>降伏前に局部座屈</td><td>有効断面特性</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>引張部材：全断面積、純断面積、有効断面積</h2>
+  <div class="body"><p>引張は最も単純な鋼の検討である — 座屈はなく、断面積×強度だけ — しかしディテールは微妙である。<strong>全断面積</strong> A_g は完全な断面であり、<strong>純断面積</strong> A_n はボルト孔を除いたものであり、<strong>有効断面積</strong> A_e は<strong>せん断ラグ</strong>によりさらに低減される：ボルトが山形鋼の片脚のみを接合する場合、突出脚は接合部ではなく隅角部を通じて徐々に荷重に参加する。</p>
+<ul>
+<li>片脚でボルト接合された単山形鋼：<code>A_n = A_g − 0.3 a₂</code>、ここで a₂ は非接合脚の面積である。</li>
+<li>接合部を共有するダブル山形鋼：<code>A_n = A_g − 0.15 a₂</code>。</li>
+<li>有効断面積：<code>A_e = K_e A_n</code>、S355 鋼では K_e は約 1.1 である。</li>
+<li>65 × 65 山形鋼の引張試験では、突出脚にわたってひずみが急激に低下した — せん断ラグが可視化された。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">純断面積、片脚でボルト接合された単山形鋼</span>
+      <div class="formula-expr formula-math">\[A_n = A_g - 0.3\,a_2\]</div>
+      <span class="formula-note">a₂ は非接合（突出）脚の面積</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">純断面積、ダブル山形鋼</span>
+      <div class="formula-expr formula-math">\[A_n = A_g - 0.15\,a_2\]</div>
+      <span class="formula-note">より小さな控除は、背合わせペアにおけるより良い荷重伝達を反映している</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">有効断面積</span>
+      <div class="formula-expr formula-math">\[A_e = K_e A_n\]</div>
+      <span class="formula-note">S355 では K_e は約 1.1；耐力は p_y A_e から求まる</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>曲げとせん断</h2>
+  <div class="body"><p>クラス1または2の断面の曲げ抵抗は塑性モーメント M_c = p_y S である。ここで S は塑性断面係数である。クラス3断面は代わりに弾性断面係数 Z を用い、クラス4断面は有効断面係数を用いる。</p>
+<ul>
+<li>せん断は主にウェブが負担する：V_c = 0.6 p_y A_v、ここで A_v はせん断面積である。</li>
+<li>せん断力がせん断抵抗の約60%を超える場合、失われるせん断面積に対してモーメント耐力の低減が必要である。</li>
+<li>集中荷重ではウェブの局部圧縮耐力とウェブ座屈の検討も必要であり、ウェブが薄すぎる場合はスティフナーを設ける。</li>
+<li>たわみは係数化しない荷重による別個の使用性検討である。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">曲げ抵抗、クラス1または2</span>
+      <div class="formula-expr formula-math">\[M_c = p_y S\]</div>
+      <span class="formula-note">クラス3断面では Z を用いる</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">せん断抵抗</span>
+      <div class="formula-expr formula-math">\[V_c = 0.6\,p_y A_v\]</div>
+      <span class="formula-note">せん断面積、主にウェブ</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>横ねじれ座屈</h2>
+  <div class="body"><p>拘束されていない梁は強軸まわりに曲げられるが、圧縮フランジは横に移動しようとする。フランジが変位し断面がねじれると、梁は塑性モーメントよりはるかに低い荷重で横ねじれ座屈により破壊する。</p>
+<p>抵抗は M_b = χ_LT M_c であり、低減係数 χ_LT は細長比 λ_LT が増すにつれて低下する。</p>
+<ul>
+<li>細長比は拘束間の有効長さ、ねじり剛性とそり剛性、荷重高さに依存する。</li>
+<li>上フランジ上の荷重は不安定化し、下フランジ上の荷重は安定化する。</li>
+<li>等価一様モーメント係数は拘束間の非一様モーメントを考慮する。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">座屈抵抗モーメント</span>
+      <div class="formula-expr formula-math">\[M_b = \chi_{LT} M_c\]</div>
+      <span class="formula-note">横ねじれ座屈に対して塑性モーメントを低減する</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>圧縮部材</h2>
+  <div class="body"><p>ずんぐりした柱は応力が設計強度に達すると圧縮降伏し、耐力は p_y A_g に近い。細長い柱は先に座屈し、耐力は降伏強度、オイラー座屈応力、不完全性パラメータの間の Perry-Robertson 関係から求まる。</p>
+<ul>
+<li>実際の柱は初期たわみ、残留応力、偏心を有するため、座屈曲線は経験的に校正されている。</li>
+<li>有効長さ L_E = K L は端部拘束と架構の水平変位を反映する；細長比は λ = L_E / r であり、拘束が妨げない限り弱軸まわりの回転半径を用いる。</li>
+<li>水平変位する架構内の柱は、その物理的長さより長いかのように挙動する。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">オイラー座屈応力</span>
+      <div class="formula-expr formula-math">\[p_E = \frac{\pi^2 E}{\lambda^2}\]</div>
+      <span class="formula-note">λ は細長比 L_E / r；p_E は p_y と比較される</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">圧縮耐力</span>
+      <div class="formula-expr formula-math">\[P_c = p_c A_g\]</div>
+      <span class="formula-note">p_c は座屈曲線から求まる圧縮強度で、p_y より小さい</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>接合部：ボルトと溶接</h2>
+  <div class="body"><p>接合部は部材力を伝達し、しばしば鋼架構のコストを支配する。単純接合はせん断と回転に対して設計され、モーメント接合は曲げも伝達しなければならない。</p>
+<ul>
+<li>ボルトはせん断、支圧、引抜き、ブロックせん断について検討され、ボルト群はねじりも負担することがある。</li>
+<li>ボルトのせん断抵抗は V_s = p_s A_s であり、関連する破壊面のせん断面積を用いる。</li>
+<li>すみ肉溶接はのど厚を通じて力を伝達する：脚長 s の場合のど厚は 0.7s であり、単位長さあたりの抵抗は 0.7 s p_w である。</li>
+<li>溶接記号、最小長さ、縁端距離はディテール要件である；製作できない接合部は設計ではない。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">ボルトのせん断抵抗</span>
+      <div class="formula-expr formula-math">\[V_s = p_s A_s\]</div>
+      <span class="formula-note">A_s は破壊面のせん断面積；p_s はせん断強度</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">すみ肉溶接の単位長さあたりの抵抗</span>
+      <div class="formula-expr formula-math">\[P_w = 0.7\,s\,p_w\]</div>
+      <span class="formula-note">s は脚長；0.7s はのど厚</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>使用性、火災、耐久性</h2>
+  <div class="body"><p>たわみ限界は仕上げ材と快適性を保護する；限界はスパンの分数として表され、係数化しない荷重で検討される。長スパンの床は振動検討も必要であり、通常は固有振動数を数ヘルツ以上に保つ。</p>
+<ul>
+<li>耐火性は膨張性塗料、ボード、コンクリート充填により確保され、要求時間は建物の用途と高さに依存する。</li>
+<li>腐食保護は暴露環境に従う：通常条件では亜鉛めっきまたは塗装、海浜部や工業雰囲気ではより多くの保護。</li>
+<li>水だまりを避け検査を可能にするディテールは、維持管理より安価である。</li>
+<li>鋼構造はシステムであり — ブレース、接合部、ロバスト性タイを含む — 部材の集合ではない。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">たわみ、等分布荷重を受ける単純支持梁</span>
+      <div class="formula-expr formula-math">\[\delta = \frac{5 w L^4}{384 E I}\]</div>
+      <span class="formula-note">使用性荷重、係数化しない；E は N/mm²、I は mm⁴</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>1回で行う完全な梁の検討</h2>
+  <div class="body"><p>現実的な梁の設計は固定された手順である。梁にその負担面積から荷重を載せる：スラブ自重 2.94 kPa と積載荷重 3.0 kPa の床は、終局限界状態で <code>1.4G + 1.6Q = 8.92 kPa</code> として組み合わされる。スラブのアスペクト比が荷重経路を決める — 長辺が短辺の約2倍を超える場合は一方向、そうでなければ三角形または台形反力による二方向である。</p>
+<ul>
+<li>断面クラスを検討する（<code>ε = √(275/p_y)</code> を b/T および d/t の限界値と比較）。</li>
+<li>曲げを検討する（<code>M_c = p_y S</code>）。</li>
+<li>せん断を検討する（<code>V_c = 0.6 p_y A_v</code>）。</li>
+<li>拘束されていない梁では、拘束長さにおける座屈抵抗 M_b を検討する。</li>
+<li>使用性で締めくくる：係数化しない積載荷重によるたわみをスパン/360 などの限界値と比較し、床では固有振動数を約3–5 Hz以上に保つ振動検討を行う。</li>
+</ul>
+<p>手順を固定しておくことで、典型的な見落とし — 曲げは満たすが横拘束が検証されていない梁 — を防ぐ。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">固有振動数、単純支持梁</span>
+      <div class="formula-expr formula-math">\[f = \frac{\pi}{2 L^2}\sqrt{\frac{E I}{m}}\]</div>
+      <span class="formula-note">m は床を含む単位長さあたりの質量；f は約3–5 Hz以上に保つ</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>限界状態設計</dt><dd>終局状態と使用状態の両方について、係数化した荷重効果を係数化した抵抗と比較する設計。</dd></div><div class="term"><dt>設計強度</dt><dd>降伏強度を材料係数で除したもので、部材検討における応力限界として用いられる。</dd></div><div class="term"><dt>断面分類</dt><dd>板要素の細長比に応じて、断面を塑性、コンパクト、セミコンパクト、細長に分類すること。</dd></div><div class="term"><dt>塑性断面係数</dt><dd>等面積軸まわりの断面積の一次モーメントであり、設計強度を掛けると塑性モーメントを与える。</dd></div><div class="term"><dt>横ねじれ座屈</dt><dd>拘束されていない梁が、圧縮フランジの横方向変位とねじれによって破壊すること。</dd></div><div class="term"><dt>有効長さ</dt><dd>横拘束点間の部材の座屈長さであり、端部条件と架構の水平変位に対して調整される。</dd></div><div class="term"><dt>せん断ラグ</dt><dd>突出部分が接合部を通じてのみ荷重に参加するため、接合断面に軸力が不均一に広がること。</dd></div><div class="term"><dt>そり定数</dt><dd>非一様ねじりに対する抵抗を表す断面特性であり、梁が横ねじれ座屈中にねじれる際に動員される。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>床梁の曲げ、せん断、たわみ</h2>
+        <p class="problem">スパン 7.5 m の単純支持梁が、終局等分布荷重 30 kN/m と使用等分布荷重 20 kN/m を負担する。断面はクラス1で、塑性断面係数 S = 1500 cm³、せん断面積 A_v = 3500 mm²、断面二次モーメント I = 3.6 × 10⁸ mm⁴ である。設計強度 p_y = 355 N/mm²、E = 205 kN/mm² とする。曲げ、せん断、たわみをスパン/360 の限界値に対して検討せよ。</p>
+        <ol><li>最大曲げモーメント：M = w L² / 8 = 30 × 7.5² / 8 = 210.9 kNm。</li><li>曲げ抵抗：M_c = p_y S = 355 × 1 500 000 = 532.5 × 10⁶ Nmm = 532.5 kNm。210.9 &lt; 532.5 kNm であるため、曲げは利用率約40%で十分である。</li><li>最大せん断力：V = w L / 2 = 30 × 7.5 / 2 = 112.5 kN。せん断抵抗：V_c = 0.6 p_y A_v = 0.6 × 355 × 3500 = 745.5 kN。112.5 &lt; 745.5 kN であるため、せん断は十分であり、モーメントとせん断の低減は不要である。</li><li>使用荷重によるたわみ：δ = 5 w L⁴ / (384 E I) = 5 × 20 × 7500⁴ / (384 × 205 000 × 3.6 × 10⁸) = 11.2 mm。限界は L/360 = 20.8 mm であるため、たわみも十分である。</li><li>3つの検討はすべて合格する。曲げが最も高い利用率を与えるため、より軽い断面を試すこともできるが、その場合は横ねじれ座屈と接合部設計を別途検証する必要がある。</li></ol>
+        <div class="answer"><b>Answer</b>曲げ 211 kNm &lt; 533 kNm、せん断 113 kN &lt; 746 kN、たわみ 11.2 mm &lt; 20.8 mm であるため、梁はこれらの検討に対して十分である。曲げが支配的な検討である。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>耐力計算の前に断面を分類すること；クラスが塑性断面係数、弾性断面係数、有効特性のどれを用いるかを決める。</li><li>S と Z を混同しないこと：S は塑性設計用、Z は弾性設計用であり、混同はよくある失点である。</li><li>横ねじれ座屈は実際の梁でしばしば支配するため、断面が十分と宣言する前に拘束間隔を検討すること。</li><li>たわみには係数化しない荷重を、強度には係数化した荷重を用いること；各行でどちらの荷重セットを用いているかを明記すること。</li><li>LTB の問題では、公式を用いる前に拘束位置と荷重の吊り位置を列挙すること；両方が有効長さと答えを変える。</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Design strength py of structural steel to BS EN grades</h3>
+  <p class="ref-table-intro">Design strength py used in the Hong Kong steel code. It is the yield strength divided by the material factor for the steel class and capped by the tensile strength divided by a second factor, so the tabulated value falls as the element gets thicker.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Steel grade</th><th scope='col'>Thickness t (mm)</th><th scope='col'>Design strength py (N/mm²)</th></tr></thead><tbody><tr><td>S235</td><td>t ≤ 16</td><td>235</td></tr><tr><td>S275</td><td>t ≤ 16</td><td>275</td></tr><tr><td>S275</td><td>16 &lt; t ≤ 40</td><td>265</td></tr><tr><td>S355</td><td>t ≤ 16</td><td>355</td></tr><tr><td>S355</td><td>16 &lt; t ≤ 40</td><td>345</td></tr><tr><td>S355</td><td>40 &lt; t ≤ 63</td><td>335</td></tr><tr><td>S460</td><td>t ≤ 16</td><td>460</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 3.2 of the Code of Practice for the Structural Use of Steel 2011 (2023 Edition). For Class 1 steel the material factors are γm1 = 1.0 and γm2 = 1.1 (Table 4.1); the thickness of the thickest element governs the grade classification.</p>
+  <p class="ref-table-caveat">Revision summary only. Values depend on the steel class, the product standard and the governing thickness, and normal-strength and high-strength steels are treated separately; check the current steel code for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q01</span><span>使用荷重時の梁のたわみは次で検討される：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>係数化しない荷重による終局限界状態</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>係数化荷重による使用限界状態</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>係数化荷重による終局限界状態</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>係数化しない荷重による使用限界状態</span></button></div>
+    <div class="quiz-explain"><b>Why</b>たわみは使用性条件であるため、係数化しない固定荷重と積載荷重で検討される。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>ウェブの幅厚比がクラス3の限界を超える断面は次に分類される：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>クラス3 セミコンパクト</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>クラス4 細長</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>クラス1 塑性</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>クラス2 コンパクト</span></button></div>
+    <div class="quiz-explain"><b>Why</b>クラス4断面は降伏に達する前に局部座屈するため、有効断面特性を用いて検討しなければならない。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>鋼梁の横ねじれ座屈が最も起こりやすいのは：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>圧縮フランジが連続的に拘束されている場合</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>圧縮フランジが長スパンにわたって拘束されていない場合</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>梁が非常に短くずんぐりしている場合</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>荷重が下フランジに作用する場合</span></button></div>
+    <div class="quiz-explain"><b>Why</b>圧縮フランジが横方向に変位しねじれる自由がある必要があり、長い非拘束長さがこの破壊モードを決定的にする。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>脚長 s のすみ肉溶接ののど厚は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.85 s</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>s</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.5 s</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>0.7 s</span></button></div>
+    <div class="quiz-explain"><b>Why</b>のど厚は脚に対して45°で測られ、0.7s となり、溶接抵抗はそののど厚にわたって作用する。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q05</span><span>片脚でボルト接合された単山形鋼の引張材は、せん断ラグに対して純断面積を次だけ低減する：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>突出脚面積の0.3倍</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>全断面積の0.5倍</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>まったく低減しない</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>突出脚面積の0.15倍</span></button></div>
+    <div class="quiz-explain"><b>Why</b>単山形鋼では控除は 0.3 a₂ であり、接合部を共有するダブル山形鋼ではより小さな 0.15 a₂ の控除となる。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>横ねじれ座屈試験で、作用荷重を上フランジから下フランジへ移すと荷重は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>完全な横拘束と等価になる</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>不安定化し、座屈荷重が低下する</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>安定化し、座屈荷重が上昇する</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>無関係である、座屈は断面のみに依存するため</span></button></div>
+    <div class="quiz-explain"><b>Why</b>下フランジ荷重は梁が座屈する際に復元ねじりを生じるが、上フランジ荷重はねじりを増大させ、より厳しいケースとなる。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="structural-mechanics.ja.html"><span>Core</span><b>構造力学</b></a><a class="related-card" href="structural-analysis.ja.html"><span>Core</span><b>構造解析</b></a><a class="related-card" href="construction-materials.ja.html"><span>Core</span><b>建設材料</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="construction-management.ja.html"><small>Previous</small><b>建設マネジメント</b></a><a class="next" href="quantitative-methods.ja.html"><small>Next</small><b>エンジニアのための定量手法</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2023). <i>Code of Practice for the Structural Use of Steel 2011 (2023 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/SUOS2011.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/SUOS2011.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">クラス4では有効断面特性が必要。</p><p class="margin-note">塑性には S、弾性には Z — 混同しないこと。</p><p class="margin-note">拘束間隔が LTB 検討を決める。</p><p class="margin-note">溶接のど厚は 0.7 × 脚長。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

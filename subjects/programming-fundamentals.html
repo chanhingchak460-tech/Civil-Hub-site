@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programming Fundamentals — Civil Hub</title>
+<meta name="description" content="A first course in thinking like a program: storing values, steering decisions, repeating work, packaging logic into functions, and moving data through file">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/programming-fundamentals.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="Programming Fundamentals — Civil Hub">
+<meta property="og:description" content="A first course in thinking like a program: storing values, steering decisions, repeating work, packaging logic into functions, and moving data through file">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/programming-fundamentals.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="programming-fundamentals.html" data-alt-zh-hant="programming-fundamentals.zh-Hant.html" data-alt-ja="programming-fundamentals.ja.html" data-alt-ko="programming-fundamentals.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">Programming Fundamentals</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Computing</p>
+          <h1>Programming Fundamentals</h1>
+          <p class="subject-sub">Thinking in code: logic, data and functions</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Computing</li><li><b data-i18n="subject.read">Read</b>10 min</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>9</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="44" y="34" width="252" height="136" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M44 58 H296" stroke="var(--line)" stroke-width="1"/><circle cx="58" cy="46" r="2.5" fill="var(--accent)" stroke="none"/><path d="M64 78 h76" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 93 h120" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 108 h60" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 123 h144" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 138 h96" stroke="var(--faint)" stroke-width="1.2"/><text x="64" y="160" font-family="var(--mono)" font-size="7" fill="currentColor" stroke="none" text-anchor="start" letter-spacing="0.18em">> RUN</text><path d="M118 155 h10" stroke="var(--accent)" stroke-width="1.4"/></svg>
+          <figcaption>A short program — input, logic, output</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">Values, names and types</a></li><li><a href="#sec-2">Input, output and formatting</a></li><li><a href="#sec-3">Decisions with if, elif and else</a></li><li><a href="#sec-4">Loops and the accumulator pattern</a></li><li><a href="#sec-5">Functions and recursion</a></li><li><a href="#sec-6">Lists, tuples and dictionaries</a></li><li><a href="#sec-7">Strings are sequences too</a></li><li><a href="#sec-8">Nested loops and two-dimensional data</a></li><li><a href="#sec-9">Files and simple data processing</a></li><li><a href="#sec-10">Modules, libraries and the bigger toolbox</a></li><li><a href="#sec-11">Debugging is a skill, not luck</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">A first course in thinking like a program: storing values, steering decisions, repeating work, packaging logic into functions, and moving data through files. These habits carry into every later computing subject.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="programming-fundamentals" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>Values, names and types</h2>
+  <div class="body"><p>A <strong>variable</strong> is a name bound to an object, not a labelled box of fixed size. Python decides the type at run time: <code>int</code> for whole numbers, <code>float</code> for decimals, <code>str</code> for text and <code>bool</code> for <code>True</code> or <code>False</code>. Use <code>type(x)</code> when unsure, and convert deliberately with <code>int()</code>, <code>float()</code> and <code>str()</code>.</p>
+<p>The operator you choose changes the result. <code>/</code> always produces a float, <code>//</code> floors to an integer and <code>%</code> gives the remainder, which is the basis of many digit and parity tricks.</p>
+<p>Floating-point values are binary approximations, so test <code>0.1 + 0.2</code> and you will not get exactly <code>0.3</code>; compare with a tolerance instead of equality.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Quotient and remainder</span>
+      <pre class="formula-code"><code>q, r = divmod(n, 10)</code></pre>
+      <span class="formula-note">splits off the last digit</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Input, output and formatting</h2>
+  <div class="body"><p><code>input()</code> always hands back a string, even when the user types digits. Convert before doing arithmetic, otherwise <code>"7" + 1</code> raises a <code>TypeError</code> rather than giving <code>8</code>.</p>
+<p>Formatting is part of the answer. Prompts and outputs often have to match exactly, so build them with f-strings: <code>f"{day:02d}"</code> zero-pads a day, and <code>f"{total:.4f}"</code> keeps four decimal places.</p>
+<p>A tidy program separates the prompt, the calculation and the display; mixing them makes debugging and marking harder.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Reading a number</span>
+      <pre class="formula-code"><code>n = int(input(&quot;Please enter a number: &quot;))</code></pre>
+      <span class="formula-note">input returns text; convert before arithmetic</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>Decisions with if, elif and else</h2>
+  <div class="body"><p><strong>Conditionals</strong> choose a path, and every condition is just an expression that evaluates to true or false. Order the branches from most specific to most general, and add a final <code>else</code> only when every remaining case belongs there.</p>
+<p>Watch the classic mistakes:<br />
+- <code>=</code> assigns while <code>==</code> compares<br />
+- <code>and</code> binds more tightly than <code>or</code><br />
+- a test such as <code>if name:</code> is true for any non-empty string, which is often more than you intended</p>
+<p>Write the intended cases as comments first, then code them — that small habit removes most logic errors before they appear.</p></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Loops and the accumulator pattern</h2>
+  <div class="body"><p>A <code>for</code> loop walks over a sequence; a <code>while</code> loop repeats until a condition fails. Choose <code>for</code> when the number of items is known and <code>while</code> when it is not, and make sure the <code>while</code> condition can actually become false — a loop variable that never changes gives an infinite loop.</p>
+<p>The most reusable pattern in early programming is the <strong>accumulator</strong>: start a total at zero, add each item inside the loop, report after the loop. The same shape counts, sums, filters and searches.</p>
+<p>Keep the update line explicit so a reader can see exactly what changes and when.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Accumulating a running total</span>
+      <pre class="formula-code"><code>total = total + x</code></pre>
+      <span class="formula-note">initialise total = 0 before the loop</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Functions and recursion</h2>
+  <div class="body"><p>A <strong>function</strong> gives a name to a piece of logic, takes parameters and returns a value. Prefer returning a result over printing inside the function: returned values can be tested, reused and composed. Keep each function to one job and name it for what it does.</p>
+<p><strong>Recursion</strong> solves a problem by calling a smaller version of itself. Every recursive function needs a <strong>base case</strong> that returns without recursing, plus a recursive step that moves towards it.</p>
+<p>A Fibonacci function is the standard demonstration, but recursion also suits nested structures where a loop would need its own stack.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Recursive Fibonacci</span>
+      <div class="formula-expr formula-math">\[\mathrm{fib}(n) = \mathrm{fib}(n - 1) + \mathrm{fib}(n - 2)\]</div>
+      <span class="formula-note">with base cases fib(1) = fib(2) = 1</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>Lists, tuples and dictionaries</h2>
+  <div class="body"><p>A <strong>list</strong> is an ordered, mutable sequence indexed from zero, so <code>a[0]</code> is the first item and <code>a[-1]</code> the last. Slicing copies a section, while <code>append</code>, <code>sort</code> and <code>remove</code> edit the list in place. Because a list is shared by reference, <code>b = a</code> does not copy it; <code>b = a[:]</code> does.</p>
+<p>A <strong>tuple</strong> is an immutable sequence, useful for fixed groups such as coordinates. A <strong>dictionary</strong> maps keys to values and is the natural structure for counting, because it can create a key lazily instead of demanding a pre-check.</p>
+<p>Nested lists represent matrices: loop over rows first, then over columns.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Counting with a dictionary</span>
+      <pre class="formula-code"><code>counts[ch] = counts.get(ch, 0) + 1</code></pre>
+      <span class="formula-note">avoids a separate membership test</span>
+    </div></div><div class="table-wrap"><table><caption>Choosing a container</caption><thead><tr><th scope='col'>Container</th><th scope='col'>Ordered</th><th scope='col'>Mutable</th><th scope='col'>Typical use</th></tr></thead><tbody><tr><td>list</td><td>yes</td><td>yes</td><td>collections that grow and shrink</td></tr><tr><td>tuple</td><td>yes</td><td>no</td><td>fixed records such as coordinates</td></tr><tr><td>dict</td><td>insertion</td><td>yes</td><td>lookup by key and counting</td></tr><tr><td>string</td><td>yes</td><td>no</td><td>text, slicing and searching</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Strings are sequences too</h2>
+  <div class="body"><p>A string behaves like a tuple of characters: it is immutable, indexable and sliceable, so <code>text[2:5]</code> gives the characters at indices 2, 3 and 4, and <code>text[::-1]</code> reverses it.</p>
+<p>The predicate methods classify single characters — <code>isalpha()</code>, <code>isdigit()</code>, <code>isspace()</code> — and return booleans you can test inside a loop.</p>
+<p>Building output from parts is a recurring pattern: split text into tokens with <code>split()</code>, join them back with <code>'-'.join(tokens)</code>, and trim stray whitespace with <code>strip()</code>. Methods return new strings rather than changing the original, so assign the result when you want to keep it.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Classifying characters in a loop</span>
+      <div class="formula-expr formula-text">if ch.isdigit(): digits += 1</div>
+      <span class="formula-note">walk the string once and update a counter per character class</span>
+    </div></div><div class="table-wrap"><table><caption>String methods worth memorising</caption><thead><tr><th scope='col'>Method</th><th scope='col'>Returns</th><th scope='col'>Use</th></tr></thead><tbody><tr><td>s.split()</td><td>list of words</td><td>parse space-separated input</td></tr><tr><td>&#x27;-&#x27;.join(parts)</td><td>one string</td><td>assemble output lines</td></tr><tr><td>s.strip()</td><td>string</td><td>remove stray whitespace and newlines</td></tr><tr><td>s.find(x)</td><td>index or −1</td><td>locate a substring</td></tr><tr><td>ch.isalpha() / ch.isdigit()</td><td>bool</td><td>classify each character in a loop</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>Nested loops and two-dimensional data</h2>
+  <div class="body"><p>A list of lists represents a grid or matrix: <code>grid[r][c]</code> is the element in row <code>r</code>, column <code>c</code>, and the standard traversal is an outer loop over rows with an inner loop over columns.</p>
+<p>The same nesting prints triangular patterns such as Pascal's triangle, where each interior entry is the sum of the two above it.</p>
+<p>Matrix multiplication is the exam favourite: the element in row <code>i</code>, column <code>j</code> of the product is the dot product of row <code>i</code> of the first matrix with column <code>j</code> of the second. Test the shapes first — an n×m matrix times an m×p matrix gives n×p — because swapping the indices is the classic silent error.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Pascal&#x27;s triangle entry</span>
+      <div class="formula-expr formula-math">\[T(r,k) = T(r-1,k-1) + T(r-1,k)\]</div>
+      <span class="formula-note">edges are 1; each interior entry sums the two above it</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Matrix multiplication</span>
+      <div class="formula-expr formula-math">\[C[i][j] = \sum_{k} A[i][k]\,B[k][j]\]</div>
+      <span class="formula-note">sum over the shared inner dimension k</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Files and simple data processing</h2>
+  <div class="body"><p>Open a file inside a <code>with</code> block so that it closes even if something fails. Reading gives you lines including the trailing newline, so <code>strip()</code> first and <code>split()</code> second when parsing. Writing is literal: <code>print</code> adds a newline, but <code>file.write()</code> does not, so add <code>"\n"</code> yourself.</p>
+<p>Real data is messy. Convert a token to a number only after checking that it looks like one, and skip invalid words rather than crashing.</p>
+<p>For tabular data, the <code>csv</code> module or a dataframe library removes a great deal of fragile manual splitting; keep the parsing separate from the reporting so each part can be tested alone.</p></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>Modules, libraries and the bigger toolbox</h2>
+  <div class="body"><p>A <strong>module</strong> is a file of reusable definitions: <code>import math</code> brings in a library, and <code>math.sqrt(x)</code> calls one function without re-implementing it. The standard library covers randomness, dates and file paths, while third-party packages such as <code>pandas</code> and <code>matplotlib</code> turn tabular data into analysis and charts in a few lines.</p>
+<p>Libraries do not remove the fundamentals — you still choose types, loop correctly and validate input. Treat a library call as a black box you can name and test, not as a substitute for knowing what the data means.</p>
+<p>When a task forbids a library, it is asking you to demonstrate the underlying logic yourself, so write the loop you would otherwise have imported.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Reading a table with pandas</span>
+      <div class="formula-expr formula-text">df = pd.read_csv(&#x27;counting.csv&#x27;)
+df.plot()</div>
+      <span class="formula-note">the library parses, stores and plots the data; your job is to check the result</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>Debugging is a skill, not luck</h2>
+  <div class="body"><p>Read the <strong>traceback</strong> from the bottom up: the last line names the error, and the line above shows where it happened. Reproduce the failure with the smallest input you can find, then narrow the region by printing values at two points and asking where they first disagree.</p>
+<p>Check boundaries deliberately — empty input, a single item and the largest allowed value. Most beginner bugs are off-by-one errors, a missing conversion or a list mutated by the next function.</p>
+<p>Write one small test that should pass and rerun it after every change.</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Variable</dt><dd>A name that refers to an object, whose type is determined at run time rather than declared in advance.</dd></div><div class="term"><dt>Immutable</dt><dd>An object whose value cannot be changed after creation, such as a string or a tuple.</dd></div><div class="term"><dt>Accumulator</dt><dd>A variable that collects a result while a loop runs, usually starting from zero or an empty collection.</dd></div><div class="term"><dt>Recursion</dt><dd>A technique where a function calls itself on a smaller input, stopped by a base case.</dd></div><div class="term"><dt>Dictionary</dt><dd>A mutable mapping from keys to values, written with braces and read with square brackets.</dd></div><div class="term"><dt>Traceback</dt><dd>The report Python prints when an error occurs, listing the call stack and the failing line.</dd></div><div class="term"><dt>Slice</dt><dd>A copy of a contiguous section of a sequence, written with start, stop and optional step indices.</dd></div><div class="term"><dt>Module</dt><dd>A file of reusable definitions that a program can import and call by name.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Tracing a digit-sum function</h2>
+        <p class="problem">Trace this function by hand and state what it returns for the call digit_sum(274):
+
+def digit_sum(n):
+    total = 0
+    while n &gt; 0:
+        total = total + n % 10
+        n = n // 10
+    return total
+
+print(digit_sum(274))</p>
+        <ol><li>Start: n = 274 and total = 0. The loop test 274 &gt; 0 is true.</li><li>First pass: total = 0 + (274 % 10) = 0 + 4 = 4, and n = 274 // 10 = 27.</li><li>Second pass: total = 4 + (27 % 10) = 4 + 7 = 11, and n = 27 // 10 = 2.</li><li>Third pass: total = 11 + (2 % 10) = 11 + 2 = 13, and n = 2 // 10 = 0.</li><li>Loop test: 0 &gt; 0 is false, so the loop stops and the function returns total = 13.</li></ol>
+        <div class="answer"><b>Answer</b>The function returns 13. Sanity check: the digits of 274 are 2, 7 and 4, and their sum is 13, which matches the trace.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>Trace loops on paper with one column per variable; do not try to run the code in your head.</li><li>Convert input to the right type before arithmetic — this is the most common single mark lost.</li><li>Read error messages from the last line upwards and fix one error at a time.</li><li>Test the boundary cases: empty input, one item and the maximum allowed value.</li><li>When a question forbids find() or count(), write the loop yourself: initialise a counter, walk the characters, and update it on the condition.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>What does the built-in function input() return in Python 3?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>A float when the user types a decimal</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The same type as the value the user typed</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>A string, whatever the user typed</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>An integer when the user types digits</span></button></div>
+    <div class="quiz-explain"><b>Why</b>input() always returns text; the program must convert it with int() or float() before doing arithmetic.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>What is the value of 17 // 5?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>3</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>3.4</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>4</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2</span></button></div>
+    <div class="quiz-explain"><b>Why</b>// performs floor division, giving the integer part 3; ordinary division would give 3.4.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>Which of these containers cannot be changed after it is created?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>the accumulator variable</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>list</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>tuple</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>dict</span></button></div>
+    <div class="quiz-explain"><b>Why</b>A tuple is immutable, while lists and dictionaries support in-place changes.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q04</span><span>Which statement about file.write() is correct?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>It can only write text to the screen</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>It writes exactly what it is given, so a newline must be added explicitly</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>It closes the file after each call</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>It adds a newline automatically, like print()</span></button></div>
+    <div class="quiz-explain"><b>Why</b>print() appends a newline, but file.write() does not; the writer must add the newline character.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>For text = &#x27;abcdefg&#x27;, what does text[2:5] return?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>cdef</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>bcde</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>cde</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>cd</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Slices include the start index and exclude the stop index, so indices 2, 3 and 4 give the characters c, d and e.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q06</span><span>Which statement about Python strings is correct?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>They are mutable sequences of characters</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>They are immutable sequences of characters</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>They are lists of words</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>They can be changed with the append() method</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Strings are immutable: methods like strip() and upper() return new strings, and no in-place method such as append() exists.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.html"><span>Computing</span><b>AI &amp; Data Analysis</b></a><a class="related-card" href="data-analytics-r.html"><span>Computing</span><b>Data Analytics with R</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="advanced-structural-mechanics.html"><small>Previous</small><b>Advanced Structural Mechanics</b></a><a class="next" href="construction-materials.html"><small>Next</small><b>Construction Materials</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">input() gives text — convert before you add.</p><p class="margin-note">Accumulator: start at 0, add inside, report after.</p><p class="margin-note">// floors, % keeps the remainder.</p><p class="margin-note">Tracebacks are read bottom-up.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

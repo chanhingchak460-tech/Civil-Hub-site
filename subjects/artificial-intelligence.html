@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Artificial Intelligence — Civil Hub</title>
+<meta name="description" content="Artificial intelligence is the engineering of systems that perceive, reason and learn. This page covers search, knowledge representation, learning, neural ">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/artificial-intelligence.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="Artificial Intelligence — Civil Hub">
+<meta property="og:description" content="Artificial intelligence is the engineering of systems that perceive, reason and learn. This page covers search, knowledge representation, learning, neural ">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/artificial-intelligence.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="artificial-intelligence.html" data-alt-zh-hant="artificial-intelligence.zh-Hant.html" data-alt-ja="artificial-intelligence.ja.html" data-alt-ko="artificial-intelligence.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">Artificial Intelligence</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Computing</p>
+          <h1>Artificial Intelligence</h1>
+          <p class="subject-sub">Search, learning and generative models in engineering</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Computing</li><li><b data-i18n="subject.read">Read</b>9 min</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>8</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">What AI asks of an engineer</a></li><li><a href="#sec-2">Search: from a goal to a path</a></li><li><a href="#sec-3">Knowledge representation</a></li><li><a href="#sec-4">Machine learning: learning a mapping</a></li><li><a href="#sec-5">Neural networks and deep learning</a></li><li><a href="#sec-6">Generative models</a></li><li><a href="#sec-7">Evaluation is part of the design</a></li><li><a href="#sec-8">Responsible AI and professional judgement</a></li><li><a href="#sec-9">Prompt engineering</a></li><li><a href="#sec-10">Generative media: image, audio and video</a></li><li><a href="#sec-11">Code generation and its limits</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">Artificial intelligence is the engineering of systems that perceive, reason and learn. This page covers search, knowledge representation, learning, neural networks, generative models and how to evaluate them honestly.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="artificial-intelligence" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>What AI asks of an engineer</h2>
+  <div class="body"><p>AI is not one algorithm but a family of methods for acting under uncertainty. The classical framing separates <strong>perception</strong>, <strong>reasoning</strong>, <strong>learning</strong> and <strong>action</strong>, and asks what the system must decide, what it can observe and what being wrong would cost.</p>
+<p>Most deployed AI is <strong>narrow</strong>: excellent at one task and unable to transfer. That is the design scope rather than a fault, and writing it down is the first engineering decision.</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Search: from a goal to a path</h2>
+  <div class="body"><p>Many problems are posed as a <strong>state space</strong>: states, actions, a start, a goal and a cost per step.</p>
+<ul>
+<li><strong>Breadth-first</strong> search finds the fewest steps.</li>
+<li>Depth-first saves memory but can wander.</li>
+<li>Uniform-cost search expands the cheapest prefix first.</li>
+<li><strong>A*</strong> adds a heuristic estimate of the remaining cost.</li>
+</ul>
+<p>If the heuristic never overestimates — if it is <strong>admissible</strong> — A* returns a least-cost path without exploring everything. The heuristic is the whole design: too weak is nearly blind, too optimistic loses optimality.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">A* evaluation function</span>
+      <div class="formula-expr formula-math">\[f(n) = g(n) + h(n)\]</div>
+      <span class="formula-note">g is the cost from the start, h the estimated cost to the goal</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>Knowledge representation</h2>
+  <div class="body"><p>A reasoning system needs a model of the world it can manipulate.</p>
+<ul>
+<li><strong>Logic</strong> represents facts and rules and derives conclusions mechanically.</li>
+<li><strong>Frames</strong> and semantic networks group attributes around objects.</li>
+<li><strong>Ontologies</strong> and knowledge graphs fix a shared vocabulary so different systems mean the same thing by the same term.</li>
+</ul>
+<p>Engineering knowledge is messy and uncertain. Probabilistic models, rules carrying confidence and explicit assumptions record what is not known, which matters as much as what is.</p></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Machine learning: learning a mapping</h2>
+  <div class="body"><p>A supervised model learns a mapping from features to labels using examples. Data are split into training, validation and test sets; the test set is touched once, at the end, to estimate <strong>generalisation</strong>.</p>
+<p>A model that fits its training data but fails on new data is <strong>overfitting</strong>. The remedy is discipline, not complexity: representative data, regularisation, simpler models and a validation loop that does not quietly tune the test score. Always report a naive baseline.</p></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Neural networks and deep learning</h2>
+  <div class="body"><p>A single artificial neuron computes a weighted sum of its inputs plus a bias and passes the result through a non-linear <strong>activation function</strong>. Stacking layers represents complicated relationships.</p>
+<p>Training adjusts the weights to reduce a <strong>loss</strong>, typically by gradient descent with <strong>backpropagation</strong> supplying the gradient for every weight.</p>
+<p>Depth helps because early layers learn general features and later layers combine them. It also makes optimisation harder, data demand greater and behaviour less interpretable.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Artificial neuron</span>
+      <div class="formula-expr formula-math">\[a = \varphi\left(\sum_i w_i x_i + b\right)\]</div>
+      <span class="formula-note">φ is a non-linear activation such as ReLU or sigmoid</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Gradient descent update</span>
+      <div class="formula-expr formula-math">\[w \leftarrow w - \eta \frac{\partial L}{\partial w}\]</div>
+      <span class="formula-note">η is the learning rate; the gradient comes from backpropagation</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>Generative models</h2>
+  <div class="body"><p>A <strong>generative model</strong> learns the distribution of its training data and produces new samples.</p>
+<ul>
+<li>Large language models predict the next token from the preceding ones, so generation is repeated prediction.</li>
+<li><strong>Diffusion</strong> models add noise to data in training and learn to reverse that process when sampling.</li>
+</ul>
+<p>Generation is sampling, not recall. That explains the fluency and the <strong>hallucination</strong>: a plausible continuation is not a true one.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Autoregressive generation</span>
+      <div class="formula-expr formula-math">\[p(x_1, \ldots, x_T) = \prod_{t=1}^{T} p(x_t \mid x_{&lt;t})\]</div>
+      <span class="formula-note">the probability of a sequence is built one token at a time</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Evaluation is part of the design</h2>
+  <div class="body"><p>A model is only as good as the evidence used to judge it. Split data honestly, keep a hold-out set, and choose metrics that match the cost of error.</p>
+<p>In defect detection, <strong>precision</strong> asks how many flagged defects were real, while <strong>recall</strong> asks how many real defects were caught; a high-accuracy model that always says no defect is useless.</p>
+<p>Evaluation also covers latency, robustness to shifted inputs, calibration and test-data leakage. Generative output needs rubric-based human assessment, with criteria fixed in advance.</p></div><div class="table-wrap"><table><caption>Evaluation metrics and the failure each one can hide</caption><thead><tr><th scope='col'>Metric</th><th scope='col'>Question answered</th><th scope='col'>Failure hidden</th></tr></thead><tbody><tr><td>Accuracy</td><td>How many cases were labelled correctly overall</td><td>Failure on a rare class</td></tr><tr><td>Precision</td><td>Of the cases flagged, how many were right</td><td>Missed true positives</td></tr><tr><td>Recall</td><td>Of the true cases, how many were found</td><td>False alarms</td></tr><tr><td>F1 score</td><td>Balance of precision and recall</td><td>True negatives, and the cost of each error</td></tr><tr><td>Calibration</td><td>Do predicted probabilities match outcomes</td><td>Confident answers that are wrong</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>Responsible AI and professional judgement</h2>
+  <div class="body"><p>Deploying AI is a professional act with consequences.</p>
+<ul>
+<li><strong>Accountability</strong> stays with the engineer even when a model made the suggestion.</li>
+<li>Bias in training data becomes bias in decisions.</li>
+<li>Personal data need a lawful basis.</li>
+<li>Generated content may infringe rights or be mistaken for evidence.</li>
+</ul>
+<p>The controls are familiar from safety engineering: document the data and model, test on the population that will use it, keep a human decision point for high-stakes output, monitor after deployment, and be able to explain and withdraw the system.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Expected cost of a decision</span>
+      <div class="formula-expr formula-math">\[E[\text{cost}] = p_{fp} C_{fp} + p_{fn} C_{fn}\]</div>
+      <span class="formula-note">the decision threshold should reflect the relative cost of the two errors</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Prompt engineering</h2>
+  <div class="body"><p>A language model's output quality is set by its <strong>prompt</strong>: the instruction, context and examples given before generation.</p>
+<ul>
+<li>Effective prompts are specific about the task and the audience.</li>
+<li>Provide data and examples rather than vague hints.</li>
+<li>Name the desired output format.</li>
+<li>Describe what to do instead of what not to do.</li>
+<li>Giving the model a role — reviewer, tutor, site engineer — frames the vocabulary it will use.</li>
+</ul>
+<p><strong>Chain-of-thought prompting</strong> asks the model to work through intermediate steps before answering, which measurably improves arithmetic and multi-step reasoning. <strong>Temperature</strong> controls sampling randomness: low values repeat the most probable token and give deterministic, safe output; high values trade fluency for variety and hallucination.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Temperature-scaled softmax</span>
+      <div class="formula-expr formula-math">\[p(w_i) = \frac{e^{z_i/T}}{\sum_j e^{z_j/T}}\]</div>
+      <span class="formula-note">T → 0 picks the most likely token; larger T flattens the distribution</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>Generative media: image, audio and video</h2>
+  <div class="body"><p><strong>Diffusion</strong> models generate images by learning to reverse a process that gradually adds noise: sampling starts from pure noise and denoises step by step, guided by a text description or other conditioning. Audio models apply the same idea to waveforms or spectrograms for speech and music, and video generation must additionally keep consecutive frames consistent.</p>
+<p>Treat generated media as evidence-free by default: synthetic faces and voices are cheap to produce and hard for people to detect. Verification relies on provenance — watermarks, signed metadata and detection tools — and on process controls such as labelling, not on asking viewers to spot the fake.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Diffusion training objective</span>
+      <div class="formula-expr formula-math">\[L = \mathbb{E}\left\lVert \varepsilon - \varepsilon_\theta(x_t, t) \right\rVert^2\]</div>
+      <span class="formula-note">the network learns to predict the noise ε added to a corrupted sample</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>Code generation and its limits</h2>
+  <div class="body"><p>Large language models write code from natural language, partial programs or execution examples, and coding assistants combine tab completion with chat-based edits.</p>
+<ul>
+<li>Strong at boilerplate, regular expressions and test scaffolding.</li>
+<li>Weak where the context is long, the library is obscure or the correct answer depends on facts the model never saw.</li>
+</ul>
+<p><strong>pass@k</strong> is the standard measure: the probability that at least one of k generated attempts passes all the provided tests. Evaluation is therefore as good as the test suite — code that compiles can still be wrong. Review generated code exactly like human code: run the tests, check for hallucinated library functions, and keep a human owner for anything that touches safety.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Pass@k</span>
+      <div class="formula-expr formula-math">\[\text{pass@}k = 1 - (1 - p)^k\]</div>
+      <span class="formula-note">p is the chance one sample passes; more attempts raise the odds but cost compute</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>Hallucinated APIs</b>
+  Generated code can call functions or libraries that do not exist; run it in a test harness before trusting it, and never paste credentials or private data into a public model.
+</div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Admissible heuristic</dt><dd>An estimate of remaining cost that never exceeds the true cost, which keeps A* search optimal.</dd></div><div class="term"><dt>Overfitting</dt><dd>Fitting the training data so closely that performance on new, unseen data falls.</dd></div><div class="term"><dt>Precision</dt><dd>The proportion of cases flagged by a model that are genuinely positive.</dd></div><div class="term"><dt>Hallucination</dt><dd>Fluent, plausible generated content that is nevertheless unsupported or false.</dd></div><div class="term"><dt>Diffusion model</dt><dd>A generative model that learns to reverse a gradual noising process to produce samples.</dd></div><div class="term"><dt>Generalisation</dt><dd>Performance on data the model has not been trained on, estimated with a held-out test set.</dd></div><div class="term"><dt>Prompt engineering</dt><dd>Designing instructions, context and examples so that a language model produces the desired output.</dd></div><div class="term"><dt>Temperature</dt><dd>A sampling parameter that scales token probabilities; low values are deterministic, high values more varied.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Reading a defect detector&#x27;s confusion matrix</h2>
+        <p class="problem">A vision model is tested on 500 inspection images. It correctly flags 92 defective panels and correctly clears 362 sound ones. It wrongly flags 18 sound panels and misses 28 defective panels. Calculate accuracy, precision and recall, and say why accuracy on its own is misleading.</p>
+        <ol><li>Confusion matrix: TP = 92, FP = 18, FN = 28, TN = 362, which totals 500 images.</li><li>Accuracy = (TP + TN) / total = (92 + 362) / 500 = 454 / 500 = 0.908, or 90.8 per cent.</li><li>Precision = TP / (TP + FP) = 92 / 110 = 0.836, or 83.6 per cent.</li><li>Recall = TP / (TP + FN) = 92 / 120 = 0.767, or 76.7 per cent.</li><li>F1 = 2PR / (P + R) = 2 × 0.836 × 0.767 / (1.603) = 0.80.</li><li>Baseline check: a model that always says sound scores 380 / 500 = 76 per cent accuracy while detecting nothing, so accuracy alone flatters a model on an imbalanced set.</li></ol>
+        <div class="answer"><b>Answer</b>Accuracy is 90.8 per cent, precision 83.6 per cent and recall 76.7 per cent, with an F1 of about 0.80. About one defective panel in four is missed, so for a safety-related inspection task the threshold should be moved to raise recall, and the cost of false alarms weighed against the missed-defect cost.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>Before discussing any search algorithm, write down the state space, the actions and the cost of a step.</li><li>Quote precision and recall together with the dataset and the split; neither number means anything alone.</li><li>In responsible-AI questions, keep a named human accountable and state where the oversight step sits.</li><li>Fix the evaluation rubric before generating anything, and score generated output against it blind; an impression of quality is not a metric.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q01</span><span>An admissible heuristic guarantees that A* search:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Never expands more than one node</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Returns a least-cost path</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Runs faster than any other search</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Finds a path without a goal test</span></button></div>
+    <div class="quiz-explain"><b>Why</b>If the heuristic never overestimates remaining cost, A* cannot be misled into discarding a cheaper path, so it remains optimal.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>A classifier scores 99 per cent on training data and 62 per cent on the test set. This is best described as:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Underfitting</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Overfitting</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>A data leak into the test set</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>A perfectly calibrated model</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The large gap between training and test performance is the signature of overfitting; the model has memorised rather than generalised.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>A diffusion model generates a sample by:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Applying a fixed set of hand-written rules</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Sorting the training data by label</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Retrieving the nearest training example</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Reversing a process that adds noise to data</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Diffusion models learn to denoise; sampling starts from noise and reverses the training corruption step by step.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>When should the test set be used?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Before training to choose the features</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Only when the training set is too small</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>After every training run to guide tuning</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Once, for the final estimate of generalisation</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Using the test set repeatedly leaks information into model selection and inflates the reported performance; validation data should guide tuning.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q05</span><span>Raising the sampling temperature of a language model makes its output:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>More varied and less deterministic</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Longer but otherwise identical</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Guaranteed factual</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Faster to generate</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Temperature flattens the token probability distribution, so less likely tokens get sampled more often and output becomes more diverse.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>Which prompt practice most directly improves multi-step reasoning answers?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Asking the model to work through the steps before the final answer</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Writing the request in ALL CAPS</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Repeating the question twice</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Omitting examples so the model is not biased</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Chain-of-thought prompting shows intermediate reasoning, which reduces errors on arithmetic and multi-step tasks.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.html"><span>Computing</span><b>AI &amp; Data Analysis</b></a><a class="related-card" href="machine-learning.html"><span>Computing</span><b>Machine Learning</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="service-learning.html"><small>Previous</small><b>Service Learning</b></a><a class="next" href="design-of-transport-infrastructure.html"><small>Next</small><b>Design of Transport Infrastructure</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">A* is optimal only if h never overestimates.</p><p class="margin-note">Test data are touched once.</p><p class="margin-note">Hallucination is confident continuation.</p><p class="margin-note">Accuracy hides rare failures.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>程式設計基礎 — Civil Hub</title>
+<meta name="description" content="一門入門課程，教你像程式設計師一樣思考：儲存數值、控制決策、重複工作、將邏輯封裝成函數，以及透過檔案傳遞資料。這些習慣會延續到之後每一個電腦學科。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/programming-fundamentals.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="程式設計基礎 — Civil Hub">
+<meta property="og:description" content="一門入門課程，教你像程式設計師一樣思考：儲存數值、控制決策、重複工作、將邏輯封裝成函數，以及透過檔案傳遞資料。這些習慣會延續到之後每一個電腦學科。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/programming-fundamentals.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="programming-fundamentals.html" data-alt-zh-hant="programming-fundamentals.zh-Hant.html" data-alt-ja="programming-fundamentals.ja.html" data-alt-ko="programming-fundamentals.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">程式設計基礎</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">計算</p>
+          <h1>程式設計基礎</h1>
+          <p class="subject-sub">以程式碼思考：邏輯、數據與函數</p>
+          <ul class="subject-facts"><li><b>類型</b>計算</li><li><b>閱讀</b>10 分鐘</li><li><b>章節</b>11</li><li><b>公式</b>9</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="44" y="34" width="252" height="136" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M44 58 H296" stroke="var(--line)" stroke-width="1"/><circle cx="58" cy="46" r="2.5" fill="var(--accent)" stroke="none"/><path d="M64 78 h76" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 93 h120" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 108 h60" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 123 h144" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 138 h96" stroke="var(--faint)" stroke-width="1.2"/><text x="64" y="160" font-family="var(--mono)" font-size="7" fill="currentColor" stroke="none" text-anchor="start" letter-spacing="0.18em">> RUN</text><path d="M118 155 h10" stroke="var(--accent)" stroke-width="1.4"/></svg>
+          <figcaption>A short program — input, logic, output</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">數值、名稱與類型</a></li><li><a href="#sec-2">輸入、輸出與格式化</a></li><li><a href="#sec-3">使用 if、elif 和 else 進行決策</a></li><li><a href="#sec-4">迴圈與累加器模式</a></li><li><a href="#sec-5">函數與遞迴</a></li><li><a href="#sec-6">列表、元組與字典</a></li><li><a href="#sec-7">字串也是序列</a></li><li><a href="#sec-8">嵌套迴圈與二維數據</a></li><li><a href="#sec-9">檔案與簡單數據處理</a></li><li><a href="#sec-10">模組、庫與更大的工具箱</a></li><li><a href="#sec-11">除錯是一項技能，不是運氣</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">一門入門課程，教你像程式設計師一樣思考：儲存數值、控制決策、重複工作、將邏輯封裝成函數，以及透過檔案傳遞資料。這些習慣會延續到之後每一個電腦學科。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="programming-fundamentals" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>數值、名稱與類型</h2>
+  <div class="body"><p><strong>變數</strong>是一個綁定到物件的名稱，而不是一個固定大小的標籤盒子。Python 在執行時決定類型：整數用 <code>int</code>，小數用 <code>float</code>，文字用 <code>str</code>，而 <code>True</code> 或 <code>False</code> 用 <code>bool</code>。不確定時可使用 <code>type(x)</code>，並刻意用 <code>int()</code>、<code>float()</code> 和 <code>str()</code> 進行轉換。</p>
+<p>你選擇的運算子會改變結果。<code>/</code> 總是產生浮點數，<code>//</code> 向下取整為整數，<code>%</code> 給出餘數，這是許多數字和奇偶技巧的基礎。</p>
+<p>浮點數值是二進位近似值，所以測試 <code>0.1 + 0.2</code> 不會得到精確的 <code>0.3</code>；應使用容差比較而非相等比較。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">商與餘數</span>
+      <pre class="formula-code"><code>q, r = divmod(n, 10)</code></pre>
+      <span class="formula-note">分離出最後一位數字</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>輸入、輸出與格式化</h2>
+  <div class="body"><p><code>input()</code> 總是回傳字串，即使使用者輸入的是數字。進行算術運算前必須先轉換，否則 <code>"7" + 1</code> 會引發 <code>TypeError</code> 而不是得到 <code>8</code>。</p>
+<p>格式化是答案的一部分。提示和輸出經常需要完全匹配，因此用 f-string 來建構它們：<code>f"{day:02d}"</code> 會將日期補零，<code>f"{total:.4f}"</code> 保留四位小數。</p>
+<p>整潔的程式會將提示、計算和顯示分開；混在一起會使除錯和評分更加困難。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">讀取數字</span>
+      <pre class="formula-code"><code>n = int(input(&quot;Please enter a number: &quot;))</code></pre>
+      <span class="formula-note">input 回傳文字；進行算術前先轉換</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>使用 if、elif 和 else 進行決策</h2>
+  <div class="body"><p><strong>條件語句</strong>選擇一條路徑，每個條件都只是一個評估為真或假的表達式。將分支從最具體到最一般排序，並且只在所有剩餘情況都屬於該分支時才加入最後的 <code>else</code>。</p>
+<p>注意經典錯誤：<br />
+- <code>=</code> 是賦值，而 <code>==</code> 是比較<br />
+- <code>and</code> 的綁定比 <code>or</code> 更緊密<br />
+- 像 <code>if name:</code> 這樣的測試對任何非空字串都為真，這通常超出你的意圖</p>
+<p>先將預期的情況寫成註解，然後再編碼——這個小習慣可以在大多數邏輯錯誤出現之前就消除它們。</p></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>迴圈與累加器模式</h2>
+  <div class="body"><p><code>for</code> 迴圈遍歷序列；<code>while</code> 迴圈重複直到條件失敗。當項目數量已知時選擇 <code>for</code>，未知時選擇 <code>while</code>，並確保 <code>while</code> 條件最終能變為假——永不改變的迴圈變數會導致無限迴圈。</p>
+<p>早期程式設計中最可重用的模式是<strong>累加器</strong>：從零開始設定總和，在迴圈內加入每個項目，迴圈結束後報告。同樣的形狀可用於計數、求和、過濾和搜尋。</p>
+<p>保持更新行明確，以便讀者能清楚看到什麼在何時改變。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">累加運行總和</span>
+      <pre class="formula-code"><code>total = total + x</code></pre>
+      <span class="formula-note">在迴圈前初始化 total = 0</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>函數與遞迴</h2>
+  <div class="body"><p><strong>函數</strong>為一段邏輯賦予名稱，接受參數並回傳值。優先回傳結果而不是在函數內列印：回傳值可以被測試、重用和組合。每個函數只做一件事，並以其功能命名。</p>
+<p><strong>遞迴</strong>通過呼叫自身的較小版本來解決問題。每個遞迴函數都需要一個不回遞的<strong>基本情況</strong>，以及一個向基本情況推進的遞迴步驟。</p>
+<p>斐波那契函數是標準示範，但遞迴也適用於嵌套結構，而迴圈需要自己的堆疊。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">遞迴斐波那契</span>
+      <div class="formula-expr formula-math">\[\mathrm{fib}(n) = \mathrm{fib}(n - 1) + \mathrm{fib}(n - 2)\]</div>
+      <span class="formula-note">基本情況為 fib(1) = fib(2) = 1</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>列表、元組與字典</h2>
+  <div class="body"><p><strong>列表</strong>是一個有序、可變的序列，從零開始索引，因此 <code>a[0]</code> 是第一個項目，<code>a[-1]</code> 是最後一個。切片複製一個區段，而 <code>append</code>、<code>sort</code> 和 <code>remove</code> 會就地編輯列表。由於列表是透過引用共享的，<code>b = a</code> 不會複製它；<code>b = a[:]</code> 才會。</p>
+<p><strong>元組</strong>是一個不可變的序列，適用於固定組，例如座標。<strong>字典</strong>將鍵映射到值，是計數的自然結構，因為它可以延遲建立鍵，而不需要預先檢查。</p>
+<p>嵌套列表表示矩陣：先迴圈列，再迴圈行。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">使用字典計數</span>
+      <pre class="formula-code"><code>counts[ch] = counts.get(ch, 0) + 1</code></pre>
+      <span class="formula-note">避免單獨的成員測試</span>
+    </div></div><div class="table-wrap"><table><caption>選擇容器</caption><thead><tr><th scope='col'>容器</th><th scope='col'>有序</th><th scope='col'>可變</th><th scope='col'>典型用途</th></tr></thead><tbody><tr><td>list</td><td>是</td><td>是</td><td>會增長和縮小的集合</td></tr><tr><td>tuple</td><td>是</td><td>否</td><td>固定記錄，例如座標</td></tr><tr><td>dict</td><td>插入順序</td><td>是</td><td>按鍵查找和計數</td></tr><tr><td>string</td><td>是</td><td>否</td><td>文字、切片和搜尋</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>字串也是序列</h2>
+  <div class="body"><p>字串的行為像字元的元組：它是不可變的、可索引和可切片的，因此 <code>text[2:5]</code> 給出索引 2、3 和 4 處的字元，而 <code>text[::-1]</code> 將其反轉。</p>
+<p>謂詞方法對單個字元進行分類——<code>isalpha()</code>、<code>isdigit()</code>、<code>isspace()</code>——並回傳可在迴圈內測試的布林值。</p>
+<p>從部分建構輸出是一個反覆出現的模式：用 <code>split()</code> 將文字分割成標記，用 <code>'-'.join(tokens)</code> 將它們重新連接，並用 <code>strip()</code> 去除多餘的空白。方法回傳新字串而不是更改原始字串，因此當你想保留結果時，請賦值給變數。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">在迴圈中分類字元</span>
+      <div class="formula-expr formula-text">if ch.isdigit(): digits += 1</div>
+      <span class="formula-note">遍歷字串一次，並為每個字元類別更新計數器</span>
+    </div></div><div class="table-wrap"><table><caption>值得記住的字串方法</caption><thead><tr><th scope='col'>方法</th><th scope='col'>回傳</th><th scope='col'>用途</th></tr></thead><tbody><tr><td>s.split()</td><td>單詞列表</td><td>解析以空格分隔的輸入</td></tr><tr><td>&#x27;-&#x27;.join(parts)</td><td>一個字串</td><td>組合輸出行</td></tr><tr><td>s.strip()</td><td>字串</td><td>移除多餘的空白和換行符</td></tr><tr><td>s.find(x)</td><td>索引或 −1</td><td>定位子字串</td></tr><tr><td>ch.isalpha() / ch.isdigit()</td><td>布林值</td><td>在迴圈中分類每個字元</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>嵌套迴圈與二維數據</h2>
+  <div class="body"><p>列表的列表表示網格或矩陣：<code>grid[r][c]</code> 是第 <code>r</code> 列、第 <code>c</code> 行的元素，標準遍歷是外層迴圈列，內層迴圈行。</p>
+<p>同樣的嵌套可以列印三角形圖案，例如帕斯卡三角形，其中每個內部項目是其上方兩個項目的和。</p>
+<p>矩陣乘法是考試熱門：乘積中第 <code>i</code> 列、第 <code>j</code> 行的元素是第一個矩陣的第 <code>i</code> 列與第二個矩陣的第 <code>j</code> 行的點積。先測試形狀——一個 n×m 矩陣乘以一個 m×p 矩陣得到 n×p——因為交換索引是經典的沉默錯誤。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">帕斯卡三角形項目</span>
+      <div class="formula-expr formula-math">\[T(r,k) = T(r-1,k-1) + T(r-1,k)\]</div>
+      <span class="formula-note">邊緣為 1；每個內部項目是其上方兩個項目的和</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">矩陣乘法</span>
+      <div class="formula-expr formula-math">\[C[i][j] = \sum_{k} A[i][k]\,B[k][j]\]</div>
+      <span class="formula-note">對共享的內部維度 k 求和</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>檔案與簡單數據處理</h2>
+  <div class="body"><p>在 <code>with</code> 區塊內開啟檔案，以便即使發生錯誤也能關閉。讀取會給你包含尾隨換行符的行，因此解析時先 <code>strip()</code> 再 <code>split()</code>。寫入是字面的：<code>print</code> 會添加換行符，但 <code>file.write()</code> 不會，因此你需要自己添加 <code>"\n"</code>。</p>
+<p>真實數據是混亂的。只有在檢查標記看起來像數字後才將其轉換為數字，並跳過無效單詞而不是崩潰。</p>
+<p>對於表格數據，<code>csv</code> 模組或 dataframe 庫消除了大量脆弱的手動分割；將解析與報告分開，以便每個部分可以單獨測試。</p></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>模組、庫與更大的工具箱</h2>
+  <div class="body"><p><strong>模組</strong>是一個可重用定義的檔案：<code>import math</code> 引入一個庫，<code>math.sqrt(x)</code> 呼叫一個函數而無需重新實現。標準庫涵蓋隨機性、日期和檔案路徑，而第三方套件如 <code>pandas</code> 和 <code>matplotlib</code> 可以在幾行內將表格數據轉化為分析和圖表。</p>
+<p>庫不會移除基礎知識——你仍然需要選擇類型、正確迴圈和驗證輸入。將庫呼叫視為一個可以命名和測試的黑箱，而不是了解數據含義的替代品。</p>
+<p>當任務禁止使用庫時，它要求你自己展示底層邏輯，因此寫出你本來會導入的迴圈。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">使用 pandas 讀取表格</span>
+      <div class="formula-expr formula-text">df = pd.read_csv(&#x27;counting.csv&#x27;)
+df.plot()</div>
+      <span class="formula-note">庫解析、儲存和繪製數據；你的工作是檢查結果</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>除錯是一項技能，不是運氣</h2>
+  <div class="body"><p>從下往上閱讀<strong>回溯</strong>：最後一行指出錯誤，上面一行顯示發生位置。用你能找到的最小輸入重現失敗，然後在兩個點列印值並詢問它們首次不一致的地方，以縮小範圍。</p>
+<p>刻意檢查邊界——空輸入、單個項目和最大允許值。大多數初學者的錯誤是差一錯誤、缺少轉換或列表被下一個函數修改。</p>
+<p>寫一個應該通過的小測試，並在每次更改後重新運行它。</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>變數</dt><dd>一個引用物件的名稱，其類型在執行時確定，而不是事先聲明。</dd></div><div class="term"><dt>不可變</dt><dd>創建後其值無法更改的物件，例如字串或元組。</dd></div><div class="term"><dt>累加器</dt><dd>在迴圈運行時收集結果的變數，通常從零或空集合開始。</dd></div><div class="term"><dt>遞迴</dt><dd>一種技術，函數在較小的輸入上呼叫自身，並由基本情況停止。</dd></div><div class="term"><dt>字典</dt><dd>從鍵到值的可變映射，用大括號書寫，用方括號讀取。</dd></div><div class="term"><dt>回溯</dt><dd>Python 在發生錯誤時列印的報告，列出呼叫堆疊和失敗的行。</dd></div><div class="term"><dt>切片</dt><dd>序列中連續區段的副本，用起始、停止和可選步長索引書寫。</dd></div><div class="term"><dt>模組</dt><dd>一個可重用定義的檔案，程式可以導入並按名稱呼叫。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>追蹤數字和函數</h2>
+        <p class="problem">手動追蹤此函數並說明呼叫 digit_sum(274) 時它回傳什麼：
+
+def digit_sum(n):
+    total = 0
+    while n &gt; 0:
+        total = total + n % 10
+        n = n // 10
+    return total
+
+print(digit_sum(274))</p>
+        <ol><li>開始：n = 274，total = 0。迴圈測試 274 &gt; 0 為真。</li><li>第一輪：total = 0 + (274 % 10) = 0 + 4 = 4，且 n = 274 // 10 = 27。</li><li>第二輪：total = 4 + (27 % 10) = 4 + 7 = 11，且 n = 27 // 10 = 2。</li><li>第三輪：total = 11 + (2 % 10) = 11 + 2 = 13，且 n = 2 // 10 = 0。</li><li>迴圈測試：0 &gt; 0 為假，因此迴圈停止，函數回傳 total = 13。</li></ol>
+        <div class="answer"><b>Answer</b>函數回傳 13。合理性檢查：274 的數字是 2、7 和 4，它們的和是 13，與追蹤結果相符。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>在紙上追蹤迴圈，每個變數一列；不要試圖在腦海中執行程式碼。</li><li>在算術前將輸入轉換為正確的類型——這是最常見的單一失分點。</li><li>從最後一行向上閱讀錯誤訊息，並一次修復一個錯誤。</li><li>測試邊界情況：空輸入、單個項目和最大允許值。</li><li>當問題禁止使用 find() 或 count() 時，自己寫迴圈：初始化計數器，遍歷字元，並在條件成立時更新它。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>在 Python 3 中，內建函數 input() 回傳什麼？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>當使用者輸入小數時回傳浮點數</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>與使用者輸入值相同的類型</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>一個字串，無論使用者輸入什麼</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>當使用者輸入數字時回傳整數</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>input() 總是回傳文字；程式必須在進行算術前用 int() 或 float() 轉換它。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>17 // 5 的值是什麼？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>3</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>3.4</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>4</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>// 執行向下取整除法，給出整數部分 3；普通除法會給出 3.4。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>以下哪個容器在創建後無法更改？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>累加器變數</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>list</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>tuple</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>dict</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>元組是不可變的，而列表和字典支持就地更改。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q04</span><span>關於 file.write() 的哪個陳述是正確的？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>它只能將文字寫入螢幕</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>它只寫入給定的內容，因此必須明確添加換行符</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>它在每次呼叫後關閉檔案</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>它像 print() 一樣自動添加換行符</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>print() 會附加換行符，但 file.write() 不會；寫入者必須添加換行字元。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>對於 text = &#x27;abcdefg&#x27;，text[2:5] 回傳什麼？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>cdef</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>bcde</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>cde</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>cd</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>切片包括起始索引並排除停止索引，因此索引 2、3 和 4 給出字元 c、d 和 e。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q06</span><span>關於 Python 字串的哪個陳述是正確的？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>它們是可變的字元序列</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>它們是不可變的字元序列</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>它們是單詞的列表</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>它們可以用 append() 方法更改</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>字串是不可變的：像 strip() 和 upper() 這樣的方法回傳新字串，並且不存在像 append() 這樣就地修改的方法。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.zh-Hant.html"><span>Computing</span><b>人工智能與數據分析</b></a><a class="related-card" href="data-analytics-r.zh-Hant.html"><span>Computing</span><b>R 數據分析</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="advanced-structural-mechanics.zh-Hant.html"><small>上一頁</small><b>高等結構力學</b></a><a class="next" href="construction-materials.zh-Hant.html"><small>下一頁</small><b>建造材料</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">input() 給出文字——加法前先轉換。</p><p class="margin-note">累加器：從 0 開始，在內部添加，之後報告。</p><p class="margin-note">// 向下取整，% 保留餘數。</p><p class="margin-note">回溯是從下往上閱讀的。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

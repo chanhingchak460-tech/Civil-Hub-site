@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>高等結構力學 — Civil Hub</title>
+<meta name="description" content="非對稱或非圓形構件的載荷路徑：主軸、剪力中心、翹曲扭轉及實際柱的穩定性。解釋為何槽鋼會扭轉，以及為何細長支柱會在低於屈服荷載時失效。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/advanced-structural-mechanics.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="高等結構力學 — Civil Hub">
+<meta property="og:description" content="非對稱或非圓形構件的載荷路徑：主軸、剪力中心、翹曲扭轉及實際柱的穩定性。解釋為何槽鋼會扭轉，以及為何細長支柱會在低於屈服荷載時失效。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/advanced-structural-mechanics.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="advanced-structural-mechanics.html" data-alt-zh-hant="advanced-structural-mechanics.zh-Hant.html" data-alt-ja="advanced-structural-mechanics.ja.html" data-alt-ko="advanced-structural-mechanics.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">高等結構力學</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">核心</p>
+          <h1>高等結構力學</h1>
+          <p class="subject-sub">彎曲、剪力中心、扭轉與屈曲</p>
+          <ul class="subject-facts"><li><b>類型</b>核心</li><li><b>閱讀</b>14 分鐘</li><li><b>章節</b>10</li><li><b>公式</b>22</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M80 160 V64 H260 V160" stroke="currentColor" stroke-width="1.7"/><path d="M70 160 h20 M250 160 h20" stroke="currentColor" stroke-width="1.2"/><path d="M80 160 l-8 12 h16 z M260 160 l-8 12 h16 z" stroke="currentColor" stroke-width="1"/><path d="M80 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M220 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M104 100 q-20 14 0 28" stroke="var(--accent)" stroke-width="1"/><path d="M236 100 q20 14 0 28" stroke="var(--accent)" stroke-width="1"/><text x="170" y="44" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PORTAL FRAME</text></svg>
+          <figcaption>Portal frame — bending moments at the joints</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">對稱是例外</a></li><li><a href="#sec-2">慣性積與主軸</a></li><li><a href="#sec-3">非對稱彎曲中的應力</a></li><li><a href="#sec-4">剪力流與剪力中心</a></li><li><a href="#sec-5">超越圓軸的扭轉</a></li><li><a href="#sec-6">支柱與有效長度</a></li><li><a href="#sec-7">缺陷與 Southwell 圖</a></li><li><a href="#sec-8">能量法作為捷徑</a></li><li><a href="#sec-9">塑性彎曲與形狀係數</a></li><li><a href="#sec-10">翹曲扭轉與雙彎矩</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      <li><a href="#design-reference">設計參考</a></li>
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">非對稱或非圓形構件的載荷路徑：主軸、剪力中心、翹曲扭轉及實際柱的穩定性。解釋為何槽鋼會扭轉，以及為何細長支柱會在低於屈服荷載時失效。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="advanced-structural-mechanics" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>對稱是例外</h2>
+  <div class="body"><p>教科書截面通常是對稱的，因此載荷平面與中性軸保持垂直，兩個彎曲方向可以分開處理。實際構件則不那麼順從：不等角鋼、偏心載荷的槽鋼、Z型檁條和起重機軌道，其彎曲方向與任一形心軸都不一致。</p>
+<p>耦合來自<strong>慣性積</strong> I_xy = ∫xy dA，它衡量面積在四個象限的分佈。當它為零時，繞一軸彎曲不會在由另一坐標定義的點產生應力，簡單彎曲公式適用。當它不為零時，中性軸會傾斜。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">慣性積</span>
+      <div class="formula-expr formula-math">\[I_{xy} = \int x\,y\,\mathrm{d}A\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>慣性積與主軸</h2>
+  <div class="body"><p>對於由矩形組成的截面，I_xy 按各部分的 A_i x̄_i ȳ_i 求和，因為矩形對其自身形心軸的貢獻為零。雙對稱截面的 I_xy = 0；具有一個對稱軸的截面，關於該對軸的 I_xy 也為零。</p>
+<p><strong>主軸</strong>是使 I_xy 為零的形心軸。求主軸與求主應力的代數相同：角度滿足 tan 2θ_p = 2I_xy/(I_y − I_x)，主二次矩介於兩個極值之間。將角度代回以檢查哪個軸對應哪個值。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">主角</span>
+      <div class="formula-expr formula-math">\[\tan 2\theta_p = \frac{2 I_{xy}}{I_y - I_x}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">主二次矩</span>
+      <div class="formula-expr formula-math">\[I_{u,v} = \frac{I_x + I_y}{2} \pm \sqrt{\left(\frac{I_x - I_y}{2}\right)^2 + I_{xy}^2}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>非對稱彎曲中的應力</h2>
+  <div class="body"><p>以形心軸 x 和 y 為準，某點的的正應力由下式給出，當兩個彎矩在正象限產生拉力時取正。分母永遠非負，因為 I_x I_y ≥ I_xy²。</p>
+<p>令 σ = 0 得到中性軸：它通過形心，但其斜率與任一軸無關。最大應力不一定在 x 或 y 方向最遠的角點，因此需檢查每個角點。關於主軸，耦合消失，熟悉的公式回歸，即 σ = M_v u/I_v + M_u v/I_u。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">非對稱彎曲應力</span>
+      <div class="formula-expr formula-math">\[\sigma = \frac{(M_y I_x - M_x I_{xy})\,x + (M_x I_y - M_y I_{xy})\,y}{I_x I_y - I_{xy}^2}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>剪力流與剪力中心</h2>
+  <div class="body"><p>橫向剪力並非均勻。在薄壁截面中，在某處切開牆壁並平衡切口以外區域的縱向力：<strong>剪力流</strong>為 q = VQ/I，其中 Q 是該區域關於彎曲軸的一次矩，牆壁應力為 q 除以厚度。</p>
+<p>對於槽鋼，翼緣和腹板的剪力流合成一個垂直力，其作用線不在形心。橫向載荷不產生扭轉的點稱為<strong>剪力中心</strong>，這是純幾何性質。對於槽鋼，它位於腹板外側、遠離翼緣，距腹板中心線 e = 3b²/(h + 6b)，其中 b 是翼緣寬度，h 是翼緣中心線之間的深度。等邊角鋼的剪力中心靠近角頂。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">剪力流</span>
+      <div class="formula-expr formula-math">\[q = \frac{V Q}{I}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">槽鋼的剪力中心</span>
+      <div class="formula-expr formula-math">\[e = \frac{3 b^2}{h + 6 b}\]</div>
+      
+    </div></div><div class="table-wrap"><table><caption>常見薄壁截面的剪力中心</caption><thead><tr><th scope='col'>截面</th><th scope='col'>慣性積</th><th scope='col'>剪力中心</th></tr></thead><tbody><tr><td>雙對稱工字鋼截面</td><td>零</td><td>在形心</td></tr><tr><td>槽鋼（一個對稱軸）</td><td>關於對稱軸為零</td><td>腹板外側，翼緣對面</td></tr><tr><td>等邊角鋼</td><td>非零</td><td>靠近肢的角頂</td></tr><tr><td>Z型截面（點對稱）</td><td>通常非零</td><td>在形心</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>超越圓軸的扭轉</h2>
+  <div class="body"><p>圓軸扭轉時不翹曲，因此 τ = Tr/J 和 θ = TL/GJ 是精確的。任何其他截面都會<strong>翹曲</strong>：平面截面不再保持平面，簡單扭轉公式失效。實心非圓形桿的最大剪應力出現在最靠近形心的邊界上，其值取自係數表。</p>
+<p><strong>閉合薄壁管</strong>通過循環剪力流傳遞扭矩，因此 τ = T/(2A_m t) 和 J = 4A_m²/∮(ds/t)，其中 A_m 是牆壁中線圍成的面積。開口截面沒有閉合路徑供剪力流動，因此弱得多，J ≈ Σ(1/3)bt³。這就是為什麼相同質量的箱形截面比開口槽鋼抗扭好得多。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Bredt 剪應力</span>
+      <div class="formula-expr formula-math">\[\tau = \frac{T}{2 A_m t}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">閉合管常數</span>
+      <div class="formula-expr formula-math">\[J = \frac{4 A_m^2}{\oint \frac{\mathrm{d}s}{t}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">開口截面常數</span>
+      <div class="formula-expr formula-math">\[J \approx \sum \frac{1}{3} b t^3\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>支柱與有效長度</h2>
+  <div class="body"><p>完全筆直、中心載荷的柱在達到<strong>歐拉荷載</strong>前保持筆直：P_cr = π²EI/(KL)²，其中 KL 是由端部條件設定的有效長度。K 對於鉸接-鉸接為 1.0，固定-鉸接為 0.7，固定-固定為 0.5，固定-自由為 2.0。超過該荷載，直線形狀不穩定，任何小擾動都會增長。</p>
+<p>控制參數是長細比 λ = KL/r，其中 r = √(I/A) 是關於彎曲軸的迴轉半徑。粗短柱在屈曲前屈服；細長柱在遠低於屈服的應力下屈曲。截面的強度取決於其較弱軸。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">歐拉屈曲荷載</span>
+      <div class="formula-expr formula-math">\[P_{cr} = \frac{\pi^2 E I}{(K L)^2}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">長細比</span>
+      <div class="formula-expr formula-math">\[\lambda = \frac{K L}{r}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>缺陷與 Southwell 圖</h2>
+  <div class="body"><p>沒有實際柱是完全筆直或完全中心載荷的。初始彎曲 δ₀ 被軸向荷載放大，因此中高撓度變為 δ_max = δ₀/[1 − P/P_cr]，極端纖維必須加上 P/A 和 Pδ_max/Z 而不超過屈服。</p>
+<p>因此失效在歐拉荷載之前發生：柱被自身增長的撓度驅使屈服，<strong>Perry–Robertson</strong> 方法同時解決此問題。<strong>Southwell 圖</strong>從未達到不穩定的試驗中提取歐拉荷載：繪製測量撓度除以荷載對撓度的圖，得到斜率為 1/P_cr 的直線。屈曲是剛度的逐漸喪失。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">撓度放大</span>
+      <div class="formula-expr formula-math">\[\delta_{\max} = \frac{\delta_0}{1 - P/P_{cr}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Southwell 圖</span>
+      <div class="formula-expr formula-math">\[\frac{\delta}{P} = \frac{\delta}{P_{cr}} + \frac{\delta_0}{P_{cr}}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>能量法作為捷徑</h2>
+  <div class="body"><p>應變能儲存變形功：對於彎曲 U = ∫M²/(2EI) ds，軸力、剪力和扭轉有類似的積分。<strong>Castigliano 定理</strong>然後給出沿載荷方向的位移為 Δ = ∂U/∂P，這無需積分微分方程即可處理曲線和超靜定構件。</p>
+<p><strong>單位載荷法</strong>是同一思想的代數形式：在需要位移的地方施加單位載荷，求出其產生的內彎矩 m，然後 1·Δ = ∫Mm/(EI) ds。屈曲荷載也可由能量得出，通過將支柱彎曲時軸向載荷的功等於儲存的彎曲能。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">彎曲應變能</span>
+      <div class="formula-expr formula-math">\[U = \int \frac{M^2}{2 E I}\,\mathrm{d}s\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Castigliano 定理</span>
+      <div class="formula-expr formula-math">\[\Delta = \frac{\partial U}{\partial P}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">單位載荷法</span>
+      <div class="formula-expr formula-math">\[1 \cdot \Delta = \int \frac{M m}{E I}\,\mathrm{d}s\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>塑性彎曲與形狀係數</h2>
+  <div class="body"><p>當極端纖維首次達到屈服時，彈性理論認為失效——但截面仍能承載。隨著屈服向內擴展，承載力增長，直到整個截面達到 f_y：<strong>塑性彎矩</strong>為 M_p = f_y S，其中 S 是塑性模量，即關於等面積軸的面積一次矩。對於矩形，S = bh²/4，而彈性 Z = bh²/6，因此<strong>形狀係數</strong> M_p/M_y 為 1.5；工字鋼截面約為 1.1–1.2。</p>
+<p><strong>塑性鉸</strong>在 M 達到 M_p 並在恒定彎矩下自由轉動處形成，將構件變成機構。這種重分佈是塑性設計的基礎：倒塌荷載來自機構幾何，而非首次屈服點。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">屈服與塑性彎矩</span>
+      <div class="formula-expr formula-math">\[M_y = f_y Z, \quad M_p = f_y S\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">塑性模量，矩形</span>
+      <div class="formula-expr formula-math">\[S = \frac{b h^2}{4}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">形狀係數</span>
+      <div class="formula-expr formula-math">\[\frac{M_p}{M_y} = \frac{S}{Z}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>翹曲扭轉與雙彎矩</h2>
+  <div class="body"><p>開口薄壁截面在扭轉下不保持平面：翼緣側向彎曲，產生的翼緣應力為<strong>翹曲應力</strong>，由<strong>雙彎矩</strong>描述。總扭矩分為聖維南和翹曲部分，T = T_sv + T_w，其中 T_sv = G J θ′ 和 T_w = −E I_w θ″′，I_w 是翹曲常數，單位為長度的六次方。對於工字鋼截面，I_w ≈ I_f h²/2，其中 I_f 是一個翼緣的二次矩。</p>
+<p>端部約束改變一切：扭轉約束梁通過翹曲承擔大部分扭矩，因此簡單的 τ = Tr/J 值對於開口截面可能嚴重不安全。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">扭矩拆分</span>
+      <div class="formula-expr formula-math">\[T = T_{sv} + T_w\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">翹曲扭矩</span>
+      <div class="formula-expr formula-math">\[T_w = -E I_w \theta&#x27;&#x27;&#x27;\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">翹曲常數，工字鋼截面</span>
+      <div class="formula-expr formula-math">\[I_w \approx \frac{I_f h^2}{2}\]</div>
+      
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>慣性積</dt><dd>截面上的積分 ∫xy dA；非零表示形心軸不是主軸，繞一軸彎曲會引起與另一軸相關的應力。</dd></div><div class="term"><dt>主軸</dt><dd>慣性積為零的一對形心軸，因此繞任一軸彎曲不會產生交叉耦合。</dd></div><div class="term"><dt>剪力中心</dt><dd>截面中橫向載荷必須通過以不引起扭轉的點；是與材料無關的幾何性質。</dd></div><div class="term"><dt>剪力流</dt><dd>沿薄壁單位長度的剪力，q = VQ/I，用於定位合剪力和剪力中心。</dd></div><div class="term"><dt>翹曲</dt><dd>非圓形截面在扭轉下的平面外變形，由沿牆壁變化的剪應變引起。</dd></div><div class="term"><dt>有效長度</dt><dd>屈曲支柱反彎點之間的距離 KL，根據端部約束選擇。</dd></div><div class="term"><dt>Perry–Robertson 方法</dt><dd>一種柱設計方法，結合彈性屈曲與極端纖維屈服來預測缺陷支柱的失效。</dd></div><div class="term"><dt>Southwell 圖</dt><dd>柱試驗中撓度除以荷載對撓度的圖；其斜率給出臨界屈曲荷載的倒數。</dd></div><div class="term"><dt>塑性模量</dt><dd>關於等面積軸的面積一次矩；乘以屈服應力得到塑性彎矩。</dd></div><div class="term"><dt>雙彎矩</dt><dd>由約束翹曲引起的自平衡翼緣彎矩對；其沿構件的梯度給出翹曲扭矩。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>槽鋼的剪力中心與偏心載荷引起的扭轉</h2>
+        <p class="problem">薄壁槽鋼的翼緣寬度 b = 75 mm（從腹板中心線量起），翼緣中心線之間的深度 h = 200 mm，厚度 t = 6 mm。一垂直載荷 5 kN 作用在 2.0 m 長構件的形心上。求剪力中心、偏心載荷引起的扭矩以及聖維南扭轉角（G = 79 GPa）。</p>
+        <ol><li>關於彎曲軸的二次矩：I_x = t h³/12 + 2 b t (h/2)² = 6 × 200³/12 + 2 × 75 × 6 × 100² = 4.0 × 10⁶ + 9.0 × 10⁶ = 13.0 × 10⁶ mm⁴。</li><li>剪力中心距腹板中心線的偏移：e = 3b²/(h + 6b) = 3 × 75²/(200 + 450) = 16 875/650 = 26.0 mm，在腹板遠離翼緣的一側。</li><li>形心向翼緣偏移：A = t h + 2 b t = 1200 + 900 = 2100 mm²，因此 x̄ = (2 b t)(b/2)/A = 33 750/2100 = 16.1 mm。因此形心載荷距剪力中心 26.0 + 16.1 = 42.1 mm。</li><li>關於剪力中心的扭矩：T = V × e = 5000 N × 0.0421 m = 210 N·m = 210 500 N·mm。</li><li>開口截面扭轉常數：J ≈ Σ(1/3) b t³ = (1/3)(200 + 75 + 75)(6³) = 25 200 mm⁴。</li><li>扭轉角：θ = T L/(G J) = (210 500 × 2000)/(79 000 × 25 200) = 0.212 rad，約 12°。</li><li>合理性檢查：2 m 上 12° 對於屋頂構件是不可接受的，這就是為什麼槽鋼通過剪力中心載荷、由屋面板約束或替換為閉合箱形截面。翹曲約束會減小此估計，但不會減至零。</li></ol>
+        <div class="answer"><b>Answer</b>剪力中心距腹板中心線 26.0 mm，在翼緣對面。形心載荷對其施加 0.21 kN·m 的扭矩，聖維南扭轉約為 0.21 rad（12°），證實開口截面需要約束或通過剪力中心的載荷路徑。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>在代入非對稱彎曲公式前，先說明 M_x 和 M_y 的正負號約定；大多數失分是符號錯誤，而非代數錯誤。</li><li>對於任何薄壁截面，先繪製剪力流路徑：自由邊緣從零剪力流開始，角點是合力相交處。</li><li>在扭轉問題中，寫公式前先說明截面是閉合還是開口；剛度差異巨大。</li><li>對於支柱，引用歐拉荷載和屈服荷載，然後說明對於給定的長細比哪個控制。</li><li>對於扭轉下的開口截面，同時引用翹曲常數和 J——端部約束可使翹曲扭矩成為主導項。</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Design strength py of structural steel to BS EN grades</h3>
+  <p class="ref-table-intro">Design strength py used in the Hong Kong steel code. It is the yield strength divided by the material factor for the steel class and capped by the tensile strength divided by a second factor, so the tabulated value falls as the element gets thicker.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Steel grade</th><th scope='col'>Thickness t (mm)</th><th scope='col'>Design strength py (N/mm²)</th></tr></thead><tbody><tr><td>S235</td><td>t ≤ 16</td><td>235</td></tr><tr><td>S275</td><td>t ≤ 16</td><td>275</td></tr><tr><td>S275</td><td>16 &lt; t ≤ 40</td><td>265</td></tr><tr><td>S355</td><td>t ≤ 16</td><td>355</td></tr><tr><td>S355</td><td>16 &lt; t ≤ 40</td><td>345</td></tr><tr><td>S355</td><td>40 &lt; t ≤ 63</td><td>335</td></tr><tr><td>S460</td><td>t ≤ 16</td><td>460</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 3.2 of the Code of Practice for the Structural Use of Steel 2011 (2023 Edition). For Class 1 steel the material factors are γm1 = 1.0 and γm2 = 1.1 (Table 4.1); the thickness of the thickest element governs the grade classification.</p>
+  <p class="ref-table-caveat">Revision summary only. Values depend on the steel class, the product standard and the governing thickness, and normal-strength and high-strength steels are treated separately; check the current steel code for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>某截面的慣性積非零。關於其彎曲行為，哪個說法正確？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>繞一形心軸彎曲會在另一坐標為零的點產生應力</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>中性軸必須平行於載荷平面</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>截面不能承受彎矩</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>最大應力總是出現在離形心最遠的角點</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>通過 I_xy 的耦合意味著繞 x 的彎矩產生的應力隨 x 和 y 變化，中性軸偏離幾何軸。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>槽鋼截面承受垂直載荷。其剪力中心在哪裡？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>腹板與上翼緣的交界處</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>在形心</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>腹板外側，翼緣對面</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>翼緣內，腹板與端部之間的中點</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>對於槽鋼，翼緣剪力流形成力偶，將合剪力推到腹板外側、翼緣對面，位置為 e = 3b²/(h + 6b)。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q03</span><span>兩個構件質量相同、圍成面積相同，一個是閉合管，一個是開口槽鋼。對於相同扭矩，哪個扭轉較小？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>閉合管，因為其剪力流可以循環</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>兩者扭轉相同，因為扭轉僅取決於面積</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>沒有材料模量無法確定</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>開口槽鋼，因為其牆壁未加勁</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>閉合管通過循環的 Bredt 剪力流傳遞扭矩，給出 J = 4A_m²/∮(ds/t)；開口截面的 J ≈ Σbt³/3，小幾個數量級。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q04</span><span>長度為 L 的鉸接-鉸接支柱歐拉荷載為 P。如果兩端改為固定且其他不變，歐拉荷載約變為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>4P</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>P/2</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>P</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2P</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>有效長度從 L 降至 0.5L，而 P_cr 隨 1/(KL)² 變化，因此荷載增加 1/0.5² = 4 倍。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>矩形截面的彈性模量 Z = bh²/6，塑性模量 S = bh²/4。其形狀係數為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>1.0</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>1.25</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1.5</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2.0</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>形狀係數為 S/Z = (bh²/4)/(bh²/6) = 6/4 = 1.5，意味著塑性彎矩比首次屈服彎矩大一半。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>在剪力中心實驗中，槽鋼的剪力中心通過載荷位置確定，該位置滿足：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>載荷吊架不再夾住板</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>兩個角點千分表讀數相等且方向相反的撓度</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>施加載荷後兩個千分表歸零</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>測量撓度最大</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>通過剪力中心的載荷產生彎曲而無扭轉，因此兩個角點的旋轉千分表讀數為零。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="structural-mechanics.zh-Hant.html"><span>Core</span><b>結構力學</b></a><a class="related-card" href="construction-materials.zh-Hant.html"><span>Core</span><b>建造材料</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="aviation-studies.zh-Hant.html"><small>上一頁</small><b>航空與基礎設施</b></a><a class="next" href="programming-fundamentals.zh-Hant.html"><small>下一頁</small><b>程式設計基礎</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2>參考文獻</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2023). <i>Code of Practice for the Structural Use of Steel 2011 (2023 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/SUOS2011.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/SUOS2011.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">I_xy ≠ 0：軸不是主軸。</p><p class="margin-note">薄壁自由邊緣：剪力流從零開始。</p><p class="margin-note">開口截面抗扭能力弱——用箱形截面。</p><p class="margin-note">支柱因彎曲而失效，而非壓碎。</p><p class="margin-note">Southwell 斜率 = 1/P_cr。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

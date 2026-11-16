@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>構造解析 — Civil Hub</title>
+<meta name="description" content="実際の架構の力と変位を求める方法：不静定次数、仮想仕事、影響線、モーメント分配法、剛性法。構造物のスケッチを、技術者が説明責任を持てる数値に変える。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/structural-analysis.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="構造解析 — Civil Hub">
+<meta property="og:description" content="実際の架構の力と変位を求める方法：不静定次数、仮想仕事、影響線、モーメント分配法、剛性法。構造物のスケッチを、技術者が説明責任を持てる数値に変える。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/structural-analysis.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="structural-analysis.html" data-alt-zh-hant="structural-analysis.zh-Hant.html" data-alt-ja="structural-analysis.ja.html" data-alt-ko="structural-analysis.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">構造解析</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">コア</p>
+          <h1>構造解析</h1>
+          <p class="subject-sub">骨組、影響線、剛性、実構造物の挙動</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>コア</li><li><b data-i18n="subject.read">Read</b>11 分</li><li><b data-i18n="subject.sections">Sections</b>10</li><li><b data-i18n="subject.formulas">Formulas</b>13</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M80 160 V64 H260 V160" stroke="currentColor" stroke-width="1.7"/><path d="M70 160 h20 M250 160 h20" stroke="currentColor" stroke-width="1.2"/><path d="M80 160 l-8 12 h16 z M260 160 l-8 12 h16 z" stroke="currentColor" stroke-width="1"/><path d="M80 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M220 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M104 100 q-20 14 0 28" stroke="var(--accent)" stroke-width="1"/><path d="M236 100 q20 14 0 28" stroke="var(--accent)" stroke-width="1"/><text x="170" y="44" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PORTAL FRAME</text></svg>
+          <figcaption>Portal frame — bending moments at the joints</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">不静定次数と安定性</a></li><li><a href="#sec-2">仮想仕事と単位荷重法</a></li><li><a href="#sec-3">たわみ法</a></li><li><a href="#sec-4">影響線</a></li><li><a href="#sec-5">モーメント分配法</a></li><li><a href="#sec-6">剛性法</a></li><li><a href="#sec-7">平面トラスの剛性解析</a></li><li><a href="#sec-8">架構の挙動とスウェイ</a></li><li><a href="#sec-9">コンピュータモデルの検証</a></li><li><a href="#sec-10">解析から設計へ</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">実際の架構の力と変位を求める方法：不静定次数、仮想仕事、影響線、モーメント分配法、剛性法。構造物のスケッチを、技術者が説明責任を持てる数値に変える。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="structural-analysis" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>不静定次数と安定性</h2>
+  <div class="body"><p>釣合いにより、各平面自由物体に対して3つの独立した方程式が得られる。部材、節点、反力成分を数えると、剛節架構の静的不静定次数は D_s = 3m + r − 3j となる。</p>
+<ul>
+<li>D_s = 0：反力は釣合いから求まる。</li>
+<li>D_s &gt; 0：その数だけ余剰力が残る。</li>
+<li>D_s &lt; 0：機構の警告となる。</li>
+<li>内部ヒンジは次数を減らす。</li>
+</ul>
+<p>不静定次数は算術であり、安定性の証明ではない。平行な支点や、1点に集まる反力は、不静定次数が0の構造物を移動可能なままにすることがあるため、まず機構をスケッチすること。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">平面架構の静的不静定次数</span>
+      <div class="formula-expr formula-math">\[D_s = 3m + r - 3j\]</div>
+      <span class="formula-note">m 部材数、r 反力成分数、j 節点数；D_s &lt; 0 は機構を示す</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>仮想仕事と単位荷重法</h2>
+  <div class="body"><p>単位荷重法は一度に1つの変位を求める。必要な点と方向に仮想単位荷重を作用させ、内部仮想力を求め、構造物全体にわたって仮想作用と実作用の積を合計する。</p>
+<ul>
+<li>架構の場合：Σ∫ M m / (EI) ds。</li>
+<li>トラスの場合：Σ n N L / (A E)。</li>
+</ul>
+<p>符号は仮定した仮想方向に従う：負の結果は変位が単位荷重と逆向きであることを意味する。選んだ点でコンピュータの結果を検証するのに最適である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">単位荷重法、架構</span>
+      <div class="formula-expr formula-math">\[\Delta = \sum \int \frac{M m}{E I}\,\mathrm{d}s\]</div>
+      <span class="formula-note">M と m は実曲げモーメントと仮想曲げモーメント</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">単位荷重法、トラス</span>
+      <div class="formula-expr formula-math">\[\Delta = \sum \frac{n N L}{A E}\]</div>
+      <span class="formula-note">n と N は仮想軸力と実軸力</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>たわみ法</h2>
+  <div class="body"><p>たわみ法（力法）は、静定な<strong>解放構造</strong>が残るまで支点や内部作用を取り除くことで不静定構造を扱う。未知数は余剰力 X であり、解放の代償は、解放構造を実構造と同じ挙動にしなければならないことである。</p>
+<p>適合条件が不足する方程式を与える：各解放座標における変位は、作用荷重と余剰力によるもので、その実値——通常はゼロ——に等しくなければならない。行列形式では <code>f X + D = 0</code> であり、<code>f_ij</code> は j の単位余剰力による座標 i の変位、<code>D</code> は荷重のみによるその点の変位である。各係数は仮想仕事から求まる。</p>
+<p><strong>図形乗法</strong>を用いる場合、モーメント図を面積と図心が既知の単純な図形に分割する。曲げモーメント図の勾配はせん断力に等しいため、節点で勾配が変化する図は分解しなければならない——放物線と三角形であり、想像上の1つの図形ではない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">行列形式の適合方程式</span>
+      <div class="formula-expr formula-math">\[\mathbf{f}\,\mathbf{X} + \mathbf{D} = 0\]</div>
+      <span class="formula-note">f たわみマトリクス、X 余剰力、D 荷重下の解放構造の変位</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">たわみ係数</span>
+      <div class="formula-expr formula-math">\[f_{ij} = \sum \int \frac{m_i m_j}{E I}\,\mathrm{d}s\]</div>
+      <span class="formula-note">m_i と m_j は i と j の単位余剰力による曲げモーメント</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>影響線</h2>
+  <div class="body"><p>影響線は、単位荷重が構造物上を移動するとき、1つの応答——反力、せん断力、モーメント、変位——がどのように変化するかを示す。線がわかれば、任意の荷重列は重ね合わせで扱える：各荷重にその直下の縦距を掛けて合計する。最大縦距の上に荷重を配置すると支配的な位置が得られ、橋やクレーンガーダーに適する理由がここにある。</p>
+<p>Müller-Breslauの原理は形状を直接与える：対象点で構造を解放し、応答方向に単位変位または単位回転を与えると、得られるたわみ形状が影響線となる。単純支持梁では、モーメント影響線は断面下で縦距 a b / L をもつ。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">単純支持梁のモーメント影響縦距</span>
+      <div class="formula-expr formula-math">\[y = \frac{a b}{L}\]</div>
+      <span class="formula-note">a、b は断面から支点までの距離；L はスパン</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>モーメント分配法</h2>
+  <div class="body"><p>モーメント分配法は、連立方程式を使わずに、節点ごとに不静定梁や架構を解く。すべての節点を固定し、部材荷重による固定端モーメントを書き、次に1つの節点を解放する。不釣合いモーメントは剛性に比例して部材間に分配され、一部は固定された遠端に伝達される；伝達が無視できるまで繰り返す。</p>
+<ul>
+<li>一定 EI の場合、剛性は遠端固定で 4EI/L、遠端ピンで 3EI/L である。</li>
+<li>伝達率は固定端へ 0.5、ピン端へはゼロである。</li>
+</ul>
+<p>最初に符号規約を定めること：節点の片側で逆曲げは、反対側では正曲げである。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">分配率</span>
+      <div class="formula-expr formula-math">\[\mathrm{DF} = \frac{k}{\sum k}\]</div>
+      <span class="formula-note">k = 4EI/L（遠端固定）、3EI/L（遠端ピン）</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">伝達率</span>
+      <div class="formula-expr formula-math">\[C = 0.5\]</div>
+      <span class="formula-note">一定 EI、遠端固定；ピン端への伝達なし</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>剛性法</h2>
+  <div class="body"><p>剛性法は節点変位を未知数とする。各要素は局所座標系の剛性マトリクスで表され、マトリクスは全体座標系に回転され、K u = F に組み立てられる。部材荷重は等価節点力となり、方程式は u について解かれ、部材端力は部材変位から求まる。</p>
+<p>手計算で書くと、同じ考え方はたわみ角法の式である：M_AB = (4EI/L) θ_A + (2EI/L) θ_B + FEM_AB。任意の形状と支点条件に対応できるため、架構解析ソフトウェアの基礎となっている；モデルは支点と特性の良し悪しにすぎない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">組み立て剛性方程式</span>
+      <div class="formula-expr formula-math">\[\mathbf{K}\,\mathbf{u} = \mathbf{F}\]</div>
+      <span class="formula-note">K 全体剛性マトリクス、u 節点変位、F 作用節点力</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">たわみ角法の式</span>
+      <div class="formula-expr formula-math">\[M_{AB} = \frac{4 E I}{L}\theta_A + \frac{2 E I}{L}\theta_B + \mathrm{FEM}_{AB}\]</div>
+      <span class="formula-note">θ はラジアン；FEM は部材荷重による固定端モーメント</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>平面トラスの剛性解析</h2>
+  <div class="body"><p>平面トラスでは、剛性法は明快な手順となる。各要素は軸剛性 <code>EA/L</code> の棒であり、その端力は棒軸方向に分解された端変位の差に依存する。全体座標系では、要素剛性マトリクスは <code>k = (EA/L) [[c², cs], [cs, s²]]</code> である。ここで <code>c = cos α</code>、<code>s = sin α</code> は角度 α で傾いた棒に対する値である。</p>
+<p>組み立てでは、各 2 × 2 マトリクスを要素の2つの節点の自由度で全体 K に加算する；支点は拘束された行と列を削除することで課される。節点変位について <code>K u = F</code> を解き、次に <code>N = (EA/L) [c s] (u_B − u_A)</code> で各要素力を求める。正の値は引張を意味する。引張の規約を明示しないトラス解は未完成である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">平面トラスの要素剛性マトリクス</span>
+      <div class="formula-expr formula-math">\[k = \frac{EA}{L}\begin{bmatrix} c^2 &amp; cs \\ cs &amp; s^2 \end{bmatrix}\]</div>
+      <span class="formula-note">c = cos α、s = sin α；全体 x–y 座標で 2 × 2</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">端変位からの要素力</span>
+      <div class="formula-expr formula-math">\[N = \frac{EA}{L}\begin{bmatrix} c &amp; s \end{bmatrix}\left(\mathbf{u}_B - \mathbf{u}_A\right)\]</div>
+      <span class="formula-note">正の N は引張；u_A と u_B は節点変位ベクトル</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>架構の挙動とスウェイ</h2>
+  <div class="body"><p>剛節架構は、柱と梁を一体として曲げることで水平荷重に抵抗する。架構が水平移動できる場合、スウェイはモーメントを増大させ、構造物はスウェイ感受性となる；充填壁、ブレース、コアは解析カテゴリーを変えうるため、含めなければならない。スウェイ架構には2次解析または増幅モーメントが必要である。P-Δ効果は高さと軸力とともに増大するからである。</p>
+<p>予備断面算定では、門形法は各柱の中間高さと各梁の中央スパンに反曲点を仮定するため、層せん断力は柱間に分配される。これはスケッチであり設計法ではないが、大きな不釣合いを早期に捉える。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">固定端柱の水平剛性</span>
+      <div class="formula-expr formula-math">\[K_{\mathrm{lat}} \approx \sum \frac{12 E I_c}{h^3}\]</div>
+      <span class="formula-note">初期推定；梁の拘束により実効値は低下する</span>
+    </div></div><div class="table-wrap"><table><caption>解析手法の選択</caption><thead><tr><th scope='col'>手法</th><th scope='col'>未知数</th><th scope='col'>最適な用途</th><th scope='col'>注意点</th></tr></thead><tbody><tr><td>単位荷重／仮想仕事</td><td>1つの変位</td><td>特定点のたわみ検証</td><td>一度に1点のみ</td></tr><tr><td>モーメント分配法</td><td>節点回転角</td><td>連続梁、小規模架構</td><td>節点やスウェイが多いと遅い</td></tr><tr><td>剛性マトリクス</td><td>節点変位</td><td>任意架構のコンピュータ解析</td><td>モデル誤り、単位、解放</td></tr><tr><td>2次解析</td><td>P-Δを含む変位</td><td>細長い架構やスウェイ架構</td><td>現実的な初期不整が必要</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>コンピュータモデルの検証</h2>
+  <div class="body"><p>ソフトウェアはモデルが妥当かどうかに関係なく数値を返す。出力を使用する前に、単位と軸、支点と解放、断面の向きを確認すること。</p>
+<ul>
+<li>作用荷重の合計が反力の合計に等しいことを確認する。</li>
+<li>各ピンでモーメントがゼロに戻ることを確認する。</li>
+<li>たわみ形状が拘束条件と一致することを確認する。</li>
+<li>剛性が特異に近いという警告は、通常、自由節点または機構を意味する。</li>
+<li>1つの部材を手計算で検証する——釣合い、標準式、既知の影響線。</li>
+<li>メッシュを細分化して答えが動くか確認する；無関係な細分化で変化する結果は収束していない。</li>
+</ul></div>
+<div class="callout callout--warning">
+  <b>図は閉じなければならない</b>
+  ピンでゼロに戻らない曲げモーメント図は、符号誤り、解放誤り、または不釣合い荷重の証拠である。
+</div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>解析から設計へ</h2>
+  <div class="body"><p>解析は作用を与えるが、判定は与えない。荷重ケースを組み合わせ、各部材に沿った効果の包絡線を取り、強度、安定性、使用性を別々に検討する。細長い架構やスウェイ感受性架構には2次効果を含めなければならず、移動荷重には支配的位置を見つけるために影響線または影響面が必要である。</p>
+<p>すべての数値の背後にある荷重組み合わせ、符号規約、単位を記録すること。断面設計はその3つすべてに依存するからである。整理され追跡可能な設計作用のセットこそが、構造解析の真の成果物である。</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>静的不静定次数</dt><dd>釣合いだけでは決定できない未知反力または部材力の数。</dd></div><div class="term"><dt>影響線</dt><dd>単位荷重が構造物上を移動するときの1つの応答を表す図。</dd></div><div class="term"><dt>Müller-Breslauの原理</dt><dd>応答に対する影響線は、その応答方向に単位変位または単位回転を与えることで生じるたわみ形状である。</dd></div><div class="term"><dt>分配率</dt><dd>不釣合い節点モーメントのうち1つの部材が負担する割合で、その剛性に比例する。</dd></div><div class="term"><dt>伝達率</dt><dd>分配モーメントが部材の遠端に伝達される割合；一定 EI で遠端固定の場合 0.5。</dd></div><div class="term"><dt>スウェイ架構</dt><dd>節点の水平移動が拘束されていない架構で、2次効果を考慮しなければならない。</dd></div><div class="term"><dt>たわみ係数</dt><dd>ある解放座標における変位で、別の単位余剰力によって生じ、適合方程式を構築するために用いられる。</dd></div><div class="term"><dt>図形乗法</dt><dd>単純な曲げモーメント図の面積にその図心での縦距を掛けて仮想仕事の積分を評価すること。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>モーメント分配法による2スパン連続梁</h2>
+        <p class="problem">連続梁 ABC は等しい2スパン 6.0 m、一定 EI で、両スパンに 12 kN/m の等分布荷重を受ける。中央支点 B の逆曲げモーメント、3つの鉛直反力、スパン AB の最大正曲げモーメントを求めよ。</p>
+        <ol><li>各スパンの B における固定端モーメント（遠端ピン）：w L² / 8 = 12 × 6.0² / 8 = 54 kNm 逆曲げ。</li><li>B における分配率：両スパンとも剛性 3EI/L なので、各分配率は 0.5。2つのスパンからの固定端モーメントは節点で逆向きの回転方向に作用するため、正味の不釣合いモーメントはゼロであり、分配も伝達も不要である。</li><li>したがって支点モーメントは M_B = 54 kNm 逆曲げ。スパン AB について：R_A = wL/2 − M_B/L = 36 − 9 = 27 kN；このスパンからの B の反力は 36 + 9 = 45 kN で、他のスパンも同じだけ加わるため、R_B = 90 kN。</li><li>鉛直釣合いを確認：27 + 90 + 27 = 144 kN = 12 × 12 m。正しい。</li><li>AB の最大正曲げモーメントはせん断力がゼロとなる点、A から x = 27/12 = 2.25 m で生じる：M = 27 × 2.25 − 12 × 2.25²/2 = 30.4 kNm。</li></ol>
+        <div class="answer"><b>Answer</b>M_B = 54 kNm 逆曲げ、R_A = R_C = 27 kN、R_B = 90 kN、スパン AB の最大正曲げモーメントは A から 2.25 m の位置で 30.4 kNm。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>手法を選ぶ前に不静定次数を数え、たわみ形状をスケッチすること；手法は習慣ではなく構造物から決まる。</li><li>仮想仕事の問題では、仮想系を真に仮想に保ち、その符号を答えまで持ち越すこと；負の変位は方向であり、誤りではない。</li><li>影響線では、まず臨界点の縦距を求めること；最大効果は荷重×縦距の単純な重ね合わせとなる。</li><li>コンピュータ解析が与えられたら、設計検討に出力を使う前に2分間で反力とモーメント図を確認すること。</li><li>力法の解答では、たわみマトリクスを書く前に解放構造と各単位余剰力のモーメント図を描くこと；誤りの多くはそれらの図の間の符号誤りである。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>両端固定の単スパン梁の静的不静定次数は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>1</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>2</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>3</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>6</span></button></div>
+    <div class="quiz-explain"><b>Why</b>6つの反力成分が作用し、3つの釣合い方程式が利用できるため、不静定次数は 6 − 3 = 3 である。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>単位荷重法は何から変位を求めるか：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>せん断力図の面積</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>実力と実剛性の積</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>仮想内部力と実変形の積の和</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>曲げモーメント図の勾配</span></button></div>
+    <div class="quiz-explain"><b>Why</b>仮想単位荷重が実変形に対して仕事をし、変位を Σ∫Mm/EI または ΣnNL/AE として直接与える。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>Müller-Breslauの原理によれば、支点の鉛直反力の影響線は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>支点に単位荷重を作用させたときの曲げモーメント図</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>反力方向に支点で単位変位を与えることで生じるたわみ形状</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>中央スパンに単位荷重を作用させたときのせん断力図</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>部材の曲率図</span></button></div>
+    <div class="quiz-explain"><b>Why</b>支点を解放し、反力方向に単位変位を与えると、反力影響線に等しいたわみ形状が生じる。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>一定 EI のモーメント分配法において、節点から固定遠端への伝達率は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.25</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.5</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>1.0</span></button></div>
+    <div class="quiz-explain"><b>Why</b>遠端が固定で部材が一定 EI の場合、作用モーメントの半分が伝達される；ピン端には何も伝達されない。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q05</span><span>たわみ法において、未知の余剰力の数は次に等しい：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>部材数</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>支点反力数</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>構造物の節点数</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>静的不静定次数</span></button></div>
+    <div class="quiz-explain"><b>Why</b>各解放は釣合いを超える未知数を1つ取り除くため、余剰力は不静定次数と1対1に対応する。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>単純支持梁の中央スパン載荷試験で荷重 P とたわみ δ が得られた。同じ荷重でたわみが2倍になった場合、逆算される弾性係数は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>変わらない</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>2倍になる</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>4分の1になる</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>半分になる</span></button></div>
+    <div class="quiz-explain"><b>Why</b>E = PL³/(48δI) であるため、δ が2倍になると計算される弾性係数は半分になる。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="structural-mechanics.ja.html"><span>Core</span><b>構造力学</b></a><a class="related-card" href="advanced-structural-mechanics.ja.html"><span>Core</span><b>上級構造力学</b></a><a class="related-card" href="design-of-steel-structures.ja.html"><span>Core</span><b>鋼構造設計</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="integrated-project-quality.ja.html"><small>Previous</small><b>統合プロジェクト・品質管理</b></a><a class="next" href="construction-management.ja.html"><small>Next</small><b>建設マネジメント</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">D_s &gt; 0 は適合条件が必要であることを意味する。</p><p class="margin-note">影響線は移動荷重のためのものである。</p><p class="margin-note">一度に1つの節点を解放する。</p><p class="margin-note">ソフトウェアの出力は検証ではない。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

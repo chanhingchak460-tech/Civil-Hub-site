@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIoT — Civil Hub</title>
+<meta name="description" content="感測器、小型電腦、網絡與模型在真實限制下協同運作。這門科目與其說講最聰明的演算法，不如說講延遲、能源、頻寬與新鮮度，以及這些取捨對互聯基礎設施的意義。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/ai-iot.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="AIoT — Civil Hub">
+<meta property="og:description" content="感測器、小型電腦、網絡與模型在真實限制下協同運作。這門科目與其說講最聰明的演算法，不如說講延遲、能源、頻寬與新鮮度，以及這些取捨對互聯基礎設施的意義。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/ai-iot.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="ai-iot.html" data-alt-zh-hant="ai-iot.zh-Hant.html" data-alt-ja="ai-iot.ja.html" data-alt-ko="ai-iot.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">AIoT</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">計算</p>
+          <h1>AIoT</h1>
+          <p class="subject-sub">感測器、嵌入式智能與互聯基礎設施</p>
+          <ul class="subject-facts"><li><b>類型</b>計算</li><li><b>閱讀</b>9 分鐘</li><li><b>章節</b>11</li><li><b>公式</b>16</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">重點在迴路，不在裝置</a></li><li><a href="#sec-2">感測、取樣與微控制器</a></li><li><a href="#sec-3">網絡選擇</a></li><li><a href="#sec-4">MQTT 以外的協定</a></li><li><a href="#sec-5">邊緣還是雲端</a></li><li><a href="#sec-6">學習型控制器：從規則到梯度</a></li><li><a href="#sec-7">串流、隊列與新鮮度</a></li><li><a href="#sec-8">小型核心上的實時排程</a></li><li><a href="#sec-9">數碼分身與智慧基礎設施</a></li><li><a href="#sec-10">設計內建的保安與私隱</a></li><li><a href="#sec-11">虛擬感測與隱藏狀態</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">感測器、小型電腦、網絡與模型在真實限制下協同運作。這門科目與其說講最聰明的演算法，不如說講延遲、能源、頻寬與新鮮度，以及這些取捨對互聯基礎設施的意義。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="ai-iot" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>重點在迴路，不在裝置</h2>
+  <div class="body"><p>AIoT 將推論放在數據產生的地方附近。系統以換能器感測，在微控制器上調理訊號，經網絡傳送，並根據決策採取行動。</p>
+<p>它與普通 IoT 的分別，在於由模型作出決策，而且往往就在裝置本身進行。設計問題從來不只是準確度：而是每單位能源、延遲與頻寬的準確度。</p>
+<p>以毫秒級回報的橋樑應變感測器，與每小時醒來一次的土壤探針，解決的是不同的問題。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Nyquist 取樣規則</span>
+      <div class="formula-expr formula-math">\[f_s &gt; 2 f_{\max}\]</div>
+      <span class="formula-note">取樣頻率須高於關注最高頻率的兩倍，否則快速振動會混疊成假的慢波</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>感測、取樣與微控制器</h2>
+  <div class="body"><p>感測器將物理量轉換為電訊號，而 <strong>ADC</strong> 以固定的<strong>取樣率</strong>將其轉為數字。真實讀數帶有雜訊與漂移，因此要對照參考值進行校準並濾波，同時記住每個濾波器都會增加延遲。</p>
+<p>微控制器提供 GPIO 腳位、計時器，以及供本地晶片使用的 I²C 和 SPI 等匯流排，而且必須以工作週期方式運作：無線電與感測主導功率預算，因此在取樣之間休眠，才能讓電池維持數年。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">ADC 解析度</span>
+      <div class="formula-expr formula-math">\[\Delta V = \frac{V_{\mathrm{ref}}}{2^n}\]</div>
+      <span class="formula-note">n 位元轉換器的最小電壓步階；真實讀數通常涵蓋數個步階</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>網絡選擇</h2>
+  <div class="body"><p>沒有單一無線電技術適合所有部署。在連結層之上，<strong>MQTT</strong> 是常用的訊息模式：裝置向<strong>代理</strong>發佈到諸如 <code>site/42/temperature</code> 的主題，訂閱者則接收該訊息。</p>
+<p>QoS 等級 0、1 和 2 在重複訊息與傳遞保證之間取捨，而保留訊息可避免遲來的訂閱者看到過時狀態。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">以 MQTT 發佈讀數</span>
+      <div class="formula-expr formula-text">client.publish(&#x27;site/42/strain&#x27;, payload, qos=1)
+client.subscribe(&#x27;site/42/command&#x27;)</div>
+      <span class="formula-note">qos=1 提供至少一次傳遞，因此處理程序必須能容忍重複訊息</span>
+    </div></div><div class="table-wrap"><table><caption>典型 AIoT 部署的無線電選項</caption><thead><tr><th scope='col'>無線電</th><th scope='col'>典型範圍</th><th scope='col'>數據速率</th><th scope='col'>功率</th><th scope='col'>典型用途</th></tr></thead><tbody><tr><td>Wi-Fi</td><td>數十米</td><td>高</td><td>高</td><td>攝影機、閘道器、室內感測器</td></tr><tr><td>BLE</td><td>約 10 米</td><td>低</td><td>極低</td><td>穿戴裝置、信標、手機連結</td></tr><tr><td>LoRaWAN</td><td>2–15 公里</td><td>極低</td><td>極低</td><td>土壤探針、鄉郊儀錶</td></tr><tr><td>NB-IoT</td><td>數公里</td><td>低</td><td>低</td><td>公用事業儀錶、街道設施</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>MQTT 以外的協定</h2>
+  <div class="body"><p>MQTT 並非傳送位元組的唯一方式。<strong>CoAP</strong> 將 HTTP 的請求–回應模型精簡到 UDP 上，供受限節點使用，具備可確認訊息與 observe 模式作伺服器推送；它適合位於閘道器後方的電池感測器，而非頻繁通訊的網頁應用。</p>
+<p>純 <strong>HTTP/REST</strong> 易於除錯與整合，但每則訊息較冗長；<strong>WebSockets</strong> 為即時儀表板維持持久通道；<strong>AMQP</strong> 為大量閘道器加入企業級路由。</p>
+<p>按限制而非習慣來選擇：負載與標頭開銷、連線狀態、傳遞保證，以及網絡是端到端 IP 還是需要閘道器轉譯。假設 TCP 永遠在線的協定，並不適合每小時醒來一次的節點。</p></div><div class="table-wrap"><table><caption>訊息協定比較</caption><thead><tr><th scope='col'>協定</th><th scope='col'>傳輸</th><th scope='col'>模式</th><th scope='col'>最適合</th></tr></thead><tbody><tr><td>MQTT</td><td>TCP</td><td>按主題發佈–訂閱</td><td>從眾多裝置到眾多應用的遙測</td></tr><tr><td>CoAP</td><td>UDP</td><td>請求–回應、observe</td><td>受限電池節點、本地探索</td></tr><tr><td>HTTP/REST</td><td>TCP</td><td>請求–回應</td><td>雲端 API 與簡單整合</td></tr><tr><td>WebSocket</td><td>TCP</td><td>持久雙向</td><td>即時儀表板與遙距指令</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>邊緣還是雲端</h2>
+  <div class="body"><p>推論可在裝置、閘道器或雲端執行。推得越近，延遲與頻寬越低，但模型大小與能源受限。端到端延遲是各階段之和，而最慢的階段主導整體。</p>
+<p><strong>模型壓縮</strong>讓邊緣推論變得可行：量化以 8 位元而非 32 位元儲存權重，剪枝移除小權重，兩者都付出少許準確度代價。應將此選擇視為取捨曲線，而非口號。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">端到端延遲</span>
+      <div class="formula-expr formula-math">\[L = t_{\mathrm{sense}} + t_{\mathrm{queue}} + t_{\mathrm{compute}} + t_{\mathrm{network}}\]</div>
+      <span class="formula-note">量度每個階段；優化錯誤的階段毫無得益</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">服務容量</span>
+      <div class="formula-expr formula-math">\[C = \frac{1}{t_{\mathrm{service}}}\]</div>
+      <span class="formula-note">當服務時間以秒計，單位為每秒樣本數</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>學習型控制器：從規則到梯度</h2>
+  <div class="body"><p>裝置上的 AI 往往是<strong>學習型控制器</strong>，而非視覺模型。基於規則的層以固定閾值切換；學習層從特徵計算<strong>線性分數</strong>，並以 <strong>sigmoid</strong> 函數轉為機率。</p>
+<p>訓練透過下降<strong>交叉熵損失</strong>的梯度來找出權重，該損失對自信的錯誤懲罰遠大於猶豫的錯誤。</p>
+<p>工作流程與數學同樣重要：從運作中的控制器收集有標籤的行為，在執行時抽取相同的特徵，離線訓練，然後在線運行小型模型。由於模型學習的是決策模式而非物理，它重現教師的行為卻不理解房間——這正是訓練數據必須涵蓋邊緣情況的原因。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">線性分數</span>
+      <div class="formula-expr formula-math">\[s = w_1 x_1 + w_2 x_2 + w_3 x_3 + b\]</div>
+      <span class="formula-note">特徵 x 由近期讀數計算；s = 0 為決策邊界</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Sigmoid 機率</span>
+      <div class="formula-expr formula-math">\[p = \frac{1}{1 + e^{-s}}\]</div>
+      <span class="formula-note">p 為正類別的預測機率</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">交叉熵損失</span>
+      <div class="formula-expr formula-math">\[l = -[y\ln p + (1-y)\ln(1-p)]\]</div>
+      <span class="formula-note">y ∈ {0, 1} 為標籤；自信的錯誤答案代價為大損失</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">梯度更新步驟</span>
+      <div class="formula-expr formula-math">\[w \leftarrow w - \eta (p - y) x\]</div>
+      <span class="formula-note">η 為學習率；每個訓練樣本一小步</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>串流、隊列與新鮮度</h2>
+  <div class="body"><p>感測數據持續到達，因此 AIoT 系統是一個排隊系統。當到達率接近服務率，等待時間會爆炸：在 80% 使用率下，隊列已比 50% 時長四倍。</p>
+<p><strong>准入控制</strong>決定隊列滿時丟棄哪些樣本，這是系統在過載下自我保護的方式。另一個有用的量度是<strong>資訊年齡</strong>，即最新已處理樣本的年齡。對過時數據作出非常準確的推論，比得上一個粗略但即時的答案更差。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">使用率</span>
+      <div class="formula-expr formula-math">\[\rho = \lambda t_{\mathrm{service}}\]</div>
+      <span class="formula-note">ρ 必須保持在 1 以下，隊列才穩定</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Little 定律</span>
+      <div class="formula-expr formula-math">\[L = \lambda W\]</div>
+      <span class="formula-note">系統中平均項目數等於到達率乘以系統中平均時間</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">M/M/1 隊列的平均等待</span>
+      <div class="formula-expr formula-math">\[L_q = \frac{\rho^2}{1 - \rho}\]</div>
+      <span class="formula-note">當 ρ 趨近 1 時發散</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>小型核心上的實時排程</h2>
+  <div class="body"><p>必須按時取樣、傳輸和推論的邊緣節點是一個<strong>實時系統</strong>：每個任務有週期與最壞情況執行時間，以及絕不可錯過的截止時間。第一步檢查是<strong>使用率</strong>，即每個任務的執行時間除以週期之總和。</p>
+<p><strong>單調速率</strong>將最短週期的任務賦予最高優先級，在固定優先級方案中可證明為最優；<strong>最早截止時間優先</strong>按剩餘截止時間排序，可使單一處理器忙至滿使用率。</p>
+<p>題目通常給出任務表並問該集合是否可排程：計算使用率，與界限比較，對單調速率還須檢查每個任務的回應時間。在基礎設施監測中錯過截止時間意味著漏掉警報，因此排程是設計約束，而非事後補救。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">CPU 使用率</span>
+      <div class="formula-expr formula-math">\[U = \sum \frac{C_i}{T_i}\]</div>
+      <span class="formula-note">C_i 執行時間，T_i 週期；U ≤ 1 對任何排程器都是必要條件</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">單調速率界限</span>
+      <div class="formula-expr formula-math">\[U \le n\,(2^{1/n} - 1)\]</div>
+      <span class="formula-note">n 個任務在單調速率排程下的充分條件；趨向 ln 2 ≈ 0.693</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">EDF 界限</span>
+      <div class="formula-expr formula-math">\[U \le 1\]</div>
+      <span class="formula-note">單一處理器上最早截止時間優先的充分必要條件</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>數碼分身與智慧基礎設施</h2>
+  <div class="body"><p>數碼分身是由感測數據保持最新的模型，用於監測、模擬與預測。在基礎設施上，它表現為橋樑的結構健康監測、供水網絡的漏水偵測，或建築物的佔用控制。</p>
+<p>其價值取決於迴路是否閉合：預測軸承故障的模型，除非維修系統據此行動，否則毫無用處。分身亦繼承其數據的所有弱點——漂移、缺失讀數，以及翻新後改變的基線。</p></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>設計內建的保安與私隱</h2>
+  <div class="body"><p>每個聯網感測器都是攻擊面。常見的失效包括預設密碼、未簽署的韌體、未加密的連結，以及無法修補已安裝的裝置。</p>
+<p>實際的防禦是裝置身份與雙向認證、連結上的 TLS、簽署的韌體更新與網絡分段，使受入侵的感測器無法觸及控制系統。</p>
+<p>私隱也是設計約束：收集最少數據、在邊緣聚合，並將個人資料排除在不需要的地方之外。一個洩露家中無人的智慧水錶是私隱問題，不僅僅是公用事業問題。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">邊緣的數據最小化</span>
+      <div class="formula-expr formula-text">send aggregate, not raw: (mean, count, timestamp)</div>
+      <span class="formula-note">離開裝置的位元組與個人資訊更少</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>虛擬感測與隱藏狀態</h2>
+  <div class="body"><p>並非所有值得知道的事物都有專用感測器。<strong>虛擬感測</strong>透過模型從可觀測訊號推斷隱藏量：攝影機影像得出深度，Wi-Fi 訊號強度指紋得出室內位置，智能手機的慣性讀數得出步行速度。模式總是可觀測訊號 → 模型 → 隱藏狀態。</p>
+<p>虛擬感測器降低硬件成本，並可覆蓋物理探針無法到達的地方，但它們繼承模型誤差與漂移，因此需要定期對照地面真值重新校準。應將其輸出視為帶置信度的估計，並保留後備方案：當模型不確定時，拒絕行動而非錯誤行動。</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>換能器</dt><dd>將一種能量形式（如應變或溫度）轉換為電訊號的裝置。</dd></div><div class="term"><dt>混疊</dt><dd>當訊號的取樣率對其最高頻率而言過慢時，所產生的虛假低頻讀數。</dd></div><div class="term"><dt>邊緣推論</dt><dd>在本地裝置或閘道器上運行已訓練的模型，而非將數據送往雲端。</dd></div><div class="term"><dt>MQTT 代理</dt><dd>接收已發佈訊息並按主題轉發給訂閱者的伺服器。</dd></div><div class="term"><dt>數碼分身</dt><dd>由感測數據保持最新的實體資產模型，用於監測與預測。</dd></div><div class="term"><dt>資訊年齡</dt><dd>最新已處理樣本的年齡，用以判斷決策是否足夠新鮮。</dd></div><div class="term"><dt>單調速率排程</dt><dd>一種固定優先級方案，週期較短的任務獲得較高優先級，在靜態優先級分配中最優。</dd></div><div class="term"><dt>虛擬感測</dt><dd>透過模型從可觀測訊號推斷位置或深度等隱藏量，而非使用專用感測器。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>邊緣能否跟上串流？</h2>
+        <p class="problem">一個振動感測器每秒產生 20 個樣本。邊緣模型每個樣本需時 40 ms。雲端模型需 80 ms 運算加上 50 ms 網絡時間。求每個選項的服務容量、邊緣使用率，以及若邊緣隊列為 M/M/1 系統時的平均等待時間。哪個配置可行？</p>
+        <ol><li>邊緣容量 = 1 / 0.040 = 每秒 25 個樣本。雲端容量 = 1 / 0.130 = 每秒 7.7 個樣本。</li><li>以 λ = 每秒 20 個樣本計算，雲端使用率為 20 × 0.130 = 2.6，超過 1，因此雲端隊列無限增長，不存在平均延遲。</li><li>邊緣使用率為 ρ = 20 × 0.040 = 0.8，穩定但負載沉重。</li><li>對 M/M/1 隊列，L_q = ρ²/(1 − ρ) = 0.64/0.20 = 3.2 個樣本平均等待。</li><li>平均等待時間 = L_q / λ = 3.2 / 20 = 0.16 s，因此系統中平均時間約為 0.16 + 0.04 = 0.20 s。</li></ol>
+        <div class="answer"><b>Answer</b>在每秒 20 個樣本下，只有邊緣配置穩定。雲端無法跟上，而邊緣給出約 0.20 s 的平均決策年齡，對振動監測可接受，但若感測率上升則需要卸載。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>在提出架構前先指出瓶頸階段；延遲與能源題目按取捨評分，而非產品名稱。</li><li>在排隊題目中，先計算 ρ = λ t_service：若 ρ ≥ 1，隊列不穩定，不存在平均延遲。</li><li>在命名協定前，先將範圍、數據速率與功率配合應用，並說明替代方案為何失利。</li><li>當出現任務表時，先計算 U = Σ C_i/T_i，然後套用單調速率或 EDF 界限，並說明截止時間等於週期的假設。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q01</span><span>一個電池供電的感測器須每小時從 8 公里外傳送數個位元組。哪種無線電最合適？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>有線以太網絡連結</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Wi-Fi</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>BLE</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>LoRaWAN</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>LoRaWAN 專為長距離、極低數據速率與極低功率而設計。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>一個訊號包含高達 100 Hz 的振動。避免混疊的最低取樣率是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>每秒 10 個樣本</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>每秒 50 個樣本</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>每秒 100 個樣本</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>每秒 200 個樣本</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>Nyquist 要求取樣高於最高頻率的兩倍，因此至少每秒 200 個樣本。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>感測器以每秒 20 個樣本到達，邊緣服務時間為 40 ms。使用率是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.4</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.8</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1.25</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2.0</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>ρ = λ t_service = 20 × 0.040 = 0.8，低於 1，但隊列快速增長。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>將模型從 32 位元量化至 8 位元權重，主要會：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>為傳輸加密模型</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>消除對網絡連線的需求</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>提升其在每個數據集上的準確度</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>減少記憶體與運算，付出少許準確度代價</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>較少位元意味較少記憶體與更快算術，但權重變得更粗略，因此準確度通常略為下降。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>CoAP 主要為以下而設計：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>雲端中的批次分析</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>高頻寬視像串流</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>使用 UDP 上精簡訊息的受限電池節點</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>數據中心之間的企業訊息路由</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>CoAP 將網頁請求–回應模式精簡到 UDP 上，使受限裝置能以低開銷交換小型訊息。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>兩個週期性任務的週期為 4 ms 和 10 ms，執行時間為 1 ms 和 2 ms。處理器使用率是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.45</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.30</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.20</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>1.45</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>U = 1/4 + 2/10 = 0.25 + 0.20 = 0.45，低於單一處理器的界限 1。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.zh-Hant.html"><span>Computing</span><b>人工智能與數據分析</b></a><a class="related-card" href="machine-learning.zh-Hant.html"><span>Computing</span><b>機器學習</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="discovering-chinese-history-hk.zh-Hant.html"><small>上一頁</small><b>從香港發現中國歷史</b></a><a class="next" href="traffic-surveys-planning.zh-Hant.html"><small>下一頁</small><b>交通調查與運輸規劃</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">ρ ≥ 1 意味隊列永不安定。</p><p class="margin-note">取樣須高於最高頻率的兩倍。</p><p class="margin-note">先壓縮，再量度準確度代價。</p><p class="margin-note">分身的優劣取決於其感測器。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

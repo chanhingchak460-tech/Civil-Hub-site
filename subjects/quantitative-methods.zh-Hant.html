@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>工程師定量方法 — Civil Hub</title>
+<meta name="description" content="工程師如何從有限的數據中得出結論：抽樣、置信區間、假設檢驗、設計實驗和迴歸分析。這是一門在測量數據有噪聲時保持決策誠實的學科。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/quantitative-methods.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="工程師定量方法 — Civil Hub">
+<meta property="og:description" content="工程師如何從有限的數據中得出結論：抽樣、置信區間、假設檢驗、設計實驗和迴歸分析。這是一門在測量數據有噪聲時保持決策誠實的學科。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/quantitative-methods.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="quantitative-methods.html" data-alt-zh-hant="quantitative-methods.zh-Hant.html" data-alt-ja="quantitative-methods.ja.html" data-alt-ko="quantitative-methods.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">工程師定量方法</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">核心</p>
+          <h1>工程師定量方法</h1>
+          <p class="subject-sub">從工程數據進行實驗、推論與決策</p>
+          <ul class="subject-facts"><li><b>類型</b>核心</li><li><b>閱讀</b>10 分鐘</li><li><b>章節</b>11</li><li><b>公式</b>18</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M44 162 H296" stroke="currentColor" stroke-width="1.2"/><path d="M44 162 V34" stroke="currentColor" stroke-width="1.2"/><path d="M170 162 C120 162 118 52 170 52 C222 52 220 162 170 162" stroke="var(--accent)" stroke-width="1.5"/><path d="M80 162 V144" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M106 162 V128" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M132 162 V104" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M158 162 V78" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M184 162 V104" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M210 162 V128" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M236 162 V144" stroke="var(--line)" stroke-width="8" opacity="0.9"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">DISTRIBUTION</text></svg>
+          <figcaption>A distribution — centre, spread and tails</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">變異就是數據</a></li><li><a href="#sec-2">抽樣與中心極限定理</a></li><li><a href="#sec-3">置信區間</a></li><li><a href="#sec-4">假設檢驗</a></li><li><a href="#sec-5">比較兩個總體</a></li><li><a href="#sec-6">方差分析與設計實驗</a></li><li><a href="#sec-7">迴歸與預測</a></li><li><a href="#sec-8">質量控制與過程能力</a></li><li><a href="#sec-9">卡方檢驗：計數說明了什麼</a></li><li><a href="#sec-10">多元迴歸</a></li><li><a href="#sec-11">功效、效應量與研究規劃</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">工程師如何從有限的數據中得出結論：抽樣、置信區間、假設檢驗、設計實驗和迴歸分析。這是一門在測量數據有噪聲時保持決策誠實的學科。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="quantitative-methods" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>變異就是數據</h2>
+  <div class="body"><p>測量值會變異，即使被測量的對象本身不變。因此，工程數據需要一個中心和一個離散度：樣本均值估計總體均值，樣本標準差估計讀數與該均值的典型距離。</p>
+<ul>
+<li>變異係數 CV = s / x̄ 用於比較不同單位或不同均值的數據集之間的變異性。</li>
+<li>始終在摘要中報告樣本量和單位。</li>
+<li>沒有離散度的均值掩蓋了風險，沒有均值的離散度缺乏尺度；兩者是對數據集的最低限度誠實描述。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">樣本均值</span>
+      <div class="formula-expr formula-math">\[\bar{x} = \frac{\sum x}{n}\]</div>
+      <span class="formula-note">讀數之和除以樣本量</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">樣本標準差</span>
+      <div class="formula-expr formula-math">\[s = \sqrt{\frac{\sum (x - \bar{x})^2}{n - 1}}\]</div>
+      <span class="formula-note">除數 n − 1 消除了從樣本估計的偏差</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">變異係數</span>
+      <div class="formula-expr formula-math">\[\mathrm{CV} = \frac{s}{\bar{x}}\]</div>
+      <span class="formula-note">無單位的相對變異性度量</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>抽樣與中心極限定理</h2>
+  <div class="body"><p>樣本只有在代表總體時才有用。隨機選擇、獨立性和一致的測量方法是使推論有效的假設；有偏的樣本無法通過增大 n 來挽救。</p>
+<ul>
+<li>均值的標準誤為 SE = s / √n，它隨樣本量的平方根減小。</li>
+<li>中心極限定理指出，無論總體分佈的形狀如何，隨著 n 增大，樣本均值的分佈趨近於正態分佈。</li>
+<li>這就是為什麼 t 和 z 程序適用於中等大樣本的均值，即使數據不服從正態分佈。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">均值的標準誤</span>
+      <div class="formula-expr formula-math">\[\mathrm{SE} = \frac{s}{\sqrt{n}}\]</div>
+      <span class="formula-note">將 SE 減半需要四倍的樣本量</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>置信區間</h2>
+  <div class="body"><p>置信區間在估計值周圍給出一個範圍。對於總體標準差未知的均值，區間為 x̄ ± t s / √n，其中 t 來自自由度為 n − 1 的 t 分佈。區間寬度隨置信水平和變異性增大，隨樣本量減小。</p>
+<p>解釋很容易出錯。95% 區間並不意味著 μ 落在這個特定區間內的概率是 95%；而是說，用這種方法構建的區間中有 95% 會包含 μ。區間估計的是參數，不是單個讀數。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">均值的置信區間</span>
+      <div class="formula-expr formula-math">\[\bar{x} \pm t\,\frac{s}{\sqrt{n}}\]</div>
+      <span class="formula-note">t 是自由度為 n − 1 的雙尾值</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>假設檢驗</h2>
+  <div class="body"><p>假設檢驗詢問數據是否與一個陳述值一致。設定原假設 H0（無效應、無差異）和備擇假設 H1，選擇顯著性水平 α，並計算檢驗統計量。對於均值，t = (x̄ − μ0) / (s / √n)。</p>
+<ul>
+<li>p 值是在 H0 為真的假設下，觀察到至少與觀測結果一樣極端的結果的概率；當 p &lt; α 時拒絕 H0。</li>
+<li>第一類錯誤是拒絕了真實的原假設；第二類錯誤是未能拒絕錯誤的原假設。</li>
+<li>統計顯著性不等於實際重要性：一個微小但精確的差異可能顯著但仍然無關緊要。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">單樣本 t 統計量</span>
+      <div class="formula-expr formula-math">\[t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}\]</div>
+      <span class="formula-note">μ0 是假設的均值；df = n − 1</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>比較兩個總體</h2>
+  <div class="body"><p>通過均值比較兩種設計、兩個供應商或兩種養護方法。</p>
+<ul>
+<li>對於方差相似的獨立樣本，合併標準差並使用雙樣本 t 檢驗；自由度為 n1 + n2 − 2。</li>
+<li>對於配對觀測——同一試件的前後對比，或匹配對——檢驗差異，這消除了對間變異性。</li>
+<li>報告估計差異及其置信區間，而不僅僅是 p 值。</li>
+<li>0.2 MPa 的顯著差異可能是真實的，但太小而無法改變規範；區間顯示了效應的大小和精度。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">合併方差</span>
+      <div class="formula-expr formula-math">\[s_p^2 = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}\]</div>
+      <span class="formula-note">假設兩個總體具有相似的方差</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">雙樣本 t 統計量</span>
+      <div class="formula-expr formula-math">\[t = \frac{\bar{x}_1 - \bar{x}_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}\]</div>
+      <span class="formula-note">合併檢驗的 df = n1 + n2 − 2</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>方差分析與設計實驗</h2>
+  <div class="body"><p>要比較三個或更多均值，使用方差分析而不是重複的 t 檢驗，後者會增加假陽性的機會。單因素方差分析將總變異分解為組間均值和組內變異；F 比率比較它們，大的 F 值表明至少有一個均值不同。顯著的 F 並不能說明是哪一個——事後比較可以。</p>
+<ul>
+<li>設計實驗更進一步：隨機化運行順序、重複，並區組已知的干擾變異來源。</li>
+<li>在因子實驗中，測試因子水平的每個組合，因此可以估計主效應和交互作用。</li>
+<li>交互作用意味著一個因子的效應取決於另一個因子的水平。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">F 比率，單因素方差分析</span>
+      <div class="formula-expr formula-math">\[F = \frac{\mathrm{MS}_{\text{between}}}{\mathrm{MS}_{\text{within}}}\]</div>
+      <span class="formula-note">大的 F 意味著組間變異主導組內變異</span>
+    </div></div><div class="table-wrap"><table><caption>單因素方差分析表</caption><thead><tr><th scope='col'>來源</th><th scope='col'>平方和</th><th scope='col'>自由度</th><th scope='col'>均方</th><th scope='col'>F</th></tr></thead><tbody><tr><td>組間</td><td>SSB</td><td>k − 1</td><td>MSB = SSB / (k − 1)</td><td>F = MSB / MSW</td></tr><tr><td>組內</td><td>SSW</td><td>N − k</td><td>MSW = SSW / (N − k)</td><td>—</td></tr><tr><td>總計</td><td>SST</td><td>N − 1</td><td>—</td><td>—</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>迴歸與預測</h2>
+  <div class="body"><p>迴歸擬合響應變量 y 與一個或多個解釋變量 x 之間的關係。最小二乘線 y = a + b x 最小化殘差平方和，斜率 b = S_xy / S_xx，截距 a = ȳ − b x̄。</p>
+<ul>
+<li>決定係數 r² 是模型解釋的總變異比例。</li>
+<li>高 r² 不能證明因果關係，也不能保證在觀測範圍之外有好的預測。</li>
+<li>檢查殘差是否有曲率、變化的離散度和異常值；殘差中的模式意味著模型遺漏了某些東西。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">最小二乘斜率</span>
+      <div class="formula-expr formula-math">\[b = \frac{S_{xy}}{S_{xx}}\]</div>
+      <span class="formula-note">S_xy 是協方差和；S_xx 是 x 偏差的平方和</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">決定係數</span>
+      <div class="formula-expr formula-math">\[r^2 = 1 - \frac{\mathrm{SS}_{\mathrm{res}}}{\mathrm{SS}_{\mathrm{tot}}}\]</div>
+      <span class="formula-note">擬合模型解釋的變異比例</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>質量控制與過程能力</h2>
+  <div class="body"><p>控制圖將過程固有的普通原因變異與表明某些東西已改變的特殊原因變異區分開來。</p>
+<ul>
+<li>均值圖繪製樣本平均值，控制限設置在中心線兩側各三個標準誤處；極差圖跟蹤變異性。</li>
+<li>超出控制限的點，或連續點在一側，提示需要調查而不是調整每個讀數。</li>
+<li>過程能力將規範與過程離散度比較：Cp = (USL − LSL) / (6σ)，Cpk 考慮了過程偏離中心的情況。</li>
+<li>有能力的過程既精確又居中；高 Cp 但低 Cpk 意味著離散度良好但設置錯誤。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">均值圖的控制限</span>
+      <div class="formula-expr formula-math">\[\mathrm{UCL},\, \mathrm{LCL} = \bar{x} \pm \frac{3\sigma}{\sqrt{n}}\]</div>
+      <span class="formula-note">σ 是過程標準差，n 是子組大小</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">過程能力</span>
+      <div class="formula-expr formula-math">\[C_p = \frac{\mathrm{USL} - \mathrm{LSL}}{6\sigma}\]</div>
+      <span class="formula-note">USL 和 LSL 是規範上下限</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>卡方檢驗：計數說明了什麼</h2>
+  <div class="body"><p>並非每個問題都關於均值。當數據是類別中的<strong>計數</strong>時，卡方框架取代 t 和 F 檢驗。</p>
+<ul>
+<li><strong>擬合優度檢驗</strong>詢問觀察頻率是否服從假設分佈；<strong>獨立性檢驗</strong>詢問兩個分類變量是否相關，使用二維計數表。</li>
+<li>兩者都將觀察計數與原假設下的期望計數比較，且都是單側的：只有大的差異才重要。</li>
+<li>假設是弱點——類別必須互斥，每個期望計數應至少為 5，因此在檢驗前合併稀疏類別。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">卡方統計量</span>
+      <div class="formula-expr formula-math">\[\chi^2 = \sum_i \frac{(O_i - E_i)^2}{E_i}\]</div>
+      <span class="formula-note">大值表示與原模型吻合度差</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">自由度</span>
+      <div class="formula-expr formula-math">\[\text{fit: } k - 1 - m; \qquad \text{table: } (r-1)(c-1)\]</div>
+      <span class="formula-note">m 是從數據估計的參數數量</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>期望計數，而非觀察計數</b>
+  卡方近似要求每個單元格的期望計數約為 5 或更多；如果某些低於此值，合併類別並說明新的自由度。
+</div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>多元迴歸</h2>
+  <div class="body"><p>大多數工程響應有多個驅動因素，因此模型變為 y = β₀ + β₁x₁ + β₂x₂ + … + ε。每個係數是一個<strong>偏效應</strong>：在其他預測變量保持不變的情況下，該預測變量每增加一個單位時 y 的期望變化。這與簡單的雙變量斜率是不同的量，混淆兩者是經典的考試錯誤。</p>
+<ul>
+<li>普通 R² 在添加預測變量時總是上升，即使是一個無用的預測變量，因此多元迴歸應引用<strong>調整 R²</strong>，它對每個額外參數進行懲罰。</li>
+<li>檢查<strong>多重共線性</strong>——預測變量相關性太強以至於模型無法分離其效應——通過相關性或方差膨脹因子。</li>
+<li>在剖析單個係數之前，用整體 F 檢驗測試整個模型。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">多元迴歸模型</span>
+      <div class="formula-expr formula-math">\[y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \varepsilon\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">調整決定係數</span>
+      <div class="formula-expr formula-math">\[\bar{R}^2 = 1 - \frac{(1 - R^2)(n - 1)}{n - k - 1}\]</div>
+      <span class="formula-note">k 個預測變量；只有當預測變量值得其位置時才會上升</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>功效、效應量與研究規劃</h2>
+  <div class="body"><p>如果研究沒有機會檢測到重要的效應，那麼不顯著的結果意義不大。<strong>功效</strong>是在特定備擇假設為真時拒絕 H₀ 的概率，由四個量驅動：顯著性水平 α、真實效應量 δ、噪聲 σ 和樣本量 n。</p>
+<ul>
+<li>對於雙側 z 檢驗，所需樣本量約為 (z_(α/2) + z_β)² σ² / δ²，其中 1 − β 是目標功效。</li>
+<li>將公式視為預算：將必須檢測的差異減半會使樣本量翻兩番，而更清潔的測量方法（更小的 σ）與更多重複一樣有價值。</li>
+<li>每當未能拒絕時，說明功效和假設的效應量。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">雙側 z 檢驗的樣本量</span>
+      <div class="formula-expr formula-math">\[n \approx \frac{(z_{\alpha/2} + z_\beta)^2 \sigma^2}{\delta^2}\]</div>
+      <span class="formula-note">β 是第二類錯誤率，因此 1 − β 是功效</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>標準誤</dt><dd>估計量抽樣分佈的標準差，顯示樣本估計總體值的精確程度。</dd></div><div class="term"><dt>置信區間</dt><dd>由數據構建的數值範圍，在重複抽樣中按規定比例包含真實參數。</dd></div><div class="term"><dt>p 值</dt><dd>在原假設為真的假設下，觀察到至少與數據一樣極端結果的概率。</dd></div><div class="term"><dt>第一類錯誤</dt><dd>拒絕實際為真的原假設；其概率為顯著性水平 α。</dd></div><div class="term"><dt>方差分析</dt><dd>一種通過將總變異分解為組間和組內部分來比較多個組均值的方法。</dd></div><div class="term"><dt>決定係數</dt><dd>迴歸模型解釋的響應變異比例，記為 r²。</dd></div><div class="term"><dt>擬合優度檢驗</dt><dd>一種卡方檢驗，檢驗觀察計數是否與假設分佈或模型一致。</dd></div><div class="term"><dt>功效</dt><dd>當指定備擇假設為真時，假設檢驗拒絕原假設的概率。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>比較兩種養護方法</h2>
+        <p class="problem">對每種養護方法各取 10 個混凝土立方體進行比較。方法 A 的平均強度為 42.1 MPa，標準差為 2.0 MPa；方法 B 為 40.3 MPa，標準差為 1.8 MPa。在 5% 顯著性水平下檢驗平均強度是否有差異。取自由度為 18 的臨界 t 值為 2.101。</p>
+        <ol><li>陳述假設：H0: μA = μB；H1: μA ≠ μB。使用 α = 0.05 進行雙尾檢驗，df = 10 + 10 − 2 = 18。</li><li>合併方差：s_p² = [(9)(2.0²) + (9)(1.8²)] / 18 = (36.0 + 29.16) / 18 = 3.62，因此 s_p = 1.90 MPa。</li><li>差異的標準誤：s_p √(1/10 + 1/10) = 1.90 × 0.447 = 0.850 MPa。</li><li>檢驗統計量：t = (42.1 − 40.3) / 0.850 = 2.12。</li><li>由於 |t| = 2.12 大於臨界值 2.101，拒絕 H0。差異在統計上顯著，儘管僅為 1.8 MPa，因此實際顯著性需要工程判斷。</li></ol>
+        <div class="answer"><b>Answer</b>在 5% 水平下拒絕 H0：平均強度顯著不同（t = 2.12，df = 18，p 略低於 0.05）。估計差異為 1.8 MPa，更大的樣本會給出更精確的估計。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>在觸碰計算器之前陳述 H0、H1 和 α；測試題中的大部分分數來自正確的設置。</li><li>用重複抽樣來解釋置信區間，而不是作為參數落在這個區間內的概率。</li><li>在信任 t 或 F 結果之前，檢查獨立性、正態性和等方差假設。</li><li>顯著的方差分析 F 表明至少有一個均值不同，而不是哪一個；在結論中說明這一點。</li><li>在多元迴歸中，在每個解釋的係數旁寫上「其他預測變量保持不變」。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>總體均值的 95% 置信區間意味著：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>用同樣方法構建的區間中有 95% 會包含真實均值</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>樣本均值有 95% 的準確性</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>真實均值落在這個區間內的概率是 95%</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>95% 的樣本值落在這個區間內</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>置信水平描述了方法的長期表現，而不是這一個區間的概率。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>拒絕真實的原假設被稱為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>第二類錯誤</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>功效</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>抽樣偏差</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>第一類錯誤</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>第一類錯誤是假陽性，其概率等於所選的顯著性水平 α。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>在單因素方差分析中，大的 F 比率表明：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>所有組均值相等</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>樣本量太小</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>組間變異相對於組內變異較大</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>總體方差肯定相等</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>F 是組間均方與組內均方的比率；大值表明至少有一個均值不同。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>一個過程具有高 Cp 但低 Cpk。這意味著過程：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>失控，應停止</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>寬且偏離中心</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>窄但相對於規範偏離中心</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>窄且完全居中</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>Cp 將離散度與公差比較；Cpk 還懲罰未居中於規範帶內的均值。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>對 3×4 列聯表應用卡方獨立性檢驗。檢驗統計量有多少自由度？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>12</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>7</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>6</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>自由度為 (r − 1)(c − 1) = 2 × 3 = 6。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>在混凝土強度對水泥含量和水灰比的多元迴歸中，水灰比的係數估計：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>兩個預測變量同時變化時強度的總變化</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>強度與水灰比之間的相關性</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>僅由水灰比解釋的變異份額</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>水泥含量固定時，水灰比每變化一個單位強度的變化</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>多元迴歸係數是偏效應：它們保持其他預測變量不變，不同於簡單的雙變量斜率。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-statistics.zh-Hant.html"><span>Core</span><b>工程統計學</b></a><a class="related-card" href="ai-data-analysis.zh-Hant.html"><span>Computing</span><b>人工智能與數據分析</b></a><a class="related-card" href="construction-materials.zh-Hant.html"><span>Core</span><b>建造材料</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="design-of-steel-structures.zh-Hant.html"><small>上一頁</small><b>鋼結構設計</b></a><a class="next" href="machine-learning-smart-mobility.zh-Hant.html"><small>下一頁</small><b>智慧出行機器學習</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">n 翻兩番才能使 SE 減半。</p><p class="margin-note">p 不是 H0 為真的概率。</p><p class="margin-note">測量前先隨機化。</p><p class="margin-note">置信區間關乎方法，而非參數。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

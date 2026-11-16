@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>建設材料 — Civil Hub</title>
+<meta name="description" content="工学材料としてのコンクリートと鋼材：セメントの水和反応、配合設計と試験方法、引張りに対する鋼材の挙動について解説する。実験室での測定値と現場での耐久性に関する意思決定を結びつける。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/construction-materials.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="建設材料 — Civil Hub">
+<meta property="og:description" content="工学材料としてのコンクリートと鋼材：セメントの水和反応、配合設計と試験方法、引張りに対する鋼材の挙動について解説する。実験室での測定値と現場での耐久性に関する意思決定を結びつける。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/construction-materials.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="construction-materials.html" data-alt-zh-hant="construction-materials.zh-Hant.html" data-alt-ja="construction-materials.ja.html" data-alt-ko="construction-materials.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">建設材料</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">コア</p>
+          <h1>建設材料</h1>
+          <p class="subject-sub">コンクリートと鋼：組成から試験まで</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>コア</li><li><b data-i18n="subject.read">Read</b>12 分</li><li><b data-i18n="subject.sections">Sections</b>9</li><li><b data-i18n="subject.formulas">Formulas</b>9</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M136 48 H204" stroke="currentColor" stroke-width="2"/><path d="M136 152 H204" stroke="currentColor" stroke-width="2"/><path d="M148 56 V144 M192 56 V144" stroke="currentColor" stroke-width="1.4"/><path d="M148 56 l44 0" stroke="var(--line)" stroke-width="1"/><path d="M158 22 V44 M154 40 l4 5 4 -5" stroke="var(--accent)" stroke-width="1.1"/><path d="M170 22 V44 M166 40 l4 5 4 -5" stroke="var(--accent)" stroke-width="1.1"/><path d="M182 22 V44 M178 40 l4 5 4 -5" stroke="var(--accent)" stroke-width="1.1"/><path d="M204 96 l18 -10 l-6 20 l16 6" stroke="var(--accent)" stroke-width="1"/><text x="170" y="178" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">CYLINDER TEST</text></svg>
+          <figcaption>Cylinder compression test — platens and failure</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">セメントは化学システムである</a></li><li><a href="#sec-2">水、凝結、水セメント比</a></li><li><a href="#sec-3">骨材と配合設計</a></li><li><a href="#sec-4">ワーカビリティ、締固め、養生</a></li><li><a href="#sec-5">鋼材：組成と引張挙動</a></li><li><a href="#sec-6">耐久性と腐食</a></li><li><a href="#sec-7">絶対体積：原理からの配合設計</a></li><li><a href="#sec-8">フレッシュ状態の確認：稠度、密度、凝結</a></li><li><a href="#sec-9">使用中の鋼材：硬さ、疲労、火災</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">工学材料としてのコンクリートと鋼材：セメントの水和反応、配合設計と試験方法、引張りに対する鋼材の挙動について解説する。実験室での測定値と現場での耐久性に関する意思決定を結びつける。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="construction-materials" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>セメントは化学システムである</h2>
+  <div class="body"><p>ポルトランドセメントは、石灰石と粘土を焼成してクリンカーとし、少量の石膏とともに粉砕して製造される。クリンカーには主に4つの相が含まれる：<br />
+- <strong>エーライト</strong>は初期強度の大部分を担う。<br />
+- <strong>ビーライト</strong>は数ヶ月かけてゆっくりと寄与する。<br />
+- <strong>アルミネート</strong>は最も早く凝結し、最も多くの熱を放出する。<br />
+- <strong>フェライト</strong>の寄与は小さい。</p>
+<p>石膏は凝結調整剤であり、アルミネートが数分以内にペーストを硬化させるのを防ぐ。水を加えると、ケイ酸塩は水和してケイ酸カルシウム水和物（すべてを結合するゲル）と水酸化カルシウムになる。強度は粉体の性質ではなく、水、時間、制御された温度を必要とする反応の産物である。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>水、凝結、水セメント比</h2>
+  <div class="body"><p><strong>水セメント比</strong>は水の質量をセメントの質量で割ったものであり、ワーカビリティ、強度、透水性、収縮のほとんどすべてを支配する。完全水和時に化学的に結合するのはセメント質量の約0.23倍に過ぎないが、ワーカビリティのために余分な水が必要であり、実用的な配合は0.40～0.55付近になる。水が多いほど毛細管空隙が増え、w/cが上昇するにつれて強度は低下する。</p>
+<p>凝結と硬化は異なる：凝結は塑性の喪失であり、硬化は強度の増加である。ビカット装置は標準稠度のための水量を求め、次に始発時間と終結時間を求める。促進剤は凝結を短縮し、遅延剤は延長し、塩化カルシウムは促進するが鉄筋腐食のリスクがある。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">水セメント比</span>
+      <div class="formula-expr formula-math">\[\frac{w}{c} = \frac{\text{mass of water}}{\text{mass of cement}}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>骨材と配合設計</h2>
+  <div class="body"><p>骨材は体積の約60～75%を占め、コンクリートの骨格を提供する。粒度分布が重要である：連続した粒径範囲は空隙を埋め、必要なペーストを減らし、ワーカビリティを改善するが、単一粒度の骨材ははるかに多くのペーストを必要とする。角張った粗い粒子は噛み合うが、より多くの水を必要とする。弱い粒子や吸水性の粒子は強度と耐久性を制限する。</p>
+<p>配合設計は目標から逆算する：<br />
+- 現場の変動を考慮して、指定された特性値より高い<strong>目標平均強度</strong>を選ぶ。<br />
+- それを達成するw/c比を選ぶ。<br />
+- 必要なスランプに対する水量を決める。<br />
+- セメントと骨材の割合を決める。</p>
+<p>フライアッシュやスラグはセメントの一部を置換し、水和熱を下げ、長期性能を改善する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">目標平均強度</span>
+      <div class="formula-expr formula-math">\[f_m = f_{ck} + 1.64\,s\]</div>
+      <span class="formula-note">sは立方体結果の標準偏差；1.64は約5%の不合格率を与える</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>ワーカビリティ、締固め、養生</h2>
+  <div class="body"><p><strong>ワーカビリティ</strong>とは、材料分離を起こさずに打設・締固めできる容易さを表す。スランプ試験は現場での確認方法である：コーンを3層に分けて充填し、引き上げてコンクリートの落下量を測定する。真のスランプは許容されるが、せん断や崩壊は配合が不適切であることを意味し、再試験が必要である。スランプは稠度を表し、強度を表すものではない。</p>
+<p>締固めは巻き込まれた空気を除去する — 怠ると通常2～5%の体積となり、同程度の強度損失を招く。養生は水和が継続するように水を利用可能に保つ：湿潤養生は約7日間が標準であり、高温、海洋、低w/cの工事ではより長くする。不十分な養生は弱く透水性の高い表層を残し、そこから耐久性の問題が始まる。</p></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>鋼材：組成と引張挙動</h2>
+  <div class="body"><p>構造用鋼は鉄-炭素合金である。炭素は強度と硬さを高めるが延性と溶接性を低下させるため、構造用グレードでは炭素を低く抑え、マンガンと少量の合金添加に頼る。熱間圧延形鋼、鋼板、冷間成形薄板、鉄筋、ファスナーはすべて、異なる成形履歴と特性を持つ鋼製品である。</p>
+<p>引張試験が材料を定義する：線形領域でE ≈ 200 GPa、次に降伏点、プラトー、極限強度までのひずみ硬化、くびれ、破断となる。降伏強度は設計特性であり、極限強度は上限であり、破断時の伸びは<strong>延性</strong>を表す。硬さ試験は引張強度との迅速な相関を与える。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">工学的応力とひずみ</span>
+      <div class="formula-expr formula-math">\[\sigma = \frac{F}{A_0}, \quad \varepsilon = \frac{\Delta L}{L_0}\]</div>
+      <span class="formula-note">A₀とL₀は元の断面積とゲージ長さ</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">伸び率</span>
+      <div class="formula-expr formula-math">\[\text{elongation} = \frac{L_u - L_0}{L_0} \times 100\%\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>耐久性と腐食</h2>
+  <div class="body"><p>コンクリートが耐久性を持つのは、その細孔溶液が強アルカリ性であり、鉄筋を<strong>不動態化</strong>するためである。この保護は2つの方法で失われる：<br />
+- <strong>炭酸化</strong>：二酸化炭素が水酸化カルシウムを中和し、pHが9に向かって低下する。<br />
+- <strong>塩化物浸透</strong>：不動態皮膜を局部的に破壊し、孔食を引き起こす。</p>
+<p>どちらも輸送プロセスであるため、深さはほぼ時間の平方根に比例して増加する。緻密で低w/cのコンクリートと十分なかぶりが最も安価な保護である。鋼は水と酸素が到達すると腐食し、塩分がプロセスを加速する。亜鉛めっき、塗装、ステンレス鋼、電気防食はすべてその回路を遮断する。火災は別の耐久性問題である：無保護の鋼は約500 °C以上で強度の大部分を失う。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">炭酸化深さ</span>
+      <div class="formula-expr formula-math">\[x = k \sqrt{t}\]</div>
+      <span class="formula-note">kは配合と暴露条件に依存；xは時間tの平方根で増加する</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>絶対体積：原理からの配合設計</h2>
+  <div class="body"><p>配合設計は質量ではなく体積で行う：1立方メートルのコンクリートは、材料の1立方メートルに閉じ込められた空気を加えたものを含まなければならない。セメントと水の粒子密度がそれぞれ約3.1と1.0 Mg/m³であるとき、<strong>絶対体積法</strong>は目標スランプに対する水量と目標強度に対するw/c比を定め、残りの体積を粗骨材と細骨材に粒度曲線で配分した結合骨材で満たす。</p>
+<p>骨材の含水状態は補正しないと計算を狂わせる：湿ったストックパイルは表面水を配合に持ち込み、吸水不足の骨材は練混ぜ水を奪う。<strong>飽和表面乾燥</strong>状態に補正し、バッチ水が真の自由水となるようにする。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">絶対体積の釣り合い</span>
+      <div class="formula-expr formula-math">\[\frac{W_c}{\rho_c} + \frac{W_w}{\rho_w} + V_{agg} + V_{air} = 1\ \mathrm{m}^3\]</div>
+      <span class="formula-note">締め固めたコンクリート1立方メートルあたり</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">骨材吸水率</span>
+      <div class="formula-expr formula-math">\[\mathrm{abs} = \frac{M_{\mathrm{SSD}} - M_{\mathrm{dry}}}{M_{\mathrm{dry}}} \times 100\%\]</div>
+      <span class="formula-note">炉乾燥骨材が飽和表面乾燥状態に達するときの質量増加</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">フレッシュ密度</span>
+      <div class="formula-expr formula-math">\[\rho = \frac{m}{V}\]</div>
+      <span class="formula-note">締め固めたフレッシュコンクリートの既知体積の質量</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>フレッシュ状態の確認：稠度、密度、凝結</h2>
+  <div class="body"><p>ビカット試験は<strong>標準稠度</strong>を、プランジャーが停止してその下面が底板の6 ± 2 mm上にある水量と定義し、練混ぜ後約4分で読み取る。同じ装置での針試験は始発と終結を求める；遅延剤を用いたある実験室の実行では、これらは約100分と130分であった。</p>
+<p>現場ではスランプコーンを3つの等しい層に充填し、各層を突き、落下量を10 mm単位で読み取る；約80 mmの真のスランプが実験室配合の典型であった。せん断や崩壊の結果はスランプではない — 試験を繰り返す。湿潤密度、すなわちフレッシュコンクリートの既知体積の質量は、バッチプラントが注文した配合を送ったかどうかの納品確認である。</p></div>
+<div class="callout callout--tip">
+  <b>標準稠度を一行で</b>
+  ビカットプランジャー下面が底板の6 ± 2 mm上：ペーストは標準稠度にあり、それを達成する水量は0.5%単位で記録される。
+</div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>使用中の鋼材：硬さ、疲労、火災</h2>
+  <div class="body"><p>硬さは局部塑性変形への抵抗であり、ロックウェル試験はそれを、小さな荷重の後に大きな荷重を加えた圧子の永久深さとして測定する。HRAスケールでの実験室の読みは、軟鋼で約44、黄銅で46、アルミニウムで46、高張力鋼で62であり、硬さは強度と順位を共にする。</p>
+<p>繰り返し荷重下で鋼は<strong>疲労</strong>する：S–Nアプローチは応力振幅を破壊までの繰り返し数に対してプロットし、設計は応力範囲を耐久限界以下に保つが、溶接ディテールは母材よりもはるかに脆弱である。火災では、無保護の鋼は約500 °Cで強度の大部分を失うため、断面は耐火被覆、吹付け、膨張性塗料で保護され、避難時間を稼ぐ。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">S–N（バスキン）関係</span>
+      <div class="formula-expr formula-math">\[\sigma_a^m N_f = C\]</div>
+      <span class="formula-note">σ_aは応力振幅、N_fは破壊までの繰り返し数；S–Nプロット上で対数線形</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>水和</dt><dd>セメント化合物と水の化学反応でC-S-Hゲルと水酸化カルシウムを形成し、ペーストを凝結・硬化させる。</dd></div><div class="term"><dt>水セメント比</dt><dd>水の質量をセメントの質量で割ったもの；強度、透水性、収縮に最も強い影響を与える単一の要因。</dd></div><div class="term"><dt>ワーカビリティ</dt><dd>フレッシュ配合を材料分離やブリーディングなしに打設、締固め、仕上げできる容易さ。</dd></div><div class="term"><dt>養生</dt><dd>打設後にコンクリートを湿潤かつ適切な温度に保ち、水和が継続して表層が強度を獲得できるようにすること。</dd></div><div class="term"><dt>特性強度</dt><dd>試験結果がこれを下回る割合が定義された小さな割合以下であると予想される強度。</dd></div><div class="term"><dt>炭酸化</dt><dd>コンクリート中の水酸化カルシウムと二酸化炭素の反応で、pHを低下させ鉄筋の保護を失わせる。</dd></div><div class="term"><dt>延性</dt><dd>材料が破壊前に塑性変形する能力で、破壊の警告を与え、力の再配分を可能にする。</dd></div><div class="term"><dt>不動態化</dt><dd>良質なコンクリートのアルカリ環境で鋼を保護する薄い酸化皮膜；炭酸化や塩化物の侵入で失われる。</dd></div><div class="term"><dt>標準稠度</dt><dd>ビカットプランジャーが底板の6 ± 2 mm上に沈む水量で、再現性のある硬さのペーストを定義する。</dd></div><div class="term"><dt>飽和表面乾燥</dt><dd>細孔は満たされているが表面は乾燥している骨材の含水状態；配合設計の基準状態。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>立方体と円柱の結果からバッチを評価する</h2>
+        <p class="problem">あるバッチからの3つの150 mm立方体が780 kN、810 kN、762 kNで破壊した。150 mm直径×300 mmの円柱が240 kNで割裂した。配合は1立方メートルあたりセメント380 kg、水190 kgを使用し、仕様は特性強度f_ck = 30 MPa、暴露クラスに対して最大w/c 0.45を要求する。このバッチを評価せよ。</p>
+        <ol><li>立方体断面積：A = 150 × 150 = 22 500 mm²。強度：780 000/22 500 = 34.7 MPa、810 000/22 500 = 36.0 MPa、762 000/22 500 = 33.9 MPa。</li><li>平均強度 = (34.7 + 36.0 + 33.9)/3 = 34.9 MPa。試料標準偏差s = √[(0.04 + 1.21 + 1.00)/2] = √1.125 = 1.06 MPa。</li><li>特性値 = 平均 − 1.64 s = 34.9 − 1.74 = 33.2 MPa、これは指定された30 MPaを超えるため、強度基準は満たされる。</li><li>割裂引張強度：f_ct = 2F/(πDL) = 2 × 240 000/(π × 150 × 300) = 480 000/141 372 = 3.4 MPa。</li><li>比f_ct/f_ck = 3.4/33.2 = 0.10、すなわち圧縮強度の約10%であり、通常の8～12%の範囲内で、普通コンクリートであることを確認する。</li><li>配合の耐久性チェック：w/c = 190/380 = 0.50、制限値0.45に対して。強度は合格するが、配合は暴露要件を満たさない。</li><li>健全性チェック：w/c 0.50、セメント380 kg/m³は施工可能だが多孔質な配合である；水を増やすのではなく、減水剤またはセメント増量で修正すべきである。</li></ol>
+        <div class="answer"><b>Answer</b>平均立方体強度は34.9 MPa、推定特性強度は33.2 MPaであり、バッチは30 MPaの要件を満たし、引張比0.10は正常である。しかしw/c = 0.50は耐久性限界0.45を超えるため、受け入れる前に配合を再設計する必要がある。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>コンクリート強度を述べるときは常に単位と試験材齢を明記すること；28日で35 MPaは7日で35 MPaとは異なる主張である。</li><li>耐久性の質問では、透水性とかぶりから始め、次に輸送機構（炭酸化、塩化物拡散、吸収）を挙げること。</li><li>配合設計では、配合の前に目標平均強度と余裕を示すこと；試験官は1.64 sの許容を探している。</li><li>立方体と円柱の結果を比較するときは、載荷板の拘束に言及し、等しいものとして扱うのではなく換算係数を示すこと。</li><li>骨材の含水状態（炉乾燥、気乾、SSD）が与えられたときは常に、w/cを述べる前にバッチ水を調整すること — 吸水補正はバッチあたり数キログラムの水に値する。</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Concrete durability: exposure condition, minimum grade and nominal cover</h3>
+  <p class="ref-table-intro">Minimum concrete quality and nominal cover required for durability, matched to the exposure condition of the concrete. Cover is the design depth to all reinforcement, including links, and also has to satisfy fire and bond requirements.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Exposure condition</th><th scope='col'>Typical situation</th><th scope='col'>Lowest grade</th><th scope='col'>Nominal cover at lowest grade (mm)</th><th scope='col'>Max free w/c</th><th scope='col'>Min cementitious content (kg/m³)</th></tr></thead><tbody><tr><td>1 - Mild (slabs only)</td><td>Internal slabs; surfaces protected from severe rain</td><td>C20/25</td><td>30</td><td>0.65</td><td>290</td></tr><tr><td>1 - Mild (other members)</td><td>Internal beams, columns and walls; concrete continuously under water (not sea water)</td><td>C20/25</td><td>35</td><td>0.65</td><td>290</td></tr><tr><td>2 - Moderate</td><td>Bathrooms and kitchens; external fair-faced concrete; concrete behind curtain walling</td><td>C30</td><td>40</td><td>0.65</td><td>310</td></tr><tr><td>3 - Severe</td><td>Concrete on or near the coast exposed to sea-water spray; concrete exposed to corrosive fumes</td><td>C40</td><td>50</td><td>0.55</td><td>350</td></tr><tr><td>4 - Very severe</td><td>Concrete in the sea-water tidal zone or frequently exposed to sea water</td><td>C50</td><td>55</td><td>0.40</td><td>400</td></tr></tbody></table></div>
+  <p class="ref-table-note">Simplified from Tables 4.1 and 4.2 of the Code of Practice for the Structural Use of Concrete 2013 (2020 Edition). Covers shown are those permitted with the lowest grade listed for each condition; the code allows smaller covers where a higher grade is used. Values assume 20 mm nominal maximum aggregate and normal-weight concrete.</p>
+  <p class="ref-table-caveat">Revision summary only. Cover must also satisfy fire resistance and bond requirements, and the code contains further rules for abrasion, cast-against-earth surfaces and prestressed concrete; verify against the current code for actual design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q01</span><span>ポルトランドセメントの初期強度に主に寄与するクリンカー化合物はどれか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>二カルシウムシリケート</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>三カルシウムシリケート</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>三カルシウムアルミネート</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>四カルシウムアルミノフェライト</span></button></div>
+    <div class="quiz-explain"><b>Why</b>エーライト、すなわち三カルシウムシリケート相は速やかに水和し、最初の数週間で強度の大部分を与える；ビーライトは数ヶ月かけてゆっくり寄与する。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>セメントクリンカーの粉砕中に石膏を加える理由は何か？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>ペーストの水量を低下させるため</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>28日圧縮強度を増加させるため</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>アルミネート相の反応を遅らせて凝結を調整するため</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>ケイ酸塩の水和熱を減少させるため</span></button></div>
+    <div class="quiz-explain"><b>Why</b>石膏がなければアルミネートはほぼ即座に反応して急結を引き起こす；石膏は凝結速度を制御する。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>同じコンクリートの立方体と円柱を同じ材齢で試験する。立方体の結果が高いのはなぜか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>立方体はより長く養生されるため</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>立方体のコンクリート体積が大きいため</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>載荷板が立方体の横方向膨張を拘束するため</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>円柱は常により弱い配合で打設されるため</span></button></div>
+    <div class="quiz-explain"><b>Why</b>載荷板の摩擦が立方体を拘束し、見かけの強度を高める；円柱は細長いためその拘束の影響が小さい。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>コンクリートの炭酸化が耐久性にとって主に重要なのはなぜか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>細孔の含水量を減少させる</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>塩化物の浸透を防ぐ</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>かぶりコンクリートの圧縮強度を増加させる</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>pHを低下させ鉄筋の不動態皮膜を破壊する</span></button></div>
+    <div class="quiz-explain"><b>Why</b>二酸化炭素は水酸化カルシウムを炭酸カルシウムに変え、pHを9に向かって低下させ、その時点で鋼はもはや不動態化されない。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q05</span><span>湿った骨材ストックパイルを含水補正なしで質量でバッチした。意図した配合と比較して、コンクリートは最も likely どうなるか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>余分な自由水を含み、弱く透水性が高くなる</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>骨材の水は吸収されるため影響を受けない</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>即座に凝結し打設できない</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>より多くの固体をバッチするため強度が増加する</span></button></div>
+    <div class="quiz-explain"><b>Why</b>骨材表面の水は余分な自由水として配合に入り、実効w/c比を高め、強度と耐久性を低下させる。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>セメントペーストの標準稠度の定義に最もよく合う読みはどれか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>針がペーストに全く貫入しない</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>ペーストが1分以内に型から流出する</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>プランジャーが底板に触れるまで貫入する</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>プランジャーが下面を底板の6 ± 2 mm上で停止する</span></button></div>
+    <div class="quiz-explain"><b>Why</b>標準稠度は、練混ぜ後約4分でビカットプランジャーが底板の6 ± 2 mm以内に沈むことと定義される。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="structural-mechanics.ja.html"><span>Core</span><b>構造力学</b></a><a class="related-card" href="advanced-structural-mechanics.ja.html"><span>Core</span><b>上級構造力学</b></a><a class="related-card" href="construction-introduction.ja.html"><span>Core</span><b>建設入門</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="programming-fundamentals.ja.html"><small>Previous</small><b>プログラミング基礎</b></a><a class="next" href="engineering-geology.ja.html"><small>Next</small><b>応用地質学</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2020). <i>Code of Practice for the Structural Use of Concrete 2013 (2020 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/CoP_SUC2013e.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/CoP_SUC2013e.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">エーライト：初期強度。ビーライト：ゆっくり燃える。</p><p class="margin-note">強度は加えた水で支払われる。</p><p class="margin-note">スランプは稠度を測り、強度ではない。</p><p class="margin-note">かぶりは最も安価な腐食保護。</p><p class="margin-note">不動態化なし、耐久性なし。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>콘크리트 구조 설계 — Civil Hub</title>
+<meta name="description" content="철근콘크리트 설계는 요구 강도를 철근 면적, 철근 지름, 피복으로 변환한다. 이는 한계상태 하중을 휨, 전단, 슬래브 및 기둥 검토와 연결하고, 마지막으로 상세 설계와 사용성을 마무리한다.">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-concrete-structures.ko.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="콘크리트 구조 설계 — Civil Hub">
+<meta property="og:description" content="철근콘크리트 설계는 요구 강도를 철근 면적, 철근 지름, 피복으로 변환한다. 이는 한계상태 하중을 휨, 전단, 슬래브 및 기둥 검토와 연결하고, 마지막으로 상세 설계와 사용성을 마무리한다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-concrete-structures.ko.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="design-of-concrete-structures.html" data-alt-zh-hant="design-of-concrete-structures.zh-Hant.html" data-alt-ja="design-of-concrete-structures.ja.html" data-alt-ko="design-of-concrete-structures.ko.html" data-page-lang="ko" data-root="../" data-total="42" data-page="library" data-content-lang="ko">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">콘크리트 구조 설계</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">핵심</p>
+          <h1>콘크리트 구조 설계</h1>
+          <p class="subject-sub">홍콩 실무에 따른 철근 콘크리트 부재</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>핵심</li><li><b data-i18n="subject.read">Read</b>12 분</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>12</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M136 48 H204" stroke="currentColor" stroke-width="2"/><path d="M136 152 H204" stroke="currentColor" stroke-width="2"/><path d="M148 56 V144 M192 56 V144" stroke="currentColor" stroke-width="1.4"/><path d="M148 56 l44 0" stroke="var(--line)" stroke-width="1"/><path d="M158 22 V44 M154 40 l4 5 4 -5" stroke="var(--accent)" stroke-width="1.1"/><path d="M170 22 V44 M166 40 l4 5 4 -5" stroke="var(--accent)" stroke-width="1.1"/><path d="M182 22 V44 M178 40 l4 5 4 -5" stroke="var(--accent)" stroke-width="1.1"/><path d="M204 96 l18 -10 l-6 20 l16 6" stroke="var(--accent)" stroke-width="1"/><text x="170" y="178" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">CYLINDER TEST</text></svg>
+          <figcaption>Cylinder compression test — platens and failure</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">콘크리트의 한계상태 설계</a></li><li><a href="#sec-2">단철근 단면의 휨</a></li><li><a href="#sec-3">연속보의 모멘트 계수</a></li><li><a href="#sec-4">플랜지 보와 압축철근</a></li><li><a href="#sec-5">유효 플랜지 폭과 T형 보 설계 순서</a></li><li><a href="#sec-6">전단과 스터럽</a></li><li><a href="#sec-7">일방향 및 이방향 슬래브</a></li><li><a href="#sec-8">기둥: 축하중과 세장비</a></li><li><a href="#sec-9">피복, 내구성 및 상세 설계</a></li><li><a href="#sec-10">모멘트 재분배와 상세 설계 패키지</a></li><li><a href="#sec-11">사용성: 처짐과 균열</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">철근콘크리트 설계는 요구 강도를 철근 면적, 철근 지름, 피복으로 변환한다. 이는 한계상태 하중을 휨, 전단, 슬래브 및 기둥 검토와 연결하고, 마지막으로 상세 설계와 사용성을 마무리한다.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="design-of-concrete-structures" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>콘크리트의 한계상태 설계</h2>
+  <div class="body"><p>콘크리트는 압축에는 강하지만 인장에는 약하므로, 부재가 균열될 위치에 철근을 배치한다. <strong>한계상태 설계</strong>는 하나의 전체 안전율을 하중과 재료에 각각 적용하는 부분 안전율로 대체한다.</p>
+<ul>
+<li><strong>극한한계상태</strong>(ULS)에서 부재는 붕괴되어서는 안 된다.</li>
+<li><strong>사용한계상태</strong>(SLS)에서 처짐과 균열은 정상 사용 시 허용 가능한 수준이어야 한다.</li>
+<li>콘크리트의 특성강도 <code>f_cu</code>는 28일 큐브 강도이고, <code>f_y</code>는 철근의 특성 항복강도이다.</li>
+</ul>
+<p>두 상태를 절대 혼동하지 말 것. 단면이 ULS를 통과하더라도 과도하게 처지거나 균열될 수 있으며, SLS 검토는 붕괴에 대해 아무것도 말해주지 않는다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">설계하중</span>
+      <div class="formula-expr formula-math">\[w_u = 1.4G_k + 1.6Q_k\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>단철근 단면의 휨</h2>
+  <div class="body"><p>휨을 받는 직사각형 단면은 콘크리트의 응력블록과 철근의 인장력으로 설계한다. <strong>K 값</strong>은 콘크리트에 가해지는 응력의 정도를 나타낸다:</p>
+<p><code>K = M / (f_cu b d²)</code></p>
+<p>여기서 <code>b</code>는 단면 폭, <code>d</code>는 압축면에서 인장철근의 도심까지 측정한 <strong>유효깊이</strong>이다.</p>
+<ul>
+<li>한계값 <code>K′ = 0.156</code> 이하에서는 단면을 단철근으로 설계할 수 있다.</li>
+<li>지레팔은 <code>z = d [0.5 + √(0.25 − K/0.9)]</code>이며, <code>0.95d</code>로 제한된다.</li>
+<li>철근 면적은 <code>A_s = M / (0.87 f_y z)</code>로부터 구한다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">K 값</span>
+      <div class="formula-expr formula-math">\[K = \frac{M}{f_{cu} b d^2}\]</div>
+      <span class="formula-note">M은 N mm, f_cu는 N/mm², b와 d는 mm 단위</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">지레팔</span>
+      <div class="formula-expr formula-math">\[z = d\left[0.5 + \sqrt{0.25 - \frac{K}{0.9}}\right] \le 0.95d\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">소요 인장철근</span>
+      <div class="formula-expr formula-math">\[A_s = \frac{M}{0.87 f_y z}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>연속보의 모멘트 계수</h2>
+  <div class="body"><p>등분포 하중을 받는 연속보의 경우, 다음 세 가지 조건이 충족되면 전체 탄성 해석을 표로 주어진 <strong>모멘트 계수</strong>로 대체할 수 있다:</p>
+<ul>
+<li>경간 차이가 최장 경간의 약 15%를 넘지 않을 것,</li>
+<li>하중이 본질적으로 등분포일 것,</li>
+<li>활하중이 고정하중을 초과하지 않을 것.</li>
+</ul>
+<p>설계 모멘트는 <code>M = β F L</code>이며, 여기서 <code>F = w L</code>은 경간에 작용하는 총 설계하중이고 β는 위치에 따른 계수이다. 일반적인 값은 외부 지지점에서 0.04F, 단부 경간 중앙부 근처에서 0.075F, 첫 번째 내부 지지점에서 0.086F, 내부 경간 중앙부와 내부 지지점에서 0.063F이다. 첫 번째 내부 지지점 모멘트가 가장 크므로 그곳의 상부 철근이 가장 많으며, 관련 전단력은 같은 표나 각 경간의 자유물체도로부터 구한다.</p>
+<p>이 계수들은 일체식 시공과 보 길이 방향으로 비교적 균일한 강성을 가정한다. 헌치가 크거나 불규칙한 프레임은 대신 탄성 해석이 필요하다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">계수로부터의 설계 모멘트</span>
+      <div class="formula-expr formula-math">\[M = \beta F L\]</div>
+      <span class="formula-note">F = w L은 경간에 작용하는 총 설계하중이며, β는 위치에 따라 달라진다</span>
+    </div></div><div class="table-wrap"><table><caption>일반적인 연속보 모멘트 계수 (등분포 하중, 거의 동일한 경간)</caption><thead><tr><th scope='col'>위치</th><th scope='col'>F = w L에 대한 계수 β</th></tr></thead><tbody><tr><td>외부 지지점</td><td>0.04</td></tr><tr><td>단부 경간 중앙부 근처</td><td>0.075</td></tr><tr><td>첫 번째 내부 지지점</td><td>0.086</td></tr><tr><td>내부 경간 중앙부</td><td>0.063</td></tr><tr><td>내부 지지점</td><td>0.063</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>플랜지 보와 압축철근</h2>
+  <div class="body"><p>슬래브와 함께 타설된 보는 슬래브의 일부 폭이 압축영역에 합쳐지므로 T형 또는 L형 단면으로 작용한다. <strong>유효 플랜지 폭</strong>은 경간과 보 간격의 일부로 제한되므로, 웨브에 가까운 슬래브만 포함된다.</p>
+<p>응력블록의 위치를 확인한다: 그 깊이는 <code>s = 2(d − z)</code>이다. <code>s</code>가 플랜지 두께 <code>h_f</code>를 초과하지 않으면 단면은 전체 플랜지 폭을 가진 직사각형으로 거동하며 일반적인 <code>K</code>와 <code>z</code> 식이 적용된다. 블록이 웨브까지 이르면 진정한 T형 단면으로 설계한다.</p>
+<p><code>K</code>가 <code>K′</code>를 초과할 때는 보를 깊게 하거나 압축철근을 추가하며, 이는 초과 모멘트와 철근층 사이의 깊이로부터 산정한다.</p></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>유효 플랜지 폭과 T형 보 설계 순서</h2>
+  <div class="body"><p>T형 보는 슬래브의 일부만 플랜지로 계산한다. 웨브 양쪽의 돌출부는 인접 보까지의 순거리의 약 0.2배에 유효 경간의 0.1배를 더한 값으로 제한되며, 단부(L) 보의 경우 경간 항은 그 값의 약 85%로 줄어든다. 4 m 간격과 5 m 경간을 가진 보 그리드로 계산한 결과, 유효 플랜지 폭은 680 mm가 되었고, 250 mm 웨브를 더하면 총 930 mm가 되어 전체 간격보다 훨씬 작았다.</p>
+<p>설계 순서는 다음과 같이 정해진다:</p>
+<ul>
+<li>플랜지 폭으로 K를 계산하고,</li>
+<li>z를 구하며,</li>
+<li>응력블록 깊이 <code>s = 2(d − z)</code>를 확인한다.</li>
+</ul>
+<p>s가 플랜지 두께 h_f 이내이면 단면은 폭 b_f의 직사각형으로 설계하고, s가 웨브로 내려가면 웨브 내 압축은 별도로 처리해야 한다. 플랜지 대 웨브 폭 비율은 약 4 이하로 유지하고, 최소 철근은 전체 플랜지가 아닌 웨브 면적에 대해 검토한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">내부 T형 보의 유효 플랜지 폭</span>
+      <div class="formula-expr formula-math">\[b_{\mathrm{eff}} = b_w + 0.2\,b_1 + 0.1\,\ell\]</div>
+      <span class="formula-note">b₁은 웨브 사이의 순거리, ℓ은 유효 경간이며, 단부 보의 경우 경간 항을 약 0.85로 줄인다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">응력블록 깊이 확인</span>
+      <div class="formula-expr formula-math">\[s = 2(d - z)\]</div>
+      <span class="formula-note">s ≤ h_f이면 단면은 폭 b_f의 직사각형으로 거동한다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>전단과 스터럽</h2>
+  <div class="body"><p>전단은 부분적으로 콘크리트가, 부분적으로 <strong>스터럽</strong>(링)이 부담한다. 작용 응력은 <code>v = V/(b_v d)</code>이며, 지지면으로부터 <code>d</code> 떨어진 단면에서 검토한다. 콘크리트 기여분 <code>v_c</code>는 종방향 철근비와 콘크리트 등급에 따라 코드 표에서 구한다.</p>
+<p>초과분은 스터럽으로 처리한다: <code>A_sv/s_v ≥ (v − v_c) b_v / (0.87 f_yv)</code>. 전단이 최대인 지지점 근처에서 간격이 좁아지며, 응력은 대략 <code>0.8√f_cu</code>의 압쇄 한계 이하로 유지해야 한다.</p>
+<p>스터럽은 또한 콘크리트를 구속하고 주철근을 고정하며 철근망을 유지하므로, 계산상 필요하지 않은 곳에서도 코드는 최소 스터럽 면적을 요구한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">소요 스터럽 면적</span>
+      <div class="formula-expr formula-math">\[\frac{A_{sv}}{s_v} \ge \frac{(v - v_c)b_v}{0.87 f_{yv}}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>일방향 및 이방향 슬래브</h2>
+  <div class="body"><p>슬래브가 마주 보는 두 변에만 지지되면 <strong>일방향</strong>이고, 긴 경간이 짧은 경간의 약 2배 미만이면 <strong>이방향</strong>이다. 이방향 슬래브는 두 방향으로 휨이 발생하므로 각 스트립은 하중의 일부만 부담한다.</p>
+<p>두께는 보통 휨이 아니라 처짐에 의해 결정된다. 기본 경간 대 유효깊이 비는 단순지지 슬래브의 경우 약 20, 연속 슬래브의 경우 26이며, 제공된 철근에 따라 수정된다. 연속 슬래브는 프레임 해석 대신 표로 주어진 <strong>모멘트 계수</strong>를 사용할 수 있다.</p>
+<p>주철근에 직각 방향으로 배력철근을 추가하여 균열을 제어하고, 집중 반력이 얇은 슬래브를 뚫을 수 있는 기둥 주변의 <strong>펀칭 전단</strong>을 검토한다.</p></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>기둥: 축하중과 세장비</h2>
+  <div class="body"><p>주로 축하중을 받는 단주는 공칭 내력이 다음과 같다:</p>
+<p><code>N = 0.4 f_cu A_c + 0.75 f_y A_sc</code>,</p>
+<p>여기서 <code>A_c</code>는 순 콘크리트 면적, <code>A_sc</code>는 철근 면적이다. 계수는 큐브 강도와 부재 강도의 차이 및 변형률 적합성을 고려한 것이다.</p>
+<p>세장비는 상황을 바꾼다: 세장한 기둥은 휨이 발생하고, 그 처짐으로 인한 추가 모멘트가 작용 모멘트에 더해진다. 설계 시 두 축에 대한 세장비를 검토하고, 최소 편심을 적용하며, 이축 휨을 고려한다.</p>
+<p>상세 설계도 적용된다: 철근비는 최소 약 1%, 최대 4–6%, 직사각형 단면에는 최소 4개의 철근, 스터럽 간격은 철근 지름의 12배 또는 최소 단면 치수 이하이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">단주 축내력</span>
+      <div class="formula-expr formula-math">\[N = 0.4f_{cu}A_c + 0.75f_yA_{sc}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>피복, 내구성 및 상세 설계</h2>
+  <div class="body"><p><strong>공칭 피복</strong>은 표면에서 철근 외측까지의 거리이다. 이는 물과 염화물이 철근에 도달하는 것을 막고 화재 시 철근을 보호하므로, 노출 환경과 내화 성능이 이를 결정한다.</p>
+<p>철근은 또한 자신의 힘을 정착시켜야 한다. 정착 길이는 철근 지름과 응력에 따라 증가하며, 대략 <code>l_b = f_y φ / (4 f_b)</code>이고 여기서 <code>f_b</code>는 설계 부착 응력이다. 겹침 이음은 두 철근이 하나의 콘크리트 길이를 공유하므로 더 길다.</p>
+<p>골재가 통과할 수 있도록 철근 간격을 충분히 유지하고, 주철근 주위에 스터럽을 고리로 감는다. 상세 설계는 계산이 시공 가능하게 되는 단계이다: 철근은 맞아야 하고, 고정되어야 하며, 다져진 콘크리트로 둘러싸여야 한다.</p></div><div class="table-wrap"><table><caption>노출 조건별 지표 공칭 피복 (일반적인 범위; 프로젝트 시방서가 우선함)</caption><thead><tr><th scope='col'>노출 조건</th><th scope='col'>일반적인 공칭 피복 (mm)</th><th scope='col'>주요 위협</th></tr></thead><tbody><tr><td>경미: 건조하고 보호된 실내</td><td>25–30</td><td>탄산화</td></tr><tr><td>보통: 습하고 차폐된 환경</td><td>35–40</td><td>탄산화 및 습기</td></tr><tr><td>심함: 습윤과 건조 반복</td><td>45–50</td><td>염화물 침투</td></tr><tr><td>매우 심함: 해양 또는 제빙염</td><td>55–60</td><td>염화물 및 화재</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>모멘트 재분배와 상세 설계 패키지</h2>
+  <div class="body"><p>잘 배근된 콘크리트 단면은 연성적이므로, 단면이 회전 능력을 갖추고 중립축이 얕게 유지되는 경우(<code>x/d ≤ 0.5</code>), 지지점의 탄성 최대 모멘트를 <strong>재분배</strong>하여 줄이고 다른 곳에서 재조정할 수 있다. 최대 약 30%의 재분배가 허용되며, <code>x/d = 0.6</code>에서 선형적으로 0으로 감소한다.</p>
+<p>재분배는 지지점에서 경제성을 얻지만 연성을 요구한다: 전단 내력이 충분한 경량 배근 단면은 적합하지만, 과다 배근 단면은 그렇지 않다.</p>
+<p>그런 다음 상세 설계가 해석을 확정한다:</p>
+<ul>
+<li>철근 면적은 b h의 약 0.13%인 최소값과 총 콘크리트 면적의 약 4%인 최대값 사이에 있어야 한다.</li>
+<li>저모멘트 구역에서 철근을 절단한다.</li>
+<li>균열 제어를 위해 간격을 충분히 좁게 유지하되 골재가 통과할 만큼 넓게 한다.</li>
+<li>힘이 콘크리트로 전달되어야 하는 모든 철근을 정착하거나 절곡한다.</li>
+</ul>
+<p>여전히 필요한 위치에서 끝나는 철근은 설계된 균열이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">재분배와 중립축 한계</span>
+      <div class="formula-expr formula-math">\[\frac{x}{d} \le 0.6 - 0.33\,\beta\]</div>
+      <span class="formula-note">β는 재분배된 모멘트의 비율이며, β = 0.3이면 x/d ≤ 0.5이다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">최소 인장철근</span>
+      <div class="formula-expr formula-math">\[A_{s,\min} \approx 0.0013\,b\,h\]</div>
+      <span class="formula-note">총 단면의 약 0.13%이며, 최대는 약 4%이다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>사용성: 처짐과 균열</h2>
+  <div class="body"><p>처짐은 경간 대 깊이 비를 제한하거나 경간/250과 같은 한계에 대해 계산하여 제어한다. 크리프와 건조수축은 단기 탄성 처짐에 추가되므로 지속하중에 대해서는 장기 처짐을 추정해야 한다.</p>
+<p>균열은 인장면 근처에 철근을 분포시키고 철근 간격을 제한하여 제어한다. 계산된 균열 폭은 다음과 같은 형태이다:</p>
+<p><code>w_k = 3 a_cr ε_m / [1 + 2(a_cr − c_min)/(h − x)]</code>,</p>
+<p>여기서 <code>a_cr</code>은 가장 가까운 철근까지의 거리, <code>ε_m</code>은 평균 변형률, <code>c_min</code>은 최소 피복, <code>x</code>는 중립축 깊이이다.</p>
+<p>철근 응력을 적당히 유지하고 철근 간격을 촘촘히 하면 균열 폭은 보통 0.3 mm 한계 근처에 머문다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">균열 폭</span>
+      <div class="formula-expr formula-math">\[w_k = \frac{3a_{cr}\varepsilon_m}{1 + 2\frac{a_{cr} - c_{min}}{h - x}}\]</div>
+      
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>특성강도</dt><dd>시험 결과가 지정된 작은 비율 이상으로 이 값 아래에 떨어지지 않을 것으로 예상되는 강도.</dd></div><div class="term"><dt>유효깊이</dt><dd>압축면에서 인장철근의 도심까지의 거리.</dd></div><div class="term"><dt>지레팔</dt><dd>콘크리트 압축 합력과 철근 인장력 사이의 거리로, 0.95d로 제한된다.</dd></div><div class="term"><dt>K 값</dt><dd>모멘트를 f_cu b d 제곱으로 나눈 값으로, 단면이 단철근으로 설계 가능한지 보여준다.</dd></div><div class="term"><dt>공칭 피복</dt><dd>콘크리트 표면에서 철근 외측까지의 지정된 거리로, 내구성과 화재에 의해 결정된다.</dd></div><div class="term"><dt>펀칭 전단</dt><dd>기둥이나 하중 주변의 집중 전단으로, 슬래브의 플러그를 지지점을 통해 밀어낼 수 있다.</dd></div><div class="term"><dt>모멘트 재분배</dt><dd>탄성 지지점 모멘트의 일부를 의도적으로 경간으로 이동시키는 것으로, 단면이 회전할 연성을 갖춘 경우에만 허용된다.</dd></div><div class="term"><dt>유효 플랜지 폭</dt><dd>T형 또는 L형 보의 압축 플랜지 일부로 계산되는 제한된 슬래브 폭으로, 경간과 보 간격에 의해 결정된다.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>직사각형 보의 인장철근 설계</h2>
+        <p class="problem">폭 250 mm, 깊이 500 mm의 단순지지 보가 설계 극한 모멘트 200 kNm를 받는다. 유효깊이는 450 mm, f_cu = 30 N/mm², f_y = 500 N/mm²이다. 단면이 단철근으로 설계 가능한지 판단하고 소요 인장철근 면적을 구하라. 실용적인 철근 배치를 제시하라.</p>
+        <ol><li>K = M / (f_cu b d²) = (200 × 10⁶) / (30 × 250 × 450²) = 0.132.</li><li>K′ = 0.156과 비교: K가 더 작으므로 압축철근이 필요 없다.</li><li>z = d [0.5 + √(0.25 − K/0.9)] = 450 [0.5 + √(0.25 − 0.1463)] = 450 × 0.822 = 370 mm.</li><li>상한 확인: 0.95d = 427 mm이므로 계산된 z = 370 mm를 사용한다.</li><li>A_s = M / (0.87 f_y z) = (200 × 10⁶) / (0.87 × 500 × 370) = 1243 mm².</li><li>최소 철근 확인: b × h의 약 0.13% = 0.0013 × 250 × 500 = 163 mm²이므로 휨 요구량이 지배한다.</li><li>타당성 확인: 4 H20 철근 배치, A_s = 1256 mm². 100A_s/(b d) = 1.12%로 최대 약 4% 이하이다.</li></ol>
+        <div class="answer"><b>Answer</b>인장 영역에 4 H20 철근(1256 mm²)을 배치한다; K = 0.132로 K′보다 작으므로 보는 단철근으로 충분히 설계되었다.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>K를 사용하기 전에 모든 것을 뉴턴과 밀리미터로 변환하고, 최종 답은 kNm, mm² 또는 MPa로 명시하라.</li><li>항상 K를 K′와 비교하라; 압축철근이 필요한 보는 단철근 보와 다른 계산이다.</li><li>지레팔을 0.95d로 제한하고 그 제한을 명시하라 — 채점자는 이 확인에 점수를 준다.</li><li>답안에서 ULS와 SLS를 분리하라: 강도 검토와 처짐 또는 균열 검토는 다른 요구사항으로 채점된다.</li><li>모멘트 계수를 사용하기 전에 세 가지 조건(거의 동일한 경간, 등분포 하중, 활하중이 고정하중을 초과하지 않음)을 명시하고 문제와 대조하여 확인하라.</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Minimum percentages of reinforcement in beams</h3>
+  <p class="ref-table-intro">Minimum reinforcement required by the concrete code to control cracking and ensure ductility. The percentages scale with the steel yield strength through the factor αmin, which reduces the minimum as fy rises.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Situation</th><th scope='col'>Percentage definition</th><th scope='col'>fy = 250 N/mm²</th><th scope='col'>fy = 500 N/mm²</th></tr></thead><tbody><tr><td>Sections subjected mainly to pure tension</td><td>100As/Ac</td><td>0.8αmin</td><td>0.45αmin</td></tr><tr><td>Rectangular section in flexure</td><td>100As/Ac</td><td>0.24αmin</td><td>0.13αmin</td></tr><tr><td>Flanged beam, web in tension, bw/b &lt; 0.4</td><td>100As/bwh</td><td>0.32αmin</td><td>0.18αmin</td></tr><tr><td>Flanged beam, web in tension, bw/b ≥ 0.4</td><td>100As/bwh</td><td>0.24αmin</td><td>0.13αmin</td></tr><tr><td>Flanged beam, flange in tension (T-beam)</td><td>100As/bwh</td><td>0.48αmin</td><td>0.26αmin</td></tr><tr><td>Compression reinforcement, general rule</td><td>100Asc/Acc</td><td>0.4</td><td>0.4</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 9.1 of the Code of Practice for the Structural Use of Concrete 2013 (2020 Edition). αmin = 40 fcu^(2/3) / fy but not less than 1.0; As is the tension reinforcement area, Ac the concrete area, bw the web width and h the overall depth.</p>
+  <p class="ref-table-caveat">Revision summary only. Minimum percentages may need increasing to satisfy ductility requirements, and spacing, anchorage and detailing rules also apply; verify against the current code for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q01</span><span>모멘트 재분배가 없는 단철근 직사각형 단면이 휨에서 만족스러우려면 K가 약 얼마를 초과하지 않아야 하는가?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.045</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.156</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.402</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>1.000</span></button></div>
+    <div class="quiz-explain"><b>Why</b>K′ = 0.156이 일반적인 한계이며, 이를 초과하면 압축철근 또는 더 깊은 단면이 필요하다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>보에서 전단 스터럽의 주요 구조적 목적은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>콘크리트 내력을 초과한 후 대각 인장에 저항한다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>장기 처짐을 감소시킨다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>보를 기둥에 정착시킨다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>휨 모멘트 내력을 증가시킨다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>콘크리트가 일부 전단을 부담하고 스터럽이 초과분을 부담하며, 코드는 구속과 고정을 위해 최소 스터럽 면적도 규정한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>철근에 대한 공칭 피복은 주로 무엇에 의해 결정되는가?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>부재의 경간</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>단면의 철근 수</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>골재 크기만</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>내구성 노출 및 내화 성능</span></button></div>
+    <div class="quiz-explain"><b>Why</b>피복은 철근을 부식으로부터 보호하고 화재 시 단열하므로, 노출 등급과 내화 시간이 값을 결정한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q04</span><span>이방향 슬래브 거동에서 하중은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>전적으로 짧은 경간에 의해 지지된다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>두 방향의 휨에 의해 지지된다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>막 작용에 의해서만 지지된다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>긴 변의 보에 의해서만 지지된다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>긴 경간이 짧은 경간의 약 2배 미만이면 슬래브는 두 방향으로 휨이 발생하고 하중을 분담한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>간략화된 계수를 사용할 때, 경간에 총하중 F를 받는 연속보의 첫 번째 내부 지지점 설계 모멘트는 약 얼마인가?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.040 F L</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.075 F L</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.086 F L</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>0.100 F L</span></button></div>
+    <div class="quiz-explain"><b>Why</b>첫 번째 내부 지지점은 계수 중 가장 큰 약 0.086F L을 받으며, 이 때문에 그곳의 상부 철근이 최대가 된다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>x/d = 0.5인 단면에 대해 취할 수 있는 최대 모멘트 재분배는 약 얼마인가?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>10%</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>20%</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>30%</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>50%</span></button></div>
+    <div class="quiz-explain"><b>Why</b>재분배는 x/d ≤ 0.5일 때 약 30%로 제한되며, x/d가 0.6에 접근함에 따라 선형적으로 0으로 감소한다.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="design-of-steel-structures.ko.html"><span>Core</span><b>강구조 설계</b></a><a class="related-card" href="construction-materials.ko.html"><span>Core</span><b>건설 재료</b></a><a class="related-card" href="structural-mechanics.ko.html"><span>Core</span><b>구조 역학</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="hydraulics-hydrology.ko.html"><small>Previous</small><b>수리학 및 수문학</b></a><a class="next" href="transportation-highway-engineering.ko.html"><small>Next</small><b>교통 및 도로 공학</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2020). <i>Code of Practice for the Structural Use of Concrete 2013 (2020 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/CoP_SUC2013e.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/CoP_SUC2013e.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">z는 0.95d로 제한된다 — 지레팔은 무한히 커질 수 없다.</p><p class="margin-note">K가 0.156을 초과하면 압축철근 또는 더 깊은 보가 필요하다.</p><p class="margin-note">피복은 도면 상세가 아닌 내구성 결정이다.</p><p class="margin-note">스터럽은 콘크리트가 할 수 없는 일, 즉 대각 인장을 담당한다.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

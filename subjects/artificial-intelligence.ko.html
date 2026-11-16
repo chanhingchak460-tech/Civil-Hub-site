@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>인공지능 — Civil Hub</title>
+<meta name="description" content="인공지능은 인지하고 추론하며 학습하는 시스템을 만드는 공학이다. 이 페이지에서는 탐색, 지식 표현, 학습, 신경망, 생성 모델, 그리고 이를 정직하게 평가하는 방법을 다룬다.">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/artificial-intelligence.ko.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="인공지능 — Civil Hub">
+<meta property="og:description" content="인공지능은 인지하고 추론하며 학습하는 시스템을 만드는 공학이다. 이 페이지에서는 탐색, 지식 표현, 학습, 신경망, 생성 모델, 그리고 이를 정직하게 평가하는 방법을 다룬다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/artificial-intelligence.ko.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="artificial-intelligence.html" data-alt-zh-hant="artificial-intelligence.zh-Hant.html" data-alt-ja="artificial-intelligence.ja.html" data-alt-ko="artificial-intelligence.ko.html" data-page-lang="ko" data-root="../" data-total="42" data-page="library" data-content-lang="ko">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">인공지능</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">컴퓨팅</p>
+          <h1>인공지능</h1>
+          <p class="subject-sub">공학에서의 탐색, 학습 및 생성 모델</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>컴퓨팅</li><li><b data-i18n="subject.read">Read</b>9 분</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>8</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">AI가 엔지니어에게 요구하는 것</a></li><li><a href="#sec-2">탐색: 목표에서 경로로</a></li><li><a href="#sec-3">지식 표현</a></li><li><a href="#sec-4">머신러닝: 매핑 학습</a></li><li><a href="#sec-5">신경망과 딥러닝</a></li><li><a href="#sec-6">생성 모델</a></li><li><a href="#sec-7">평가는 설계의 일부</a></li><li><a href="#sec-8">책임 있는 AI와 전문가적 판단</a></li><li><a href="#sec-9">프롬프트 엔지니어링</a></li><li><a href="#sec-10">생성 미디어: 이미지, 오디오, 비디오</a></li><li><a href="#sec-11">코드 생성과 그 한계</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">인공지능은 인지하고 추론하며 학습하는 시스템을 만드는 공학이다. 이 페이지에서는 탐색, 지식 표현, 학습, 신경망, 생성 모델, 그리고 이를 정직하게 평가하는 방법을 다룬다.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="artificial-intelligence" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>AI가 엔지니어에게 요구하는 것</h2>
+  <div class="body"><p>AI는 하나의 알고리즘이 아니라 불확실성 속에서 행동하기 위한 방법들의 집합이다. 고전적인 틀은 <strong>인지</strong>, <strong>추론</strong>, <strong>학습</strong>, <strong>행동</strong>을 구분하고, 시스템이 무엇을 결정해야 하는지, 무엇을 관찰할 수 있는지, 틀렸을 때 어떤 비용이 드는지를 묻는다.</p>
+<p>배포된 AI의 대부분은 <strong>좁은(narrow)</strong> AI다. 한 가지 작업에는 뛰어나지만 전이하지 못한다. 이는 결함이 아니라 설계 범위이며, 이를 문서로 남기는 것이 첫 번째 공학적 결정이다.</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>탐색: 목표에서 경로로</h2>
+  <div class="body"><p>많은 문제는 <strong>상태 공간</strong>으로 제시된다. 상태, 행동, 시작점, 목표, 그리고 단계당 비용이 그것이다.</p>
+<ul>
+<li><strong>너비 우선</strong> 탐색은 최소 단계 수를 찾는다.</li>
+<li>깊이 우선 탐색은 메모리를 절약하지만 헤맬 수 있다.</li>
+<li>균일 비용 탐색은 가장 저렴한 접두부를 먼저 확장한다.</li>
+<li><strong>A*</strong>는 남은 비용에 대한 휴리스틱 추정치를 더한다.</li>
+</ul>
+<p>휴리스틱이 결코 과대평가하지 않는다면, 즉 <strong>허용 가능(admissible)</strong>하다면, A*는 모든 것을 탐색하지 않고도 최소 비용 경로를 반환한다. 휴리스틱이 곧 설계의 전부다. 너무 약하면 거의 장님과 같고, 너무 낙관적이면 최적성을 잃는다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">A* 평가 함수</span>
+      <div class="formula-expr formula-math">\[f(n) = g(n) + h(n)\]</div>
+      <span class="formula-note">g는 시작점으로부터의 비용, h는 목표까지의 추정 비용</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>지식 표현</h2>
+  <div class="body"><p>추론 시스템은 조작할 수 있는 세계의 모델이 필요하다.</p>
+<ul>
+<li><strong>논리</strong>는 사실과 규칙을 표현하고 결론을 기계적으로 도출한다.</li>
+<li><strong>프레임</strong>과 의미망은 객체를 중심으로 속성을 묶는다.</li>
+<li><strong>온톨로지</strong>와 지식 그래프는 공유 어휘를 정하여 서로 다른 시스템이 같은 용어로 같은 의미를 갖게 한다.</li>
+</ul>
+<p>공학 지식은 지저분하고 불확실하다. 확률적 모델, 신뢰도를 지닌 규칙, 명시적 가정은 알려지지 않은 것을 기록하며, 이는 아는 것만큼이나 중요하다.</p></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>머신러닝: 매핑 학습</h2>
+  <div class="body"><p>지도 학습 모델은 예제를 사용하여 특징에서 레이블로의 매핑을 학습한다. 데이터는 훈련, 검증, 테스트 세트로 나뉘며, 테스트 세트는 <strong>일반화</strong>를 추정하기 위해 마지막에 한 번만 사용된다.</p>
+<p>훈련 데이터에는 맞지만 새 데이터에서 실패하는 모델은 <strong>과적합</strong>이다. 해결책은 복잡성이 아니라 규율이다. 대표성 있는 데이터, 정규화, 더 단순한 모델, 그리고 테스트 점수를 몰래 조정하지 않는 검증 루프가 필요하다. 항상 단순 기준선(naive baseline)을 보고하라.</p></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>신경망과 딥러닝</h2>
+  <div class="body"><p>단일 인공 뉴런은 입력의 가중 합에 편향을 더하고 그 결과를 비선형 <strong>활성화 함수</strong>에 통과시킨다. 층을 쌓으면 복잡한 관계를 표현할 수 있다.</p>
+<p>훈련은 <strong>손실</strong>을 줄이도록 가중치를 조정하며, 일반적으로 <strong>역전파</strong>가 모든 가중치의 기울기를 제공하는 경사 하강법을 사용한다.</p>
+<p>깊이는 초기 층이 일반적인 특징을 학습하고 후기 층이 이를 결합하기 때문에 도움이 된다. 동시에 최적화를 어렵게 하고, 데이터 요구를 키우며, 동작을 덜 해석 가능하게 만든다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">인공 뉴런</span>
+      <div class="formula-expr formula-math">\[a = \varphi\left(\sum_i w_i x_i + b\right)\]</div>
+      <span class="formula-note">φ는 ReLU나 시그모이드 같은 비선형 활성화 함수</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">경사 하강법 갱신</span>
+      <div class="formula-expr formula-math">\[w \leftarrow w - \eta \frac{\partial L}{\partial w}\]</div>
+      <span class="formula-note">η는 학습률이며, 기울기는 역전파에서 나온다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>생성 모델</h2>
+  <div class="body"><p><strong>생성 모델</strong>은 훈련 데이터의 분포를 학습하고 새로운 샘플을 생성한다.</p>
+<ul>
+<li>대규모 언어 모델은 선행 토큰으로부터 다음 토큰을 예측하므로, 생성은 반복된 예측이다.</li>
+<li><strong>확산(diffusion)</strong> 모델은 훈련 중 데이터에 노이즈를 더하고, 샘플링 시 그 과정을 역으로 학습한다.</li>
+</ul>
+<p>생성은 회상이 아니라 샘플링이다. 이것이 유창함과 <strong>환각(hallucination)</strong>을 설명한다. 그럴듯한 연속은 참인 연속이 아니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">자기회귀 생성</span>
+      <div class="formula-expr formula-math">\[p(x_1, \ldots, x_T) = \prod_{t=1}^{T} p(x_t \mid x_{&lt;t})\]</div>
+      <span class="formula-note">시퀀스의 확률은 한 번에 한 토큰씩 구성된다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>평가는 설계의 일부</h2>
+  <div class="body"><p>모델은 그것을 판단하는 데 사용된 증거만큼만 좋다. 데이터를 정직하게 분할하고, 홀드아웃 세트를 유지하며, 오류 비용에 맞는 지표를 선택하라.</p>
+<p>결함 탐지에서 <strong>정밀도</strong>는 표시된 결함 중 실제 결함이 얼마나 되는지를 묻고, <strong>재현율</strong>은 실제 결함 중 얼마나 발견되었는지를 묻는다. 항상 결함 없음이라고 말하는 높은 정확도의 모델은 쓸모없다.</p>
+<p>평가는 지연 시간, 입력 변화에 대한 견고성, 보정(calibration), 테스트 데이터 누출도 포함한다. 생성 출력은 사전에 기준을 고정한 루브릭 기반 인간 평가가 필요하다.</p></div><div class="table-wrap"><table><caption>평가 지표와 각 지표가 숨길 수 있는 실패</caption><thead><tr><th scope='col'>지표</th><th scope='col'>답하는 질문</th><th scope='col'>숨겨지는 실패</th></tr></thead><tbody><tr><td>정확도</td><td>전체 사례 중 올바르게 레이블된 비율</td><td>희귀 클래스에서의 실패</td></tr><tr><td>정밀도</td><td>표시된 사례 중 실제로 맞은 비율</td><td>놓친 참 양성</td></tr><tr><td>재현율</td><td>실제 사례 중 발견된 비율</td><td>오경보</td></tr><tr><td>F1 점수</td><td>정밀도와 재현율의 균형</td><td>참 음성, 그리고 각 오류의 비용</td></tr><tr><td>보정</td><td>예측 확률이 결과와 일치하는가</td><td>자신 있지만 틀린 답변</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>책임 있는 AI와 전문가적 판단</h2>
+  <div class="body"><p>AI 배포는 결과를 수반하는 전문적 행위다.</p>
+<ul>
+<li><strong>책임</strong>은 모델이 제안했더라도 엔지니어에게 남는다.</li>
+<li>훈련 데이터의 편향은 결정의 편향이 된다.</li>
+<li>개인 데이터에는 적법한 근거가 필요하다.</li>
+<li>생성 콘텐츠는 권리를 침해하거나 증거로 오인될 수 있다.</li>
+</ul>
+<p>통제 수단은 안전 공학에서 익숙하다. 데이터와 모델을 문서화하고, 실제 사용할 모집단에서 테스트하며, 고위험 출력에는 인간 결정 지점을 두고, 배포 후 모니터링하며, 시스템을 설명하고 철회할 수 있어야 한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">결정의 기대 비용</span>
+      <div class="formula-expr formula-math">\[E[\text{cost}] = p_{fp} C_{fp} + p_{fn} C_{fn}\]</div>
+      <span class="formula-note">결정 임계값은 두 오류의 상대적 비용을 반영해야 한다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>프롬프트 엔지니어링</h2>
+  <div class="body"><p>언어 모델의 출력 품질은 <strong>프롬프트</strong>에 의해 결정된다. 프롬프트는 생성 전에 주어지는 지시, 맥락, 예제다.</p>
+<ul>
+<li>효과적인 프롬프트는 작업과 대상 독자에 대해 구체적이다.</li>
+<li>모호한 힌트 대신 데이터와 예제를 제공하라.</li>
+<li>원하는 출력 형식을 명시하라.</li>
+<li>하지 말아야 할 것이 아니라 해야 할 것을 설명하라.</li>
+<li>모델에 역할(검토자, 튜터, 현장 엔지니어)을 부여하면 사용할 어휘가 정해진다.</li>
+</ul>
+<p><strong>사고 연쇄(chain-of-thought) 프롬프팅</strong>은 답하기 전에 중간 단계를 거치도록 요청하며, 산술과 다단계 추론을 측정 가능하게 개선한다. <strong>온도(temperature)</strong>는 샘플링 무작위성을 제어한다. 낮은 값은 가장 확률 높은 토큰을 반복하여 결정적이고 안전한 출력을 주고, 높은 값은 유창함을 다양성과 환각으로 맞바꾼다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">온도 스케일 소프트맥스</span>
+      <div class="formula-expr formula-math">\[p(w_i) = \frac{e^{z_i/T}}{\sum_j e^{z_j/T}}\]</div>
+      <span class="formula-note">T → 0이면 가장 가능성 높은 토큰을 선택하고, T가 클수록 분포가 평탄해진다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>생성 미디어: 이미지, 오디오, 비디오</h2>
+  <div class="body"><p><strong>확산</strong> 모델은 점진적으로 노이즈를 더하는 과정을 역으로 학습하여 이미지를 생성한다. 샘플링은 순수 노이즈에서 시작하여 텍스트 설명이나 다른 조건에 이끌려 단계별로 노이즈를 제거한다. 오디오 모델은 음성과 음악을 위해 파형이나 스펙트로그램에 같은 아이디어를 적용하며, 비디오 생성은 추가로 연속 프레임의 일관성을 유지해야 한다.</p>
+<p>생성 미디어는 기본적으로 증거가 없는 것으로 취급하라. 합성 얼굴과 음성은 생산하기 쉽고 사람이 탐지하기 어렵다. 검증은 출처(워터마크, 서명된 메타데이터, 탐지 도구)와 라벨링 같은 프로세스 통제에 의존하며, 시청자에게 가짜를 찾아내라고 요구하는 것에 의존하지 않는다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">확산 훈련 목표</span>
+      <div class="formula-expr formula-math">\[L = \mathbb{E}\left\lVert \varepsilon - \varepsilon_\theta(x_t, t) \right\rVert^2\]</div>
+      <span class="formula-note">네트워크는 손상된 샘플에 더해진 노이즈 ε를 예측하도록 학습한다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>코드 생성과 그 한계</h2>
+  <div class="body"><p>대규모 언어 모델은 자연어, 부분 프로그램, 실행 예제로부터 코드를 작성하며, 코딩 어시스턴트는 탭 완성과 채팅 기반 편집을 결합한다.</p>
+<ul>
+<li>상용구, 정규식, 테스트 스캐폴딩에 강하다.</li>
+<li>맥락이 길거나, 라이브러리가 생소하거나, 정답이 모델이 본 적 없는 사실에 의존할 때 약하다.</li>
+</ul>
+<p><strong>pass@k</strong>는 표준 측정치다. k번의 생성 시도 중 적어도 하나가 제공된 모든 테스트를 통과할 확률이다. 따라서 평가는 테스트 스위트만큼만 좋다. 컴파일되는 코드도 여전히 틀릴 수 있다. 생성된 코드는 인간 코드와 똑같이 검토하라. 테스트를 실행하고, 환각된 라이브러리 함수를 확인하며, 안전에 관련된 모든 것에는 인간 책임자를 두라.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Pass@k</span>
+      <div class="formula-expr formula-math">\[\text{pass@}k = 1 - (1 - p)^k\]</div>
+      <span class="formula-note">p는 한 샘플이 통과할 확률이며, 시도가 많을수록 확률은 오르지만 연산 비용이 든다</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>환각된 API</b>
+  생성된 코드는 존재하지 않는 함수나 라이브러리를 호출할 수 있다. 신뢰하기 전에 테스트 하네스에서 실행하고, 자격 증명이나 개인 데이터를 공개 모델에 절대 붙여넣지 마라.
+</div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>허용 가능 휴리스틱</dt><dd>남은 비용의 추정치가 실제 비용을 결코 초과하지 않게 하는 것으로, A* 탐색의 최적성을 유지한다.</dd></div><div class="term"><dt>과적합</dt><dd>훈련 데이터에 너무 밀접하게 맞추어 새롭고 보지 못한 데이터에서의 성능이 떨어지는 것.</dd></div><div class="term"><dt>정밀도</dt><dd>모델이 표시한 사례 중 실제로 양성인 비율.</dd></div><div class="term"><dt>환각</dt><dd>유창하고 그럴듯하지만 근거가 없거나 거짓인 생성 콘텐츠.</dd></div><div class="term"><dt>확산 모델</dt><dd>점진적 노이즈 추가 과정을 역으로 학습하여 샘플을 생성하는 생성 모델.</dd></div><div class="term"><dt>일반화</dt><dd>모델이 훈련받지 않은 데이터에서의 성능으로, 홀드아웃 테스트 세트로 추정한다.</dd></div><div class="term"><dt>프롬프트 엔지니어링</dt><dd>언어 모델이 원하는 출력을 생성하도록 지시, 맥락, 예제를 설계하는 것.</dd></div><div class="term"><dt>온도</dt><dd>토큰 확률을 스케일링하는 샘플링 매개변수로, 낮은 값은 결정적이고 높은 값은 더 다양하다.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>결함 탐지기의 혼동 행렬 읽기</h2>
+        <p class="problem">비전 모델을 500장의 검사 이미지로 테스트한다. 결함 있는 패널 92개를 올바르게 표시하고, 정상 패널 362개를 올바르게 통과시킨다. 정상 패널 18개를 잘못 표시하고, 결함 패널 28개를 놓친다. 정확도, 정밀도, 재현율을 계산하고, 정확도만으로는 왜 오해를 부르는지 설명하라.</p>
+        <ol><li>혼동 행렬: TP = 92, FP = 18, FN = 28, TN = 362, 총 500장.</li><li>정확도 = (TP + TN) / 전체 = (92 + 362) / 500 = 454 / 500 = 0.908, 즉 90.8퍼센트.</li><li>정밀도 = TP / (TP + FP) = 92 / 110 = 0.836, 즉 83.6퍼센트.</li><li>재현율 = TP / (TP + FN) = 92 / 120 = 0.767, 즉 76.7퍼센트.</li><li>F1 = 2PR / (P + R) = 2 × 0.836 × 0.767 / (1.603) = 0.80.</li><li>기준선 확인: 항상 정상이라고 말하는 모델은 아무것도 탐지하지 못하면서 380 / 500 = 76퍼센트 정확도를 기록하므로, 정확도만으로는 불균형 데이터 세트에서 모델을 실제보다 좋게 보이게 한다.</li></ol>
+        <div class="answer"><b>Answer</b>정확도는 90.8퍼센트, 정밀도는 83.6퍼센트, 재현율은 76.7퍼센트이며 F1은 약 0.80이다. 결함 패널 네 개 중 하나꼴로 놓치므로, 안전 관련 검사 작업에서는 재현율을 높이도록 임계값을 옮기고 오경보 비용을 놓친 결함 비용과 견주어 저울질해야 한다.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>어떤 탐색 알고리즘을 논하기 전에 상태 공간, 행동, 단계 비용을 적어라.</li><li>정밀도와 재현율은 데이터 세트와 분할과 함께 제시하라. 어느 숫자도 단독으로는 의미가 없다.</li><li>책임 있는 AI 질문에서는 책임 있는 인간을 명시하고 감독 단계가 어디에 있는지 밝혀라.</li><li>무엇이든 생성하기 전에 평가 루브릭을 고정하고, 생성된 출력을 블라인드로 그에 비추어 점수화하라. 품질에 대한 인상은 지표가 아니다.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q01</span><span>허용 가능한 휴리스틱은 A* 탐색이 다음을 보장한다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>노드를 하나 이상 확장하지 않는다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>최소 비용 경로를 반환한다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>어떤 다른 탐색보다 빠르게 실행된다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>목표 테스트 없이 경로를 찾는다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>휴리스틱이 남은 비용을 결코 과대평가하지 않으면 A*는 더 저렴한 경로를 버리도록 오도되지 않으므로 최적성을 유지한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>분류기가 훈련 데이터에서 99퍼센트, 테스트 세트에서 62퍼센트를 기록한다. 이를 가장 잘 설명하는 것은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>과소적합</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>과적합</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>테스트 세트로의 데이터 누출</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>완벽하게 보정된 모델</span></button></div>
+    <div class="quiz-explain"><b>Why</b>훈련과 테스트 성능 사이의 큰 격차는 과적합의 특징이다. 모델이 일반화하지 않고 암기한 것이다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>확산 모델이 샘플을 생성하는 방법은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>손으로 작성한 고정 규칙 집합을 적용한다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>훈련 데이터를 레이블로 정렬한다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>가장 가까운 훈련 예제를 검색한다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>데이터에 노이즈를 더하는 과정을 역으로 수행한다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>확산 모델은 노이즈 제거를 학습하며, 샘플링은 노이즈에서 시작하여 훈련 시의 손상 과정을 단계별로 역으로 수행한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>테스트 세트는 언제 사용해야 하는가?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>특징을 선택하기 위해 훈련 전에</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>훈련 세트가 너무 작을 때만</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>튜닝을 안내하기 위해 매 훈련 실행 후</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>일반화의 최종 추정을 위해 한 번</span></button></div>
+    <div class="quiz-explain"><b>Why</b>테스트 세트를 반복 사용하면 모델 선택에 정보가 누출되어 보고된 성능이 부풀려진다. 튜닝은 검증 데이터가 안내해야 한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q05</span><span>언어 모델의 샘플링 온도를 높이면 출력이:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>더 다양해지고 덜 결정적이 된다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>더 길어지지만 그 외에는 동일하다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>사실임이 보장된다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>더 빠르게 생성된다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>온도는 토큰 확률 분포를 평탄하게 만들어 가능성이 낮은 토큰이 더 자주 샘플링되므로 출력이 더 다양해진다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>다단계 추론 답변을 가장 직접적으로 개선하는 프롬프트 관행은?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>최종 답변 전에 단계를 거치도록 모델에 요청한다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>요청을 전부 대문자로 작성한다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>질문을 두 번 반복한다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>모델이 편향되지 않도록 예제를 생략한다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>사고 연쇄 프롬프팅은 중간 추론을 보여주므로 산술 및 다단계 작업에서 오류를 줄인다.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.ko.html"><span>Computing</span><b>AI와 데이터 분석</b></a><a class="related-card" href="machine-learning.ko.html"><span>Computing</span><b>머신러닝</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="service-learning.ko.html"><small>Previous</small><b>서비스 러닝</b></a><a class="next" href="design-of-transport-infrastructure.ko.html"><small>Next</small><b>교통 인프라 설계</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">A*는 h가 결코 과대평가하지 않을 때만 최적이다.</p><p class="margin-note">테스트 데이터는 한 번만 사용한다.</p><p class="margin-note">환각은 자신감 있는 연속이다.</p><p class="margin-note">정확도는 희귀한 실패를 숨긴다.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

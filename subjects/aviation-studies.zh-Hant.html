@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>航空與基礎設施 — Civil Hub</title>
+<meta name="description" content="飛機如何飛行，以及支援飛機的地面系統如何被工程設計：四種力、升力與失速、跑道與客運大樓限制、航空交通間隔，以及業界的環境考量。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/aviation-studies.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="航空與基礎設施 — Civil Hub">
+<meta property="og:description" content="飛機如何飛行，以及支援飛機的地面系統如何被工程設計：四種力、升力與失速、跑道與客運大樓限制、航空交通間隔，以及業界的環境考量。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/aviation-studies.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="aviation-studies.html" data-alt-zh-hant="aviation-studies.zh-Hant.html" data-alt-ja="aviation-studies.ja.html" data-alt-ko="aviation-studies.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">航空與基礎設施</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">通識</p>
+          <h1>航空與基礎設施</h1>
+          <p class="subject-sub">飛行原理與機場工程設計</p>
+          <ul class="subject-facts"><li><b>類型</b>通識</li><li><b>閱讀</b>6 分鐘</li><li><b>章節</b>9</li><li><b>公式</b>7</li><li><b>測驗</b>5</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M60 104 L210 88 L286 104 L210 112 L182 104" stroke="currentColor" stroke-width="1.4"/><path d="M150 96 L172 62 L184 64 L170 98" stroke="currentColor" stroke-width="1.2"/><path d="M40 156 L300 132 M60 170 L300 150" stroke="var(--line)" stroke-width="1"/><path d="M64 158 h30 M120 154 h22 M180 148 h26 M240 142 h20" stroke="var(--faint)" stroke-width="1.2"/><circle cx="272" cy="52" r="26" stroke="var(--accent)" stroke-width="1.1"/><text x="170" y="188" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">FLIGHT & AIRPORTS</text></svg>
+          <figcaption>Flight path and runway approach</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">四力平衡</a></li><li><a href="#sec-2">攻角與失速</a></li><li><a href="#sec-3">導航輔助設施與儀器進場</a></li><li><a href="#sec-4">駕駛艙及其儀器</a></li><li><a href="#sec-5">機場是工程系統</a></li><li><a href="#sec-6">跑道標誌、燈光與空域</a></li><li><a href="#sec-7">航空交通管理與安全</a></li><li><a href="#sec-8">航空為何在經濟上重要</a></li><li><a href="#sec-9">環境考量</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">飛機如何飛行，以及支援飛機的地面系統如何被工程設計：四種力、升力與失速、跑道與客運大樓限制、航空交通間隔，以及業界的環境考量。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="aviation-studies" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>四力平衡</h2>
+  <div class="body"><p>飛行是四種力的平衡：向上的<strong>升力</strong>、向下的重量、沿飛行路徑的推力，以及與之對抗的阻力。在穩定水平巡航中，升力等於重量，推力等於阻力；任何不平衡都會改變速度、高度或兩者。</p>
+<ul>
+<li>升力隨空氣密度、空速平方及機翼面積增加。</li>
+<li>密度隨高度下降，並在冷空氣中上升。</li>
+<li>因此跑道性能取決於當日的溫度和氣壓，而不僅僅是飛機本身。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">升力</span>
+      <div class="formula-expr formula-math">\[L = \frac{1}{2} \rho V^2 S C_L\]</div>
+      <span class="formula-note">ρ 密度，V 空速，S 面積，C_L 升力係數</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">穩定水平飛行</span>
+      <div class="formula-expr formula-math">\[L = W, \quad T = D\]</div>
+      <span class="formula-note">W 重量，T 推力，D 阻力</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">阻力</span>
+      <div class="formula-expr formula-math">\[D = \frac{1}{2} \rho V^2 S C_D\]</div>
+      <span class="formula-note">C_D 阻力係數；總阻力包括寄生阻力和誘導阻力</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>攻角與失速</h2>
+  <div class="body"><p><strong>攻角</strong>是機翼弦線與迎面氣流之間的角度。升力隨攻角增加而上升，直至氣流無法再沿上表面流動；超過臨界攻角後，機翼<strong>失速</strong>，升力急劇下降。失速關乎角度，而非速度。</p>
+<ul>
+<li>襟翼和縫翼以額外阻力為代價提高低速升力，因此巡航時會收起。</li>
+<li><strong>誘導阻力</strong>隨速度上升而下降，因為產生相同升力所需的攻角較小。</li>
+<li>因此總阻力在某個速度下達到最低，此時升阻比最高，航程最長。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">升阻比</span>
+      <div class="formula-expr formula-math">\[\frac{L}{D} = \frac{C_L}{C_D}\]</div>
+      <span class="formula-note">在靜風中最佳航程速度時達到最大</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>導航輔助設施與儀器進場</h2>
+  <div class="body"><p>飛機透過一系列輔助設施導航：</p>
+<ul>
+<li><strong>VOR</strong> 發射方位，讓接收器保持某一徑向線。</li>
+<li><strong>DME</strong> 提供距離。</li>
+<li>衛星導航可在任何地方確定位置，無需地面站。</li>
+<li><strong>儀器降落系統</strong>以定位器和下滑道波束引導最後進場，直至跑道入口。</li>
+</ul>
+<p>儀器進場是一個編排好的程序：到場航線接入公布的進場程序，飛機截取定位器和下滑道，並在固定高度通過穩定檢查點檢查速度和構型。若在決斷高度仍看不見跑道，則放棄進場並按設計的復飛程序飛行。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">儀器進場程序</span>
+      <div class="formula-expr formula-text">arrival → approach procedure → localiser intercept → glide slope → decision height</div>
+      <span class="formula-note">由固定檢查點穩定；復飛是設計好的路徑，而非失敗</span>
+    </div></div><div class="table-wrap"><table><caption>導航輔助設施比較</caption><thead><tr><th scope='col'>輔助設施</th><th scope='col'>提供的資訊</th><th scope='col'>限制</th></tr></thead><tbody><tr><td>VOR</td><td>從地面信標獲取方位</td><td>視線範圍、站點網絡</td></tr><tr><td>DME</td><td>至電台的斜距</td><td>需要同址信標</td></tr><tr><td>GNSS</td><td>透過衛星在任何地方定位</td><td>信號脆弱性、完整性檢查</td></tr><tr><td>ILS</td><td>引導至觸地的橫向和垂直指引</td><td>每個跑道端成本高昂</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>駕駛艙及其儀器</h2>
+  <div class="body"><p>六個基本儀器告訴飛行員飛機的狀態，按經典的<strong>T形排列</strong>佈置：空速錶、姿態儀、高度錶和升降速度錶橫排於上方，航向和轉彎協調儀則在下方。現代玻璃駕駛艙將它們合併到屏幕上，但底層的物理量不變：速度、姿態、高度、升降率、航向和轉彎。</p>
+<p>這些儀器基於不同的物理原理運作——空速用皮托管壓力、高度用靜壓、姿態和航向用陀螺儀——而這種獨立性很重要。當一個儀器與其他儀器不一致時，飛行員會交叉核對，而非信任那個異常的儀器；掃描、解讀、核實是整個儀錶板的紀律。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">六個基本儀器的T形排列</span>
+      <div class="formula-expr formula-text">airspeed · attitude · altitude · vertical speed · heading · turn</div>
+      <span class="formula-note">每次儀器掃描都必須涵蓋的六個基本物理量</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>機場是工程系統</h2>
+  <div class="body"><p>機場分隔兩股流：<strong>空側</strong>的飛機——跑道、滑行道和停機坪——以及陸側的人員和貨物，即客運大樓、道路通道和行李系統。保安和邊境管制位於分界線上。</p>
+<ul>
+<li>跑道方向跟隨盛行風，因為飛機逆風起飛和降落。</li>
+<li>跑道長度由要求最高的機型和最惡劣的條件決定：高海拔、高溫、濕滑表面和進場障礙物都會使其延長。</li>
+<li>容量很少是單一數字：跑道起降架次、停機位、登機櫃檯和行李輸送帶各自構成限制，而機場容量取最緊缺的一項。</li>
+</ul></div><div class="table-wrap"><table><caption>機場組成部分及其限制</caption><thead><tr><th scope='col'>組成部分</th><th scope='col'>用途</th><th scope='col'>典型限制</th></tr></thead><tbody><tr><td>跑道</td><td>起飛和降落</td><td>長度、風、間隔</td></tr><tr><td>滑行道</td><td>通往停機坪的移動</td><td>高峰擁堵</td></tr><tr><td>停機位</td><td>停泊和服務</td><td>閘口可用性</td></tr><tr><td>客運大樓</td><td>旅客處理</td><td>登機、保安、邊境</td></tr><tr><td>行李系統</td><td>分揀和運送</td><td>輸送帶容量、轉運時間</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>跑道標誌、燈光與空域</h2>
+  <div class="body"><p>跑道既是一個視覺系統，也是一個物理系統：</p>
+<ul>
+<li>標誌標識入口、中線、接地帶和瞄準點。</li>
+<li>燈光引導進場，並以飛行員解讀為位置的顏色顯示邊緣、中線和末端。</li>
+<li>標誌和漆畫的等待點使飛機停在活躍跑道周圍保護區之外。</li>
+</ul>
+<p>在機場周圍，<strong>空域</strong>劃分為受管制和非管制類別，具有規定的服務和進入規則，標準離場和到場航線將跑道連接到航路網絡。標誌、燈光和空域的存在，都是為了讓一位飛行員的意圖無需無線電通話就能被其他人理解。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">跑道視覺環境</span>
+      <div class="formula-expr formula-text">markings → lighting → signs → holding points → protected surfaces</div>
+      <span class="formula-note">使位置和許可從駕駛艙可讀的層次</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>航空交通管理與安全</h2>
+  <div class="body"><p><strong>航空交通管制</strong>透過分配航線、高度和時間，利用雷達和衛星監視使飛機保持間隔。間隔標準是核心概念：兩架飛機絕不能同時佔用同一空域。</p>
+<p>流量管理透過在地面延誤起飛而非在空中等待來平滑高峰；時隙分配稀缺的跑道時間。安全透過報告而非指責來管理。事件被記錄、趨勢被分析、程序被修改，使健康的系統在接近失誤變成事故之前從中學習。</p></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>航空為何在經濟上重要</h2>
+  <div class="body"><p>航空運輸按重量計只承運少量世界貨運，但按價值計則很多，因為它運送緊急、高價值和易腐貨物。對旅客而言，它壓縮了距離，支持旅遊、商務旅行和跨國家庭聯繫。</p>
+<ul>
+<li>航空直接支持就業，包括機組和地勤人員，並透過製造、物流和旅遊業間接支持就業。</li>
+<li>對某些地區而言，連通性是參與全球經濟與處於邊緣之間的差別。</li>
+<li>樞紐機場透過將中轉交通集中到幾波航班來放大這一點。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>環境考量</h2>
+  <div class="body"><p>航空產生約佔全球二氧化碳排放2–3%，而其非碳影響——氮氧化物、凝結跡和雲形成——增加了氣候影響。<strong>噪音</strong>是另一項本地負擔，在飛行路徑下方感受最為明顯。</p>
+<p>槓桿是效率、燃料和運作：</p>
+<ul>
+<li>較新的發動機和機體每座公里燃燒更少。</li>
+<li><strong>可持續航空燃料</strong>可大幅減少生命周期碳，但仍然稀缺且昂貴。</li>
+<li>更好的航線規劃、連續下降和減少滑行可在無需新硬件的情況下節省燃料。</li>
+<li>機場透過能源、水、廢物和地面交通作出貢獻。</li>
+</ul>
+<p>每位乘客的排放下降，而總交通量上升，因此絕對排放取決於兩者。</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>升力</dt><dd>垂直於氣流、支撐飛機飛行的空氣動力。</dd></div><div class="term"><dt>攻角</dt><dd>機翼弦線與迎面氣流之間的角度。</dd></div><div class="term"><dt>失速</dt><dd>當攻角超過臨界值時升力突然喪失。</dd></div><div class="term"><dt>誘導阻力</dt><dd>產生升力時作為副產品產生的阻力；隨速度上升而下降。</dd></div><div class="term"><dt>空側</dt><dd>機場保安範圍以外、飛機、跑道和停機坪所在的部分。</dd></div><div class="term"><dt>可持續航空燃料</dt><dd>由非化石原料製成的即用型燃料，可降低生命周期碳排放。</dd></div><div class="term"><dt>VOR</dt><dd>一種地面無線電信標，讓飛機讀取並保持方位，是經典的航路導航輔助設施之一。</dd></div><div class="term"><dt>儀器降落系統</dt><dd>提供橫向和垂直指引的無線電波束，沿精確進場引導至跑道入口。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>估算起飛升力</h2>
+        <p class="problem">一架飛機的機翼面積為120 m²，抬輪時升力係數為1.2。在某日空氣密度為1.20 kg/m³時，它以80 m/s的真空速抬輪。估算升力，並與質量56 000 kg的飛機重量比較（取 g = 9.81 m/s²）。</p>
+        <ol><li>應用升力方程：L = ½ ρ V² S C_L = 0.5 × 1.20 × 80² × 120 × 1.2。</li><li>分步計算：80² = 6400，然後 0.5 × 1.20 × 6400 = 3840 N/m² 的機翼面積係數，所以 3840 × 120 × 1.2 = 552 960 N。</li><li>計算重量：W = m g = 56 000 × 9.81 = 549 360 N，約549 kN。</li><li>比較：升力約553 kN，而重量約549 kN，盈餘狹窄。</li><li>合理性檢查：在較低密度下，例如炎熱高海拔的日子，相同速度會產生較少升力，這正是起飛距離增加的原因。</li></ol>
+        <div class="answer"><b>Answer</b>升力約553 kN，僅略高於飛機約549 kN的重量，因此它可以在很小的餘量下離地；這個餘量正是起飛性能對密度、質量和速度敏感的原因。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>在任何計算之前畫出四種力，並說明在給定飛行條件下哪兩對力平衡。</li><li>在性能問題中，檢查空氣密度是否變化：高度、溫度和濕度都會改變升力和跑道長度。</li><li>對於可持續性問題，將每位乘客的排放與總排放分開，因為這兩種趨勢可能朝相反方向發展。</li><li>在描述限制時區分空側和陸側，並指出實際瓶頸，而非列出每個組成部分。</li><li>每當問題問為何存在最小阻力速度時，將阻力分為寄生阻力（隨V²上升）和誘導阻力（隨V²下降）。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 5 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q01</span><span>在穩定、水平、等速飛行中，哪對力平衡？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>升力等於阻力，推力等於重量</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>四種力的大小都相等</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>升力等於推力，重量等於阻力</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>升力等於重量，推力等於阻力</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>沒有垂直加速度，也沒有速度變化，因此升力平衡重量，推力平衡阻力。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>翼型失速發生於：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>攻角超過臨界角且氣流分離</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>襟翼為降落而伸出</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>飛機重於其最大著陸重量</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>其速度超過音速</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>超過臨界角後，邊界層分離，升力急劇下降，與空速無關。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>對於給定飛機和載荷，所需跑道長度通常增加當：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>冷天空氣密度上升</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>機場位於高海拔且溫度高</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>跑道乾燥且平坦</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>飛機迎著強逆風起飛</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>更稀薄、更暖的空氣減少升力和推力，因此需要更高的真空速和更長的滑跑。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>儀器降落系統中引導飛機橫向對準跑道中線的部分是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>姿態儀</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>下滑道</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>定位器</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>DME</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>定位器波束定義橫向路徑，下滑道定義垂直路徑；兩者共同構成ILS。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>在給定重量的水平飛行中，總阻力是寄生阻力和誘導阻力之和。隨著速度增加：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>兩者保持不變</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>寄生阻力下降，誘導阻力上升</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>寄生阻力上升，誘導阻力下降</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>兩者一起上升</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>寄生阻力隨速度平方增長，而誘導阻力因所需攻角較小而下降；它們的總和在最佳航程速度時達到最小。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="air-noise-pollution.zh-Hant.html"><span>Environmental</span><b>空氣與噪音污染</b></a><a class="related-card" href="construction-introduction.zh-Hant.html"><span>Core</span><b>建造概論</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="construction-introduction.zh-Hant.html"><small>上一頁</small><b>建造概論</b></a><a class="next" href="advanced-structural-mechanics.zh-Hant.html"><small>下一頁</small><b>高等結構力學</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">升力隨V²增長，因此速度主導。</p><p class="margin-note">失速是角度，不是速度。</p><p class="margin-note">最惡劣的日子決定跑道尺寸。</p><p class="margin-note">每座更少不等於總量更少。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

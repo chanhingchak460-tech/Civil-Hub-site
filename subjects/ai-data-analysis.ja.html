@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIとデータ分析 — Civil Hub</title>
+<meta name="description" content="データの価値は、それに対してどのような問いを立てるかで決まる。このページでは、データセットの記述、回帰直線の当てはめと評価、そして自信ありげな答えを誤りにしてしまう品質上の問題の見つけ方を扱う。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/ai-data-analysis.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="AIとデータ分析 — Civil Hub">
+<meta property="og:description" content="データの価値は、それに対してどのような問いを立てるかで決まる。このページでは、データセットの記述、回帰直線の当てはめと評価、そして自信ありげな答えを誤りにしてしまう品質上の問題の見つけ方を扱う。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/ai-data-analysis.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="ai-data-analysis.html" data-alt-zh-hant="ai-data-analysis.zh-Hant.html" data-alt-ja="ai-data-analysis.ja.html" data-alt-ko="ai-data-analysis.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">AIとデータ分析</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">計算</p>
+          <h1>AIとデータ分析</h1>
+          <p class="subject-sub">データの中にパターンを見つけ、誠実に読み解く</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>計算</li><li><b data-i18n="subject.read">Read</b>8 分</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>12</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">モデルの前にデータ</a></li><li><a href="#sec-2">データセットの要約</a></li><li><a href="#sec-3">相関は傾きでも原因でもない</a></li><li><a href="#sec-4">最小二乗法による直線の当てはめ</a></li><li><a href="#sec-5">当てはめの評価</a></li><li><a href="#sec-6">モデルを正直に検証する</a></li><li><a href="#sec-7">データ品質の落とし穴</a></li><li><a href="#sec-8">出所・バイアス・推論（SBI）</a></li><li><a href="#sec-9">分類：スコアが判断になる</a></li><li><a href="#sec-10">特徴量エンジニアリングとスケーリング</a></li><li><a href="#sec-11">ベースラインと正直な比較</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">データの価値は、それに対してどのような問いを立てるかで決まる。このページでは、データセットの記述、回帰直線の当てはめと評価、そして自信ありげな答えを誤りにしてしまう品質上の問題の見つけ方を扱う。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="ai-data-analysis" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>モデルの前にデータ</h2>
+  <div class="body"><p>分析は、ソフトウェアに何ができるかではなく、何が記録されたかから始まる。各<strong>変数</strong>は測定された特性——圧縮強度、塩化物含有量、分単位の遅延——であり、その型が許される算術を決める：</p>
+<ul>
+<li>名義尺度のラベルは数えることしかできない</li>
+<li>順序尺度は順位付けできる</li>
+<li>間隔尺度の値は差を取れる</li>
+<li>真のゼロを持つのは比率尺度だけ</li>
+</ul>
+<p>工学的データのほとんどは、より大きな母集団からの<strong>標本</strong>であるため、あらゆる要約は推定値である。行がどのように選ばれたかを問うこと。便宜的な標本は、対象そのものと同じくらい標本抽出法を測っている。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>データセットの要約</h2>
+  <div class="body"><p>最初の一巡は記述的で安価である：中心、ばらつき、形状。<strong>平均</strong>はつり合い点、<strong>中央値</strong>は中央の値、<strong>最頻値</strong>は最も頻繁なカテゴリである。ばらつきは、データと同じ単位を持つ標準偏差、または無次元で変数間で比較可能な変動係数として報告する。歪みは平均を長い裾へ引き寄せるが中央値はほとんど動かない。だからこそ修繕費や降雨量は中央値で示される。要約のそばには必ず標本サイズを添えること。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">標本平均</span>
+      <div class="formula-expr formula-math">\[\bar{x} = \frac{\sum x_i}{n}\]</div>
+      <span class="formula-note">n 個の観測値</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">標本標準偏差</span>
+      <div class="formula-expr formula-math">\[s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n - 1}}\]</div>
+      <span class="formula-note">n − 1 は標本サイズを補正する</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">変動係数</span>
+      <div class="formula-expr formula-math">\[\mathrm{CV} = \frac{s}{\bar{x}}\]</div>
+      <span class="formula-note">無次元</span>
+    </div></div><div class="table-wrap"><table><caption>4つの要約統計量と、それぞれが誤解を招く場面</caption><thead><tr><th scope='col'>統計量</th><th scope='col'>要約するもの</th><th scope='col'>誤解を招く場面</th></tr></thead><tbody><tr><td>平均</td><td>すべての値のつり合い点</td><td>極端な値に引っ張られる</td></tr><tr><td>中央値</td><td>順位付け後の中央の値</td><td>ほとんどの値の大きさを無視する</td></tr><tr><td>標準偏差</td><td>平均からの典型的な距離</td><td>対称なばらつきを仮定する</td></tr><tr><td>変動係数</td><td>平均に対する相対的なばらつき</td><td>平均がゼロに近いと不安定になる</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>相関は傾きでも原因でもない</h2>
+  <div class="body"><p>まずプロットする。2つの変数が明瞭な曲線に従っていても、相関係数がゼロ近くになることがある。ピアソン係数 r は線形の関連しか測らないからである。r は単位を持たず、−1 から +1 の範囲をとり、傾きではない：r = 0.9 は x の1単位あたり y がどれだけ変化するかを教えてくれない。相関は因果でもない。第三の要因が両方の変数を動かしているかもしれないし、因果の矢印が逆向きかもしれないし、標本が結果に基づいて選ばれているかもしれない。因果を述べるには、無作為化、対照群、または自然実験が必要である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">ピアソン相関係数</span>
+      <div class="formula-expr formula-math">\[r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \cdot \sum (y_i - \bar{y})^2}}\]</div>
+      <span class="formula-note">−1 ≤ r ≤ +1；線形の関連のみを検出する</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>最小二乗法による直線の当てはめ</h2>
+  <div class="body"><p>単純線形回帰は、各観測値と直線の間の垂直方向の差の二乗和を最小にする直線を選ぶことで ŷ = a + b x を当てはめる。二乗することで正と負の外れを同等に扱い、大きな外れを最も厳しく罰するため、1つの外れ値が当てはめを傾けることがある。傾き b は x が1単位増えるごとの y の予測変化量である。切片 a は x = 0 での予測値であり、測定範囲の外にあることが多く、物理的に無意味なこともある。どちらも単位を添えて示し、外挿した予測をあたかも測定値のように提示してはならない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">最小二乗の傾き</span>
+      <div class="formula-expr formula-math">\[b = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^2}\]</div>
+      <span class="formula-note">x の単位変化あたりの y の変化</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">切片</span>
+      <div class="formula-expr formula-math">\[a = \bar{y} - b\,\bar{x}\]</div>
+      <span class="formula-note">当てはめた直線は ŷ = a + b x</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>当てはめの評価</h2>
+  <div class="body"><p>決定係数 R² は、モデルが説明する y の変動の割合である：1 はすべての点が直線上にあることを、0 はモデルが平均を予測する以上のものではないことを意味する。モデルの形が正しいかどうかは何も語らない——狭い範囲に当てはめた曲線でも高いスコアを出せる。正直な検証は残差プロットである。パターンがあればモデルは誤特定であり、じょうご形なら分散が x とともに変化しており、ごく少数の非常に大きな残差は影響力のある点を示す。R² だけでなく典型的な誤差を報告すること。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">決定係数</span>
+      <div class="formula-expr formula-math">\[R^2 = 1 - \frac{\mathrm{SS}_{\mathrm{res}}}{\mathrm{SS}_{\mathrm{tot}}}\]</div>
+      <span class="formula-note">SS_res = Σ(yᵢ − ŷᵢ)²、SS_tot = Σ(yᵢ − ȳ)²</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>モデルを正直に検証する</h2>
+  <div class="body"><p>モデルは、まだ見ていないデータで性能を発揮して初めて有用である。チューニングの前に<strong>テストセット</strong>を分離するか、標本が小さい場合は交差検証を行う。そうしなければ、モデルは訓練行を丸暗記して優秀に見えることがある。数値予測では、平均絶対誤差または二乗平均平方根誤差を y の単位で報告する。二乗平均平方根は大きな外れをより厳しく罰する。適切に選ばれたテストセットでの低い誤差は証拠であり、訓練セットでの低い誤差は単なる算術である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">二乗平均平方根誤差</span>
+      <div class="formula-expr formula-math">\[\mathrm{RMSE} = \sqrt{\frac{1}{n} \sum (y_i - \hat{y}_i)^2}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>データ品質の落とし穴</h2>
+  <div class="body"><p>モデリングの失敗のほとんどはデータの失敗である。<strong>欠損値</strong>には理由があるかもしれない——しきい値を超えると飽和するセンサーなど——ので、不完全な行を削除すると記述している母集団が静かに変わってしまう。<strong>外れ値</strong>は調査に値する：転記ミスなら修正だが、本物の極端値なら情報である。<strong>リーク</strong>は、予測時には存在しない情報を予測子が含むときに起こり、テストスコアは素晴らしいが実運用では役に立たないモデルになる。単位、重複、変動を隠す丸め、行の順序を確認すること。未来で訓練されたモデルは予測ではない。</p></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>出所・バイアス・推論（SBI）</h2>
+  <div class="body"><p>3つの問いが分析を正直に保つ。<strong>出所</strong>：誰が、どの計器で、どのような条件下で数値を集めたのか？ <strong>バイアス</strong>：この標本が体系的に見落としている物語の部分はどこか——上限のあるセンサー、便宜的な現場、「その他」にまとめられたカテゴリなど？ <strong>推論</strong>：証拠は実際どこまで及ぶのか、推定値のそばに置くべき不確実性は何か？ 最後の問いこそ、試験の答案が忘れがちなものである。10点に当てはめた傾きが支えるのは方向とおおよその大きさであり、精密な予測ではない：標本サイズ、残差誤差、当てはめた範囲を述べること。</p></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>分類：スコアが判断になる</h2>
+  <div class="body"><p>結果がカテゴリ——不良か健全か、合格か不合格か——のとき、モデルはスコアを出力し、しきい値がそれを判断に変える。<strong>ロジスティック回帰</strong>は線形スコアをシグモイドに通して出力を確率にする。しきい値0.5は既定値であり法則ではなく、動かせば一方の誤りと他方の誤りを交換することになる。分類器は精度だけでなく<strong>混同行列</strong>で評価すること。<strong>適合率</strong>は陽性と判定された事例のうち真に陽性である割合であり、<strong>再現率</strong>は真の陽性のうち見つけられた割合である。両者は相反する誤りを罰する。不均衡データでは、何も陽性と判定しないモデルが高い精度を出しながら何も見つけられない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">ロジスティック確率</span>
+      <div class="formula-expr formula-math">\[p = \frac{1}{1 + e^{-s}}, \quad s = b_0 + b_1 x_1 + \cdots\]</div>
+      <span class="formula-note">線形スコア s が0から1の間の確率に写像される</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">適合率と再現率</span>
+      <div class="formula-expr formula-math">\[\mathrm{precision} = \frac{TP}{TP + FP}, \quad \mathrm{recall} = \frac{TP}{TP + FN}\]</div>
+      <span class="formula-note">TP、FP、FN は混同行列から得られる</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>特徴量エンジニアリングとスケーリング</h2>
+  <div class="body"><p>モデルに渡す列がモデルの半分である。<strong>標準化</strong>は変数をゼロ中心にし、標準偏差1に再スケールする。これにより数値の大きい変数が当てはめを支配するのを防ぐ。対数変換はコストや濃度のような右に歪んだ変数をならす。ワンホットエンコーディングは名義カテゴリを指示列に変える。スケーリングとエンコーディングは<strong>訓練セットのみ</strong>から計算した統計量で行い、その後で同一の変換をテストセットに適用する。先に全データでスケーリングすると、テストセットが静かに訓練に漏れ、あらゆる結果が良く見えてしまう。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">標準化</span>
+      <div class="formula-expr formula-math">\[z = \frac{x - \mu}{\sigma}\]</div>
+      <span class="formula-note">μ と σ は訓練セットの平均と標準偏差</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>変換は訓練データのみで当てはめる</b>
+  平均、標準偏差、カテゴリ水準は訓練分割から計算し、テストセットで再利用すること。そうしなければ評価は楽観的になる。
+</div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>ベースラインと正直な比較</h2>
+  <div class="body"><p>モデルは抽象的に良し悪しが決まるのではなく、<strong>ベースライン</strong>と比べて良し悪しが決まる。何かを当てはめる前に、最も単純で擁護できる代替案——過去の平均、前期の値、または1ルールの分類器——を同じテストセットで採点し、モデルのそばに報告する。候補は同一の分割で同一の指標により比較し、単位を文字通りに読むべき場合は<strong>平均絶対誤差</strong>を好む：典型的な外れを直接報告するのに対し、二乗平均平方根誤差はまれな大きな外れを増幅するからである。取るに足らないベースラインに勝てないモデルは、どれほど巧妙でも改善ではない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">平均絶対誤差</span>
+      <div class="formula-expr formula-math">\[\mathrm{MAE} = \frac{1}{n} \sum |y_i - \hat{y}_i|\]</div>
+      <span class="formula-note">y の単位での典型的な誤差</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>残差</dt><dd>観測値と、当てはめたモデルが予測した値との間の垂直方向の差。</dd></div><div class="term"><dt>決定係数</dt><dd>当てはめたモデルが説明する応答変数の変動の割合。</dd></div><div class="term"><dt>最小二乗法</dt><dd>残差の二乗和を最小にすることでパラメータを選ぶ当てはめ規則。</dd></div><div class="term"><dt>標本</dt><dd>実際に測定され、そこから推定が行われる母集団の部分集合。</dd></div><div class="term"><dt>外れ値</dt><dd>データの残りから大きく離れた観測値であり、記録ミスか本物の極端値のいずれかである。</dd></div><div class="term"><dt>データリーク</dt><dd>予測を行わなければならない時点では利用できない情報を含む予測子を使うこと。</dd></div><div class="term"><dt>混同行列</dt><dd>真陽性、偽陽性、偽陰性、真陰性の表で、分類器がどこで誤るかを示す。</dd></div><div class="term"><dt>標準化</dt><dd>通常は訓練セットから取った統計量を用いて、変数を平均ゼロ・標準偏差1に再スケールすること。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>養生時間に対する強度の当てはめ</h2>
+        <p class="problem">小規模な試験で、5つの材齢における x 日間の養生後のコンクリート強度 y（MPa）を測定した：(1, 10)、(2, 12)、(3, 15)、(4, 18)、(5, 20)。最小二乗直線を当てはめ、R² を求め、傾きを解釈せよ。</p>
+        <ol><li>要約：Σx = 15 より x̄ = 3 日；Σy = 75 より ȳ = 15 MPa。</li><li>平均からの偏差より Σ(xᵢ − x̄)² = 4 + 1 + 0 + 1 + 4 = 10、Σ(xᵢ − x̄)(yᵢ − ȳ) = 10 + 3 + 0 + 3 + 10 = 26。</li><li>傾き：b = 26 / 10 = 2.60 MPa/日。切片：a = ȳ − b x̄ = 15 − 2.60 × 3 = 7.2 MPa、よって ŷ = 7.2 + 2.60x。</li><li>予測値は 9.8、12.4、15.0、17.6、20.2 MPa となり、残差は 0.2、−0.4、0、0.4、−0.2。すると SS_res = 0.40、SS_tot = 25 + 9 + 0 + 9 + 25 = 68。</li><li>R² = 1 − 0.40/68 = 0.994 となり、この5つの材齢における強度の変動の99.4%を直線が説明する。</li></ol>
+        <div class="answer"><b>Answer</b>ŷ = 7.2 + 2.60x（MPa）、R² = 0.994。養生が1日増えるごとに予測強度は約2.6 MPa高くなるが、5点で範囲が1〜5日しかないため、この直線を28日設計強度へ外挿してはならない。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>傾きの単位（x 単位あたりの y 単位）と切片の単位を示すこと——数値だけでは点を失う。</li><li>R² を精度と呼んではならない：それは説明された変動の割合であり、正しい予測の割合ではない。</li><li>どの当てはめを擁護する前にも、まずデータを、次に残差をプロットすること。残差にパターンがあればモデルは誤りである。</li><li>当てはめた範囲と標本サイズを述べ、予測が外挿であるときはそう言うこと。</li><li>モデルが良いと主張する前に、同じテストセットで単純なベースラインを報告すること。スコアは何かと比べて初めて意味を持つ。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>養生時間からコンクリート強度を予測する回帰が R² = 0.02 を報告した。最も正確な読み取りはどれか：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>関係は因果でなければならない</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>モデルは2%の精度で強度を予測する</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>強度の変動の約2%が養生時間によって説明される</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>傾きが2%誤っている</span></button></div>
+    <div class="quiz-explain"><b>Why</b>R² は分散の割合であり、正しい予測の割合ではない。ここでは直線は平均を予測するよりもほとんど良くない。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>養生時間に対する強度の最小二乗当てはめが b = 2.6 MPa/日 を与えた。正しい文はどれか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>養生が1日増えるごとに予測強度が2.6 MPa高くなる関連がある</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>強度は1日あたり2.6%増加する</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>5日後には強度は2.6 MPaになる</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>養生が1日増えるごとに2.6 MPa増加する原因となる</span></button></div>
+    <div class="quiz-explain"><b>Why</b>傾きは x の1単位あたりの予測変化量である。関連は原因の証明ではなく、傾きは割合でもない。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>あるモデルが、コンクリート打設後に記録された延性試験を用いて28日強度を予測し、訓練データでもテストデータでも素晴らしいスコアを出した。最も可能性の高い欠陥は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>MPa と kN の単位の不一致</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>予測子変数が少なすぎる</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>スコアが良すぎるので過学習</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>予測が必要な時点では予測子が利用できないため、データリーク</span></button></div>
+    <div class="quiz-explain"><b>Why</b>リークは未来の情報を予測子に混入させる。モデルは優秀に見えるが、予測時には使えない。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>右に歪んだ修繕費データについて、典型値とそのばらつきを最もよく表す組はどれか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>最頻値と範囲</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>平均と変動係数</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>平均と標準偏差</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>中央値と四分位範囲</span></button></div>
+    <div class="quiz-explain"><b>Why</b>中央値と四分位範囲は長い裾に耐性があるが、平均と標準偏差は裾に引っ張られる。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>欠陥検出器を400枚のパネルで実行した：60枚を陽性と判定し、そのうち45枚が真に欠陥であり、25枚の真の欠陥が見逃された。適合率は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>45/400</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>45/60</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>45/70</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>60/400</span></button></div>
+    <div class="quiz-explain"><b>Why</b>適合率は陽性と判定されたパネルのうち本当に欠陥であった割合である：TP/(TP + FP) = 45/60 = 0.75。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>あるチームが分割前に全データセットの平均と標準偏差を用いて変数を標準化した。起こりうる結果は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>モデルは過小学習になる</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>傾きが相関になる</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>何も起こらない；標準化は結果を変えられない</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>テスト情報が訓練に漏れ、評価が楽観的になる</span></button></div>
+    <div class="quiz-explain"><b>Why</b>全行で変換を計算すると、テストセットが訓練パイプラインに影響を与え、報告される性能を水増しする。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-statistics.ja.html"><span>Core</span><b>工学統計学</b></a><a class="related-card" href="programming-fundamentals.ja.html"><span>Computing</span><b>プログラミング基礎</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="structural-mechanics.ja.html"><small>Previous</small><b>構造力学</b></a><a class="next" href="air-noise-pollution.ja.html"><small>Next</small><b>大気・騒音汚染</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">まずプロット、次に当てはめ。</p><p class="margin-note">r は傾きではない。</p><p class="margin-note">高い R² がモデルを正しくするわけではない。</p><p class="margin-note">各数値がどこから来たかを問うこと。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

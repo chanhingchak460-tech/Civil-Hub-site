@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공학도를 위한 정량적 방법 — Civil Hub</title>
+<meta name="description" content="엔지니어가 제한된 데이터로 어떻게 결론을 도출하는지 다룬다: 표본추출, 신뢰구간, 가설검정, 실험계획, 회귀분석. 측정값에 잡음이 있을 때 의사결정을 정직하게 유지해 주는 학문 분야다.">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/quantitative-methods.ko.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="공학도를 위한 정량적 방법 — Civil Hub">
+<meta property="og:description" content="엔지니어가 제한된 데이터로 어떻게 결론을 도출하는지 다룬다: 표본추출, 신뢰구간, 가설검정, 실험계획, 회귀분석. 측정값에 잡음이 있을 때 의사결정을 정직하게 유지해 주는 학문 분야다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/quantitative-methods.ko.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="quantitative-methods.html" data-alt-zh-hant="quantitative-methods.zh-Hant.html" data-alt-ja="quantitative-methods.ja.html" data-alt-ko="quantitative-methods.ko.html" data-page-lang="ko" data-root="../" data-total="42" data-page="library" data-content-lang="ko">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">공학도를 위한 정량적 방법</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">핵심</p>
+          <h1>공학도를 위한 정량적 방법</h1>
+          <p class="subject-sub">공학 데이터로부터의 실험, 추론 및 의사결정</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>핵심</li><li><b data-i18n="subject.read">Read</b>10 분</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>18</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M44 162 H296" stroke="currentColor" stroke-width="1.2"/><path d="M44 162 V34" stroke="currentColor" stroke-width="1.2"/><path d="M170 162 C120 162 118 52 170 52 C222 52 220 162 170 162" stroke="var(--accent)" stroke-width="1.5"/><path d="M80 162 V144" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M106 162 V128" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M132 162 V104" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M158 162 V78" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M184 162 V104" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M210 162 V128" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M236 162 V144" stroke="var(--line)" stroke-width="8" opacity="0.9"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">DISTRIBUTION</text></svg>
+          <figcaption>A distribution — centre, spread and tails</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">변동이 곧 데이터다</a></li><li><a href="#sec-2">표본추출과 중심극한정리</a></li><li><a href="#sec-3">신뢰구간</a></li><li><a href="#sec-4">가설검정</a></li><li><a href="#sec-5">두 모집단 비교</a></li><li><a href="#sec-6">ANOVA와 실험계획</a></li><li><a href="#sec-7">회귀분석과 예측</a></li><li><a href="#sec-8">품질관리와 공정능력</a></li><li><a href="#sec-9">카이제곱 검정: 도수(개수)가 말하는 것</a></li><li><a href="#sec-10">다중회귀</a></li><li><a href="#sec-11">검정력, 효과 크기, 연구 계획</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">엔지니어가 제한된 데이터로 어떻게 결론을 도출하는지 다룬다: 표본추출, 신뢰구간, 가설검정, 실험계획, 회귀분석. 측정값에 잡음이 있을 때 의사결정을 정직하게 유지해 주는 학문 분야다.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="quantitative-methods" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>변동이 곧 데이터다</h2>
+  <div class="body"><p>측정값은 측정 대상이 변하지 않더라도 변한다. 따라서 공학 데이터에는 중심과 산포가 필요하다: 표본평균은 모평균을 추정하고, 표본표준편차는 측정값이 그 평균으로부터 떨어진 전형적 거리를 추정한다.</p>
+<ul>
+<li>변동계수 CV = s / x̄는 단위나 평균이 다른 데이터셋 간의 변동성을 비교한다.</li>
+<li>요약값과 함께 항상 표본 크기와 단위를 보고하라.</li>
+<li>산포 없는 평균은 위험을 감추고, 평균 없는 산포는 규모가 없다. 이 둘의 조합이 데이터셋에 대한 최소한의 정직한 기술이다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">표본평균</span>
+      <div class="formula-expr formula-math">\[\bar{x} = \frac{\sum x}{n}\]</div>
+      <span class="formula-note">측정값의 합을 표본 크기로 나눈 값</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">표본표준편차</span>
+      <div class="formula-expr formula-math">\[s = \sqrt{\frac{\sum (x - \bar{x})^2}{n - 1}}\]</div>
+      <span class="formula-note">나눗셈 인자 n − 1은 표본에서 추정할 때의 편향을 제거한다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">변동계수</span>
+      <div class="formula-expr formula-math">\[\mathrm{CV} = \frac{s}{\bar{x}}\]</div>
+      <span class="formula-note">상대적 변동성을 나타내는 무차원 척도</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>표본추출과 중심극한정리</h2>
+  <div class="body"><p>표본은 모집단을 대표할 때만 유용하다. 무작위 선택, 독립성, 일관된 측정 방법이 추론을 타당하게 만드는 가정이다. 편향된 표본은 n을 늘려도 구제할 수 없다.</p>
+<ul>
+<li>평균의 표준오차는 SE = s / √n이며, 표본 크기의 제곱근에 비례하여 줄어든다.</li>
+<li>중심극한정리에 따르면 모집단의 모양과 관계없이 n이 커질수록 표본평균의 분포는 정규분포에 가까워진다.</li>
+<li>이것이 데이터가 정규분포가 아니더라도 적당히 큰 표본의 평균에 t 및 z 절차가 작동하는 이유다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">평균의 표준오차</span>
+      <div class="formula-expr formula-math">\[\mathrm{SE} = \frac{s}{\sqrt{n}}\]</div>
+      <span class="formula-note">SE를 절반으로 줄이려면 표본 크기가 네 배 필요하다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>신뢰구간</h2>
+  <div class="body"><p>신뢰구간은 추정값 주위에 범위를 설정한다. 모표준편차를 모르는 평균의 경우 구간은 x̄ ± t s / √n이며, 여기서 t는 자유도 n − 1인 t 분포에서 나온다. 구간의 폭은 신뢰수준과 변동성이 클수록 커지고, 표본 크기가 클수록 작아진다.</p>
+<p>해석은 틀리기 쉽다. 95% 구간은 μ가 이 특정 구간 안에 있을 확률이 95%라는 뜻이 아니다. 이런 방식으로 만든 구간의 95%가 μ를 포함한다는 뜻이다. 구간은 개별 측정값이 아니라 모수를 추정한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">평균의 신뢰구간</span>
+      <div class="formula-expr formula-math">\[\bar{x} \pm t\,\frac{s}{\sqrt{n}}\]</div>
+      <span class="formula-note">t는 자유도 n − 1에 대한 양측 값이다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>가설검정</h2>
+  <div class="body"><p>가설검정은 데이터가 주어진 값과 일치하는지 묻는다. 귀무가설 H0(효과 없음, 차이 없음)와 대립가설 H1을 설정하고, 유의수준 α를 선택한 뒤 검정통계량을 계산한다. 평균의 경우 t = (x̄ − μ0) / (s / √n)이다.</p>
+<ul>
+<li>p값은 H0가 참이라고 가정할 때 관측된 결과만큼 또는 그보다 극단적인 결과가 나올 확률이다. p &lt; α이면 H0를 기각한다.</li>
+<li>제1종 오류는 참인 귀무가설을 기각하는 것이고, 제2종 오류는 거짓인 귀무가설을 기각하지 못하는 것이다.</li>
+<li>통계적 유의성은 실질적 중요성이 아니다. 아주 작고 정밀한 차이는 유의하면서도 여전히 무관할 수 있다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">단일표본 t 통계량</span>
+      <div class="formula-expr formula-math">\[t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}\]</div>
+      <span class="formula-note">μ0는 가설로 설정한 평균이며, df = n − 1이다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>두 모집단 비교</h2>
+  <div class="body"><p>두 설계, 두 공급업체 또는 두 양생 방법을 평균으로 비교한다.</p>
+<ul>
+<li>분산이 비슷한 독립표본의 경우 표준편차를 합동으로 추정하고 이표본 t 검정을 사용한다. 자유도는 n1 + n2 − 2이다.</li>
+<li>대응 관측값(같은 시편의 전후, 또는 짝지은 쌍)의 경우 차이를 검정하며, 이는 쌍 간 변동성을 제거한다.</li>
+<li>p값만이 아니라 추정된 차이를 신뢰구간과 함께 보고하라.</li>
+<li>0.2 MPa의 유의한 차이는 실제일 수 있지만 사양을 바꾸기에는 너무 작을 수 있다. 구간은 효과의 크기와 정밀도를 모두 보여준다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">합동분산</span>
+      <div class="formula-expr formula-math">\[s_p^2 = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}\]</div>
+      <span class="formula-note">두 모집단의 분산이 비슷하다고 가정한다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">이표본 t 통계량</span>
+      <div class="formula-expr formula-math">\[t = \frac{\bar{x}_1 - \bar{x}_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}\]</div>
+      <span class="formula-note">합동 검정의 df = n1 + n2 − 2</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>ANOVA와 실험계획</h2>
+  <div class="body"><p>세 개 이상의 평균을 비교하려면 반복된 t 검정 대신 분산분석을 사용해야 한다. 반복된 t 검정은 거짓 양성이 나올 가능성을 높인다. 일원배치 ANOVA는 전체 변동을 집단 평균 간 변동과 집단 내 변동으로 나눈다. F 비율은 이 둘을 비교하며, 큰 F는 적어도 하나의 평균이 다르다는 것을 시사한다. 유의한 F는 어느 평균이 다른지는 말해주지 않는다. 사후 비교가 그 역할을 한다.</p>
+<ul>
+<li>실험계획은 더 나아간다: 실험 순서를 무작위화하고, 반복하고, 알려진 방해 변동 원인을 블록화한다.</li>
+<li>요인배치 실험에서는 요인 수준의 모든 조합을 시험하므로 주효과와 상호작용을 추정할 수 있다.</li>
+<li>상호작용은 한 요인의 효과가 다른 요인의 수준에 의존한다는 뜻이다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">F 비율, 일원배치 ANOVA</span>
+      <div class="formula-expr formula-math">\[F = \frac{\mathrm{MS}_{\text{between}}}{\mathrm{MS}_{\text{within}}}\]</div>
+      <span class="formula-note">큰 F는 집단 간 변동이 집단 내 변동을 지배한다는 뜻이다</span>
+    </div></div><div class="table-wrap"><table><caption>일원배치 ANOVA 표</caption><thead><tr><th scope='col'>변동원</th><th scope='col'>제곱합</th><th scope='col'>자유도</th><th scope='col'>평균제곱</th><th scope='col'>F</th></tr></thead><tbody><tr><td>집단 간</td><td>SSB</td><td>k − 1</td><td>MSB = SSB / (k − 1)</td><td>F = MSB / MSW</td></tr><tr><td>집단 내</td><td>SSW</td><td>N − k</td><td>MSW = SSW / (N − k)</td><td>—</td></tr><tr><td>전체</td><td>SST</td><td>N − 1</td><td>—</td><td>—</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>회귀분석과 예측</h2>
+  <div class="body"><p>회귀분석은 반응변수 y와 하나 이상의 설명변수 x 사이의 관계를 적합한다. 최소제곱 직선 y = a + b x는 잔차 제곱합을 최소화하며, 기울기 b = S_xy / S_xx이고 절편 a = ȳ − b x̄이다.</p>
+<ul>
+<li>결정계수 r²는 모형이 설명하는 전체 변동의 비율이다.</li>
+<li>높은 r²는 인과관계를 증명하지 않으며, 관측 범위 밖에서 좋은 예측을 보장하지도 않는다.</li>
+<li>잔차에서 곡률, 변동 폭의 변화, 이상치를 확인하라. 잔차에 패턴이 있으면 모형이 무언가를 놓치고 있다는 뜻이다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">최소제곱 기울기</span>
+      <div class="formula-expr formula-math">\[b = \frac{S_{xy}}{S_{xx}}\]</div>
+      <span class="formula-note">S_xy는 공분산 합이고, S_xx는 x 편차 제곱합이다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">결정계수</span>
+      <div class="formula-expr formula-math">\[r^2 = 1 - \frac{\mathrm{SS}_{\mathrm{res}}}{\mathrm{SS}_{\mathrm{tot}}}\]</div>
+      <span class="formula-note">적합된 모형이 설명하는 변동의 비율</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>품질관리와 공정능력</h2>
+  <div class="body"><p>관리도는 공정에 내재된 우연원인 변동과 무언가가 변했음을 알리는 이상원인 변동을 구분한다.</p>
+<ul>
+<li>평균 관리도는 중심선 양쪽 3표준오차에 관리한계를 두고 표본평균을 도시하며, 범위 관리도는 변동성을 추적한다.</li>
+<li>관리한계를 벗어난 점이나 한쪽에 연속으로 나타난 점은 모든 측정값을 조정하기보다 원인 조사를 촉구한다.</li>
+<li>공정능력은 규격과 공정 산포를 비교한다: Cp = (USL − LSL) / (6σ)이며, Cpk는 공정이 중심에서 벗어난 것을 반영한다.</li>
+<li>능력 있는 공정은 정밀하면서도 중심에 맞춰져 있다. Cp는 높지만 Cpk가 낮다면 산포는 괜찮지만 설정이 잘못되었다는 뜻이다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">평균 관리도의 관리한계</span>
+      <div class="formula-expr formula-math">\[\mathrm{UCL},\, \mathrm{LCL} = \bar{x} \pm \frac{3\sigma}{\sqrt{n}}\]</div>
+      <span class="formula-note">σ는 공정 표준편차이고 n은 부분군 크기이다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">공정능력</span>
+      <div class="formula-expr formula-math">\[C_p = \frac{\mathrm{USL} - \mathrm{LSL}}{6\sigma}\]</div>
+      <span class="formula-note">USL과 LSL은 상한 및 하한 규격한계이다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>카이제곱 검정: 도수(개수)가 말하는 것</h2>
+  <div class="body"><p>모든 질문이 평균에 관한 것은 아니다. 데이터가 범주별 <strong>도수(개수)</strong>일 때는 카이제곱 체계가 t 및 F 검정을 대체한다.</p>
+<ul>
+<li><strong>적합도 검정</strong>은 관측도수가 가설화된 분포를 따르는지 묻고, <strong>독립성 검정</strong>은 두 범주형 변수가 관련이 있는지 도수 교차표를 사용해 묻는다.</li>
+<li>둘 다 관측도수를 귀무가설 아래의 기대도수와 비교하며, 둘 다 단측 검정이다: 큰 불일치만 문제가 된다.</li>
+<li>가정이 약점이다. 범주는 상호배타적이어야 하고, 모든 기대도수는 최소 5 이상이어야 하므로 검정 전에 희소 범주를 병합하라.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">카이제곱 통계량</span>
+      <div class="formula-expr formula-math">\[\chi^2 = \sum_i \frac{(O_i - E_i)^2}{E_i}\]</div>
+      <span class="formula-note">큰 값은 귀무 모형과의 일치가 나쁘다는 것을 나타낸다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">자유도</span>
+      <div class="formula-expr formula-math">\[\text{fit: } k - 1 - m; \qquad \text{table: } (r-1)(c-1)\]</div>
+      <span class="formula-note">m은 데이터에서 추정한 모수의 개수이다</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>관측도수가 아니라 기대도수</b>
+  카이제곱 근사에는 모든 셀의 기대도수가 대략 5 이상이어야 한다. 일부가 그보다 작으면 범주를 병합하고 새로운 자유도를 명시하라.
+</div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>다중회귀</h2>
+  <div class="body"><p>대부분의 공학 반응에는 여러 동인이 있으므로 모형은 y = β₀ + β₁x₁ + β₂x₂ + … + ε이 된다. 각 계수는 <strong>편효과</strong>다. 즉 다른 예측변수를 고정했을 때 해당 예측변수가 한 단위 증가할 때 y의 기대 변화량이다. 이는 단순 이변수 기울기와 다른 양이며, 둘을 혼동하는 것은 전형적인 시험 실수다.</p>
+<ul>
+<li>단순 R²는 쓸모없는 예측변수를 추가해도 항상 증가하므로, 다중회귀에서는 추가 모수마다 벌점을 주는 <strong>수정 R²</strong>를 제시해야 한다.</li>
+<li><strong>다중공선성</strong>(예측변수들이 너무 강하게 상관되어 모형이 그 효과를 분리할 수 없는 상태)을 상관계수나 분산팽창계수로 확인하라.</li>
+<li>개별 계수를 분석하기 전에 전체 F 검정으로 모형 전체를 검정하라.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">다중회귀 모형</span>
+      <div class="formula-expr formula-math">\[y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \varepsilon\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">수정 결정계수</span>
+      <div class="formula-expr formula-math">\[\bar{R}^2 = 1 - \frac{(1 - R^2)(n - 1)}{n - k - 1}\]</div>
+      <span class="formula-note">k개의 예측변수; 예측변수가 제 역할을 할 때만 증가한다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>검정력, 효과 크기, 연구 계획</h2>
+  <div class="body"><p>연구가 중요한 효과를 탐지할 가능성이 없었다면 유의하지 않은 결과는 의미가 거의 없다. <strong>검정력</strong>은 특정 대립가설이 참일 때 H₀를 기각할 확률이며, 네 가지 양에 의해 결정된다: 유의수준 α, 실제 효과 크기 δ, 잡음 σ, 표본 크기 n.</p>
+<ul>
+<li>양측 z 검정의 경우 필요한 표본은 대략 (z_(α/2) + z_β)² σ² / δ²이며, 여기서 1 − β가 목표 검정력이다.</li>
+<li>이 공식을 예산으로 읽어라: 탐지해야 하는 차이를 절반으로 줄이면 표본은 네 배가 되고, 더 깨끗한 측정 방법(작은 σ)은 반복 횟수를 늘리는 것만큼 가치가 있다.</li>
+<li>기각하지 못할 때는 항상 검정력과 가정한 효과 크기를 명시하라.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">양측 z 검정의 표본 크기</span>
+      <div class="formula-expr formula-math">\[n \approx \frac{(z_{\alpha/2} + z_\beta)^2 \sigma^2}{\delta^2}\]</div>
+      <span class="formula-note">β는 제2종 오류율이므로 1 − β가 검정력이다</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>표준오차</dt><dd>추정량의 표본분포 표준편차로, 표본이 모집단 값을 얼마나 정밀하게 추정하는지 보여준다.</dd></div><div class="term"><dt>신뢰구간</dt><dd>데이터로부터 구성되며, 반복 표본추출에서 정해진 비율만큼 참 모수를 포함하게 되는 값의 범위.</dd></div><div class="term"><dt>p값</dt><dd>귀무가설이 참이라고 가정할 때 데이터만큼 또는 그보다 극단적인 결과를 관측할 확률.</dd></div><div class="term"><dt>제1종 오류</dt><dd>실제로 참인 귀무가설을 기각하는 것; 그 확률은 유의수준 α이다.</dd></div><div class="term"><dt>ANOVA</dt><dd>분산분석. 전체 변동을 집단 간 변동과 집단 내 변동으로 나누어 여러 집단 평균을 비교하는 방법.</dd></div><div class="term"><dt>결정계수</dt><dd>회귀모형이 설명하는 반응변수 변동의 비율로, r²로 표기한다.</dd></div><div class="term"><dt>적합도 검정</dt><dd>관측도수가 가설화된 분포나 모형과 일치하는지 검정하는 카이제곱 검정.</dd></div><div class="term"><dt>검정력</dt><dd>명시된 대립가설이 참일 때 가설검정이 귀무가설을 기각할 확률.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>두 양생 방법 비교</h2>
+        <p class="problem">두 양생 방법을 각각 콘크리트 큐브 10개로 비교한다. 방법 A는 평균 강도 42.1 MPa, 표준편차 2.0 MPa이고, 방법 B는 40.3 MPa, 표준편차 1.8 MPa이다. 평균 강도가 다른지 5% 유의수준에서 검정하라. 자유도 18에 대한 임계 t 값을 2.101로 한다.</p>
+        <ol><li>가설을 설정한다: H0: μA = μB; H1: μA ≠ μB. α = 0.05, 양측검정, df = 10 + 10 − 2 = 18을 사용한다.</li><li>합동분산: s_p² = [(9)(2.0²) + (9)(1.8²)] / 18 = (36.0 + 29.16) / 18 = 3.62이므로 s_p = 1.90 MPa이다.</li><li>차이의 표준오차: s_p √(1/10 + 1/10) = 1.90 × 0.447 = 0.850 MPa.</li><li>검정통계량: t = (42.1 − 40.3) / 0.850 = 2.12.</li><li>|t| = 2.12가 임계값 2.101보다 크므로 H0를 기각한다. 차이는 통계적으로 유의하지만 1.8 MPa에 불과하므로 실질적 유의성은 공학적 판단이 필요하다.</li></ol>
+        <div class="answer"><b>Answer</b>5% 수준에서 H0를 기각한다: 평균 강도는 유의하게 다르다(t = 2.12, df = 18, p는 0.05보다 약간 작음). 추정된 차이는 1.8 MPa이며, 표본이 더 크면 더 정밀한 추정이 가능하다.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>계산기를 만지기 전에 H0, H1, α를 명시하라. 시험 문제의 대부분의 배점은 올바른 설정에서 나온다.</li><li>신뢰구간은 모수가 이 구간 안에 있을 확률이 아니라 반복 표본추출의 관점에서 해석하라.</li><li>t 또는 F 결과를 신뢰하기 전에 독립성, 정규성, 등분산성 가정을 확인하라.</li><li>유의한 ANOVA F는 적어도 하나의 평균이 다르다는 것을 말할 뿐, 어느 것인지는 말하지 않는다. 결론에서 이를 밝혀라.</li><li>다중회귀에서 해석하는 모든 계수 옆에 &#x27;다른 예측변수를 고정했을 때&#x27;라는 말을 써 넣어라.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>모평균에 대한 95% 신뢰구간은 다음을 의미한다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>같은 방식으로 구성된 구간의 95%가 참 평균을 포함할 것이다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>표본평균이 95% 정확하다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>참 평균이 이 구간 안에 있을 확률이 95%이다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>표본값의 95%가 이 구간 안에 있다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>신뢰수준은 이 특정 구간에 대한 확률이 아니라 방법의 장기적 성능을 설명한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>참인 귀무가설을 기각하는 것을 무엇이라 하는가:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>제2종 오류</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>검정력</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>표본추출 편향</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>제1종 오류</span></button></div>
+    <div class="quiz-explain"><b>Why</b>제1종 오류는 거짓 양성이며, 그 확률은 선택한 유의수준 α와 같다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>일원배치 ANOVA에서 큰 F 비율은 다음을 나타낸다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>모든 집단 평균이 같다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>표본 크기가 너무 작다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>집단 간 변동이 집단 내 변동에 비해 크다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>모집단 분산이 반드시 같다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>F는 집단 간 평균제곱과 집단 내 평균제곱의 비율이다. 큰 값은 적어도 하나의 평균이 다르다는 것을 시사한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>어떤 공정의 Cp는 높지만 Cpk가 낮다. 이는 공정이 다음과 같다는 뜻이다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>관리 상태를 벗어나 중단해야 한다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>넓고 중심에서 벗어나 있다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>좁지만 규격에 비해 중심에서 벗어나 있다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>좁고 완벽하게 중심에 맞춰져 있다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Cp는 산포를 공차와 비교하고, Cpk는 평균이 규격 범위의 중심에서 벗어난 것도 반영한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>3 by 4 분할표에 독립성 카이제곱 검정을 적용한다. 검정통계량의 자유도는 얼마인가?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>12</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>7</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>6</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2</span></button></div>
+    <div class="quiz-explain"><b>Why</b>자유도는 (r − 1)(c − 1) = 2 × 3 = 6이다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>콘크리트 강도를 시멘트 함량과 물-시멘트비에 대해 다중회귀할 때, 물-시멘트비의 계수는 다음을 추정한다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>두 예측변수가 함께 변할 때의 총 강도 변화</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>강도와 비 사이의 상관관계</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>비만으로 설명되는 변동의 비율</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>시멘트 함량을 고정했을 때 비의 단위 변화당 강도 변화</span></button></div>
+    <div class="quiz-explain"><b>Why</b>다중회귀 계수는 편효과다. 단순 이변수 기울기와 달리 다른 예측변수를 고정한다.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-statistics.ko.html"><span>Core</span><b>공학 통계</b></a><a class="related-card" href="ai-data-analysis.ko.html"><span>Computing</span><b>AI와 데이터 분석</b></a><a class="related-card" href="construction-materials.ko.html"><span>Core</span><b>건설 재료</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="design-of-steel-structures.ko.html"><small>Previous</small><b>강구조 설계</b></a><a class="next" href="machine-learning-smart-mobility.ko.html"><small>Next</small><b>스마트 모빌리티를 위한 머신러닝</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">SE를 절반으로 줄이려면 n은 네 배가 된다.</p><p class="margin-note">p는 H0가 참일 확률이 아니다.</p><p class="margin-note">측정 전에 무작위화하라.</p><p class="margin-note">신뢰구간은 모수가 아니라 방법에 관한 것이다.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

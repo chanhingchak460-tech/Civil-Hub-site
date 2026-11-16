@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIoT — Civil Hub</title>
+<meta name="description" content="Sensors, small computers, networks and models working together under real constraints. The subject is less about the cleverest algorithm than about latency">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/ai-iot.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="AIoT — Civil Hub">
+<meta property="og:description" content="Sensors, small computers, networks and models working together under real constraints. The subject is less about the cleverest algorithm than about latency">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/ai-iot.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="ai-iot.html" data-alt-zh-hant="ai-iot.zh-Hant.html" data-alt-ja="ai-iot.ja.html" data-alt-ko="ai-iot.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">AIoT</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Computing</p>
+          <h1>AIoT</h1>
+          <p class="subject-sub">Sensors, embedded intelligence and connected infrastructure</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Computing</li><li><b data-i18n="subject.read">Read</b>9 min</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>16</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">The loop, not the device</a></li><li><a href="#sec-2">Sensing, sampling and the microcontroller</a></li><li><a href="#sec-3">Networking choices</a></li><li><a href="#sec-4">Protocols beyond MQTT</a></li><li><a href="#sec-5">Edge or cloud</a></li><li><a href="#sec-6">Learned controllers: from rules to gradients</a></li><li><a href="#sec-7">Streaming, queues and freshness</a></li><li><a href="#sec-8">Real-time scheduling on small cores</a></li><li><a href="#sec-9">Digital twins and smart infrastructure</a></li><li><a href="#sec-10">Security and privacy by design</a></li><li><a href="#sec-11">Virtual sensing and the hidden state</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">Sensors, small computers, networks and models working together under real constraints. The subject is less about the cleverest algorithm than about latency, energy, bandwidth and freshness, and what those trade-offs mean for connected infrastructure.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="ai-iot" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>The loop, not the device</h2>
+  <div class="body"><p>AIoT puts inference close to where data is made. A system senses with transducers, conditions the signal on a microcontroller, moves it over a network, and acts on a decision.</p>
+<p>What separates it from ordinary IoT is that a model makes the decision, often on the device itself. The design question is never accuracy alone: it is accuracy per unit of energy, latency and bandwidth.</p>
+<p>A bridge strain sensor reporting in milliseconds solves a different problem from a soil probe that wakes once an hour.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Nyquist sampling rule</span>
+      <div class="formula-expr formula-math">\[f_s &gt; 2 f_{\max}\]</div>
+      <span class="formula-note">sample above twice the highest frequency of interest, or fast vibration aliases into a false slow wave</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Sensing, sampling and the microcontroller</h2>
+  <div class="body"><p>A sensor converts a physical quantity into an electrical signal, and an <strong>ADC</strong> turns that into numbers at a fixed <strong>sampling rate</strong>. Real readings carry noise and drift, so calibrate against a reference and filter, remembering that every filter adds delay.</p>
+<p>A microcontroller provides GPIO pins, timers and buses such as I²C and SPI for local chips, and it must be duty-cycled: radio and sensing dominate the power budget, so sleeping between samples is what makes a battery last for years.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">ADC resolution</span>
+      <div class="formula-expr formula-math">\[\Delta V = \frac{V_{\mathrm{ref}}}{2^n}\]</div>
+      <span class="formula-note">the smallest voltage step for an n-bit converter; a real reading is usually several steps</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>Networking choices</h2>
+  <div class="body"><p>No single radio fits every deployment. Above the link layer, <strong>MQTT</strong> is the usual messaging pattern: devices publish to a <strong>broker</strong> on a topic such as <code>site/42/temperature</code>, and subscribers receive it.</p>
+<p>QoS levels 0, 1 and 2 trade duplicates against delivery guarantees, and a retained message stops a late subscriber from seeing stale state.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Publishing a reading with MQTT</span>
+      <div class="formula-expr formula-text">client.publish(&#x27;site/42/strain&#x27;, payload, qos=1)
+client.subscribe(&#x27;site/42/command&#x27;)</div>
+      <span class="formula-note">qos=1 gives at-least-once delivery, so the handler must tolerate duplicates</span>
+    </div></div><div class="table-wrap"><table><caption>Radio options for typical AIoT deployments</caption><thead><tr><th scope='col'>Radio</th><th scope='col'>Typical range</th><th scope='col'>Data rate</th><th scope='col'>Power</th><th scope='col'>Typical use</th></tr></thead><tbody><tr><td>Wi-Fi</td><td>tens of metres</td><td>high</td><td>high</td><td>cameras, gateways, indoor sensors</td></tr><tr><td>BLE</td><td>about 10 m</td><td>low</td><td>very low</td><td>wearables, beacons, phone links</td></tr><tr><td>LoRaWAN</td><td>2–15 km</td><td>very low</td><td>very low</td><td>soil probes, rural meters</td></tr><tr><td>NB-IoT</td><td>kilometres</td><td>low</td><td>low</td><td>utility meters, street furniture</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Protocols beyond MQTT</h2>
+  <div class="body"><p>MQTT is not the only way to move bytes. <strong>CoAP</strong> shrinks HTTP's request–response model onto UDP for constrained nodes, with confirmable messages and an observe mode for server push; it suits a battery sensor behind a gateway rather than a chatty web app.</p>
+<p>Plain <strong>HTTP/REST</strong> is easy to debug and integrate but verbose per message; <strong>WebSockets</strong> keep a persistent channel for live dashboards; <strong>AMQP</strong> adds enterprise routing for fleets of gateways.</p>
+<p>Choose by constraint, not habit: payload and header overhead, connection state, delivery guarantee, and whether the network is IP end-to-end or needs a gateway translation. A protocol that assumes always-on TCP is a poor fit for a node that wakes once an hour.</p></div><div class="table-wrap"><table><caption>Messaging protocols compared</caption><thead><tr><th scope='col'>Protocol</th><th scope='col'>Transport</th><th scope='col'>Pattern</th><th scope='col'>Best fit</th></tr></thead><tbody><tr><td>MQTT</td><td>TCP</td><td>publish–subscribe on topics</td><td>telemetry from many devices to many applications</td></tr><tr><td>CoAP</td><td>UDP</td><td>request–response, observe</td><td>constrained battery nodes, local discovery</td></tr><tr><td>HTTP/REST</td><td>TCP</td><td>request–response</td><td>cloud APIs and simple integration</td></tr><tr><td>WebSocket</td><td>TCP</td><td>persistent bidirectional</td><td>live dashboards and remote commands</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Edge or cloud</h2>
+  <div class="body"><p>Inference can run on the device, at a gateway, or in the cloud. Pushing it closer cuts latency and bandwidth but limits model size and energy. End-to-end latency is the sum of the stages, and the slowest stage dominates.</p>
+<p><strong>Model compression</strong> makes edge inference practical: quantisation stores weights in 8 bits instead of 32, pruning removes small weights, and both cost a little accuracy. Treat the choice as a trade curve rather than a slogan.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">End-to-end latency</span>
+      <div class="formula-expr formula-math">\[L = t_{\mathrm{sense}} + t_{\mathrm{queue}} + t_{\mathrm{compute}} + t_{\mathrm{network}}\]</div>
+      <span class="formula-note">measure each stage; optimising the wrong one buys nothing</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Service capacity</span>
+      <div class="formula-expr formula-math">\[C = \frac{1}{t_{\mathrm{service}}}\]</div>
+      <span class="formula-note">in samples per second when the service time is in seconds</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>Learned controllers: from rules to gradients</h2>
+  <div class="body"><p>On-device AI is often a <strong>learned controller</strong> rather than a vision model. A rule-based layer switches on fixed thresholds; a learned layer computes a <strong>linear score</strong> from features and turns it into a probability with the <strong>sigmoid</strong> function.</p>
+<p>Training finds the weights by descending the gradient of the <strong>cross-entropy loss</strong>, which punishes confident mistakes far more than hesitant ones.</p>
+<p>The workflow matters as much as the maths: collect labelled behaviour from a working controller, extract the same features at run time, train offline, then run the small model online. Because the model learns a decision pattern rather than the physics, it reproduces the teacher's behaviour without understanding the room — which is exactly why the training data must cover the edge cases.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Linear score</span>
+      <div class="formula-expr formula-math">\[s = w_1 x_1 + w_2 x_2 + w_3 x_3 + b\]</div>
+      <span class="formula-note">features x computed from recent readings; s = 0 is the decision boundary</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Sigmoid probability</span>
+      <div class="formula-expr formula-math">\[p = \frac{1}{1 + e^{-s}}\]</div>
+      <span class="formula-note">p is the predicted probability of the positive class</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Cross-entropy loss</span>
+      <div class="formula-expr formula-math">\[l = -[y\ln p + (1-y)\ln(1-p)]\]</div>
+      <span class="formula-note">y ∈ {0, 1} is the label; a confident wrong answer costs a large loss</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Gradient update step</span>
+      <div class="formula-expr formula-math">\[w \leftarrow w - \eta (p - y) x\]</div>
+      <span class="formula-note">η is the learning rate; one small step per training sample</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Streaming, queues and freshness</h2>
+  <div class="body"><p>Sensor data arrives continuously, so an AIoT system is a queueing system. As the arrival rate approaches the service rate, waiting time explodes: at 80% utilisation a queue is already four times longer than at 50%.</p>
+<p><strong>Admission control</strong> decides which samples to drop when the queue is full, which is how the system protects itself under overload. Another useful measure is the <strong>age of information</strong>, the age of the newest processed sample. Very accurate inference on stale data is worse than a rough answer that is current.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Utilisation</span>
+      <div class="formula-expr formula-math">\[\rho = \lambda t_{\mathrm{service}}\]</div>
+      <span class="formula-note">ρ must stay below 1 for a stable queue</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Little&#x27;s law</span>
+      <div class="formula-expr formula-math">\[L = \lambda W\]</div>
+      <span class="formula-note">mean items in the system equal arrival rate times mean time in the system</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Mean waiting, M/M/1 queue</span>
+      <div class="formula-expr formula-math">\[L_q = \frac{\rho^2}{1 - \rho}\]</div>
+      <span class="formula-note">diverges as ρ approaches 1</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>Real-time scheduling on small cores</h2>
+  <div class="body"><p>An edge node that must sample, transmit and infer on schedule is a <strong>real-time system</strong>: each task has a period and a worst-case execution time, and a deadline it must never miss. The first check is <strong>utilisation</strong>, the sum of execution time over period for every task.</p>
+<p><strong>Rate-monotonic</strong> gives the shortest-period task the highest priority and is provably optimal among fixed-priority schemes; <strong>earliest-deadline-first</strong> orders by remaining deadline and can keep a single processor busy up to full utilisation.</p>
+<p>Questions usually give a task table and ask whether the set is schedulable: compute the utilisation, compare it with the bound, and for rate-monotonic also check each task's response time. Missing a deadline in infrastructure monitoring means a dropped alarm, so scheduling is a design constraint, not an afterthought.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">CPU utilisation</span>
+      <div class="formula-expr formula-math">\[U = \sum \frac{C_i}{T_i}\]</div>
+      <span class="formula-note">C_i execution time, T_i period; U ≤ 1 is necessary for any scheduler</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Rate-monotonic bound</span>
+      <div class="formula-expr formula-math">\[U \le n\,(2^{1/n} - 1)\]</div>
+      <span class="formula-note">sufficient condition for n tasks under rate-monotonic scheduling; tends to ln 2 ≈ 0.693</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">EDF bound</span>
+      <div class="formula-expr formula-math">\[U \le 1\]</div>
+      <span class="formula-note">sufficient and necessary on a single processor for earliest-deadline-first</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Digital twins and smart infrastructure</h2>
+  <div class="body"><p>A digital twin is a model kept current by sensor data, used for monitoring, simulation and prediction. On infrastructure it appears as structural health monitoring on a bridge, leak detection in a water network, or occupancy control in a building.</p>
+<p>The value depends on the loop closing: a model that predicts a bearing failure is useless unless the maintenance system acts on it. A twin also inherits every weakness of its data — drift, missing readings and a changed baseline after renovation.</p></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>Security and privacy by design</h2>
+  <div class="body"><p>Every connected sensor is an attack surface. Common failures are default passwords, unsigned firmware, unencrypted links and no way to patch devices already installed.</p>
+<p>Practical defences are device identity and mutual authentication, TLS on the link, signed firmware updates and network segmentation, so a compromised sensor cannot reach the control system.</p>
+<p>Privacy is a design constraint too: collect the minimum, aggregate at the edge, and keep personal data out of places it is not needed. A smart water meter that reveals when nobody is home is a privacy problem, not just a utility.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Data minimisation at the edge</span>
+      <div class="formula-expr formula-text">send aggregate, not raw: (mean, count, timestamp)</div>
+      <span class="formula-note">fewer bytes and less personal information leave the device</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>Virtual sensing and the hidden state</h2>
+  <div class="body"><p>Not everything worth knowing has a dedicated sensor. <strong>Virtual sensing</strong> infers a hidden quantity from observable signals through a model: a camera image yields depth, a Wi-Fi signal-strength fingerprint yields indoor position, and a smartphone's inertial readings yield walking speed. The pattern is always observable signals → model → hidden state.</p>
+<p>Virtual sensors cut hardware cost and can cover places a physical probe cannot reach, but they inherit model error and drift, so they need periodic re-calibration against ground truth. Treat their output as an estimate with a confidence, and keep the fallback: when the model is uncertain, refuse to act rather than act wrong.</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Transducer</dt><dd>A device that converts one form of energy, such as strain or temperature, into an electrical signal.</dd></div><div class="term"><dt>Aliasing</dt><dd>The false low-frequency reading produced when a signal is sampled too slowly for its highest frequency.</dd></div><div class="term"><dt>Edge inference</dt><dd>Running a trained model on the local device or gateway instead of sending data to the cloud.</dd></div><div class="term"><dt>MQTT broker</dt><dd>The server that receives published messages and forwards them to subscribers by topic.</dd></div><div class="term"><dt>Digital twin</dt><dd>A model of a physical asset kept current by sensor data and used for monitoring and prediction.</dd></div><div class="term"><dt>Age of information</dt><dd>The age of the newest sample that has been processed, used to judge whether a decision is fresh enough.</dd></div><div class="term"><dt>Rate-monotonic scheduling</dt><dd>A fixed-priority scheme in which shorter-period tasks get higher priority, optimal among static priority assignments.</dd></div><div class="term"><dt>Virtual sensing</dt><dd>Inferring a hidden quantity such as location or depth from observable signals through a model instead of a dedicated sensor.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Can the edge keep up with the stream?</h2>
+        <p class="problem">A vibration sensor produces 20 samples per second. The edge model takes 40 ms per sample. The cloud model takes 80 ms of compute plus 50 ms of network time. Find the service capacity of each option, the edge utilisation, and the mean waiting time if the edge queue behaves as an M/M/1 system. Which placement works?</p>
+        <ol><li>Edge capacity = 1 / 0.040 = 25 samples per second. Cloud capacity = 1 / 0.130 = 7.7 samples per second.</li><li>Cloud utilisation with λ = 20 samples per second is 20 × 0.130 = 2.6, which exceeds 1, so the cloud queue grows without bound and no average delay exists.</li><li>Edge utilisation is ρ = 20 × 0.040 = 0.8, which is stable but heavily loaded.</li><li>For an M/M/1 queue, L_q = ρ²/(1 − ρ) = 0.64/0.20 = 3.2 samples waiting on average.</li><li>Mean waiting time = L_q / λ = 3.2 / 20 = 0.16 s, so the mean time in the system is about 0.16 + 0.04 = 0.20 s.</li></ol>
+        <div class="answer"><b>Answer</b>Only the edge placement is stable at 20 samples per second. The cloud cannot keep up, and the edge gives a mean decision age around 0.20 s, which is acceptable for vibration monitoring but would need load shedding if the sensing rate rose.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>State the bottleneck stage before proposing an architecture; latency and energy questions are marked on the trade-off, not the product name.</li><li>In queueing questions, compute ρ = λ t_service first: if ρ ≥ 1 the queue is unstable and no average delay exists.</li><li>Match range, data rate and power to the application before naming a protocol, and say why the alternatives lose.</li><li>When a task table appears, compute U = Σ C_i/T_i first, then apply the rate-monotonic or EDF bound, and state the assumption that deadlines equal periods.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q01</span><span>A battery-powered sensor must send a few bytes per hour from 8 km away. Which radio is most appropriate?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>A wired Ethernet link</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Wi-Fi</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>BLE</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>LoRaWAN</span></button></div>
+    <div class="quiz-explain"><b>Why</b>LoRaWAN is designed for long range at very low data rate and very low power.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>A signal contains vibration up to 100 Hz. The minimum sampling rate that avoids aliasing is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>10 samples per second</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>50 samples per second</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>100 samples per second</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>200 samples per second</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Nyquist requires sampling above twice the highest frequency, so at least 200 samples per second.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>A sensor arrives at 20 samples per second and the edge service time is 40 ms. The utilisation is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.4</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.8</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1.25</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2.0</span></button></div>
+    <div class="quiz-explain"><b>Why</b>ρ = λ t_service = 20 × 0.040 = 0.8, below 1 but with a fast-growing queue.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>Quantising a model from 32-bit to 8-bit weights mainly:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Encrypts the model for transmission</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Removes the need for a network connection</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Increases its accuracy on every dataset</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Reduces memory and compute at a small accuracy cost</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Fewer bits mean less memory and faster arithmetic, but the weights become coarser, so accuracy usually drops slightly.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>CoAP is designed mainly for:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Batch analytics in the cloud</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>High-bandwidth video streaming</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Constrained battery nodes using compact messages over UDP</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Enterprise message routing between data centres</span></button></div>
+    <div class="quiz-explain"><b>Why</b>CoAP shrinks the web request–response pattern onto UDP so constrained devices can exchange small messages with low overhead.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>Two periodic tasks have periods 4 ms and 10 ms and execution times 1 ms and 2 ms. The processor utilisation is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.45</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.30</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.20</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>1.45</span></button></div>
+    <div class="quiz-explain"><b>Why</b>U = 1/4 + 2/10 = 0.25 + 0.20 = 0.45, below the single-processor bound of 1.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.html"><span>Computing</span><b>AI &amp; Data Analysis</b></a><a class="related-card" href="machine-learning.html"><span>Computing</span><b>Machine Learning</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="discovering-chinese-history-hk.html"><small>Previous</small><b>Discovering Chinese History in Hong Kong</b></a><a class="next" href="traffic-surveys-planning.html"><small>Next</small><b>Traffic Surveys &amp; Transport Planning</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">ρ ≥ 1 means the queue never settles.</p><p class="margin-note">Sample above twice the highest frequency.</p><p class="margin-note">Compress, then measure the accuracy cost.</p><p class="margin-note">A twin is only as good as its sensors.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

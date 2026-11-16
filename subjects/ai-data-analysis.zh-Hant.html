@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>人工智能與數據分析 — Civil Hub</title>
+<meta name="description" content="數據的價值取決於你向它提出的問題。本頁涵蓋描述數據集、擬合與判斷迴歸直線，以及找出會令自信答案出錯的品質問題。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/ai-data-analysis.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="人工智能與數據分析 — Civil Hub">
+<meta property="og:description" content="數據的價值取決於你向它提出的問題。本頁涵蓋描述數據集、擬合與判斷迴歸直線，以及找出會令自信答案出錯的品質問題。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/ai-data-analysis.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="ai-data-analysis.html" data-alt-zh-hant="ai-data-analysis.zh-Hant.html" data-alt-ja="ai-data-analysis.ja.html" data-alt-ko="ai-data-analysis.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">人工智能與數據分析</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">計算</p>
+          <h1>人工智能與數據分析</h1>
+          <p class="subject-sub">在數據中尋找規律並誠實解讀</p>
+          <ul class="subject-facts"><li><b>類型</b>計算</li><li><b>閱讀</b>8 分鐘</li><li><b>章節</b>11</li><li><b>公式</b>12</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">先有數據，後有模型</a></li><li><a href="#sec-2">摘要數據集</a></li><li><a href="#sec-3">相關既非斜率，亦非因果</a></li><li><a href="#sec-4">以最小二乘法擬合直線</a></li><li><a href="#sec-5">判斷擬合</a></li><li><a href="#sec-6">誠實地檢驗模型</a></li><li><a href="#sec-7">數據品質陷阱</a></li><li><a href="#sec-8">來源、偏差、推論（SBI）</a></li><li><a href="#sec-9">分類：分數變成決策</a></li><li><a href="#sec-10">特徵工程與縮放</a></li><li><a href="#sec-11">基線與誠實比較</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">數據的價值取決於你向它提出的問題。本頁涵蓋描述數據集、擬合與判斷迴歸直線，以及找出會令自信答案出錯的品質問題。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="ai-data-analysis" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>先有數據，後有模型</h2>
+  <div class="body"><p>分析始於記錄了什麼，而非軟件能做什麼。每個<strong>變數</strong>都是一項量度屬性——抗壓強度、氯化物含量、延誤分鐘數——其類型決定合法的算術運算：</p>
+<ul>
+<li>名義標籤只能計數</li>
+<li>有序等級可排序</li>
+<li>區間數值可相減</li>
+<li>只有比率尺度才有真正的零點</li>
+</ul>
+<p>大多數工程數據都是從較大母體抽取的<strong>樣本</strong>，因此每個摘要都是估計值。要問清楚各行是如何選取的；便利樣本量度的既是研究對象，也是抽樣方法。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>摘要數據集</h2>
+  <div class="body"><p>第一輪是描述性且成本低廉：中心、離散度和形狀。<strong>平均值</strong>是平衡點，<strong>中位數</strong>是中間值，<strong>眾數</strong>是最常見的類別。離散度以標準差報告，其單位與數據相同；或以變異係數報告，其無量綱，可跨變數比較。偏態會把平均值拉向長尾，而中位數幾乎不動，這就是維修成本和降雨量以中位數引述的原因；任何摘要旁都應保留樣本量。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">樣本平均值</span>
+      <div class="formula-expr formula-math">\[\bar{x} = \frac{\sum x_i}{n}\]</div>
+      <span class="formula-note">n 個觀測值</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">樣本標準差</span>
+      <div class="formula-expr formula-math">\[s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n - 1}}\]</div>
+      <span class="formula-note">n − 1 校正樣本量</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">變異係數</span>
+      <div class="formula-expr formula-math">\[\mathrm{CV} = \frac{s}{\bar{x}}\]</div>
+      <span class="formula-note">無量綱</span>
+    </div></div><div class="table-wrap"><table><caption>四種摘要統計量及各自誤導之處</caption><thead><tr><th scope='col'>統計量</th><th scope='col'>摘要什麼</th><th scope='col'>誤導之處</th></tr></thead><tbody><tr><td>平均值</td><td>所有數值的平衡點</td><td>受極端值拉扯</td></tr><tr><td>中位數</td><td>排序後的中間值</td><td>忽略大多數數值的大小</td></tr><tr><td>標準差</td><td>距平均值的典型距離</td><td>假設對稱分佈</td></tr><tr><td>變異係數</td><td>相對於平均值的離散度</td><td>平均值接近零時不穩定</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>相關既非斜率，亦非因果</h2>
+  <div class="body"><p>先繪圖。兩個變數可以呈現明顯曲線，卻仍得出接近零的相關係數，因為 Pearson 係數 r 只量度線性關聯。它無單位，由 −1 到 +1，且不是斜率：r = 0.9 不會告訴你 x 每增加一單位 y 改變多少。相關亦非因果。第三個因素可以同時驅動兩個變數，因果箭頭可能反向，或樣本可能按結果選取。隨機化、對照組或自然實驗才可支持因果陳述。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Pearson 相關係數</span>
+      <div class="formula-expr formula-math">\[r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \cdot \sum (y_i - \bar{y})^2}}\]</div>
+      <span class="formula-note">−1 ≤ r ≤ +1；只偵測線性關聯</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>以最小二乘法擬合直線</h2>
+  <div class="body"><p>簡單線性迴歸透過選擇使每個觀測值與直線之間垂直差距平方和最小的直線，來擬合 ŷ = a + b x。平方處理使正負誤差一視同仁，並對大誤差懲罰最重，因此一個離群值就能令擬合傾斜。斜率 b 是 x 每增加一單位時 y 的預測變化。截距 a 是 x = 0 時的預測值，通常超出量度範圍且物理上無意義。兩者都應連單位引述，且絕不可把外推預測當作已量度值呈現。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">最小二乘斜率</span>
+      <div class="formula-expr formula-math">\[b = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^2}\]</div>
+      <span class="formula-note">x 每改變一單位時 y 的變化</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">截距</span>
+      <div class="formula-expr formula-math">\[a = \bar{y} - b\,\bar{x}\]</div>
+      <span class="formula-note">擬合直線為 ŷ = a + b x</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>判斷擬合</h2>
+  <div class="body"><p>決定係數 R² 是模型所解釋 y 變異的比例：1 表示每個點都在直線上，0 表示模型不比預測平均值好。它完全不說明模型形式是否正確——在窄範圍內擬合的曲線仍可得分很高。殘差圖才是誠實的檢驗。有規律表示模型設定錯誤，呈漏斗形表示變異隨 x 改變，少數極大殘差則標示影響點。應報告典型誤差，而非只報 R²。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">決定係數</span>
+      <div class="formula-expr formula-math">\[R^2 = 1 - \frac{\mathrm{SS}_{\mathrm{res}}}{\mathrm{SS}_{\mathrm{tot}}}\]</div>
+      <span class="formula-note">SS_res = Σ(yᵢ − ŷᵢ)² 及 SS_tot = Σ(yᵢ − ȳ)²</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>誠實地檢驗模型</h2>
+  <div class="body"><p>模型只有在未見過的數據上表現良好才有用。調參前先分出一組<strong>測試集</strong>，樣本小時則用交叉驗證；否則模型可記住訓練行而看似極佳。對於數值預測，報告平均絕對誤差或均方根誤差，兩者均以 y 的單位表示；均方根對大誤差懲罰更重。在精心選擇的測試集上誤差低是證據；在訓練集上誤差低只是算術。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">均方根誤差</span>
+      <div class="formula-expr formula-math">\[\mathrm{RMSE} = \sqrt{\frac{1}{n} \sum (y_i - \hat{y}_i)^2}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>數據品質陷阱</h2>
+  <div class="body"><p>大多數建模失敗都是數據失敗。<strong>缺失值</strong>可能是有原因的缺失——感測器在閾值以上飽和——因此刪除不完整行會悄然改變所描述的母體。<strong>離群值</strong>值得調查：轉錄錯誤是修正，但真實極端值是資訊。<strong>洩漏</strong>發生於預測變數含有預測時不存在的信息，導致測試分數極佳但部署模型無用。檢查單位、重複、掩蓋變異的捨入及行序。以未來訓練的模型不是預測。</p></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>來源、偏差、推論（SBI）</h2>
+  <div class="body"><p>三個問題可令分析保持誠實。<strong>來源</strong>：誰收集這些數字，用什麼儀器，在什麼條件下？<strong>偏差</strong>：這個樣本系統性漏掉故事的哪部分——上限感測器、便利地點、被歸入「其他」的類別？<strong>推論</strong>：證據實際能延伸多遠，估計值旁應附什麼不確定性？最後一問是考試答案常忘記的。以十個點擬合的斜率支持方向及粗略幅度，而非精確預測：說明樣本量、殘差誤差及擬合範圍。</p></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>分類：分數變成決策</h2>
+  <div class="body"><p>當結果是類別——有缺陷或完好、合格或不合格——模型輸出分數，閾值把它變成決策。<strong>邏輯迴歸</strong>把線性分數經 sigmoid 壓縮，使輸出為概率；閾值 0.5 是預設而非定律，移動它會以一種錯誤換另一種。用<strong>混淆矩陣</strong>而非單靠準確率判斷分類器。<strong>精確率</strong>是被標記個案中真正陽性的比例，<strong>召回率</strong>是真正陽性中被找出的比例；它們懲罰相反的錯誤。在類別不平衡數據上，從不標記任何東西的模型可得高準確率卻什麼也找不到。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">邏輯概率</span>
+      <div class="formula-expr formula-math">\[p = \frac{1}{1 + e^{-s}}, \quad s = b_0 + b_1 x_1 + \cdots\]</div>
+      <span class="formula-note">線性分數 s 映射為 0 與 1 之間的概率</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">精確率與召回率</span>
+      <div class="formula-expr formula-math">\[\mathrm{precision} = \frac{TP}{TP + FP}, \quad \mathrm{recall} = \frac{TP}{TP + FN}\]</div>
+      <span class="formula-note">TP、FP 及 FN 來自混淆矩陣</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>特徵工程與縮放</h2>
+  <div class="body"><p>交給模型的欄位就是模型的一半。<strong>標準化</strong>把變數中心化至零並重新縮放至單位標準差，防止某個大數值變數主導擬合；對數變換可馴服右偏變數如成本及濃度；獨熱編碼把名義類別轉為指示欄位。縮放及編碼須只用<strong>訓練集</strong>計算的統計量，然後把相同變換套用於測試集。先對全部數據縮放會悄然把測試集洩漏進訓練，令每個結果都偏樂觀。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">標準化</span>
+      <div class="formula-expr formula-math">\[z = \frac{x - \mu}{\sigma}\]</div>
+      <span class="formula-note">μ 及 σ 為訓練集的平均值及標準差</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>只在訓練數據上擬合變換</b>
+  從訓練分割計算平均值、標準差及類別水平，然後在測試集重用；否則評估會過於樂觀。
+</div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>基線與誠實比較</h2>
+  <div class="body"><p>沒有模型在抽象上好不好；只有相對於<strong>基線</strong>好不好。擬合任何東西前，先在同一測試集上為最簡單可辯護的替代方案評分——歷史平均值、上一期數值或單規則分類器——並在模型旁報告。在相同分割及相同指標上比較候選模型，當單位應字面理解時偏好<strong>平均絕對誤差</strong>：它直接報告典型誤差，而均方根誤差會放大罕見的大誤差。無法勝過平凡基線的模型不是改進，無論多巧妙。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">平均絕對誤差</span>
+      <div class="formula-expr formula-math">\[\mathrm{MAE} = \frac{1}{n} \sum |y_i - \hat{y}_i|\]</div>
+      <span class="formula-note">以 y 的單位表示的典型誤差</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>殘差</dt><dd>觀測值與擬合模型預測值之間的垂直差距。</dd></div><div class="term"><dt>決定係數</dt><dd>擬合模型所解釋的反應變數變異比例。</dd></div><div class="term"><dt>最小二乘法</dt><dd>透過最小化殘差平方和來選擇參數的擬合規則。</dd></div><div class="term"><dt>樣本</dt><dd>實際量度的母體子集，並由此作出估計。</dd></div><div class="term"><dt>離群值</dt><dd>遠離其餘數據的觀測值，可能是記錄錯誤或真實極端值。</dd></div><div class="term"><dt>數據洩漏</dt><dd>使用含有作出預測時無法獲得的信息的預測變數。</dd></div><div class="term"><dt>混淆矩陣</dt><dd>真陽性、假陽性、假陰性及真陰性的表格，顯示分類器出錯之處。</dd></div><div class="term"><dt>標準化</dt><dd>把變數重新縮放至零平均值及單位標準差，通常使用訓練集的統計量。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>擬合強度對養護時間</h2>
+        <p class="problem">一項小型試驗在五個齡期量度混凝土養護 x 天後的強度 y（MPa）：(1, 10)、(2, 12)、(3, 15)、(4, 18)、(5, 20)。擬合最小二乘直線，求 R²，並解釋斜率。</p>
+        <ol><li>摘要：Σx = 15，故 x̄ = 3 天；Σy = 75，故 ȳ = 15 MPa。</li><li>對平均值的偏差給出 Σ(xᵢ − x̄)² = 4 + 1 + 0 + 1 + 4 = 10 及 Σ(xᵢ − x̄)(yᵢ − ȳ) = 10 + 3 + 0 + 3 + 10 = 26。</li><li>斜率：b = 26 / 10 = 2.60 MPa 每天。截距：a = ȳ − b x̄ = 15 − 2.60 × 3 = 7.2 MPa，故 ŷ = 7.2 + 2.60x。</li><li>預測值為 9.8、12.4、15.0、17.6 及 20.2 MPa，殘差為 0.2、−0.4、0、0.4 及 −0.2。於是 SS_res = 0.40，SS_tot = 25 + 9 + 0 + 9 + 25 = 68。</li><li>R² = 1 − 0.40/68 = 0.994，故直線解釋這五個齡期強度變異的 99.4%。</li></ol>
+        <div class="answer"><b>Answer</b>ŷ = 7.2 + 2.60x（MPa），R² = 0.994。每多一天與預測強度約高 2.6 MPa 相關，但只有五個點且範圍僅 1–5 天，不應把直線外推至 28 天設計強度。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>寫出斜率的單位（每 x 單位的 y 單位）及截距的單位——只寫數字會失分。</li><li>切勿把 R² 描述為準確率：它是所解釋變異的比例，不是正確預測的百分比。</li><li>在為任何擬合辯護前先繪數據圖，再繪殘差圖；殘差有規律表示模型錯誤。</li><li>說明擬合範圍及樣本量，並指出預測何時屬外推。</li><li>聲稱任何模型好之前，先在同一測試集報告樸素基線；分數只有相對於某事物才有意義。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>一個迴歸以養護時間預測混凝土強度並報告 R² = 0.02。最準確的解讀是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>該關係必定是因果</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>模型以 2% 準確率預測強度</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>約 2% 的強度變異由養護時間解釋</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>斜率錯了 2%</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>R² 是變異的比例，不是正確預測的百分比；此處直線幾乎不比預測平均值好。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>強度對養護時間的最小二乘擬合給出 b = 2.6 MPa 每天。哪句正確？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>每多一天與預測強度高 2.6 MPa 相關</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>強度每天增加 2.6%</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>五天後強度為 2.6 MPa</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>每多一天養護導致額外 2.6 MPa</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>斜率是 x 每單位時的預測變化；關聯不是因果證明，斜率也不是百分比。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>一個模型用混凝土澆築後記錄的延性測試來預測 28 天強度，並在訓練及測試數據上都得分極佳。最可能的問題是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>MPa 與 kN 單位不匹配</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>預測變數太少</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>過擬合，因為分數太好</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>數據洩漏，因為預測時不會有該預測變數</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>洩漏讓未來信息進入預測變數；模型看似極佳但預測時無法使用。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>對於右偏的維修成本數據，哪一對最能描述典型值及其離散度？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>眾數與全距</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>平均值與變異係數</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>平均值與標準差</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>中位數與四分位距</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>中位數及四分位距不受長尾影響，而平均值及標準差會被拉扯。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>一個缺陷偵測器在 400 塊面板上運行：標記 60 塊，其中 45 塊真正有缺陷，另有 25 個真正缺陷未被標記。其精確率是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>45/400</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>45/60</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>45/70</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>60/400</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>精確率是標記面板中真正有缺陷的比例：TP/(TP + FP) = 45/60 = 0.75。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>一個團隊在分割前用整個數據集的平均值及標準差標準化變數。可能的後果是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>模型會欠擬合</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>斜率會變成相關係數</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>沒有影響；標準化不能改變結果</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>測試信息洩漏進訓練，令評估過於樂觀</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>對所有行計算變換會讓測試集影響訓練流程，誇大所報告的表現。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-statistics.zh-Hant.html"><span>Core</span><b>工程統計學</b></a><a class="related-card" href="programming-fundamentals.zh-Hant.html"><span>Computing</span><b>程式設計基礎</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="structural-mechanics.zh-Hant.html"><small>上一頁</small><b>結構力學</b></a><a class="next" href="air-noise-pollution.zh-Hant.html"><small>下一頁</small><b>空氣與噪音污染</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">先繪圖，後擬合。</p><p class="margin-note">r 不是斜率。</p><p class="margin-note">高 R² 不代表模型正確。</p><p class="margin-note">問每個數字從何而來。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

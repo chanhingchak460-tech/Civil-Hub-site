@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://chanhingchak460-tech.github.io/Civil-Hub-site/sitemap.xml

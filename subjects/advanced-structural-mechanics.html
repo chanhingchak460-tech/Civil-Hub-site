@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advanced Structural Mechanics — Civil Hub</title>
+<meta name="description" content="Load paths in members that are neither symmetrical nor circular: principal axes, shear centres, warping torsion and the stability of real columns. It expla">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/advanced-structural-mechanics.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="Advanced Structural Mechanics — Civil Hub">
+<meta property="og:description" content="Load paths in members that are neither symmetrical nor circular: principal axes, shear centres, warping torsion and the stability of real columns. It expla">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/advanced-structural-mechanics.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="advanced-structural-mechanics.html" data-alt-zh-hant="advanced-structural-mechanics.zh-Hant.html" data-alt-ja="advanced-structural-mechanics.ja.html" data-alt-ko="advanced-structural-mechanics.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">Advanced Structural Mechanics</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Core</p>
+          <h1>Advanced Structural Mechanics</h1>
+          <p class="subject-sub">Bending, shear centres, torsion and buckling</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Core</li><li><b data-i18n="subject.read">Read</b>14 min</li><li><b data-i18n="subject.sections">Sections</b>10</li><li><b data-i18n="subject.formulas">Formulas</b>22</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M80 160 V64 H260 V160" stroke="currentColor" stroke-width="1.7"/><path d="M70 160 h20 M250 160 h20" stroke="currentColor" stroke-width="1.2"/><path d="M80 160 l-8 12 h16 z M260 160 l-8 12 h16 z" stroke="currentColor" stroke-width="1"/><path d="M80 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M220 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M104 100 q-20 14 0 28" stroke="var(--accent)" stroke-width="1"/><path d="M236 100 q20 14 0 28" stroke="var(--accent)" stroke-width="1"/><text x="170" y="44" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PORTAL FRAME</text></svg>
+          <figcaption>Portal frame — bending moments at the joints</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">Symmetry is the exception</a></li><li><a href="#sec-2">Product of inertia and the principal axes</a></li><li><a href="#sec-3">Stress in unsymmetrical bending</a></li><li><a href="#sec-4">Shear flow and the shear centre</a></li><li><a href="#sec-5">Torsion beyond the circular shaft</a></li><li><a href="#sec-6">Struts and effective length</a></li><li><a href="#sec-7">Imperfections and the Southwell plot</a></li><li><a href="#sec-8">Energy methods as a shortcut</a></li><li><a href="#sec-9">Plastic bending and the shape factor</a></li><li><a href="#sec-10">Warping torsion and the bimoment</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">Load paths in members that are neither symmetrical nor circular: principal axes, shear centres, warping torsion and the stability of real columns. It explains why a channel twists and why a slender strut fails below its yield load.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="advanced-structural-mechanics" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>Symmetry is the exception</h2>
+  <div class="body"><p>Textbook sections are usually symmetric, so the load plane and the neutral axis stay perpendicular and the two bending directions can be treated separately. Real members are less obliging: unequal angles, channels loaded off-centre, Z-purlins and crane rails all bend in a direction that matches neither centroidal axis.</p>
+<p>The coupling comes from the <strong>product of inertia</strong> I_xy = ∫xy dA, which measures how the area is spread through the four quadrants. When it is zero, bending about one axis produces no stress at points defined by the other coordinate and the simple flexure formula applies. When it is not, the neutral axis tilts.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Product of inertia</span>
+      <div class="formula-expr formula-math">\[I_{xy} = \int x\,y\,\mathrm{d}A\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Product of inertia and the principal axes</h2>
+  <div class="body"><p>For a section built from rectangles, I_xy sums each part as A_i x̄_i ȳ_i, because a rectangle contributes nothing about its own centroidal axes. Doubly symmetric sections have I_xy = 0; a section with one axis of symmetry also has it zero about that pair of axes.</p>
+<p>The <strong>principal axes</strong> are the centroidal axes for which I_xy vanishes. Finding them is the same algebra as principal stresses: the angle obeys tan 2θ_p = 2I_xy/(I_y − I_x), and the principal second moments sit between the two extremes. Substitute the angle back to check which axis carries which value.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Principal angle</span>
+      <div class="formula-expr formula-math">\[\tan 2\theta_p = \frac{2 I_{xy}}{I_y - I_x}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Principal second moments</span>
+      <div class="formula-expr formula-math">\[I_{u,v} = \frac{I_x + I_y}{2} \pm \sqrt{\left(\frac{I_x - I_y}{2}\right)^2 + I_{xy}^2}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>Stress in unsymmetrical bending</h2>
+  <div class="body"><p>With centroidal axes x and y, the normal stress at a point is given by the formula below, with both moments taken positive when they cause tension in the positive quadrant. The denominator is never negative, because I_x I_y ≥ I_xy².</p>
+<p>Setting σ = 0 gives the neutral axis: it passes through the centroid, but its slope is unrelated to either axis. The extreme stress is not automatically at the corner furthest in x or y, so check every corner. About principal axes the coupling vanishes and the familiar form returns, with σ = M_v u/I_v + M_u v/I_u.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Unsymmetrical bending stress</span>
+      <div class="formula-expr formula-math">\[\sigma = \frac{(M_y I_x - M_x I_{xy})\,x + (M_x I_y - M_y I_{xy})\,y}{I_x I_y - I_{xy}^2}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Shear flow and the shear centre</h2>
+  <div class="body"><p>Transverse shear is not uniform. In a thin-walled section, cut the wall somewhere and balance the longitudinal force on the area beyond the cut: the <strong>shear flow</strong> is q = VQ/I, where Q is the first moment of that area about the bending axis, and the wall stress is q divided by the thickness.</p>
+<p>For a channel, the flange and web flows combine into one vertical force whose line of action is not the centroid. The point through which a transverse load produces no twist is the <strong>shear centre</strong>, a purely geometric property. For a channel it lies outside the web, away from the flanges, at e = 3b²/(h + 6b) from the web centre-line, with b the flange width and h the depth between flange centre-lines. An equal angle has its shear centre near the heel.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Shear flow</span>
+      <div class="formula-expr formula-math">\[q = \frac{V Q}{I}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Shear centre of a channel</span>
+      <div class="formula-expr formula-math">\[e = \frac{3 b^2}{h + 6 b}\]</div>
+      
+    </div></div><div class="table-wrap"><table><caption>Shear centre for common thin-walled sections</caption><thead><tr><th scope='col'>Section</th><th scope='col'>Product of inertia</th><th scope='col'>Shear centre</th></tr></thead><tbody><tr><td>Doubly symmetric I-section</td><td>zero</td><td>at the centroid</td></tr><tr><td>Channel (one axis of symmetry)</td><td>zero about symmetry axes</td><td>outside the web, opposite the flanges</td></tr><tr><td>Equal angle</td><td>non-zero</td><td>near the heel of the legs</td></tr><tr><td>Z-section (point symmetry)</td><td>generally non-zero</td><td>at the centroid</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Torsion beyond the circular shaft</h2>
+  <div class="body"><p>A circular shaft twists without warping, so τ = Tr/J and θ = TL/GJ are exact. Any other section <strong>warps</strong>: plane sections do not stay plane, and the simple torsion formula fails. A solid non-circular bar reaches its maximum shear stress on the boundary nearest the centroid, with the value taken from a coefficient table.</p>
+<p>A <strong>closed thin-walled tube</strong> carries torsion by circulating shear flow, so τ = T/(2A_m t) and J = 4A_m²/∮(ds/t), with A_m the area enclosed by the wall mid-line. An open section has no closed path for the flow and is far weaker, J ≈ Σ(1/3)bt³. That is why a box resists torsion far better than an open channel of the same mass.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Bredt shear stress</span>
+      <div class="formula-expr formula-math">\[\tau = \frac{T}{2 A_m t}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Closed-tube constant</span>
+      <div class="formula-expr formula-math">\[J = \frac{4 A_m^2}{\oint \frac{\mathrm{d}s}{t}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Open-section constant</span>
+      <div class="formula-expr formula-math">\[J \approx \sum \frac{1}{3} b t^3\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>Struts and effective length</h2>
+  <div class="body"><p>A perfectly straight, centrally loaded column stays straight until the <strong>Euler load</strong> is reached: P_cr = π²EI/(KL)², where KL is the effective length set by the ends. K is 1.0 for pinned–pinned, 0.7 for fixed–pinned, 0.5 for fixed–fixed and 2.0 for fixed–free. Beyond that load the straight shape is unstable and any small disturbance grows.</p>
+<p>The governing parameter is the slenderness ratio λ = KL/r, with r = √(I/A) the radius of gyration about the bending axis. Stocky columns yield before they buckle; slender ones buckle at stresses well below yield. A section is only as strong as its weaker axis.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Euler buckling load</span>
+      <div class="formula-expr formula-math">\[P_{cr} = \frac{\pi^2 E I}{(K L)^2}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Slenderness ratio</span>
+      <div class="formula-expr formula-math">\[\lambda = \frac{K L}{r}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Imperfections and the Southwell plot</h2>
+  <div class="body"><p>No real column is perfectly straight or perfectly loaded. An initial bow δ₀ is amplified by the axial load, so the mid-height deflection becomes δ_max = δ₀/[1 − P/P_cr], and the extreme fibre must add P/A and Pδ_max/Z without exceeding yield.</p>
+<p>Failure therefore arrives below the Euler load: the column is driven into yielding by its own growing deflection, which the <strong>Perry–Robertson</strong> method solves together. The <strong>Southwell plot</strong> extracts the Euler load from a test that never reaches instability: plotting measured deflection divided by load against deflection gives a straight line of slope 1/P_cr. Buckling is a gradual loss of stiffness.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Deflection amplification</span>
+      <div class="formula-expr formula-math">\[\delta_{\max} = \frac{\delta_0}{1 - P/P_{cr}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Southwell plot</span>
+      <div class="formula-expr formula-math">\[\frac{\delta}{P} = \frac{\delta}{P_{cr}} + \frac{\delta_0}{P_{cr}}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>Energy methods as a shortcut</h2>
+  <div class="body"><p>Strain energy stores the work of deformation: for bending U = ∫M²/(2EI) ds, with similar integrals in axial force, shear and torsion. <strong>Castigliano's theorem</strong> then gives the displacement in the direction of a load as Δ = ∂U/∂P, which handles curved and indeterminate members without integrating the differential equation.</p>
+<p>The <strong>unit load method</strong> is the same idea in algebraic form: apply a unit load where the displacement is wanted, find the internal moment m it produces, then 1·Δ = ∫Mm/(EI) ds. Buckling loads also follow from energy, by equating the work of the axial load as the strut bows to the bending energy stored.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Bending strain energy</span>
+      <div class="formula-expr formula-math">\[U = \int \frac{M^2}{2 E I}\,\mathrm{d}s\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Castigliano&#x27;s theorem</span>
+      <div class="formula-expr formula-math">\[\Delta = \frac{\partial U}{\partial P}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Unit load method</span>
+      <div class="formula-expr formula-math">\[1 \cdot \Delta = \int \frac{M m}{E I}\,\mathrm{d}s\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Plastic bending and the shape factor</h2>
+  <div class="body"><p>When the extreme fibre first reaches yield, elastic theory says failure — but the section still carries load. Capacity grows as yielding spreads inward until the whole section is at f_y: the <strong>plastic moment</strong> is M_p = f_y S, where S is the plastic modulus, the first moment of area about the equal-area axis. For a rectangle S = bh²/4 against elastic Z = bh²/6, so the <strong>shape factor</strong> M_p/M_y is 1.5; an I-section sits near 1.1–1.2.</p>
+<p>A <strong>plastic hinge</strong> forms where M reaches M_p and rotates freely at constant moment, turning the member into a mechanism. That redistribution is the basis of plastic design: the collapse load comes from mechanism geometry, not from the first point of yield.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Yield and plastic moments</span>
+      <div class="formula-expr formula-math">\[M_y = f_y Z, \quad M_p = f_y S\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Plastic modulus, rectangle</span>
+      <div class="formula-expr formula-math">\[S = \frac{b h^2}{4}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Shape factor</span>
+      <div class="formula-expr formula-math">\[\frac{M_p}{M_y} = \frac{S}{Z}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>Warping torsion and the bimoment</h2>
+  <div class="body"><p>An open thin-walled section under torsion does not stay plane: the flanges bend sideways, and the resulting flange stresses are <strong>warping stresses</strong>, described by a <strong>bimoment</strong>. The total torque splits into St Venant and warping parts, T = T_sv + T_w, with T_sv = G J θ′ and T_w = −E I_w θ″′, where I_w is the warping constant, with units of length to the sixth. For an I-section I_w ≈ I_f h²/2, where I_f is the second moment of one flange.</p>
+<p>End restraint changes everything: a torsionally restrained beam carries much of its torque by warping, so the simple τ = Tr/J figure can be badly unconservative for open sections.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Torque split</span>
+      <div class="formula-expr formula-math">\[T = T_{sv} + T_w\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Warping torque</span>
+      <div class="formula-expr formula-math">\[T_w = -E I_w \theta&#x27;&#x27;&#x27;\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Warping constant, I-section</span>
+      <div class="formula-expr formula-math">\[I_w \approx \frac{I_f h^2}{2}\]</div>
+      
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Product of inertia</dt><dd>The integral ∫xy dA over a section; non-zero means the centroidal axes are not principal and bending about one axis induces stress related to the other.</dd></div><div class="term"><dt>Principal axes</dt><dd>The pair of centroidal axes about which the product of inertia is zero, so bending about either one produces no cross-coupling.</dd></div><div class="term"><dt>Shear centre</dt><dd>The point in a section through which a transverse load must pass to cause no twisting; a geometric property independent of material.</dd></div><div class="term"><dt>Shear flow</dt><dd>The shear force per unit length along a thin wall, q = VQ/I, used to locate the resultant shear and the shear centre.</dd></div><div class="term"><dt>Warping</dt><dd>The out-of-plane distortion of a non-circular section under torsion, caused by shear strains varying around the wall.</dd></div><div class="term"><dt>Effective length</dt><dd>The distance KL between points of contraflexure of a buckling strut, chosen from its end fixity.</dd></div><div class="term"><dt>Perry–Robertson method</dt><dd>A column approach that combines elastic buckling with yielding at the extreme fibre to predict failure of an imperfect strut.</dd></div><div class="term"><dt>Southwell plot</dt><dd>A graph of deflection over load against deflection for a column test; its slope gives the reciprocal of the critical buckling load.</dd></div><div class="term"><dt>Plastic modulus</dt><dd>The first moment of area about the equal-area axis; multiplied by the yield stress it gives the plastic moment.</dd></div><div class="term"><dt>Bimoment</dt><dd>The self-equilibrating pair of flange moments caused by restrained warping; its gradient along the member gives the warping torque.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Shear centre of a channel and torsion from an eccentric load</h2>
+        <p class="problem">A thin-walled channel has flange width b = 75 mm measured from the web centre-line, depth h = 200 mm between flange centre-lines and thickness t = 6 mm. A vertical load of 5 kN acts through the centroid of a 2.0 m long member. Find the shear centre, the torque caused by the eccentric load, and the St Venant angle of twist (G = 79 GPa).</p>
+        <ol><li>Second moment about the bending axis: I_x = t h³/12 + 2 b t (h/2)² = 6 × 200³/12 + 2 × 75 × 6 × 100² = 4.0 × 10⁶ + 9.0 × 10⁶ = 13.0 × 10⁶ mm⁴.</li><li>Shear centre offset from the web centre-line: e = 3b²/(h + 6b) = 3 × 75²/(200 + 450) = 16 875/650 = 26.0 mm, on the side of the web away from the flanges.</li><li>Centroid offset toward the flanges: A = t h + 2 b t = 1200 + 900 = 2100 mm², so x̄ = (2 b t)(b/2)/A = 33 750/2100 = 16.1 mm. The centroid load is therefore 26.0 + 16.1 = 42.1 mm from the shear centre.</li><li>Torque about the shear centre: T = V × e = 5000 N × 0.0421 m = 210 N·m = 210 500 N·mm.</li><li>Open-section torsion constant: J ≈ Σ(1/3) b t³ = (1/3)(200 + 75 + 75)(6³) = 25 200 mm⁴.</li><li>Angle of twist: θ = T L/(G J) = (210 500 × 2000)/(79 000 × 25 200) = 0.212 rad, about 12°.</li><li>Sanity check: 12° over 2 m is unacceptable for a roof member, which is why channels are loaded through the shear centre, restrained by sheeting, or replaced by a closed box. Warping restraint would reduce this estimate, but not to zero.</li></ol>
+        <div class="answer"><b>Answer</b>The shear centre lies 26.0 mm from the web centre-line, on the side opposite the flanges. The centroid load applies a 0.21 kN·m torque about it, and the St Venant twist is about 0.21 rad (12°), confirming that open sections need restraint or a load path through the shear centre.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>State the sign convention for M_x and M_y before substituting into the unsymmetrical bending formula; most lost marks are sign errors, not algebra.</li><li>For any thin-walled section, sketch the shear flow path first: free edges start at zero flow, and corners are where the resultants meet.</li><li>In torsion questions, say whether the section is closed or open before writing a formula; the difference in stiffness is enormous.</li><li>For struts, quote both the Euler load and the yield load, then say which one governs for the stated slenderness.</li><li>For open sections under torsion, quote the warping constant alongside J — end restraint can make the warping torque the dominant term.</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Design strength py of structural steel to BS EN grades</h3>
+  <p class="ref-table-intro">Design strength py used in the Hong Kong steel code. It is the yield strength divided by the material factor for the steel class and capped by the tensile strength divided by a second factor, so the tabulated value falls as the element gets thicker.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Steel grade</th><th scope='col'>Thickness t (mm)</th><th scope='col'>Design strength py (N/mm²)</th></tr></thead><tbody><tr><td>S235</td><td>t ≤ 16</td><td>235</td></tr><tr><td>S275</td><td>t ≤ 16</td><td>275</td></tr><tr><td>S275</td><td>16 &lt; t ≤ 40</td><td>265</td></tr><tr><td>S355</td><td>t ≤ 16</td><td>355</td></tr><tr><td>S355</td><td>16 &lt; t ≤ 40</td><td>345</td></tr><tr><td>S355</td><td>40 &lt; t ≤ 63</td><td>335</td></tr><tr><td>S460</td><td>t ≤ 16</td><td>460</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 3.2 of the Code of Practice for the Structural Use of Steel 2011 (2023 Edition). For Class 1 steel the material factors are γm1 = 1.0 and γm2 = 1.1 (Table 4.1); the thickness of the thickest element governs the grade classification.</p>
+  <p class="ref-table-caveat">Revision summary only. Values depend on the steel class, the product standard and the governing thickness, and normal-strength and high-strength steels are treated separately; check the current steel code for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>A section has a non-zero product of inertia. Which statement about its bending behaviour is correct?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Bending about one centroidal axis produces stress at points where the other coordinate is zero</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The neutral axis must be parallel to the load plane</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The section cannot carry bending moment</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The maximum stress always occurs at the corner furthest from the centroid</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Coupling through I_xy means a moment about x produces stress that varies with x as well as y, and the neutral axis tilts away from the geometric axis.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>A channel section carries a vertical load. Where is its shear centre?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>At the junction of the web and the top flange</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>At the centroid</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Outside the web, on the side away from the flanges</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Inside the flange, midway between the web and the tip</span></button></div>
+    <div class="quiz-explain"><b>Why</b>For a channel the flange shear flows form a couple that pushes the resultant shear outside the web, opposite the flanges, at e = 3b²/(h + 6b).</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q03</span><span>Two members have the same mass and the same enclosed area, one a closed tube and one an open channel. For the same torque, which twists less?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The closed tube, because its shear flow can circulate</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Both twist equally because torsion depends only on area</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>It cannot be determined without the material modulus</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The open channel, because its walls are unstiffened</span></button></div>
+    <div class="quiz-explain"><b>Why</b>A closed tube carries torsion by a circulating Bredt shear flow, giving J = 4A_m²/∮(ds/t); an open section has J ≈ Σbt³/3, orders of magnitude smaller.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q04</span><span>A pinned-pinned strut of length L has Euler load P. If both ends are made fixed and nothing else changes, the Euler load becomes approximately:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>4P</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>P/2</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>P</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2P</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The effective length falls from L to 0.5L, and P_cr varies as 1/(KL)², so the load increases by 1/0.5² = 4.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>A rectangular section has elastic modulus Z = bh²/6 and plastic modulus S = bh²/4. Its shape factor is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>1.0</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>1.25</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1.5</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2.0</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The shape factor is S/Z = (bh²/4)/(bh²/6) = 6/4 = 1.5, meaning the plastic moment is half as much again as the first-yield moment.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>In the shear centre experiment, the shear centre of a channel is found as the loading position where:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The load hanger no longer grips the plate</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The two corner dial gauges read equal and opposite deflections</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Both gauges return to zero after the load is applied</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The measured deflection is a maximum</span></button></div>
+    <div class="quiz-explain"><b>Why</b>A load through the shear centre produces bending without twist, so the rotation gauges at the two corners read zero.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="structural-mechanics.html"><span>Core</span><b>Structural Mechanics</b></a><a class="related-card" href="construction-materials.html"><span>Core</span><b>Construction Materials</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="aviation-studies.html"><small>Previous</small><b>Aviation &amp; Infrastructure</b></a><a class="next" href="programming-fundamentals.html"><small>Next</small><b>Programming Fundamentals</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2023). <i>Code of Practice for the Structural Use of Steel 2011 (2023 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/SUOS2011.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/SUOS2011.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">I_xy ≠ 0: the axes are not principal.</p><p class="margin-note">Free edge of a thin wall: shear flow starts at zero.</p><p class="margin-note">Open sections are torsionally feeble — box them.</p><p class="margin-note">A strut fails by bending, not by crushing.</p><p class="margin-note">Southwell slope = 1/P_cr.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>흙의 역학 — Civil Hub</title>
+<meta name="description" content="흙은 입자, 물, 공기로 이루어진 삼상 재료로, 강도와 침하량은 유효응력, 배수 조건, 응력 이력에 따라 달라집니다. 이 페이지에서는 기초 및 사면 설계의 근간이 되는 상(phase) 관계, 분류 시험, 압밀 이론, 전단강도를 연결하여 설명합니다.">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/soil-mechanics.ko.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="흙의 역학 — Civil Hub">
+<meta property="og:description" content="흙은 입자, 물, 공기로 이루어진 삼상 재료로, 강도와 침하량은 유효응력, 배수 조건, 응력 이력에 따라 달라집니다. 이 페이지에서는 기초 및 사면 설계의 근간이 되는 상(phase) 관계, 분류 시험, 압밀 이론, 전단강도를 연결하여 설명합니다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/soil-mechanics.ko.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="soil-mechanics.html" data-alt-zh-hant="soil-mechanics.zh-Hant.html" data-alt-ja="soil-mechanics.ja.html" data-alt-ko="soil-mechanics.ko.html" data-page-lang="ko" data-root="../" data-total="42" data-page="library" data-content-lang="ko">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">흙의 역학</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">핵심</p>
+          <h1>흙의 역학</h1>
+          <p class="subject-sub">유효 응력, 압밀, 전단 강도 및 토압</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>핵심</li><li><b data-i18n="subject.read">Read</b>13 분</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>21</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M60 128 H280" stroke="currentColor" stroke-width="1.6"/><path d="M92 128 V104 H248 V128" stroke="currentColor" stroke-width="1.5"/><path d="M120 60 V100 M148 60 V100 M176 60 V100 M204 60 V100 M232 60 V100" stroke="var(--accent)" stroke-width="1.1"/><path d="M120 56 l4 6 4 -6 M148 56 l4 6 4 -6 M176 56 l4 6 4 -6 M204 56 l4 6 4 -6 M232 56 l4 6 4 -6" stroke="var(--accent)" stroke-width="1"/><path d="M36 140 H304" stroke="var(--line)" stroke-width="1"/><path d="M44 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M66 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M88 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M110 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M132 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M154 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M176 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M198 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M220 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M242 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M264 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M286 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M170 128 C140 146 126 160 126 176 M170 128 C200 146 214 160 214 176" stroke="var(--line)" stroke-width="1.1"/><text x="170" y="190" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">STRESS BULB</text></svg>
+          <figcaption>Footing pressure — the stress bulb below</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">삼상 구조</a></li><li><a href="#sec-2">분류 및 아터버그 한계</a></li><li><a href="#sec-3">다짐</a></li><li><a href="#sec-4">유효응력과 침투</a></li><li><a href="#sec-5">압밀과 침하</a></li><li><a href="#sec-6">전단강도와 모어-쿨롱</a></li><li><a href="#sec-7">옹벽에 작용하는 토압</a></li><li><a href="#sec-8">지지력과 사면 안정</a></li><li><a href="#sec-9">투수성: 정수두 및 변수두 시험</a></li><li><a href="#sec-10">압밀시험 해석: t90으로부터 c_v 산정</a></li><li><a href="#sec-11">삼축시험: UU, CU, CD</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">흙은 입자, 물, 공기로 이루어진 삼상 재료로, 강도와 침하량은 유효응력, 배수 조건, 응력 이력에 따라 달라집니다. 이 페이지에서는 기초 및 사면 설계의 근간이 되는 상(phase) 관계, 분류 시험, 압밀 이론, 전단강도를 연결하여 설명합니다.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="soil-mechanics" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>삼상 구조</h2>
+  <div class="body"><p>흙은 입자 골격과 그 사이의 물과 공기로 이루어져 있습니다. 간극 부피는 V_v = V_w + V_a이며, 상(phase) 관계는 이러한 부피와 중량을 비교합니다.</p>
+<ul>
+<li>간극비 e = V_v/V_s는 느슨함을 나타내며, 공극률 n = e/(1+e)는 같은 개념을 부피 비율로 표현한 것입니다.</li>
+<li>함수비 w = W_w/W_s는 물의 질량과 고체의 질량을 비교하고, 포화도 S_r = V_w/V_v는 간극이 얼마나 채워져 있는지를 나타냅니다.</li>
+<li>비중 G_s는 석영 입자의 경우 약 2.65입니다.</li>
+<li>단위중량은 상 도표로부터 유도됩니다: 습윤 단위중량 γ = (G_s + e S_r) γ_w/(1+e), 건조 단위중량 γ_d = γ/(1+w) = G_s γ_w/(1+e).</li>
+</ul>
+<p>일관성을 유지하면 나중에 오류를 줄일 수 있습니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">간극비</span>
+      <div class="formula-expr formula-math">\[e = \frac{V_v}{V_s}\]</div>
+      <span class="formula-note">간극의 부피를 고체의 부피로 나눈 값</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">건조 단위중량</span>
+      <div class="formula-expr formula-math">\[\gamma_d = \frac{G_s \gamma_w}{1 + e}\]</div>
+      <span class="formula-note">γ/(1+w)와 동일</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>분류 및 아터버그 한계</h2>
+  <div class="body"><p>조립토는 체분석으로, 세립토는 비중계 시험으로 분류합니다. 입도곡선에서 D₁₀, D₃₀, D₆₀을 구하고, 균등계수 C_u = D₆₀/D₁₀를 계산합니다. 값이 크면 입도가 양호한 흙입니다.</p>
+<p>세립토의 경우 <strong>아터버그 한계</strong>는 거동이 변화하는 함수비를 나타냅니다.</p>
+<ul>
+<li>액성한계 LL은 흙이 더 이상 흐르지 않는 함수비입니다(폴콘 시험에서 20 mm 관입).</li>
+<li>소성한계 PL은 3 mm 실이 부서지는 함수비입니다.</li>
+<li>소성지수 PI = LL − PL은 소성 거동의 범위를 나타냅니다.</li>
+</ul>
+<p>PI가 높으면 압축성이 큰 점토를 의미하며, 소성도표는 실트와 점토를 구분합니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">소성지수</span>
+      <div class="formula-expr formula-math">\[\mathrm{PI} = \mathrm{LL} - \mathrm{PL}\]</div>
+      <span class="formula-note">소성 범위의 폭</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">균등계수</span>
+      <div class="formula-expr formula-math">\[C_u = \frac{D_{60}}{D_{10}}\]</div>
+      <span class="formula-note">입도곡선의 분포 범위</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>다짐</h2>
+  <div class="body"><p>다짐은 일반적으로 롤러를 사용하여 공기를 배출시켜 흙을 밀도 있게 만드는 것입니다. 실내 프록터 시험은 여러 함수비에서 시료를 다짐하고 건조밀도를 함수비에 대해 도시하여 <strong>최적함수비</strong>에서 최대값을 갖는 곡선을 얻습니다.</p>
+<p>너무 건조하면 입자들이 서로 맞물리고, 너무 습하면 물이 흙이 채워야 할 간극을 차지합니다.</p>
+<p>다짐은 강도와 지지력을 높이고 침하와 투수성을 감소시키므로, 성토는 단순히 덤프하는 것이 아니라 얇은 층으로 포설하고 규정된 상대다짐도로 다짐해야 합니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">상대다짐도</span>
+      <div class="formula-expr formula-math">\[\mathrm{RC} = \frac{\gamma_d(\text{field})}{\gamma_d(\text{max, lab})}\]</div>
+      <span class="formula-note">일반적으로 백분율로 규정</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>유효응력과 침투</h2>
+  <div class="body"><p>강도와 침하는 <strong>유효응력</strong>에 의해 지배됩니다: σ' = σ − u, 여기서 σ는 상부 흙과 물의 무게로 인한 전응력이고 u는 간극수압입니다. 동일한 전응력이라도 간극수압이 다르면 거동이 완전히 달라집니다.</p>
+<ul>
+<li>지하수면 아래에서는 u = ρ_w g h이고 유효응력은 수중 단위중량 γ' = γ_sat − γ_w를 사용합니다.</li>
+<li>지하수면 위에서는 모세관수가 부의 간극수압을 발생시켜 일시적으로 σ'를 증가시킬 수 있습니다.</li>
+<li>침투는 힘을 추가합니다. 다르시 법칙은 v = k i, q = k i A이며, 동수경사 i = Δh/L입니다.</li>
+<li>상향 침투가 수중중량에 접근하면 유효응력이 0이 됩니다: <strong>한계동수경사</strong>는 i_c = (G_s − 1)/(1 + e)이며, 이를 초과하면 흙이 끓어오르고 파이핑이 시작될 수 있습니다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">유효응력</span>
+      <div class="formula-expr formula-math">\[\sigma&#x27; = \sigma - u\]</div>
+      <span class="formula-note">골격이 부담하는 응력</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">다르시 법칙</span>
+      <div class="formula-expr formula-math">\[v = k i\]</div>
+      <span class="formula-note">투수계수</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">한계동수경사</span>
+      <div class="formula-expr formula-math">\[i_c = \frac{G_s - 1}{1 + e}\]</div>
+      <span class="formula-note">유효응력이 0으로 감소</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>압밀과 침하</h2>
+  <div class="body"><p>압밀은 포화 점토에서 과잉간극수압이 소산됨에 따라 시간에 의존하여 압축되는 현상입니다. 하중은 처음에는 물이 부담하고, 배수가 진행되면 압력이 흙 골격으로 전이되어 간극비가 감소하고 침하가 발생합니다.</p>
+<p>압밀시험(오도미터)은 시료에 단계적으로 하중을 가하고 간극비를 대수 압력에 대해 도시합니다. 초기 압축선의 기울기는 압축지수 C_c이며, 선행압밀압력은 과거에 받은 최대 응력을 나타냅니다. <strong>과압밀비</strong> OCR은 그 응력과 현재 응력을 비교하며, 과압밀 점토는 침하가 훨씬 작습니다.</p>
+<p>침하는 s_c = C_c H/(1 + e₀) · log₁₀((σ'₀ + Δσ)/σ'₀)를 따르며, 속도는 압밀계수 c_v에 의존합니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">1차원 침하</span>
+      <div class="formula-expr formula-math">\[s_c = \frac{C_c H}{1 + e_0} \log_{10}\left(\frac{\sigma&#x27;_0 + \Delta \sigma}{\sigma&#x27;_0}\right)\]</div>
+      <span class="formula-note">층 두께</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>전단강도와 모어-쿨롱</h2>
+  <div class="body"><p>전단강도는 입자 간 미끄러짐에 대한 저항입니다. <strong>모어-쿨롱</strong> 파괴기준은 τ_f = c' + σ' tan φ'이며, 여기서 c'는 유효점착력, φ'는 유효마찰각, σ'는 파괴면의 유효수직응력입니다.</p>
+<ul>
+<li>τ_f를 σ'에 대해 도시하면 절편은 c', 기울기는 tan φ'입니다.</li>
+<li>파괴 시 모어원은 이 포락선에 접하며, 파괴면은 주응력면과 45° + φ'/2의 각도를 이룹니다.</li>
+<li>느슨한 모래의 φ'는 약 30°이며, 조밀한 모래는 더 큽니다.</li>
+<li>포화된 연약 점토를 비배수 전단하면 φ_u = 0인 것처럼 거동하며, 강도는 비배수 전단강도 s_u입니다.</li>
+<li>직접전단시험은 강제 파괴면을 따라 시료를 전단하고, 삼축시험은 구속압을 제어하면서 원통형 시료에 하중을 가하며 간극수압을 측정할 수 있어 전응력 및 유효응력 정수를 모두 얻을 수 있습니다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">모어-쿨롱 파괴기준</span>
+      <div class="formula-expr formula-math">\[\tau_f = c&#x27; + \sigma&#x27; \tan \varphi&#x27;\]</div>
+      <span class="formula-note">배수, 유효응력 형태</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>옹벽에 작용하는 토압</h2>
+  <div class="body"><p>벽 뒤의 토압은 벽의 이동 정도에 따라 달라집니다. 이동이 없으면 정지 상태이며 σ'_h = K₀ σ'_v이고 K₀ ≈ 1 − sin φ'입니다.</p>
+<ul>
+<li>벽이 외측으로 변위하면 흙은 <strong>주동</strong> 상태에 도달하며 K_a = tan²(45° − φ'/2)입니다.</li>
+<li>벽을 흙 쪽으로 밀면 <strong>수동</strong> 저항이 발현되며 K_p = tan²(45° + φ'/2)이고, 일반적으로 몇 배 더 큽니다.</li>
+<li>수압은 별도로 추가해야 합니다.</li>
+</ul>
+<p>배수가 되지 않는 벽은 흙 골격이 느끼지 못하는 간극수압을 축적하며, 이는 흔한 파괴 원인입니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">주동토압계수</span>
+      <div class="formula-expr formula-math">\[K_a = \tan^2\left(45^{\circ} - \frac{\varphi&#x27;}{2}\right)\]</div>
+      <span class="formula-note">벽이 흙으로부터 멀어짐</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">수동토압계수</span>
+      <div class="formula-expr formula-math">\[K_p = \tan^2\left(45^{\circ} + \frac{\varphi&#x27;}{2}\right)\]</div>
+      <span class="formula-note">벽이 흙을 밀어냄</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>지지력과 사면 안정</h2>
+  <div class="body"><p>기초는 하부 흙이 전단 파괴될 때 파괴됩니다. 지지력 공식은 세 항을 조합합니다: q_ult = c N_c + q N_q + 0.5 γ B N_γ, 여기서 N 계수는 φ'에 의존하고 q는 기초 저면의 상재하중입니다. 허용 지지력은 q_ult를 약 3의 <strong>안전율</strong>로 나눈 값입니다.</p>
+<p>사면은 구동 전단응력이 가용 강도를 초과할 때 파괴되며, 안정성은 FoS = 저항/구동으로 표현됩니다.</p>
+<p>배수는 가장 강력한 수단입니다: 지하수위를 낮추면 유효응력이 증가하고 간극수압이 감소하므로, 많은 사면 파괴가 폭우 후에 발생하는 이유입니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">지지력</span>
+      <div class="formula-expr formula-math">\[q_{\text{ult}} = c N_c + q N_q + 0.5 \gamma B N_\gamma\]</div>
+      <span class="formula-note">N 계수는 φ&#x27;로부터 산정</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">안전율</span>
+      <div class="formula-expr formula-math">\[\mathrm{FoS} = \frac{\text{resisting shear}}{\text{driving shear}}\]</div>
+      <span class="formula-note">설계 시 1.5 ~ 3</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>투수성: 정수두 및 변수두 시험</h2>
+  <div class="body"><p><strong>정수두</strong> 시험은 조립토에 적합합니다: 길이 L, 단면적 A인 원통형 시료에 수두차 Δh를 가하여 정상류를 일정 시간 동안 수집하여 k = QL/(A Δh t)를 구합니다. 조립토 모래에 대한 실내 시험에서 온도 보정 k₂₀ = k_T η_T/η₂₀ 후 k₂₀ ≈ 7.9 × 10⁻³ m/s를 얻었습니다.</p>
+<p>세립토는 물이 너무 적게 통과하여 측정이 어려우므로, <strong>변수두</strong> 시험은 단면적 a인 스탠드파이프가 시료를 통해 배수되는 것을 관찰합니다: k = (a L)/(A t) ln(h₁/h₂). 화강암 풍화토와 화산암 풍화토 시료는 각각 1.8 × 10⁻⁸ 및 5.8 × 10⁻⁸ m/s를 보였으며, 이는 모래보다 9자리 느린 값으로, 배수 설계 시 흙의 종류를 알아야 하는 이유입니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">정수두 투수계수</span>
+      <div class="formula-expr formula-math">\[k = \frac{Q L}{A \Delta h t}\]</div>
+      <span class="formula-note">시간 t 동안 수집된 정상류</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">변수두 투수계수</span>
+      <div class="formula-expr formula-math">\[k = \frac{a L}{A t} \ln\frac{h_1}{h_2}\]</div>
+      <span class="formula-note">a는 스탠드파이프 단면적, h₁과 h₂는 초기 및 최종 수두</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">온도 보정</span>
+      <div class="formula-expr formula-math">\[k_{20} = k_T \frac{\eta_T}{\eta_{20}}\]</div>
+      <span class="formula-note">표준 20 °C 값으로 점성 보정</span>
+    </div></div><div class="table-wrap"><table><caption>대표적인 투수계수</caption><thead><tr><th scope='col'>흙</th><th scope='col'>k (m/s)</th><th scope='col'>적합한 시험</th></tr></thead><tbody><tr><td>깨끗한 자갈</td><td>10⁻² – 1</td><td>정수두</td></tr><tr><td>조립토 모래 (실내)</td><td>7.9 × 10⁻³</td><td>정수두</td></tr><tr><td>세립토 모래</td><td>10⁻⁵ – 10⁻³</td><td>정수두 또는 변수두</td></tr><tr><td>실트</td><td>10⁻⁸ – 10⁻⁵</td><td>변수두</td></tr><tr><td>화강암 풍화토 (실내)</td><td>1.8 × 10⁻⁸</td><td>변수두</td></tr><tr><td>점토</td><td>10⁻⁹ 미만</td><td>변수두 또는 압밀시험</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>압밀시험 해석: t90으로부터 c_v 산정</h2>
+  <div class="body"><p>침하량의 크기는 C_c로부터 구하지만, 속도는 <strong>압밀계수</strong> c_v가 필요합니다. 압축량을 시간의 제곱근에 대해 도시하면: 초기 읽음값은 직선을 이루며, 이 직선을 영점으로 역투영하여 보정된 원점을 구하고, 횡좌표가 1.15배 더 큰 두 번째 직선이 곡선과 교차하는 점이 <strong>t90</strong>, 즉 90% 압밀에 도달하는 시간입니다.</p>
+<p>그러면 c_v = T_v H²/t90이며, T_90 = 0.848이고 H는 배수 경로(양면 배수의 경우 시료 높이의 절반)입니다.</p>
+<p>동반되는 <strong>체적압축계수</strong>는 단위 응력 증가당 침하량을 연결하며, 실내 시험에서 압력 단계가 높을수록 점토가 단단해져 t90이 낮아졌습니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">압밀계수</span>
+      <div class="formula-expr formula-math">\[c_v = \frac{T_v H^2}{t_{90}}\]</div>
+      <span class="formula-note">H는 최장 배수 경로</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">90% 압밀 시 시간계수</span>
+      <div class="formula-expr formula-math">\[T_{90} = 0.848\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">체적압축계수</span>
+      <div class="formula-expr formula-math">\[m_v = \frac{\Delta e}{(1 + e_0) \Delta \sigma&#x27;}\]</div>
+      <span class="formula-note">단위 유효응력 증가당 체적 변형률</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>삼축시험: UU, CU, CD</h2>
+  <div class="body"><p>삼축 셀은 배수를 제어하며, 이것이 세 가지 표준 시험을 구분합니다.</p>
+<ul>
+<li><strong>비압밀 비배수 (UU)</strong>: 어느 단계에서도 배수가 없어 빠르고 저렴합니다. 포화 점토는 φ_u ≈ 0을 보이며 강도는 비배수 전단강도 s_u = (σ₁ − σ₃)/2이고, 이는 비배수 조건에서만 유효합니다.</li>
+<li><strong>압밀 비배수 (CU)</strong>: 시료가 셀 압력 하에서 압밀된 후 간극수압을 측정하면서 비배수 전단되어 유효정수 c′와 φ′를 얻습니다.</li>
+<li><strong>압밀 배수 (CD)</strong>: 전 과정 배수하며 천천히 전단하여 모래와 장기 점토 거동에 대한 진정한 배수 강도를 제공합니다.</li>
+</ul>
+<p>입상토에 대한 실내 CD 시험에서 c′ = 0, φ′ ≈ 40°를 얻었습니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">비배수 전단강도, UU</span>
+      <div class="formula-expr formula-math">\[s_u = \frac{\sigma_1 - \sigma_3}{2}\]</div>
+      <span class="formula-note">전응력에서 파괴 모어원의 반지름</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>간극비</dt><dd>간극의 부피를 고체의 부피로 나눈 값으로, 흙의 느슨함 또는 조밀함을 나타내는 기본 척도입니다.</dd></div><div class="term"><dt>소성지수</dt><dd>세립토가 소성 거동을 보이는 함수비 범위로, LL − PL과 같습니다.</dd></div><div class="term"><dt>유효응력</dt><dd>전응력에서 간극수압을 뺀 값으로, 흙 골격이 부담하며 강도와 압축을 지배합니다.</dd></div><div class="term"><dt>과압밀비</dt><dd>과거 최대 유효응력을 현재 유효응력으로 나눈 값으로, 점토가 얼마나 과압밀되었는지를 나타냅니다.</dd></div><div class="term"><dt>압축지수</dt><dd>압밀시험에서 간극비 대 대수 압력 도표의 초기 압축선 기울기입니다.</dd></div><div class="term"><dt>안전율</dt><dd>가용 전단저항을 파괴를 일으키는 데 필요한 전단응력으로 나눈 비율입니다.</dd></div><div class="term"><dt>압밀계수</dt><dd>압밀층에서 과잉간극수압이 소산되고 침하가 진행되는 속도를 지배하는 매개변수 c_v입니다.</dd></div><div class="term"><dt>변수두 시험</dt><dd>세립토의 투수 시험으로, 스탠드파이프가 시료를 통해 배수되며 수위 강하 시간으로부터 k를 구합니다.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>신규 성토 하중을 받는 점토층의 침하</h2>
+        <p class="problem">두께 4.0 m의 정규압밀 점토층이 초기 간극비 1.10, 압축지수 0.35를 가집니다. 중간 깊이에서 초기 유효연직응력은 100 kPa입니다. 성토는 40 kPa의 균일한 응력 증가를 추가합니다. 이 층의 최종 압밀 침하량을 추정하시오.</p>
+        <ol><li>침하 공식은 s_c = [C_c H/(1 + e₀)] · log₁₀[(σ&#x27;₀ + Δσ)/σ&#x27;₀]입니다.</li><li>값을 대입하면: s_c = [0.35 × 4.0/(1 + 1.10)] × log₁₀[(100 + 40)/100].</li><li>계수는 1.40/2.10 = 0.6667 m입니다.</li><li>응력비는 140/100 = 1.40이고, log₁₀(1.40) = 0.1461입니다.</li><li>따라서 s_c = 0.6667 × 0.1461 = 0.0974 m ≈ 97 mm입니다.</li><li>검토: 연약한 정규압밀 점토에 40% 응력 증가가 가해져 100 mm 미만의 침하는 합리적입니다. 층 두께가 두 배라면 침하량도 약 두 배가 됩니다.</li></ol>
+        <div class="answer"><b>Answer</b>최종 압밀 침하량은 약 97 mm이며, 과잉간극수압이 소산됨에 따라 시간에 걸쳐 발생합니다. 크기뿐만 아니라 속도도 구조물의 부등침하 허용치에 대해 검토해야 합니다.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>강도나 침하 계산을 시도하기 전에 지반 프로파일을 그리고 각 층 경계에서 전응력, 간극수압, 유효응력을 계산하세요.</li><li>시험이 전응력 정수를 주었는지 유효응력 정수를 주었는지 명시하세요. 전단강도 오류의 대부분은 이 둘을 혼동해서 발생합니다.</li><li>침하 문제에서는 크기와 배수 경로를 모두 언급하세요. 두께와 투수성이 침하 발생 속도를 지배하기 때문입니다.</li><li>단위를 확인하세요: 응력은 kPa, 단위중량은 kN/m³, 층 두께는 m입니다. 1000배 오차가 쉽게 발생합니다.</li><li>t90에는 제곱근 시간 도표와 1.15 오프셋 선을 사용하세요. 원시 곡선에서 추정한 1차 압밀 종료점으로 c_v를 구하는 것은 전형적인 감점 요인입니다.</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Presumed allowable bearing pressure for foundations on sands and gravels</h3>
+  <p class="ref-table-intro">Presumed allowable vertical bearing pressures for shallow foundations on non-cohesive soils, used for preliminary footing sizing once the soil category has been established from SPT results and description.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Soil category</th><th scope='col'>Description</th><th scope='col'>SPT N value</th><th scope='col'>Presumed allowable bearing pressure (kPa)</th></tr></thead><tbody><tr><td>4(a)</td><td>Very dense; requires pick for excavation</td><td>&gt; 50</td><td>500</td></tr><tr><td>4(b)</td><td>Dense; requires pick for excavation, 50 mm peg hard to drive</td><td>30 - 50</td><td>300</td></tr><tr><td>4(c)</td><td>Medium dense</td><td>10 - 30</td><td>100</td></tr><tr><td>4(d)</td><td>Loose; can be excavated with a spade, 50 mm peg easily driven</td><td>4 - 10</td><td>&lt; 100</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 1 of GEO Technical Guidance Note No. 53 (Issue 2, dated 17 April 2026). The presumed values assume founding at least 1 m below ground surface, groundwater not higher than 1 m below ground, granular material that is siliceous and non-crushable, and a maximum total settlement of 30 mm.</p>
+  <p class="ref-table-caveat">Revision summary only. Settlement and serviceability must be assessed, and foundations larger than 6 m or with different groundwater or founding conditions need separate bearing capacity and settlement checks; verify against the current guidance for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>포화토 내 한 점에서의 유효응력은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>지하수위와 무관하다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>전응력에 간극수압을 더한 값</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>전응력에서 간극수압을 뺀 값</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>항상 간극수압과 같다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>σ&#x27; = σ − u이며, 강도와 압축을 지배하는 것은 전응력이 아니라 이 유효응력입니다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>어떤 흙의 액성한계가 45%, 소성한계가 20%입니다. 소성지수는:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.25%</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>2.25%</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>25%</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>65%</span></button></div>
+    <div class="quiz-explain"><b>Why</b>PI = LL − PL = 45 − 20 = 25%로, 소성 범위의 폭입니다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q03</span><span>압밀시험은 포화 점토 시료의 압축을 측정합니다. 간극비 대 대수 압력 도표에서 초기 압축선의 기울기는:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>압축지수</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>균등계수</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>투수계수</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>압밀계수</span></button></div>
+    <div class="quiz-explain"><b>Why</b>그 기울기는 침하 공식에 사용되는 압축지수 C_c입니다. c_v는 크기가 아닌 속도를 나타냅니다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>점토 사면의 안전율을 가장 크게 증가시키는 변화는?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>간극수압 증가</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>지하수위 상승</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>지하수위 저하 및 사면 배수</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>정상부에 하중 추가</span></button></div>
+    <div class="quiz-explain"><b>Why</b>배수는 간극수압을 낮추고 유효응력을 높여 미끄러짐면을 따라 가용 전단강도를 증가시킵니다.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>변수두 시험에서 스탠드파이프 수위가 1.20 m에서 0.60 m로 떨어졌습니다. 투수계수 계산에는 다음이 사용됩니다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>수두차 0.60 m를 직접 사용</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>h₁/h₂ 비의 자연로그</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>수두비의 제곱근</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>경과 시간만</span></button></div>
+    <div class="quiz-explain"><b>Why</b>변수두 투수계수는 k = (aL/At) ln(h₁/h₂)이므로 초기 대 최종 수두비의 로그가 들어가며, 차이는 아닙니다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>포화 점토에 대한 비압밀 비배수 삼축시험은 전응력 기준으로 다음을 제공합니다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>φ_u ≈ 0 및 s_u = (σ₁ − σ₃)/2</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>진정한 유효정수 c′와 φ′</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>사용 가능한 강도 정수 없음</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>배수 시험과 동일한 결과</span></button></div>
+    <div class="quiz-explain"><b>Why</b>압밀이나 배수가 없으면 전응력에서 파괴 포락선은 수평이 되어 φ_u ≈ 0이고 강도는 비배수 전단강도입니다.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-geology.ko.html"><span>Core</span><b>공학 지질학</b></a><a class="related-card" href="fluid-mechanics.ko.html"><span>Core</span><b>유체 역학</b></a><a class="related-card" href="construction-materials.ko.html"><span>Core</span><b>건설 재료</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="fluid-mechanics.ko.html"><small>Previous</small><b>유체 역학</b></a><a class="next" href="surveying.ko.html"><small>Next</small><b>공학 측량</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Geotechnical Engineering Office, Civil Engineering and Development Department. (2026). <i>GEO Technical Guidance Note No. 53: Supplementary Guidelines for Foundation Design and Construction (Issue 2)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.cedd.gov.hk/filemanager/eng/content_427/TGN%2053_Issue%202.pdf" rel="noopener">https://www.cedd.gov.hk/filemanager/eng/content_427/TGN%2053_Issue%202.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">유효응력이 중요하다.</p><p class="margin-note">전응력, 간극수압, 그 다음 σ′.</p><p class="margin-note">배수는 강도를 높인다.</p><p class="margin-note">대부분의 사면 파괴 배후에는 물이 있다.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

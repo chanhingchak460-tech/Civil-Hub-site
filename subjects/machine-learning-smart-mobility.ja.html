@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>スマートモビリティのための機械学習 — Civil Hub</title>
+<meta name="description" content="モビリティデータから学ぶ：速度の回帰、道路標識の分類、そして汎化しなければならないニューラルネットワーク。本ページでは学習ループ、誠実な評価、そして位置記録に伴うプライバシーの問題を扱う。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/machine-learning-smart-mobility.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="スマートモビリティのための機械学習 — Civil Hub">
+<meta property="og:description" content="モビリティデータから学ぶ：速度の回帰、道路標識の分類、そして汎化しなければならないニューラルネットワーク。本ページでは学習ループ、誠実な評価、そして位置記録に伴うプライバシーの問題を扱う。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/machine-learning-smart-mobility.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="machine-learning-smart-mobility.html" data-alt-zh-hant="machine-learning-smart-mobility.zh-Hant.html" data-alt-ja="machine-learning-smart-mobility.ja.html" data-alt-ko="machine-learning-smart-mobility.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">スマートモビリティのための機械学習</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">計算</p>
+          <h1>スマートモビリティのための機械学習</h1>
+          <p class="subject-sub">回帰・分類・ニューラルネットワークでモビリティデータから学ぶ</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>計算</li><li><b data-i18n="subject.read">Read</b>10 分</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>9</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">モビリティモデルが予測するもの</a></li><li><a href="#sec-2">回帰：移動に直線を当てはめる</a></li><li><a href="#sec-3">分類、ラベル、データ分割</a></li><li><a href="#sec-4">過学習は既定の失敗である</a></li><li><a href="#sec-5">ニューラルネットワーク：積み重ねた変換</a></li><li><a href="#sec-6">道路標識のための畳み込みネットワーク</a></li><li><a href="#sec-7">意思決定に合った評価</a></li><li><a href="#sec-8">モビリティデータは個人データである</a></li><li><a href="#sec-9">物体検出：ボックスとIoU</a></li><li><a href="#sec-10">軌跡予測のための系列モデル</a></li><li><a href="#sec-11">事前学習済み検出器の微調整</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">モビリティデータから学ぶ：速度の回帰、道路標識の分類、そして汎化しなければならないニューラルネットワーク。本ページでは学習ループ、誠実な評価、そして位置記録に伴うプライバシーの問題を扱う。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="machine-learning-smart-mobility" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>モビリティモデルが予測するもの</h2>
+  <div class="body"><p>スマートモビリティはセンサー記録を予測に変える：15分後のリンク速度、カメラ画像中の道路標識のクラス、歩行者が次に進む経路。</p>
+<p>最初の判断は<strong>タスク種別</strong>であり、これがラベル、損失関数、評価を決める。</p>
+<ul>
+<li><strong>教師あり学習</strong>：各例は特徴ベクトル<code>x</code>と既知のターゲット<code>y</code>の組である。</li>
+<li><strong>回帰</strong>：数値を予測する。</li>
+<li><strong>分類</strong>：カテゴリを予測する。</li>
+<li><strong>教師なし</strong>手法はターゲットなしで構造を見つける。例えば類似した移動のクラスタリングなど。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>回帰：移動に直線を当てはめる</h2>
+  <div class="body"><p>線形モデルはターゲットを入力の重み付き和として予測する：<code>ŷ = w · x + b</code>。学習は予測が観測値に近づくように重みを選び、通常は<strong>平均二乗誤差</strong>を最小化する。</p>
+<p>二乗は大きな外れを最も強く罰する — 速度予測では大きな誤差が最も問題になるため妥当である。</p>
+<p>損失は重み空間上の曲面である。<strong>勾配降下法</strong>は下り坂に進み、方向には微分を、歩幅には学習率を用いる。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">線形回帰モデル</span>
+      <div class="formula-expr formula-math">\[\hat{y} = \mathbf{w}\cdot\mathbf{x} + b\]</div>
+      <span class="formula-note">x は特徴、w は重み、b はバイアス</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">平均二乗誤差</span>
+      <div class="formula-expr formula-math">\[\mathrm{MSE} = \frac{1}{n}\sum (y_i - \hat{y}_i)^2\]</div>
+      <span class="formula-note">n は訓練例の数</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">勾配降下法の更新</span>
+      <div class="formula-expr formula-math">\[w \leftarrow w - \eta \frac{\partial L}{\partial w}\]</div>
+      <span class="formula-note">η は学習率</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>分類、ラベル、データ分割</h2>
+  <div class="body"><p>分類器は各クラスのスコアを出力し、2クラスでは<strong>シグモイド</strong>、多クラスでは<strong>ソフトマックス</strong>によって確率に変換される。予測ラベルは最高スコアのものであり、2つのスコアが並ぶ面が決定境界である。</p>
+<p>チューニングの前に、モデルが決して見ない<strong>テストセット</strong>を確保する。自分の訓練行で採点されたモデルは、単に記憶力を確認されているにすぎない。</p>
+<p>小規模データセットでは、<strong>交差検証</strong>がホールドアウトを回転させ、すべての行が一度はテストされるようにする。</p></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>過学習は既定の失敗である</h2>
+  <div class="body"><p>訓練損失は容量が増えるにつれてほぼ常に下がるが、検証損失こそが誠実な信号である。検証損失が底を打ってから上昇する一方で訓練損失が下がり続けるとき、モデルはノイズを当てはめ始めている。</p>
+<p>このギャップが<strong>過学習</strong>であり、パターンに対して単純すぎるモデルは<strong>未学習</strong>で、どちらの損失も高いままである。</p>
+<p>制御手段には以下がある：<br />
+- 特徴や層を減らす<br />
+- 大きな重みに罰則を与える<strong>正則化</strong><br />
+- 実効データセットを拡大する拡張<br />
+- 検証損失が最小の時点での早期停止</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">正則化損失</span>
+      <div class="formula-expr formula-math">\[L = \mathrm{loss} + \lambda \sum w_i^2\]</div>
+      <span class="formula-note">λ は罰則の強さを決める</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>ニューラルネットワーク：積み重ねた変換</h2>
+  <div class="body"><p>ニューロンは入力の重み付き和を計算し、バイアスを加え、その結果をReLUなどの非線形<strong>活性化</strong>に通す。層を積み重ねることでネットワークは独自の<strong>特徴</strong>を構築できる：初期層は単純なパターンを検出し、後の層がそれらを組み合わせる。</p>
+<p><strong>誤差逆伝播</strong>は連鎖律を適用して各重みが損失にどう影響したかを見つけ、オプティマイザがすべての重みをまとめて更新する。ミニバッチはノイズの多い勾配と引き換えに速度を得て、データを1回通すことが<strong>エポック</strong>である。</p>
+<p>非線形性がなければ、積み重ねた線形層は1つの線形写像に潰れてしまう。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">ニューロンの出力</span>
+      <div class="formula-expr formula-math">\[a = f(Wx + b)\]</div>
+      <span class="formula-note">f は ReLU などの非線形活性化関数</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>道路標識のための畳み込みネットワーク</h2>
+  <div class="body"><p>カメラ画像はピクセルの格子であり、平坦化すると近傍構造が壊れる。<strong>畳み込み層</strong>は小さな学習可能なフィルタを画像上でスライドさせ、すべての位置で重みを共有するので、ある隅で学習したエッジ検出器がすべての隅で機能する。<strong>プーリング</strong>は特徴マップを圧縮し、小さなずれへの許容性を加える。</p>
+<p>道路標識データセットはしばしば小さく不均衡なので、<strong>転移学習</strong>が標準である：<br />
+- 大規模な画像コレクションで訓練されたネットワークから始める<br />
+- 初期層を凍結する<br />
+- 標識クラス用に最終層を再訓練する</p>
+<p>拡張 — 回転、明るさ、クロップ — は訓練セットを広げる。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">畳み込みの出力サイズ</span>
+      <div class="formula-expr formula-math">\[n_{\mathrm{out}} = \frac{n_{\mathrm{in}} - k + 2p}{s} + 1\]</div>
+      <span class="formula-note">k はフィルタサイズ、p はパディング、s はストライド</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>意思決定に合った評価</h2>
+  <div class="body"><p>クラスが不均衡なとき、精度は誤解を招く：まれな一時停止標識を決して予測しない検出器でも95%を記録しうる。</p>
+<p><strong>混同行列</strong>は誤りの種類を分離し、<strong>適合率</strong>と<strong>再現率</strong>はそれらを異なる形で採点する — 適合率は検出のうちどれだけが正しかったかを問い、再現率は実際の標識のうちどれだけが見つかったかを問う。</p>
+<p>速度については、データの単位での<strong>MAE</strong>と、大きな外れを罰する<strong>RMSE</strong>を報告する；<strong>MAPE</strong>は速度がゼロに近いところで爆発する。テストセット、ベースライン、クラスごとの結果を明記すること。</p></div><div class="table-wrap"><table><caption>モビリティタスクの指標と、それぞれが隠すもの</caption><thead><tr><th scope='col'>指標</th><th scope='col'>タスク</th><th scope='col'>読み方</th><th scope='col'>隠すもの</th></tr></thead><tbody><tr><td>精度</td><td>分類</td><td>正しくラベル付けされた割合</td><td>まれなクラスが無視されうる</td></tr><tr><td>適合率</td><td>検出</td><td>検出のうち正しいものの割合</td><td>見逃した標識は数えられない</td></tr><tr><td>再現率</td><td>検出</td><td>実際の標識のうち見つけた割合</td><td>誤検出は数えられない</td></tr><tr><td>MAE と RMSE</td><td>回帰</td><td>平均誤差、および大きな外れを強調した誤差</td><td>RMSE は外れ値に支配される</td></tr><tr><td>MAPE</td><td>回帰</td><td>平均パーセント誤差</td><td>速度がゼロに近いと不安定</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>モビリティデータは個人データである</h2>
+  <div class="body"><p>軌跡は自宅や職場と結びつけられると個人を特定する。公開前に集約し、パイプラインから識別子を除去し、細粒度の位置情報は既定で機微なものとして扱うこと。</p>
+<p>訓練データは<strong>バイアス</strong>も運ぶ：カメラは一部の道路を他よりよくカバーし、ラベルはそこに誰がいたかではなく誰が観測されたかを記録する。取締りのパターンを模倣するよう教えられたモデルはそれを再現する。</p>
+<p>データの出所を文書化し、人間をループに残し、展開された予測をドリフトと不平等な誤差について監視すること。平均精度だけを見てはならない。</p></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>物体検出：ボックスとIoU</h2>
+  <div class="body"><p>道路標識を検出するとは、バウンディングボックスとそのクラスを予測することである。2つのボックスが正確に一致することはまれなので、検出は<strong>交差比</strong>で採点される：共通面積を合計面積で割ったものである。</p>
+<p>予測は、正解ボックスとのIoUがしきい値（一般に0.5）を超えるときヒットと数えられる。クラスごとにヒットを数えると<strong>平均適合率</strong>が得られ、クラス全体の平均が検出器の代表指標となる。</p>
+<p>IoUしきい値を併記すること — 0.5で良いスコアの検出器が0.75では崩壊しうるし、安全にとって重要なのは厳しい方のしきい値である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">交差比</span>
+      <div class="formula-expr formula-math">\[\mathrm{IoU} = \frac{\mathrm{area}(A \cap B)}{\mathrm{area}(A \cup B)}\]</div>
+      <span class="formula-note">0から1の間；約0.5を超えると予測は正解と一致する</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>軌跡予測のための系列モデル</h2>
+  <div class="body"><p>軌跡は位置の系列であり、過去のステップが特徴である。<strong>時間畳み込みネットワーク</strong>は拡張率を増やした因果畳み込みを用いるので、パラメータの爆発なしに層が履歴の遠くまで見ることができる；<strong>トランスフォーマ</strong>エンコーダは代わりに時間ステップを直接アテンションする。どちらも観測された経路を隠れ状態に写像し、最終層がそれを次の位置に変換する。</p>
+<p>データに適した損失で訓練する：単純な平均絶対誤差は頑健であり、<strong>Smooth L1</strong>損失は大きな誤差ではL1のように、ゼロ付近では二乗誤差のように振る舞い、微調整中に滑らかな勾配を与えつつ外れ値に耐える。</p>
+<p>メートル単位のMAEとRMSEで、ホールドアウトしたシーン上で評価する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Smooth L1 損失</span>
+      <div class="formula-expr formula-math">\[L(x) = \begin{cases} 0.5 x^2 &amp; |x| &lt; 1 \\ |x| - 0.5 &amp; \text{otherwise} \end{cases}\]</div>
+      <span class="formula-note">x は予測誤差；ゼロ付近では二次、遠くでは線形</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">拡張畳み込み</span>
+      <div class="formula-expr formula-math">\[\text{dilation } d: \quad y_t = \sum_k w_k x_{t - dk}\]</div>
+      <span class="formula-note">d = 1, 2, 4, … で層を積み重ねると受容野が広がる</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>事前学習済み検出器の微調整</h2>
+  <div class="body"><p>モビリティデータセットは検出器をゼロから訓練するのに十分な大きさであることはまれなので、標準的な道筋は<strong>転移学習</strong>である：大規模な一般画像コレクションで事前学習されたバックボーンから始め、その分類ヘッドを新しいクラス用に差し替え、初期層を<strong>凍結</strong>したままそのヘッドだけを訓練する。凍結層は学習した特徴を保ち、勾配更新を受けない。</p>
+<p>ヘッドが収束したら、はるかに小さい学習率で後方のバックボーン層を解凍し、学習したものを壊さずに特徴を適応させる。</p>
+<p><strong>拡張</strong> — 水平反転、色ジッター、リサイズ、正規化 — は実効データセットを拡大し、不変性を教える。テスト画像は訓練と同じパイプラインで前処理すること。さもなければモデルは学習したのと異なるデータ分布を見ることになる。</p></div>
+<div class="callout callout--tip">
+  <b>まず凍結、後で解凍</b>
+  バックボーンを凍結したまま新しいヘッドを訓練し、その後約10分の1の学習率で解凍する；いきなり完全な微調整に飛びつくと有用な特徴を破壊しがちである。
+</div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>教師あり学習</dt><dd>各入力が正しい出力と対になったラベル付き例から写像を学習すること。</dd></div><div class="term"><dt>過学習</dt><dd>訓練データのノイズにあまりに密着して当てはめ、未見データでの性能が低下すること。</dd></div><div class="term"><dt>検証セット</dt><dd>訓練から取り分けられ、最終テストの前にモデルの選択肢を比較するために使われるデータ。</dd></div><div class="term"><dt>畳み込み層</dt><dd>共有された学習可能なフィルタを画像全体に適用し、平行移動に耐性のある特徴を構築する層。</dd></div><div class="term"><dt>転移学習</dt><dd>大規模データセットで訓練されたモデルを、より小さな関連タスクの出発点として再利用すること。</dd></div><div class="term"><dt>再現率</dt><dd>実際の陽性ケースのうち、モデルがうまく見つけた割合。</dd></div><div class="term"><dt>交差比</dt><dd>予測ボックスと正解ボックスの共通面積をそれらの合計で割ったもので、物体検出における標準的な一致尺度。</dd></div><div class="term"><dt>微調整</dt><dd>事前学習済みモデルを新しい関連データセットで訓練し続けること。しばしば初期層を凍結して行う。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>ホールドアウトした速度予測での誤差</h2>
+        <p class="problem">あるモデルが5つの連続する区間でリンク速度をkm/hで予測する。観測速度は60、55、70、65、80、予測速度は58、58、66、65、74である。MAEとRMSEを求め、常に訓練平均66 km/hを予測するベースラインと両方を比較せよ。</p>
+        <ol><li>誤差（観測 − 予測）：2、−3、4、0、6 km/h。</li><li>MAE = (2 + 3 + 4 + 0 + 6) / 5 = 15 / 5 = 3.0 km/h。</li><li>二乗誤差：4、9、16、0、36、合計65。RMSE = √(65/5) = √13 ≈ 3.6 km/h。</li><li>66 km/hからのベースライン誤差：−6、−11、4、−1、14、よってそのMAE = 36/5 = 7.2 km/h。</li><li>ベースラインRMSE = √((36 + 121 + 16 + 1 + 196)/5) = √74 ≈ 8.6 km/h。</li><li>健全性チェック：モデルは両指標でベースラインを上回り、6 km/hの外れが重く重み付けされるためRMSEはMAEを超える。</li></ol>
+        <div class="answer"><b>Answer</b>MAE = 3.0 km/h、RMSE ≈ 3.6 km/h、ベースライン値は7.2 km/hと8.6 km/h。このサンプルでは予測はベースラインより良いが、5区間では一般的な改善を主張するには少なすぎる。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>まずタスクを名指しせよ：回帰と分類は異なる損失と異なる指標を必要とする。</li><li>各テストセット指標は単位とベースラインとともに報告せよ；精度だけでは問われたことにほとんど答えられない。</li><li>不均衡なクラスでは、全体精度ではなく適合率と再現率を挙げよ。</li><li>微調整では最初のパスでバックボーンを凍結し、解凍するときに学習率を約10分の1に下げよ。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>チームがホールドアウトしたテストセットでの精度が改善しなくなるまでハイパーパラメータを調整し続けている。この手順の主な問題は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>テストセットがもはや独立でなくなり、そのスコアが楽観的になる</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>分類では精度を計算できない</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>ハイパーパラメータは精度に決して影響しない</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>モデルは確実に未学習になる</span></button></div>
+    <div class="quiz-explain"><b>Why</b>テストセットで繰り返し採点するとその情報がモデルの選択に漏れ出す；ハイパーパラメータは検証分割で扱うべきである。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>訓練中、訓練損失は下がり続ける一方で検証損失が底を打ってから上昇する。このパターンは何を示すか：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>検証セットのデータ漏洩</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>訓練損失が低いので未学習</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>モデルが信号ではなくノイズを当てはめているので過学習</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>学習率が小さすぎる</span></button></div>
+    <div class="quiz-explain"><b>Why</b>下がる訓練損失と上がる検証損失の間の広がるギャップは、モデルがノイズを記憶し始めた古典的な兆候である。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>畳み込み層での重み共有が道路標識認識に主に役立つのは：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>非線形活性化の必要性を取り除く</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>100%のテスト精度を保証する</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>同じ学習済みフィルタが画像のどこでも特徴を検出できる</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>必要な訓練画像数をゼロに減らす</span></button></div>
+    <div class="quiz-explain"><b>Why</b>1つのフィルタを位置間で共有すると検出器が平行移動に耐性を持ち、全結合層と比べてパラメータ数が大幅に減る。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q04</span><span>一時停止標識検出器が96%の精度だが、まれな一時停止（ゆずれ）クラスを決して予測しない。最も有用な次の報告は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>クラスごとの適合率、再現率、混同行列</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>最終エポックの訓練損失</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>ネットワークのパラメータ数</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>全体精度のみ</span></button></div>
+    <div class="quiz-explain"><b>Why</b>精度は無視されたクラスを隠す；クラスごとの適合率、再現率、混同行列がモデルが実際にどのクラスを見つけるかを示す。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>予測ボックスと正解ボックスが面積30 px²で重なり、それらの合計が60 px²を覆う。交差比は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>2.0</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.5</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.33</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>30</span></button></div>
+    <div class="quiz-explain"><b>Why</b>IoUは共通面積を合計面積で割ったもの：30/60 = 0.5、検出をヒットと数える通常のしきい値である。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q06</span><span>軌跡予測でSmooth L1損失が単純なL1より好まれる主な理由は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>L2より外れ値に強く罰則を与える</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>小さな誤差では二次であり、微調整中に安定した勾配を与える</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>常により小さな損失を生む</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>学習率の必要性を取り除く</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Smooth L1はゼロ付近で二次、大きな誤差では線形であり、安定した微調整と外れ位置への頑健性を兼ね備える。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.ja.html"><span>Computing</span><b>AIとデータ分析</b></a><a class="related-card" href="artificial-intelligence.ja.html"><span>Computing</span><b>人工知能</b></a><a class="related-card" href="machine-learning.ja.html"><span>Computing</span><b>機械学習</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="quantitative-methods.ja.html"><small>Previous</small><b>エンジニアのための定量手法</b></a><a class="next" href="professional-english.ja.html"><small>Next</small><b>プロフェッショナル英語</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">チューニングの前に分割せよ。</p><p class="margin-note">検証損失が誠実な信号である。</p><p class="margin-note">MSEは大きな外れを罰する。</p><p class="margin-note">位置記録は個人データである。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

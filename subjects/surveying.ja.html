@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>測量学 — Civil Hub</title>
+<meta name="description" content="現場で位置と高さをどのように測定し、計算し、設置するか：水準測量、トラバース調整、座標、トータルステーション、GNSS、曲線。地上の観測を建設に使える数値に変える科目である。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/surveying.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="測量学 — Civil Hub">
+<meta property="og:description" content="現場で位置と高さをどのように測定し、計算し、設置するか：水準測量、トラバース調整、座標、トータルステーション、GNSS、曲線。地上の観測を建設に使える数値に変える科目である。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/surveying.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="surveying.html" data-alt-zh-hant="surveying.zh-Hant.html" data-alt-ja="surveying.ja.html" data-alt-ko="surveying.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">測量学</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">コア</p>
+          <h1>測量学</h1>
+          <p class="subject-sub">地盤の測定、計算、設置</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>コア</li><li><b data-i18n="subject.read">Read</b>12 分</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>20</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="176" cy="36" r="5" stroke="var(--accent)" stroke-width="1.4"/><path d="M176 41 V80" stroke="currentColor" stroke-width="1.3"/><path d="M176 62 l-30 34 M176 62 l30 34 M176 62 l-3 40" stroke="currentColor" stroke-width="1.2"/><path d="M40 168 H300" stroke="var(--line)" stroke-width="1"/><path d="M72 92 l104 76 M92 96 l120 72" stroke="var(--faint)" stroke-width="1"/><path d="M118 128 q10 10 4 22" stroke="var(--accent)" stroke-width="1"/><text x="132" y="152" font-family="var(--mono)" font-size="8" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">θ</text><text x="70" y="186" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">A</text><text x="264" y="186" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">B</text></svg>
+          <figcaption>Traverse geometry — angles and measured lines</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">まず基準点、次に細部</a></li><li><a href="#sec-2">水準測量：野帳は釣り合わなければならない</a></li><li><a href="#sec-3">角度、方位角、全円方位の慣行</a></li><li><a href="#sec-4">決まった順序でのトラバース計算</a></li><li><a href="#sec-5">現地測量法の選択</a></li><li><a href="#sec-6">トータルステーション、EDM、GNSS</a></li><li><a href="#sec-7">曲線と設置</a></li><li><a href="#sec-8">誤差、閉合、記録の追跡</a></li><li><a href="#sec-9">座標とオフセットからの面積と体積</a></li><li><a href="#sec-10">2ペグ試験の実際</a></li><li><a href="#sec-11">接線角による曲線の設置</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">現場で位置と高さをどのように測定し、計算し、設置するか：水準測量、トラバース調整、座標、トータルステーション、GNSS、曲線。地上の観測を建設に使える数値に変える科目である。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="surveying" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>まず基準点、次に細部</h2>
+  <div class="body"><p>すべての測量は、すでに既知の点に対して新しい点を固定する。既知の点が<strong>基準点（コントロール）</strong>を形成し、それ以外はすべて<strong>細部</strong>である。基準点は、そこから派生する作業よりも密で精度が高い。なぜなら、後続のすべての測定がその誤差を引き継ぐからである。</p>
+<p>作業原則は<strong>全体から部分へ</strong>である。まず骨格を構築する——座標を持つ水平基準点、標高（縮尺高）を持つ水準点——そしてその骨格から細部を埋める。座標には原点が、高さには基準面（データム）が必要であり、両方を明示しなければならない。細部から始めて上へ積み上げる測量には、自己検証の手段がない。</p>
+<p><strong>正確さ（accuracy）</strong>は結果が真値にどれだけ近いかであり、<strong>精度（precision）</strong>はどれだけ再現性があるかである。真値から離れた密集した測定値の集まりは、精度は高いが偏り（バイアス）がある。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>水準測量：野帳は釣り合わなければならない</h2>
+  <div class="body"><p>水準測量は高低差を測定する。2本の標尺の間に器械を設置し、その視準線が<strong>器械高（height of collimation）</strong>を定める。据え付け後の最初の読みは既知の高さの点への<strong>後視（back sight）</strong>である。<strong>中間視（intermediate sight）</strong>は変化点の間の点を位置づける。<strong>前視（fore sight）</strong>は器械を移動する前の最後の読みである。その後、標尺は<strong>変化点（change point）</strong>として残るので、安定した場所に置かなければならない。</p>
+<p>記帳の慣行は主に2つある：<br />
+- <strong>器械高法</strong>：既知の高さに後視を一度加え、その高さから他のすべての読みを引く。<br />
+- <strong>昇降法（rise and fall）</strong>：連続する読みを比較する方法で、遅いが、すべての中間視を検査できる。</p>
+<p>後視と前視の距離を釣り合わせて器械高誤差と曲率を相殺し、視距離を短く保ち、約0.5 m未満の読みは避ける。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">器械高</span>
+      <div class="formula-expr formula-math">\[\mathrm{HI} = \mathrm{RL} + \mathrm{BS}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">昇降</span>
+      <div class="formula-expr formula-math">\[\text{rise} = \mathrm{BS} - \mathrm{FS}\]</div>
+      <span class="formula-note">負の結果は降下（fall）</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>角度、方位角、全円方位の慣行</h2>
+  <div class="body"><p>方向は北から時計回りに測定する。<strong>全円方位角（whole-circle bearing）</strong>は0°から360°で表し、<strong>象限方位角（reduced bearing）</strong>は同じ方向を北または南から東または西に向けて表す。後視点から前視点へ視準線を時計回りに回すと<strong>右角（angle to the right）</strong>が得られ、ほとんどのデータロガーが期待する慣行である。</p>
+<p>閉合多角形の角度は一定の和になるため、測定値と理論値の和の差が<strong>角閉合差（angular misclosure）</strong>である。n辺形の内角の和は (n − 2) × 180° である。</p>
+<p>方位角を先へ伝えるのは記帳作業である：前の辺の後方位角（前方位角 ± 180°）を取り、右角を加え、必要なら360°を引く。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">内角の和</span>
+      <div class="formula-expr formula-math">\[\sum \theta = (n - 2) \times 180^{\circ}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">方位角の伝達</span>
+      <div class="formula-expr formula-math">\[\mathrm{WCB}_{\text{next}} = \mathrm{WCB}_{\text{back}} + \theta_{\text{right}}\]</div>
+      <span class="formula-note">WCB_back は前の方位角 ± 180°</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>決まった順序でのトラバース計算</h2>
+  <div class="body"><p>トラバースは測点の連鎖に沿って角度と距離を測定する。次の順序で計算する：<br />
+- 角度を調整する<br />
+- 図形を通して方位角を伝える<br />
+- 各辺を<strong>緯距（latitude）</strong>と<strong>経距（departure）</strong>と呼ばれる南北・東西成分に変換する<br />
+- それらを合計して閉合を検査する<br />
+- 残差を配分する</p>
+<p>角閉合差は、各角が等しい労力で観測されたため、角度に均等に配分する。座標誤差のベクトル和が<strong>線閉合差（linear misclosure）</strong>であり、全長に対するその大きさが<strong>相対精度（relative precision）</strong>である。</p>
+<p><strong>ボーディッチ（Bowditch）</strong>（コンパス）則は、座標補正を辺長に比例して配分するので、短い辺はわずかにしか動かない。この重み付けは角度誤差と距離誤差が同程度の場合に適する。距離の精度がより高い場合は別の重み付けが必要である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">角閉合差</span>
+      <div class="formula-expr formula-math">\[e_\theta = \sum \theta_{\text{measured}} - (n - 2) \times 180^{\circ}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">緯距と経距</span>
+      <div class="formula-expr formula-math">\[\Delta N = d \cdot \cos \theta, \quad \Delta E = d \cdot \sin \theta\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">ボーディッチ補正</span>
+      <div class="formula-expr formula-math">\[C = -\frac{e\,d_i}{\sum d}\]</div>
+      <span class="formula-note">e はその成分の閉合差</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>現地測量法の選択</h2>
+  <div class="body"><p>作業ごとに異なる幾何学が求められる。放射法は1つの測点からすべてが見えるときに速い。交会法は目標点を占用する必要がない。トラバースは新しい基準点を構築する。GNSSは開けた地面に適するが、樹冠や反射を嫌う。</p></div><div class="table-wrap"><table><caption>現地測量法の比較</caption><thead><tr><th scope='col'>方法</th><th scope='col'>得られるもの</th><th scope='col'>最適な用途</th><th scope='col'>注意点</th></tr></thead><tbody><tr><td>放射法</td><td>1測点からの細部</td><td>開けた現場</td><td>隠れた点</td></tr><tr><td>交会法</td><td>非占用点</td><td>法面、危険な物体</td><td>狭い切通し</td></tr><tr><td>後方交会法</td><td>測点位置</td><td>自由測站</td><td>悪い幾何配置</td></tr><tr><td>トラバース</td><td>新しい基準点</td><td>回廊、市街地</td><td>角閉合差と線閉合差</td></tr><tr><td>静的GNSS</td><td>高精度基準点</td><td>開けた空、長基線</td><td>遮蔽、マルチパス</td></tr><tr><td>RTK GNSS</td><td>細部と設置</td><td>開けた現場、迅速な作業</td><td>データム変換、樹冠</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>トータルステーション、EDM、GNSS</h2>
+  <div class="body"><p><strong>トータルステーション</strong>は電子セオドライト、EDM、コンピュータを組み合わせたものである。EDMは変調信号の時間を測って斜距離を求め、その後、大気条件、器械定数と反射鏡定数、周期誤差について補正する。水平距離は斜距離と天頂角から得られ、器械高と目標高を考慮すれば同じ観測から高さも得られる。</p>
+<p><strong>GNSS</strong>は衛星までの距離を測定する。コード（擬似距離）解はメートル単位を与え、搬送波位相解は<strong>整数アンビギュイティ</strong>が解決された後、2台の受信機が同時に観測することを条件にセンチメートル単位に達する——基準点には静的、細部にはRTK。</p>
+<p>GNSSの位置はローカルグリッドではなく全球基準座標系に基づくため、変換と独立した高さの検査を手法に含めるべきである。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">距離と方位角の結合</span>
+      <div class="formula-expr formula-math">\[d = \sqrt{\Delta N^2 + \Delta E^2}, \quad \theta = \arctan\left(\frac{\Delta E}{\Delta N}\right)\]</div>
+      <span class="formula-note">θを出す前に象限を確認する</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">三角高低測量</span>
+      <div class="formula-expr formula-math">\[H_B = H_A + i + d \cdot \cos z - t\]</div>
+      <span class="formula-note">i 器械高、t 目標高</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>曲線と設置</h2>
+  <div class="body"><p>平面線形は直線を<strong>円曲線</strong>で結び、しばしばその間に半径が変化する緩和曲線を挟む。半径R、偏角θの曲線では、接線長が曲線の始点と終点を定め、弧長が中心線に沿った<strong>通し距離（through chainage）</strong>を与える。</p>
+<p><strong>接線角（tangential angles）</strong>による設置は単純な事実に基づく：接線と弦の間の角は、その弦が中心に張る角の半分に等しい。<strong>縦曲線</strong>は勾配を放物線で結び、その長さはK値を通した停止視距によって定まる。</p>
+<p>設置は基準点から設計を地上に置くことで、通常は座標による：基準点を占用し、基準物体に方向を合わせ、計算した方位角と距離を振り出す。それ自体が設置された点から設置してはならない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">接線長</span>
+      <div class="formula-expr formula-math">\[T = R \cdot \tan\left(\frac{\theta}{2}\right)\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">円曲線長</span>
+      <div class="formula-expr formula-math">\[L = R \cdot \theta_{\mathrm{rad}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">縦曲線長</span>
+      <div class="formula-expr formula-math">\[L = K \cdot A\]</div>
+      <span class="formula-note">A は勾配の変化量（パーセント）</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>誤差、閉合、記録の追跡</h2>
+  <div class="body"><p>誤差は間違いとは異なる。<strong>過失（blunder）</strong>は重大な間違い——数字の入れ替え、標尺の読み違い——であり、冗長性がそれを見つける。調整はそれを隠してはならない。<strong>系統誤差</strong>は同じ符号で繰り返し現れ、手順によって補正または相殺される。<strong>偶然誤差</strong>はばらつき、平均化によって小さくなる。</p>
+<p>2ペグ試験、正反観測、釣り合った視準は、これらの挙動を予測可能にする。すべての測量には精度の記述が必要で、通常は許容値と比較した閉合差である。</p>
+<p>過失を捉えるのに十分な冗長測定を記録し、計算が追跡可能であるよう野帳はインクで保管する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">許容閉合差</span>
+      <div class="formula-expr formula-math">\[E_{\text{allow}} = c \cdot \sqrt{n}\]</div>
+      <span class="formula-note">c は要求される精度等級に依存する</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">相対精度</span>
+      <div class="formula-expr formula-math">\[1 : \frac{\sum d}{e}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>座標とオフセットからの面積と体積</h2>
+  <div class="body"><p>面積は座標またはオフセットから求める。<strong>倍面積（double area）</strong>公式は多角形の周りでクロス積を合計し、座標を順に取り、最後の点を最初の点に閉じる。不規則な境界では、等間隔のオフセットを<strong>台形則</strong>で積分するか、放物弧を当てはめ奇数個のオフセットを必要とする<strong>シンプソン則</strong>で積分する。</p>
+<p>土工量は断面積から求める：端面積法は2つの断面を平均して長さを掛け、プリズモイド公式は中央断面積がわかっているときにそれを精緻化する。深い掘削では、グリッド上のスポットレベルを、角、辺、内部の点にそれぞれ1、2、4倍の重みを付けて平均する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">座標からの倍面積</span>
+      <div class="formula-expr formula-math">\[2A = \left|\sum E_i (N_{i+1} - N_{i-1})\right|\]</div>
+      <span class="formula-note">閉じた多角形を順に合計する</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">台形則</span>
+      <div class="formula-expr formula-math">\[A \approx d\left(\frac{h_1}{2} + h_2 + \cdots + h_{n-1} + \frac{h_n}{2}\right)\]</div>
+      <span class="formula-note">d は共通のオフセット間隔</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">シンプソン則</span>
+      <div class="formula-expr formula-math">\[A \approx \frac{d}{3}\left(h_1 + h_n + 4\sum h_{\mathrm{even}} + 2\sum h_{\mathrm{odd}}\right)\]</div>
+      <span class="formula-note">奇数個のオフセットを必要とする</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">端面積体積</span>
+      <div class="formula-expr formula-math">\[V = \frac{L (A_1 + A_2)}{2}\]</div>
+      <span class="formula-note">平均断面積×長さ</span>
+    </div></div><div class="table-wrap"><table><caption>面積・体積の規則の比較</caption><thead><tr><th scope='col'>規則</th><th scope='col'>適合するもの</th><th scope='col'>注意点</th></tr></thead><tbody><tr><td>座標（倍面積）</td><td>直線で囲まれた区画</td><td>点を順に列挙し図形を閉じる</td></tr><tr><td>台形則</td><td>任意のオフセット間隔</td><td>曲線境界を過小評価する</td></tr><tr><td>シンプソン則</td><td>滑らかな不規則境界</td><td>オフセットは奇数個、間隔は等間隔でなければならない</td></tr><tr><td>端面積法</td><td>一様な断面</td><td>面積が非線形に変化する場合に過大評価する</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>2ペグ試験の実際</h2>
+  <div class="body"><p>水準測量は視準線が水平であると仮定する。<strong>視準誤差（collimation error）</strong>はそれを傾ける。2ペグ試験はその傾きを見つける。</p>
+<p>ペグを約30〜40 m離して設置し、その中間に器械を据える。両方の距離が等しいため、視準線が傾いていても真の高低差は保たれる。次に一方のペグから数メートル先に器械を据え、両方の標尺を再度読む。2つの見かけの差の差が、1ペグ間隔あたりの視準誤差であるため、器械を調整するか読みを補正する。</p>
+<p>後視と前視の距離を釣り合わせることで、すべての路線で同じ相殺が達成される。これが精密水準測量の定石である理由である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">2ペグ試験からの視準誤差</span>
+      <div class="formula-expr formula-math">\[e = (a_2 - b_2) - (a_1 - b_1)\]</div>
+      <span class="formula-note">近接据え付けと中間据え付けの見かけの高低差の差</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>接線角による曲線の設置</h2>
+  <div class="body"><p>円曲線は接線から<strong>接線角</strong>によって設置する：接点における接線と任意の弦の間の角は、その弦が中心に張る角の半分に等しい。</p>
+<p>半径R上の全弦cに対する接線角は c/(2R) ラジアンである。連続する弦は累積するので、各点は接線から累積合計を振り、弦距離を測設することで設置する。緩和曲線も半径が変化する弦を使って同じ方法で設置する——計算は同一で、曲線に沿って半径が変わるだけである。</p>
+<p>この方法は遠方の接点で自己検証され、そこでの総偏角は偏角の半分に等しくなければならない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">接線角</span>
+      <div class="formula-expr formula-math">\[\delta = \frac{c}{2R}\]</div>
+      <span class="formula-note">ラジアン；度にするには180/πを掛ける</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>基準点（コントロール）</dt><dd>既知の座標と高さを持つ測点の網であり、他のすべての作業の基準となる。</dd></div><div class="term"><dt>縮尺高（reduced level）</dt><dd>定められた鉛直基準面からの点の高さ。</dd></div><div class="term"><dt>全円方位角</dt><dd>北から時計回りに測定し、0°から360°の間で表す方向。</dd></div><div class="term"><dt>角閉合差</dt><dd>閉合図形における測定角度の和と理論上の和の差。</dd></div><div class="term"><dt>ボーディッチ則</dt><dd>座標閉合差を各トラバース辺の長さに比例して配分する調整法。</dd></div><div class="term"><dt>整数アンビギュイティ</dt><dd>衛星と受信機の間の搬送波波長の未知の整数であり、センチメートル位置に達するために解決される。</dd></div><div class="term"><dt>通し距離（through chainage）</dt><dd>固定原点から路線中心線に沿って測定した距離で、その上の任意の点を参照するために用いる。</dd></div><div class="term"><dt>2ペグ試験</dt><dd>2つのペグの中間からの観測と一方のペグ付近からの観測による高低差を比較して視準誤差を定量化する水準測量の検査。</dd></div><div class="term"><dt>接線角</dt><dd>接線と曲線点への弦の間の角で、その弦が張る中心角の半分に等しい。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>4測点トラバースの閉合と調整</h2>
+        <p class="problem">閉合トラバースがA、B、C、Dを通りAに戻る。4つの右角はそれぞれ90°00′02″と測定された。ABの方位角は090°00′00″に固定され、測定によりAB = 100.010 m、BC = 60.000 m、CD = 99.990 m、DA = 60.000 mが得られた。角度を調整し、方位角と座標を計算し、ボーディッチ調整を適用せよ。点AはN 1000.000 m、E 500.000 mに固定されている。</p>
+        <ol><li>測定角度の和 = 4 × 90°00′02″ = 360°00′08″。理論上の和 = (4 − 2) × 180° = 360°00′00″であるから、角閉合差は +8″。許容値 20″√4 = 40″であるから、作業は合格。</li><li>−8″を均等に配分：各角に−2″の補正。調整後の各角はちょうど90°00′00″となり、これは偶然のばらつきではなく系統的な原因が1つあることを示唆する。</li><li>方位角を伝達：WCB_BC = 090° + 90° = 180°、WCB_CD = 270°、WCB_DA = 000°。</li><li>辺を分解：ΔN = d cos θ、ΔE = d sin θ。緯距：BC = −60.000、DA = +60.000、他はゼロ、よってΣΔN = 0。経距：AB = +100.010、CD = −99.990、よってΣΔE = +0.020 m。</li><li>線閉合差 = √(0² + 0.020²) = 0.020 m、全長320.000 mに対して相対精度1 : 16 000。各経距への補正 = −0.020 × d / 320：AB −0.00625 m、BC −0.00375 m、CD −0.00625 m、DA −0.00375 m。</li><li>補正後の経距：AB +100.00375、BC −0.00375、CD −99.99625、DA −0.00375、合計はゼロ。補正後の緯距は変わらず、これも合計ゼロ。</li><li>補正した成分を座標に加える：B (1000.000, 600.004)、C (940.000, 600.000)、D (940.000, 500.004)、A (1000.000, 500.000) に閉じる。</li><li>健全性チェック：丸め後に閉合座標がAを正確に再現し、閉合差は出発方向に平行な辺によって運ばれた。これは距離依存の誤差が示すべき姿である。</li></ol>
+        <div class="answer"><b>Answer</b>角閉合差 +8″（許容値40″以内）をゼロに調整；線閉合差20 mm、精度約1 : 16 000をボーディッチで除去；調整後のループはA（N 1000.000 m、E 500.000 m）に閉じる。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>計算前に記帳検査を行う：ΣBS − ΣFS は最初と最後の縮尺高の差に等しくなければならない。</li><li>どのトラバースでも、まず角閉合差を計算する。角度が閉じるまで方位角は信頼できない。</li><li>軸の順序を一貫させる：NをEの前に、方位角はatan2(ΔE, ΔN)から導き、逆にしない。</li><li>許容閉合差を明示し、それと明示的に比較する。比較のない閉合差は、計算が正しくても得点が少ない。</li><li>座標を使う面積問題：N列とE列を持つ倍面積表を書き、クロス乗算する——符号の誤り1つで多角形の向きが逆になり、面積だけの問題ではない。</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Hong Kong 1980 Geodetic Datum and HK1980 Grid parameters</h3>
+  <p class="ref-table-intro">Defining parameters of the HK80 datum and the local HK1980 Grid, a Transverse Mercator system used for cadastral, engineering and large-scale mapping in Hong Kong. They are the constants entered into coordinate transformations and checks.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Parameter</th><th scope='col'>Value</th><th scope='col'>Notes</th></tr></thead><tbody><tr><td>Geodetic datum</td><td>Hong Kong 1980 (HK80)</td><td>Local datum for HK1980 Grid coordinates</td></tr><tr><td>Reference ellipsoid</td><td>International Hayford (1910); a = 6 378 388 m, 1/f = 297.0</td><td>Semi-major axis and flattening</td></tr><tr><td>Datum origin (Trigonometrical Zero)</td><td>22° 18&#x27; 12.82&quot; N, 114° 10&#x27; 18.75&quot; E</td><td>Old trig station at the Hong Kong Observatory</td></tr><tr><td>Map projection</td><td>Transverse Mercator</td><td>Conformal cylindrical projection</td></tr><tr><td>Projection origin (old Trig 2, Patridge Hill)</td><td>22° 18&#x27; 43.68&quot; N, 114° 10&#x27; 42.80&quot; E</td><td>Reference station for the grid origin</td></tr><tr><td>Grid coordinates of the projection origin</td><td>819 069.80 mN, 836 694.05 mE</td><td>Northing and easting of the origin</td></tr><tr><td>Scale factor</td><td>Unity (1.0) along the central meridian</td><td>At old Trig 2; the UTM grids in Hong Kong use 0.9996</td></tr></tbody></table></div>
+  <p class="ref-table-note">Parameters from the Datum Parameters and Projection Parameters tables in the Explanatory Notes on Geodetic Datums in Hong Kong, Survey and Mapping Office, Lands Department (1995, minor revision 2023).</p>
+  <p class="ref-table-caveat">Revision summary only. Use the current transformation parameters, projection formulae and worked examples published by the Survey and Mapping Office; the grid coordinates quoted refer to the projection origin, not to any local benchmark.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q01</span><span>器械高法において、中間点の縮尺高はどのように求められるか：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>後視に中間視を加える</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>後視と前視を平均する</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>既知の高さに中間視を加える</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>器械高から中間視を引く</span></button></div>
+    <div class="quiz-explain"><b>Why</b>器械高は視準線の高さであるため、すべての標尺読みをそれから引いて地表面の点に達する。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>閉合トラバースの5つの内角の和が540°00′40″である。角閉合差はいくらか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>−40″</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>+40″</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>+1°40′</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>ゼロ、(5 − 2) × 180° = 540°だから</span></button></div>
+    <div class="quiz-explain"><b>Why</b>理論上の和は (5 − 2) × 180° = 540°00′00″であるから、測定値から理論値を引くと +40″。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>ボーディッチ則の下で、トラバース辺に適用される補正は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>辺の方位角に比例する</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>長さに関係なくすべての辺で等しい</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>短い辺では長い辺より大きい</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>辺長に比例する</span></button></div>
+    <div class="quiz-explain"><b>Why</b>ボーディッチは閉合差を距離に比例して配分するので、短い辺は比例して小さな補正を受ける。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>センチメートル級の測量位置を達成できるGNSS観測量はどれか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>C/Aコードからの擬似距離</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>搬送波のドップラーシフト</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>整数アンビギュイティを解決した搬送波位相</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>放送暦（アルマナック）</span></button></div>
+    <div class="quiz-explain"><b>Why</b>コード距離はメートル単位を与える。搬送波位相は数ミリメートルまで測定され、全周期アンビギュイティが固定されれば精密な距離になる。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q05</span><span>面積計算のシンプソン則はオフセットの数がいくつであることを要求するか：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>奇数</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>間隔が等しければ任意の数</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>4の倍数</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>偶数</span></button></div>
+    <div class="quiz-explain"><b>Why</b>シンプソン則は放物弧を区間の対ごとに当てはめるので、オフセットの数（両端を含む）は奇数でなければならない。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>2ペグ試験で、水準儀をまずペグの中間に据えるのはなぜか：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>視準誤差が観測高低差から相殺される</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>読みができるだけ大きくなる</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>変化点なしで標尺を読める</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>屈折と曲率が相殺される</span></button></div>
+    <div class="quiz-explain"><b>Why</b>視距離が等しいと、傾いた視準線は両方の読みを等しく汚染するので、真の高低差は保たれる。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-geology.ja.html"><span>Core</span><b>応用地質学</b></a><a class="related-card" href="construction-introduction.ja.html"><span>Core</span><b>建設入門</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="soil-mechanics.ja.html"><small>Previous</small><b>土質力学</b></a><a class="next" href="integrated-project-quality.ja.html"><small>Next</small><b>統合プロジェクト・品質管理</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Survey and Mapping Office, Lands Department. (2023). <i>Explanatory Notes on Geodetic Datums in Hong Kong (minor revision 2023)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.geodetic.gov.hk/common/data/pdf/explanatorynotes.pdf" rel="noopener">https://www.geodetic.gov.hk/common/data/pdf/explanatorynotes.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">まず基準点——細部は自己検証しない。</p><p class="margin-note">昇降法はすべての中間視を検査する。</p><p class="margin-note">座標に触れる前に角度を調整する。</p><p class="margin-note">視準を釣り合わせて曲率と器械高誤差を相殺する。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>鋼結構設計 — Civil Hub</title>
+<meta name="description" content="鋼構件與接頭在承載能力極限狀態及正常使用極限狀態下如何驗算：截面分類、彎曲、剪力、屈曲、焊縫與螺栓。這是截面表、設計規範與計算機交匯之處。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-steel-structures.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="鋼結構設計 — Civil Hub">
+<meta property="og:description" content="鋼構件與接頭在承載能力極限狀態及正常使用極限狀態下如何驗算：截面分類、彎曲、剪力、屈曲、焊縫與螺栓。這是截面表、設計規範與計算機交匯之處。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-steel-structures.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="design-of-steel-structures.html" data-alt-zh-hant="design-of-steel-structures.zh-Hant.html" data-alt-ja="design-of-steel-structures.ja.html" data-alt-ko="design-of-steel-structures.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">鋼結構設計</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">核心</p>
+          <h1>鋼結構設計</h1>
+          <p class="subject-sub">極限狀態設計、截面承載力與接頭驗算</p>
+          <ul class="subject-facts"><li><b>類型</b>核心</li><li><b>閱讀</b>12 分鐘</li><li><b>章節</b>10</li><li><b>公式</b>15</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M80 160 V64 H260 V160" stroke="currentColor" stroke-width="1.7"/><path d="M70 160 h20 M250 160 h20" stroke="currentColor" stroke-width="1.2"/><path d="M80 160 l-8 12 h16 z M260 160 l-8 12 h16 z" stroke="currentColor" stroke-width="1"/><path d="M80 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M220 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M104 100 q-20 14 0 28" stroke="var(--accent)" stroke-width="1"/><path d="M236 100 q20 14 0 28" stroke="var(--accent)" stroke-width="1"/><text x="170" y="44" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PORTAL FRAME</text></svg>
+          <figcaption>Portal frame — bending moments at the joints</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">兩個數字與一個安全係數</a></li><li><a href="#sec-2">鋼材、強度與長細比</a></li><li><a href="#sec-3">截面分類</a></li><li><a href="#sec-4">受拉構件：總截面、淨截面與有效截面</a></li><li><a href="#sec-5">彎曲與剪力</a></li><li><a href="#sec-6">側向扭轉屈曲</a></li><li><a href="#sec-7">受壓構件</a></li><li><a href="#sec-8">接頭：螺栓與焊縫</a></li><li><a href="#sec-9">正常使用、防火與耐久性</a></li><li><a href="#sec-10">一次完成整條梁的驗算</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      <li><a href="#design-reference">設計參考</a></li>
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">鋼構件與接頭在承載能力極限狀態及正常使用極限狀態下如何驗算：截面分類、彎曲、剪力、屈曲、焊縫與螺栓。這是截面表、設計規範與計算機交匯之處。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="design-of-steel-structures" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>兩個數字與一個安全係數</h2>
+  <div class="body"><p>極限狀態設計將已乘載荷係數的載荷效應與已乘抗力係數的抗力作比較，並要求抗力較大：E_d ≤ R_d。</p>
+<ul>
+<li>載荷係數涵蓋恆載、外加載荷及風載荷的不確定性；材料係數涵蓋屈服強度與製作。</li>
+<li>承載能力極限狀態涵蓋強度、穩定性及防火；正常使用極限狀態涵蓋撓度、振動及耐久性。</li>
+<li>目標是在設計使用期內達到一個細小且已知的失效概率，而非零風險。</li>
+<li>延性與穩健性很重要：能在失效前發出警告的結構更安全。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">極限狀態驗算</span>
+      <div class="formula-expr formula-math">\[E_d \le R_d\]</div>
+      <span class="formula-note">R_d 為設計抗力</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>鋼材、強度與長細比</h2>
+  <div class="body"><p>鋼材按等級指定——S275、S355、S460——數字代表該厚度下的最低屈服強度，單位為 N/mm²。計算所用的設計強度為 p_y = f_y / γ_M。</p>
+<ul>
+<li>鋼材剛硬、高強且具延性；延性容許力量重分佈，並在斷裂前發出可見警告。</li>
+<li>軋製及焊接產生的殘餘應力不會降低壓碎載荷，但會降低剛度並使屈曲提早發生。</li>
+<li>厚截面及低溫環境下韌性很重要，因此衝擊次等級應納入規格。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">設計強度</span>
+      <div class="formula-expr formula-math">\[p_y = \frac{f_y}{\gamma_M}\]</div>
+      <span class="formula-note">γ_M 為材料係數，接近 1.0</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>截面分類</h2>
+  <div class="body"><p>局部屈曲取決於每個板件的長細程度。寬厚比 b/T 會與以 ε 倍數表示的限值作比較，其中 ε = √(275/p_y)，而 275 N/mm² 為參考屈服強度。</p>
+<ul>
+<li>第 1 類 塑性：可形成塑性鉸並轉動。</li>
+<li>第 2 類 緊湊：達到塑性彎矩，轉動有限。</li>
+<li>第 3 類 半緊湊：僅在邊緣纖維達到屈服。</li>
+<li>第 4 類 長細：在屈服前發生局部屈曲。</li>
+<li>整個截面取其各板件中最差的類別。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">長細係數</span>
+      <div class="formula-expr formula-math">\[\varepsilon = \sqrt{\frac{275}{p_y}}\]</div>
+      <span class="formula-note">p_y 單位為 N/mm²；b/T 的限值以 ε 的倍數表示</span>
+    </div></div><div class="table-wrap"><table><caption>四種截面類別</caption><thead><tr><th scope='col'>類別</th><th scope='col'>局部行為</th><th scope='col'>抗彎能力</th></tr></thead><tbody><tr><td>1 塑性</td><td>形成塑性鉸並轉動</td><td>M_c = p_y S</td></tr><tr><td>2 緊湊</td><td>達到塑性彎矩，轉動有限</td><td>M_c = p_y S</td></tr><tr><td>3 半緊湊</td><td>僅在邊緣纖維屈服</td><td>M_c = p_y Z</td></tr><tr><td>4 長細</td><td>屈服前發生局部屈曲</td><td>有效截面特性</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>受拉構件：總截面、淨截面與有效截面</h2>
+  <div class="body"><p>拉力是最簡單的鋼材驗算——沒有屈曲，只是面積乘以強度——但細部設計頗為微妙。<strong>總截面積</strong> A_g 為完整截面；<strong>淨截面積</strong> A_n 扣除螺栓孔；而<strong>有效截面積</strong> A_e 因<strong>剪力滯後</strong>而進一步折減：當螺栓只連接角鋼的一肢時，外伸肢是透過角部逐漸分擔載荷，而非在接頭處直接受力。</p>
+<ul>
+<li>單角鋼以螺栓穿過一肢：<code>A_n = A_g − 0.3 a₂</code>，其中 a₂ 為未連接肢的面積。</li>
+<li>雙角鋼分擔接頭：<code>A_n = A_g − 0.15 a₂</code>。</li>
+<li>有效截面積：<code>A_e = K_e A_n</code>，S355 鋼的 K_e 約為 1.1。</li>
+<li>對 65 × 65 角鋼進行的拉伸試驗顯示，應變在外伸肢上急劇下降——剪力滯後清晰可見。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">淨截面積，單角鋼以螺栓穿過一肢</span>
+      <div class="formula-expr formula-math">\[A_n = A_g - 0.3\,a_2\]</div>
+      <span class="formula-note">a₂ 為未連接（外伸）肢的面積</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">淨截面積，雙角鋼</span>
+      <div class="formula-expr formula-math">\[A_n = A_g - 0.15\,a_2\]</div>
+      <span class="formula-note">較小的扣除量反映背對背成對角鋼有較佳的載荷傳遞</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">有效截面積</span>
+      <div class="formula-expr formula-math">\[A_e = K_e A_n\]</div>
+      <span class="formula-note">S355 的 K_e 約為 1.1；承載力由 p_y A_e 得出</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>彎曲與剪力</h2>
+  <div class="body"><p>第 1 或 2 類截面的抗彎能力為塑性彎矩 M_c = p_y S，其中 S 為塑性截面模數。第 3 類截面則採用彈性模數 Z，第 4 類截面採用有效模數。</p>
+<ul>
+<li>剪力主要由腹板承擔：V_c = 0.6 p_y A_v，其中 A_v 為受剪面積。</li>
+<li>當剪力超過抗剪能力約 60% 時，須就損失的受剪面積折減彎矩容量。</li>
+<li>集中載荷亦須進行腹板承壓及腹板屈曲驗算，腹板過薄處須加設加勁肋。</li>
+<li>撓度是另一項正常使用驗算，採用未乘係數的載荷。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">抗彎能力，第 1 或 2 類</span>
+      <div class="formula-expr formula-math">\[M_c = p_y S\]</div>
+      <span class="formula-note">第 3 類截面採用 Z</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">抗剪能力</span>
+      <div class="formula-expr formula-math">\[V_c = 0.6\,p_y A_v\]</div>
+      <span class="formula-note">受剪面積，主要為腹板</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>側向扭轉屈曲</h2>
+  <div class="body"><p>無側向約束的梁繞強軸彎曲，但受壓翼緣傾向側向移動。一旦翼緣位移且截面扭轉，梁便會在遠低於塑性彎矩的載荷下發生側向扭轉屈曲而失效。</p>
+<p>抗力為 M_b = χ_LT M_c，其中折減係數 χ_LT 隨長細比 λ_LT 上升而下降。</p>
+<ul>
+<li>長細比取決於約束點之間的有效長度、扭轉及翹曲剛度，以及載荷高度。</li>
+<li>作用於上翼緣的載荷會加劇不穩定；作用於下翼緣的載荷則有穩定作用。</li>
+<li>等效均勻彎矩係數用以考慮約束點之間的非均勻彎矩。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">屈曲抗力彎矩</span>
+      <div class="formula-expr formula-math">\[M_b = \chi_{LT} M_c\]</div>
+      <span class="formula-note">就側向扭轉屈曲折減塑性彎矩</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>受壓構件</h2>
+  <div class="body"><p>粗壯柱在應力達到設計強度時被壓碎，因此其承載力接近 p_y A_g。長細柱則先發生屈曲，承載力來自屈服強度、歐拉屈曲應力與缺陷參數之間的 Perry-Robertson 關係。</p>
+<ul>
+<li>實際柱存在初始彎曲、殘餘應力及偏心，因此屈曲曲線須以經驗校準。</li>
+<li>有效長度 L_E = K L 反映端部約束及框架側移；長細比為 λ = L_E / r，採用繞較弱軸的迴轉半徑，除非約束阻止。</li>
+<li>側移框架中的柱，其行為猶如比實際長度更長。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">歐拉屈曲應力</span>
+      <div class="formula-expr formula-math">\[p_E = \frac{\pi^2 E}{\lambda^2}\]</div>
+      <span class="formula-note">λ 為長細比 L_E / r；p_E 與 p_y 作比較</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">抗壓能力</span>
+      <div class="formula-expr formula-math">\[P_c = p_c A_g\]</div>
+      <span class="formula-note">p_c 為由屈曲曲線得出的抗壓強度，低於 p_y</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>接頭：螺栓與焊縫</h2>
+  <div class="body"><p>接頭傳遞構件內力，往往決定鋼框架的成本。簡單接頭按剪力及轉動設計；剛接接頭則須同時傳遞彎矩。</p>
+<ul>
+<li>螺栓須驗算剪力、承壓、撕裂及塊狀剪切，螺栓群亦可能承受扭矩。</li>
+<li>螺栓抗剪能力為 V_s = p_s A_s，採用相關破壞平面的受剪面積。</li>
+<li>角焊縫透過焊喉傳遞力量：焊腳尺寸為 s 時，焊喉為 0.7s，而每單位長度的抗力為 0.7 s p_w。</li>
+<li>焊接符號、最小長度及邊距均屬細部設計要求；無法製作的接頭並非設計。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">螺栓抗剪能力</span>
+      <div class="formula-expr formula-math">\[V_s = p_s A_s\]</div>
+      <span class="formula-note">A_s 為破壞平面上的受剪面積；p_s 為抗剪強度</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">角焊縫每單位長度抗力</span>
+      <div class="formula-expr formula-math">\[P_w = 0.7\,s\,p_w\]</div>
+      <span class="formula-note">s 為焊腳尺寸；0.7s 為焊喉厚度</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>正常使用、防火與耐久性</h2>
+  <div class="body"><p>撓度限值保護飾面及舒適度；限值以跨度的分數表示，並以未乘係數的載荷驗算。大跨度樓板亦須進行振動驗算，通常將自然頻率保持在數赫茲以上。</p>
+<ul>
+<li>防火能力可透過膨脹塗料、防火板或混凝土填充提供；所需時段取決於建築物用途及高度。</li>
+<li>防腐保護按暴露環境而定：正常情況下採用鍍鋅或油漆，近海或工業大氣環境則須更多保護。</li>
+<li>避免積水並容許檢查的細部設計，比維修更便宜。</li>
+<li>鋼結構是一個系統——包括支撐、接頭及穩健性拉結——而非構件的集合。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">撓度，均布載荷簡支梁</span>
+      <div class="formula-expr formula-math">\[\delta = \frac{5 w L^4}{384 E I}\]</div>
+      <span class="formula-note">正常使用載荷，未乘係數；E 單位 N/mm²，I 單位 mm⁴</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>一次完成整條梁的驗算</h2>
+  <div class="body"><p>實際的梁設計是一個固定次序。從分擔面積為梁加載：樓板自重 2.94 kPa 加上外加載荷 3.0 kPa，在承載能力極限狀態下組合為 <code>1.4G + 1.6Q = 8.92 kPa</code>。樓板長寬比決定載荷路徑——長邊約為短邊兩倍以上時為單向，否則為雙向，並以三角形或梯形反力傳至梁上。</p>
+<ul>
+<li>驗算截面類別（以 <code>ε = √(275/p_y)</code> 對照 b/T 及 d/t 限值）。</li>
+<li>驗算彎曲（<code>M_c = p_y S</code>）。</li>
+<li>驗算剪力（<code>V_c = 0.6 p_y A_v</code>）。</li>
+<li>對無側向約束的梁，在約束長度處驗算屈曲抗力 M_b。</li>
+<li>最後以正常使用作結：未乘係數外加載荷下的撓度對照如跨度/360 的限值，以及振動驗算，使樓板基本頻率保持在約 3–5 Hz 以上。</li>
+</ul>
+<p>保持固定次序可避免經典的遺漏——一條通過彎曲驗算但從未核實側向約束的梁。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">基本頻率，簡支梁</span>
+      <div class="formula-expr formula-math">\[f = \frac{\pi}{2 L^2}\sqrt{\frac{E I}{m}}\]</div>
+      <span class="formula-note">m 為包括樓板的每單位長度質量；保持 f 在約 3–5 Hz 以上</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>極限狀態設計</dt><dd>就承載能力及正常使用兩種情況，將已乘係數的載荷效應與已乘係數的抗力作比較的設計方法。</dd></div><div class="term"><dt>設計強度</dt><dd>屈服強度除以材料係數，用作構件驗算中的應力限值。</dd></div><div class="term"><dt>截面分類</dt><dd>按截面各板件的長細程度，將截面歸類為塑性、緊湊、半緊湊或長細。</dd></div><div class="term"><dt>塑性截面模數</dt><dd>截面面積對等面積軸的一次矩，乘以設計強度即得塑性彎矩。</dd></div><div class="term"><dt>側向扭轉屈曲</dt><dd>無側向約束的梁因受壓翼緣側向位移及扭轉而失效。</dd></div><div class="term"><dt>有效長度</dt><dd>構件在側向約束點之間的屈曲長度，按端部條件及框架側移調整。</dd></div><div class="term"><dt>剪力滯後</dt><dd>軸力在連接截面上分佈不均，因為外伸部分僅透過接頭分擔載荷。</dd></div><div class="term"><dt>翹曲常數</dt><dd>量度截面抵抗非均勻扭轉的截面特性，梁在側向扭轉屈曲過程中扭轉時會加以動用。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>樓面梁的彎曲、剪力與撓度</h2>
+        <p class="problem">一條跨度 7.5 m 的簡支梁承受承載能力極限狀態均布載荷 30 kN/m，以及正常使用均布載荷 20 kN/m。截面為第 1 類，塑性模數 S = 1500 cm³，受剪面積 A_v = 3500 mm²，二次矩 I = 3.6 × 10⁸ mm⁴。設計強度 p_y = 355 N/mm²，E = 205 kN/mm²。按跨度/360 限值驗算彎曲、剪力及撓度。</p>
+        <ol><li>最大彎矩：M = w L² / 8 = 30 × 7.5² / 8 = 210.9 kNm。</li><li>抗彎能力：M_c = p_y S = 355 × 1 500 000 = 532.5 × 10⁶ Nmm = 532.5 kNm。由於 210.9 &lt; 532.5 kNm，彎曲足夠，利用率約 40%。</li><li>最大剪力：V = w L / 2 = 30 × 7.5 / 2 = 112.5 kN。抗剪能力：V_c = 0.6 p_y A_v = 0.6 × 355 × 3500 = 745.5 kN。由於 112.5 &lt; 745.5 kN，剪力足夠，無須作彎矩-剪力折減。</li><li>正常使用載荷下的撓度：δ = 5 w L⁴ / (384 E I) = 5 × 20 × 7500⁴ / (384 × 205 000 × 3.6 × 10⁸) = 11.2 mm。限值為 L/360 = 20.8 mm，因此撓度亦足夠。</li><li>三項驗算均通過。彎曲的利用率最高，可嘗試較輕的截面，但其後須另行核實側向扭轉屈曲及接頭設計。</li></ol>
+        <div class="answer"><b>Answer</b>彎曲 211 kNm &lt; 533 kNm，剪力 113 kN &lt; 746 kN，撓度 11.2 mm &lt; 20.8 mm，因此該梁就這些驗算而言足夠。彎曲為控制性驗算。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>在計算任何承載力之前先分類截面；類別決定採用塑性模數、彈性模數還是有效特性。</li><li>分清 S 與 Z：S 用於塑性設計，Z 用於彈性設計，混淆兩者是常見的失分點。</li><li>側向扭轉屈曲往往控制實際梁的設計，因此在判定截面足夠之前，先檢查約束間距。</li><li>撓度採用未乘係數的載荷，強度採用已乘係數的載荷；在每一行說明所用的是哪一組。</li><li>在側向扭轉屈曲題目中，使用任何公式前先列出約束位置及載荷懸掛位置；兩者都會改變有效長度及答案。</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Design strength py of structural steel to BS EN grades</h3>
+  <p class="ref-table-intro">Design strength py used in the Hong Kong steel code. It is the yield strength divided by the material factor for the steel class and capped by the tensile strength divided by a second factor, so the tabulated value falls as the element gets thicker.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Steel grade</th><th scope='col'>Thickness t (mm)</th><th scope='col'>Design strength py (N/mm²)</th></tr></thead><tbody><tr><td>S235</td><td>t ≤ 16</td><td>235</td></tr><tr><td>S275</td><td>t ≤ 16</td><td>275</td></tr><tr><td>S275</td><td>16 &lt; t ≤ 40</td><td>265</td></tr><tr><td>S355</td><td>t ≤ 16</td><td>355</td></tr><tr><td>S355</td><td>16 &lt; t ≤ 40</td><td>345</td></tr><tr><td>S355</td><td>40 &lt; t ≤ 63</td><td>335</td></tr><tr><td>S460</td><td>t ≤ 16</td><td>460</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 3.2 of the Code of Practice for the Structural Use of Steel 2011 (2023 Edition). For Class 1 steel the material factors are γm1 = 1.0 and γm2 = 1.1 (Table 4.1); the thickness of the thickest element governs the grade classification.</p>
+  <p class="ref-table-caveat">Revision summary only. Values depend on the steel class, the product standard and the governing thickness, and normal-strength and high-strength steels are treated separately; check the current steel code for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q01</span><span>梁在工作載荷下的撓度是在何處驗算？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>承載能力極限狀態，採用未乘係數載荷</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>正常使用極限狀態，採用已乘係數載荷</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>承載能力極限狀態，採用已乘係數載荷</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>正常使用極限狀態，採用未乘係數載荷</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>撓度屬正常使用情況，因此以未乘係數的恆載及外加載荷驗算。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>腹板寬厚比超過第 3 類限值的截面分類為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>第 3 類 半緊湊</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>第 4 類 長細</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>第 1 類 塑性</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>第 2 類 緊湊</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>第 4 類截面在達到屈服前發生局部屈曲，必須採用有效截面特性驗算。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>鋼梁最可能發生側向扭轉屈曲的情況是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>受壓翼緣連續受約束</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>受壓翼緣在長跨度上無約束</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>梁非常短且粗壯</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>載荷作用於下翼緣</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>受壓翼緣必須能自由側向位移及扭轉；長而無約束的長度使此失效模式成為關鍵。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>焊腳尺寸為 s 的角焊縫，其焊喉厚度為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.85 s</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>s</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.5 s</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>0.7 s</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>焊喉與焊腳成 45° 量度，得出 0.7s，焊縫抗力即作用於該焊喉上。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q05</span><span>單角鋼拉桿以螺栓穿過一肢，其淨截面積因剪力滯後而折減：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>外伸肢面積的 0.3 倍</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>總面積的 0.5 倍</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>完全沒有折減</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>外伸肢面積的 0.15 倍</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>單角鋼的扣除量為 0.3 a₂；分擔接頭的雙角鋼則採用較小的 0.15 a₂ 扣除量。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>在側向扭轉屈曲試驗中，將施加載荷由上翼緣移至下翼緣會使載荷：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>等同於完全側向約束</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>變得不穩定，降低屈曲載荷</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>變得穩定，提高屈曲載荷</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>無關，因為屈曲只取決於截面</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>下翼緣載荷在梁屈曲時產生回復扭矩，而上翼緣載荷則加劇扭轉，是較嚴重的情況。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="structural-mechanics.zh-Hant.html"><span>Core</span><b>結構力學</b></a><a class="related-card" href="structural-analysis.zh-Hant.html"><span>Core</span><b>結構分析</b></a><a class="related-card" href="construction-materials.zh-Hant.html"><span>Core</span><b>建造材料</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="construction-management.zh-Hant.html"><small>上一頁</small><b>建造管理</b></a><a class="next" href="quantitative-methods.zh-Hant.html"><small>下一頁</small><b>工程師定量方法</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2>參考文獻</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2023). <i>Code of Practice for the Structural Use of Steel 2011 (2023 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/SUOS2011.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/SUOS2011.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">第 4 類須採用有效截面特性。</p><p class="margin-note">S 用於塑性，Z 用於彈性——切勿混淆。</p><p class="margin-note">約束間距決定側向扭轉屈曲驗算。</p><p class="margin-note">焊喉為 0.7 × 焊腳。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>교통 인프라 설계 — Civil Hub</title>
+<meta name="description" content="교차로와 철도 노선은 점유하는 공간이 아니라 제공해야 하는 용량에 따라 규모가 결정된다. 이 페이지에서는 우선권 교차로, 회전교차로, 신호 용량, 철도 차두시간 및 이들을 뒷받침하는 기준을 다룬다.">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-transport-infrastructure.ko.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="교통 인프라 설계 — Civil Hub">
+<meta property="og:description" content="교차로와 철도 노선은 점유하는 공간이 아니라 제공해야 하는 용량에 따라 규모가 결정된다. 이 페이지에서는 우선권 교차로, 회전교차로, 신호 용량, 철도 차두시간 및 이들을 뒷받침하는 기준을 다룬다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-transport-infrastructure.ko.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="design-of-transport-infrastructure.html" data-alt-zh-hant="design-of-transport-infrastructure.zh-Hant.html" data-alt-ja="design-of-transport-infrastructure.ja.html" data-alt-ko="design-of-transport-infrastructure.ko.html" data-page-lang="ko" data-root="../" data-total="42" data-page="library" data-content-lang="ko">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">교통 인프라 설계</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">핵심</p>
+          <h1>교통 인프라 설계</h1>
+          <p class="subject-sub">교차로, 철도, 그리고 이동을 뒷받침하는 인프라</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>핵심</li><li><b data-i18n="subject.read">Read</b>10 분</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>11</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M56 170 H298" stroke="currentColor" stroke-width="1.2"/><path d="M86 170 V64" stroke="currentColor" stroke-width="1.6"/><path d="M78 64 H190" stroke="currentColor" stroke-width="1.6"/><path d="M86 64 L160 40" stroke="currentColor" stroke-width="1.3"/><path d="M160 40 V86" stroke="var(--faint)" stroke-width="1"/><path d="M152 86 h16 v10 h-16 z" stroke="currentColor" stroke-width="1.1"/><path d="M86 110 H190" stroke="var(--line)" stroke-width="1.1"/><path d="M210 170 V112 H282 V170" stroke="currentColor" stroke-width="1.4"/><path d="M222 128 H270" stroke="var(--line)" stroke-width="1"/><path d="M222 146 H270" stroke="var(--line)" stroke-width="1"/><text x="170" y="192" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">SITE & CRANE</text></svg>
+          <figcaption>Site operations — crane and frame</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">설계는 용량의 문제다</a></li><li><a href="#sec-2">우선권 교차로: 간격 수용</a></li><li><a href="#sec-3">회전교차로: 회전교통류가 진입 용량을 결정한다</a></li><li><a href="#sec-4">신호: 포화교통류율과 녹색비</a></li><li><a href="#sec-5">현장에서 포화교통류율 측정</a></li><li><a href="#sec-6">보행자와 자전거 이용자는 설계 사용자다</a></li><li><a href="#sec-7">철도 용량은 차두시간 계산이다</a></li><li><a href="#sec-8">수치로 본 철도 용량: 제공 및 활용</a></li><li><a href="#sec-9">역과 환승</a></li><li><a href="#sec-10">교통 영향 평가: 범위와 단계</a></li><li><a href="#sec-11">기준, 모델 및 판단</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">교차로와 철도 노선은 점유하는 공간이 아니라 제공해야 하는 용량에 따라 규모가 결정된다. 이 페이지에서는 우선권 교차로, 회전교차로, 신호 용량, 철도 차두시간 및 이들을 뒷받침하는 기준을 다룬다.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="design-of-transport-infrastructure" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>설계는 용량의 문제다</h2>
+  <div class="body"><p>교통 시설은 원시 차량 수가 아닌 시간당 <strong>승용차 환산 단위</strong>(pcu)로 표현된 설계 연도 수요에 맞춰 설계된다. 이는 대형 화물차가 승용차보다 더 많은 도로 공간을 차지하기 때문이다. 핵심 비율은 수요를 용량으로 나눈 <strong>포화도</strong>이며, 핵심 산출물은 지체와 대기행렬 길이이다.</p>
+<p>용량만으로 교차로 유형을 선택하지는 않는다. 안전, 토지, 보행자, 비용 및 주변 네트워크가 모두 답을 제약하므로, 기준은 하나의 해법이 아닌 배치안을 제시한다.</p></div><div class="table-wrap"><table><caption>교차로 유형과 용량을 결정하는 요소</caption><thead><tr><th scope='col'>유형</th><th scope='col'>용량 결정 요인</th><th scope='col'>장점</th><th scope='col'>단점</th></tr></thead><tbody><tr><td>우선권 교차로</td><td>주도로 교통류의 간격 수용</td><td>저렴하고 컴팩트하며 시공이 간단</td><td>주도로 교통량이 증가하면 부도로 접근로가 실패</td></tr><tr><td>신호 교차로</td><td>포화교통류율과 녹색비</td><td>다양한 이동과 보행자를 처리</td><td>용량 근처에서 지체가 급격히 증가</td></tr><tr><td>표준 회전교차로</td><td>회전교통류와 진입 기하구조</td><td>자기 규제적이며 회전 교통류에 적합</td><td>큰 부지 면적, 진입 용량 제한</td></tr><tr><td>미니 회전교차로</td><td>주행 가능한 섬을 포함한 진입 기하구조</td><td>작고 저렴하며 속도를 낮게 유지</td><td>빠르게 과부하되고 차로 규율이 약함</td></tr><tr><td>입체 교차로</td><td>자유류 연결로 용량</td><td>매우 높은 용량, 상충 없음</td><td>비용, 토지 수용, 단절</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>우선권 교차로: 간격 수용</h2>
+  <div class="body"><p>양보 교차로에서 부도로는 주도로 교통류의 간격을 찾아야 한다. 따라서 상충 교통량이 증가하면 용량이 감소하며, 그 감소 형태는 <strong>간격 수용</strong> 이론을 따른다. 운전자는 진입 전에 <strong>임계 간격</strong>이 필요하고, 연속 차량은 <strong>후속 시간</strong> 간격으로 따른다.</p>
+<p>실무적 결론은 부도로 접근로가 병목이며, 그 용량은 주도로 교통량, 가시성 및 회전 비율에 민감하다는 것이다. 추가 부도로 차로나 확장 차로는 차로가 제약일 때만 도움이 되며, 간격이 제약일 때는 효과가 제한적이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">부도로 용량 (간격 수용)</span>
+      <div class="formula-expr formula-math">\[C = \frac{q e^{-q t_c/3600}}{1 - e^{-q t_f/3600}}\]</div>
+      <span class="formula-note">q는 상충 주도로 교통량(pcu/h), t_c는 임계 간격, t_f는 후속 시간(초)</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>회전교차로: 회전교통류가 진입 용량을 결정한다</h2>
+  <div class="body"><p>회전교차로 진입로는 <strong>회전교통류</strong>에 양보하므로, 진입 용량은 이미 링에 있는 교통량의 함수이다. 아래와 같은 선형 형태의 경험적 모델은 관측된 행태에 적합되며, 계수는 보편적 상수가 아니라 진입 기하구조에 따라 달라진다.</p>
+<p>기하구조는 속도와 간격 수용을 제어하므로 중요하다. 진입 편향, 진입 폭, 확장 길이 및 섬 반경은 모두 차량이 얼마나 빠르게 진입할 수 있는지를 변화시킨다. 미니 회전교차로는 교차점을 단순화하지만, 섬이 주행 가능하고 차로가 공유되므로 빠르게 과부하될 수 있다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">회전교차로 진입 용량</span>
+      <div class="formula-expr formula-math">\[C_{\mathrm{entry}} = a - b\,q_c\]</div>
+      <span class="formula-note">q_c는 회전교통류(pcu/h); a와 b는 진입 기하구조에 적합된 계수</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>신호: 포화교통류율과 녹색비</h2>
+  <div class="body"><p>신호 접근로는 녹색 시간이 완전히 사용되는 동안 <strong>포화교통류율</strong>로 방출된다. 이상적인 조건에서 차로당 대략 1,800~2,000 pcu/h이다. 주기가 C이고 유효 녹색 시간이 g일 때, 용량은 포화교통류율에 녹색비를 곱한 값이다.</p>
+<p><strong>유량비</strong> y = q/s는 수요가 필요로 하는 포화교통류율의 비율을 측정하고, <strong>포화도</strong> X = q/c는 수요를 용량과 비교한다. 손실 시간(각 단계의 출발 및 정리 시간)은 짧은 주기가 녹색 시간의 더 큰 비율을 낭비하는 이유이며, Webster 공식이 그 낭비와 긴 주기의 지체를 절충하는 이유이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">접근로 용량</span>
+      <div class="formula-expr formula-math">\[c = s \left( \frac{g}{C} \right)\]</div>
+      <span class="formula-note">s는 pcu/h, g는 유효 녹색 시간, C는 동일 시간 단위의 주기 길이</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Webster 최적 주기</span>
+      <div class="formula-expr formula-math">\[C_o = \frac{1.5L + 5}{1 - Y}\]</div>
+      <span class="formula-note">L은 주기당 총 손실 시간, Y는 임계 유량비의 합</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>현장에서 포화교통류율 측정</h2>
+  <div class="body"><p>포화교통류율은 가정하기보다 측정하는 것이 가장 좋다. 현장 방법은 <strong>포화 주기</strong>(대기행렬이 남아 있는 상태로 끝나는 녹색 기간) 동안 출발 차량을 세며, 신뢰성을 위해 최소 약 5대의 대기 차량이 필요하다. 처음 몇 대의 차량은 여전히 <strong>출발 손실 시간</strong>을 극복 중이므로 제외하고, 정상 차두시간 부분만 계산한다:</p>
+<p><code>s = 3600 n / t_g</code>,</p>
+<p>여기서 n은 길이 t_g인 녹색의 포화 부분 동안 계수된 차량 수이다.</p>
+<ul>
+<li>경사, 회전 반경, 차로 폭 및 차량 구성은 각각 보정 계수를 정당화한다.</li>
+<li>측정은 접근로의 대표적인 차로(직진 또는 혼합 차로, 전용 회전 차로가 아님)에서 충분한 주기를 평균해야 한다. 혼잡한 1분은 포화교통류율이 아니기 때문이다.</li>
+<li>교차로가 이를 정당화하는 경우, 직접 측정이 경험적 보정 방정식보다 우수하며, 매뉴얼이 상세 신호 계획에 이를 규정하는 이유이다.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">현장 포화교통류율</span>
+      <div class="formula-expr formula-math">\[s = \frac{3600\,n}{t_g}\]</div>
+      <span class="formula-note">n은 녹색의 포화 부분 동안 차량 수, t_g는 초 단위; 각 대기행렬의 처음 몇 대 차량은 제외</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>보행자와 자전거 이용자는 설계 사용자다</h2>
+  <div class="body"><p>모든 교차로는 보행자 횡단이기도 하다. 차량의 회전 궤적으로 설정된 모서리 반경은 횡단 거리를 늘릴 수 있어, 사람들이 의도된 곳이 아닌 가능한 곳에서 횡단하도록 유도한다. 좁은 반경, 안전 섬, 평면 횡단 및 합리적인 신호 단계는 횡단을 짧고 가시적으로 유지한다.</p>
+<p>자전거 이용자는 연속적이고 예측 가능한 공간이 필요하다. 교차로에서 끊기거나 회전 차량이 반드시 교차해야 하는 위치에 있는 자전거 차로는 제거하려 했던 상충을 다시 만든다. 설계 기준은 차로 연속성, 가시성 봉투 및 신호 단계를 통해 이를 다룬다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">횡단 신호 시간 검토</span>
+      <div class="formula-expr formula-math">\[t_{\mathrm{needed}} = \frac{L}{v} + t_s\]</div>
+      <span class="formula-note">보행 속도는 설계 시 약 1.2 m/s로 종종 사용됨</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>철도 용량은 차두시간 계산이다</h2>
+  <div class="body"><p>철도에서 용량은 한 시간에 한 지점을 통과하는 열차 수이므로, 모든 것이 <strong>최소 차두시간</strong>으로 귀결된다. 신호 시스템은 각 열차에 대해 <strong>폐색 시간</strong>을 정의하고, 역은 <strong>정차 시간</strong>에 더해 출발 가속 및 승강장 정리 시간을 추가한다.</p>
+<p>1차 근사 역 차두시간은 정차 시간 + 가속 시간 + 제동 시간 + 열차 및 정리 통과 시간에 신호 여유를 더한 값이다. 시간당 열차 수는 이 차두시간에서 도출된다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">최소 역 차두시간</span>
+      <div class="formula-expr formula-math">\[h_{\min} \approx t_{\mathrm{dwell}} + \frac{v}{a} + \frac{v}{b} + \frac{L_{\mathrm{train}} + L_{\mathrm{clear}}}{v} + t_{\mathrm{margin}}\]</div>
+      <span class="formula-note">v는 m/s, 가속도는 m/s², 길이는 m, 결과 h는 초</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">차두시간으로부터의 선로 용량</span>
+      <div class="formula-expr formula-math">\[C = \frac{3600}{h} c_{\mathrm{train}}\]</div>
+      <span class="formula-note">c_train은 한 열차의 혼잡 시 정원(승객)</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>수치로 본 철도 용량: 제공 및 활용</h2>
+  <div class="body"><p>철도 용량 산술은 차량 단위에서 시작한다. 차량 용량은 좌석과 입석 공간을 결합한다:</p>
+<p><code>C_vehicle = S_seats + A_stand × ρ</code>,</p>
+<p>여기서 ρ는 입석 밀도로, 일반 계획에서 약 4인/m²이다. 150석 차량이 각각 45 m²의 입석 공간을 제공하는 6량 편성 열차는 차량당 약 330명, 열차당 1,980명을 수송한다.</p>
+<p><strong>제공</strong> 선로 용량은 <code>C_offered = c_train × 3600 / h</code>이며, <strong>활용</strong> 용량은 실제 혼잡을 반영하기 위해 약 1.1의 <strong>설계 혼잡도 계수</strong>를 적용한다: <code>C_utilised = C_offered × F_load</code>. 135초 첨두 차두시간은 시간당 약 52,800명을 제공한다.</p>
+<p>최소 차두시간이 상한을 설정한다: 역 차두시간(정차 + 정리 시간 × 안전 계수)이 보통 제약이 되지만, 제동으로 인한 선로 차두시간도 확인해야 한다:</p>
+<p><code>h_way ≈ [v/a + (L_train + L_clear)/v] × f_safety</code>. 더 큰 차두시간이 시간표를 지배하며, 선로 용량은 그로부터 도출된다. 따라서 5초의 정차 시간 절감은 실질적인 용량 증가이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">차량 용량</span>
+      <div class="formula-expr formula-math">\[C_{\mathrm{vehicle}} = S_{\mathrm{seats}} + A_{\mathrm{stand}}\,\rho\]</div>
+      <span class="formula-note">ρ는 입석 밀도, 계획 시 약 4인/m²</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">활용 선로 용량</span>
+      <div class="formula-expr formula-math">\[C_{\mathrm{utilised}} = C_{\mathrm{offered}}\,F_{\mathrm{load}}\]</div>
+      <span class="formula-note">F_load는 설계 혼잡도 계수, 약 1.1</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">최소 선로 차두시간</span>
+      <div class="formula-expr formula-math">\[h_{\mathrm{way}} \approx \left[\frac{v}{a} + \frac{L_{\mathrm{train}} + L_{\mathrm{clear}}}{v}\right] f_{\mathrm{safety}}\]</div>
+      <span class="formula-note">제동 시간 + 열차 및 정리 통과 시간, 안전 계수 곱함</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>역과 환승</h2>
+  <div class="body"><p>역은 용량 장치이다. 승강장 폭, 계단, 에스컬레이터 및 개찰구는 각각 유량을 가지며, 가장 느린 연결부가 환승 시간을 결정한다. 단순한 2면 승강장 역은 긴 정차 시간을 허용하지만, 혼잡한 환승역은 더 넓은 승강장, 더 많은 수직 이동 경로 및 수평 접근이 필요하다.</p>
+<p>환승 설계는 도보 거리와 혼잡을 절충한다. 길지만 잘 안내된 도보가 짧지만 혼잡한 도보보다 나을 수 있으며, 대향식 환승은 층 변경을 완전히 제거하므로 가장 강력한 연결이다. 길 안내와 접근성은 설계 단계에서 포함되어야 하며, 나중에 추가해서는 안 된다.</p></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>교통 영향 평가: 범위와 단계</h2>
+  <div class="body"><p><strong>교통 영향 평가</strong>(TIA)는 제안된 개발이 주변 교통 네트워크에 미치는 영향을 묻고, 고정된 범위를 따른다.</p>
+<ul>
+<li>연구 지역과 목표 연도를 설정한다 — 보통 개통 연도와 설계 연도.</li>
+<li>토지 이용으로부터 통행 발생 및 유인을 추정한다.</li>
+<li>통행을 수단과 경로별로 네트워크에 배분한다.</li>
+<li>개발이 영향을 미칠 교차로, 횡단 및 접근 지점을 검토한다.</li>
+<li>교차로 성능을 <strong>포화도</strong>로 판단한다: 접근로는 대기행렬이 회복될 수 있도록 약 85~90% 미만으로 유지되어야 한다.</li>
+<li>접근 기하구조, 서비스 차량, 승하차 및 버스와 보행자에 대한 영향을 다룬다.</li>
+<li>네트워크가 실패하는 경우, 완화 방안(단계적 시행, 차로 변경, 접근 관리)을 설계하고 재검토하며, 당국이 판단할 수 있도록 잔여 영향을 보고한다.</li>
+</ul>
+<p>TIA는 통행률만큼만 좋다: 다른 도시에서 차용한 통행률이나 조사 대신 가정된 수단 분담은 그럴듯해 보이지만 의미 없는 숫자를 만들어낸다.</p></div>
+<div class="callout callout--warning">
+  <b>통행률이 모든 것을 결정한다</b>
+  차용한 통행률과 검증되지 않은 수단 분담에 기반한 TIA는 연약한 입력에서 정밀한 출력을 만들어낸다. 결론을 옹호하기 전에 모든 통행률의 출처를 명시하라.
+</div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>기준, 모델 및 판단</h2>
+  <div class="body"><p>설계 지침은 기하구조, 용량 방정식 및 안전 기준을 제공한다. 교통 모델은 방정식이 할 수 없는 것을 추가한다: 시간 의존적 수요, 교차로 간에 확산되는 대기행렬, 그리고 하나의 과부하된 접근로가 전체 네트워크에 미치는 영향.</p>
+<p>경험적 방법은 빠르지만 균일한 조건을 가정한다. 시뮬레이션은 상호작용을 포착하지만 보정이 필요하다. 엔지니어는 둘을 조화시키고, 가정을 명시하며, 관측된 교통량에 대해 모델을 검증한다. 소프트웨어 출력은 의사결정이 아닌 증거이다: 배치안은 여전히 안전하고 시공 가능하며 사용자에게 수용되어야 한다.</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>포화도</dt><dd>접근로에서 수요와 용량의 비율; 1에 가까운 값은 대기행렬이 쉽게 증가함을 의미한다.</dd></div><div class="term"><dt>포화교통류율</dt><dd>녹색 시간이 완전히 사용되는 동안 차로군의 방출률로, 일반적으로 차로당 약 1,800 pcu/h이다.</dd></div><div class="term"><dt>임계 간격</dt><dd>운전자가 교차로에 진입하기 전에 수용할 상충 교통류의 최소 간격.</dd></div><div class="term"><dt>회전교통류</dt><dd>회전교차로 링을 이미 통행 중인 교통류로, 진입 교통류가 양보해야 하는 대상.</dd></div><div class="term"><dt>폐색 시간</dt><dd>한 열차를 위해 선로 구간이 예약되는 시간으로, 접근 및 정리 시간을 포함하며 신호 차두시간을 설정한다.</dd></div><div class="term"><dt>정차 시간</dt><dd>열차가 승강장에 정차하여 승객이 승하차하는 시간.</dd></div><div class="term"><dt>출발 손실 시간</dt><dd>대기행렬의 첫 차량들이 정지선을 통과하는 데 걸리는 추가 초로, 포화교통류율 측정 시 제외된다.</dd></div><div class="term"><dt>설계 혼잡도 계수</dt><dd>명목 차량 용량을 용량 계획에서 가정된 탑승률로 변환하는 계수로, 혼잡을 고려한다.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>고정 차두시간을 가진 지하철의 선로 용량</h2>
+        <p class="problem">지하철 노선이 6량 편성 열차를 운행하며, 각 차량 길이는 20 m이다. 정차 시간은 30초, 선로 속도는 45 km/h, 가속도와 서비스 제동은 모두 약 1.0 m/s², 열차 및 안전 정리 거리는 145 m, 신호 및 성능 여유는 10초이다. 최소 역 차두시간, 시간당 열차 수, 그리고 각 열차가 1,200명을 수송할 때 선로 용량을 계산하라.</p>
+        <ol><li>선로 속도 변환: 45 km/h = 12.5 m/s.</li><li>가속과 제동은 각각 v/a = 12.5 / 1.0 = 12.5초가 걸린다.</li><li>열차와 정리 거리는 한 지점을 통과하는 데 (145 m) / (12.5 m/s) = 11.6초가 걸린다.</li><li>최소 차두시간 = 30 + 12.5 + 12.5 + 11.6 + 10 = 76.6초, 올림하여 77초.</li><li>시간당 열차 수 = 3600 / 77 = 46.8이므로, 달성 가능한 서비스는 정수인 시간당 46대이다.</li><li>선로 용량 = 46 × 1,200 = 시간당 편도 55,200명.</li><li>검증: 시간당 40,000명의 수요는 40,000 / 55,200 = 선로 용량의 72%를 사용하여 회복을 위한 여유를 남긴다.</li></ol>
+        <div class="answer"><b>Answer</b>최소 역 차두시간은 약 77초로, 시간당 46대 열차와 시간당 편도 55,200명의 선로 용량을 제공한다. 정차 시간과 정지-출발 주기가 차두시간을 지배하므로, 정차 시간을 5초 줄이면 용량이 시간당 약 3대 증가한다.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>교차로 옵션을 비교하기 전에 수요를 pcu/h로 변환하고 포화도를 명시하라.</li><li>신호 용량의 경우, 포화교통류율에 녹색비를 곱하라; 한 단계에 녹색을 추가하면 반드시 다른 단계에서 가져온다.</li><li>철도 문제의 경우, 초 단위로 항별로 계산하고 v, a 및 길이의 단위를 일관되게 유지하라.</li><li>모델과 매뉴얼 계산이 불일치할 때, 어느 것을 신뢰할지 선택하기 전에 각각의 가정을 설명하라.</li><li>포화교통류율 문제에서, 계수된 차량 수를 포화 녹색 시간으로 나누기 전에 출발 차량을 제외하라; 포함하면 s를 과소평가한다.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>한 차로군의 포화교통류율이 1,800 pcu/h이고 90초 주기에서 유효 녹색 시간이 30초일 때, 그 용량은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>600 pcu/h</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>900 pcu/h</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1,800 pcu/h</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>300 pcu/h</span></button></div>
+    <div class="quiz-explain"><b>Why</b>용량 = s × g / C = 1,800 × 30 / 90 = 600 pcu/h.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>회전교차로에서 회전교통류가 증가함에 따라 각 진입로의 용량은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>감소한다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>일정하다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>주도로에 대해서만 증가한다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>증가한다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>진입 교통류는 링에 양보해야 하므로, 회전교통류가 많을수록 수용 가능한 간격이 줄어 진입 용량이 감소한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>우선권 교차로에서 운전자에게 더 큰 임계 간격을 가정하면:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>주도로 용량에만 영향을 미친다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>부도로 용량이 증가한다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>부도로 용량이 감소한다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>용량에 영향이 없다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>더 큰 간격을 고집하는 운전자는 더 적은 간격을 수용하므로, 진입 차량이 줄어 부도로 용량이 감소한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>최소 차두시간이 80초인 지하철이 운행할 수 있는 최대 열차 수는:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>시간당 80대</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>시간당 36대</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>시간당 45대</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>시간당 60대</span></button></div>
+    <div class="quiz-explain"><b>Why</b>시간당 열차 수 = 3600 / 80 = 45.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q05</span><span>도로변 방법으로 포화교통류율을 측정할 때, 계수에서 제외되는 차량은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>신호가 바뀌기 전 마지막 차량</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>모든 대형 차량</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>녹색이 끝난 후 통과하는 차량</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>출발 손실을 극복 중인 각 대기행렬의 처음 몇 대 차량</span></button></div>
+    <div class="quiz-explain"><b>Why</b>정상 차두시간 부분만 계산하므로, 포화 녹색 시간으로 나누기 전에 대기행렬의 출발 부분을 제외한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>지하철 열차가 1,800명을 수송하고 120초 차두시간으로 운행할 때, 제공 선로 용량은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>시간당 54,000명</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>시간당 216,000명</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>시간당 15명</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>시간당 1,800명</span></button></div>
+    <div class="quiz-explain"><b>Why</b>C_offered = c_train × 3600 / h = 1,800 × 3600 / 120 = 시간당 54,000명.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="transport-operations-management.ko.html"><span>Professional</span><b>교통 운영 및 관리</b></a><a class="related-card" href="transportation-highway-engineering.ko.html"><span>Core</span><b>교통 및 도로 공학</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="artificial-intelligence.ko.html"><small>Previous</small><b>인공지능</b></a><a class="next" href="engineers-in-society.ko.html"><small>Next</small><b>사회 속의 엔지니어</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">용량은 녹색비 곱하기 포화교통류율이다.</p><p class="margin-note">회전교차로 진입로는 링에 양보한다.</p><p class="margin-note">철도 용량은 3600을 차두시간으로 나눈 값이다.</p><p class="margin-note">정차 시간은 종종 가장 저렴하게 확보할 수 있는 용량이다.</p><p class="margin-note">기준은 기하구조를 설정하고, 모델은 상호작용을 검증한다.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

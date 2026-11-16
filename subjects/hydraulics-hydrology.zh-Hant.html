@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水力学與水文學 — Civil Hub</title>
+<meta name="description" content="水在流向大海的途中：明渠中的均勻流與非均勻流、Manning 方程、比能與水躍，然後是管道損失、降雨—徑流鏈、合理化方法與重現期。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/hydraulics-hydrology.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="水力学與水文學 — Civil Hub">
+<meta property="og:description" content="水在流向大海的途中：明渠中的均勻流與非均勻流、Manning 方程、比能與水躍，然後是管道損失、降雨—徑流鏈、合理化方法與重現期。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/hydraulics-hydrology.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="hydraulics-hydrology.html" data-alt-zh-hant="hydraulics-hydrology.zh-Hant.html" data-alt-ja="hydraulics-hydrology.ja.html" data-alt-ko="hydraulics-hydrology.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">水力学與水文學</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">核心</p>
+          <h1>水力学與水文學</h1>
+          <p class="subject-sub">渠道流、管網流動與降雨徑流過程</p>
+          <ul class="subject-facts"><li><b>類型</b>核心</li><li><b>閱讀</b>11 分鐘</li><li><b>章節</b>10</li><li><b>公式</b>10</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M40 84 H300 M40 132 H300" stroke="currentColor" stroke-width="1.5"/><path d="M40 84 V132 M300 84 V132" stroke="currentColor" stroke-width="1.5"/><path d="M56 96 q40 -10 80 0 t80 0 t60 0" stroke="var(--accent)" stroke-width="1" opacity="0.85"/><path d="M56 106 q40 -10 80 0 t80 0 t60 0" stroke="var(--accent)" stroke-width="1" opacity="0.6699999999999999"/><path d="M56 118 q40 -10 80 0 t80 0 t60 0" stroke="var(--accent)" stroke-width="1" opacity="0.49"/><path d="M64 70 v10 M64 74 l-4 4 M64 74 l4 4" stroke="var(--faint)" stroke-width="1"/><text x="40" y="58" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">P₁</text><text x="310" y="58" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="end" letter-spacing="0.18em">P₂</text><text x="170" y="168" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PIPE FLOW</text></svg>
+          <figcaption>Pipe flow — pressure drop along the section</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">水的兩種流動方式</a></li><li><a href="#sec-2">Manning 方程</a></li><li><a href="#sec-3">比能與臨界水深</a></li><li><a href="#sec-4">水躍</a></li><li><a href="#sec-5">管網與摩擦</a></li><li><a href="#sec-6">無壓含水層中的井水力學</a></li><li><a href="#sec-7">集水區、降雨與損失</a></li><li><a href="#sec-8">合理化方法</a></li><li><a href="#sec-9">單位歷線</a></li><li><a href="#sec-10">重現期與設計風險</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">水在流向大海的途中：明渠中的均勻流與非均勻流、Manning 方程、比能與水躍，然後是管道損失、降雨—徑流鏈、合理化方法與重現期。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="hydraulics-hydrology" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>水的兩種流動方式</h2>
+  <div class="body"><p><strong>明渠流</strong>具有自由表面，處於大氣壓力下；由重力驅動，水深可升可降。<strong>管道流</strong>為滿管流動，由壓力梯度驅動，斷面固定。明渠水深由河床坡度和下游控制決定；滿管的水頭損失則由流量和粗糙度決定。</p>
+<p>當水深、面積和流速沿河段不變時，流動為<strong>均勻流</strong>——即重力與摩擦之間的平衡。<strong>漸變流</strong>變化緩慢，如水壩後方；<strong>急變流</strong>在數個水深的距離內發生變化，如水躍處。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Manning 方程</h2>
+  <div class="body"><p>Manning 方程根據渠道幾何、河床坡度和粗糙係數估算平均流速。它採用<strong>水力半徑</strong> R = A/P——面積除以濕周——因為摩擦沿濕周發生。它並非推導而來，而是對實測數據的擬合。</p>
+<p>粗糙係數 n 為經驗值，涵蓋植被和河床不規則性。數值僅供參考：光滑混凝土約 0.012–0.015，土渠 0.020–0.030，植被河道更高。<code>1/n</code> 形式僅適用於 SI 單位。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Manning 流速</span>
+      <div class="formula-expr formula-math">\[V = \frac{1}{n} R^{2/3} S^{1/2}\]</div>
+      <span class="formula-note">SI 單位；R 以米計，S 為坡度</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>比能與臨界水深</h2>
+  <div class="body"><p><strong>比能</strong>是水相對於渠底的總水頭：E = y + V²/(2g)。在單位寬度流量 q 固定時，E–y 曲線為一條有最小值的拋物線，對於任何高於該最小值的能量，都有兩個可能的水深——即<strong>交替水深</strong>。最小值即<strong>臨界水深</strong>，此時 Fr = 1。</p>
+<p>當 Fr &lt; 1 時流動為<strong>緩流</strong>（由下游控制），當 Fr &gt; 1 時為<strong>急流</strong>（由上游控制）。<strong>控制</strong>（如水壩）迫使水深達到臨界值，並固定上游的水面線。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">比能</span>
+      <div class="formula-expr formula-math">\[E = y + \frac{V^2}{2g}\]</div>
+      <span class="formula-note">y 為水深，V 為平均流速</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">矩形渠道臨界水深</span>
+      <div class="formula-expr formula-math">\[y_c = \left(\frac{q^2}{g}\right)^{1/3}\]</div>
+      <span class="formula-note">q 為單位寬度流量</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Froude 數</span>
+      <div class="formula-expr formula-math">\[\mathrm{Fr} = \frac{V}{\sqrt{gD}}\]</div>
+      <span class="formula-note">D 為水力水深，A/T</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>水躍</h2>
+  <div class="body"><p>當急流遇到障礙物或尾水上升時，會在短暫的湍流過渡段內躍變為緩流。水深上升，流速下降，大部分動能作為熱量耗散——這就是為何在溢洪道下方設置水躍以保護下游河床。</p>
+<p>水深變化由動量方程求得，因為能量損失無法預先得知。對於矩形渠道，<strong>共軛水深</strong>遵循與來流 Froude 數相關的關係式，損失隨水躍強度急劇增加。振盪水躍不穩定，應在設計中避免。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">共軛水深</span>
+      <div class="formula-expr formula-math">\[\frac{y_2}{y_1} = \frac{1}{2}\left(\sqrt{1 + 8\,\mathrm{Fr}_1^2} - 1\right)\]</div>
+      <span class="formula-note">矩形渠道，來流 Froude 數 Fr₁</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>管網與摩擦</h2>
+  <div class="body"><p>在滿管中，水頭損失有兩部分：<strong>摩擦</strong>，與長度和流速平方成正比；以及彎頭、閥門和管件處的<strong>局部損失</strong>，以係數 K 表示。Darcy–Weisbach 方程為標準形式；f 由 Moody 圖查得，取決於雷諾數和相對粗糙度 ε/D。</p>
+<p>管網在每個節點增加連續性方程，並在每個節點設定單一水頭。<strong>並聯管道</strong>共享相同的水頭損失，因此流量按阻力反比分配；<strong>串聯管道</strong>共享相同流量，損失相加。大型管網通過調整流量直至水頭閉合來迭代求解。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Darcy–Weisbach 水頭損失</span>
+      <div class="formula-expr formula-math">\[h_f = f\,\frac{L}{D}\,\frac{V^2}{2g}\]</div>
+      <span class="formula-note">f 由 Moody 圖查得</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>無壓含水層中的井水力學</h2>
+  <div class="body"><p>在無壓含水層中抽水會形成<strong>降落漏斗</strong>：徑向流匯聚於井，對漏斗積分 Darcy 定律可得流量與兩個觀測井（距離 r₁ 和 r₂）水位之間的關係：</p>
+<p><code>Q = π k (h₂² − h₁²) / ln(r₂/r₁)</code>，</p>
+<p>其中 k 為滲透係數，h 為各井處的飽和厚度。</p>
+<p>因此，抽水試驗可在現場全尺度測量 k，而非在小樣本中測量：以恆定流量抽水直至水位穩定，讀取 h₁ 和 h₂，求解 k。其假設值得重視——水平徑向流、均質含水層、穩定條件——因為實際降深需要時間才能達到平衡，而層狀地層會悄然違反均質性假設。同一方程反解，可確定井的產水量或預測鄰近鑽孔處的降深，這在新增取水可能搶奪現有井水時尤為重要。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">無壓含水層井流量</span>
+      <div class="formula-expr formula-math">\[Q = \frac{\pi k\,(h_2^2 - h_1^2)}{\ln(r_2/r_1)}\]</div>
+      <span class="formula-note">h₁ 和 h₂ 為觀測井 r₁ 和 r₂ 處的飽和厚度</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>集水區、降雨與損失</h2>
+  <div class="body"><p>水文學將降雨轉化為某點的流量。<strong>集水區</strong>是匯流至該點的區域；其響應取決於面積、坡度、土壤、土地覆蓋和暴雨模式。隨時間記錄的降雨為<strong>雨量歷線</strong>；離開集水區的流量為<strong>流量歷線</strong>。</p>
+<p>只有部分降雨變成徑流。水被截留、填充地表窪地並<strong>下滲</strong>入土壤；其餘為<strong>有效降雨</strong>。<strong>集流時間</strong>是從集水區最遠點到出口的旅行時間，它決定流量歷線達到洪峰的速度。城市硬化縮短集流時間並提高洪峰。</p></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>合理化方法</h2>
+  <div class="body"><p>對於小集水區，<strong>合理化方法</strong>根據徑流係數 C、設計歷時的降雨強度 i 和集水區面積 A 估算洪峰流量。該係數綜合了土壤、坡度和土地利用：數值範圍從開闊地面的約 0.1 到不透水鋪面的 0.9。</p>
+<p>該方法假設暴雨持續時間足以讓整個集水區貢獻徑流，因此設計強度取集流時間對應的值。它僅給出<strong>洪峰流量</strong>——沒有流量歷線，沒有體積——且對 C 和所選的強度—歷時—頻率曲線敏感。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">合理化方法</span>
+      <div class="formula-expr formula-math">\[Q = \frac{C\,i\,A}{3.6}\]</div>
+      <span class="formula-note">Q 以 m³/s 計，i 以 mm/h 計，A 以 km² 計</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>單位歷線</h2>
+  <div class="body"><p><strong>單位歷線</strong>是由一單位有效降雨——通常為 1 mm——在指定歷時內均勻降落在集水區上所產生的直接徑流歷線。其假設是集水區響應為<strong>線性</strong>：兩倍降雨產生兩倍流量，暴雨可通過<strong>卷積</strong>疊加並在時間上平移。</p>
+<p>這可構建設計流量歷線：將記錄的暴雨分離為有效降雨塊，對每塊應用單位歷線，並將平移後的響應相加。該方法假設基流恆定且集水區不變；城市化、蓄水或不同的暴雨歷時都會破壞這一假設。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">有效降雨卷積</span>
+      <div class="formula-expr formula-math">\[Q(t) = \sum P(\tau)\,U(t - \tau)\]</div>
+      <span class="formula-note">P 為有效降雨，U 為單位歷線</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>重現期與設計風險</h2>
+  <div class="body"><p><strong>重現期</strong> T 是給定規模事件之間的平均間隔，而非時間表：百年一遇暴雨每年有 1% 的超越概率。在 50 年設計壽命內，此類事件至少發生一次的機率約為 39%。</p>
+<p>設計暴雨來自所選歷時和重現期的<strong>強度—歷時—頻率</strong>曲線；氣候變化使歷史曲線成為起點，而非保證。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">n 年內的風險</span>
+      <div class="formula-expr formula-math">\[R = 1 - \left(1 - \frac{1}{T}\right)^n\]</div>
+      <span class="formula-note">年超越概率為 p = 1/T</span>
+    </div></div><div class="table-wrap"><table><caption>Manning 粗糙係數參考值（請查閱項目指引）</caption><thead><tr><th scope='col'>渠道表面</th><th scope='col'>Manning n</th><th scope='col'>備註</th></tr></thead><tbody><tr><td>光滑混凝土</td><td>0.012–0.015</td><td>清潔、順直、表面良好</td></tr><tr><td>土渠，順直清潔</td><td>0.020–0.025</td><td>邊緣有少量植被</td></tr><tr><td>礫石河床，天然溪流</td><td>0.030–0.050</td><td>強烈取決於河床材料</td></tr><tr><td>茂密植被，洪泛平原</td><td>0.050–0.150</td><td>範圍寬廣；須現場核實</td></tr></tbody></table></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>Froude 數</dt><dd>流速與淺水波波速之比；低於 1 為緩流，高於 1 為急流。</dd></div><div class="term"><dt>水力半徑</dt><dd>過流面積除以濕周，在 Manning 方程中用作長度尺度。</dd></div><div class="term"><dt>臨界水深</dt><dd>比能最小且 Froude 數等於 1 時的水深。</dd></div><div class="term"><dt>水躍</dt><dd>從急流到緩流的快速過渡，水深上升並耗散能量。</dd></div><div class="term"><dt>集流時間</dt><dd>水從集水區最遠點到達出口的旅行時間。</dd></div><div class="term"><dt>單位歷線</dt><dd>一單位有效降雨在指定歷時內均勻降落在集水區上所產生的直接徑流歷線。</dd></div><div class="term"><dt>重現期</dt><dd>等於或超過給定規模事件之間的平均間隔，等於年超越概率的倒數。</dd></div><div class="term"><dt>降落漏斗</dt><dd>抽水井周圍地下水位呈漏斗狀下降，徑向流匯聚於此。</dd></div><div class="term"><dt>Chezy 係數</dt><dd>Chezy 方程中與粗糙度相關的流速係數，與 Manning n 的關係為 C = R^(1/6)/n。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>矩形渠道中的均勻流</h2>
+        <p class="problem">一條寬 3.0 m 的矩形渠道在坡度為 0.001 的河床上以 1.2 m 的均勻水深輸水。Manning n 為 0.015。求流量、平均流速和 Froude 數，並說明流動為緩流還是急流。</p>
+        <ol><li>過流面積 A = b y = 3.0 × 1.2 = 3.6 m²。濕周 P = b + 2y = 3.0 + 2.4 = 5.4 m。</li><li>水力半徑 R = A/P = 3.6/5.4 = 0.667 m，故 R^(2/3) = 0.763。</li><li>流速：V = (1/0.015)(0.763)(0.001^(1/2)) = (66.67)(0.763)(0.0316) = 1.61 m/s。</li><li>流量：Q = A V = 3.6 × 1.61 = 5.79 m³/s。</li><li>水力水深 D = A/T = 3.6/3.0 = 1.2 m，故 Fr = V/√(gD) = 1.61/√(9.81 × 1.2) = 1.61/3.43 = 0.47。</li><li>合理性檢查：q = 5.79/3.0 = 1.93 m²/s 得 y_c = (1.93²/9.81)^(1/3) = 0.724 m。實際水深 1.2 m 高於臨界水深，與緩流一致。</li></ol>
+        <div class="answer"><b>Answer</b>Q ≈ 5.79 m³/s，V ≈ 1.61 m/s，Fr ≈ 0.47，故流動為緩流。水深明顯高於臨界水深 0.72 m，表明該河段處於緩坡。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>寫 Manning 方程時在 R 和 S 旁標明單位；1/n 形式僅適用於 SI。</li><li>先分類流動：Froude 數以及河段是均勻流還是非均勻流決定適用哪些方程。</li><li>將洪峰流量方法與流量歷線方法分開：合理化方法給出洪峰，單位歷線給出形狀。</li><li>將重現期視為概率；說明設計壽命內的風險，而不僅僅是 T。</li><li>對於管道流，先確定流態——層流用 f = 64/Re，湍流需查 Moody 圖——再進行任何水頭損失計算。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>矩形渠道中的流動 Froude 數為 0.5。以下哪項正確？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>流動為緩流，下游控制可影響水深</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>流動為臨界流，比能最大</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>由於 Fr 低於 1，流動必為均勻流</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>流動為急流，由上游控制</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>Fr 低於 1 表示緩流（靜流），擾動可向上游傳播，因此下游控制（如水壩）決定水深。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>在溢洪道下方故意設置水躍的主要目的是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>將緩流轉變為急流</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>清除消力池中的泥沙</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>提高溢洪道的洩流能力</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>耗散動能並保護下游河床</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>水躍將快速急流轉化為較慢的緩流，並在到達河床前耗散大部分能量。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>合理化方法的主要限制是它：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>不能用於小於一公頃的集水區</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>僅給出洪峰流量，並假設整個集水區降雨均勻</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>需要完整的單位歷線才能應用</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>完全忽略集水區面積</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>合理化方法產生洪峰流量，而非流量歷線或徑流體積，其設計強度假設整個集水區貢獻徑流。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>重現期為 50 年的暴雨，其年超越概率為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>50%</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>10%</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>2%</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>0.2%</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>p = 1/T = 1/50 = 0.02，即任一年為 2%；50 年內至少發生一次的機率約為 64%。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>對於層流管道流，Darcy–Weisbach 摩擦因子為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>等於相對粗糙度</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>64/Re</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.316/Re^(0.25)</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>與雷諾數無關</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>低於約 Re = 2000 時流動為層流，f = 64/Re 精確成立，與壁面粗糙度無關。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>無壓含水層中的抽水試驗使用兩個觀測井。滲透係數與以下哪項成正比？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Q (h₂ − h₁) / (r₂ − r₁)</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Q r₁ r₂ / (h₁ h₂)</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Q / (2π r h)</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Q ln(r₂/r₁) / [π(h₂² − h₁²)]</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>重排井方程 Q = πk(h₂² − h₁²)/ln(r₂/r₁) 得 k = Q ln(r₂/r₁)/[π(h₂² − h₁²)]。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="fluid-mechanics.zh-Hant.html"><span>Core</span><b>流體力學</b></a><a class="related-card" href="engineering-statistics.zh-Hant.html"><span>Core</span><b>工程統計學</b></a><a class="related-card" href="soil-mechanics.zh-Hant.html"><span>Core</span><b>土力學</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="transport-operations-management.zh-Hant.html"><small>上一頁</small><b>運輸營運與管理</b></a><a class="next" href="design-of-concrete-structures.zh-Hant.html"><small>下一頁</small><b>混凝土結構設計</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">Fr &lt; 1：緩流，由下游控制。</p><p class="margin-note">Manning n 是擬合值，不是物理定律。</p><p class="margin-note">合理化方法給出洪峰，從不給出體積。</p><p class="margin-note">百年一遇暴雨並非每世紀一次。</p><p class="margin-note">水躍故意耗散能量。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

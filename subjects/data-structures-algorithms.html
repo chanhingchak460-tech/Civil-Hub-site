@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Structures &amp; Algorithms — Civil Hub</title>
+<meta name="description" content="Choosing a data structure is a decision about cost. This page covers arrays, lists, stacks, queues, hash tables, trees and graphs, then sorting, searching ">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/data-structures-algorithms.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="Data Structures &amp; Algorithms — Civil Hub">
+<meta property="og:description" content="Choosing a data structure is a decision about cost. This page covers arrays, lists, stacks, queues, hash tables, trees and graphs, then sorting, searching ">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/data-structures-algorithms.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="data-structures-algorithms.html" data-alt-zh-hant="data-structures-algorithms.zh-Hant.html" data-alt-ja="data-structures-algorithms.ja.html" data-alt-ko="data-structures-algorithms.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">Data Structures &amp; Algorithms</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Computing</p>
+          <h1>Data Structures &amp; Algorithms</h1>
+          <p class="subject-sub">Choosing the right structure and measuring the cost</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Computing</li><li><b data-i18n="subject.read">Read</b>10 min</li><li><b data-i18n="subject.sections">Sections</b>12</li><li><b data-i18n="subject.formulas">Formulas</b>9</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="44" y="34" width="252" height="136" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M44 58 H296" stroke="var(--line)" stroke-width="1"/><circle cx="58" cy="46" r="2.5" fill="var(--accent)" stroke="none"/><path d="M64 78 h76" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 93 h120" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 108 h60" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 123 h144" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 138 h96" stroke="var(--faint)" stroke-width="1.2"/><text x="64" y="160" font-family="var(--mono)" font-size="7" fill="currentColor" stroke="none" text-anchor="start" letter-spacing="0.18em">> RUN</text><path d="M118 155 h10" stroke="var(--accent)" stroke-width="1.4"/></svg>
+          <figcaption>A short program — input, logic, output</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">The structure is part of the algorithm</a></li><li><a href="#sec-2">Arrays and linked lists</a></li><li><a href="#sec-3">Stacks and queues</a></li><li><a href="#sec-4">Hash tables</a></li><li><a href="#sec-5">Trees and heaps</a></li><li><a href="#sec-6">Balance and rotations</a></li><li><a href="#sec-7">Graphs and how to walk them</a></li><li><a href="#sec-8">Greedy algorithms and shortest paths</a></li><li><a href="#sec-9">Sorting, searching and Big-O</a></li><li><a href="#sec-10">Growth rates and the Master theorem</a></li><li><a href="#sec-11">Recursion and the time-memory trade-off</a></li><li><a href="#sec-12">Topological order and cycle detection</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">Choosing a data structure is a decision about cost. This page covers arrays, lists, stacks, queues, hash tables, trees and graphs, then sorting, searching and the Big-O language used to compare them.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="data-structures-algorithms" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>The structure is part of the algorithm</h2>
+  <div class="body"><p>An <strong>abstract data type</strong> is a contract: the operations and their meaning, with no promise about implementation. A <strong>data structure</strong> is one way to keep that contract, and every implementation trades something — time for memory, or generality for speed.</p>
+<ul>
+<li>Finding whether a value exists: linear scan in an unsorted array, logarithmic search in a sorted one, average constant-time lookup in a hash table.</li>
+<li>Name the operations the program performs most often before writing code.</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Arrays and linked lists</h2>
+  <div class="body"><p>An array stores elements in contiguous memory, so indexing is constant-time arithmetic, but inserting in the middle shifts everything after it. A <strong>linked list</strong> stores nodes that point to each other: inserting at a known node is constant-time, yet reaching position <code>k</code> means walking <code>k</code> nodes, and each step may miss the cache.</p>
+<ul>
+<li>Use arrays for indexed reading and iteration; lists for splicing and reordering without random access.</li>
+<li>A <strong>dynamic array</strong> amortises growth by doubling capacity, which makes appending O(1) on average.</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>Stacks and queues</h2>
+  <div class="body"><p>A <strong>stack</strong> is last-in, first-out: push and pop at one end. It models nested structure — function calls, bracket matching, depth-first traversal, undo history. A <strong>queue</strong> is first-in, first-out: enqueue at the back, dequeue at the front. It models fair service and breadth-first traversal, such as exploring a road network by distance from the start.</p>
+<ul>
+<li>A plain array queue wastes space as the front advances; a <strong>circular buffer</strong> reuses it.</li>
+<li>A <strong>deque</strong> allows both ends in constant time.</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Hash tables</h2>
+  <div class="body"><p>A <strong>hash table</strong> maps a key to a bucket by computing <code>h(key)</code>, aiming for constant-time average lookup, insertion and deletion. Collisions are unavoidable; <strong>separate chaining</strong> stores a list per bucket, while <strong>open addressing</strong> probes other slots in a fixed sequence.</p>
+<ul>
+<li>Performance depends on the <strong>load factor</strong>, the ratio of stored keys to buckets.</li>
+<li>Small tables and poor hash functions turn expected O(1) into O(n).</li>
+<li>Never rely on iteration order, and rehash by doubling when the load factor passes a threshold.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Load factor</span>
+      <div class="formula-expr formula-math">\[\alpha = \frac{n}{m}\]</div>
+      <span class="formula-note">n keys in m buckets; keep α below about 0.75</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Trees and heaps</h2>
+  <div class="body"><p>A <strong>binary search tree</strong> keeps smaller keys left and larger keys right, so search costs the height of the tree: O(log n) when balanced, O(n) when degenerate. <strong>Balanced trees</strong> rebalance on insertion and guarantee logarithmic height.</p>
+<ul>
+<li>A <strong>heap</strong> keeps only a partial order — every parent smaller than its children for a min-heap — which is enough for a priority queue.</li>
+<li>Push and pop cost O(log n), reading the extreme costs O(1), and the structure lives in a flat array.</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>Balance and rotations</h2>
+  <div class="body"><p>A search tree is only logarithmic while it stays <strong>balanced</strong>. An <strong>AVL tree</strong> keeps, at every node, the heights of the two subtrees within one of each other; when an insertion breaks that rule, a <strong>rotation</strong> restores it.</p>
+<ul>
+<li>A single rotation fixes an outside-heavy shape, while a double rotation fixes the zig-zag inside shape.</li>
+<li>Rotations are local pointer surgery: constant time, but they must update parent links and the stored heights.</li>
+<li><strong>Red–black trees</strong> relax the rule to a colouring scheme that needs at most a constant number of rotations per insertion.</li>
+<li>In exams, name the invariant first, apply the rotation second, and update the metadata third.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">AVL balance factor</span>
+      <div class="formula-expr formula-math">\[\mathrm{BF} = h_L - h_R \in \{-1, 0, +1\}\]</div>
+      <span class="formula-note">an insertion or deletion may break it; one or two rotations restore it</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Heap array indices</span>
+      <div class="formula-expr formula-text">children of i: 2i + 1 and 2i + 2; parent: (i − 1) // 2</div>
+      <span class="formula-note">zero-based array layout of a binary heap</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Graphs and how to walk them</h2>
+  <div class="body"><p>A graph is vertices plus edges, with weights for distance or travel time.</p>
+<ul>
+<li>An <strong>adjacency list</strong> stores neighbours per vertex and suits sparse networks.</li>
+<li>An <strong>adjacency matrix</strong> uses n² memory and answers "is there an edge?" in constant time, which suits dense ones.</li>
+<li><strong>Breadth-first search</strong> explores by layers and finds shortest paths when every edge has the same weight.</li>
+<li><strong>Depth-first search</strong> follows one branch as far as possible and exposes cycles, components and topological order.</li>
+<li>Weighted shortest paths need Dijkstra's algorithm, which expands the cheapest unvisited vertex using a priority queue.</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>Greedy algorithms and shortest paths</h2>
+  <div class="body"><p>A <strong>greedy</strong> algorithm commits to the locally best choice and never revisits it. That works when a problem has optimal substructure plus a safe greedy choice: activity selection keeps the earliest-finishing compatible activity, and Huffman coding repeatedly merges the two rarest symbols.</p>
+<ul>
+<li>Dijkstra's algorithm is greedy relaxation: repeatedly settle the unsettled vertex with the smallest known distance, then relax its edges.</li>
+<li>It requires non-negative weights; with negative edges, use Bellman–Ford, which relaxes every edge n−1 times and detects negative cycles on one extra pass.</li>
+<li>When asked to justify a greedy algorithm, state the choice and why it is safe.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Edge relaxation</span>
+      <div class="formula-expr formula-math">\[d[v] = \min(d[v],\; d[u] + w(u,v))\]</div>
+      <span class="formula-note">u is settled, u→v is an edge of weight w</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Sorting, searching and Big-O</h2>
+  <div class="body"><p><strong>Big-O</strong> describes how cost grows with input size, ignoring constants and lower-order terms. It is a language of growth rates, not a stopwatch: an O(n²) sort can beat an O(n log n) sort on small arrays because its overhead is smaller.</p>
+<ul>
+<li>Comparison sorting cannot beat Ω(n log n).</li>
+<li>Merge sort guarantees O(n log n) and is stable but needs extra memory.</li>
+<li>Quicksort is fast in practice but degrades to O(n²) on adversarial pivots.</li>
+<li>Insertion sort is excellent on nearly sorted data.</li>
+<li><strong>Binary search</strong> halves the range each step, so it needs only logarithmic comparisons.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Binary search comparisons</span>
+      <div class="formula-expr formula-math">\[C \le \lceil \log_2 n \rceil + 1\]</div>
+      <span class="formula-note">for a sorted array of n elements</span>
+    </div></div><div class="table-wrap"><table><caption>Cost of common operations and where each degrades</caption><thead><tr><th scope='col'>Operation</th><th scope='col'>Structure</th><th scope='col'>Typical cost</th><th scope='col'>Degrades when</th></tr></thead><tbody><tr><td>Access by index</td><td>Array</td><td>O(1)</td><td>Index is outside the array</td></tr><tr><td>Insert at head</td><td>Linked list</td><td>O(1)</td><td>The node must be found first</td></tr><tr><td>Lookup by key</td><td>Hash table</td><td>O(1) average</td><td>High load factor or clustering</td></tr><tr><td>Search</td><td>Balanced search tree</td><td>O(log n)</td><td>The tree becomes degenerate</td></tr><tr><td>Sort</td><td>Merge sort</td><td>O(n log n)</td><td>Extra memory for the merge</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>Growth rates and the Master theorem</h2>
+  <div class="body"><p>Recurrences describe divide-and-conquer costs, and the <strong>Master theorem</strong> solves the common shape by comparing the split-and-combine work with the work done in the leaves.</p>
+<ul>
+<li>When the combining term dominates, the total is the combining cost.</li>
+<li>When the leaves dominate, it is the leaf cost.</li>
+<li>When the two balance, the answer gains a log factor.</li>
+<li>The trap is notation, not algebra: O is an upper bound, Ω a lower bound and Θ both, and they describe growth classes, not specific run times.</li>
+<li>Practise ordering classes such as log n, √n, n, n log n, n² and 2ⁿ before the exam, and check every answer against a small case.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Master theorem shape</span>
+      <div class="formula-expr formula-math">\[T(n) = aT(n/b) + f(n)\]</div>
+      <span class="formula-note">compare f(n) with n^(log_b a); whichever grows faster decides the total</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>Do not force the Master theorem</b>
+  It only applies to recurrences of the shape T(n) = aT(n/b) + f(n) with equal-sized subproblems. For irregular splits, draw the recursion tree and sum the levels instead.
+</div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>Recursion and the time-memory trade-off</h2>
+  <div class="body"><p>A <strong>recursive</strong> function solves a problem by calling itself on a smaller input; every call adds a frame to the call stack, so depth is memory. The recurrence <code>T(n) = 2T(n/2) + O(n)</code> resolves to O(n log n), while a branching recurrence with repeated subproblems can explode exponentially.</p>
+<ul>
+<li><strong>Dynamic programming</strong> removes that blow-up by storing each subproblem once.</li>
+<li>Memoisation keeps the top-down recursion and caches results; the bottom-up form fills a table in dependency order.</li>
+<li>Both spend memory to buy time, so inspect a recurrence for repeated work before implementing it.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Divide-and-conquer recurrence</span>
+      <div class="formula-expr formula-math">\[T(n) = 2T(n/2) + O(n) \rightarrow O(n\log n)\]</div>
+      <span class="formula-note">two halves of equal size plus linear work</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Dynamic programming recurrence</span>
+      <div class="formula-expr formula-math">\[r(n) = \max_{1 \le i \le n} (p(i) + r(n-i))\]</div>
+      <span class="formula-note">each subproblem solved once</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-12">
+  <h2><span class="sec-num">12</span>Topological order and cycle detection</h2>
+  <div class="body"><p>A <strong>directed acyclic graph</strong> (DAG) models tasks with prerequisites, and a <strong>topological order</strong> lists the vertices so that every edge points forward.</p>
+<ul>
+<li>Kahn's algorithm repeatedly removes a vertex whose in-degree is zero; if the process stops with vertices remaining, the graph contains a cycle.</li>
+<li>Depth-first search gives the same order via reversed finishing times.</li>
+<li>Cycle detection and topological sorting appear whenever a programme, a dependency set or an assembly sequence must be shown to be feasible.</li>
+<li>For scheduling questions, draw the precedence graph first, compute the in-degrees, and simulate the queue — the order you obtain is one valid answer, not necessarily the only one.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">In-degree update</span>
+      <div class="formula-expr formula-text">for each edge u→v: indegree[v] = indegree[v] − 1</div>
+      <span class="formula-note">after removing u; any vertex reaching zero joins the queue</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Abstract data type</dt><dd>A specification of operations and their behaviour, independent of any implementation.</dd></div><div class="term"><dt>Load factor</dt><dd>The number of stored keys divided by the number of buckets; it controls hash-table performance.</dd></div><div class="term"><dt>Binary search tree</dt><dd>A tree with smaller keys on the left and larger keys on the right, searched in height time.</dd></div><div class="term"><dt>Heap</dt><dd>A tree with a partial order between parent and child, used to implement a priority queue.</dd></div><div class="term"><dt>Big-O</dt><dd>An asymptotic upper bound on how an algorithm&#x27;s cost grows with input size, up to constant factors.</dd></div><div class="term"><dt>Dynamic programming</dt><dd>Solving a problem by storing and reusing the answers to its overlapping subproblems.</dd></div><div class="term"><dt>AVL tree</dt><dd>A self-balancing binary search tree whose nodes keep left and right subtree heights within one of each other.</dd></div><div class="term"><dt>Topological order</dt><dd>A linear ordering of a DAG&#x27;s vertices in which every edge points from an earlier to a later vertex.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Inserting into a hash table with chaining</h2>
+        <p class="problem">A hash table has m = 7 buckets, uses h(k) = k mod 7 with separate chaining, and inserts the keys 25, 38, 41, 7, 52, 61, 33 and 14 in that order, each prepended to its chain. Show the final table, its load factor, and the number of comparisons needed to find 38 and 61.</p>
+        <ol><li>Bucket index for each key: 25 → 4, 38 → 3, 41 → 6, 7 → 0, 52 → 3, 61 → 5, 33 → 5, 14 → 0.</li><li>Inserting in order and prepending: bucket 4 holds 25; bucket 3 grows to 52 → 38; bucket 6 holds 41.</li><li>Bucket 5 grows to 33 → 61, because 61 was inserted before 33 and prepending puts the new key first. Bucket 0 grows to 14 → 7 for the same reason.</li><li>Final chains: bucket 0: 14 → 7; bucket 3: 52 → 38; bucket 4: 25; bucket 5: 33 → 61; bucket 6: 41; buckets 1 and 2 are empty.</li><li>Load factor α = 8/7 ≈ 1.14, so the average chain is longer than one node and the longest chain has two nodes.</li><li>Find 38: probe bucket 3, compare 52 (miss), then 38 (hit), so two comparisons. Find 61: probe bucket 5, compare 33, then 61, also two comparisons.</li></ol>
+        <div class="answer"><b>Answer</b>Chains are 14 → 7 (bucket 0), 52 → 38 (3), 25 (4), 33 → 61 (5) and 41 (6); buckets 1 and 2 are empty. The load factor is 8/7 ≈ 1.14, and both searches take two comparisons. A factor above 1 justifies growing the table and rehashing, which restores the expected O(1) behaviour.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>Give the worst case and the average case separately; hash tables are only O(1) on average.</li><li>State a structure&#x27;s invariant before using it — heap order, search-tree order, sorted array — because every operation depends on it.</li><li>For recursion, write the recurrence first, then solve or quote the Master theorem; do not guess the growth rate from the code.</li><li>For Dijkstra, draw the distance table and tick vertices in the order they are settled; never relax from a vertex before it is settled.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>A hash table with chaining contains n keys in m buckets. Its worst-case lookup cost is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>O(n), because all keys may collide into one chain</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>O(n log n), because hashing requires sorting</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>O(1), because hashing always finds the bucket directly</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>O(log n), because each chain is kept sorted</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The average case is O(1) with a good hash function and low load factor, but the worst case degenerates to scanning one chain of n keys.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>Which structure most naturally implements breadth-first search of a graph?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>A stack</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>A queue</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>A binary search tree</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>A max-heap</span></button></div>
+    <div class="quiz-explain"><b>Why</b>BFS visits vertices in the order they are discovered, so a first-in, first-out queue keeps the frontier in the right order.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>Memoisation speeds up a recursive algorithm mainly because it:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Removes the need for a base case</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Reduces the depth of every recursive call</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Stores each overlapping subproblem&#x27;s answer and reuses it</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Sorts the inputs before recursing</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Repeated subproblems are solved once and cached, which can turn exponential work into polynomial work at the cost of memory.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q04</span><span>Binary search can be applied to an array only when:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The array contains no duplicate values</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The array is sorted</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The array is stored as a linked list</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The array length is a power of two</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Binary search discards half the range based on an ordering comparison, so the data must be sorted; duplicates are fine and the length need not be a power of two.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>Dijkstra&#x27;s algorithm is valid only when:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The graph is stored as an adjacency matrix</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>No negative cycle exists</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Every edge weight is non-negative</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The graph is a tree</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Dijkstra relies on settled distances never improving later, which negative edges can break; Bellman–Ford handles negative weights instead.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>Kahn&#x27;s algorithm stops before every vertex has been output. This proves that:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The graph contains a cycle</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The graph is disconnected</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The graph has negative edge weights</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The graph is a tree</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Kahn&#x27;s algorithm removes in-degree-zero vertices; if some remain, they wait on each other in a cycle, so no topological order exists.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="programming-fundamentals.html"><span>Computing</span><b>Programming Fundamentals</b></a><a class="related-card" href="ai-data-analysis.html"><span>Computing</span><b>AI &amp; Data Analysis</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="professional-english.html"><small>Previous</small><b>Professional English</b></a><a class="next" href="transport-operations-management.html"><small>Next</small><b>Transport Operations &amp; Management</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">Name the operations before the structure.</p><p class="margin-note">Hash tables are O(1) only on average.</p><p class="margin-note">Balanced means logarithmic; degenerate means linear.</p><p class="margin-note">Recursion depth costs stack memory.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

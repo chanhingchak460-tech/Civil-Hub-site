@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantitative Methods for Engineers — Civil Hub</title>
+<meta name="description" content="How engineers draw conclusions from limited data: sampling, confidence intervals, hypothesis tests, designed experiments and regression. It is the discipli">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/quantitative-methods.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="Quantitative Methods for Engineers — Civil Hub">
+<meta property="og:description" content="How engineers draw conclusions from limited data: sampling, confidence intervals, hypothesis tests, designed experiments and regression. It is the discipli">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/quantitative-methods.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="quantitative-methods.html" data-alt-zh-hant="quantitative-methods.zh-Hant.html" data-alt-ja="quantitative-methods.ja.html" data-alt-ko="quantitative-methods.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">Quantitative Methods for Engineers</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Core</p>
+          <h1>Quantitative Methods for Engineers</h1>
+          <p class="subject-sub">Experiments, inference and decisions from engineering data</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Core</li><li><b data-i18n="subject.read">Read</b>10 min</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>18</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M44 162 H296" stroke="currentColor" stroke-width="1.2"/><path d="M44 162 V34" stroke="currentColor" stroke-width="1.2"/><path d="M170 162 C120 162 118 52 170 52 C222 52 220 162 170 162" stroke="var(--accent)" stroke-width="1.5"/><path d="M80 162 V144" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M106 162 V128" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M132 162 V104" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M158 162 V78" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M184 162 V104" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M210 162 V128" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M236 162 V144" stroke="var(--line)" stroke-width="8" opacity="0.9"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">DISTRIBUTION</text></svg>
+          <figcaption>A distribution — centre, spread and tails</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">Variation is the data</a></li><li><a href="#sec-2">Sampling and the central limit theorem</a></li><li><a href="#sec-3">Confidence intervals</a></li><li><a href="#sec-4">Hypothesis tests</a></li><li><a href="#sec-5">Comparing two populations</a></li><li><a href="#sec-6">ANOVA and designed experiments</a></li><li><a href="#sec-7">Regression and prediction</a></li><li><a href="#sec-8">Quality control and capability</a></li><li><a href="#sec-9">Chi-square tests: what the counts say</a></li><li><a href="#sec-10">Multiple regression</a></li><li><a href="#sec-11">Power, effect size and planning a study</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">How engineers draw conclusions from limited data: sampling, confidence intervals, hypothesis tests, designed experiments and regression. It is the discipline that keeps a decision honest when the measurements are noisy.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="quantitative-methods" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>Variation is the data</h2>
+  <div class="body"><p>Measurements vary, even when the thing measured does not. Engineering data therefore needs a centre and a spread: the sample mean estimates the population mean, and the sample standard deviation estimates the typical distance of a reading from that mean.</p>
+<ul>
+<li>The coefficient of variation, CV = s / x̄, compares variability between datasets with different units or means.</li>
+<li>Always report the sample size and the units with the summary.</li>
+<li>A mean without a spread hides the risk, and a spread without a mean has no scale; the pair is the minimum honest description of a dataset.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Sample mean</span>
+      <div class="formula-expr formula-math">\[\bar{x} = \frac{\sum x}{n}\]</div>
+      <span class="formula-note">the sum of the readings divided by the sample size</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Sample standard deviation</span>
+      <div class="formula-expr formula-math">\[s = \sqrt{\frac{\sum (x - \bar{x})^2}{n - 1}}\]</div>
+      <span class="formula-note">the divisor n − 1 removes the bias of estimating from a sample</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Coefficient of variation</span>
+      <div class="formula-expr formula-math">\[\mathrm{CV} = \frac{s}{\bar{x}}\]</div>
+      <span class="formula-note">a unitless measure of relative variability</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Sampling and the central limit theorem</h2>
+  <div class="body"><p>A sample is useful only if it represents the population. Random selection, independence and a consistent measurement method are the assumptions that make inference valid; a biased sample cannot be rescued by a larger n.</p>
+<ul>
+<li>The standard error of the mean is SE = s / √n, which shrinks as the square root of the sample size.</li>
+<li>The central limit theorem says that the distribution of the sample mean approaches normal as n grows, whatever the shape of the population.</li>
+<li>This is why the t and z procedures work for means of moderately large samples even when the data are not normal.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Standard error of the mean</span>
+      <div class="formula-expr formula-math">\[\mathrm{SE} = \frac{s}{\sqrt{n}}\]</div>
+      <span class="formula-note">halving the SE needs four times the sample size</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>Confidence intervals</h2>
+  <div class="body"><p>A confidence interval puts a range around an estimate. For a mean with an unknown population standard deviation, the interval is x̄ ± t s / √n, where t comes from the t distribution with n − 1 degrees of freedom. The width grows with the confidence level and the variability, and falls with the sample size.</p>
+<p>The interpretation is easy to get wrong. A 95% interval does not mean there is a 95% probability that μ lies inside this particular interval; it means that 95% of intervals built this way would contain μ. The interval estimates the parameter, not the individual readings.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Confidence interval for a mean</span>
+      <div class="formula-expr formula-math">\[\bar{x} \pm t\,\frac{s}{\sqrt{n}}\]</div>
+      <span class="formula-note">t is the two-tailed value for n − 1 degrees of freedom</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Hypothesis tests</h2>
+  <div class="body"><p>A hypothesis test asks whether the data are consistent with a stated value. Set a null hypothesis H0 (no effect, no difference) and an alternative H1, choose a significance level α, and calculate a test statistic. For a mean, t = (x̄ − μ0) / (s / √n).</p>
+<ul>
+<li>The p-value is the probability of a result at least as extreme as the observed one, assuming H0 is true; reject H0 when p &lt; α.</li>
+<li>A Type I error rejects a true null; a Type II error fails to reject a false one.</li>
+<li>Statistical significance is not practical importance: a tiny, precise difference can be significant and still irrelevant.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">One-sample t statistic</span>
+      <div class="formula-expr formula-math">\[t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}\]</div>
+      <span class="formula-note">μ0 is the hypothesised mean; df = n − 1</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Comparing two populations</h2>
+  <div class="body"><p>Two designs, two suppliers or two curing methods are compared by their means.</p>
+<ul>
+<li>For independent samples with similar variances, pool the standard deviations and use a two-sample t test; the degrees of freedom are n1 + n2 − 2.</li>
+<li>For paired observations — the same specimen before and after, or matched pairs — test the differences instead, which removes the between-pair variability.</li>
+<li>Report the estimated difference with a confidence interval, not just a p-value.</li>
+<li>A significant difference of 0.2 MPa may be real but too small to change a specification; the interval shows both the size and the precision of the effect.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Pooled variance</span>
+      <div class="formula-expr formula-math">\[s_p^2 = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}\]</div>
+      <span class="formula-note">assumes the two populations have similar variances</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Two-sample t statistic</span>
+      <div class="formula-expr formula-math">\[t = \frac{\bar{x}_1 - \bar{x}_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}\]</div>
+      <span class="formula-note">df = n1 + n2 − 2 for the pooled test</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>ANOVA and designed experiments</h2>
+  <div class="body"><p>To compare three or more means, use analysis of variance rather than repeated t tests, which would inflate the chance of a false positive. One-way ANOVA splits the total variation into that between group means and that within groups; the F ratio compares them, and a large F suggests at least one mean differs. A significant F does not say which one — a post-hoc comparison does.</p>
+<ul>
+<li>Designed experiments go further: randomise the runs, replicate, and block known sources of nuisance variation.</li>
+<li>In a factorial experiment every combination of factor levels is tested, so main effects and interactions can be estimated.</li>
+<li>An interaction means the effect of one factor depends on the level of another.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">F ratio, one-way ANOVA</span>
+      <div class="formula-expr formula-math">\[F = \frac{\mathrm{MS}_{\text{between}}}{\mathrm{MS}_{\text{within}}}\]</div>
+      <span class="formula-note">large F means between-group variation dominates within-group variation</span>
+    </div></div><div class="table-wrap"><table><caption>One-way ANOVA table</caption><thead><tr><th scope='col'>Source</th><th scope='col'>Sum of squares</th><th scope='col'>Degrees of freedom</th><th scope='col'>Mean square</th><th scope='col'>F</th></tr></thead><tbody><tr><td>Between groups</td><td>SSB</td><td>k − 1</td><td>MSB = SSB / (k − 1)</td><td>F = MSB / MSW</td></tr><tr><td>Within groups</td><td>SSW</td><td>N − k</td><td>MSW = SSW / (N − k)</td><td>—</td></tr><tr><td>Total</td><td>SST</td><td>N − 1</td><td>—</td><td>—</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Regression and prediction</h2>
+  <div class="body"><p>Regression fits a relationship between a response y and one or more explanatory variables x. The least squares line y = a + b x minimises the sum of squared residuals, with slope b = S_xy / S_xx and intercept a = ȳ − b x̄.</p>
+<ul>
+<li>The coefficient of determination r² is the proportion of total variation explained by the model.</li>
+<li>A high r² does not prove causation, and it does not guarantee good predictions outside the observed range.</li>
+<li>Check the residuals for curvature, changing spread and outliers; a pattern in the residuals means the model is missing something.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Least squares slope</span>
+      <div class="formula-expr formula-math">\[b = \frac{S_{xy}}{S_{xx}}\]</div>
+      <span class="formula-note">S_xy is the covariance sum; S_xx is the sum of squared x deviations</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Coefficient of determination</span>
+      <div class="formula-expr formula-math">\[r^2 = 1 - \frac{\mathrm{SS}_{\mathrm{res}}}{\mathrm{SS}_{\mathrm{tot}}}\]</div>
+      <span class="formula-note">the fraction of variation explained by the fitted model</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>Quality control and capability</h2>
+  <div class="body"><p>Control charts separate common-cause variation, which is built into the process, from special-cause variation, which signals that something has changed.</p>
+<ul>
+<li>A mean chart plots the sample average with limits at three standard errors either side of the centre line; a range chart tracks variability.</li>
+<li>Points outside the limits, or runs of points on one side, prompt investigation rather than adjustment of every reading.</li>
+<li>Process capability compares the specification with the process spread: Cp = (USL − LSL) / (6σ), and Cpk accounts for the process being off-centre.</li>
+<li>A capable process is both precise and centred; a high Cp with a low Cpk means the spread is fine but the setting is wrong.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Control limits for a mean chart</span>
+      <div class="formula-expr formula-math">\[\mathrm{UCL},\, \mathrm{LCL} = \bar{x} \pm \frac{3\sigma}{\sqrt{n}}\]</div>
+      <span class="formula-note">σ is the process standard deviation and n the subgroup size</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Process capability</span>
+      <div class="formula-expr formula-math">\[C_p = \frac{\mathrm{USL} - \mathrm{LSL}}{6\sigma}\]</div>
+      <span class="formula-note">USL and LSL are the upper and lower specification limits</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Chi-square tests: what the counts say</h2>
+  <div class="body"><p>Not every question is about a mean. When the data are <strong>counts</strong> in categories, the chi-square framework replaces the t and F tests.</p>
+<ul>
+<li>A <strong>goodness-of-fit test</strong> asks whether observed frequencies follow a hypothesised distribution; a <strong>test of independence</strong> asks whether two categorical variables are related, using a two-way table of counts.</li>
+<li>Both compare observed counts with the counts expected under the null hypothesis, and both are one-sided: only large discrepancies matter.</li>
+<li>The assumptions are the weak points — categories must be mutually exclusive, and every expected count should be at least 5, so merge sparse categories before testing.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Chi-square statistic</span>
+      <div class="formula-expr formula-math">\[\chi^2 = \sum_i \frac{(O_i - E_i)^2}{E_i}\]</div>
+      <span class="formula-note">large values indicate poor agreement with the null model</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Degrees of freedom</span>
+      <div class="formula-expr formula-math">\[\text{fit: } k - 1 - m; \qquad \text{table: } (r-1)(c-1)\]</div>
+      <span class="formula-note">m is the number of parameters estimated from the data</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>Expected counts, not observed ones</b>
+  The chi-square approximation needs expected counts of roughly 5 or more in every cell; if some fall below, merge categories and state the new degrees of freedom.
+</div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>Multiple regression</h2>
+  <div class="body"><p>Most engineering responses have several drivers, so the model becomes y = β₀ + β₁x₁ + β₂x₂ + … + ε. Each coefficient is a <strong>partial effect</strong>: the expected change in y per unit increase in that predictor, with the others held fixed. That is a different quantity from the simple two-variable slope, and mixing the two up is a classic exam error.</p>
+<ul>
+<li>The plain R² rises whenever a predictor is added, even a useless one, so multiple regression should quote the <strong>adjusted R²</strong>, which penalises each extra parameter.</li>
+<li>Check for <strong>multicollinearity</strong> — predictors so strongly correlated that the model cannot separate their effects — via correlations or variance inflation factors.</li>
+<li>Test the whole model with the overall F test before dissecting individual coefficients.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Multiple regression model</span>
+      <div class="formula-expr formula-math">\[y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \varepsilon\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Adjusted coefficient of determination</span>
+      <div class="formula-expr formula-math">\[\bar{R}^2 = 1 - \frac{(1 - R^2)(n - 1)}{n - k - 1}\]</div>
+      <span class="formula-note">k predictors; it rises only when a predictor earns its place</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>Power, effect size and planning a study</h2>
+  <div class="body"><p>A non-significant result means little if the study had no chance of detecting the effect that mattered. <strong>Power</strong> is the probability of rejecting H₀ when a particular alternative is true, driven by four quantities: the significance level α, the true effect size δ, the noise σ and the sample size n.</p>
+<ul>
+<li>For a two-sided z test, the required sample is approximately (z_(α/2) + z_β)² σ² / δ², where 1 − β is the target power.</li>
+<li>Read the formula as a budget: halving the difference you must detect quadruples the sample, and a cleaner measurement method (smaller σ) is as valuable as more replicates.</li>
+<li>State the power and the assumed effect size whenever you fail to reject.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Sample size for a two-sided z test</span>
+      <div class="formula-expr formula-math">\[n \approx \frac{(z_{\alpha/2} + z_\beta)^2 \sigma^2}{\delta^2}\]</div>
+      <span class="formula-note">β is the Type II error rate, so 1 − β is the power</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Standard error</dt><dd>The standard deviation of an estimator&#x27;s sampling distribution, showing how precisely a sample estimates a population value.</dd></div><div class="term"><dt>Confidence interval</dt><dd>A range of values, built from the data, that would contain the true parameter in a stated proportion of repeated samples.</dd></div><div class="term"><dt>p-value</dt><dd>The probability of observing a result at least as extreme as the data, assuming the null hypothesis is true.</dd></div><div class="term"><dt>Type I error</dt><dd>Rejecting a null hypothesis that is actually true; its probability is the significance level α.</dd></div><div class="term"><dt>ANOVA</dt><dd>Analysis of variance, a method that compares several group means by splitting total variation into between-group and within-group parts.</dd></div><div class="term"><dt>Coefficient of determination</dt><dd>The proportion of the response variation explained by a regression model, written r².</dd></div><div class="term"><dt>Goodness-of-fit test</dt><dd>A chi-square test of whether observed counts agree with a hypothesised distribution or model.</dd></div><div class="term"><dt>Power</dt><dd>The probability that a hypothesis test rejects the null hypothesis when the specified alternative is true.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Comparing two curing methods</h2>
+        <p class="problem">Two curing methods are compared on 10 concrete cubes each. Method A gives a mean strength of 42.1 MPa with standard deviation 2.0 MPa; method B gives 40.3 MPa with standard deviation 1.8 MPa. Test at the 5% significance level whether the mean strengths differ. Take the critical t value for 18 degrees of freedom as 2.101.</p>
+        <ol><li>State the hypotheses: H0: μA = μB; H1: μA ≠ μB. Use α = 0.05 in a two-tailed test with df = 10 + 10 − 2 = 18.</li><li>Pooled variance: s_p² = [(9)(2.0²) + (9)(1.8²)] / 18 = (36.0 + 29.16) / 18 = 3.62, so s_p = 1.90 MPa.</li><li>Standard error of the difference: s_p √(1/10 + 1/10) = 1.90 × 0.447 = 0.850 MPa.</li><li>Test statistic: t = (42.1 − 40.3) / 0.850 = 2.12.</li><li>Since |t| = 2.12 is greater than the critical value 2.101, reject H0. The difference is statistically significant, though only 1.8 MPa, so practical significance needs engineering judgement.</li></ol>
+        <div class="answer"><b>Answer</b>Reject H0 at the 5% level: the mean strengths differ significantly (t = 2.12, df = 18, p just below 0.05). The estimated difference is 1.8 MPa, and a larger sample would give a more precise estimate.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>State H0, H1 and α before touching the calculator; most marks in a test question come from a correct setup.</li><li>Interpret a confidence interval in terms of repeated sampling, not as a probability that the parameter lies inside this interval.</li><li>Check the assumptions of independence, normality and equal variance before trusting a t or F result.</li><li>A significant ANOVA F says that at least one mean differs, not which one; say so in the conclusion.</li><li>In multiple regression, write the words holding the other predictors fixed beside every coefficient you interpret.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>A 95% confidence interval for a population mean means that:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>95% of intervals constructed in the same way would contain the true mean</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The sample mean is 95% accurate</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>There is a 95% probability that the true mean lies in this interval</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>95% of the sample values lie in this interval</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The confidence level describes the long-run performance of the method, not the probability for this one interval.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>Rejecting a true null hypothesis is called a:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Type II error</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Power</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Sampling bias</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Type I error</span></button></div>
+    <div class="quiz-explain"><b>Why</b>A Type I error is a false positive, with probability equal to the chosen significance level α.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>In one-way ANOVA, a large F ratio indicates that:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>All group means are equal</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The sample sizes are too small</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Between-group variation is large relative to within-group variation</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The population variances are definitely equal</span></button></div>
+    <div class="quiz-explain"><b>Why</b>F is the ratio of between-group mean square to within-group mean square; a large value suggests at least one mean differs.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>A process has a high Cp but a low Cpk. This means the process is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Out of control and should be stopped</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Wide and off-centre</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Narrow but off-centre relative to the specification</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Narrow and perfectly centred</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Cp compares spread with the tolerance; Cpk also penalises a mean that is not centred in the specification band.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>A chi-square test of independence is applied to a 3 by 4 contingency table. The test statistic has how many degrees of freedom?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>12</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>7</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>6</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The degrees of freedom are (r − 1)(c − 1) = 2 × 3 = 6.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>In a multiple regression of concrete strength on cement content and water-cement ratio, the coefficient of the water-cement ratio estimates:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The total change in strength when both predictors change together</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The correlation between strength and the ratio</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The share of variation explained by the ratio alone</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The change in strength per unit change in the ratio, with cement content held fixed</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Multiple regression coefficients are partial effects: they hold the other predictors fixed, unlike the simple two-variable slope.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-statistics.html"><span>Core</span><b>Engineering Statistics</b></a><a class="related-card" href="ai-data-analysis.html"><span>Computing</span><b>AI &amp; Data Analysis</b></a><a class="related-card" href="construction-materials.html"><span>Core</span><b>Construction Materials</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="design-of-steel-structures.html"><small>Previous</small><b>Design of Steel Structures</b></a><a class="next" href="machine-learning-smart-mobility.html"><small>Next</small><b>Machine Learning for Smart Mobility</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">n quadruples to halve the SE.</p><p class="margin-note">p is not the probability H0 is true.</p><p class="margin-note">Randomise before you measure.</p><p class="margin-note">A CI is about the method, not the parameter.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

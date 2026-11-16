@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BIM 與三維 GIS — Civil Hub</title>
+<meta name="description" content="建築信息模型以豐富數據描述個別資產，而三維地理信息系統則描述它們所在的地面。結合兩者需要開放標準、共通數據環境和共享坐標系統。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/bim-3d-gis.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="BIM 與三維 GIS — Civil Hub">
+<meta property="og:description" content="建築信息模型以豐富數據描述個別資產，而三維地理信息系統則描述它們所在的地面。結合兩者需要開放標準、共通數據環境和共享坐標系統。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/bim-3d-gis.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="bim-3d-gis.html" data-alt-zh-hant="bim-3d-gis.zh-Hant.html" data-alt-ja="bim-3d-gis.ja.html" data-alt-ko="bim-3d-gis.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">BIM 與三維 GIS</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">專業</p>
+          <h1>BIM 與三維 GIS</h1>
+          <p class="subject-sub">結合建築資訊模型與空間數據</p>
+          <ul class="subject-facts"><li><b>類型</b>專業</li><li><b>閱讀</b>8 分鐘</li><li><b>章節</b>11</li><li><b>公式</b>5</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M120 96 L170 66 L220 96 L170 126 Z" stroke="currentColor" stroke-width="1.4"/><path d="M120 96 V146 L170 176 V126 M220 96 V146 L170 176" stroke="currentColor" stroke-width="1.4"/><circle cx="120" cy="96" r="2.6" fill="var(--accent)" stroke="none"/><circle cx="220" cy="96" r="2.6" fill="var(--accent)" stroke="none"/><circle cx="170" cy="66" r="2.6" fill="var(--accent)" stroke="none"/><circle cx="170" cy="126" r="2.6" fill="var(--accent)" stroke="none"/><circle cx="120" cy="146" r="2.6" fill="var(--accent)" stroke="none"/><circle cx="220" cy="146" r="2.6" fill="var(--accent)" stroke="none"/><circle cx="170" cy="176" r="2.6" fill="var(--accent)" stroke="none"/><text x="170" y="42" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">INFORMATION MODEL</text></svg>
+          <figcaption>An information model — elements and relationships</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">BIM 是信息模型，不是圖紙</a></li><li><a href="#sec-2">BIM 的維度</a></li><li><a href="#sec-3">IFC 與開放交換</a></li><li><a href="#sec-4">CityGML 與語義城市模型</a></li><li><a href="#sec-5">共通數據環境</a></li><li><a href="#sec-6">GIS 數據模型與三維城市模型</a></li><li><a href="#sec-7">從點雲到竣工模型</a></li><li><a href="#sec-8">坐標系統與地理參考</a></li><li><a href="#sec-9">三維分析與 Web GIS</a></li><li><a href="#sec-10">數字孿生與互操作性</a></li><li><a href="#sec-11">結合 BIM 與 GIS 數據</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">建築信息模型以豐富數據描述個別資產，而三維地理信息系統則描述它們所在的地面。結合兩者需要開放標準、共通數據環境和共享坐標系統。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="bim-3d-gis" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>BIM 是信息模型，不是圖紙</h2>
+  <div class="body"><p><strong>建築信息模型</strong>是一組物件——牆、板、管道、空間——每個物件都帶有幾何、關係和屬性。由於每個物件只定義一次，同一個模型可以產出圖紙、明細表、工程量、協調檢查和移交數據。</p>
+<p><strong>聯邦模型</strong>將各專業模型組合成一個協調環境，而每個作者仍控制自己的檔案。模型質量、命名和信息結構與圖紙本身同樣重要。</p>
+<p>模型也是竣工時移交給營運方的記錄，因此其信息應由將會使用它的人定義，而不僅是由建造它的人定義。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>BIM 的維度</h2>
+  <div class="body"><p>信息模型以<strong>維度</strong>描述。三個維度提供幾何；更高的維度添加其他人使用的信息。</p>
+<ul>
+<li>編號是一種溝通工具而非正式標準，因此應在項目上就每個維度的含義達成一致。</li>
+<li>更高維度的價值取決於較低維度。</li>
+<li>建立在命名不當和未協調物件上的明細表或成本模型，會產生自信但錯誤的答案。</li>
+</ul></div><div class="table-wrap"><table><caption>每個 BIM 維度添加的內容</caption><thead><tr><th scope='col'>維度</th><th scope='col'>添加</th><th scope='col'>典型用途</th></tr></thead><tbody><tr><td>3D</td><td>幾何和空間關係</td><td>碰撞檢測和視覺審查</td></tr><tr><td>4D</td><td>時間和施工順序</td><td>進度計劃和工地規劃</td></tr><tr><td>5D</td><td>成本和工程量</td><td>計量和估算</td></tr><tr><td>6D</td><td>可持續性和能源數據</td><td>性能和碳研究</td></tr><tr><td>7D</td><td>運營和維護數據</td><td>資產移交和設施管理</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>IFC 與開放交換</h2>
+  <div class="body"><p><strong>IFC</strong>（Industry Foundation Classes）是用於交換建築模型的開放、供應商中立架構。它定義了牆、空間和屬性等實體及其之間的關係，因此在一个工具中創建的模型可以在另一個工具中讀取而不丟失其含義。</p>
+<ul>
+<li>交換由<strong>模型視圖定義</strong>控制，這些定義選擇了用於協調或工程量計算等目的所需的架構子集。</li>
+<li>屬性集攜帶接收方所需的屬性，分類系統將物件與工作分解結構對齊。</li>
+<li>IFC 不取代原生格式；它是它們之間的契約。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>CityGML 與語義城市模型</h2>
+  <div class="body"><p><strong>CityGML</strong> 是三維城市模型的開放標準：建築物、地形、道路和植被等主題類別，按從塊狀模型到完整室內的漸進細節層次組織。與描述單一建築物組件用於設計和施工的 IFC 不同，CityGML 描述眾多資產及其上下文，用於分析和管理。</p>
+<p>物件除了表面還帶有語義，因此查詢可以要求洪水位以上的所有住宅樓層，而不是一個裸網格。由於兩個架構重疊但並非一一對應，它們之間的轉換需要定義映射，而每次轉換都會在過程中丟失一些信息。</p></div><div class="table-wrap"><table><caption>兩個架構，兩項工作</caption><thead><tr><th scope='col'>方面</th><th scope='col'>IFC</th><th scope='col'>CityGML</th></tr></thead><tbody><tr><td>範圍</td><td>單一資產的組件和屬性</td><td>整個城市主題：建築物、地形、道路</td></tr><tr><td>細節</td><td>施工級別的元素</td><td>每個主題的漸進細節層次</td></tr><tr><td>幾何</td><td>實體，通常為參數化組件</td><td>基於表面，帶紋理</td></tr><tr><td>主要用戶</td><td>設計、施工、移交</td><td>規劃、分析、管理</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>共通數據環境</h2>
+  <div class="body"><p><strong>共通數據環境</strong>（CDE）是項目信息的單一議定來源。模型和文件存放在<strong>容器</strong>中，並經過受控狀態：進行中工作、共享、已發布和已歸檔。只有共享或已發布的信息才可以被其他方依賴。</p>
+<ul>
+<li>信息要求——什麼信息、以什麼格式、在什麼日期——在工作開始前定義，交付計劃說明誰提供。</li>
+<li>版本控制、命名和狀態代碼顯示哪個文件是當前的，這解決了協調中最古老的問題。</li>
+<li>當多個組織貢獻時，環境還記錄誰在何時批准每個容器，以便責任保持可追溯。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>GIS 數據模型與三維城市模型</h2>
+  <div class="body"><p><strong>GIS</strong> 用空間數據模型描述世界。<strong>矢量</strong>模型存儲點、線和多邊形及其屬性和拓撲，適合網絡和邊界；<strong>柵格</strong>模型存儲網格單元，適合地形和影像等連續表面；<strong>TIN</strong> 將地形表示為三角化表面。</p>
+<p>三維城市模型添加高度、屋頂和細節，按<strong>細節層次</strong>分級：簡單塊狀模型，然後屋頂形狀，然後詳細立面。由於城市模型和建築模型以不同比例描述同一地點，兩者越來越傾向於連結而非分開。GIS 擅長位置、比例和眾多數據集；BIM 擅長個別資產及其屬性。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">柵格單元數量</span>
+      <div class="formula-expr formula-math">\[N = \frac{W \times H}{c^2}\]</div>
+      <span class="formula-note">W 和 H 是範圍尺寸，c 是單元大小；將 c 減半會使單元數量增加四倍</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>從點雲到竣工模型</h2>
+  <div class="body"><p>現有結構很少與其圖紙相符，因此捕獲從<strong>激光掃描</strong>或攝影測量開始，產生<strong>點雲</strong>——數百萬個測量坐標。飛行時間掃描儀根據激光脈衝的往返時間推導每個距離，密度取決於掃描解析度：將點間距減半會使存儲點數增加四倍。</p>
+<p>將點雲轉化為模型是<strong>掃描到 BIM</strong>：將掃描註冊到一個坐標系統，清理噪聲，將點分類為結構、地面和服務，然後追蹤或自動擬合模型元素。過程部分是自動化，部分是判斷——軟件提出建議，工程師確認，模型繼承點雲中留下的每一個誤差。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">飛行時間距離</span>
+      <div class="formula-expr formula-math">\[R = \frac{c \Delta t}{2}\]</div>
+      <span class="formula-note">c 是光速，Δt 是往返時間；係數 2 考慮了返回路徑</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">點密度</span>
+      <div class="formula-expr formula-math">\[\rho = \frac{N}{A}\]</div>
+      <span class="formula-note">N 個點分佈在面積 A 上；精細網格適合小特徵但會快速增加存儲</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>坐標系統與地理參考</h2>
+  <div class="body"><p>BIM 模型在局部坐標中創建，但基礎設施存在於<strong>坐標參考系統</strong>中。地理系統在基準面上使用緯度和經度；投影系統將其展平到以米為單位的網格上。結合兩者需要一個包含平移、旋轉和縮放的變換：</p>
+<p><code>E = E_0 + s(x cos θ − y sin θ)</code><br />
+<code>N = N_0 + s(x sin θ + y cos θ)</code></p>
+<p>其中 <code>(x, y)</code> 是模型坐標，<code>θ</code> 是模型北與網格北之間的旋轉，<code>s</code> 是縮放，<code>(E_0, N_0)</code> 是平移。錯誤的符號或過時的基準面會使模型偏移數米，其上的每個資產都會繼承該誤差。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">模型到網格變換</span>
+      <div class="formula-expr formula-math">\[E = E_0 + s(x\cos\theta - y\sin\theta), \quad N = N_0 + s(x\sin\theta + y\cos\theta)\]</div>
+      <span class="formula-note">θ 從模型北量度到網格北；對於地圖投影，s 接近 1</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>三維分析與 Web GIS</h2>
+  <div class="body"><p>三維 GIS 在<strong>分析</strong>中體現價值：<strong>視域</strong>顯示從一點可見的地形，陰影模型測試擬建塔樓的日照，洪水模擬檢查風暴到達哪些地下室入口，視線檢查起重機能否到達吊運區。每項分析都需要地形表面、資產模型和正確共享的坐標系統。</p>
+<p>Web GIS 通過場景服務將這些移入瀏覽器，因此利益相關者無需桌面許可證即可審查；BIM 查看器對建築模型做同樣的事情，兩者越來越多的嵌入一個儀表板中。在網上傳輸的是已發布、已檢查的版本——永遠不是工作文件。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">綜合比例因子</span>
+      <div class="formula-expr formula-math">\[\text{grid distance} = \text{ground distance} \times \mathrm{CSF}\]</div>
+      <span class="formula-note">CSF 結合了投影比例因子和高程因子；測量測量值在進入 GIS 前縮減為網格距離</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>數字孿生與互操作性</h2>
+  <div class="body"><p><strong>數字孿生</strong>是與資產保持同步的模型：竣工幾何、資產數據和實時傳感器讀數在一個環境中。它支持運營和維護而非施工，因此依賴於模型、GIS 和資產登記冊之間一致的標識符。</p>
+<p><strong>互操作性</strong>是實際限制。幾何可能轉移，而屬性、單位、材料和分類會丟失，因此交換要針對定義的目的和檢查規則集進行測試。碰撞檢測和自動檢查發現衝突和不合規，但僅限於已編寫的規則。</p></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>結合 BIM 與 GIS 數據</h2>
+  <div class="body"><p>整合主要是數據問題，而不是視覺問題。兩個世界必須共享<strong>標識符</strong>——建築物或組件必須在資產登記冊、GIS 要素和模型中攜帶相同的參考——否則每次更新都會分歧。</p>
+<p>ETL 管道將 IFC 類映射到 GIS 架構，丟棄分析不需要的施工細節，並記錄轉換了什麼。室內 GIS 在建築物內部延伸同樣的邏輯：房間、路線和傳感器參考平面圖。</p>
+<p>任何整合的實際測試是往返——更改資產登記冊，然後確認更改出現在 GIS 視圖和 BIM 視圖中，而無需手動重新輸入。</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>聯邦模型</dt><dd>由各專業模型組裝而成的組合模型，用於協調，作者身份保留在源文件中。</dd></div><div class="term"><dt>IFC</dt><dd>用於在軟件工具之間交換建築信息模型的開放、供應商中立數據架構。</dd></div><div class="term"><dt>共通數據環境</dt><dd>項目信息的議定單一來源，具有進行中工作、共享、已發布和已歸檔數據的受控狀態。</dd></div><div class="term"><dt>細節層次</dt><dd>三維城市模型所表示的幾何和語義細節程度的漸進度量，從塊狀模型到詳細立面。</dd></div><div class="term"><dt>地理參考</dt><dd>將模型定位在坐標參考系統中，使其與測量和 GIS 數據對齊。</dd></div><div class="term"><dt>數字孿生</dt><dd>通過竣工數據和持續的傳感器信息與物理資產保持同步的模型。</dd></div><div class="term"><dt>碰撞檢測</dt><dd>自動檢查聯邦模型中各專業之間的物理或空間衝突。</dd></div><div class="term"><dt>CityGML</dt><dd>語義三維城市模型的開放標準，按主題和細節層次描述建築物、地形和基礎設施。</dd></div><div class="term"><dt>掃描到 BIM</dt><dd>將點雲註冊、分類並追蹤為竣工信息模型的工作流程。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>地理參考局部模型</h2>
+        <p class="problem">一個建築模型使用以米為單位的局部坐標。一根柱的中心位於 x = 120.000 m，y = 45.000 m。模型必須放置在項目網格上，從模型北到網格北的旋轉為 30°，比例因子為 0.9996，並平移到網格東坐標 500 000.000 m 和北坐標 100 000.000 m。求該柱的網格坐標，並檢查除了比例之外，距原點的距離是否保持不變。</p>
+        <ol><li>cos 30° = 0.866025，sin 30° = 0.5。</li><li>東偏移：x cos θ − y sin θ = 120 × 0.866025 − 45 × 0.5 = 103.923 − 22.500 = 81.423 m。</li><li>北偏移：x sin θ + y cos θ = 120 × 0.5 + 45 × 0.866025 = 60.000 + 38.971 = 98.971 m。</li><li>應用比例：0.9996 × 81.423 = 81.390 m 和 0.9996 × 98.971 = 98.931 m。</li><li>加上平移：E = 500 081.390 m，N = 100 098.931 m。</li><li>合理性檢查：局部偏移長度為 √(120² + 45²) = 128.160 m；縮放後變為 128.109 m，變換後的偏移給出 √(81.390² + 98.931²) = 128.108 m，在捨入範圍內匹配。</li></ol>
+        <div class="answer"><b>Answer</b>該柱位於網格東坐標 500 081.390 m 和北坐標 100 098.931 m。檢查確認旋轉和比例已一致應用。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>區分模型與信息：幾何、屬性、關係和狀態是獨立的問題。</li><li>對於 CDE 問題，說出狀態並說明誰可以依賴該狀態的信息。</li><li>轉換坐標時，在加上平移之前分別寫出旋轉和比例——這會暴露符號錯誤。</li><li>在整合問題中，首先說出共享標識符和坐標系統；其他一切都在這兩個選擇的下游。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>IFC 的主要目的是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>自動生成 4D 施工順序</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>存儲點雲和地形表面</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>在不同軟件工具之間交換建築模型而不丟失含義</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>取代共通數據環境</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>IFC 是一個供應商中立架構，因此模型可以在創作和檢查工具之間移動，其實體和屬性保持完整。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>在共通數據環境中，共享狀態的信息是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>僅供客戶存檔</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>仍在開發中且尚未檢查</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>已檢查並可供其他專業用於協調</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>整個項目期間凍結</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>共享信息已經過檢查並發布供他人使用，而已發布信息則授權用於定義的目的。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>細節層次 1 的三維城市模型通常顯示：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>室內房間和家具</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>帶平屋頂的簡單塊狀模型</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>屋頂形狀和建築部件</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>詳細立面、窗戶和門</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>LOD1 是塊狀模型階段；屋頂形狀在 LOD2 出現，詳細立面在 LOD3。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>哪種 GIS 數據模型最適合地形高程等連續表面？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>關係表</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>矢量點</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>矢量多邊形</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>柵格網格</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>柵格在每個網格單元中存儲一個值，適合高程、溫度或影像等連續場。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>CityGML 最準確的描述是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>用於發布地圖的 Web 服務</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>用於交換單一建築物組件的供應商中立架構</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>語義三維城市模型的開放標準</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>激光掃描文件格式</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>CityGML 以語義物件和細節層次對整個城市主題建模，補充 IFC 對建築物級別的關注。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q06</span><span>一個激光脈衝在 3.33 ns 後返回。取光速為 3 × 10⁸ m/s，測量距離約為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>1000 m</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.5 m</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1.0 m</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2.0 m</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>R = cΔt/2 = (3 × 10⁸ × 3.33 × 10⁻⁹)/2 ≈ 0.5 m；返回行程將光行進的距離減半。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="bim-management.zh-Hant.html"><span>Professional</span><b>BIM 管理</b></a><a class="related-card" href="surveying.zh-Hant.html"><span>Core</span><b>工程測量</b></a><a class="related-card" href="integrated-project-quality.zh-Hant.html"><span>Professional</span><b>綜合項目與品質管理</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="geotechnical-design.zh-Hant.html"><small>上一頁</small><b>岩土設計</b></a><a class="next" href="service-learning.zh-Hant.html"><small>下一頁</small><b>服務學習</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">物件攜帶數據；線條則不。</p><p class="margin-note">聯邦是為了協調，不是為了合併作者身份。</p><p class="margin-note">IFC 是工具之間的契約。</p><p class="margin-note">先旋轉，再縮放，然後平移。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

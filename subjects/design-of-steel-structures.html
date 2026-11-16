@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design of Steel Structures — Civil Hub</title>
+<meta name="description" content="How steel members and connections are checked at the ultimate and serviceability limit states: classification, bending, shear, buckling, welds and bolts. I">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-steel-structures.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="Design of Steel Structures — Civil Hub">
+<meta property="og:description" content="How steel members and connections are checked at the ultimate and serviceability limit states: classification, bending, shear, buckling, welds and bolts. I">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-steel-structures.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="design-of-steel-structures.html" data-alt-zh-hant="design-of-steel-structures.zh-Hant.html" data-alt-ja="design-of-steel-structures.ja.html" data-alt-ko="design-of-steel-structures.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">Design of Steel Structures</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Core</p>
+          <h1>Design of Steel Structures</h1>
+          <p class="subject-sub">Limit state design, section capacity and connection checks</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Core</li><li><b data-i18n="subject.read">Read</b>12 min</li><li><b data-i18n="subject.sections">Sections</b>10</li><li><b data-i18n="subject.formulas">Formulas</b>15</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M80 160 V64 H260 V160" stroke="currentColor" stroke-width="1.7"/><path d="M70 160 h20 M250 160 h20" stroke="currentColor" stroke-width="1.2"/><path d="M80 160 l-8 12 h16 z M260 160 l-8 12 h16 z" stroke="currentColor" stroke-width="1"/><path d="M80 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M220 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M104 100 q-20 14 0 28" stroke="var(--accent)" stroke-width="1"/><path d="M236 100 q20 14 0 28" stroke="var(--accent)" stroke-width="1"/><text x="170" y="44" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PORTAL FRAME</text></svg>
+          <figcaption>Portal frame — bending moments at the joints</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">Two numbers and a factor of safety</a></li><li><a href="#sec-2">Steel, strength and slenderness</a></li><li><a href="#sec-3">Section classification</a></li><li><a href="#sec-4">Tension members: gross, net and effective area</a></li><li><a href="#sec-5">Bending and shear</a></li><li><a href="#sec-6">Lateral-torsional buckling</a></li><li><a href="#sec-7">Compression members</a></li><li><a href="#sec-8">Connections: bolts and welds</a></li><li><a href="#sec-9">Serviceability, fire and durability</a></li><li><a href="#sec-10">The full beam check in one pass</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">How steel members and connections are checked at the ultimate and serviceability limit states: classification, bending, shear, buckling, welds and bolts. It is where a section table, a design code and a calculator meet.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="design-of-steel-structures" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>Two numbers and a factor of safety</h2>
+  <div class="body"><p>Limit state design compares a factored load effect with a factored resistance and requires the resistance to be the larger: E_d ≤ R_d.</p>
+<ul>
+<li>Load factors cover uncertainty of dead, imposed and wind loads; material factors cover yield strength and fabrication.</li>
+<li>Ultimate limit states cover strength, stability and fire; serviceability limit states cover deflection, vibration and durability.</li>
+<li>The aim is a small, known probability of failure during the design life, not zero risk.</li>
+<li>Ductility and robustness matter: a structure that warns before it fails is safer.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Limit state check</span>
+      <div class="formula-expr formula-math">\[E_d \le R_d\]</div>
+      <span class="formula-note">R_d is the design resistance</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Steel, strength and slenderness</h2>
+  <div class="body"><p>Steel is specified by grade — S275, S355, S460 — where the number is the minimum yield strength in N/mm² for that thickness. The design strength used in calculations is p_y = f_y / γ_M.</p>
+<ul>
+<li>Steel is stiff, strong and ductile; ductility allows redistribution of force and gives visible warning before fracture.</li>
+<li>Residual stresses from rolling and welding do not reduce the squash load, but they do reduce stiffness and bring buckling forward.</li>
+<li>Toughness matters in thick sections and at low temperature, so the impact sub-grade belongs in the specification.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Design strength</span>
+      <div class="formula-expr formula-math">\[p_y = \frac{f_y}{\gamma_M}\]</div>
+      <span class="formula-note">γ_M is the material factor, close to 1.0</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>Section classification</h2>
+  <div class="body"><p>Local buckling depends on how slender each plate element is. The width-to-thickness ratio b/T is compared with limits written as multiples of ε, where ε = √(275/p_y) and 275 N/mm² is the reference yield strength.</p>
+<ul>
+<li>Class 1 plastic: can form a plastic hinge and rotate.</li>
+<li>Class 2 compact: reaches the plastic moment with little rotation.</li>
+<li>Class 3 semi-compact: reaches yield at the extreme fibre only.</li>
+<li>Class 4 slender: buckles locally before yield.</li>
+<li>The whole section takes the worst class of its elements.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Slenderness factor</span>
+      <div class="formula-expr formula-math">\[\varepsilon = \sqrt{\frac{275}{p_y}}\]</div>
+      <span class="formula-note">p_y in N/mm²; the limits for b/T are written as multiples of ε</span>
+    </div></div><div class="table-wrap"><table><caption>The four cross-section classes</caption><thead><tr><th scope='col'>Class</th><th scope='col'>Local behaviour</th><th scope='col'>Bending resistance</th></tr></thead><tbody><tr><td>1 plastic</td><td>plastic hinge forms and rotates</td><td>M_c = p_y S</td></tr><tr><td>2 compact</td><td>plastic moment reached, little rotation</td><td>M_c = p_y S</td></tr><tr><td>3 semi-compact</td><td>yield at the extreme fibre only</td><td>M_c = p_y Z</td></tr><tr><td>4 slender</td><td>local buckling before yield</td><td>effective section properties</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Tension members: gross, net and effective area</h2>
+  <div class="body"><p>Tension is the cleanest steel check — no buckling, just area times strength — but the detailing is subtle. The <strong>gross area</strong> A_g is the full cross-section; the <strong>net area</strong> A_n removes bolt holes; and the <strong>effective area</strong> A_e reduces further for <strong>shear lag</strong>: when bolts connect only one leg of an angle, the outstand leg joins the load gradually through the corner rather than at the connection.</p>
+<ul>
+<li>Single angle bolted through one leg: <code>A_n = A_g − 0.3 a₂</code>, where a₂ is the area of the unconnected leg.</li>
+<li>Double angle sharing the connection: <code>A_n = A_g − 0.15 a₂</code>.</li>
+<li>Effective area: <code>A_e = K_e A_n</code>, with K_e of about 1.1 for S355 steel.</li>
+<li>A tension test on 65 × 65 angles showed strain falling steeply across the outstand leg — shear lag made visible.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Net area, single angle bolted through one leg</span>
+      <div class="formula-expr formula-math">\[A_n = A_g - 0.3\,a_2\]</div>
+      <span class="formula-note">a₂ is the area of the unconnected (outstand) leg</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Net area, double angle</span>
+      <div class="formula-expr formula-math">\[A_n = A_g - 0.15\,a_2\]</div>
+      <span class="formula-note">the smaller deduction recognises the better load transfer in a back-to-back pair</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Effective area</span>
+      <div class="formula-expr formula-math">\[A_e = K_e A_n\]</div>
+      <span class="formula-note">K_e is about 1.1 for S355; capacity follows from p_y A_e</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Bending and shear</h2>
+  <div class="body"><p>The bending resistance of a Class 1 or 2 section is the plastic moment M_c = p_y S, where S is the plastic section modulus. A Class 3 section uses the elastic modulus Z instead, and a Class 4 section uses the effective modulus.</p>
+<ul>
+<li>Shear is carried mainly by the web: V_c = 0.6 p_y A_v, where A_v is the shear area.</li>
+<li>When the shear force exceeds about 60% of the shear resistance, the moment capacity must be reduced for the shear area lost.</li>
+<li>Concentrated loads also require web bearing and web buckling checks, with stiffeners where the web is too thin.</li>
+<li>Deflection is a separate serviceability check with unfactored loads.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Bending resistance, Class 1 or 2</span>
+      <div class="formula-expr formula-math">\[M_c = p_y S\]</div>
+      <span class="formula-note">use Z for a Class 3 section</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Shear resistance</span>
+      <div class="formula-expr formula-math">\[V_c = 0.6\,p_y A_v\]</div>
+      <span class="formula-note">shear area, mainly the web</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>Lateral-torsional buckling</h2>
+  <div class="body"><p>An unrestrained beam bends about its strong axis, but the compression flange wants to move sideways. Once the flange displaces and the section twists, the beam fails by lateral-torsional buckling at a load well below the plastic moment.</p>
+<p>The resistance is M_b = χ_LT M_c, where the reduction factor χ_LT falls as the slenderness λ_LT rises.</p>
+<ul>
+<li>Slenderness depends on the effective length between restraints, the torsional and warping stiffness, and the load height.</li>
+<li>Loads on the top flange are destabilising; loads on the bottom flange are stabilising.</li>
+<li>The equivalent uniform moment factor allows for a non-uniform moment between restraints.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Buckling resistance moment</span>
+      <div class="formula-expr formula-math">\[M_b = \chi_{LT} M_c\]</div>
+      <span class="formula-note">reduces the plastic moment for lateral-torsional buckling</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Compression members</h2>
+  <div class="body"><p>A stocky column squashes when the stress reaches the design strength, so its capacity is close to p_y A_g. A slender column buckles first, and the capacity comes from the Perry-Robertson relationship between the yield strength, the Euler buckling stress and an imperfection parameter.</p>
+<ul>
+<li>Real columns carry initial bow, residual stress and eccentricity, which is why the buckling curves are calibrated empirically.</li>
+<li>The effective length L_E = K L reflects end restraint and frame sway; the slenderness is λ = L_E / r, using the radius of gyration about the weaker axis unless restraint prevents it.</li>
+<li>A column in a sway frame behaves as if it were longer than its physical length.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Euler buckling stress</span>
+      <div class="formula-expr formula-math">\[p_E = \frac{\pi^2 E}{\lambda^2}\]</div>
+      <span class="formula-note">λ is the slenderness L_E / r; p_E is compared with p_y</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Compression resistance</span>
+      <div class="formula-expr formula-math">\[P_c = p_c A_g\]</div>
+      <span class="formula-note">p_c is the compressive strength from the buckling curve, below p_y</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>Connections: bolts and welds</h2>
+  <div class="body"><p>Connections transfer the member forces and often govern the cost of a steel frame. A simple connection is designed for shear and rotation; a moment connection must also transfer bending.</p>
+<ul>
+<li>Bolts are checked for shear, bearing, tear-out and block shear, and a bolt group may also carry torsion.</li>
+<li>Bolt shear resistance is V_s = p_s A_s, using the shear area of the relevant failure plane.</li>
+<li>Fillet welds carry force through their throat: for a leg size s the throat is 0.7s, and the resistance per unit length is 0.7 s p_w.</li>
+<li>Weld symbols, minimum lengths and edge distances are detailing requirements; a connection that cannot be fabricated is not a design.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Bolt shear resistance</span>
+      <div class="formula-expr formula-math">\[V_s = p_s A_s\]</div>
+      <span class="formula-note">A_s is the shear area on the failure plane; p_s is the shear strength</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Fillet weld resistance per unit length</span>
+      <div class="formula-expr formula-math">\[P_w = 0.7\,s\,p_w\]</div>
+      <span class="formula-note">s is the leg size; 0.7s is the throat thickness</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Serviceability, fire and durability</h2>
+  <div class="body"><p>Deflection limits protect finishes and comfort; the limit is expressed as a fraction of the span and checked with unfactored loads. Long-span floors also need a vibration check, usually by keeping the natural frequency above a few hertz.</p>
+<ul>
+<li>Fire resistance is provided by intumescent coating, boards or concrete filling; the required period depends on the building's use and height.</li>
+<li>Corrosion protection follows the exposure: galvanising or painting in normal conditions, more protection near the sea or in industrial atmospheres.</li>
+<li>Detailing that avoids water traps and allows inspection is cheaper than maintenance.</li>
+<li>A steel structure is a system — bracing, connections and robustness ties included — not a collection of members.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Deflection, simply supported beam with UDL</span>
+      <div class="formula-expr formula-math">\[\delta = \frac{5 w L^4}{384 E I}\]</div>
+      <span class="formula-note">serviceability loads, unfactored; E in N/mm², I in mm⁴</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>The full beam check in one pass</h2>
+  <div class="body"><p>A realistic beam design is a fixed sequence. Load the beam from its tributary area: a floor with 2.94 kPa of slab weight and 3.0 kPa imposed load combines as <code>1.4G + 1.6Q = 8.92 kPa</code> at ULS. Slab aspect decides the load path — one-way when the long side exceeds about twice the short, otherwise two-way with triangular or trapezoidal reactions onto the beam.</p>
+<ul>
+<li>Check section class (<code>ε = √(275/p_y)</code> against the b/T and d/t limits).</li>
+<li>Check bending (<code>M_c = p_y S</code>).</li>
+<li>Check shear (<code>V_c = 0.6 p_y A_v</code>).</li>
+<li>For an unrestrained beam, check the buckling resistance M_b at the restrained length.</li>
+<li>Close with serviceability: deflection under unfactored imposed load against a limit such as span/360, and a vibration check keeping the fundamental frequency above about 3–5 Hz for floors.</li>
+</ul>
+<p>Keeping the sequence fixed prevents the classic omission — a beam that passes bending but whose lateral restraint was never verified.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Fundamental frequency, simply supported beam</span>
+      <div class="formula-expr formula-math">\[f = \frac{\pi}{2 L^2}\sqrt{\frac{E I}{m}}\]</div>
+      <span class="formula-note">m is the mass per unit length including the floor; keep f above about 3–5 Hz</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Limit state design</dt><dd>Design that checks factored load effects against factored resistances for both ultimate and serviceability conditions.</dd></div><div class="term"><dt>Design strength</dt><dd>The yield strength divided by a material factor, used as the stress limit in member checks.</dd></div><div class="term"><dt>Section classification</dt><dd>The grouping of a cross-section as plastic, compact, semi-compact or slender according to the slenderness of its plate elements.</dd></div><div class="term"><dt>Plastic section modulus</dt><dd>The first moment of the section area about the equal-area axis, giving the plastic moment when multiplied by the design strength.</dd></div><div class="term"><dt>Lateral-torsional buckling</dt><dd>Failure of an unrestrained beam by sideways displacement and twisting of its compression flange.</dd></div><div class="term"><dt>Effective length</dt><dd>The buckling length of a member between points of lateral restraint, adjusted for end conditions and frame sway.</dd></div><div class="term"><dt>Shear lag</dt><dd>The uneven spread of axial force across a connected section, because outstand parts join the load only through the connection.</dd></div><div class="term"><dt>Warping constant</dt><dd>A section property measuring resistance to non-uniform twisting, which a beam mobilises as it twists during lateral-torsional buckling.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Bending, shear and deflection of a floor beam</h2>
+        <p class="problem">A simply supported beam of span 7.5 m carries an ultimate uniformly distributed load of 30 kN/m and a service uniformly distributed load of 20 kN/m. The section is Class 1 with plastic modulus S = 1500 cm³, shear area A_v = 3500 mm² and second moment of area I = 3.6 × 10⁸ mm⁴. Design strength p_y = 355 N/mm² and E = 205 kN/mm². Check bending, shear and deflection against a span/360 limit.</p>
+        <ol><li>Maximum bending moment: M = w L² / 8 = 30 × 7.5² / 8 = 210.9 kNm.</li><li>Bending resistance: M_c = p_y S = 355 × 1 500 000 = 532.5 × 10⁶ Nmm = 532.5 kNm. Since 210.9 &lt; 532.5 kNm, bending is adequate at about 40% utilisation.</li><li>Maximum shear: V = w L / 2 = 30 × 7.5 / 2 = 112.5 kN. Shear resistance: V_c = 0.6 p_y A_v = 0.6 × 355 × 3500 = 745.5 kN. Since 112.5 &lt; 745.5 kN, shear is adequate and no moment-shear reduction is needed.</li><li>Deflection with service load: δ = 5 w L⁴ / (384 E I) = 5 × 20 × 7500⁴ / (384 × 205 000 × 3.6 × 10⁸) = 11.2 mm. The limit is L/360 = 20.8 mm, so deflection is also adequate.</li><li>All three checks pass. Bending gives the highest utilisation, so a lighter section could be tried, but lateral-torsional buckling and the connection design would then need separate verification.</li></ol>
+        <div class="answer"><b>Answer</b>Bending 211 kNm &lt; 533 kNm, shear 113 kN &lt; 746 kN and deflection 11.2 mm &lt; 20.8 mm, so the beam is adequate for these checks. Bending is the controlling check.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>Classify the section before calculating any capacity; the class decides whether the plastic modulus, the elastic modulus or effective properties are used.</li><li>Keep S and Z straight: S is for plastic design, Z for elastic design, and mixing them is a common lost mark.</li><li>Lateral-torsional buckling often governs a real beam, so check the restraint spacing before declaring a section adequate.</li><li>Use unfactored loads for deflection and factored loads for strength; state which set you are using in each line.</li><li>In an LTB question, list the restraint positions and where the load hangs before using any formula; both change the effective length and the answer.</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Design strength py of structural steel to BS EN grades</h3>
+  <p class="ref-table-intro">Design strength py used in the Hong Kong steel code. It is the yield strength divided by the material factor for the steel class and capped by the tensile strength divided by a second factor, so the tabulated value falls as the element gets thicker.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Steel grade</th><th scope='col'>Thickness t (mm)</th><th scope='col'>Design strength py (N/mm²)</th></tr></thead><tbody><tr><td>S235</td><td>t ≤ 16</td><td>235</td></tr><tr><td>S275</td><td>t ≤ 16</td><td>275</td></tr><tr><td>S275</td><td>16 &lt; t ≤ 40</td><td>265</td></tr><tr><td>S355</td><td>t ≤ 16</td><td>355</td></tr><tr><td>S355</td><td>16 &lt; t ≤ 40</td><td>345</td></tr><tr><td>S355</td><td>40 &lt; t ≤ 63</td><td>335</td></tr><tr><td>S460</td><td>t ≤ 16</td><td>460</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 3.2 of the Code of Practice for the Structural Use of Steel 2011 (2023 Edition). For Class 1 steel the material factors are γm1 = 1.0 and γm2 = 1.1 (Table 4.1); the thickness of the thickest element governs the grade classification.</p>
+  <p class="ref-table-caveat">Revision summary only. Values depend on the steel class, the product standard and the governing thickness, and normal-strength and high-strength steels are treated separately; check the current steel code for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q01</span><span>The deflection of a beam at working load is checked at the:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Ultimate limit state with unfactored loads</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Serviceability limit state with factored loads</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Ultimate limit state with factored loads</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Serviceability limit state with unfactored loads</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Deflection is a serviceability condition, so it is checked with unfactored dead and imposed loads.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>A cross-section whose web width-to-thickness ratio exceeds the Class 3 limit is classified as:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Class 3 semi-compact</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Class 4 slender</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Class 1 plastic</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Class 2 compact</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Class 4 sections buckle locally before reaching yield and must be checked using effective section properties.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>Lateral-torsional buckling of a steel beam is most likely when:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The compression flange is continuously restrained</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The compression flange is unrestrained over a long span</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The beam is very short and stocky</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The load acts on the bottom flange</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The compression flange must be free to displace sideways and twist; long unrestrained lengths make this failure mode critical.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>The throat thickness of a fillet weld with leg size s is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.85 s</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>s</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.5 s</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>0.7 s</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The throat is measured at 45° to the legs, giving 0.7s, and the weld resistance acts over that throat.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q05</span><span>A single angle tie bolted through one leg has its net area reduced for shear lag by:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.3 times the outstand leg area</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.5 times the gross area</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>No reduction at all</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>0.15 times the outstand leg area</span></button></div>
+    <div class="quiz-explain"><b>Why</b>For a single angle the deduction is 0.3 a₂; a double angle sharing the connection gets the smaller 0.15 a₂ deduction.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>In a lateral-torsional buckling test, moving the applied load from the top flange to the bottom flange makes the load:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Equivalent to a full lateral restraint</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Destabilising, lowering the buckling load</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Stabilising, raising the buckling load</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Irrelevant, since buckling depends only on the section</span></button></div>
+    <div class="quiz-explain"><b>Why</b>A bottom-flange load develops a restoring twist as the beam buckles, whereas a top-flange load adds to the twist and is the more severe case.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="structural-mechanics.html"><span>Core</span><b>Structural Mechanics</b></a><a class="related-card" href="structural-analysis.html"><span>Core</span><b>Structural Analysis</b></a><a class="related-card" href="construction-materials.html"><span>Core</span><b>Construction Materials</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="construction-management.html"><small>Previous</small><b>Construction Management</b></a><a class="next" href="quantitative-methods.html"><small>Next</small><b>Quantitative Methods for Engineers</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2023). <i>Code of Practice for the Structural Use of Steel 2011 (2023 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/SUOS2011.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/SUOS2011.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">Class 4 needs effective section properties.</p><p class="margin-note">S for plastic, Z for elastic — do not mix.</p><p class="margin-note">Restraint spacing sets the LTB check.</p><p class="margin-note">Weld throat is 0.7 × leg.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

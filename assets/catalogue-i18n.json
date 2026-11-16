@@ -1,0 +1,1886 @@
+{
+  "en": {
+    "academic-english": {
+      "title": "Academic & Professional English",
+      "subtitle": "Reading, writing and speaking with precision",
+      "kind": "Communication",
+      "tags": [
+        "writing",
+        "reports",
+        "presentations",
+        "academic style"
+      ]
+    },
+    "innovation-entrepreneurship": {
+      "title": "Innovation & Entrepreneurship",
+      "subtitle": "Turning an engineering idea into something people use",
+      "kind": "Breadth",
+      "tags": [
+        "design thinking",
+        "value proposition",
+        "startups"
+      ]
+    },
+    "leadership-teamwork": {
+      "title": "Leadership & Teamwork",
+      "subtitle": "Working with people when the stakes are real",
+      "kind": "Breadth",
+      "tags": [
+        "teams",
+        "communication",
+        "feedback",
+        "projects"
+      ]
+    },
+    "structural-mechanics": {
+      "title": "Structural Mechanics",
+      "subtitle": "How structures carry load, and how they deform",
+      "kind": "Core",
+      "tags": [
+        "stress",
+        "strain",
+        "bending",
+        "torsion",
+        "columns"
+      ]
+    },
+    "ai-data-analysis": {
+      "title": "AI & Data Analysis",
+      "subtitle": "Finding patterns in data and reading them honestly",
+      "kind": "Computing",
+      "tags": [
+        "statistics",
+        "regression",
+        "SBI",
+        "data quality"
+      ]
+    },
+    "air-noise-pollution": {
+      "title": "Air & Noise Pollution",
+      "subtitle": "Measuring, modelling and managing what we breathe and hear",
+      "kind": "Environmental",
+      "tags": [
+        "air quality",
+        "acoustics",
+        "dispersion",
+        "control"
+      ]
+    },
+    "construction-introduction": {
+      "title": "Introduction to Construction",
+      "subtitle": "The industry, the project team and the work itself",
+      "kind": "Core",
+      "tags": [
+        "industry",
+        "procurement",
+        "site work",
+        "safety"
+      ]
+    },
+    "aviation-studies": {
+      "title": "Aviation & Infrastructure",
+      "subtitle": "How flight works and how airports are engineered",
+      "kind": "Breadth",
+      "tags": [
+        "lift",
+        "airports",
+        "runways",
+        "air traffic"
+      ]
+    },
+    "advanced-structural-mechanics": {
+      "title": "Advanced Structural Mechanics",
+      "subtitle": "Bending, shear centres, torsion and buckling",
+      "kind": "Core",
+      "tags": [
+        "unsymmetrical bending",
+        "shear centre",
+        "torsion",
+        "buckling"
+      ]
+    },
+    "programming-fundamentals": {
+      "title": "Programming Fundamentals",
+      "subtitle": "Thinking in code: logic, data and functions",
+      "kind": "Computing",
+      "tags": [
+        "Python",
+        "loops",
+        "functions",
+        "files",
+        "algorithms"
+      ]
+    },
+    "construction-materials": {
+      "title": "Construction Materials",
+      "subtitle": "Concrete and steel, from composition to testing",
+      "kind": "Core",
+      "tags": [
+        "concrete",
+        "steel",
+        "mix design",
+        "testing",
+        "durability"
+      ]
+    },
+    "engineering-geology": {
+      "title": "Engineering Geology",
+      "subtitle": "Reading the ground before you build on it",
+      "kind": "Core",
+      "tags": [
+        "minerals",
+        "rocks",
+        "structures",
+        "maps",
+        "site investigation"
+      ]
+    },
+    "bim-management": {
+      "title": "BIM Management",
+      "subtitle": "Digital models, information and the project lifecycle",
+      "kind": "Professional",
+      "tags": [
+        "BIM",
+        "CDE",
+        "EIR",
+        "information management"
+      ]
+    },
+    "chinese-professional-communication": {
+      "title": "專業中文傳意",
+      "subtitle": "工程專業寫作、公函與匯報",
+      "kind": "Communication",
+      "tags": [
+        "專業寫作",
+        "公函",
+        "匯報",
+        "書面語"
+      ]
+    },
+    "engineering-statistics": {
+      "title": "Engineering Statistics",
+      "subtitle": "Probability, estimation and decisions under uncertainty",
+      "kind": "Core",
+      "tags": [
+        "probability",
+        "distributions",
+        "confidence intervals",
+        "hypothesis tests"
+      ]
+    },
+    "data-analytics-r": {
+      "title": "Data Analytics with R",
+      "subtitle": "Cleaning, plotting and modelling real data",
+      "kind": "Computing",
+      "tags": [
+        "R",
+        "data wrangling",
+        "visualisation",
+        "time series",
+        "ARIMA"
+      ]
+    },
+    "fluid-mechanics": {
+      "title": "Fluid Mechanics",
+      "subtitle": "Pressure, flow and forces on bodies in water",
+      "kind": "Core",
+      "tags": [
+        "hydrostatics",
+        "Bernoulli",
+        "pipe flow",
+        "boundary layers"
+      ]
+    },
+    "soil-mechanics": {
+      "title": "Soil Mechanics",
+      "subtitle": "Effective stress, consolidation, shear strength and earth pressure",
+      "kind": "Core",
+      "tags": [
+        "classification",
+        "effective stress",
+        "consolidation",
+        "shear strength",
+        "earth pressure"
+      ]
+    },
+    "surveying": {
+      "title": "Engineering Surveying",
+      "subtitle": "Measuring, computing and setting out the ground",
+      "kind": "Core",
+      "tags": [
+        "levelling",
+        "traverse",
+        "coordinates",
+        "errors",
+        "setting out"
+      ]
+    },
+    "integrated-project-quality": {
+      "title": "Integrated Project & Quality Management",
+      "subtitle": "Plans, quality, prefabrication and professional practice",
+      "kind": "Professional",
+      "tags": [
+        "quality",
+        "BIM",
+        "MiC",
+        "site inspection",
+        "project delivery"
+      ]
+    },
+    "structural-analysis": {
+      "title": "Structural Analysis",
+      "subtitle": "Frames, influence lines, stiffness and the behaviour of real structures",
+      "kind": "Core",
+      "tags": [
+        "analysis",
+        "frames",
+        "stiffness",
+        "influence lines"
+      ]
+    },
+    "construction-management": {
+      "title": "Construction Management",
+      "subtitle": "Planning, programming, procurement and control on a live project",
+      "kind": "Professional",
+      "tags": [
+        "programme",
+        "cost",
+        "procurement",
+        "BIM"
+      ]
+    },
+    "design-of-steel-structures": {
+      "title": "Design of Steel Structures",
+      "subtitle": "Limit state design, section capacity and connection checks",
+      "kind": "Core",
+      "tags": [
+        "steel",
+        "buckling",
+        "connections",
+        "limit state"
+      ]
+    },
+    "quantitative-methods": {
+      "title": "Quantitative Methods for Engineers",
+      "subtitle": "Experiments, inference and decisions from engineering data",
+      "kind": "Core",
+      "tags": [
+        "statistics",
+        "experiments",
+        "inference",
+        "regression"
+      ]
+    },
+    "machine-learning-smart-mobility": {
+      "title": "Machine Learning for Smart Mobility",
+      "subtitle": "Learning from mobility data with regression, classification and neural networks",
+      "kind": "Computing",
+      "tags": [
+        "Python",
+        "regression",
+        "classification",
+        "neural networks"
+      ]
+    },
+    "professional-english": {
+      "title": "Professional English",
+      "subtitle": "Technical writing, presentations and workplace communication",
+      "kind": "Communication",
+      "tags": [
+        "reports",
+        "presentations",
+        "professional writing"
+      ]
+    },
+    "data-structures-algorithms": {
+      "title": "Data Structures & Algorithms",
+      "subtitle": "Choosing the right structure and measuring the cost",
+      "kind": "Computing",
+      "tags": [
+        "lists",
+        "trees",
+        "graphs",
+        "complexity"
+      ]
+    },
+    "transport-operations-management": {
+      "title": "Transport Operations & Management",
+      "subtitle": "How transport systems are operated, scheduled and priced",
+      "kind": "Professional",
+      "tags": [
+        "operations",
+        "scheduling",
+        "demand",
+        "public transport"
+      ]
+    },
+    "hydraulics-hydrology": {
+      "title": "Hydraulics & Hydrology",
+      "subtitle": "Flow in channels, pipe networks and the rainfall-runoff process",
+      "kind": "Core",
+      "tags": [
+        "open channel",
+        "hydrology",
+        "runoff",
+        "networks"
+      ]
+    },
+    "design-of-concrete-structures": {
+      "title": "Design of Concrete Structures",
+      "subtitle": "Reinforced concrete members to Hong Kong practice",
+      "kind": "Core",
+      "tags": [
+        "concrete",
+        "beams",
+        "columns",
+        "slabs",
+        "limit state"
+      ]
+    },
+    "transportation-highway-engineering": {
+      "title": "Transportation & Highway Engineering",
+      "subtitle": "Road design, traffic flow, pavements and safety",
+      "kind": "Core",
+      "tags": [
+        "highway",
+        "pavement",
+        "traffic flow",
+        "geometry"
+      ]
+    },
+    "geotechnical-design": {
+      "title": "Geotechnical Design",
+      "subtitle": "Foundations, retaining structures, slopes and ground improvement",
+      "kind": "Core",
+      "tags": [
+        "foundations",
+        "retaining walls",
+        "slopes",
+        "ground improvement"
+      ]
+    },
+    "bim-3d-gis": {
+      "title": "BIM & 3D GIS",
+      "subtitle": "Combining building information models with spatial data",
+      "kind": "Professional",
+      "tags": [
+        "BIM",
+        "GIS",
+        "spatial data",
+        "coordination"
+      ]
+    },
+    "service-learning": {
+      "title": "Service Learning",
+      "subtitle": "Engineering in the community: listening, designing and reflecting",
+      "kind": "Breadth",
+      "tags": [
+        "community",
+        "service",
+        "reflection",
+        "teamwork"
+      ]
+    },
+    "artificial-intelligence": {
+      "title": "Artificial Intelligence",
+      "subtitle": "Search, learning and generative models in engineering",
+      "kind": "Computing",
+      "tags": [
+        "AI",
+        "search",
+        "generative models",
+        "evaluation"
+      ]
+    },
+    "design-of-transport-infrastructure": {
+      "title": "Design of Transport Infrastructure",
+      "subtitle": "Junctions, rail and the infrastructure behind movement",
+      "kind": "Core",
+      "tags": [
+        "junctions",
+        "rail",
+        "capacity",
+        "infrastructure"
+      ]
+    },
+    "engineers-in-society": {
+      "title": "Engineers in Society",
+      "subtitle": "Law, ethics, contracts and the engineer's public role",
+      "kind": "Professional",
+      "tags": [
+        "law",
+        "ethics",
+        "contracts",
+        "professional practice"
+      ]
+    },
+    "discovering-chinese-history-hk": {
+      "title": "Discovering Chinese History in Hong Kong",
+      "subtitle": "Hong Kong's past through places, people and sources",
+      "kind": "Breadth",
+      "tags": [
+        "history",
+        "Hong Kong",
+        "heritage",
+        "sources"
+      ]
+    },
+    "ai-iot": {
+      "title": "AIoT",
+      "subtitle": "Sensors, embedded intelligence and connected infrastructure",
+      "kind": "Computing",
+      "tags": [
+        "IoT",
+        "sensors",
+        "edge AI",
+        "networks"
+      ]
+    },
+    "traffic-surveys-planning": {
+      "title": "Traffic Surveys & Transport Planning",
+      "subtitle": "Measuring movement and planning for it",
+      "kind": "Professional",
+      "tags": [
+        "surveys",
+        "demand",
+        "modelling",
+        "planning"
+      ]
+    },
+    "infrastructure-management": {
+      "title": "Infrastructure Management",
+      "subtitle": "Asset condition, maintenance and whole-life decisions",
+      "kind": "Professional",
+      "tags": [
+        "assets",
+        "maintenance",
+        "risk",
+        "whole life"
+      ]
+    },
+    "machine-learning": {
+      "title": "Machine Learning",
+      "subtitle": "Models that learn from data, and how to judge them",
+      "kind": "Computing",
+      "tags": [
+        "learning",
+        "models",
+        "validation",
+        "ethics"
+      ]
+    }
+  },
+  "zh-Hant": {
+    "academic-english": {
+      "title": "學術及專業英語",
+      "subtitle": "精準的閱讀、寫作與演說",
+      "kind": "傳意",
+      "tags": [
+        "寫作",
+        "報告",
+        "簡報",
+        "學術文體"
+      ]
+    },
+    "innovation-entrepreneurship": {
+      "title": "創新與創業",
+      "subtitle": "將工程構思轉化為人實際使用的產品",
+      "kind": "通識",
+      "tags": [
+        "設計思維",
+        "價值主張",
+        "初創企業"
+      ]
+    },
+    "leadership-teamwork": {
+      "title": "領導與團隊協作",
+      "subtitle": "在切身利害關頭與人共事",
+      "kind": "通識",
+      "tags": [
+        "團隊",
+        "溝通",
+        "回饋",
+        "項目"
+      ]
+    },
+    "structural-mechanics": {
+      "title": "結構力學",
+      "subtitle": "結構如何承受荷載，以及如何變形",
+      "kind": "核心",
+      "tags": [
+        "應力",
+        "應變",
+        "彎曲",
+        "扭轉",
+        "柱"
+      ]
+    },
+    "ai-data-analysis": {
+      "title": "人工智能與數據分析",
+      "subtitle": "在數據中尋找規律並誠實解讀",
+      "kind": "計算",
+      "tags": [
+        "統計",
+        "迴歸",
+        "SBI",
+        "數據質素"
+      ]
+    },
+    "air-noise-pollution": {
+      "title": "空氣與噪音污染",
+      "subtitle": "量度、模擬及管理我們呼吸與聽到的環境",
+      "kind": "環境",
+      "tags": [
+        "空氣質素",
+        "聲學",
+        "擴散",
+        "控制"
+      ]
+    },
+    "construction-introduction": {
+      "title": "建造概論",
+      "subtitle": "行業、項目團隊與工作本身",
+      "kind": "核心",
+      "tags": [
+        "行業",
+        "採購",
+        "工地作業",
+        "安全"
+      ]
+    },
+    "aviation-studies": {
+      "title": "航空與基礎設施",
+      "subtitle": "飛行原理與機場工程設計",
+      "kind": "通識",
+      "tags": [
+        "升力",
+        "機場",
+        "跑道",
+        "航空交通"
+      ]
+    },
+    "advanced-structural-mechanics": {
+      "title": "高等結構力學",
+      "subtitle": "彎曲、剪力中心、扭轉與屈曲",
+      "kind": "核心",
+      "tags": [
+        "非對稱彎曲",
+        "剪力中心",
+        "扭轉",
+        "屈曲"
+      ]
+    },
+    "programming-fundamentals": {
+      "title": "程式設計基礎",
+      "subtitle": "以程式碼思考：邏輯、數據與函數",
+      "kind": "計算",
+      "tags": [
+        "Python",
+        "迴圈",
+        "函數",
+        "檔案",
+        "演算法"
+      ]
+    },
+    "construction-materials": {
+      "title": "建造材料",
+      "subtitle": "混凝土與鋼材：從成分到測試",
+      "kind": "核心",
+      "tags": [
+        "混凝土",
+        "鋼材",
+        "配合比設計",
+        "測試",
+        "耐久性"
+      ]
+    },
+    "engineering-geology": {
+      "title": "工程地質學",
+      "subtitle": "建造之前先讀懂地層",
+      "kind": "核心",
+      "tags": [
+        "礦物",
+        "岩石",
+        "地質構造",
+        "地圖",
+        "地盤勘察"
+      ]
+    },
+    "bim-management": {
+      "title": "BIM 管理",
+      "subtitle": "數碼模型、資訊與項目生命周期",
+      "kind": "專業",
+      "tags": [
+        "BIM",
+        "CDE",
+        "EIR",
+        "資訊管理"
+      ]
+    },
+    "chinese-professional-communication": {
+      "title": "專業中文傳意",
+      "subtitle": "工程專業寫作、公函與匯報",
+      "kind": "傳意",
+      "tags": [
+        "專業寫作",
+        "公函",
+        "匯報",
+        "書面語"
+      ]
+    },
+    "engineering-statistics": {
+      "title": "工程統計學",
+      "subtitle": "概率、估計與不確定情況下的決策",
+      "kind": "核心",
+      "tags": [
+        "概率",
+        "分佈",
+        "置信區間",
+        "假設檢定"
+      ]
+    },
+    "data-analytics-r": {
+      "title": "R 數據分析",
+      "subtitle": "清理、繪圖及模擬真實數據",
+      "kind": "計算",
+      "tags": [
+        "R",
+        "數據整理",
+        "視覺化",
+        "時間序列",
+        "ARIMA"
+      ]
+    },
+    "fluid-mechanics": {
+      "title": "流體力學",
+      "subtitle": "壓力、流動與水中物體所受的力",
+      "kind": "核心",
+      "tags": [
+        "流體靜力學",
+        "伯努利",
+        "管道流",
+        "邊界層"
+      ]
+    },
+    "soil-mechanics": {
+      "title": "土力學",
+      "subtitle": "有效應力、固結、抗剪強度與土壓力",
+      "kind": "核心",
+      "tags": [
+        "分類",
+        "有效應力",
+        "固結",
+        "抗剪強度",
+        "土壓力"
+      ]
+    },
+    "surveying": {
+      "title": "工程測量",
+      "subtitle": "量度、計算與實地放樣",
+      "kind": "核心",
+      "tags": [
+        "水準測量",
+        "導線測量",
+        "坐標",
+        "誤差",
+        "放樣"
+      ]
+    },
+    "integrated-project-quality": {
+      "title": "綜合項目與品質管理",
+      "subtitle": "計劃、品質、預製組件與專業實務",
+      "kind": "專業",
+      "tags": [
+        "品質",
+        "BIM",
+        "MiC",
+        "工地檢查",
+        "項目交付"
+      ]
+    },
+    "structural-analysis": {
+      "title": "結構分析",
+      "subtitle": "框架、影響線、勁度與真實結構的行為",
+      "kind": "核心",
+      "tags": [
+        "分析",
+        "框架",
+        "勁度",
+        "影響線"
+      ]
+    },
+    "construction-management": {
+      "title": "建造管理",
+      "subtitle": "在建項目中的規劃、進度編排、採購與控制",
+      "kind": "專業",
+      "tags": [
+        "進度計劃",
+        "成本",
+        "採購",
+        "BIM"
+      ]
+    },
+    "design-of-steel-structures": {
+      "title": "鋼結構設計",
+      "subtitle": "極限狀態設計、截面承載力與接頭驗算",
+      "kind": "核心",
+      "tags": [
+        "鋼材",
+        "屈曲",
+        "接頭",
+        "極限狀態"
+      ]
+    },
+    "quantitative-methods": {
+      "title": "工程師定量方法",
+      "subtitle": "從工程數據進行實驗、推論與決策",
+      "kind": "核心",
+      "tags": [
+        "統計",
+        "實驗",
+        "推論",
+        "迴歸"
+      ]
+    },
+    "machine-learning-smart-mobility": {
+      "title": "智慧出行機器學習",
+      "subtitle": "以迴歸、分類與神經網絡從出行數據中學習",
+      "kind": "計算",
+      "tags": [
+        "Python",
+        "迴歸",
+        "分類",
+        "神經網絡"
+      ]
+    },
+    "professional-english": {
+      "title": "專業英語",
+      "subtitle": "技術寫作、簡報與職場溝通",
+      "kind": "傳意",
+      "tags": [
+        "報告",
+        "簡報",
+        "專業寫作"
+      ]
+    },
+    "data-structures-algorithms": {
+      "title": "數據結構與演算法",
+      "subtitle": "選擇合適的結構並衡量其成本",
+      "kind": "計算",
+      "tags": [
+        "列表",
+        "樹",
+        "圖",
+        "複雜度"
+      ]
+    },
+    "transport-operations-management": {
+      "title": "運輸營運與管理",
+      "subtitle": "運輸系統如何營運、編排班次與定價",
+      "kind": "專業",
+      "tags": [
+        "營運",
+        "班次編排",
+        "需求",
+        "公共交通"
+      ]
+    },
+    "hydraulics-hydrology": {
+      "title": "水力学與水文學",
+      "subtitle": "渠道流、管網流動與降雨徑流過程",
+      "kind": "核心",
+      "tags": [
+        "明渠",
+        "水文學",
+        "徑流",
+        "管網"
+      ]
+    },
+    "design-of-concrete-structures": {
+      "title": "混凝土結構設計",
+      "subtitle": "按香港實務設計鋼筋混凝土構件",
+      "kind": "核心",
+      "tags": [
+        "混凝土",
+        "樑",
+        "柱",
+        "板",
+        "極限狀態"
+      ]
+    },
+    "transportation-highway-engineering": {
+      "title": "運輸與公路工程",
+      "subtitle": "道路設計、交通流量、路面與安全",
+      "kind": "核心",
+      "tags": [
+        "公路",
+        "路面",
+        "交通流量",
+        "線形"
+      ]
+    },
+    "geotechnical-design": {
+      "title": "岩土設計",
+      "subtitle": "基礎、擋土結構、斜坡與地基改良",
+      "kind": "核心",
+      "tags": [
+        "基礎",
+        "擋土牆",
+        "斜坡",
+        "地基改良"
+      ]
+    },
+    "bim-3d-gis": {
+      "title": "BIM 與三維 GIS",
+      "subtitle": "結合建築資訊模型與空間數據",
+      "kind": "專業",
+      "tags": [
+        "BIM",
+        "GIS",
+        "空間數據",
+        "協調"
+      ]
+    },
+    "service-learning": {
+      "title": "服務學習",
+      "subtitle": "社區中的工程：聆聽、設計與反思",
+      "kind": "通識",
+      "tags": [
+        "社區",
+        "服務",
+        "反思",
+        "團隊協作"
+      ]
+    },
+    "artificial-intelligence": {
+      "title": "人工智能",
+      "subtitle": "工程中的搜尋、學習與生成模型",
+      "kind": "計算",
+      "tags": [
+        "AI",
+        "搜尋",
+        "生成模型",
+        "評估"
+      ]
+    },
+    "design-of-transport-infrastructure": {
+      "title": "運輸基礎設施設計",
+      "subtitle": "路口、鐵路與支撐人流物流的基礎設施",
+      "kind": "核心",
+      "tags": [
+        "路口",
+        "鐵路",
+        "容量",
+        "基礎設施"
+      ]
+    },
+    "engineers-in-society": {
+      "title": "社會中的工程師",
+      "subtitle": "法律、倫理、合約與工程師的公共角色",
+      "kind": "專業",
+      "tags": [
+        "法律",
+        "倫理",
+        "合約",
+        "專業實務"
+      ]
+    },
+    "discovering-chinese-history-hk": {
+      "title": "從香港發現中國歷史",
+      "subtitle": "透過地方、人物與史料認識香港的過去",
+      "kind": "通識",
+      "tags": [
+        "歷史",
+        "香港",
+        "文化遺產",
+        "史料"
+      ]
+    },
+    "ai-iot": {
+      "title": "AIoT",
+      "subtitle": "感測器、嵌入式智能與互聯基礎設施",
+      "kind": "計算",
+      "tags": [
+        "物聯網",
+        "感測器",
+        "邊緣 AI",
+        "網絡"
+      ]
+    },
+    "traffic-surveys-planning": {
+      "title": "交通調查與運輸規劃",
+      "subtitle": "量度人流車流並為其規劃",
+      "kind": "專業",
+      "tags": [
+        "調查",
+        "需求",
+        "模擬",
+        "規劃"
+      ]
+    },
+    "infrastructure-management": {
+      "title": "基礎設施管理",
+      "subtitle": "資產狀況、維修與全生命周期決策",
+      "kind": "專業",
+      "tags": [
+        "資產",
+        "維修",
+        "風險",
+        "全生命周期"
+      ]
+    },
+    "machine-learning": {
+      "title": "機器學習",
+      "subtitle": "從數據學習的模型，以及如何評判它們",
+      "kind": "計算",
+      "tags": [
+        "學習",
+        "模型",
+        "驗證",
+        "倫理"
+      ]
+    }
+  },
+  "ja": {
+    "academic-english": {
+      "title": "アカデミック・プロフェッショナル英語",
+      "subtitle": "正確さを伴う読解・ライティング・スピーキング",
+      "kind": "コミュニケーション",
+      "tags": [
+        "ライティング",
+        "レポート",
+        "プレゼンテーション",
+        "アカデミックスタイル"
+      ]
+    },
+    "innovation-entrepreneurship": {
+      "title": "イノベーションと起業",
+      "subtitle": "工学的アイデアを人々が使うものへ変える",
+      "kind": "教養",
+      "tags": [
+        "デザイン思考",
+        "バリュープロポジション",
+        "スタートアップ"
+      ]
+    },
+    "leadership-teamwork": {
+      "title": "リーダーシップとチームワーク",
+      "subtitle": "重要な局面で人々と協働する",
+      "kind": "教養",
+      "tags": [
+        "チーム",
+        "コミュニケーション",
+        "フィードバック",
+        "プロジェクト"
+      ]
+    },
+    "structural-mechanics": {
+      "title": "構造力学",
+      "subtitle": "構造物が荷重を支え、どのように変形するか",
+      "kind": "コア",
+      "tags": [
+        "応力",
+        "ひずみ",
+        "曲げ",
+        "ねじり",
+        "柱"
+      ]
+    },
+    "ai-data-analysis": {
+      "title": "AIとデータ分析",
+      "subtitle": "データの中にパターンを見つけ、誠実に読み解く",
+      "kind": "計算",
+      "tags": [
+        "統計",
+        "回帰",
+        "SBI",
+        "データ品質"
+      ]
+    },
+    "air-noise-pollution": {
+      "title": "大気・騒音汚染",
+      "subtitle": "私たちが呼吸し聴くものを測定・モデル化・管理する",
+      "kind": "環境",
+      "tags": [
+        "大気質",
+        "音響",
+        "拡散",
+        "制御"
+      ]
+    },
+    "construction-introduction": {
+      "title": "建設入門",
+      "subtitle": "産業、プロジェクトチーム、そして仕事そのもの",
+      "kind": "コア",
+      "tags": [
+        "産業",
+        "調達",
+        "現場作業",
+        "安全"
+      ]
+    },
+    "aviation-studies": {
+      "title": "航空とインフラ",
+      "subtitle": "飛行の仕組みと空港の工学的設計",
+      "kind": "教養",
+      "tags": [
+        "揚力",
+        "空港",
+        "滑走路",
+        "航空交通"
+      ]
+    },
+    "advanced-structural-mechanics": {
+      "title": "上級構造力学",
+      "subtitle": "曲げ、せん断中心、ねじり、座屈",
+      "kind": "コア",
+      "tags": [
+        "非対称曲げ",
+        "せん断中心",
+        "ねじり",
+        "座屈"
+      ]
+    },
+    "programming-fundamentals": {
+      "title": "プログラミング基礎",
+      "subtitle": "コードで考える：論理、データ、関数",
+      "kind": "計算",
+      "tags": [
+        "Python",
+        "ループ",
+        "関数",
+        "ファイル",
+        "アルゴリズム"
+      ]
+    },
+    "construction-materials": {
+      "title": "建設材料",
+      "subtitle": "コンクリートと鋼：組成から試験まで",
+      "kind": "コア",
+      "tags": [
+        "コンクリート",
+        "鋼",
+        "配合設計",
+        "試験",
+        "耐久性"
+      ]
+    },
+    "engineering-geology": {
+      "title": "応用地質学",
+      "subtitle": "建設前に地盤を読み解く",
+      "kind": "コア",
+      "tags": [
+        "鉱物",
+        "岩石",
+        "地質構造",
+        "地図",
+        "地盤調査"
+      ]
+    },
+    "bim-management": {
+      "title": "BIMマネジメント",
+      "subtitle": "デジタルモデル、情報、プロジェクトライフサイクル",
+      "kind": "専門",
+      "tags": [
+        "BIM",
+        "CDE",
+        "EIR",
+        "情報管理"
+      ]
+    },
+    "chinese-professional-communication": {
+      "title": "専門中国語コミュニケーション",
+      "subtitle": "工学専門の文章作成、公的書簡、報告",
+      "kind": "コミュニケーション",
+      "tags": [
+        "専門文章",
+        "公的書簡",
+        "報告",
+        "書面語"
+      ]
+    },
+    "engineering-statistics": {
+      "title": "工学統計学",
+      "subtitle": "確率、推定、不確実性下の意思決定",
+      "kind": "コア",
+      "tags": [
+        "確率",
+        "分布",
+        "信頼区間",
+        "仮説検定"
+      ]
+    },
+    "data-analytics-r": {
+      "title": "Rによるデータ分析",
+      "subtitle": "実データのクリーニング、可視化、モデリング",
+      "kind": "計算",
+      "tags": [
+        "R",
+        "データ整形",
+        "可視化",
+        "時系列",
+        "ARIMA"
+      ]
+    },
+    "fluid-mechanics": {
+      "title": "流体力学",
+      "subtitle": "圧力、流れ、水中の物体に働く力",
+      "kind": "コア",
+      "tags": [
+        "静水力学",
+        "ベルヌーイ",
+        "管流れ",
+        "境界層"
+      ]
+    },
+    "soil-mechanics": {
+      "title": "土質力学",
+      "subtitle": "有効応力、圧密、せん断強度、土圧",
+      "kind": "コア",
+      "tags": [
+        "分類",
+        "有効応力",
+        "圧密",
+        "せん断強度",
+        "土圧"
+      ]
+    },
+    "surveying": {
+      "title": "測量学",
+      "subtitle": "地盤の測定、計算、設置",
+      "kind": "コア",
+      "tags": [
+        "水準測量",
+        "トラバース",
+        "座標",
+        "誤差",
+        "設置"
+      ]
+    },
+    "integrated-project-quality": {
+      "title": "統合プロジェクト・品質管理",
+      "subtitle": "計画、品質、プレファブリケーション、専門実務",
+      "kind": "専門",
+      "tags": [
+        "品質",
+        "BIM",
+        "MiC",
+        "現場検査",
+        "プロジェクト遂行"
+      ]
+    },
+    "structural-analysis": {
+      "title": "構造解析",
+      "subtitle": "骨組、影響線、剛性、実構造物の挙動",
+      "kind": "コア",
+      "tags": [
+        "解析",
+        "骨組",
+        "剛性",
+        "影響線"
+      ]
+    },
+    "construction-management": {
+      "title": "建設マネジメント",
+      "subtitle": "進行中プロジェクトの計画、工程、調達、管理",
+      "kind": "専門",
+      "tags": [
+        "工程",
+        "コスト",
+        "調達",
+        "BIM"
+      ]
+    },
+    "design-of-steel-structures": {
+      "title": "鋼構造設計",
+      "subtitle": "限界状態設計、断面耐力、接合部の検討",
+      "kind": "コア",
+      "tags": [
+        "鋼",
+        "座屈",
+        "接合部",
+        "限界状態"
+      ]
+    },
+    "quantitative-methods": {
+      "title": "エンジニアのための定量手法",
+      "subtitle": "工学データによる実験、推論、意思決定",
+      "kind": "コア",
+      "tags": [
+        "統計",
+        "実験",
+        "推論",
+        "回帰"
+      ]
+    },
+    "machine-learning-smart-mobility": {
+      "title": "スマートモビリティのための機械学習",
+      "subtitle": "回帰・分類・ニューラルネットワークでモビリティデータから学ぶ",
+      "kind": "計算",
+      "tags": [
+        "Python",
+        "回帰",
+        "分類",
+        "ニューラルネットワーク"
+      ]
+    },
+    "professional-english": {
+      "title": "プロフェッショナル英語",
+      "subtitle": "技術文書作成、プレゼンテーション、職場コミュニケーション",
+      "kind": "コミュニケーション",
+      "tags": [
+        "レポート",
+        "プレゼンテーション",
+        "専門文書作成"
+      ]
+    },
+    "data-structures-algorithms": {
+      "title": "データ構造とアルゴリズム",
+      "subtitle": "適切な構造の選択とコストの測定",
+      "kind": "計算",
+      "tags": [
+        "リスト",
+        "木",
+        "グラフ",
+        "計算量"
+      ]
+    },
+    "transport-operations-management": {
+      "title": "交通運用とマネジメント",
+      "subtitle": "交通システムの運用、ダイヤ編成、料金設定",
+      "kind": "専門",
+      "tags": [
+        "運用",
+        "ダイヤ編成",
+        "需要",
+        "公共交通"
+      ]
+    },
+    "hydraulics-hydrology": {
+      "title": "水理学と水文学",
+      "subtitle": "水路・管路網の流れと降雨流出過程",
+      "kind": "コア",
+      "tags": [
+        "開水路",
+        "水文学",
+        "流出",
+        "ネットワーク"
+      ]
+    },
+    "design-of-concrete-structures": {
+      "title": "コンクリート構造設計",
+      "subtitle": "香港の実務に基づく鉄筋コンクリート部材",
+      "kind": "コア",
+      "tags": [
+        "コンクリート",
+        "梁",
+        "柱",
+        "スラブ",
+        "限界状態"
+      ]
+    },
+    "transportation-highway-engineering": {
+      "title": "交通・道路工学",
+      "subtitle": "道路設計、交通流、舗装、安全性",
+      "kind": "コア",
+      "tags": [
+        "道路",
+        "舗装",
+        "交通流",
+        "線形"
+      ]
+    },
+    "geotechnical-design": {
+      "title": "地盤工学設計",
+      "subtitle": "基礎、擁壁、斜面、地盤改良",
+      "kind": "コア",
+      "tags": [
+        "基礎",
+        "擁壁",
+        "斜面",
+        "地盤改良"
+      ]
+    },
+    "bim-3d-gis": {
+      "title": "BIMと3D GIS",
+      "subtitle": "ビルディングインフォメーションモデルと空間データの統合",
+      "kind": "専門",
+      "tags": [
+        "BIM",
+        "GIS",
+        "空間データ",
+        "調整"
+      ]
+    },
+    "service-learning": {
+      "title": "サービスラーニング",
+      "subtitle": "地域社会における工学：傾聴、設計、省察",
+      "kind": "教養",
+      "tags": [
+        "地域社会",
+        "奉仕",
+        "省察",
+        "チームワーク"
+      ]
+    },
+    "artificial-intelligence": {
+      "title": "人工知能",
+      "subtitle": "工学における探索、学習、生成モデル",
+      "kind": "計算",
+      "tags": [
+        "AI",
+        "探索",
+        "生成モデル",
+        "評価"
+      ]
+    },
+    "design-of-transport-infrastructure": {
+      "title": "交通インフラ設計",
+      "subtitle": "交差点、鉄道、移動を支えるインフラ",
+      "kind": "コア",
+      "tags": [
+        "交差点",
+        "鉄道",
+        "容量",
+        "インフラ"
+      ]
+    },
+    "engineers-in-society": {
+      "title": "社会におけるエンジニア",
+      "subtitle": "法、倫理、契約、エンジニアの公共的役割",
+      "kind": "専門",
+      "tags": [
+        "法",
+        "倫理",
+        "契約",
+        "専門実務"
+      ]
+    },
+    "discovering-chinese-history-hk": {
+      "title": "香港で中国史を発見する",
+      "subtitle": "場所、人々、史料を通して見る香港の過去",
+      "kind": "教養",
+      "tags": [
+        "歴史",
+        "香港",
+        "遺産",
+        "史料"
+      ]
+    },
+    "ai-iot": {
+      "title": "AIoT",
+      "subtitle": "センサー、組込み知能、接続されたインフラ",
+      "kind": "計算",
+      "tags": [
+        "IoT",
+        "センサー",
+        "エッジAI",
+        "ネットワーク"
+      ]
+    },
+    "traffic-surveys-planning": {
+      "title": "交通調査と交通計画",
+      "subtitle": "移動を測定し、計画する",
+      "kind": "専門",
+      "tags": [
+        "調査",
+        "需要",
+        "モデリング",
+        "計画"
+      ]
+    },
+    "infrastructure-management": {
+      "title": "インフラマネジメント",
+      "subtitle": "資産状態、維持管理、ライフサイクル全体の意思決定",
+      "kind": "専門",
+      "tags": [
+        "資産",
+        "維持管理",
+        "リスク",
+        "ライフサイクル"
+      ]
+    },
+    "machine-learning": {
+      "title": "機械学習",
+      "subtitle": "データから学ぶモデルとその評価方法",
+      "kind": "計算",
+      "tags": [
+        "学習",
+        "モデル",
+        "検証",
+        "倫理"
+      ]
+    }
+  },
+  "ko": {
+    "academic-english": {
+      "title": "학술 및 전문 영어",
+      "subtitle": "정확성을 갖춘 읽기, 쓰기, 말하기",
+      "kind": "커뮤니케이션",
+      "tags": [
+        "쓰기",
+        "보고서",
+        "발표",
+        "학술 문체"
+      ]
+    },
+    "innovation-entrepreneurship": {
+      "title": "혁신과 창업",
+      "subtitle": "공학적 아이디어를 사람들이 사용하는 것으로 전환하기",
+      "kind": "교양",
+      "tags": [
+        "디자인 사고",
+        "가치 제안",
+        "스타트업"
+      ]
+    },
+    "leadership-teamwork": {
+      "title": "리더십과 팀워크",
+      "subtitle": "중요한 상황에서 사람들과 함께 일하기",
+      "kind": "교양",
+      "tags": [
+        "팀",
+        "커뮤니케이션",
+        "피드백",
+        "프로젝트"
+      ]
+    },
+    "structural-mechanics": {
+      "title": "구조 역학",
+      "subtitle": "구조물이 하중을 지지하는 방식과 변형되는 방식",
+      "kind": "핵심",
+      "tags": [
+        "응력",
+        "변형률",
+        "휨",
+        "비틀림",
+        "기둥"
+      ]
+    },
+    "ai-data-analysis": {
+      "title": "AI와 데이터 분석",
+      "subtitle": "데이터에서 패턴을 찾고 정직하게 해석하기",
+      "kind": "컴퓨팅",
+      "tags": [
+        "통계",
+        "회귀",
+        "SBI",
+        "데이터 품질"
+      ]
+    },
+    "air-noise-pollution": {
+      "title": "대기 및 소음 오염",
+      "subtitle": "우리가 숨 쉬고 듣는 것의 측정, 모델링, 관리",
+      "kind": "환경",
+      "tags": [
+        "대기 질",
+        "음향",
+        "확산",
+        "제어"
+      ]
+    },
+    "construction-introduction": {
+      "title": "건설 입문",
+      "subtitle": "산업, 프로젝트 팀, 그리고 업무 자체",
+      "kind": "핵심",
+      "tags": [
+        "산업",
+        "조달",
+        "현장 작업",
+        "안전"
+      ]
+    },
+    "aviation-studies": {
+      "title": "항공 및 인프라",
+      "subtitle": "비행의 원리와 공항의 공학적 설계",
+      "kind": "교양",
+      "tags": [
+        "양력",
+        "공항",
+        "활주로",
+        "항공 교통"
+      ]
+    },
+    "advanced-structural-mechanics": {
+      "title": "고급 구조 역학",
+      "subtitle": "휨, 전단 중심, 비틀림 및 좌굴",
+      "kind": "핵심",
+      "tags": [
+        "비대칭 휨",
+        "전단 중심",
+        "비틀림",
+        "좌굴"
+      ]
+    },
+    "programming-fundamentals": {
+      "title": "프로그래밍 기초",
+      "subtitle": "코드로 사고하기: 논리, 데이터, 함수",
+      "kind": "컴퓨팅",
+      "tags": [
+        "Python",
+        "반복문",
+        "함수",
+        "파일",
+        "알고리즘"
+      ]
+    },
+    "construction-materials": {
+      "title": "건설 재료",
+      "subtitle": "조성에서 시험까지, 콘크리트와 강재",
+      "kind": "핵심",
+      "tags": [
+        "콘크리트",
+        "강재",
+        "배합 설계",
+        "시험",
+        "내구성"
+      ]
+    },
+    "engineering-geology": {
+      "title": "공학 지질학",
+      "subtitle": "건설 전에 지반을 읽기",
+      "kind": "핵심",
+      "tags": [
+        "광물",
+        "암석",
+        "구조",
+        "지도",
+        "지반 조사"
+      ]
+    },
+    "bim-management": {
+      "title": "BIM 관리",
+      "subtitle": "디지털 모델, 정보, 그리고 프로젝트 생애주기",
+      "kind": "전문",
+      "tags": [
+        "BIM",
+        "CDE",
+        "EIR",
+        "정보 관리"
+      ]
+    },
+    "chinese-professional-communication": {
+      "title": "전문 중국어 전의",
+      "subtitle": "공학 전문 작문, 공문 및 보고",
+      "kind": "커뮤니케이션",
+      "tags": [
+        "전문 작문",
+        "공문",
+        "보고",
+        "서면어"
+      ]
+    },
+    "engineering-statistics": {
+      "title": "공학 통계",
+      "subtitle": "확률, 추정, 그리고 불확실성 속 의사결정",
+      "kind": "핵심",
+      "tags": [
+        "확률",
+        "분포",
+        "신뢰 구간",
+        "가설 검정"
+      ]
+    },
+    "data-analytics-r": {
+      "title": "R을 활용한 데이터 분석",
+      "subtitle": "실제 데이터의 정제, 시각화 및 모델링",
+      "kind": "컴퓨팅",
+      "tags": [
+        "R",
+        "데이터 정제",
+        "시각화",
+        "시계열",
+        "ARIMA"
+      ]
+    },
+    "fluid-mechanics": {
+      "title": "유체 역학",
+      "subtitle": "압력, 흐름, 그리고 수중 물체에 작용하는 힘",
+      "kind": "핵심",
+      "tags": [
+        "정수 역학",
+        "베르누이",
+        "관 흐름",
+        "경계층"
+      ]
+    },
+    "soil-mechanics": {
+      "title": "흙의 역학",
+      "subtitle": "유효 응력, 압밀, 전단 강도 및 토압",
+      "kind": "핵심",
+      "tags": [
+        "분류",
+        "유효 응력",
+        "압밀",
+        "전단 강도",
+        "토압"
+      ]
+    },
+    "surveying": {
+      "title": "공학 측량",
+      "subtitle": "지반의 측정, 계산 및 설정",
+      "kind": "핵심",
+      "tags": [
+        "수준 측량",
+        "트래버스",
+        "좌표",
+        "오차",
+        "설정"
+      ]
+    },
+    "integrated-project-quality": {
+      "title": "통합 프로젝트 및 품질 관리",
+      "subtitle": "계획, 품질, 사전 제작 및 전문 실무",
+      "kind": "전문",
+      "tags": [
+        "품질",
+        "BIM",
+        "MiC",
+        "현장 검사",
+        "프로젝트 수행"
+      ]
+    },
+    "structural-analysis": {
+      "title": "구조 해석",
+      "subtitle": "프레임, 영향선, 강성 및 실제 구조물의 거동",
+      "kind": "핵심",
+      "tags": [
+        "해석",
+        "프레임",
+        "강성",
+        "영향선"
+      ]
+    },
+    "construction-management": {
+      "title": "건설 관리",
+      "subtitle": "실제 프로젝트에서의 계획, 공정, 조달 및 통제",
+      "kind": "전문",
+      "tags": [
+        "공정",
+        "비용",
+        "조달",
+        "BIM"
+      ]
+    },
+    "design-of-steel-structures": {
+      "title": "강구조 설계",
+      "subtitle": "한계 상태 설계, 단면 성능 및 접합부 검토",
+      "kind": "핵심",
+      "tags": [
+        "강재",
+        "좌굴",
+        "접합부",
+        "한계 상태"
+      ]
+    },
+    "quantitative-methods": {
+      "title": "공학도를 위한 정량적 방법",
+      "subtitle": "공학 데이터로부터의 실험, 추론 및 의사결정",
+      "kind": "핵심",
+      "tags": [
+        "통계",
+        "실험",
+        "추론",
+        "회귀"
+      ]
+    },
+    "machine-learning-smart-mobility": {
+      "title": "스마트 모빌리티를 위한 머신러닝",
+      "subtitle": "회귀, 분류, 신경망을 통한 모빌리티 데이터 학습",
+      "kind": "컴퓨팅",
+      "tags": [
+        "Python",
+        "회귀",
+        "분류",
+        "신경망"
+      ]
+    },
+    "professional-english": {
+      "title": "전문 영어",
+      "subtitle": "기술 작문, 발표 및 직장 커뮤니케이션",
+      "kind": "커뮤니케이션",
+      "tags": [
+        "보고서",
+        "발표",
+        "전문 작문"
+      ]
+    },
+    "data-structures-algorithms": {
+      "title": "자료 구조와 알고리즘",
+      "subtitle": "올바른 구조 선택과 비용 측정",
+      "kind": "컴퓨팅",
+      "tags": [
+        "리스트",
+        "트리",
+        "그래프",
+        "복잡도"
+      ]
+    },
+    "transport-operations-management": {
+      "title": "교통 운영 및 관리",
+      "subtitle": "교통 시스템의 운영, 운행 계획 및 요금 책정 방식",
+      "kind": "전문",
+      "tags": [
+        "운영",
+        "운행 계획",
+        "수요",
+        "대중교통"
+      ]
+    },
+    "hydraulics-hydrology": {
+      "title": "수리학 및 수문학",
+      "subtitle": "수로와 관망의 흐름, 그리고 강우-유출 과정",
+      "kind": "핵심",
+      "tags": [
+        "개수로",
+        "수문학",
+        "유출",
+        "관망"
+      ]
+    },
+    "design-of-concrete-structures": {
+      "title": "콘크리트 구조 설계",
+      "subtitle": "홍콩 실무에 따른 철근 콘크리트 부재",
+      "kind": "핵심",
+      "tags": [
+        "콘크리트",
+        "보",
+        "기둥",
+        "슬래브",
+        "한계 상태"
+      ]
+    },
+    "transportation-highway-engineering": {
+      "title": "교통 및 도로 공학",
+      "subtitle": "도로 설계, 교통 흐름, 포장 및 안전",
+      "kind": "핵심",
+      "tags": [
+        "도로",
+        "포장",
+        "교통 흐름",
+        "기하 구조"
+      ]
+    },
+    "geotechnical-design": {
+      "title": "지반 공학 설계",
+      "subtitle": "기초, 옹벽 구조물, 사면 및 지반 개량",
+      "kind": "핵심",
+      "tags": [
+        "기초",
+        "옹벽",
+        "사면",
+        "지반 개량"
+      ]
+    },
+    "bim-3d-gis": {
+      "title": "BIM과 3D GIS",
+      "subtitle": "건물 정보 모델과 공간 데이터의 결합",
+      "kind": "전문",
+      "tags": [
+        "BIM",
+        "GIS",
+        "공간 데이터",
+        "조정"
+      ]
+    },
+    "service-learning": {
+      "title": "서비스 러닝",
+      "subtitle": "지역 사회 속 공학: 경청, 설계, 성찰",
+      "kind": "교양",
+      "tags": [
+        "지역 사회",
+        "봉사",
+        "성찰",
+        "팀워크"
+      ]
+    },
+    "artificial-intelligence": {
+      "title": "인공지능",
+      "subtitle": "공학에서의 탐색, 학습 및 생성 모델",
+      "kind": "컴퓨팅",
+      "tags": [
+        "AI",
+        "탐색",
+        "생성 모델",
+        "평가"
+      ]
+    },
+    "design-of-transport-infrastructure": {
+      "title": "교통 인프라 설계",
+      "subtitle": "교차로, 철도, 그리고 이동을 뒷받침하는 인프라",
+      "kind": "핵심",
+      "tags": [
+        "교차로",
+        "철도",
+        "용량",
+        "인프라"
+      ]
+    },
+    "engineers-in-society": {
+      "title": "사회 속의 엔지니어",
+      "subtitle": "법, 윤리, 계약 및 엔지니어의 공적 역할",
+      "kind": "전문",
+      "tags": [
+        "법",
+        "윤리",
+        "계약",
+        "전문 실무"
+      ]
+    },
+    "discovering-chinese-history-hk": {
+      "title": "홍콩에서 만나는 중국사",
+      "subtitle": "장소, 사람, 사료를 통해 본 홍콩의 과거",
+      "kind": "교양",
+      "tags": [
+        "역사",
+        "홍콩",
+        "유산",
+        "사료"
+      ]
+    },
+    "ai-iot": {
+      "title": "AIoT",
+      "subtitle": "센서, 임베디드 지능 및 연결된 인프라",
+      "kind": "컴퓨팅",
+      "tags": [
+        "IoT",
+        "센서",
+        "엣지 AI",
+        "네트워크"
+      ]
+    },
+    "traffic-surveys-planning": {
+      "title": "교통 조사 및 교통 계획",
+      "subtitle": "이동의 측정과 그에 대한 계획",
+      "kind": "전문",
+      "tags": [
+        "조사",
+        "수요",
+        "모델링",
+        "계획"
+      ]
+    },
+    "infrastructure-management": {
+      "title": "인프라 관리",
+      "subtitle": "자산 상태, 유지보수 및 전 생애 의사결정",
+      "kind": "전문",
+      "tags": [
+        "자산",
+        "유지보수",
+        "위험",
+        "전 생애"
+      ]
+    },
+    "machine-learning": {
+      "title": "머신러닝",
+      "subtitle": "데이터로부터 학습하는 모델과 그 평가 방법",
+      "kind": "컴퓨팅",
+      "tags": [
+        "학습",
+        "모델",
+        "검증",
+        "윤리"
+      ]
+    }
+  }
+}

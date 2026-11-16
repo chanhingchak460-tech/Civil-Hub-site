@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>機械学習 — Civil Hub</title>
+<meta name="description" content="モデルがデータからどのようにパターンを学習するのか、そしてそのモデルが優れているかどうかをどう見極めるのかを扱う。回帰、分類、検証、実際の問いに合った指標、過学習、ニューラルネットワーク、モデルを実運用する際の倫理について解説する。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/machine-learning.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="機械学習 — Civil Hub">
+<meta property="og:description" content="モデルがデータからどのようにパターンを学習するのか、そしてそのモデルが優れているかどうかをどう見極めるのかを扱う。回帰、分類、検証、実際の問いに合った指標、過学習、ニューラルネットワーク、モデルを実運用する際の倫理について解説する。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/machine-learning.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="machine-learning.html" data-alt-zh-hant="machine-learning.zh-Hant.html" data-alt-ja="machine-learning.ja.html" data-alt-ko="machine-learning.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">機械学習</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">計算</p>
+          <h1>機械学習</h1>
+          <p class="subject-sub">データから学ぶモデルとその評価方法</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>計算</li><li><b data-i18n="subject.read">Read</b>9 分</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>10</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">学習とは関数を当てはめること</a></li><li><a href="#sec-2">回帰と分類</a></li><li><a href="#sec-3">訓練：損失と勾配</a></li><li><a href="#sec-4">検証とリーク</a></li><li><a href="#sec-5">問いに合った指標</a></li><li><a href="#sec-6">過学習と正則化</a></li><li><a href="#sec-7">ニューラルネットワーク</a></li><li><a href="#sec-8">倫理と実運用</a></li><li><a href="#sec-9">木のアンサンブル：表形式データの王者</a></li><li><a href="#sec-10">誠実に行うハイパーパラメータ調整</a></li><li><a href="#sec-11">教師なし学習：クラスタリングとPCA</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">モデルがデータからどのようにパターンを学習するのか、そしてそのモデルが優れているかどうかをどう見極めるのかを扱う。回帰、分類、検証、実際の問いに合った指標、過学習、ニューラルネットワーク、モデルを実運用する際の倫理について解説する。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="machine-learning" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>学習とは関数を当てはめること</h2>
+  <div class="body"><p>機械学習は、ルールを手で書く代わりに、例から関数を当てはめる。</p>
+<ul>
+<li><strong>教師あり学習</strong>: 各例にラベルが付く。回帰は数値を予測し、分類はカテゴリを予測する。</li>
+<li><strong>教師なし</strong>手法はラベルなしで構造を探す — クラスタリング、次元削減。</li>
+<li><strong>強化学習</strong>は報酬から行動を学習する。</li>
+</ul>
+<p>推定の良し悪しはサンプル次第である。偏ったデータや代表性のないデータは、実運用で間違っているのに自信過剰なモデルを生む。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>回帰と分類</h2>
+  <div class="body"><p>線形回帰は最小二乗法で数値的な結果に直線を当てはめる。誤差項は直線が捉えられなかった部分を集める。はい/いいえの判断では、ロジスティック回帰が線形スコアを<strong>シグモイド</strong>に通して0から1の間の確率を出す。</p>
+<p>スコアはゼロの位置に境界を定める。出力は確率であり、判定ではない。しきい値がそれをクラスに変換し、偽陽性と偽陰性をトレードオフする。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">線形回帰</span>
+      <div class="formula-expr formula-math">\[y = \beta_0 + \beta_1 x + \varepsilon\]</div>
+      <span class="formula-note">εは直線が説明しないyの部分</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">ロジスティック（シグモイド）モデル</span>
+      <div class="formula-expr formula-math">\[p = \frac{1}{1 + e^{-s}}, \quad s = w \cdot x + b\]</div>
+      <span class="formula-note">pは確率であり、クラスは選んだしきい値から決まる</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>訓練：損失と勾配</h2>
+  <div class="body"><p>訓練は、予測がラベルに近づくようにパラメータを選ぶ。</p>
+<ul>
+<li><strong>損失関数</strong>はその差を測る — 回帰では二乗誤差、分類では交差エントロピー。</li>
+<li><strong>勾配降下法</strong>は各重みを損失の勾配と逆方向に少し動かす。</li>
+<li>学習率は重要な選択である。小さすぎると訓練は遅々として進まず、大きすぎると損失は上下に暴れたり発散したりする。</li>
+<li>ミニバッチはノイズの多い勾配と引き換えに速度を得る。データを一度通すことが1エポックである。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">勾配降下法の更新</span>
+      <div class="formula-expr formula-math">\[w \leftarrow w - \eta \frac{\partial L}{\partial w}\]</div>
+      <span class="formula-note">ηは学習率であり、各ステップは勾配と逆方向</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>検証とリーク</h2>
+  <div class="body"><p>学習に使ったデータで採点されたモデルは、自分の宿題を自分で採点しているようなものだ。訓練、検証、テストの集合に分割し、訓練で学習し、検証でハイパーパラメータを選び、テスト集合には最後に一度だけ触れる。<strong>k分割交差検証</strong>は検証フォールドを回転させ、すべての行を推定に使う。</p>
+<p><strong>リーク</strong>は静かな破壊者である。分割前のスケーリング、集合間の重複レコード、結果の後に記録された特徴などがそれにあたる。時系列データはランダムではなく時間で分割しなければならない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">層化分割と学習</span>
+      <div class="formula-expr formula-text">X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.2, stratify=y)
+model.fit(X_tr, y_tr)
+score = model.score(X_te, y_te)</div>
+      <span class="formula-note">stratifyは両方の部分でクラスバランスを保つ。訓練行だけで学習する</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>問いに合った指標</h2>
+  <div class="body"><p>精度は最初の指標であり、しばしば間違った指標である。1,000件のうち60件が陽性である場合、常に「いいえ」と言うモデルは94%の精度を出し、何も捉えない。</p>
+<ul>
+<li><strong>混同行列</strong>は真陽性、偽陽性、偽陰性、真陰性を分け、そこから<strong>適合率</strong>と<strong>再現率</strong>が導かれる。</li>
+<li><strong>F1</strong>は両者のバランスをとり、ROC-AUCはすべてのしきい値にわたるランキングを測る。</li>
+<li>回帰の指標は異なる。RMSEは大きな誤差に罰を与え、MAEは元の単位を保ち、R²は説明された変動である。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">適合率と再現率</span>
+      <div class="formula-expr formula-math">\[\mathrm{precision} = \frac{TP}{TP + FP}, \quad \mathrm{recall} = \frac{TP}{TP + FN}\]</div>
+      <span class="formula-note">適合率は誤警報に罰を与え、再現率は見逃した陽性に罰を与える</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">F1スコア</span>
+      <div class="formula-expr formula-math">\[F_1 = \frac{2 \cdot \mathrm{precision} \cdot \mathrm{recall}}{\mathrm{precision} + \mathrm{recall}}\]</div>
+      <span class="formula-note">調和平均なので、どちらかが悪いと全体が引き下げられる</span>
+    </div></div><div class="table-wrap"><table><caption>分類指標とそれぞれの落とし穴</caption><thead><tr><th scope='col'>指標</th><th scope='col'>何に答えるか</th><th scope='col'>単独で使った場合の落とし穴</th></tr></thead><tbody><tr><td>精度</td><td>全ケースのうち正解した割合</td><td>多数派クラスに支配される</td></tr><tr><td>適合率</td><td>フラグを立てたもののうち正しかった割合</td><td>見逃した陽性を無視する</td></tr><tr><td>再現率</td><td>真の陽性のうち見つけた割合</td><td>誤警報を無視する</td></tr><tr><td>F1</td><td>両者のバランス</td><td>各エラー種別のコストを隠す</td></tr><tr><td>ROC-AUC</td><td>しきい値にわたるランキング品質</td><td>選んだしきい値での判断がない</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>過学習と正則化</h2>
+  <div class="body"><p><strong>過学習</strong>はパターンではなく訓練集合を学習してしまうことである。訓練誤差は下がり続ける一方で検証誤差は上がる。これはデータ量に対してモデルが柔軟すぎることが原因である。</p>
+<p>治療法はデータを増やすこと、モデルを単純にすること、または大きな重みに罰を与える<strong>正則化</strong>である。ドロップアウト、早期停止、データ拡張も抑制の形である。過少適合は逆の失敗であり、パターンを表現できないモデルはどれだけ調整しても直らない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">正則化損失（L2）</span>
+      <div class="formula-expr formula-math">\[L_{\mathrm{reg}} = L + \lambda \sum w^2\]</div>
+      <span class="formula-note">λは大きな重みにどれだけ強く罰を与えるかを制御する</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>ニューラルネットワーク</h2>
+  <div class="body"><p>ニューラルネットワークは重み付き和と非線形活性化の層を積み重ねる。深さによって線形モデルでは表現できない相互作用を表現できる。ReLUが一般的な活性化であり、<strong>誤差逆伝播</strong>が勾配降下法に必要な勾配を計算する。</p>
+<p>畳み込み層は画像の局所構造を活用し、系列モデルは順序のあるデータを扱う。ネットワークは古典的モデルより多くのデータと計算を必要とし、解釈が難しいままであり、これは判断が人に影響する場合に重要である。</p></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>倫理と実運用</h2>
+  <div class="body"><p>良いテストスコアは実運用の許可ではない。訓練データに誰が代表されているか、誤差がグループごとに不均等に生じないか、誰が判断に異議を唱えられるかを問うべきである。</p>
+<p><strong>分布シフト</strong>とは、訓練後に世界が動くことであり、性能は劣化するため監視が必要である。データ、指標、限界を文書化し、誤りのコストが高い場合は人間をループに入れておく。モデルはシステムの一構成要素であり、責任はシステムが負う。</p></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>木のアンサンブル：表形式データの王者</h2>
+  <div class="body"><p><strong>決定木</strong>は単純なしきい値の質問でデータを分割し、葉で平均または多数派を予測する。木は過学習しやすいため、アンサンブルで多数の木をまとめる。<strong>ランダムフォレスト</strong>はブートストラップ標本とランダムな特徴部分集合で木を成長させ、<strong>勾配ブースティング</strong>は木を逐次的に構築し、各木をこれまでのアンサンブルの誤差に当てはめる。</p>
+<p>表形式データ — 工学でよくある測定値の表 — では、XGBoostやLightGBMのようなブースティング木が通常最初に試すモデルである。欠損値や混在する単位を扱え、調整がほとんど不要で、ほとんどの小規模・中規模の表で深層ネットワークを上回る。主な調整項目は学習率、木の深さ、木の数であり、小さな学習率と多くの木が既定のレシピである。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">ブースティングアンサンブル</span>
+      <div class="formula-expr formula-math">\[\hat{y} = \sum_{m=1}^{M} \eta \, h_m(x)\]</div>
+      <span class="formula-note">各木h_mは残りの誤差に当てはめられる。ηは学習率</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>誠実に行うハイパーパラメータ調整</h2>
+  <div class="body"><p>ハイパーパラメータ — 深さ、学習率、正則化の強さ — は試行によって選ばれ、各試行は採点に使うデータの情報を消費する。<strong>検証</strong>フォールドで調整し、テスト集合では調整しない。テスト集合を繰り返し使うと、それは訓練手順の一部となり、最終スコアは不偏推定でなくなる。</p>
+<ul>
+<li><strong>交差検証</strong>が主力である。訓練データをフォールドに分割し、1つを除いて訓練し、残したフォールドで検証し、回転させる。</li>
+<li>クラスが不均衡な場合は<strong>層化</strong>フォールドを使い、各フォールドで同じクラス比率を保つ。</li>
+<li>最良のスコアではなく、フォールドスコアの平均とばらつきを報告する。</li>
+<li>モデルの結果が重要な場合は、探索全体を入れ子交差検証の外側ループで包む。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">層化k分割探索</span>
+      <div class="formula-expr formula-text">skf = StratifiedKFold(n_splits=5, shuffle=True)
+grid = GridSearchCV(pipe, param_grid, cv=skf, scoring=&#x27;f1&#x27;)
+grid.fit(X_train, y_train)
+final_score = grid.score(X_test, y_test)</div>
+      <span class="formula-note">調整は訓練データのフォールドのみを使う。テスト集合には一度だけ触れる</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>テスト集合は触れた時点で消費される</b>
+  テスト集合を見た後に行うすべての決定 — しきい値、特徴、モデルファミリー — はそのスコアを楽観的にする。見るのはちょうど一度だけにすべきである。
+</div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>教師なし学習：クラスタリングとPCA</h2>
+  <div class="body"><p>ラベルがない場合、モデルは構造を探す。</p>
+<ul>
+<li><strong>k-means</strong>クラスタリングは各点を最も近い重心に割り当て、割り当てが変わらなくなるまで重心を再計算する。クラスタ内二乗距離を最小化するため、クラスタ数kはモデリング上の選択であり、目的関数対kのエルボープロットはクラスタを増やす効果が頭打ちになる場所を示す。</li>
+<li><strong>主成分分析</strong>は分散が最大の方向を見つけ、データをそこに射影し、相関する多くの列を少数の成分に圧縮する。保持される分散の割合が射影が保存するものを測る。累積割合が頭打ちになったら成分を削除する。</li>
+</ul>
+<p>クラスタリングの結果は探索的であり、スコアを引用するのではなく下流の目的に対して検証すべきである。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">k-meansの目的関数</span>
+      <div class="formula-expr formula-math">\[\mathrm{SSE} = \sum_j \sum_{x \in C_j} \lVert x - \mu_j \rVert^2\]</div>
+      <span class="formula-note">各点からそのクラスタ重心までの二乗距離の和</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>教師あり学習</dt><dd>入力から既知のラベルへの写像を学習すること。数値の回帰とカテゴリの分類を含む。</dd></div><div class="term"><dt>過学習</dt><dd>訓練データに適合しすぎて、新しいデータでの性能が悪くなること。</dd></div><div class="term"><dt>適合率</dt><dd>フラグを立てたケースのうち真に陽性である割合。TPをTPとFPの和で割ったもの。</dd></div><div class="term"><dt>再現率</dt><dd>真の陽性のうちモデルが見つけた割合。TPをTPとFNの和で割ったもの。</dd></div><div class="term"><dt>交差検証</dt><dd>訓練データを繰り返し分割し、各部分が一度ずつ検証に使われるようにして、より安定した性能推定を得る手法。</dd></div><div class="term"><dt>正則化</dt><dd>モデルの複雑さや大きな重みに罰を与え、過学習を減らすこと。</dd></div><div class="term"><dt>分布シフト</dt><dd>実運用で見るデータが訓練データと比べて変化し、性能が劣化すること。</dd></div><div class="term"><dt>アンサンブル学習</dt><dd>木などの多くの基本モデルを組み合わせ、分散やバイアスを減らして予測を改善すること。</dd></div><div class="term"><dt>クラスタリング</dt><dd>ラベルなしデータを、同じグループ内の点が他のグループの点より互いに似るようにグループ化すること。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>スクリーニングモデルの混同行列を読む</h2>
+        <p class="problem">あるモデルが1,000件の構造物検査をスクリーニングする。実際には60個の部品が欠陥である。モデルは50個の部品にフラグを立て、そのうち40個は真に欠陥があり、10個はそうではなく、20個の欠陥部品は見逃された。精度、適合率、再現率、F1を計算し、どの指標が判断を導くべきかを述べよ。</p>
+        <ol><li>件数をラベル付けする: TP = 40、FP = 10、FN = 20、TN = 930。</li><li>精度 = (TP + TN) / 合計 = (40 + 930) / 1000 = 0.97。</li><li>適合率 = TP / (TP + FP) = 40 / 50 = 0.80。</li><li>再現率 = TP / (TP + FN) = 40 / 60 = 0.667。</li><li>F1 = 2 × 0.80 × 0.667 / (0.80 + 0.667) = 0.727。</li></ol>
+        <div class="answer"><b>Answer</b>精度は97%、適合率は0.80、再現率は0.67、F1は0.73である。見出しの精度は、3つの欠陥のうち1つが見逃されていることを隠している。したがって再現率が判断を導くべきである。より多くの欠陥を見つけるためにしきい値を下げ、より多くの誤警報を受け入れ、両方の指標を併せて報告する。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>分類指標を計算する前に混同行列を描く。計算が簡単で誤りが見える。</li><li>問いが実際に必要とする指標を挙げ、精度がなぜ誤解を招くかを一文で説明する。</li><li>検証スコアが異常に良く見える場合は、結果として報告する前にリークを確認する。</li><li>表形式の工学データでは、ニューラルネットワークより先に勾配ブースティング木を当てはめる。通常より強く、調整も少なくて済む。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>陽性が3%しかないデータセットで、モデルが97%の精度を報告した。主なリスクは次のうちどれか。</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>精度は多数派クラスに支配され、見逃した陽性を隠す</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>モデルは確実に過学習している</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>テスト集合が大きすぎた</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>適合率は再現率と等しくなければならない</span></button></div>
+    <div class="quiz-explain"><b>Why</b>どこでも多数派クラスを予測すれば、陽性を一つも見つけずに高い精度が出る。そのため適合率と再現率が必要である。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>最終的な不偏性能推定を与えるために使うべきデータセットはどれか。</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>すべてのデータを結合したもの</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>訓練集合</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>調整に使った検証集合</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>最後に一度だけ触れるテスト集合</span></button></div>
+    <div class="quiz-explain"><b>Why</b>検証で調整すると情報が漏れる。保持したテスト集合だけが唯一のクリーンな推定を与える。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q03</span><span>訓練損失が下がり続ける一方で検証損失が上がっている。これは何を示すか。</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>過学習</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>完全に汎化するモデル</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>学習率が小さすぎること</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>過少適合</span></button></div>
+    <div class="quiz-explain"><b>Why</b>モデルは訓練データを暗記して汎化を失っている。これが過学習の特徴である。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>勾配降下法の学習率がはるかに大きすぎる場合、通常何が起こるか。</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>テスト集合が訓練に漏れる</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>特徴が標準化される</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>損失が振動または発散する</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>大域最小解への収束が速くなる</span></button></div>
+    <div class="quiz-explain"><b>Why</b>各ステップが最小点を越えすぎるため、損失は落ち着かずに跳ねたり増えたりする。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>勾配ブースティングがランダムフォレストと主に異なるのはなぜか。</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>その木は互いに特徴を共有しない</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>欠損値を扱えない</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>新しい各木がこれまでのアンサンブルの誤差に当てはめられる</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>学習率を決して使わない</span></button></div>
+    <div class="quiz-explain"><b>Why</b>ブースティングは木を逐次的に成長させ、各木が前のアンサンブルが残した残差を補正する。一方、フォレストは木を独立に成長させる。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>k-meansクラスタリングは点をクラスタにどのように割り当てるか。</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>決して変わらないランダムな割り当てによって</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>点が到着する順序によって</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>教師あり分類器が予測したラベルによって</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>最も近い重心によって。重心は各反復で再計算される</span></button></div>
+    <div class="quiz-explain"><b>Why</b>各反復で各点を最も近い重心に割り当て、次に重心を割り当てられた点の平均に移動する。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.ja.html"><span>Computing</span><b>AIとデータ分析</b></a><a class="related-card" href="artificial-intelligence.ja.html"><span>Computing</span><b>人工知能</b></a><a class="related-card" href="machine-learning-smart-mobility.ja.html"><span>Computing</span><b>スマートモビリティのための機械学習</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="infrastructure-management.ja.html"><small>Previous</small><b>インフラマネジメント</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">訓練データでテストしてはいけない。</p><p class="margin-note">精度は不均衡を隠す。</p><p class="margin-note">正則化するか単純化する。データを増やすのがより良い。</p><p class="margin-note">モデルは実運用後に劣化する。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

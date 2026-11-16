@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>結構力學 — Civil Hub</title>
+<meta name="description" content="結構的語法：荷載如何在構件中傳遞、應力與應變的關係，以及梁、軸和柱如何破壞。它是後續所有設計科目的基礎。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/structural-mechanics.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="結構力學 — Civil Hub">
+<meta property="og:description" content="結構的語法：荷載如何在構件中傳遞、應力與應變的關係，以及梁、軸和柱如何破壞。它是後續所有設計科目的基礎。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/structural-mechanics.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="structural-mechanics.html" data-alt-zh-hant="structural-mechanics.zh-Hant.html" data-alt-ja="structural-mechanics.ja.html" data-alt-ko="structural-mechanics.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">結構力學</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">核心</p>
+          <h1>結構力學</h1>
+          <p class="subject-sub">結構如何承受荷載，以及如何變形</p>
+          <ul class="subject-facts"><li><b>類型</b>核心</li><li><b>閱讀</b>12 分鐘</li><li><b>章節</b>11</li><li><b>公式</b>20</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M46 78 H294" stroke="currentColor" stroke-width="1.7"/><path d="M58 84 l-10 14 h20 z M282 84 l-10 14 h20 z" stroke="currentColor" stroke-width="1.2"/><path d="M80 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M76 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M108 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M104 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M136 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M132 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M164 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M160 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M192 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M188 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M220 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M216 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M248 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M244 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><text x="170" y="30" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">UDL  w</text><path d="M46 150 Q170 106 294 150" stroke="var(--accent)" stroke-width="1.4"/><path d="M46 150 H294" stroke="var(--line)" stroke-width="1"/><text x="170" y="178" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">BENDING MOMENT</text></svg>
+          <figcaption>Simply supported beam — load, shear and bending moment</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">從自由體圖開始</a></li><li><a href="#sec-2">應力、應變與彈性模量</a></li><li><a href="#sec-3">軸向變形與協調</a></li><li><a href="#sec-4">彎曲：撓曲公式</a></li><li><a href="#sec-5">撓度與剛度驗算</a></li><li><a href="#sec-6">圓形軸的扭轉</a></li><li><a href="#sec-7">柱與彈性屈曲</a></li><li><a href="#sec-8">從拉伸試驗到設計</a></li><li><a href="#sec-9">桁架與零力桿</a></li><li><a href="#sec-10">梁中的剪應力</a></li><li><a href="#sec-11">組合荷載與莫爾圓</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      <li><a href="#design-reference">設計參考</a></li>
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">結構的語法：荷載如何在構件中傳遞、應力與應變的關係，以及梁、軸和柱如何破壞。它是後續所有設計科目的基礎。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="structural-mechanics" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>從自由體圖開始</h2>
+  <div class="body"><p>每個結構問題的開始方式都一樣：隔離你關心的部分，畫出作用在其上的所有力，並應用平衡。自由體圖不是裝飾——如果漏掉一個反力或構件力，後續的數字就毫無意義。</p>
+<p>對於平面結構，有三個獨立的平衡方程：ΣF_x = 0、ΣF_y = 0 和 ΣM = 0。先用它們求反力，然後在需要的位置切開結構。切口處的內力總是以其正方向繪製：軸力 N、剪力 V 和彎矩 M。</p>
+<p>當反力僅由平衡就能求出時，結構是<strong>靜定的</strong>。額外的支承使其變為超靜定，求解時需要協調條件——即變形必須相互協調的要求。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">平面平衡</span>
+      <div class="formula-expr formula-math">\[\sum F_x = 0, \quad \sum F_y = 0, \quad \sum M = 0\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>應力、應變與彈性模量</h2>
+  <div class="body"><p>應力將力轉化為強度：正應力 σ = F/A 垂直作用於截面，而剪應力 τ 沿截面作用。應變是相應的單位長度變形，ε = ΔL/L。</p>
+<p>對於線彈性材料，應力和應變在屈服點之前成正比。常數是楊氏模量 E = σ/ε，它是剛度的度量而非強度。材料可以剛而弱，或柔而強——鋼既剛又強；橡膠既不剛也不強，但延展性很好。</p>
+<p>當桿件受拉時，它也會變細。泊松比 ν = −ε_lateral/ε_axial 捕捉了這一效應，並聯繫了彈性常數：G = E / [2(1 + ν)]。鋼的 ν 值約為 0.30，混凝土約為 0.15–0.20。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">正應力</span>
+      <div class="formula-expr formula-math">\[\sigma = \frac{F}{A}\]</div>
+      <span class="formula-note">垂直於截面的力，單位為牛頓每平方米</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">楊氏模量</span>
+      <div class="formula-expr formula-math">\[E = \frac{\sigma}{\varepsilon}\]</div>
+      <span class="formula-note">應力–應變曲線線彈性部分的斜率</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">剪切模量</span>
+      <div class="formula-expr formula-math">\[G = \frac{E}{2(1 + \nu)}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>軸向變形與協調</h2>
+  <div class="body"><p>長度為 L、面積為 A、模量為 E 的等截面桿件承受軸力 P 時，長度變化為 ΔL = P L / (A E)。這是超靜定問題的主力：用未知力表示每個構件的伸長量，然後施加幾何條件，即構件仍在同一節點相遇。</p>
+<p>溫度變化會增加自由膨脹 ΔL = α L ΔT。如果該膨脹受到約束，構件會產生熱應力 σ = −E α ΔT。在炎熱天氣下兩端固定的鋼軌處於受壓狀態，儘管沒有任何東西觸碰它——被阻止的是運動，而不是溫度。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">軸向變形</span>
+      <div class="formula-expr formula-math">\[\Delta L = \frac{P L}{A E}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">熱應力，完全約束</span>
+      <div class="formula-expr formula-math">\[\sigma = -E \alpha \Delta T\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>彎曲：撓曲公式</h2>
+  <div class="body"><p>彎矩在截面內產生應力梯度。中性軸通過形心；一側的纖維受壓，另一側受拉。</p>
+<p>撓曲公式為 σ = M y / I，其中 y 是距中性軸的距離，I 是關於該軸的截面二次矩。最大應力發生在極端纖維處，因此截面常用彈性截面模量 Z = I / y_max 描述，給出 σ_max = M / Z。</p>
+<p>矩形梁的深度加倍會使 I 增加八倍，因為 I = b h³ / 12——深度比寬度效率高得多。剪力不會消失。在梁中，它產生拋物線形的剪應力分佈，在極端纖維處為零，在中性軸處最大，對於矩形，τ_max = 3V/(2A)。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">撓曲公式</span>
+      <div class="formula-expr formula-math">\[\sigma = \frac{M y}{I}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">彈性截面模量</span>
+      <div class="formula-expr formula-math">\[Z = \frac{I}{y_{\max}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">截面二次矩，矩形</span>
+      <div class="formula-expr formula-math">\[I = \frac{b h^3}{12}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>撓度與剛度驗算</h2>
+  <div class="body"><p>彎曲也會改變形狀。曲率與彎矩的關係為 EI v'' = M，其中 EI 是抗彎剛度，v 是橫向位移。積分兩次得到轉角和撓度；常數來自支承條件。</p>
+<p>對於常見情況，結果值得記住：<br />
+- 簡支梁承受跨中集中荷載 P：跨中 δ = PL³/(48EI)。<br />
+- 簡支梁承受均布荷載 w：δ = 5wL⁴/(384EI)。<br />
+- 懸臂梁承受端部荷載：δ = PL³/(3EI)。</p>
+<p>疊加法允許你將這些模式相加用於組合荷載，前提是響應保持線性。撓度限值往往在強度之前控制設計，尤其是大跨度樓板和細長屋面。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">梁曲率</span>
+      <div class="formula-expr formula-math">\[E I v&#x27;&#x27; = M\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">跨中撓度，集中荷載</span>
+      <div class="formula-expr formula-math">\[\delta = \frac{P L^3}{48 E I}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">跨中撓度，均布荷載</span>
+      <div class="formula-expr formula-math">\[\delta = \frac{5 w L^4}{384 E I}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>圓形軸的扭轉</h2>
+  <div class="body"><p>圓形軸受扭矩 T 作用時，產生的剪應力隨半徑線性增長：τ = T r / J，其中 J 是極截面二次矩。對於實心圓，J = π d⁴ / 32，因此 τ_max = 16T/(π d³)。</p>
+<p>長度 L 上的扭轉角為 θ = T L / (G J)。扭轉是空心軸高效的原因：大部分抗扭能力存在於外層纖維，因此靠近中心的材料貢獻很小。</p>
+<p>只有圓形截面在扭轉下保持平面；非圓形截面會翹曲，其分析需要不同的方法。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">扭轉剪應力</span>
+      <div class="formula-expr formula-math">\[\tau = \frac{T r}{J}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">扭轉角</span>
+      <div class="formula-expr formula-math">\[\theta = \frac{T L}{G J}\]</div>
+      <span class="formula-note">θ 以弧度為單位，單位需一致</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>柱與彈性屈曲</h2>
+  <div class="body"><p>細長的受壓構件可能在材料壓碎之前很久就因屈曲而破壞。歐拉荷載為 P_cr = π² E I / (K L)²，其中 K 取決於端部條件：<br />
+- 兩端鉸接：K = 1.0<br />
+- 兩端固定：K = 0.5<br />
+- 一端固定一端自由：K = 2.0<br />
+- 一端固定一端鉸接：K = 0.7</p>
+<p>屈曲由長細比而非強度控制。短粗柱屈服；細長柱屈曲。過渡由長細比 λ = K L / r 描述，其中 r 是迴轉半徑。</p>
+<p>由於屈曲荷載取決於 I，最小 I 方向的屈曲控制設計。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">歐拉屈曲荷載</span>
+      <div class="formula-expr formula-math">\[P_{cr} = \frac{\pi^2 E I}{(K L)^2}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>從拉伸試驗到設計</h2>
+  <div class="body"><p>拉伸試驗將理論轉化為測量數值。像低碳鋼這樣的延性試樣顯示初始線性區域（E）、上下屈服點、平台、應變硬化至極限抗拉強度，最後頸縮和斷裂。高強鋼可能幾乎沒有屈服平台，並以更小的伸長率破壞。</p>
+<p>延性很重要，因為它提供警告並允許力的重分佈。設計使用安全係數或分項係數使工作應力低於相關限值，適用性驗算保持撓度和開裂可接受。</p>
+<p>有強度而無剛度，或有剛度而無延性，很少是可接受的工程答案。</p></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>桁架與零力桿</h2>
+  <div class="body"><p>桁架是由鉸接桿件組成的組件，僅承受軸力，因此每個節點必須滿足兩個平衡方程。</p>
+<p><strong>節點法</strong>通過在每個節點寫出 ΣF_x = 0 和 ΣF_y = 0 來繞桁架計算，從最多兩個桿件力未知的節點開始。<strong>截面法</strong>切過不超過三個未知力的桿件並取矩，一步就能到達內部桿件。</p>
+<p>零力桿可以在任何算術之前發現：<br />
+- 如果只有兩根不共線的桿件在無荷載節點相遇，兩者都是零力桿。<br />
+- 如果三根桿件相遇且兩根共線，第三根不承受力，除非節點處有外部荷載作用。</p>
+<p>在實驗室桁架中，測得的桿件力對施加荷載繪製成通過原點的直線，零力桿讀數幾乎正好為零。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">截面法</span>
+      <div class="formula-expr formula-math">\[F = \frac{M_A}{r}\]</div>
+      <span class="formula-note">對方便點取矩除以到桿件的垂直距離</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>梁中的剪應力</h2>
+  <div class="body"><p>在剪力 V 作用處，剪應力沿深度變化。一般結果為 τ = VQ/(Ib)，其中 Q 是所考慮點以外部分面積的一次矩，b 是該處寬度。</p>
+<p>對於矩形，分佈是拋物線形的：在極端纖維處為零，在中性軸處最大為 τ_max = 3V/(2A)。在工字形截面中，幾乎所有剪力由腹板承擔，因為翼緣只是將力流引入腹板。</p>
+<p>剪力很少控制細長梁的設計，但對於短而深的構件、連接詳圖以及支承處很重要，那裡高 V 可能遇到因孔洞而削弱的截面。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">橫向剪應力</span>
+      <div class="formula-expr formula-math">\[\tau = \frac{V Q}{I b}\]</div>
+      <span class="formula-note">Q 是所考慮點以外部分面積的一次矩，b 是局部寬度</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">最大剪應力，矩形</span>
+      <div class="formula-expr formula-math">\[\tau_{\max} = \frac{3 V}{2 A}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>組合荷載與莫爾圓</h2>
+  <div class="body"><p>構件中的真實點通常同時承受彎曲、軸向和扭轉剪應力。來自軸向和彎曲的正應力 σ_x 與來自扭轉和橫向剪切的剪應力 τ_xy 組合；<strong>主應力</strong>如下所示，最大剪應力僅為平方根項。</p>
+<p>因此，承受組合扭矩和彎曲的軸根據等效應力而非其中之一進行驗算。莫爾圓以圖形方式繪製狀態：圓心在 (σ_x + σ_y)/2，半徑為 √[((σ_x − σ_y)/2)² + τ_xy²]。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">主應力</span>
+      <div class="formula-expr formula-math">\[\sigma_{1,2} = \frac{\sigma_x + \sigma_y}{2} \pm \sqrt{\left(\frac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">最大剪應力</span>
+      <div class="formula-expr formula-math">\[\tau_{\max} = \sqrt{\left(\frac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2}\]</div>
+      
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>中性軸</dt><dd>彎曲截面中應力為零、纖維既不伸長也不縮短的線。</dd></div><div class="term"><dt>截面二次矩</dt><dd>材料距中性軸距離的幾何度量；它控制抗彎剛度和應力。</dd></div><div class="term"><dt>楊氏模量</dt><dd>應力–應變曲線線性部分的斜率，描述剛度。</dd></div><div class="term"><dt>延性</dt><dd>材料在斷裂前發生塑性變形的能力。</dd></div><div class="term"><dt>超靜定</dt><dd>反力多於平衡方程的結構，需要協調條件求解。</dd></div><div class="term"><dt>長細比</dt><dd>有效長度除以迴轉半徑；它預測柱由屈曲還是屈服控制。</dd></div><div class="term"><dt>抗彎剛度</dt><dd>乘積 EI，構件抵抗彎曲變形的能力。</dd></div><div class="term"><dt>零力桿</dt><dd>不承受力的桁架桿件，可在任何計算之前從節點幾何識別。</dd></div><div class="term"><dt>主應力</dt><dd>剪應力為零的平面上的極端正應力，由莫爾圓作圖法求得。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>木擱柵的最大彎曲應力</h2>
+        <p class="problem">一根簡支木梁跨度 6.0 m，承受包括自重在内的均布荷載 10 kN/m。其截面寬 150 mm，深 300 mm。求最大彎曲應力，並說明容許彎曲應力為 18 MPa 的木材是否足夠。</p>
+        <ol><li>簡支梁承受均布荷載的最大彎矩為 wL²/8 = 10 × 6.0² / 8 = 45 kNm = 45 × 10⁶ Nmm。</li><li>關於中性軸的截面二次矩：I = b h³ / 12 = 150 × 300³ / 12 = 3.375 × 10⁸ mm⁴。</li><li>到極端纖維的距離：y = h/2 = 150 mm。</li><li>σ_max = M y / I = (45 × 10⁶ × 150) / (3.375 × 10⁸) = 20.0 N/mm² = 20 MPa。</li><li>用截面模量進行合理性檢查：Z = I / y = 2.25 × 10⁶ mm³，因此 σ = M/Z = 45 × 10⁶ / 2.25 × 10⁶ = 20 MPa。</li></ol>
+        <div class="answer"><b>Answer</b>最大彎曲應力為 20 MPa，超過 18 MPa 的容許值，因此該擱柵在彎曲方面不足；需要更深的截面或更短的跨度。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>在觸碰公式表之前先寫出平衡方程；大多數失分來自漏掉反力，而不是代數。</li><li>對於撓度問題，先識別標準情況，然後使用疊加法而不是從頭推導。</li><li>保持單位一致：開始時將 kN 轉換為 N，mm 轉換為 m，並說明每個答案的單位。</li><li>對於柱，同時檢查屈曲和屈服，並在結論中使用較小的承載力。</li><li>在桁架問題中，先尋找零力桿——移除它們通常會暴露只有兩個未知量的節點，並節省幾個方程。</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Minimum imposed floor loads for buildings</h3>
+  <p class="ref-table-intro">Characteristic imposed (live) loads used when sizing floors, beams and columns of buildings in Hong Kong. qk is the uniformly distributed load and Qk is a concentrated load applied on plan over a 200 mm square.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Floor use / area class</th><th scope='col'>Distributed load qk (kPa)</th><th scope='col'>Concentrated load Qk (kN)</th></tr></thead><tbody><tr><td>Domestic floors and residential activities (Area Class 1)</td><td>2.0</td><td>2.0</td></tr><tr><td>Offices for general use (Area Class 2)</td><td>3.0</td><td>4.5</td></tr><tr><td>Classrooms, lecture rooms and computer rooms (Area Class 3A)</td><td>3.0</td><td>4.5</td></tr><tr><td>Restaurants, bars, canteens and fast-food shops (Area Class 3A)</td><td>4.0</td><td>4.5</td></tr><tr><td>Assembly areas without fixed seating; refuge floors (Area Class 3C)</td><td>5.0</td><td>4.5</td></tr><tr><td>Shops, supermarkets and department stores (Area Class 4)</td><td>5.0</td><td>4.5</td></tr><tr><td>Car parks for vehicles up to 3,000 kg gross (Area Class 6A)</td><td>3.0</td><td>20.0</td></tr></tbody></table></div>
+  <p class="ref-table-note">Values selected from Tables 3.2 and 3.4 of the Code of Practice for Dead and Imposed Loads 2011 (2021 Edition), Buildings Department; area class numbers follow Table 3.1. qk acts over the floor area and Qk is applied on plan over any square with a 200 mm side.</p>
+  <p class="ref-table-caveat">Simplified revision summary only. The code contains further floor uses, load-reduction rules and dynamic and barrier requirements; verify against the current code for actual design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>矩形梁的深度加倍而寬度保持不變。其關於彎曲軸的截面二次矩變為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>2 倍</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>4 倍</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>8 倍</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>16 倍</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>I = b h³/12，因此深度加倍使 I 乘以 2³ = 8。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>一根鋼筋兩端完全約束並加熱。以下哪項陳述正確？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>它不產生應力因為鋼是彈性的</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>它在任何溫升下立即屈服</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>它產生拉應力因為它想要膨脹</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>它產生壓應力因為膨脹被阻止</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>自由膨脹被阻止，因此構件被推入受壓狀態：σ = −EαΔT。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>兩端鉸接柱的歐拉屈曲荷載與以下哪項成正比？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>L²</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>1/L</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1/L²</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>L</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>P_cr = π²EI/(KL)²，因此它隨有效長度的平方下降。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q04</span><span>在跨中集中荷載作用下的簡支梁中，最大彎矩發生在：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>跨中</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>反彎點</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>支承處</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>四分之一跨度</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>剪力在跨中改變符號，彎矩在此達到峰值 PL/4。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>在桁架的無荷載節點處，兩根不共線的桿件相遇。關於它們的力可以說什麼？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>兩根桿件承受相等的拉力</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>兩根桿件都是零力桿</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>一根桿件受拉，另一根受壓</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>沒有支承反力就無法判斷</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>沒有外部荷載時，節點處兩個獨立方向的平衡迫使兩根桿件的力為零。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>橫截面積為 A 的矩形梁承受剪力 V。梁中的最大剪應力為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>V/A</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>2V/A</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1.5V/A</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>零，因為剪力僅在表面承受</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>拋物線形剪力分佈在中性軸處峰值為 3V/(2A)，即 1.5V/A。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="advanced-structural-mechanics.zh-Hant.html"><span>Core</span><b>高等結構力學</b></a><a class="related-card" href="construction-materials.zh-Hant.html"><span>Core</span><b>建造材料</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="leadership-teamwork.zh-Hant.html"><small>上一頁</small><b>領導與團隊協作</b></a><a class="next" href="ai-data-analysis.zh-Hant.html"><small>下一頁</small><b>人工智能與數據分析</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2>參考文獻</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2021). <i>Code of Practice for Dead and Imposed Loads 2011 (2021 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/DIL2011e.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/DIL2011e.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">自由體圖優先——始終如此。</p><p class="margin-note">彎曲時深度勝過寬度：I ∝ h³。</p><p class="margin-note">撓度往往在強度之前控制。</p><p class="margin-note">延性是安全特徵，不是額外好處。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

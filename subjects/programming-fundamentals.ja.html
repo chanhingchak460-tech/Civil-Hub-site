@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プログラミング基礎 — Civil Hub</title>
+<meta name="description" content="プログラムのように考えるための入門コースです。値の保存、条件による分岐、処理の繰り返し、ロジックの関数へのまとめ、ファイルを通したデータの受け渡しを学びます。これらの習慣は、その後のすべての計算機系科目に活かされます。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/programming-fundamentals.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="プログラミング基礎 — Civil Hub">
+<meta property="og:description" content="プログラムのように考えるための入門コースです。値の保存、条件による分岐、処理の繰り返し、ロジックの関数へのまとめ、ファイルを通したデータの受け渡しを学びます。これらの習慣は、その後のすべての計算機系科目に活かされます。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/programming-fundamentals.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="programming-fundamentals.html" data-alt-zh-hant="programming-fundamentals.zh-Hant.html" data-alt-ja="programming-fundamentals.ja.html" data-alt-ko="programming-fundamentals.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">プログラミング基礎</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">計算</p>
+          <h1>プログラミング基礎</h1>
+          <p class="subject-sub">コードで考える：論理、データ、関数</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>計算</li><li><b data-i18n="subject.read">Read</b>10 分</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>9</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="44" y="34" width="252" height="136" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M44 58 H296" stroke="var(--line)" stroke-width="1"/><circle cx="58" cy="46" r="2.5" fill="var(--accent)" stroke="none"/><path d="M64 78 h76" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 93 h120" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 108 h60" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 123 h144" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 138 h96" stroke="var(--faint)" stroke-width="1.2"/><text x="64" y="160" font-family="var(--mono)" font-size="7" fill="currentColor" stroke="none" text-anchor="start" letter-spacing="0.18em">> RUN</text><path d="M118 155 h10" stroke="var(--accent)" stroke-width="1.4"/></svg>
+          <figcaption>A short program — input, logic, output</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">値、名前、型</a></li><li><a href="#sec-2">入力、出力、書式設定</a></li><li><a href="#sec-3">if、elif、else による分岐</a></li><li><a href="#sec-4">ループとアキュムレータパターン</a></li><li><a href="#sec-5">関数と再帰</a></li><li><a href="#sec-6">リスト、タプル、辞書</a></li><li><a href="#sec-7">文字列もシーケンス</a></li><li><a href="#sec-8">入れ子ループと二次元データ</a></li><li><a href="#sec-9">ファイルと簡単なデータ処理</a></li><li><a href="#sec-10">モジュール、ライブラリ、より大きなツールボックス</a></li><li><a href="#sec-11">デバッグは運ではなくスキル</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">プログラムのように考えるための入門コースです。値の保存、条件による分岐、処理の繰り返し、ロジックの関数へのまとめ、ファイルを通したデータの受け渡しを学びます。これらの習慣は、その後のすべての計算機系科目に活かされます。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="programming-fundamentals" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>値、名前、型</h2>
+  <div class="body"><p><strong>変数</strong>とは、固定サイズのラベル付き箱ではなく、オブジェクトに結び付けられた名前です。Python は実行時に型を決めます。整数は <code>int</code>、小数は <code>float</code>、テキストは <code>str</code>、<code>True</code> または <code>False</code> は <code>bool</code> です。不明なときは <code>type(x)</code> を使い、<code>int()</code>、<code>float()</code>、<code>str()</code> で意図的に変換します。</p>
+<p>選ぶ演算子によって結果が変わります。<code>/</code> は常に float を返し、<code>//</code> は切り捨てて整数にし、<code>%</code> は剰余を返します。これは桁や偶奇に関する多くのテクニックの基礎です。</p>
+<p>浮動小数点値は二進近似なので、<code>0.1 + 0.2</code> を試しても正確に <code>0.3</code> にはなりません。等値比較ではなく許容誤差を用いて比較します。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">商と剰余</span>
+      <pre class="formula-code"><code>q, r = divmod(n, 10)</code></pre>
+      <span class="formula-note">最後の桁を分離する</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>入力、出力、書式設定</h2>
+  <div class="body"><p><code>input()</code> は、ユーザーが数字を入力した場合でも常に文字列を返します。算術を行う前に変換してください。そうしないと <code>"7" + 1</code> は <code>8</code> ではなく <code>TypeError</code> を発生させます。</p>
+<p>書式設定は解答の一部です。プロンプトや出力は正確に一致しなければならないことが多いため、f-string で組み立てます。<code>f"{day:02d}"</code> は日をゼロ埋めし、<code>f"{total:.4f}"</code> は小数点以下4桁を保持します。</p>
+<p>整ったプログラムは、プロンプト、計算、表示を分離します。これらを混ぜるとデバッグや採点が難しくなります。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">数値の読み取り</span>
+      <pre class="formula-code"><code>n = int(input(&quot;Please enter a number: &quot;))</code></pre>
+      <span class="formula-note">input はテキストを返すため、算術の前に変換する</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>if、elif、else による分岐</h2>
+  <div class="body"><p><strong>条件文</strong>は経路を選び、各条件は真または偽に評価される式にすぎません。分岐は最も具体的なものから最も一般的なものへと並べ、残りのすべてのケースがそこに属する場合にのみ最後の <code>else</code> を追加します。</p>
+<p>定番の間違いに注意してください。<br />
+- <code>=</code> は代入、<code>==</code> は比較<br />
+- <code>and</code> は <code>or</code> より強く結合する<br />
+- <code>if name:</code> のようなテストは空でない文字列なら真であり、意図より広い範囲を対象にしがち</p>
+<p>意図するケースをまずコメントとして書き、それからコードにします。この小さな習慣が、多くの論理エラーを発生する前に取り除きます。</p></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>ループとアキュムレータパターン</h2>
+  <div class="body"><p><code>for</code> ループはシーケンスをたどり、<code>while</code> ループは条件が偽になるまで繰り返します。項目数が既知なら <code>for</code>、未知なら <code>while</code> を選び、<code>while</code> の条件が実際に偽になり得ることを確認してください。変化しないループ変数は無限ループを生みます。</p>
+<p>初期のプログラミングで最も再利用されるパターンは <strong>アキュムレータ</strong> です。合計をゼロで開始し、ループ内で各項目を加え、ループ後に報告します。同じ形で、数え上げ、合計、フィルタリング、検索ができます。</p>
+<p>更新行を明示して、読む人が何がいつ変わるかを正確に把握できるようにします。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">累積合計の蓄積</span>
+      <pre class="formula-code"><code>total = total + x</code></pre>
+      <span class="formula-note">ループの前に total = 0 で初期化する</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>関数と再帰</h2>
+  <div class="body"><p><strong>関数</strong>はロジックの一部に名前を与え、引数を受け取り、値を返します。関数内で出力するよりも結果を返すことを優先してください。返された値はテスト、再利用、組み合わせができます。各関数は1つの仕事に限定し、その動作に基づいて名前を付けます。</p>
+<p><strong>再帰</strong>は、自分自身のより小さな版を呼び出すことで問題を解きます。すべての再帰関数には、再帰せずに返す <strong>基底ケース</strong> と、それに向かって進む再帰ステップが必要です。</p>
+<p>フィボナッチ関数は標準的な例ですが、再帰はループでは独自のスタックが必要になる入れ子構造にも適しています。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">再帰的フィボナッチ</span>
+      <div class="formula-expr formula-math">\[\mathrm{fib}(n) = \mathrm{fib}(n - 1) + \mathrm{fib}(n - 2)\]</div>
+      <span class="formula-note">基底ケース fib(1) = fib(2) = 1 を伴う</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>リスト、タプル、辞書</h2>
+  <div class="body"><p><strong>リスト</strong>はゼロから索引付けされた順序付きの可変シーケンスなので、<code>a[0]</code> は最初の項目、<code>a[-1]</code> は最後の項目です。スライスは一部をコピーし、<code>append</code>、<code>sort</code>、<code>remove</code> はリストをその場で編集します。リストは参照で共有されるため、<code>b = a</code> はコピーしません。<code>b = a[:]</code> がコピーします。</p>
+<p><strong>タプル</strong>は不変のシーケンスで、座標のような固定の組に便利です。<strong>辞書</strong>はキーを値にマップし、事前チェックを要求せずにキーを遅延作成できるため、数え上げの自然な構造です。</p>
+<p>入れ子のリストは行列を表します。まず行をループし、次に列をループします。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">辞書による数え上げ</span>
+      <pre class="formula-code"><code>counts[ch] = counts.get(ch, 0) + 1</code></pre>
+      <span class="formula-note">別途のメンバーシップテストを避ける</span>
+    </div></div><div class="table-wrap"><table><caption>コンテナの選択</caption><thead><tr><th scope='col'>コンテナ</th><th scope='col'>順序付き</th><th scope='col'>可変</th><th scope='col'>典型的な用途</th></tr></thead><tbody><tr><td>list</td><td>はい</td><td>はい</td><td>増減するコレクション</td></tr><tr><td>tuple</td><td>はい</td><td>いいえ</td><td>座標のような固定レコード</td></tr><tr><td>dict</td><td>挿入順</td><td>はい</td><td>キーによる検索と数え上げ</td></tr><tr><td>string</td><td>はい</td><td>いいえ</td><td>テキスト、スライス、検索</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>文字列もシーケンス</h2>
+  <div class="body"><p>文字列は文字のタプルのように振る舞います。不変で、索引付けとスライスが可能なので、<code>text[2:5]</code> は索引 2、3、4 の文字を返し、<code>text[::-1]</code> はそれを逆順にします。</p>
+<p>述語メソッドは単一文字を分類します。<code>isalpha()</code>、<code>isdigit()</code>、<code>isspace()</code> はブール値を返し、ループ内でテストできます。</p>
+<p>部分から出力を組み立てるのは繰り返し現れるパターンです。<code>split()</code> でテキストをトークンに分割し、<code>'-'.join(tokens)</code> で再結合し、<code>strip()</code> で余分な空白を削除します。メソッドは元を変更せず新しい文字列を返すため、保持したい場合は結果を代入します。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">ループ内での文字の分類</span>
+      <div class="formula-expr formula-text">if ch.isdigit(): digits += 1</div>
+      <span class="formula-note">文字列を一度走査し、文字クラスごとにカウンタを更新する</span>
+    </div></div><div class="table-wrap"><table><caption>覚えておく価値のある文字列メソッド</caption><thead><tr><th scope='col'>メソッド</th><th scope='col'>返り値</th><th scope='col'>用途</th></tr></thead><tbody><tr><td>s.split()</td><td>単語のリスト</td><td>空白区切りの入力を解析する</td></tr><tr><td>&#x27;-&#x27;.join(parts)</td><td>1つの文字列</td><td>出力行を組み立てる</td></tr><tr><td>s.strip()</td><td>文字列</td><td>余分な空白と改行を削除する</td></tr><tr><td>s.find(x)</td><td>索引または −1</td><td>部分文字列を探す</td></tr><tr><td>ch.isalpha() / ch.isdigit()</td><td>bool</td><td>ループ内で各文字を分類する</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>入れ子ループと二次元データ</h2>
+  <div class="body"><p>リストのリストはグリッドまたは行列を表します。<code>grid[r][c]</code> は行 <code>r</code>、列 <code>c</code> の要素で、標準的な走査は行の外側ループと列の内側ループです。</p>
+<p>同じ入れ子でパスカルの三角形のような三角形のパターンを出力できます。各内部要素はその上の2つの和です。</p>
+<p>行列の積は試験の定番です。積の行 <code>i</code>、列 <code>j</code> の要素は、最初の行列の行 <code>i</code> と2番目の行列の列 <code>j</code> の内積です。まず形状を確認してください。n×m 行列と m×p 行列の積は n×p になります。索引を入れ替えるのが典型的な無言のエラーです。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">パスカルの三角形の要素</span>
+      <div class="formula-expr formula-math">\[T(r,k) = T(r-1,k-1) + T(r-1,k)\]</div>
+      <span class="formula-note">端は 1。各内部要素はその上の2つの和</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">行列の積</span>
+      <div class="formula-expr formula-math">\[C[i][j] = \sum_{k} A[i][k]\,B[k][j]\]</div>
+      <span class="formula-note">共有される内側次元 k について総和を取る</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>ファイルと簡単なデータ処理</h2>
+  <div class="body"><p>ファイルは <code>with</code> ブロック内で開き、何か失敗しても閉じられるようにします。読み取りでは末尾の改行を含む行が得られるため、解析時はまず <code>strip()</code>、次に <code>split()</code> を行います。書き込みはそのままです。<code>print</code> は改行を追加しますが、<code>file.write()</code> は追加しないので、<code>"\n"</code> を自分で加えます。</p>
+<p>実データは乱雑です。トークンを数値に変換するのは、数値に見えることを確認してからにし、無効な単語はクラッシュさせずにスキップします。</p>
+<p>表形式データでは、<code>csv</code> モジュールやデータフレームライブラリが、壊れやすい手動分割の多くを取り除きます。解析と報告を分離し、各部分を単独でテストできるようにします。</p></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>モジュール、ライブラリ、より大きなツールボックス</h2>
+  <div class="body"><p><strong>モジュール</strong>は再利用可能な定義のファイルです。<code>import math</code> はライブラリを取り込み、<code>math.sqrt(x)</code> は再実装せずに1つの関数を呼び出します。標準ライブラリは乱数、日付、ファイルパスをカバーし、<code>pandas</code> や <code>matplotlib</code> のようなサードパーティパッケージは、表形式データを数行で分析やグラフに変えます。</p>
+<p>ライブラリは基礎を不要にしません。型を選び、正しくループし、入力を検証する必要は依然としてあります。ライブラリ呼び出しは、名前を付けてテストできるブラックボックスとして扱い、データの意味を知ることの代わりにはしないでください。</p>
+<p>課題がライブラリを禁止している場合、それは基礎となるロジックを自分で示すことを求めています。本来インポートするはずのループを自分で書いてください。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">pandas による表の読み取り</span>
+      <div class="formula-expr formula-text">df = pd.read_csv(&#x27;counting.csv&#x27;)
+df.plot()</div>
+      <span class="formula-note">ライブラリがデータを解析、保存、プロットする。あなたの仕事は結果を確認すること</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>デバッグは運ではなくスキル</h2>
+  <div class="body"><p><strong>トレースバック</strong>は下から上へ読みます。最後の行がエラー名を示し、その上の行が発生場所を示します。見つけられる最小の入力で失敗を再現し、2点で値を出力して最初に食い違う場所を問うことで範囲を絞ります。</p>
+<p>境界を意図的に確認します。空の入力、単一の項目、許される最大値です。初心者のバグの多くは、off-by-one エラー、変換漏れ、次の関数によって変更されたリストです。</p>
+<p>合格すべき小さなテストを1つ書き、変更のたびに再実行します。</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>変数</dt><dd>オブジェクトを参照する名前で、型は事前に宣言されるのではなく実行時に決まる。</dd></div><div class="term"><dt>不変</dt><dd>文字列やタプルのように、作成後に値を変更できないオブジェクト。</dd></div><div class="term"><dt>アキュムレータ</dt><dd>ループの実行中に結果を集める変数で、通常はゼロまたは空のコレクションから始まる。</dd></div><div class="term"><dt>再帰</dt><dd>関数がより小さな入力で自分自身を呼び出す手法で、基底ケースによって停止する。</dd></div><div class="term"><dt>辞書</dt><dd>キーから値への可変マッピングで、波括弧で書き、角括弧で読む。</dd></div><div class="term"><dt>トレースバック</dt><dd>エラー発生時に Python が出力する報告で、コールスタックと失敗した行を列挙する。</dd></div><div class="term"><dt>スライス</dt><dd>シーケンスの連続した一部のコピーで、開始、終了、任意のステップ索引で書く。</dd></div><div class="term"><dt>モジュール</dt><dd>プログラムがインポートして名前で呼び出せる、再利用可能な定義のファイル。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>桁和関数のトレース</h2>
+        <p class="problem">この関数を手作業でトレースし、digit_sum(274) の呼び出しで何を返すか述べてください。
+
+def digit_sum(n):
+    total = 0
+    while n &gt; 0:
+        total = total + n % 10
+        n = n // 10
+    return total
+
+print(digit_sum(274))</p>
+        <ol><li>開始: n = 274、total = 0。ループテスト 274 &gt; 0 は真。</li><li>1回目: total = 0 + (274 % 10) = 0 + 4 = 4、n = 274 // 10 = 27。</li><li>2回目: total = 4 + (27 % 10) = 4 + 7 = 11、n = 27 // 10 = 2。</li><li>3回目: total = 11 + (2 % 10) = 11 + 2 = 13、n = 2 // 10 = 0。</li><li>ループテスト: 0 &gt; 0 は偽なのでループは停止し、関数は total = 13 を返す。</li></ol>
+        <div class="answer"><b>Answer</b>関数は 13 を返します。確認: 274 の桁は 2、7、4 で、その和は 13 であり、トレースと一致します。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>ループは変数ごとに1列を使って紙の上でトレースする。頭の中でコードを実行しようとしない。</li><li>算術の前に入力を正しい型に変換する。これが最もよく失われる1点である。</li><li>エラーメッセージは最後の行から上へ読み、一度に1つのエラーを修正する。</li><li>境界ケースをテストする。空の入力、1つの項目、許される最大値。</li><li>問題が find() や count() を禁止している場合は、自分でループを書く。カウンタを初期化し、文字を走査し、条件に応じて更新する。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>Python 3 で組み込み関数 input() は何を返しますか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>ユーザーが小数を入力すると float</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>ユーザーが入力した値と同じ型</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>ユーザーが何を入力しても文字列</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>ユーザーが数字を入力すると整数</span></button></div>
+    <div class="quiz-explain"><b>Why</b>input() は常にテキストを返します。プログラムは算術の前に int() または float() で変換する必要があります。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>17 // 5 の値は何ですか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>3</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>3.4</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>4</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2</span></button></div>
+    <div class="quiz-explain"><b>Why</b>// は切り捨て除算を行い、整数部分 3 を返します。通常の除算なら 3.4 になります。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>次のうち、作成後に変更できないコンテナはどれですか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>アキュムレータ変数</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>list</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>tuple</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>dict</span></button></div>
+    <div class="quiz-explain"><b>Why</b>タプルは不変ですが、リストと辞書はその場での変更をサポートします。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q04</span><span>file.write() について正しい記述はどれですか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>画面にテキストしか書き込めない</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>与えられたものをそのまま書き込むため、改行は明示的に追加する必要がある</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>呼び出しごとにファイルを閉じる</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>print() のように自動で改行を追加する</span></button></div>
+    <div class="quiz-explain"><b>Why</b>print() は改行を追加しますが、file.write() は追加しません。書き込む側が改行文字を追加する必要があります。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>text = &#x27;abcdefg&#x27; のとき、text[2:5] は何を返しますか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>cdef</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>bcde</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>cde</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>cd</span></button></div>
+    <div class="quiz-explain"><b>Why</b>スライスは開始索引を含み、終了索引を含まないため、索引 2、3、4 は文字 c、d、e になります。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q06</span><span>Python の文字列について正しい記述はどれですか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>文字の可変シーケンスである</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>文字の不変シーケンスである</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>単語のリストである</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>append() メソッドで変更できる</span></button></div>
+    <div class="quiz-explain"><b>Why</b>文字列は不変です。strip() や upper() のようなメソッドは新しい文字列を返し、append() のようなその場で変更するメソッドは存在しません。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.ja.html"><span>Computing</span><b>AIとデータ分析</b></a><a class="related-card" href="data-analytics-r.ja.html"><span>Computing</span><b>Rによるデータ分析</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="advanced-structural-mechanics.ja.html"><small>Previous</small><b>上級構造力学</b></a><a class="next" href="construction-materials.ja.html"><small>Next</small><b>建設材料</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">input() はテキストを返す。加算する前に変換する。</p><p class="margin-note">アキュムレータ: 0 から始め、内側で加算し、後で報告する。</p><p class="margin-note">// は切り捨て、% は剰余を保つ。</p><p class="margin-note">トレースバックは下から上へ読む。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

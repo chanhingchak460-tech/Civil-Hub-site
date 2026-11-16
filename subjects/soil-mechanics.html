@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soil Mechanics — Civil Hub</title>
+<meta name="description" content="Soil is a three-phase material whose strength and settlement depend on effective stress, drainage and stress history. This page connects the phase relation">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/soil-mechanics.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="Soil Mechanics — Civil Hub">
+<meta property="og:description" content="Soil is a three-phase material whose strength and settlement depend on effective stress, drainage and stress history. This page connects the phase relation">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/soil-mechanics.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="soil-mechanics.html" data-alt-zh-hant="soil-mechanics.zh-Hant.html" data-alt-ja="soil-mechanics.ja.html" data-alt-ko="soil-mechanics.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">Soil Mechanics</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Core</p>
+          <h1>Soil Mechanics</h1>
+          <p class="subject-sub">Effective stress, consolidation, shear strength and earth pressure</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Core</li><li><b data-i18n="subject.read">Read</b>13 min</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>21</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M60 128 H280" stroke="currentColor" stroke-width="1.6"/><path d="M92 128 V104 H248 V128" stroke="currentColor" stroke-width="1.5"/><path d="M120 60 V100 M148 60 V100 M176 60 V100 M204 60 V100 M232 60 V100" stroke="var(--accent)" stroke-width="1.1"/><path d="M120 56 l4 6 4 -6 M148 56 l4 6 4 -6 M176 56 l4 6 4 -6 M204 56 l4 6 4 -6 M232 56 l4 6 4 -6" stroke="var(--accent)" stroke-width="1"/><path d="M36 140 H304" stroke="var(--line)" stroke-width="1"/><path d="M44 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M66 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M88 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M110 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M132 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M154 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M176 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M198 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M220 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M242 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M264 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M286 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M170 128 C140 146 126 160 126 176 M170 128 C200 146 214 160 214 176" stroke="var(--line)" stroke-width="1.1"/><text x="170" y="190" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">STRESS BULB</text></svg>
+          <figcaption>Footing pressure — the stress bulb below</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">The three-phase picture</a></li><li><a href="#sec-2">Classification and Atterberg limits</a></li><li><a href="#sec-3">Compaction</a></li><li><a href="#sec-4">Effective stress and seepage</a></li><li><a href="#sec-5">Consolidation and settlement</a></li><li><a href="#sec-6">Shear strength and Mohr–Coulomb</a></li><li><a href="#sec-7">Earth pressure on retaining walls</a></li><li><a href="#sec-8">Bearing capacity and slope stability</a></li><li><a href="#sec-9">Permeability: constant head and falling head</a></li><li><a href="#sec-10">Reading the oedometer: c_v from t90</a></li><li><a href="#sec-11">Triaxial tests: UU, CU and CD</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">Soil is a three-phase material whose strength and settlement depend on effective stress, drainage and stress history. This page connects the phase relationships, classification tests, consolidation theory and shear strength that underpin foundation and slope design.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="soil-mechanics" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>The three-phase picture</h2>
+  <div class="body"><p>Soil is a skeleton of particles with water and air in the gaps. The void volume is V_v = V_w + V_a, and the phase relationships compare those volumes and weights.</p>
+<ul>
+<li>Void ratio e = V_v/V_s measures looseness; porosity n = e/(1+e) is the same idea as a volume fraction.</li>
+<li>Water content w = W_w/W_s compares water mass with solid mass, and degree of saturation S_r = V_w/V_v says how full the voids are.</li>
+<li>Specific gravity G_s is about 2.65 for quartz particles.</li>
+<li>The unit weights follow from the phase diagram: bulk γ = (G_s + e S_r) γ_w/(1+e) and dry γ_d = γ/(1+w) = G_s γ_w/(1+e).</li>
+</ul>
+<p>Consistency saves later errors.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Void ratio</span>
+      <div class="formula-expr formula-math">\[e = \frac{V_v}{V_s}\]</div>
+      <span class="formula-note">volume of voids over volume of solids</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Dry unit weight</span>
+      <div class="formula-expr formula-math">\[\gamma_d = \frac{G_s \gamma_w}{1 + e}\]</div>
+      <span class="formula-note">also γ/(1+w)</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Classification and Atterberg limits</h2>
+  <div class="body"><p>Coarse soils are classified by sieve analysis and fine soils by the hydrometer test. The grading curve gives D₁₀, D₃₀ and D₆₀, and the uniformity coefficient C_u = D₆₀/D₁₀: a high value means a well-graded soil.</p>
+<p>For fine soils the <strong>Atterberg limits</strong> mark the water contents where behaviour changes.</p>
+<ul>
+<li>The liquid limit LL is where the soil stops flowing (20 mm cone penetration in the fall-cone test).</li>
+<li>The plastic limit PL is where a 3 mm thread crumbles.</li>
+<li>The plasticity index PI = LL − PL measures the range of plastic behaviour.</li>
+</ul>
+<p>A high PI signals a compressible clay, and a plasticity chart separates silts from clays.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Plasticity index</span>
+      <div class="formula-expr formula-math">\[\mathrm{PI} = \mathrm{LL} - \mathrm{PL}\]</div>
+      <span class="formula-note">width of the plastic range</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Uniformity coefficient</span>
+      <div class="formula-expr formula-math">\[C_u = \frac{D_{60}}{D_{10}}\]</div>
+      <span class="formula-note">grading curve spread</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>Compaction</h2>
+  <div class="body"><p>Compaction densifies soil by expelling air, usually with rollers. The laboratory Proctor test compacts a sample at several water contents and plots dry density against water content, giving a curve that peaks at the <strong>optimum moisture content</strong>.</p>
+<p>Too dry and particles lock against each other; too wet and water occupies the voids the soil would otherwise fill.</p>
+<p>Compaction raises strength and bearing capacity and reduces settlement and permeability, which is why fill is placed in thin layers and compacted to a specified relative compaction rather than simply dumped.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Relative compaction</span>
+      <div class="formula-expr formula-math">\[\mathrm{RC} = \frac{\gamma_d(\text{field})}{\gamma_d(\text{max, lab})}\]</div>
+      <span class="formula-note">usually specified as a percentage</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Effective stress and seepage</h2>
+  <div class="body"><p>Strength and settlement are governed by <strong>effective stress</strong>: σ' = σ − u, where σ is the total stress from the weight of soil and water above and u is the pore water pressure. Same total stress and different pore pressure give completely different behaviour.</p>
+<ul>
+<li>Below the water table, u = ρ_w g h and effective stress uses the submerged unit weight γ' = γ_sat − γ_w.</li>
+<li>Above it, capillary water can give negative pore pressure and temporarily raise σ'.</li>
+<li>Seepage adds a force. Darcy's law gives v = k i and q = k i A, with gradient i = Δh/L.</li>
+<li>When upward seepage approaches the submerged weight, effective stress reaches zero: the <strong>critical hydraulic gradient</strong> is i_c = (G_s − 1)/(1 + e), and beyond it the soil boils and piping can begin.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Effective stress</span>
+      <div class="formula-expr formula-math">\[\sigma&#x27; = \sigma - u\]</div>
+      <span class="formula-note">carried by the skeleton</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Darcy&#x27;s law</span>
+      <div class="formula-expr formula-math">\[v = k i\]</div>
+      <span class="formula-note">permeability coefficient</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Critical hydraulic gradient</span>
+      <div class="formula-expr formula-math">\[i_c = \frac{G_s - 1}{1 + e}\]</div>
+      <span class="formula-note">effective stress falls to zero</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Consolidation and settlement</h2>
+  <div class="body"><p>Consolidation is the time-dependent compression of a saturated clay as excess pore water pressure dissipates. The load is carried by water at first; as it drains, the pressure transfers to the soil skeleton and the void ratio falls, producing settlement.</p>
+<p>The oedometer test loads a sample in increments and plots void ratio against log pressure. The slope of the virgin compression line is the compression index C_c, and the preconsolidation pressure marks the largest stress ever carried. The <strong>overconsolidation ratio</strong> OCR compares that stress with the present one; an overconsolidated clay settles much less.</p>
+<p>Settlement follows s_c = C_c H/(1 + e₀) · log₁₀((σ'₀ + Δσ)/σ'₀), and the rate depends on the coefficient of consolidation c_v.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">One-dimensional settlement</span>
+      <div class="formula-expr formula-math">\[s_c = \frac{C_c H}{1 + e_0} \log_{10}\left(\frac{\sigma&#x27;_0 + \Delta \sigma}{\sigma&#x27;_0}\right)\]</div>
+      <span class="formula-note">layer thickness</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>Shear strength and Mohr–Coulomb</h2>
+  <div class="body"><p>Shear strength is the resistance to sliding between particles. The <strong>Mohr–Coulomb</strong> criterion is τ_f = c' + σ' tan φ', where c' is effective cohesion, φ' the effective friction angle and σ' the effective normal stress on the failure plane.</p>
+<ul>
+<li>Plot τ_f against σ' and the intercept is c' while the slope is tan φ'.</li>
+<li>The Mohr circle at failure touches that envelope, and the failure plane makes 45° + φ'/2 with the major principal plane.</li>
+<li>Loose sand has φ' near 30°, dense sand more.</li>
+<li>A saturated soft clay sheared without drainage behaves as if φ_u = 0, and its strength is the undrained shear strength s_u.</li>
+<li>A direct shear box shears a sample along a forced plane; the triaxial test loads a cylindrical sample under a controlled confining pressure and can measure pore pressure, so total and effective parameters are both obtainable.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Mohr–Coulomb criterion</span>
+      <div class="formula-expr formula-math">\[\tau_f = c&#x27; + \sigma&#x27; \tan \varphi&#x27;\]</div>
+      <span class="formula-note">drained, effective stress form</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Earth pressure on retaining walls</h2>
+  <div class="body"><p>Earth pressure behind a wall depends on how far the wall moves. With no movement the soil is at rest: σ'_h = K₀ σ'_v with K₀ ≈ 1 − sin φ'.</p>
+<ul>
+<li>If the wall yields outward, the soil reaches an <strong>active</strong> state with K_a = tan²(45° − φ'/2).</li>
+<li>Pushing the wall into the soil mobilises <strong>passive</strong> resistance with K_p = tan²(45° + φ'/2), typically several times larger.</li>
+<li>Water pressure must be added separately.</li>
+</ul>
+<p>A wall that cannot drain builds pore pressure the soil skeleton never feels, and that is a common cause of failure.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Active earth pressure coefficient</span>
+      <div class="formula-expr formula-math">\[K_a = \tan^2\left(45^{\circ} - \frac{\varphi&#x27;}{2}\right)\]</div>
+      <span class="formula-note">wall moves away from the soil</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Passive earth pressure coefficient</span>
+      <div class="formula-expr formula-math">\[K_p = \tan^2\left(45^{\circ} + \frac{\varphi&#x27;}{2}\right)\]</div>
+      <span class="formula-note">wall pushes into the soil</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>Bearing capacity and slope stability</h2>
+  <div class="body"><p>A footing fails when the soil beneath shears. The bearing capacity equation combines three terms: q_ult = c N_c + q N_q + 0.5 γ B N_γ, where the N factors depend on φ' and q is the surcharge at foundation level. The allowable pressure is q_ult divided by a <strong>factor of safety</strong> of about 3.</p>
+<p>Slopes fail when driving shear exceeds available strength; stability is FoS = resisting/driving.</p>
+<p>Drainage is the strongest lever: lowering the water table raises effective stress and cuts pore pressure, which is why so many slope failures follow heavy rain.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Bearing capacity</span>
+      <div class="formula-expr formula-math">\[q_{\text{ult}} = c N_c + q N_q + 0.5 \gamma B N_\gamma\]</div>
+      <span class="formula-note">N factors from φ&#x27;</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Factor of safety</span>
+      <div class="formula-expr formula-math">\[\mathrm{FoS} = \frac{\text{resisting shear}}{\text{driving shear}}\]</div>
+      <span class="formula-note">1.5 to 3 in design</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Permeability: constant head and falling head</h2>
+  <div class="body"><p>The <strong>constant head</strong> test suits coarse soils: a steady flow through a cylinder of length L and area A under head difference Δh is collected and timed, giving k = QL/(A Δh t). A laboratory run on coarse sand gave k₂₀ ≈ 7.9 × 10⁻³ m/s after correcting for temperature with k₂₀ = k_T η_T/η₂₀.</p>
+<p>Fine soils pass too little water to meter, so the <strong>falling head</strong> test watches a standpipe of area a drain through the sample: k = (a L)/(A t) ln(h₁/h₂). Samples of decomposed granite and decomposed volcanic rock gave 1.8 × 10⁻⁸ and 5.8 × 10⁻⁸ m/s — nine orders of magnitude slower than the sand, which is why drainage design must know the soil.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Constant head permeability</span>
+      <div class="formula-expr formula-math">\[k = \frac{Q L}{A \Delta h t}\]</div>
+      <span class="formula-note">steady flow collected over time t</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Falling head permeability</span>
+      <div class="formula-expr formula-math">\[k = \frac{a L}{A t} \ln\frac{h_1}{h_2}\]</div>
+      <span class="formula-note">a is the standpipe area, h₁ and h₂ the initial and final heads</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Temperature correction</span>
+      <div class="formula-expr formula-math">\[k_{20} = k_T \frac{\eta_T}{\eta_{20}}\]</div>
+      <span class="formula-note">viscosity correction to a standard 20 °C value</span>
+    </div></div><div class="table-wrap"><table><caption>Typical coefficients of permeability</caption><thead><tr><th scope='col'>Soil</th><th scope='col'>k (m/s)</th><th scope='col'>Test suited</th></tr></thead><tbody><tr><td>Clean gravel</td><td>10⁻² – 1</td><td>constant head</td></tr><tr><td>Coarse sand (laboratory)</td><td>7.9 × 10⁻³</td><td>constant head</td></tr><tr><td>Fine sand</td><td>10⁻⁵ – 10⁻³</td><td>constant or falling head</td></tr><tr><td>Silt</td><td>10⁻⁸ – 10⁻⁵</td><td>falling head</td></tr><tr><td>Decomposed granite (laboratory)</td><td>1.8 × 10⁻⁸</td><td>falling head</td></tr><tr><td>Clay</td><td>below 10⁻⁹</td><td>falling head or oedometer</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>Reading the oedometer: c_v from t90</h2>
+  <div class="body"><p>The magnitude of settlement comes from C_c, but the rate needs the <strong>coefficient of consolidation</strong> c_v. Plot compression against the square root of time: the early readings lie on a straight line whose back-projection to zero gives the corrected origin, and a second line with abscissae 1.15 times larger intersects the curve at <strong>t90</strong>, the time for 90% consolidation.</p>
+<p>Then c_v = T_v H²/t90 with T_90 = 0.848 and H the drainage path — half the sample height for two-way drainage.</p>
+<p>The companion <strong>coefficient of volume compressibility</strong> links settlement per unit of stress increase, and in the laboratory the higher pressure increments gave lower t90 as the clay stiffened.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Coefficient of consolidation</span>
+      <div class="formula-expr formula-math">\[c_v = \frac{T_v H^2}{t_{90}}\]</div>
+      <span class="formula-note">H is the longest drainage path</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Time factor at 90% consolidation</span>
+      <div class="formula-expr formula-math">\[T_{90} = 0.848\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Coefficient of volume compressibility</span>
+      <div class="formula-expr formula-math">\[m_v = \frac{\Delta e}{(1 + e_0) \Delta \sigma&#x27;}\]</div>
+      <span class="formula-note">volumetric strain per unit effective stress increase</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>Triaxial tests: UU, CU and CD</h2>
+  <div class="body"><p>The triaxial cell controls drainage, which is what distinguishes the three standard tests.</p>
+<ul>
+<li><strong>Unconsolidated undrained (UU)</strong>: no drainage at any stage, so it is quick and cheap; a saturated clay then shows φ_u ≈ 0 and its strength is the undrained shear strength s_u = (σ₁ − σ₃)/2, valid only for the undrained condition.</li>
+<li><strong>Consolidated undrained (CU)</strong>: the sample consolidates under cell pressure, then shears closed while pore pressure is measured, so effective parameters c′ and φ′ emerge.</li>
+<li><strong>Consolidated drained (CD)</strong>: drainage throughout, sheared slowly, giving the true drained strength for sand and long-term clay behaviour.</li>
+</ul>
+<p>A laboratory CD run on granular soil returned c′ = 0 and φ′ ≈ 40°.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Undrained shear strength, UU</span>
+      <div class="formula-expr formula-math">\[s_u = \frac{\sigma_1 - \sigma_3}{2}\]</div>
+      <span class="formula-note">radius of the failure Mohr circle in total stress</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Void ratio</dt><dd>The volume of voids divided by the volume of solids, a basic measure of how loose or dense a soil is.</dd></div><div class="term"><dt>Plasticity index</dt><dd>The range of water content over which a fine soil behaves plastically, equal to LL − PL.</dd></div><div class="term"><dt>Effective stress</dt><dd>Total stress minus pore water pressure; it is the stress carried by the soil skeleton and controls strength and compression.</dd></div><div class="term"><dt>Overconsolidation ratio</dt><dd>The past maximum effective stress divided by the present effective stress, showing how heavily a clay was preloaded.</dd></div><div class="term"><dt>Compression index</dt><dd>The slope of the virgin compression line on the void ratio versus log pressure plot from an oedometer test.</dd></div><div class="term"><dt>Factor of safety</dt><dd>The ratio of available shear resistance to the shear stress needed to cause failure.</dd></div><div class="term"><dt>Coefficient of consolidation</dt><dd>The parameter c_v governing how fast excess pore water pressure dissipates and settlement proceeds in a consolidating layer.</dd></div><div class="term"><dt>Falling head test</dt><dd>A permeability test for fine soils in which a standpipe drains through the sample and k is found from the timed fall of the water level.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Settlement of a clay layer under a new embankment</h2>
+        <p class="problem">A 4.0 m thick normally consolidated clay layer has an initial void ratio of 1.10 and a compression index of 0.35. The initial effective vertical stress at mid-depth is 100 kPa. The embankment adds a uniform stress increase of 40 kPa. Estimate the final consolidation settlement of the layer.</p>
+        <ol><li>The settlement formula is s_c = [C_c H/(1 + e₀)] · log₁₀[(σ&#x27;₀ + Δσ)/σ&#x27;₀].</li><li>Substitute the values: s_c = [0.35 × 4.0/(1 + 1.10)] × log₁₀[(100 + 40)/100].</li><li>The coefficient is 1.40/2.10 = 0.6667 m.</li><li>The stress ratio is 140/100 = 1.40, and log₁₀(1.40) = 0.1461.</li><li>So s_c = 0.6667 × 0.1461 = 0.0974 m ≈ 97 mm.</li><li>Sanity check: a 40% stress increase on a soft normally consolidated clay giving under 100 mm is reasonable; a layer twice as thick would settle about twice as much.</li></ol>
+        <div class="answer"><b>Answer</b>The final consolidation settlement is about 97 mm, reached over time as the excess pore pressure dissipates. The rate, not just the magnitude, must be checked against the structure&#x27;s tolerance to differential movement.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>Draw the soil profile and compute total stress, pore pressure and effective stress at each layer boundary before attempting any strength or settlement calculation.</li><li>State whether a test gave total or effective stress parameters; most shear strength errors come from mixing the two.</li><li>For settlement questions, quote both the magnitude and the drainage path, because the thickness and permeability control how fast it occurs.</li><li>Check units: kPa for stress, kN/m³ for unit weight, and metres for layer thickness; a factor of 1000 slips in easily.</li><li>For t90 use the square-root-of-time plot and the 1.15 offset line — quoting c_v from a guessed end-of-primary point on the raw curve is a classic lost mark.</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Presumed allowable bearing pressure for foundations on sands and gravels</h3>
+  <p class="ref-table-intro">Presumed allowable vertical bearing pressures for shallow foundations on non-cohesive soils, used for preliminary footing sizing once the soil category has been established from SPT results and description.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Soil category</th><th scope='col'>Description</th><th scope='col'>SPT N value</th><th scope='col'>Presumed allowable bearing pressure (kPa)</th></tr></thead><tbody><tr><td>4(a)</td><td>Very dense; requires pick for excavation</td><td>&gt; 50</td><td>500</td></tr><tr><td>4(b)</td><td>Dense; requires pick for excavation, 50 mm peg hard to drive</td><td>30 - 50</td><td>300</td></tr><tr><td>4(c)</td><td>Medium dense</td><td>10 - 30</td><td>100</td></tr><tr><td>4(d)</td><td>Loose; can be excavated with a spade, 50 mm peg easily driven</td><td>4 - 10</td><td>&lt; 100</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 1 of GEO Technical Guidance Note No. 53 (Issue 2, dated 17 April 2026). The presumed values assume founding at least 1 m below ground surface, groundwater not higher than 1 m below ground, granular material that is siliceous and non-crushable, and a maximum total settlement of 30 mm.</p>
+  <p class="ref-table-caveat">Revision summary only. Settlement and serviceability must be assessed, and foundations larger than 6 m or with different groundwater or founding conditions need separate bearing capacity and settlement checks; verify against the current guidance for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>The effective stress at a point in a saturated soil is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Independent of the water table</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The total stress plus the pore pressure</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The total stress minus the pore pressure</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Always equal to the pore pressure</span></button></div>
+    <div class="quiz-explain"><b>Why</b>σ&#x27; = σ − u, and it is this effective stress that controls strength and compression, not the total stress alone.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>A soil has a liquid limit of 45% and a plastic limit of 20%. Its plasticity index is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.25%</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>2.25%</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>25%</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>65%</span></button></div>
+    <div class="quiz-explain"><b>Why</b>PI = LL − PL = 45 − 20 = 25%, the width of the plastic range.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q03</span><span>An oedometer test measures the compression of a saturated clay sample. The slope of the void ratio versus log pressure plot on the virgin line is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The compression index</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The uniformity coefficient</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The coefficient of permeability</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The coefficient of consolidation</span></button></div>
+    <div class="quiz-explain"><b>Why</b>That slope is the compression index C_c, used in the settlement formula; c_v describes the rate, not the magnitude.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>Which change most increases the factor of safety of a slope in clay?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Increasing the pore water pressure</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Raising the water table</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Lowering the water table and draining the slope</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Adding weight at the crest</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Drainage lowers pore pressure, raises effective stress and so increases available shear strength along the slip surface.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>In a falling head test the standpipe level falls from 1.20 m to 0.60 m. The permeability calculation uses:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The head difference of 0.60 m directly</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The natural logarithm of the ratio h₁/h₂</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The square root of the head ratio</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The elapsed time alone</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Falling head permeability is k = (aL/At) ln(h₁/h₂), so the log of the initial-to-final head ratio enters, not the difference.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>An unconsolidated undrained triaxial test on a saturated clay gives, in total stress terms:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>φ_u ≈ 0 and s_u = (σ₁ − σ₃)/2</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The true effective parameters c′ and φ′</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>No usable strength parameters</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The same result as a drained test</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Without consolidation or drainage, the failure envelope is horizontal in total stress: φ_u ≈ 0 and the strength is the undrained shear strength.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-geology.html"><span>Core</span><b>Engineering Geology</b></a><a class="related-card" href="fluid-mechanics.html"><span>Core</span><b>Fluid Mechanics</b></a><a class="related-card" href="construction-materials.html"><span>Core</span><b>Construction Materials</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="fluid-mechanics.html"><small>Previous</small><b>Fluid Mechanics</b></a><a class="next" href="surveying.html"><small>Next</small><b>Engineering Surveying</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Geotechnical Engineering Office, Civil Engineering and Development Department. (2026). <i>GEO Technical Guidance Note No. 53: Supplementary Guidelines for Foundation Design and Construction (Issue 2)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.cedd.gov.hk/filemanager/eng/content_427/TGN%2053_Issue%202.pdf" rel="noopener">https://www.cedd.gov.hk/filemanager/eng/content_427/TGN%2053_Issue%202.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">Effective stress is the one that counts.</p><p class="margin-note">Total stress, pore pressure, then σ′.</p><p class="margin-note">Drainage raises strength.</p><p class="margin-note">Water is behind most slope failures.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

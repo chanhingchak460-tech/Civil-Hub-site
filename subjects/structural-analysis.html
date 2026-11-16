@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Structural Analysis — Civil Hub</title>
+<meta name="description" content="How the forces and deflections of real frames are found: determinacy, virtual work, influence lines, moment distribution and stiffness methods. It turns a ">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/structural-analysis.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="Structural Analysis — Civil Hub">
+<meta property="og:description" content="How the forces and deflections of real frames are found: determinacy, virtual work, influence lines, moment distribution and stiffness methods. It turns a ">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/structural-analysis.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="structural-analysis.html" data-alt-zh-hant="structural-analysis.zh-Hant.html" data-alt-ja="structural-analysis.ja.html" data-alt-ko="structural-analysis.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">Structural Analysis</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Core</p>
+          <h1>Structural Analysis</h1>
+          <p class="subject-sub">Frames, influence lines, stiffness and the behaviour of real structures</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Core</li><li><b data-i18n="subject.read">Read</b>11 min</li><li><b data-i18n="subject.sections">Sections</b>10</li><li><b data-i18n="subject.formulas">Formulas</b>13</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M80 160 V64 H260 V160" stroke="currentColor" stroke-width="1.7"/><path d="M70 160 h20 M250 160 h20" stroke="currentColor" stroke-width="1.2"/><path d="M80 160 l-8 12 h16 z M260 160 l-8 12 h16 z" stroke="currentColor" stroke-width="1"/><path d="M80 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M220 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M104 100 q-20 14 0 28" stroke="var(--accent)" stroke-width="1"/><path d="M236 100 q20 14 0 28" stroke="var(--accent)" stroke-width="1"/><text x="170" y="44" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PORTAL FRAME</text></svg>
+          <figcaption>Portal frame — bending moments at the joints</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">Determinacy and stability</a></li><li><a href="#sec-2">Virtual work and the unit load method</a></li><li><a href="#sec-3">The flexibility method</a></li><li><a href="#sec-4">Influence lines</a></li><li><a href="#sec-5">Moment distribution</a></li><li><a href="#sec-6">The stiffness method</a></li><li><a href="#sec-7">Stiffness analysis of plane trusses</a></li><li><a href="#sec-8">Frame behaviour and sway</a></li><li><a href="#sec-9">Checking a computer model</a></li><li><a href="#sec-10">From analysis to design</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">How the forces and deflections of real frames are found: determinacy, virtual work, influence lines, moment distribution and stiffness methods. It turns a sketch of a structure into numbers an engineer can defend.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="structural-analysis" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>Determinacy and stability</h2>
+  <div class="body"><p>Equilibrium supplies three independent equations for each planar free body. Count the members, joints and reaction components: for a rigid-jointed frame the degree of static indeterminacy is D_s = 3m + r − 3j.</p>
+<ul>
+<li>D_s = 0: reactions follow from equilibrium.</li>
+<li>D_s &gt; 0: that many redundants remain.</li>
+<li>D_s &lt; 0: warns of a mechanism.</li>
+<li>Internal hinges reduce the count.</li>
+</ul>
+<p>Determinacy is arithmetic, not proof of stability. Parallel supports, or reactions meeting at one point, can leave a determinate structure free to move, so sketch the mechanism first.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Degree of static indeterminacy, planar frame</span>
+      <div class="formula-expr formula-math">\[D_s = 3m + r - 3j\]</div>
+      <span class="formula-note">m members, r reaction components, j joints; D_s &lt; 0 indicates a mechanism</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Virtual work and the unit load method</h2>
+  <div class="body"><p>The unit load method finds one displacement at a time. Apply a virtual unit load at the point and in the direction required, determine the internal virtual forces, then sum the products of virtual and real actions over the structure.</p>
+<ul>
+<li>For a frame: Σ∫ M m / (EI) ds.</li>
+<li>For a truss: Σ n N L / (A E).</li>
+</ul>
+<p>The sign follows the assumed virtual direction: a negative result means the displacement is opposite to the unit load. It is ideal for checking a computer result at a chosen point.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Unit load method, frame</span>
+      <div class="formula-expr formula-math">\[\Delta = \sum \int \frac{M m}{E I}\,\mathrm{d}s\]</div>
+      <span class="formula-note">M and m are the real and virtual bending moments</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Unit load method, truss</span>
+      <div class="formula-expr formula-math">\[\Delta = \sum \frac{n N L}{A E}\]</div>
+      <span class="formula-note">n and N are the virtual and real axial forces</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>The flexibility method</h2>
+  <div class="body"><p>The flexibility (force) method handles indeterminate structures by removing supports or internal actions until a statically determinate <strong>released structure</strong> remains. The unknowns are the redundant forces X; the price of release is that the released structure must be made to behave like the real one.</p>
+<p>Compatibility supplies the missing equations: the displacement at each released coordinate, caused by the applied loads plus the redundants, must equal its real value — usually zero. In matrix form <code>f X + D = 0</code>, where <code>f_ij</code> is the displacement at coordinate i from a unit redundant at j and <code>D</code> is the displacement there from the loads alone. Each coefficient follows from virtual work.</p>
+<p>When using <strong>diagram multiplication</strong>, split the moment diagrams into simple shapes whose areas and centroids are known. The slope of a bending moment diagram equals the shear, so a diagram whose slope changes at a joint must be decomposed — a parabola and a triangle, not one imagined shape.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Compatibility equations in matrix form</span>
+      <div class="formula-expr formula-math">\[\mathbf{f}\,\mathbf{X} + \mathbf{D} = 0\]</div>
+      <span class="formula-note">f flexibility matrix, X redundants, D displacements of the released structure under the loads</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Flexibility coefficient</span>
+      <div class="formula-expr formula-math">\[f_{ij} = \sum \int \frac{m_i m_j}{E I}\,\mathrm{d}s\]</div>
+      <span class="formula-note">m_i and m_j are the bending moments from unit redundants at i and j</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Influence lines</h2>
+  <div class="body"><p>An influence line shows how one response — reaction, shear, moment or deflection — varies as a unit load travels across the structure. Once the line is known, any load train is handled by superposition: multiply each load by the ordinate beneath it and add. Placing loads over the largest ordinates gives the governing position, which is why they suit bridges and crane girders.</p>
+<p>The Müller-Breslau principle gives the shape directly: release the structure at the point of interest, impose a unit displacement or rotation in the direction of the response, and the resulting deflected shape is the influence line. For a simply supported beam, the moment influence line has an ordinate a b / L beneath the section.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Moment influence ordinate, simply supported beam</span>
+      <div class="formula-expr formula-math">\[y = \frac{a b}{L}\]</div>
+      <span class="formula-note">a, b measured from the section to the supports; L is the span</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Moment distribution</h2>
+  <div class="body"><p>Moment distribution solves indeterminate beams and frames joint by joint, without simultaneous equations. Lock every joint, write the fixed-end moments from the member loads, then release one joint at a time. The unbalanced moment is shared between the members in proportion to their stiffness, and part is carried over to fixed far ends; repeat until the carry-over is negligible.</p>
+<ul>
+<li>For constant EI, stiffness is 4EI/L when the far end is fixed and 3EI/L when it is pinned.</li>
+<li>The carry-over factor is 0.5 to a fixed end and zero to a pinned end.</li>
+</ul>
+<p>Fix the sign convention at the start: hogging on one side of a joint is sagging on the other.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Distribution factor</span>
+      <div class="formula-expr formula-math">\[\mathrm{DF} = \frac{k}{\sum k}\]</div>
+      <span class="formula-note">k = 4EI/L for a fixed far end, 3EI/L for a pinned far end</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Carry-over factor</span>
+      <div class="formula-expr formula-math">\[C = 0.5\]</div>
+      <span class="formula-note">constant EI, far end fixed; no carry-over to a pinned end</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>The stiffness method</h2>
+  <div class="body"><p>The stiffness method takes joint displacements as the unknowns. Each member is described by a stiffness matrix in local axes; the matrices are rotated to global axes and assembled into K u = F. Member loads become equivalent nodal forces, the equations are solved for u, and member end forces follow from the member displacements.</p>
+<p>Written out by hand, the same idea is the slope-deflection equation: M_AB = (4EI/L) θ_A + (2EI/L) θ_B + FEM_AB. It copes with arbitrary geometry and support conditions, which is why it underpins frame analysis software; the model is only as good as its supports and properties.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Assembled stiffness equations</span>
+      <div class="formula-expr formula-math">\[\mathbf{K}\,\mathbf{u} = \mathbf{F}\]</div>
+      <span class="formula-note">K global stiffness matrix, u nodal displacements, F applied nodal forces</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Slope-deflection equation</span>
+      <div class="formula-expr formula-math">\[M_{AB} = \frac{4 E I}{L}\theta_A + \frac{2 E I}{L}\theta_B + \mathrm{FEM}_{AB}\]</div>
+      <span class="formula-note">θ in radians; FEM is the fixed-end moment from member loading</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Stiffness analysis of plane trusses</h2>
+  <div class="body"><p>For a plane truss the stiffness method becomes a clean recipe. Each member is a bar of axial stiffness <code>EA/L</code>, and its end forces depend on the difference of the end displacements resolved along the bar axis. In global coordinates the member stiffness matrix is <code>k = (EA/L) [[c², cs], [cs, s²]]</code>, where <code>c = cos α</code> and <code>s = sin α</code> for a bar inclined at angle α.</p>
+<p>Assembly adds each 2 × 2 matrix into the global K at the degrees of freedom of the member's two joints; supports are imposed by deleting the restrained rows and columns. Solve <code>K u = F</code> for the joint displacements, then recover each member force with <code>N = (EA/L) [c s] (u_B − u_A)</code>, where a positive value means tension. A truss solution that never states its tension convention is not finished.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Member stiffness matrix, plane truss</span>
+      <div class="formula-expr formula-math">\[k = \frac{EA}{L}\begin{bmatrix} c^2 &amp; cs \\ cs &amp; s^2 \end{bmatrix}\]</div>
+      <span class="formula-note">c = cos α, s = sin α; 2 × 2 in global x–y coordinates</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Member force from end displacements</span>
+      <div class="formula-expr formula-math">\[N = \frac{EA}{L}\begin{bmatrix} c &amp; s \end{bmatrix}\left(\mathbf{u}_B - \mathbf{u}_A\right)\]</div>
+      <span class="formula-note">positive N is tension; u_A and u_B are the joint displacement vectors</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>Frame behaviour and sway</h2>
+  <div class="body"><p>A rigid-jointed frame resists lateral load by bending its columns and beams together. If the frame can translate, sway adds to the moments and the structure is sway-sensitive; infill, bracing or a core can change the analysis category and must be included. Sway frames need second-order analysis or amplified moments, since P-Δ effects grow with height and axial load.</p>
+<p>For preliminary sizing, the portal method assumes a point of contraflexure at mid-height of each column and mid-span of each beam, so the storey shear is shared between columns. It is a sketch, not a design method, but it catches gross imbalance early.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Lateral stiffness of fixed-base columns</span>
+      <div class="formula-expr formula-math">\[K_{\mathrm{lat}} \approx \sum \frac{12 E I_c}{h^3}\]</div>
+      <span class="formula-note">first estimate; beam restraint reduces the effective value</span>
+    </div></div><div class="table-wrap"><table><caption>Choosing an analysis method</caption><thead><tr><th scope='col'>Method</th><th scope='col'>Unknowns</th><th scope='col'>Best suited to</th><th scope='col'>Watch out for</th></tr></thead><tbody><tr><td>Unit load / virtual work</td><td>one displacement</td><td>deflection checks at a point</td><td>one point at a time</td></tr><tr><td>Moment distribution</td><td>joint rotations</td><td>continuous beams, small frames</td><td>slow with many joints or sway</td></tr><tr><td>Stiffness matrix</td><td>joint displacements</td><td>computer analysis of any frame</td><td>model errors, units and releases</td></tr><tr><td>Second-order analysis</td><td>displacements with P-Δ</td><td>slender or sway frames</td><td>needs realistic imperfections</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Checking a computer model</h2>
+  <div class="body"><p>Software returns numbers whether or not the model makes sense. Before using the output, confirm units and axes, supports and releases, and section orientation.</p>
+<ul>
+<li>Check that the sum of applied loads equals the sum of reactions.</li>
+<li>Check that moments return to zero at every pin.</li>
+<li>Check that the deflected shape matches the restraints.</li>
+<li>Warnings about near-singular stiffness usually mean a free node or a mechanism.</li>
+<li>Check one member by hand — equilibrium, a standard formula or a known influence line.</li>
+<li>Refine the mesh and see whether the answer moves; a result that changes with an irrelevant refinement is not converged.</li>
+</ul></div>
+<div class="callout callout--warning">
+  <b>The diagram must close</b>
+  A bending moment diagram that does not return to zero at a pin is evidence of a sign error, a release error or an unbalanced load.
+</div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>From analysis to design</h2>
+  <div class="body"><p>Analysis gives actions, not a verdict. Combine the load cases, take the envelope of effects along each member, and check strength, stability and serviceability separately. Second-order effects must be included for slender or sway-sensitive frames, and moving loads need influence lines or influence surfaces to find the governing position.</p>
+<p>Record the load combination, sign convention and units behind every number, because the section design depends on all three. A tidy, traceable set of design actions is the real deliverable of structural analysis.</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Degree of static indeterminacy</dt><dd>The number of unknown reactions or member forces beyond those that equilibrium alone can determine.</dd></div><div class="term"><dt>Influence line</dt><dd>A diagram of one response as a unit load moves across a structure.</dd></div><div class="term"><dt>Müller-Breslau principle</dt><dd>The influence line for a response is the deflected shape caused by a unit displacement or rotation in the direction of that response.</dd></div><div class="term"><dt>Distribution factor</dt><dd>The share of an unbalanced joint moment taken by one member, proportional to its stiffness.</dd></div><div class="term"><dt>Carry-over factor</dt><dd>The fraction of a distributed moment carried to the far end of a member; 0.5 for constant EI with a fixed far end.</dd></div><div class="term"><dt>Sway frame</dt><dd>A frame in which lateral translation of joints is not restrained, so second-order effects must be considered.</dd></div><div class="term"><dt>Flexibility coefficient</dt><dd>The displacement at one released coordinate caused by a unit redundant force at another, used to build the compatibility equations.</dd></div><div class="term"><dt>Diagram multiplication</dt><dd>Evaluating a virtual-work integral by multiplying the areas of simple bending-moment diagrams by the ordinates at their centroids.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Two-span continuous beam by moment distribution</h2>
+        <p class="problem">A continuous beam ABC has two equal spans of 6.0 m, constant EI, and carries a uniformly distributed load of 12 kN/m on both spans. Find the hogging moment at the central support B, the three vertical reactions, and the maximum sagging moment in span AB.</p>
+        <ol><li>Fixed-end moment at B for each span, with the far end pinned: w L² / 8 = 12 × 6.0² / 8 = 54 kNm hogging.</li><li>Distribution factors at B: both spans have stiffness 3EI/L, so each factor is 0.5. The fixed-end moments from the two spans act in opposite rotational senses at the joint, so the net unbalanced moment is zero and no distribution or carry-over is required.</li><li>The support moment is therefore M_B = 54 kNm hogging. For span AB: R_A = wL/2 − M_B/L = 36 − 9 = 27 kN; the reaction at B from this span is 36 + 9 = 45 kN, and the other span adds the same, so R_B = 90 kN.</li><li>Check vertical equilibrium: 27 + 90 + 27 = 144 kN = 12 × 12 m. Correct.</li><li>Maximum sagging moment in AB occurs where the shear is zero, at x = 27/12 = 2.25 m from A: M = 27 × 2.25 − 12 × 2.25²/2 = 30.4 kNm.</li></ol>
+        <div class="answer"><b>Answer</b>M_B = 54 kNm hogging, R_A = R_C = 27 kN, R_B = 90 kN, and the maximum sagging moment in span AB is 30.4 kNm at 2.25 m from A.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>Count indeterminacy and sketch the deflected shape before choosing a method; the method follows from the structure, not from habit.</li><li>In virtual work questions, keep the virtual system truly virtual and carry its sign through to the answer; a negative displacement is a direction, not an error.</li><li>For influence lines, find the ordinates at the critical points first; the maximum effect is then a simple superposition of load times ordinate.</li><li>When a computer analysis is given, spend two minutes checking reactions and the moment diagram before using any output in a design check.</li><li>In a force-method solution, draw the released structure and every unit-redundant moment diagram before writing the flexibility matrix; most errors are sign errors between those diagrams.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>A single-span beam with both ends fixed is statically indeterminate to the degree:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>1</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>2</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>3</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>6</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Six reaction components act and three equilibrium equations are available, so the degree of indeterminacy is 6 − 3 = 3.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>The unit load method determines a displacement from:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The area of the shear force diagram</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The product of real forces and real stiffness</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The sum of virtual internal forces times real deformations</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The slope of the bending moment diagram</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The virtual unit load does work against the real deformation, giving the displacement directly as Σ∫Mm/EI or ΣnNL/AE.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>According to the Müller-Breslau principle, the influence line for the vertical reaction at a support is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The bending moment diagram for a unit load at the support</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The deflected shape produced by a unit displacement at the support in the reaction direction</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The shear force diagram for a unit load at midspan</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The curvature diagram of the member</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Releasing the support and imposing a unit displacement in the reaction direction produces a deflected shape equal to the reaction influence line.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>In moment distribution with constant EI, the carry-over factor from a joint to a fixed far end is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.25</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.5</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>1.0</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Half of the applied moment is carried over when the far end is fixed and the member has constant EI; nothing is carried over to a pinned end.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q05</span><span>In the flexibility method, the number of unknown redundant forces equals the:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Number of members</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Number of support reactions</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Number of joints in the structure</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Degree of static indeterminacy</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Each release removes one unknown beyond equilibrium, so the redundants correspond one-to-one with the degree of indeterminacy.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>A midspan load test gives load P and deflection δ on a simply supported beam. If the same load produced twice the deflection, the back-calculated elastic modulus would be:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Unchanged</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Doubled</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Quartered</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Halved</span></button></div>
+    <div class="quiz-explain"><b>Why</b>E = PL³/(48δI), so doubling δ halves the computed modulus.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="structural-mechanics.html"><span>Core</span><b>Structural Mechanics</b></a><a class="related-card" href="advanced-structural-mechanics.html"><span>Core</span><b>Advanced Structural Mechanics</b></a><a class="related-card" href="design-of-steel-structures.html"><span>Core</span><b>Design of Steel Structures</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="integrated-project-quality.html"><small>Previous</small><b>Integrated Project &amp; Quality Management</b></a><a class="next" href="construction-management.html"><small>Next</small><b>Construction Management</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">D_s &gt; 0 means compatibility is needed.</p><p class="margin-note">Influence lines are for moving loads.</p><p class="margin-note">Release one joint at a time.</p><p class="margin-note">Software output is not a check.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

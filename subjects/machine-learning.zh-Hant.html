@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>機器學習 — Civil Hub</title>
+<meta name="description" content="模型如何從數據中學習模式，以及如何判斷一個模型是否好用。內容涵蓋迴歸、分類、驗證、切合實際問題的指標、過擬合、神經網絡，以及部署模型時的倫理考量。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/machine-learning.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="機器學習 — Civil Hub">
+<meta property="og:description" content="模型如何從數據中學習模式，以及如何判斷一個模型是否好用。內容涵蓋迴歸、分類、驗證、切合實際問題的指標、過擬合、神經網絡，以及部署模型時的倫理考量。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/machine-learning.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="machine-learning.html" data-alt-zh-hant="machine-learning.zh-Hant.html" data-alt-ja="machine-learning.ja.html" data-alt-ko="machine-learning.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">機器學習</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">計算</p>
+          <h1>機器學習</h1>
+          <p class="subject-sub">從數據學習的模型，以及如何評判它們</p>
+          <ul class="subject-facts"><li><b>類型</b>計算</li><li><b>閱讀</b>9 分鐘</li><li><b>章節</b>11</li><li><b>公式</b>10</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">學習就是擬合一個函數</a></li><li><a href="#sec-2">迴歸與分類</a></li><li><a href="#sec-3">訓練：損失與梯度</a></li><li><a href="#sec-4">驗證與洩漏</a></li><li><a href="#sec-5">切合問題的指標</a></li><li><a href="#sec-6">過擬合與正則化</a></li><li><a href="#sec-7">神經網絡</a></li><li><a href="#sec-8">倫理與部署</a></li><li><a href="#sec-9">樹集成：表格數據的冠軍</a></li><li><a href="#sec-10">誠實地進行超參數調優</a></li><li><a href="#sec-11">非監督式學習：聚類與 PCA</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">模型如何從數據中學習模式，以及如何判斷一個模型是否好用。內容涵蓋迴歸、分類、驗證、切合實際問題的指標、過擬合、神經網絡，以及部署模型時的倫理考量。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="machine-learning" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>學習就是擬合一個函數</h2>
+  <div class="body"><p>機器學習是從範例中擬合一個函數，而不是手寫規則。</p>
+<ul>
+<li><strong>監督式學習</strong>：每個範例都帶有標籤；迴歸預測一個數值，分類預測一個類別。</li>
+<li><strong>非監督式</strong>方法在沒有標籤的情況下尋找結構——聚類、降維。</li>
+<li><strong>強化式</strong>學習從獎勵中學習動作。</li>
+</ul>
+<p>估計的好壞取決於樣本：有偏差或不具代表性的數據會產生一個在部署時自信地出錯的模型。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>迴歸與分類</h2>
+  <div class="body"><p>線性迴歸以最小平方法對數值結果擬合一條直線；誤差項收集了直線未能解釋的部分。對於是/否的決策，邏輯迴歸將線性分數通過 <strong>sigmoid</strong> 函數，給出一個介於 0 與 1 之間的機率。</p>
+<p>分數在零處定義了一個邊界；輸出是機率，不是判決。閾值將其轉換為類別，在偽陽性與偽陰性之間取捨。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">線性迴歸</span>
+      <div class="formula-expr formula-math">\[y = \beta_0 + \beta_1 x + \varepsilon\]</div>
+      <span class="formula-note">ε 是 y 中直線未能解釋的部分</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">邏輯（sigmoid）模型</span>
+      <div class="formula-expr formula-math">\[p = \frac{1}{1 + e^{-s}}, \quad s = w \cdot x + b\]</div>
+      <span class="formula-note">p 是機率；類別由選定的閾值決定</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>訓練：損失與梯度</h2>
+  <div class="body"><p>訓練選擇參數，使預測接近標籤。</p>
+<ul>
+<li><strong>損失函數</strong>衡量差距——迴歸用平方誤差，分類用交叉熵。</li>
+<li><strong>梯度下降</strong>讓每個權重逆著損失的梯度微調。</li>
+<li>學習率是關鍵選擇：太小訓練緩慢，太大損失會跳動或發散。</li>
+<li>小批次以噪聲梯度換取速度；對數據的一次完整遍歷稱為一個 epoch。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">梯度下降更新</span>
+      <div class="formula-expr formula-math">\[w \leftarrow w - \eta \frac{\partial L}{\partial w}\]</div>
+      <span class="formula-note">η 是學習率；每一步都與梯度方向相反</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>驗證與洩漏</h2>
+  <div class="body"><p>在學習過的數據上評分的模型，等於自己改自己的作業。劃分為訓練集、驗證集和測試集；在訓練集上擬合，在驗證集上選擇超參數，最後只碰一次測試集。<strong>k 折交叉驗證</strong>輪換驗證折，使估計用到每一行數據。</p>
+<p><strong>洩漏</strong>是沉默的殺手：在劃分前縮放、跨集合的重複記錄，或在結果之後記錄的特徵。時間順序數據必須按時間劃分，而非隨機劃分。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">分層劃分與擬合</span>
+      <div class="formula-expr formula-text">X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.2, stratify=y)
+model.fit(X_tr, y_tr)
+score = model.score(X_te, y_te)</div>
+      <span class="formula-note">stratify 保持兩部分的類別平衡；只在訓練行上擬合</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>切合問題的指標</h2>
+  <div class="body"><p>準確率是第一個指標，而且往往是錯的。在 1,000 個案例中只有 60 個為正，一個總是說「否」的模型得分 94% 準確率，卻什麼也沒抓到。</p>
+<ul>
+<li><strong>混淆矩陣</strong>區分真陽性、偽陽性、偽陰性和真陰性，由此得出<strong>精確率</strong>和<strong>召回率</strong>。</li>
+<li><strong>F1</strong> 平衡兩者，而 ROC-AUC 衡量所有閾值下的排序質量。</li>
+<li>迴歸指標不同：RMSE 懲罰大誤差，MAE 保留原始單位，R² 是解釋的變異。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">精確率與召回率</span>
+      <div class="formula-expr formula-math">\[\mathrm{precision} = \frac{TP}{TP + FP}, \quad \mathrm{recall} = \frac{TP}{TP + FN}\]</div>
+      <span class="formula-note">精確率懲罰誤報；召回率懲罰漏報的正例</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">F1 分數</span>
+      <div class="formula-expr formula-math">\[F_1 = \frac{2 \cdot \mathrm{precision} \cdot \mathrm{recall}}{\mathrm{precision} + \mathrm{recall}}\]</div>
+      <span class="formula-note">調和平均，因此任何一邊表現差都會拉低它</span>
+    </div></div><div class="table-wrap"><table><caption>分類指標及各自的陷阱</caption><thead><tr><th scope='col'>指標</th><th scope='col'>它回答什麼</th><th scope='col'>單獨使用時的陷阱</th></tr></thead><tbody><tr><td>準確率</td><td>所有案例中正確的比例</td><td>被多數類主導</td></tr><tr><td>精確率</td><td>被標記的案例中，有多少是正確的</td><td>忽略漏報的正例</td></tr><tr><td>召回率</td><td>真實正例中，找到了多少</td><td>忽略誤報</td></tr><tr><td>F1</td><td>兩者的平衡</td><td>掩蓋每種錯誤類型的代價</td></tr><tr><td>ROC-AUC</td><td>跨閾值的排序質量</td><td>在選定閾值下沒有決策</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>過擬合與正則化</h2>
+  <div class="body"><p><strong>過擬合</strong>是學習訓練集而非模式：訓練誤差持續下降，而驗證誤差上升。它來自模型對於數據量而言過於靈活。</p>
+<p>解決方法是更多數據、更簡單的模型，或對大權重施加懲罰的<strong>正則化</strong>。Dropout、早停和數據增強是其他形式的約束。欠擬合是相反的失敗，再多的調參也無法修復一個無法表達模式的模型。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">正則化損失（L2）</span>
+      <div class="formula-expr formula-math">\[L_{\mathrm{reg}} = L + \lambda \sum w^2\]</div>
+      <span class="formula-note">λ 控制大權重受懲罰的強度</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>神經網絡</h2>
+  <div class="body"><p>神經網絡堆疊加權和與非線性激活的層；深度讓它能表示線性模型無法表示的交互作用。ReLU 是常見的激活函數，而<strong>反向傳播</strong>計算梯度下降所需的梯度。</p>
+<p>卷積層利用圖像中的局部結構，序列模型處理有序數據。網絡比經典模型需要更多數據和計算，且仍然難以解釋，這在決策影響到人時很重要。</p></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>倫理與部署</h2>
+  <div class="body"><p>好的測試分數不是部署的許可。要問訓練數據中代表了誰、錯誤是否不均地落在某些群體上，以及誰能質疑決策。</p>
+<p><strong>分佈偏移</strong>意味著訓練後世界會變化，因此性能會衰減，必須監控。記錄數據、指標和限制，並在錯誤代價高的地方保持人在迴路中。模型是系統中的一個組件，而系統承擔責任。</p></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>樹集成：表格數據的冠軍</h2>
+  <div class="body"><p><strong>決策樹</strong>以簡單的閾值問題分割數據，並在葉子中預測平均值或多數類。樹容易過擬合，因此集成許多樹：<strong>隨機森林</strong>在自助抽樣和隨機特徵子集上生長樹，而<strong>梯度提升</strong>順序構建樹，每棵樹擬合迄今為止集成的誤差。</p>
+<p>對於表格數據——工程中常見的測量表格——XGBoost 和 LightGBM 等提升樹通常是首先嘗試的模型：它們能處理缺失值和混合單位，需要很少的調參，並且在大多數中小型表格上勝過深度網絡。主要旋鈕是學習率、樹深度和樹的數量；小學習率搭配許多樹是默認配方。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">提升集成</span>
+      <div class="formula-expr formula-math">\[\hat{y} = \sum_{m=1}^{M} \eta \, h_m(x)\]</div>
+      <span class="formula-note">每棵樹 h_m 擬合剩餘誤差；η 是學習率</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>誠實地進行超參數調優</h2>
+  <div class="body"><p>超參數——深度、學習率、正則化強度——通過試錯選擇，每次試錯都消耗其所評分數據的信息。在<strong>驗證</strong>折上調優，而非測試集：反覆使用測試集會使其成為訓練過程的一部分，其最終分數不再是不偏估計。</p>
+<ul>
+<li><strong>交叉驗證</strong>是主力：將訓練數據分成折，在除一折外的所有折上訓練，在留出的折上驗證並輪換。</li>
+<li>對於類別不平衡，使用<strong>分層</strong>折，使每折保持相同的類別比例。</li>
+<li>報告折分數的均值和離散度，而非最佳值。</li>
+<li>當模型的結果很重要時，將整個搜索包裹在嵌套交叉驗證的外層循環中。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">分層 k 折搜索</span>
+      <div class="formula-expr formula-text">skf = StratifiedKFold(n_splits=5, shuffle=True)
+grid = GridSearchCV(pipe, param_grid, cv=skf, scoring=&#x27;f1&#x27;)
+grid.fit(X_train, y_train)
+final_score = grid.score(X_test, y_test)</div>
+      <span class="formula-note">調優僅使用訓練數據的折；測試集只碰一次</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>測試集一碰就消耗</b>
+  在查看測試集後做出的每一個決定——閾值、特徵、模型家族——都會使該分數過於樂觀；只預算一次查看。
+</div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>非監督式學習：聚類與 PCA</h2>
+  <div class="body"><p>沒有標籤時，模型尋找結構。</p>
+<ul>
+<li><strong>k-means</strong> 聚類將每個點分配給最近的質心，並重新計算質心直到分配不再改變；它最小化簇內平方距離，因此簇數 k 是一個建模選擇，目標函數對 k 的肘部圖暗示了增加簇何時不再划算。</li>
+<li><strong>主成分分析</strong>找到方差最大的方向並將數據投影到這些方向上，將許多相關列壓縮成幾個成分。保留的方差份額衡量投影保留了什麼；當累積份額趨於平緩時丟棄成分。</li>
+</ul>
+<p>聚類結果是探索性的——根據下游目的驗證它們，而不是引用一個分數。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">k-means 目標函數</span>
+      <div class="formula-expr formula-math">\[\mathrm{SSE} = \sum_j \sum_{x \in C_j} \lVert x - \mu_j \rVert^2\]</div>
+      <span class="formula-note">每個點到其簇質心的平方距離之和</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>監督式學習</dt><dd>學習從輸入到已知標籤的映射，涵蓋數值的迴歸和類別的分類。</dd></div><div class="term"><dt>過擬合</dt><dd>過於緊密地擬合訓練數據，以致模型在新數據上表現不佳。</dd></div><div class="term"><dt>精確率</dt><dd>被標記的案例中真正為正的比例，TP 除以 TP 加 FP。</dd></div><div class="term"><dt>召回率</dt><dd>真實正例中被模型找到的比例，TP 除以 TP 加 FN。</dd></div><div class="term"><dt>交叉驗證</dt><dd>反覆劃分訓練數據，使每一部分都作為驗證集一次，給出更穩定的性能估計。</dd></div><div class="term"><dt>正則化</dt><dd>對模型複雜度或大權重的懲罰，以減少過擬合。</dd></div><div class="term"><dt>分佈偏移</dt><dd>部署時看到的數據與訓練數據相比發生變化，導致性能衰減。</dd></div><div class="term"><dt>集成學習</dt><dd>結合許多基礎模型（如樹）以減少方差或偏差並改進預測。</dd></div><div class="term"><dt>聚類</dt><dd>將無標籤數據分組，使同一組內的點彼此之間比與其他組的點更相似。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>解讀篩查模型的混淆矩陣</h2>
+        <p class="problem">一個模型篩查 1,000 個結構檢查。實際上 60 個構件有缺陷。模型標記了 50 個構件；其中 40 個確實有缺陷，10 個沒有，另有 20 個有缺陷的構件被漏掉。計算準確率、精確率、召回率和 F1，並說明哪個指標應指導決策。</p>
+        <ol><li>標記計數：TP = 40，FP = 10，FN = 20，TN = 930。</li><li>準確率 = (TP + TN) / 總數 = (40 + 930) / 1000 = 0.97。</li><li>精確率 = TP / (TP + FP) = 40 / 50 = 0.80。</li><li>召回率 = TP / (TP + FN) = 40 / 60 = 0.667。</li><li>F1 = 2 × 0.80 × 0.667 / (0.80 + 0.667) = 0.727。</li></ol>
+        <div class="answer"><b>Answer</b>準確率為 97%，精確率 0.80，召回率 0.67，F1 0.73。標題準確率掩蓋了每三個缺陷中就有一個被漏掉的事實，因此召回率應主導決策：降低閾值以找到更多缺陷，接受更多誤報，並同時報告這兩個指標。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>在計算任何分類指標之前先畫出混淆矩陣；算術更容易，錯誤也顯而易見。</li><li>說出問題實際需要的指標，並用一句話解釋為什麼準確率會誤導。</li><li>如果驗證分數看起來異常好，在報告結果之前檢查是否有洩漏。</li><li>對於表格工程數據，在神經網絡之前先擬合梯度提升樹；它通常更強且需要更少調參。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>一個模型在只有 3% 案例為正的數據集上報告 97% 的準確率。主要風險是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>準確率被多數類主導，掩蓋了漏報的正例</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>模型肯定過擬合了</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>測試集太大</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>精確率必須等於召回率</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>處處預測多數類會給出高準確率，卻找不到任何正例，因此需要精確率和召回率。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>應該使用哪個數據集來給出最終的、不偏的性能估計？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>所有數據合併</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>訓練集</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>用於調優的驗證集</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>測試集，最後只碰一次</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>在驗證集上調優會洩漏信息；留出的測試集給出唯一乾淨的估計。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q03</span><span>訓練損失持續下降而驗證損失上升。這表明：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>過擬合</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>一個完美泛化的模型</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>學習率太小</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>欠擬合</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>模型在記憶訓練數據並失去泛化能力，這是過擬合的特徵。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>梯度下降的學習率遠太大通常會導致：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>測試集洩漏到訓練中</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>特徵被標準化</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>損失振盪或發散</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>更快收斂到全局最小值</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>每一步都越過最小值，因此損失跳動或增長而不是穩定下來。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>梯度提升與隨機森林的主要區別在於：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>它的樹彼此不共享特徵</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>它無法處理缺失值</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>每棵新樹擬合迄今為止集成的誤差</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>它從不使用學習率</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>提升順序生長樹，每棵修正前一個集成留下的殘差，而森林獨立生長樹。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>k-means 聚類通過以下方式將點分配到簇：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>永不改變的隨機分配</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>點到達的順序</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>監督分類器預測的標籤</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>最近的質心，每次迭代重新計算</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>每次迭代將每個點分配給最近的質心，然後將質心移動到其分配點的平均值。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.zh-Hant.html"><span>Computing</span><b>人工智能與數據分析</b></a><a class="related-card" href="artificial-intelligence.zh-Hant.html"><span>Computing</span><b>人工智能</b></a><a class="related-card" href="machine-learning-smart-mobility.zh-Hant.html"><span>Computing</span><b>智慧出行機器學習</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="infrastructure-management.zh-Hant.html"><small>上一頁</small><b>基礎設施管理</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">切勿在訓練數據上測試。</p><p class="margin-note">準確率掩蓋不平衡。</p><p class="margin-note">正則化或簡化；更多數據更好。</p><p class="margin-note">模型部署後會衰減。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

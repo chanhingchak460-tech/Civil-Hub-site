@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コンクリート構造設計 — Civil Hub</title>
+<meta name="description" content="鉄筋コンクリート設計は、要求される強度を鉄筋量、鉄筋径、かぶりに変換する。限界状態荷重を曲げ、せん断、スラブ、柱の検討に結びつけ、最後に配筋詳細と使用性で締めくくる。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-concrete-structures.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="コンクリート構造設計 — Civil Hub">
+<meta property="og:description" content="鉄筋コンクリート設計は、要求される強度を鉄筋量、鉄筋径、かぶりに変換する。限界状態荷重を曲げ、せん断、スラブ、柱の検討に結びつけ、最後に配筋詳細と使用性で締めくくる。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-concrete-structures.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="design-of-concrete-structures.html" data-alt-zh-hant="design-of-concrete-structures.zh-Hant.html" data-alt-ja="design-of-concrete-structures.ja.html" data-alt-ko="design-of-concrete-structures.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">コンクリート構造設計</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">コア</p>
+          <h1>コンクリート構造設計</h1>
+          <p class="subject-sub">香港の実務に基づく鉄筋コンクリート部材</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>コア</li><li><b data-i18n="subject.read">Read</b>12 分</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>12</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M136 48 H204" stroke="currentColor" stroke-width="2"/><path d="M136 152 H204" stroke="currentColor" stroke-width="2"/><path d="M148 56 V144 M192 56 V144" stroke="currentColor" stroke-width="1.4"/><path d="M148 56 l44 0" stroke="var(--line)" stroke-width="1"/><path d="M158 22 V44 M154 40 l4 5 4 -5" stroke="var(--accent)" stroke-width="1.1"/><path d="M170 22 V44 M166 40 l4 5 4 -5" stroke="var(--accent)" stroke-width="1.1"/><path d="M182 22 V44 M178 40 l4 5 4 -5" stroke="var(--accent)" stroke-width="1.1"/><path d="M204 96 l18 -10 l-6 20 l16 6" stroke="var(--accent)" stroke-width="1"/><text x="170" y="178" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">CYLINDER TEST</text></svg>
+          <figcaption>Cylinder compression test — platens and failure</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">コンクリートの限界状態設計</a></li><li><a href="#sec-2">単鉄筋断面の曲げ</a></li><li><a href="#sec-3">連続梁のモーメント係数</a></li><li><a href="#sec-4">フランジ付き梁と圧縮鉄筋</a></li><li><a href="#sec-5">有効フランジ幅とT形梁の手順</a></li><li><a href="#sec-6">せん断とリンク筋</a></li><li><a href="#sec-7">一方向および二方向スラブ</a></li><li><a href="#sec-8">柱：軸力と細長比</a></li><li><a href="#sec-9">かぶり、耐久性、配筋詳細</a></li><li><a href="#sec-10">モーメント再分配と配筋詳細のまとめ</a></li><li><a href="#sec-11">使用性：たわみとひび割れ</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">鉄筋コンクリート設計は、要求される強度を鉄筋量、鉄筋径、かぶりに変換する。限界状態荷重を曲げ、せん断、スラブ、柱の検討に結びつけ、最後に配筋詳細と使用性で締めくくる。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="design-of-concrete-structures" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>コンクリートの限界状態設計</h2>
+  <div class="body"><p>コンクリートは圧縮にはよく抵抗するが引張には弱いため、部材がひび割れる箇所に鉄筋を配置する。<strong>限界状態設計</strong>では、単一の全体安全率を、荷重と材料に別々に適用する部分係数に置き換える。</p>
+<ul>
+<li><strong>終局限界状態</strong>（ULS）では、部材は崩壊してはならない。</li>
+<li><strong>使用限界状態</strong>（SLS）では、通常使用時のたわみとひび割れが許容範囲内でなければならない。</li>
+<li>コンクリートの特性強度 <code>f_cu</code> は28日立方体強度、<code>f_y</code> は鉄筋の特性降伏強度である。</li>
+</ul>
+<p>二つの状態を混同してはならない。断面はULSを満たしても、許容できないほどたわんだりひび割れたりする可能性があり、SLS検討は崩壊について何も語らない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">設計荷重</span>
+      <div class="formula-expr formula-math">\[w_u = 1.4G_k + 1.6Q_k\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>単鉄筋断面の曲げ</h2>
+  <div class="body"><p>曲げを受ける長方形断面は、コンクリートの応力ブロックと鉄筋の引張力から設計する。<strong>K値</strong>はコンクリートがどれだけ厳しく応力を受けているかを表す：</p>
+<p><code>K = M / (f_cu b d²)</code></p>
+<p>ここで <code>b</code> は断面幅、<code>d</code> は圧縮縁から引張鉄筋の図心までの<strong>有効高さ</strong>である。</p>
+<ul>
+<li>限界値 <code>K′ = 0.156</code> 未満では、断面は単鉄筋とできる。</li>
+<li>レバーアームは <code>z = d [0.5 + √(0.25 − K/0.9)]</code> で、<code>0.95d</code> を上限とする。</li>
+<li>鉄筋量は <code>A_s = M / (0.87 f_y z)</code> から求まる。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">K値</span>
+      <div class="formula-expr formula-math">\[K = \frac{M}{f_{cu} b d^2}\]</div>
+      <span class="formula-note">MはN mm、f_cuはN/mm²、bとdはmm</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">レバーアーム</span>
+      <div class="formula-expr formula-math">\[z = d\left[0.5 + \sqrt{0.25 - \frac{K}{0.9}}\right] \le 0.95d\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">必要引張鉄筋量</span>
+      <div class="formula-expr formula-math">\[A_s = \frac{M}{0.87 f_y z}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>連続梁のモーメント係数</h2>
+  <div class="body"><p>等分布荷重を受ける連続梁では、次の三条件が成り立つ場合、完全な弾性解析を表化された<strong>モーメント係数</strong>で置き換えられる：</p>
+<ul>
+<li>スパンの差が最長スパンの約15%以内であること、</li>
+<li>荷重がほぼ等分布であること、</li>
+<li>活荷重が死荷重を超えないこと。</li>
+</ul>
+<p>設計モーメントは <code>M = β F L</code> となる。ここで <code>F = w L</code> はスパン上の総設計荷重、βは位置に対する係数である。代表値は、外側支点で0.04F、端スパンの中央付近で0.075F、最初の内側支点で0.086F、内側スパンの中央と内側支点で0.063Fである。最初の内側支点のモーメントが最大であり、そこでは上端鉄筋が最も多くなる理由である。関連するせん断力は同じ表から、または各スパンの自由体から求める。</p>
+<p>係数は一体打ちの施工と、梁に沿ってほぼ一様な剛性を仮定している。大きくハンチを付けた不規則な架構では、代わりに弾性解析が必要である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">係数による設計モーメント</span>
+      <div class="formula-expr formula-math">\[M = \beta F L\]</div>
+      <span class="formula-note">F = w L はスパン上の総設計荷重、βは位置に依存する</span>
+    </div></div><div class="table-wrap"><table><caption>代表的な連続梁のモーメント係数（等分布荷重、ほぼ等スパン）</caption><thead><tr><th scope='col'>位置</th><th scope='col'>F = w L に対する係数 β</th></tr></thead><tbody><tr><td>外側支点</td><td>0.04</td></tr><tr><td>端スパンの中央付近</td><td>0.075</td></tr><tr><td>最初の内側支点</td><td>0.086</td></tr><tr><td>内側スパンの中央</td><td>0.063</td></tr><tr><td>内側支点</td><td>0.063</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>フランジ付き梁と圧縮鉄筋</h2>
+  <div class="body"><p>スラブと一体で打設された梁は、スラブの幅が圧縮域に加わるため、T形またはL形断面として働く。<strong>有効フランジ幅</strong>はスパンと梁間隔の割合に制限されるため、ウェブに近いスラブのみが計上される。</p>
+<p>応力ブロックの位置を確認する：その深さは <code>s = 2(d − z)</code> である。<code>s</code> がフランジ厚 <code>h_f</code> を超えなければ、断面はフランジ全幅の長方形として挙動し、通常の <code>K</code> と <code>z</code> の式が適用できる。ブロックがウェブに達する場合は、真のT形断面として設計する。</p>
+<p><code>K</code> が <code>K′</code> を超える場合は、梁を深くするか、超過モーメントと鉄筋層間の深さから圧縮鉄筋を算定して追加する。</p></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>有効フランジ幅とT形梁の手順</h2>
+  <div class="body"><p>T形梁はスラブの一部のみをフランジとして計上する。ウェブの両側の張り出しは、隣接梁までの純間隔の約0.2倍に有効スパンの0.1倍を加えた値に制限され、端部（L形）梁ではスパン項がその約85%に低減される。梁間隔4 m、スパン5 mの梁グリッドで計算すると、有効フランジ幅は680 mmとなり、250 mmのウェブを加えると合計930 mmとなった — 全間隔よりはるかに小さい。</p>
+<p>設計手順は次のとおり固定される：</p>
+<ul>
+<li>フランジ幅でKを計算する、</li>
+<li>zを求める、</li>
+<li>応力ブロック深さ <code>s = 2(d − z)</code> を確認する。</li>
+</ul>
+<p>sがフランジ厚h_f以内にとどまれば、断面は幅b_fの長方形として設計する。sがウェブに入り込む場合は、ウェブ内の圧縮を別途扱わなければならない。フランジとウェブの幅比は約4未満に保ち、最小鉄筋はフランジ全体ではなくウェブ面積に対して検討する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">有効フランジ幅、内側T形梁</span>
+      <div class="formula-expr formula-math">\[b_{\mathrm{eff}} = b_w + 0.2\,b_1 + 0.1\,\ell\]</div>
+      <span class="formula-note">b₁はウェブ間の純間隔、ℓは有効スパン。端部梁ではスパン項を約0.85に低減する</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">応力ブロック深さの確認</span>
+      <div class="formula-expr formula-math">\[s = 2(d - z)\]</div>
+      <span class="formula-note">s ≤ h_f なら断面は幅b_fの長方形として挙動する</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>せん断とリンク筋</h2>
+  <div class="body"><p>せん断は一部をコンクリートが、一部を<strong>リンク筋</strong>（スターラップ）が負担する。作用応力度は <code>v = V/(b_v d)</code> で、支点面から <code>d</code> の位置で検討する。コンクリートの負担分 <code>v_c</code> はコードの表から得られ、軸方向鉄筋比とコンクリート強度等級に依存する。</p>
+<p>超過分はリンク筋が負担する：<code>A_sv/s_v ≥ (v − v_c) b_v / (0.87 f_yv)</code>。せん断がピークとなる支点付近では間隔を詰め、応力度は約 <code>0.8√f_cu</code> の圧壊限界以下に保たなければならない。</p>
+<p>リンク筋はまたコンクリートを拘束し、主筋を保持し、鉄筋籠をまとめる役割を果たすため、計算上不要な箇所でもコードは最小リンク筋量を要求する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">必要リンク筋量</span>
+      <div class="formula-expr formula-math">\[\frac{A_{sv}}{s_v} \ge \frac{(v - v_c)b_v}{0.87 f_{yv}}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>一方向および二方向スラブ</h2>
+  <div class="body"><p>スラブは対向する二辺で支持されると<strong>一方向</strong>、長スパンが短スパンの約2倍未満であれば<strong>二方向</strong>である。二方向スラブは両方向に曲げが生じるため、各帯は荷重の一部のみを負担する。</p>
+<p>厚さは通常、曲げではなくたわみで決まる。基本的なスパン対有効高さ比は、単純支持スラブで約20、連続スラブで約26であり、配筋量に応じて修正する。連続スラブでは架構解析の代わりに表化された<strong>モーメント係数</strong>を用いてよい。</p>
+<p>主筋と直交する方向に分布鉄筋を配置してひび割れを制御し、柱周りの<strong>パンチングせん断</strong>を検討する。集中反力が薄いスラブを突き抜ける可能性があるためである。</p></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>柱：軸力と細長比</h2>
+  <div class="body"><p>主に軸力を受ける短柱の公称耐力は</p>
+<p><code>N = 0.4 f_cu A_c + 0.75 f_y A_sc</code></p>
+<p>であり、<code>A_c</code> は純コンクリート面積、<code>A_sc</code> は鉄筋面積である。係数は立方体強度と部材強度の差およびひずみ適合を考慮している。</p>
+<p>細長比は状況を変える：細長い柱は曲げ変形し、そのたわみによる追加モーメントが作用モーメントに加算される。設計では両軸方向の細長比を検討し、最小偏心を適用し、二軸曲げを考慮する。</p>
+<p>配筋詳細も適用される：鉄筋量は少なくとも約1%、最大4〜6%、長方形断面では最小4本、リンク筋間隔は鉄筋径の12倍または最小寸法以下とする。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">短柱の軸耐力</span>
+      <div class="formula-expr formula-math">\[N = 0.4f_{cu}A_c + 0.75f_yA_{sc}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>かぶり、耐久性、配筋詳細</h2>
+  <div class="body"><p><strong>公称かぶり</strong>は表面から鉄筋外面までの距離である。水や塩化物を鉄筋から遠ざけ、火災時に鉄筋を断熱するため、暴露条件と耐火性によって決まる。</p>
+<p>鉄筋はまたその力を定着させなければならない。定着長さは鉄筋径と応力度とともに増加し、概ね <code>l_b = f_y φ / (4 f_b)</code> である。ここで <code>f_b</code> は設計付着応力度である。重ね継手は、2本の鉄筋が一つのコンクリート長さを共有するため、より長くなる。</p>
+<p>骨材が通過できるよう鉄筋間隔を十分に保ち、リンク筋を主筋にフックする。配筋詳細は計算を施工可能にする段階である：鉄筋は収まり、固定され、締め固められたコンクリートに囲まれなければならない。</p></div><div class="table-wrap"><table><caption>暴露条件別の目安となる公称かぶり（代表的な範囲。プロジェクト仕様が優先する）</caption><thead><tr><th scope='col'>暴露条件</th><th scope='col'>代表的な公称かぶり（mm）</th><th scope='col'>主な脅威</th></tr></thead><tbody><tr><td>軽微：乾燥した保護された屋内</td><td>25〜30</td><td>炭酸化</td></tr><tr><td>中程度：湿潤で遮蔽された環境</td><td>35〜40</td><td>炭酸化と湿気</td></tr><tr><td>厳しい：湿潤と乾燥の繰り返し</td><td>45〜50</td><td>塩化物の浸透</td></tr><tr><td>非常に厳しい：海洋または凍結防止塩</td><td>55〜60</td><td>塩化物と火災</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>モーメント再分配と配筋詳細のまとめ</h2>
+  <div class="body"><p>十分に鉄筋が配置されたコンクリート断面は延性的であるため、断面に回転能力があれば、支点の弾性ピークモーメントを<strong>再分配</strong>できる — 低減し、他の箇所で再配分する。中立軸が浅い <code>x/d ≤ 0.5</code> の範囲では約30%までの再分配が許され、<code>x/d = 0.6</code> で線形的にゼロまで低減する。</p>
+<p>再分配は支点での経済性をもたらすが、延性を要求する：せん断耐力に余裕のある軽鉄筋断面は適合するが、重鉄筋断面は適合しない。</p>
+<p>次に配筋詳細が解析を確定させる：</p>
+<ul>
+<li>鉄筋量は b h の約0.13%の最小値と、コンクリート総面積の約4%の最大値の間に収めなければならない。</li>
+<li>低モーメント域で鉄筋を切断する。</li>
+<li>ひび割れを制御できる程度に間隔を詰め、かつ骨材が通過できる程度に広く保つ。</li>
+<li>力をコンクリートに伝える必要があるすべての鉄筋を定着または折り曲げる。</li>
+</ul>
+<p>まだ必要な位置で終わる鉄筋は、設計に組み込まれたひび割れである。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">再分配と中立軸の限界</span>
+      <div class="formula-expr formula-math">\[\frac{x}{d} \le 0.6 - 0.33\,\beta\]</div>
+      <span class="formula-note">βは再分配されるモーメントの割合。β = 0.3 で x/d ≤ 0.5</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">最小引張鉄筋量</span>
+      <div class="formula-expr formula-math">\[A_{s,\min} \approx 0.0013\,b\,h\]</div>
+      <span class="formula-note">総断面の約0.13%。最大は約4%</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>使用性：たわみとひび割れ</h2>
+  <div class="body"><p>たわみはスパン対高さ比を制限するか、スパン/250などの限界に対する計算で制御する。クリープと収縮は短期弾性たわみに加算されるため、持続荷重には長期推定が必要である。</p>
+<p>ひび割れは引張縁付近に鉄筋を分散配置し、鉄筋間隔を制限することで制御する。計算幅は次の形をとる：</p>
+<p><code>w_k = 3 a_cr ε_m / [1 + 2(a_cr − c_min)/(h − x)]</code></p>
+<p>ここで <code>a_cr</code> は最寄り鉄筋までの距離、<code>ε_m</code> は平均ひずみ、<code>c_min</code> は最小かぶり、<code>x</code> は中立軸深さである。</p>
+<p>鉄筋応力度を適度に保ち、鉄筋間隔を詰めれば、幅は通常0.3 mmの限界付近にとどまる。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">ひび割れ幅</span>
+      <div class="formula-expr formula-math">\[w_k = \frac{3a_{cr}\varepsilon_m}{1 + 2\frac{a_{cr} - c_{min}}{h - x}}\]</div>
+      
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>特性強度</dt><dd>試験結果のうち、規定された小さな割合のみがこれを下回ると予想される強度。</dd></div><div class="term"><dt>有効高さ</dt><dd>圧縮縁から引張鉄筋の図心までの距離。</dd></div><div class="term"><dt>レバーアーム</dt><dd>コンクリート圧縮合力と鉄筋引張力の間の距離で、0.95dを上限とする。</dd></div><div class="term"><dt>K値</dt><dd>モーメントを f_cu b d の二乗で割った値。断面が単鉄筋とできるかを示す。</dd></div><div class="term"><dt>公称かぶり</dt><dd>コンクリート表面から鉄筋外面までの規定距離で、耐久性と火災によって決まる。</dd></div><div class="term"><dt>パンチングせん断</dt><dd>柱や荷重の周りの集中せん断で、スラブの栓を支点から押し抜く可能性があるもの。</dd></div><div class="term"><dt>モーメント再分配</dt><dd>弾性支点モーメントの一部を意図的にスパンへ移すこと。断面に回転できる延性がある場合にのみ許される。</dd></div><div class="term"><dt>有効フランジ幅</dt><dd>T形またはL形梁の圧縮フランジとして計上される制限されたスラブ幅で、スパンと梁間隔によって決まる。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>長方形梁の引張鉄筋を設計する</h2>
+        <p class="problem">幅250 mm、せい500 mmの単純支持梁が、設計終局モーメント200 kNmを受ける。有効高さは450 mm、f_cu = 30 N/mm²、f_y = 500 N/mm²である。断面が単鉄筋とできるかを判定し、必要な引張鉄筋量を求めよ。実用的な鉄筋配置を示せ。</p>
+        <ol><li>K = M / (f_cu b d²) = (200 × 10⁶) / (30 × 250 × 450²) = 0.132。</li><li>K′ = 0.156 と比較する：Kは小さいため、圧縮鉄筋は不要である。</li><li>z = d [0.5 + √(0.25 − K/0.9)] = 450 [0.5 + √(0.25 − 0.1463)] = 450 × 0.822 = 370 mm。</li><li>上限を確認する：0.95d = 427 mmであるため、計算値z = 370 mmを用いる。</li><li>A_s = M / (0.87 f_y z) = (200 × 10⁶) / (0.87 × 500 × 370) = 1243 mm²。</li><li>最小鉄筋量を確認する：b × h の約0.13% = 0.0013 × 250 × 500 = 163 mm²であるため、曲げの要求が支配する。</li><li>妥当性確認：4本のH20鉄筋を配置すると、A_s = 1256 mm²。100A_s/(b d) = 1.12%で、最大約4%を下回る。</li></ol>
+        <div class="answer"><b>Answer</b>引張側に4本のH20鉄筋（1256 mm²）を配置する。K = 0.132 は K′ を下回るため、梁は単鉄筋として十分である。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>Kを使う前にすべてをニュートンとミリメートルに換算し、最終答えはkNm、mm²、MPaで示す。</li><li>常にKとK′を比較する。圧縮鉄筋を必要とする梁は単鉄筋とは別の計算である。</li><li>レバーアームは0.95dを上限とし、その上限を明記する — 試験官はこの確認に点を与える。</li><li>答えの中でULSとSLSを分ける：強度検討とたわみ・ひび割れ検討は異なる要求として採点される。</li><li>モーメント係数を使う前に三条件 — ほぼ等スパン、等分布荷重、活荷重が死荷重を超えないこと — を述べ、問題に対して確認する。</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Minimum percentages of reinforcement in beams</h3>
+  <p class="ref-table-intro">Minimum reinforcement required by the concrete code to control cracking and ensure ductility. The percentages scale with the steel yield strength through the factor αmin, which reduces the minimum as fy rises.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Situation</th><th scope='col'>Percentage definition</th><th scope='col'>fy = 250 N/mm²</th><th scope='col'>fy = 500 N/mm²</th></tr></thead><tbody><tr><td>Sections subjected mainly to pure tension</td><td>100As/Ac</td><td>0.8αmin</td><td>0.45αmin</td></tr><tr><td>Rectangular section in flexure</td><td>100As/Ac</td><td>0.24αmin</td><td>0.13αmin</td></tr><tr><td>Flanged beam, web in tension, bw/b &lt; 0.4</td><td>100As/bwh</td><td>0.32αmin</td><td>0.18αmin</td></tr><tr><td>Flanged beam, web in tension, bw/b ≥ 0.4</td><td>100As/bwh</td><td>0.24αmin</td><td>0.13αmin</td></tr><tr><td>Flanged beam, flange in tension (T-beam)</td><td>100As/bwh</td><td>0.48αmin</td><td>0.26αmin</td></tr><tr><td>Compression reinforcement, general rule</td><td>100Asc/Acc</td><td>0.4</td><td>0.4</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 9.1 of the Code of Practice for the Structural Use of Concrete 2013 (2020 Edition). αmin = 40 fcu^(2/3) / fy but not less than 1.0; As is the tension reinforcement area, Ac the concrete area, bw the web width and h the overall depth.</p>
+  <p class="ref-table-caveat">Revision summary only. Minimum percentages may need increasing to satisfy ductility requirements, and spacing, anchorage and detailing rules also apply; verify against the current code for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q01</span><span>モーメント再分配を行わない単鉄筋長方形断面が曲げに対して満足するのは、Kがおよそ次を超えない場合である：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.045</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.156</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.402</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>1.000</span></button></div>
+    <div class="quiz-explain"><b>Why</b>K′ = 0.156 が従来の限界であり、これを超えると圧縮鉄筋またはより深い断面が必要となる。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>梁のせん断リンク筋の主な構造的役割は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>コンクリート耐力が超過した後、斜め引張に抵抗する</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>長期たわみを低減する</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>梁を柱に定着させる</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>曲げモーメント耐力を増加させる</span></button></div>
+    <div class="quiz-explain"><b>Why</b>コンクリートがせん断の一部を負担し、リンク筋が超過分を負担する。またコードは拘束と固定のため最小リンク筋量を定めている。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>鉄筋の公称かぶりは主に次によって決まる：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>部材のスパン</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>断面内の鉄筋本数</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>骨材の寸法のみ</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>耐久性の暴露条件と耐火性</span></button></div>
+    <div class="quiz-explain"><b>Why</b>かぶりは鉄筋を腐食から保護し、火災時に断熱するため、暴露等級と耐火時間が値を決める。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q04</span><span>二方向スラブの挙動では、荷重は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>短スパンのみで負担される</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>両方向の曲げで負担される</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>膜作用のみで負担される</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>長辺の梁のみで負担される</span></button></div>
+    <div class="quiz-explain"><b>Why</b>長スパンが短スパンの約2倍未満の場合、スラブは両方向に曲げが生じ、荷重を両方向で分担する。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>簡易係数を用いた場合、スパン上の総荷重Fを受ける連続梁の最初の内側支点における設計モーメントはおよそ：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.040 F L</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.075 F L</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.086 F L</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>0.100 F L</span></button></div>
+    <div class="quiz-explain"><b>Why</b>最初の内側支点は約0.086F Lを負担し、係数の中で最大であるため、そこでは上端鉄筋が最大となる。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>x/d = 0.5 の断面で許容される最大モーメント再分配はおよそ：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>10%</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>20%</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>30%</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>50%</span></button></div>
+    <div class="quiz-explain"><b>Why</b>再分配は x/d ≤ 0.5 のとき約30%に制限され、x/d が0.6に近づくにつれて線形的にゼロまで低減する。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="design-of-steel-structures.ja.html"><span>Core</span><b>鋼構造設計</b></a><a class="related-card" href="construction-materials.ja.html"><span>Core</span><b>建設材料</b></a><a class="related-card" href="structural-mechanics.ja.html"><span>Core</span><b>構造力学</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="hydraulics-hydrology.ja.html"><small>Previous</small><b>水理学と水文学</b></a><a class="next" href="transportation-highway-engineering.ja.html"><small>Next</small><b>交通・道路工学</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2020). <i>Code of Practice for the Structural Use of Concrete 2013 (2020 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/CoP_SUC2013e.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/CoP_SUC2013e.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">zは0.95dを上限とする — レバーアームは無限に増加できない。</p><p class="margin-note">Kが0.156を超えると圧縮鉄筋またはより深い梁が必要となる。</p><p class="margin-note">かぶりは耐久性の決定であり、図面の細部ではない。</p><p class="margin-note">リンク筋はコンクリートが担えない仕事、すなわち斜め引張を担う。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

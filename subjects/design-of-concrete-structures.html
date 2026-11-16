@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design of Concrete Structures — Civil Hub</title>
+<meta name="description" content="Reinforced concrete design turns a required strength into steel areas, bar sizes and cover. It links limit-state loading to bending, shear, slab and column">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-concrete-structures.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="Design of Concrete Structures — Civil Hub">
+<meta property="og:description" content="Reinforced concrete design turns a required strength into steel areas, bar sizes and cover. It links limit-state loading to bending, shear, slab and column">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-concrete-structures.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="design-of-concrete-structures.html" data-alt-zh-hant="design-of-concrete-structures.zh-Hant.html" data-alt-ja="design-of-concrete-structures.ja.html" data-alt-ko="design-of-concrete-structures.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">Design of Concrete Structures</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Core</p>
+          <h1>Design of Concrete Structures</h1>
+          <p class="subject-sub">Reinforced concrete members to Hong Kong practice</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Core</li><li><b data-i18n="subject.read">Read</b>12 min</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>12</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M136 48 H204" stroke="currentColor" stroke-width="2"/><path d="M136 152 H204" stroke="currentColor" stroke-width="2"/><path d="M148 56 V144 M192 56 V144" stroke="currentColor" stroke-width="1.4"/><path d="M148 56 l44 0" stroke="var(--line)" stroke-width="1"/><path d="M158 22 V44 M154 40 l4 5 4 -5" stroke="var(--accent)" stroke-width="1.1"/><path d="M170 22 V44 M166 40 l4 5 4 -5" stroke="var(--accent)" stroke-width="1.1"/><path d="M182 22 V44 M178 40 l4 5 4 -5" stroke="var(--accent)" stroke-width="1.1"/><path d="M204 96 l18 -10 l-6 20 l16 6" stroke="var(--accent)" stroke-width="1"/><text x="170" y="178" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">CYLINDER TEST</text></svg>
+          <figcaption>Cylinder compression test — platens and failure</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">Limit state design in concrete</a></li><li><a href="#sec-2">Bending of a singly reinforced section</a></li><li><a href="#sec-3">Moment coefficients for continuous beams</a></li><li><a href="#sec-4">Flanged beams and compression steel</a></li><li><a href="#sec-5">Effective flange width and the T-beam sequence</a></li><li><a href="#sec-6">Shear and links</a></li><li><a href="#sec-7">Slabs in one and two directions</a></li><li><a href="#sec-8">Columns: axial load and slenderness</a></li><li><a href="#sec-9">Cover, durability and detailing</a></li><li><a href="#sec-10">Moment redistribution and the detailing package</a></li><li><a href="#sec-11">Serviceability: deflection and cracking</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">Reinforced concrete design turns a required strength into steel areas, bar sizes and cover. It links limit-state loading to bending, shear, slab and column checks, then closes with detailing and serviceability.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="design-of-concrete-structures" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>Limit state design in concrete</h2>
+  <div class="body"><p>Concrete resists compression well and tension poorly, so reinforcement is placed where a member would otherwise crack. <strong>Limit state design</strong> replaces one global safety factor with partial factors applied separately to loads and materials.</p>
+<ul>
+<li>At the <strong>ultimate limit state</strong> (ULS) the member must not collapse.</li>
+<li>At the <strong>serviceability limit state</strong> (SLS) deflection and cracking must stay acceptable in normal use.</li>
+<li>The characteristic concrete strength <code>f_cu</code> is the 28-day cube strength; <code>f_y</code> is the characteristic yield strength of the reinforcement.</li>
+</ul>
+<p>Never mix the two states. A section can pass ULS and still sag or crack unacceptably, and an SLS check says nothing about collapse.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Design load</span>
+      <div class="formula-expr formula-math">\[w_u = 1.4G_k + 1.6Q_k\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Bending of a singly reinforced section</h2>
+  <div class="body"><p>A rectangular section in bending is designed from a stress block in the concrete and a tensile force in the steel. The <strong>K value</strong> measures how heavily the concrete is stressed:</p>
+<p><code>K = M / (f_cu b d²)</code></p>
+<p>where <code>b</code> is the section width and <code>d</code> the <strong>effective depth</strong>, measured from the compression face to the centroid of the tension steel.</p>
+<ul>
+<li>Below the limiting <code>K′ = 0.156</code>, a section can be singly reinforced.</li>
+<li>The lever arm is <code>z = d [0.5 + √(0.25 − K/0.9)]</code>, capped at <code>0.95d</code>.</li>
+<li>The steel area follows from <code>A_s = M / (0.87 f_y z)</code>.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">K value</span>
+      <div class="formula-expr formula-math">\[K = \frac{M}{f_{cu} b d^2}\]</div>
+      <span class="formula-note">M in N mm, f_cu in N/mm², b and d in mm</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Lever arm</span>
+      <div class="formula-expr formula-math">\[z = d\left[0.5 + \sqrt{0.25 - \frac{K}{0.9}}\right] \le 0.95d\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Required tension steel</span>
+      <div class="formula-expr formula-math">\[A_s = \frac{M}{0.87 f_y z}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>Moment coefficients for continuous beams</h2>
+  <div class="body"><p>For a continuous beam under uniform loading, a full elastic analysis can be replaced by tabulated <strong>moment coefficients</strong> when three conditions hold:</p>
+<ul>
+<li>the spans differ by no more than about 15% of the longest,</li>
+<li>the loading is essentially uniform,</li>
+<li>the live load does not exceed the dead load.</li>
+</ul>
+<p>The design moment is then <code>M = β F L</code>, where <code>F = w L</code> is the total design load on the span and β is the coefficient for the position. Typical values are 0.04F at an outer support, 0.075F near midspan of an end span, 0.086F at the first interior support, and 0.063F at midspan of interior spans and at interior supports. The first interior support moment is the largest, which is why top steel is heaviest there; the associated shear forces follow from the same table or from the free body of each span.</p>
+<p>The coefficients assume monolithic construction and fairly uniform stiffness along the beam. Heavily haunched or irregular frames need an elastic analysis instead.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Design moment from coefficients</span>
+      <div class="formula-expr formula-math">\[M = \beta F L\]</div>
+      <span class="formula-note">F = w L is the total design load on the span; β depends on the position</span>
+    </div></div><div class="table-wrap"><table><caption>Typical continuous-beam moment coefficients (uniform load, near-equal spans)</caption><thead><tr><th scope='col'>Position</th><th scope='col'>Coefficient β on F = w L</th></tr></thead><tbody><tr><td>Outer support</td><td>0.04</td></tr><tr><td>Near midspan of end span</td><td>0.075</td></tr><tr><td>First interior support</td><td>0.086</td></tr><tr><td>Midspan of interior spans</td><td>0.063</td></tr><tr><td>Interior supports</td><td>0.063</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Flanged beams and compression steel</h2>
+  <div class="body"><p>Beams cast with a slab act as T- or L-sections, because a width of slab joins the compression zone. The <strong>effective flange width</strong> is limited to a fraction of the span and of the beam spacing, so only slab close to the web is counted.</p>
+<p>Check where the stress block sits: its depth is <code>s = 2(d − z)</code>. If <code>s</code> does not exceed the flange thickness <code>h_f</code>, the section behaves as a rectangle of the full flange width and the usual <code>K</code> and <code>z</code> expressions apply. If the block reaches into the web, design as a true T-section.</p>
+<p>When <code>K</code> exceeds <code>K′</code>, deepen the beam or add compression steel, sized from the excess moment and the depth between the steel layers.</p></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Effective flange width and the T-beam sequence</h2>
+  <div class="body"><p>A T-beam counts only part of the slab as its flange. The overhang on each side of the web is limited to about 0.2 times the clear distance to the adjacent beam plus 0.1 times the effective span, and for an edge (L) beam the span term is reduced to about 85% of that value. Worked from a beam grid with 4 m spacing and 5 m spans, the effective flange width came to 680 mm, giving 930 mm in total once the 250 mm web was added — far less than the full spacing.</p>
+<p>The design sequence is then fixed:</p>
+<ul>
+<li>compute K with the flange width,</li>
+<li>find z,</li>
+<li>check the stress block depth <code>s = 2(d − z)</code>.</li>
+</ul>
+<p>If s stays within the flange thickness h_f, the section is designed as a rectangle of width b_f; if s dips into the web, the compression in the web must be treated separately. Keep the flange-to-web width ratio below about 4, and check the minimum steel against the web area rather than the whole flange.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Effective flange width, interior T-beam</span>
+      <div class="formula-expr formula-math">\[b_{\mathrm{eff}} = b_w + 0.2\,b_1 + 0.1\,\ell\]</div>
+      <span class="formula-note">b₁ is the clear distance between webs and ℓ the effective span; for an edge beam reduce the span term to about 0.85</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Stress block depth check</span>
+      <div class="formula-expr formula-math">\[s = 2(d - z)\]</div>
+      <span class="formula-note">if s ≤ h_f the section behaves as a rectangle of width b_f</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>Shear and links</h2>
+  <div class="body"><p>Shear is carried partly by the concrete and partly by <strong>links</strong> (stirrups). The applied stress is <code>v = V/(b_v d)</code>, checked at a section <code>d</code> from the support face. The concrete contribution <code>v_c</code> comes from a code table and depends on the longitudinal steel ratio and the concrete grade.</p>
+<p>The excess goes into links: <code>A_sv/s_v ≥ (v − v_c) b_v / (0.87 f_yv)</code>. Spacing tightens near supports, where shear peaks, and the stress must stay below a crushing limit of roughly <code>0.8√f_cu</code>.</p>
+<p>Links also confine concrete, restrain main bars and hold the cage together, so codes require a minimum link area even where calculation demands none.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Required link area</span>
+      <div class="formula-expr formula-math">\[\frac{A_{sv}}{s_v} \ge \frac{(v - v_c)b_v}{0.87 f_{yv}}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Slabs in one and two directions</h2>
+  <div class="body"><p>A slab is <strong>one-way</strong> when supported on two opposite edges and <strong>two-way</strong> when the longer span is under about twice the shorter. A two-way slab bends in both directions, so each strip carries only part of the load.</p>
+<p>Thickness is usually set by deflection, not bending. The basic span-to-effective-depth ratio is about 20 for a simply supported slab and 26 for a continuous one, modified for the steel provided. Continuous slabs may use tabulated <strong>moment coefficients</strong> instead of a frame analysis.</p>
+<p>Add distribution steel across the main bars to control cracking, and check <strong>punching shear</strong> around columns, where a concentrated reaction can punch through a thin slab.</p></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>Columns: axial load and slenderness</h2>
+  <div class="body"><p>A short column under mainly axial load has nominal capacity</p>
+<p><code>N = 0.4 f_cu A_c + 0.75 f_y A_sc</code>,</p>
+<p>with <code>A_c</code> the net concrete area and <code>A_sc</code> the steel area. The coefficients account for cube-to-member strength differences and strain compatibility.</p>
+<p>Slenderness changes the picture: a slender column bends, and the extra moment from that deflection adds to the applied moment. Design checks slenderness about both axes, applies a minimum eccentricity and considers biaxial bending.</p>
+<p>Detailing still applies: at least about 1% steel, a maximum of 4–6%, four bars minimum in a rectangle, and links spaced no more than twelve bar diameters or the least dimension.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Short column axial capacity</span>
+      <div class="formula-expr formula-math">\[N = 0.4f_{cu}A_c + 0.75f_yA_{sc}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Cover, durability and detailing</h2>
+  <div class="body"><p><strong>Nominal cover</strong> is the distance from the surface to the outside of the reinforcement. It keeps water and chlorides away from the steel and insulates the steel in a fire, so exposure and fire resistance set it.</p>
+<p>Bars must also develop their force. Anchorage length grows with bar diameter and stress, at roughly <code>l_b = f_y φ / (4 f_b)</code> where <code>f_b</code> is the design bond stress. Laps are longer, since two bars share one length of concrete.</p>
+<p>Keep bars far enough apart for aggregate to pass, and hook links around the main steel. Detailing is where the calculation becomes buildable: the steel has to fit, be fixed and be surrounded by compacted concrete.</p></div><div class="table-wrap"><table><caption>Indicative nominal cover by exposure condition (typical ranges; the project specification governs)</caption><thead><tr><th scope='col'>Exposure condition</th><th scope='col'>Typical nominal cover (mm)</th><th scope='col'>Main threat</th></tr></thead><tbody><tr><td>Mild: dry, protected interior</td><td>25–30</td><td>Carbonation</td></tr><tr><td>Moderate: humid, sheltered</td><td>35–40</td><td>Carbonation and moisture</td></tr><tr><td>Severe: wetting and drying</td><td>45–50</td><td>Chloride ingress</td></tr><tr><td>Very severe: marine or de-icing salt</td><td>55–60</td><td>Chlorides plus fire</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>Moment redistribution and the detailing package</h2>
+  <div class="body"><p>Because a well-reinforced concrete section is ductile, the elastic peak moments at supports can be <strong>redistributed</strong> — shaved down and rebalanced elsewhere — provided the section has the rotation capacity. Up to about 30% redistribution is allowed while the neutral axis stays shallow, at <code>x/d ≤ 0.5</code>, tapering linearly to zero at <code>x/d = 0.6</code>.</p>
+<p>Redistribution buys economy at supports, but it demands ductility: lightly reinforced sections with plenty of shear capacity qualify; heavily reinforced ones do not.</p>
+<p>Detailing then locks the analysis in:</p>
+<ul>
+<li>Steel area must sit between the minimum of about 0.13% of b h and the maximum of about 4% of the gross concrete area.</li>
+<li>Curtail bars in low-moment zones.</li>
+<li>Keep spacing close enough to control cracking yet wide enough for aggregate to pass.</li>
+<li>Anchor or bend every bar whose force must enter the concrete.</li>
+</ul>
+<p>A bar that ends where it is still needed is a designed-in crack.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Redistribution and neutral axis limit</span>
+      <div class="formula-expr formula-math">\[\frac{x}{d} \le 0.6 - 0.33\,\beta\]</div>
+      <span class="formula-note">β is the fraction of moment redistributed; β = 0.3 gives x/d ≤ 0.5</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Minimum tension steel</span>
+      <div class="formula-expr formula-math">\[A_{s,\min} \approx 0.0013\,b\,h\]</div>
+      <span class="formula-note">about 0.13% of the gross section; the maximum is about 4%</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>Serviceability: deflection and cracking</h2>
+  <div class="body"><p>Deflection is controlled by limiting the span-to-depth ratio or by calculation against limits such as span/250. Creep and shrinkage add to the short-term elastic deflection, so sustained loads need a long-term estimate.</p>
+<p>Cracking is controlled by distributing steel near the tension face and limiting bar spacing. A calculated width has the form</p>
+<p><code>w_k = 3 a_cr ε_m / [1 + 2(a_cr − c_min)/(h − x)]</code>,</p>
+<p>where <code>a_cr</code> is the distance to the nearest bar, <code>ε_m</code> the mean strain, <code>c_min</code> the minimum cover and <code>x</code> the neutral axis depth.</p>
+<p>Keep steel stress moderate and bars closely spaced, and the width usually stays near the 0.3 mm limit.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Crack width</span>
+      <div class="formula-expr formula-math">\[w_k = \frac{3a_{cr}\varepsilon_m}{1 + 2\frac{a_{cr} - c_{min}}{h - x}}\]</div>
+      
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Characteristic strength</dt><dd>The strength below which no more than a small specified proportion of test results is expected to fall.</dd></div><div class="term"><dt>Effective depth</dt><dd>Distance from the compression face to the centroid of the tension reinforcement.</dd></div><div class="term"><dt>Lever arm</dt><dd>Distance between the concrete compression resultant and the steel tension force, capped at 0.95d.</dd></div><div class="term"><dt>K value</dt><dd>Moment divided by f_cu b d squared; it shows whether a section can be singly reinforced.</dd></div><div class="term"><dt>Nominal cover</dt><dd>Specified distance from the concrete surface to the outside of a bar, set by durability and fire.</dd></div><div class="term"><dt>Punching shear</dt><dd>Concentrated shear around a column or load that can push a plug of slab through the support.</dd></div><div class="term"><dt>Moment redistribution</dt><dd>Deliberately shifting some elastic support moment into the spans, allowed only where the section has the ductility to rotate.</dd></div><div class="term"><dt>Effective flange width</dt><dd>The limited width of slab counted as part of a T- or L-beam&#x27;s compression flange, set by span and beam spacing.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Design the tension steel for a rectangular beam</h2>
+        <p class="problem">A simply supported beam 250 mm wide and 500 mm deep carries a design ultimate moment of 200 kNm. The effective depth is 450 mm, f_cu = 30 N/mm² and f_y = 500 N/mm². Determine whether the section can be singly reinforced and find the required area of tension steel. State a practical bar arrangement.</p>
+        <ol><li>K = M / (f_cu b d²) = (200 × 10⁶) / (30 × 250 × 450²) = 0.132.</li><li>Compare with K′ = 0.156: K is smaller, so no compression steel is needed.</li><li>z = d [0.5 + √(0.25 − K/0.9)] = 450 [0.5 + √(0.25 − 0.1463)] = 450 × 0.822 = 370 mm.</li><li>Check the cap: 0.95d = 427 mm, so the calculated z of 370 mm is used.</li><li>A_s = M / (0.87 f_y z) = (200 × 10⁶) / (0.87 × 500 × 370) = 1243 mm².</li><li>Check minimum steel: about 0.13% of b × h = 0.0013 × 250 × 500 = 163 mm², so the bending requirement governs.</li><li>Sanity check: provide 4 H20 bars, A_s = 1256 mm². 100A_s/(b d) = 1.12%, below the maximum of about 4%.</li></ol>
+        <div class="answer"><b>Answer</b>Provide 4 H20 bars (1256 mm²) in the tension zone; K = 0.132 is below K′, so the beam is adequately singly reinforced.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>Convert everything to newtons and millimetres before using K, then state the final answer in kNm, mm² or MPa.</li><li>Always compare K with K′; a beam that needs compression steel is a different calculation from a singly reinforced one.</li><li>Cap the lever arm at 0.95d and state the cap — examiners award the check.</li><li>Separate ULS and SLS in the answer: strength checks and deflection or crack checks are marked as different requirements.</li><li>Before using moment coefficients, state the three conditions — near-equal spans, uniform loading, live load not exceeding dead load — and check them against the question.</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Minimum percentages of reinforcement in beams</h3>
+  <p class="ref-table-intro">Minimum reinforcement required by the concrete code to control cracking and ensure ductility. The percentages scale with the steel yield strength through the factor αmin, which reduces the minimum as fy rises.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Situation</th><th scope='col'>Percentage definition</th><th scope='col'>fy = 250 N/mm²</th><th scope='col'>fy = 500 N/mm²</th></tr></thead><tbody><tr><td>Sections subjected mainly to pure tension</td><td>100As/Ac</td><td>0.8αmin</td><td>0.45αmin</td></tr><tr><td>Rectangular section in flexure</td><td>100As/Ac</td><td>0.24αmin</td><td>0.13αmin</td></tr><tr><td>Flanged beam, web in tension, bw/b &lt; 0.4</td><td>100As/bwh</td><td>0.32αmin</td><td>0.18αmin</td></tr><tr><td>Flanged beam, web in tension, bw/b ≥ 0.4</td><td>100As/bwh</td><td>0.24αmin</td><td>0.13αmin</td></tr><tr><td>Flanged beam, flange in tension (T-beam)</td><td>100As/bwh</td><td>0.48αmin</td><td>0.26αmin</td></tr><tr><td>Compression reinforcement, general rule</td><td>100Asc/Acc</td><td>0.4</td><td>0.4</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 9.1 of the Code of Practice for the Structural Use of Concrete 2013 (2020 Edition). αmin = 40 fcu^(2/3) / fy but not less than 1.0; As is the tension reinforcement area, Ac the concrete area, bw the web width and h the overall depth.</p>
+  <p class="ref-table-caveat">Revision summary only. Minimum percentages may need increasing to satisfy ductility requirements, and spacing, anchorage and detailing rules also apply; verify against the current code for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q01</span><span>A singly reinforced rectangular section without moment redistribution is satisfactory in bending when K does not exceed about:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.045</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.156</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.402</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>1.000</span></button></div>
+    <div class="quiz-explain"><b>Why</b>K′ = 0.156 is the conventional limit; above it a compression zone of steel or a deeper section is needed.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>The main structural purpose of shear links in a beam is to:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Resist diagonal tension once the concrete capacity is exceeded</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Reduce the long-term deflection</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Anchor the beam into the columns</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Increase the bending moment capacity</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Concrete carries some shear; links carry the excess, and codes also set a minimum link area for confinement and fixing.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>Nominal cover to reinforcement is primarily fixed by:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The span of the member</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The number of bars in the section</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The size of the aggregate only</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Durability exposure and fire resistance</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Cover protects the steel from corrosion and insulates it in fire, so exposure class and fire period set the value.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q04</span><span>In two-way slab action, load is carried:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Entirely by the shorter span</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>By bending in both directions</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Only by membrane action</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Only by the beams on the long edges</span></button></div>
+    <div class="quiz-explain"><b>Why</b>When the longer span is under about twice the shorter, the slab bends in both directions and shares load between them.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>Using the simplified coefficients, the design moment at the first interior support of a continuous beam carrying total load F on the span is about:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.040 F L</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.075 F L</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.086 F L</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>0.100 F L</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The first interior support attracts roughly 0.086F L, the largest of the coefficients, which is why top steel peaks there.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>For a section with x/d = 0.5, the maximum moment redistribution that can be taken is about:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>10%</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>20%</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>30%</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>50%</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Redistribution is capped at about 30% when x/d ≤ 0.5 and reduces linearly to zero as x/d approaches 0.6.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="design-of-steel-structures.html"><span>Core</span><b>Design of Steel Structures</b></a><a class="related-card" href="construction-materials.html"><span>Core</span><b>Construction Materials</b></a><a class="related-card" href="structural-mechanics.html"><span>Core</span><b>Structural Mechanics</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="hydraulics-hydrology.html"><small>Previous</small><b>Hydraulics &amp; Hydrology</b></a><a class="next" href="transportation-highway-engineering.html"><small>Next</small><b>Transportation &amp; Highway Engineering</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2020). <i>Code of Practice for the Structural Use of Concrete 2013 (2020 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/CoP_SUC2013e.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/CoP_SUC2013e.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">z is capped at 0.95d — the lever arm cannot grow forever.</p><p class="margin-note">K above 0.156 means compression steel or a deeper beam.</p><p class="margin-note">Cover is a durability decision, not a drawing detail.</p><p class="margin-note">Links do the work the concrete cannot: diagonal tension.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

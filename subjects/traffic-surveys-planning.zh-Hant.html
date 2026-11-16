@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>交通調查與運輸規劃 — Civil Hub</title>
+<meta name="description" content="如何量度並預測出行。內容涵蓋分類交通量統計與起訖點調查、抽樣與擴展、四步驟需求模型、網絡分配，以及決定預測是否切合實際的土地用途回饋。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/traffic-surveys-planning.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="交通調查與運輸規劃 — Civil Hub">
+<meta property="og:description" content="如何量度並預測出行。內容涵蓋分類交通量統計與起訖點調查、抽樣與擴展、四步驟需求模型、網絡分配，以及決定預測是否切合實際的土地用途回饋。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/traffic-surveys-planning.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="traffic-surveys-planning.html" data-alt-zh-hant="traffic-surveys-planning.zh-Hant.html" data-alt-ja="traffic-surveys-planning.ja.html" data-alt-ko="traffic-surveys-planning.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">交通調查與運輸規劃</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">專業</p>
+          <h1>交通調查與運輸規劃</h1>
+          <p class="subject-sub">量度人流車流並為其規劃</p>
+          <ul class="subject-facts"><li><b>類型</b>專業</li><li><b>閱讀</b>9 分鐘</li><li><b>章節</b>10</li><li><b>公式</b>10</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="176" cy="36" r="5" stroke="var(--accent)" stroke-width="1.4"/><path d="M176 41 V80" stroke="currentColor" stroke-width="1.3"/><path d="M176 62 l-30 34 M176 62 l30 34 M176 62 l-3 40" stroke="currentColor" stroke-width="1.2"/><path d="M40 168 H300" stroke="var(--line)" stroke-width="1"/><path d="M72 92 l104 76 M92 96 l120 72" stroke="var(--faint)" stroke-width="1"/><path d="M118 128 q10 10 4 22" stroke="var(--accent)" stroke-width="1"/><text x="132" y="152" font-family="var(--mono)" font-size="8" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">θ</text><text x="70" y="186" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">A</text><text x="264" y="186" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">B</text></svg>
+          <figcaption>Traverse geometry — angles and measured lines</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">規劃是一條證據鏈</a></li><li><a href="#sec-2">點算與訪問</a></li><li><a href="#sec-3">抽樣、擴展與誤差</a></li><li><a href="#sec-4">出行產生與起訖矩陣</a></li><li><a href="#sec-5">出行產生模型</a></li><li><a href="#sec-6">分佈與方式選擇</a></li><li><a href="#sec-7">分配與網絡均衡</a></li><li><a href="#sec-8">建立分配網絡</a></li><li><a href="#sec-9">泊車調查與周轉率</a></li><li><a href="#sec-10">土地用途、驗證與判斷</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">如何量度並預測出行。內容涵蓋分類交通量統計與起訖點調查、抽樣與擴展、四步驟需求模型、網絡分配，以及決定預測是否切合實際的土地用途回饋。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="traffic-surveys-planning" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>規劃是一條證據鏈</h2>
+  <div class="body"><p>交通規劃預測有多少人會出行、往哪裡去、用哪種交通方式，以及沿哪些路段行走，以便在需求出現之前確定基礎設施與服務的規模。經典的<strong>四步驟模型</strong>依次為：出行產生、出行分佈、方式選擇與分配。</p>
+<p>每一步都需要不同類型的數據，而起始階段的誤差無法靠末端聰明的模型修補。策略性規劃著眼於數十年後，戰術性規劃著眼於數年後，而營運性規劃則著眼於一個季度。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>點算與訪問</h2>
+  <div class="body"><p>基本工具是<strong>分類交通量統計</strong>，按車輛類型與方向記錄某段時間內的交通量。統計可採人手、臨時自動（膠管、感應圈、雷達）或永久方式進行；短時間統計會利用係數擴展至典型日。</p>
+<p><strong>起訖點</strong>調查詢問出行的起點與終點：路邊訪問、車牌配對、GPS 軌跡或流動網絡數據。速度調查量度地點速度或行程時間，而泊車調查則記錄累積量與時長。</p></div><div class="table-wrap"><table><caption>選擇調查方法</caption><thead><tr><th scope='col'>方法</th><th scope='col'>量度內容</th><th scope='col'>優點</th><th scope='col'>限制</th></tr></thead><tbody><tr><td>分類交通量統計</td><td>按車輛類型的交通量</td><td>便宜且可重複</td><td>沒有起點或終點</td></tr><tr><td>路邊訪問</td><td>起訖點及出行目的</td><td>能回答規劃問題</td><td>成本高；偏向被截停的車輛</td></tr><tr><td>車牌配對</td><td>起訖點及行程時間</td><td>樣本大，無需訪問</td><td>受私隱限制；車牌誤讀</td></tr><tr><td>浮動車</td><td>行程時間及延誤</td><td>覆蓋整條路線，真實交通</td><td>樣本小；觀察者效應</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>抽樣、擴展與誤差</h2>
+  <div class="body"><p>沒有調查能點算所有事物。樣本會擴展至總體，因此<strong>擴展係數</strong>會連同其抽樣誤差一併帶入。抽樣誤差隨樣本量的平方根下降，所以樣本增至四倍可將誤差減半。</p>
+<p>覆蓋偏差比隨機誤差更嚴重——只點算平日高峰，或只訪問願意停車受訪的駕駛者，量度的只是一個被選定的群組。中性月份與中性日子很重要，而公眾假期須予剔除。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">比例抽樣樣本量</span>
+      <div class="formula-expr formula-math">\[n = \frac{z^2 p (1 - p)}{e^2}\]</div>
+      <span class="formula-note">95% 置信水平下 z ≈ 1.96，p 為預期比例，e 為誤差界限</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>出行產生與起訖矩陣</h2>
+  <div class="body"><p>出行產生估算一個住戶或發展項目產生多少出行，方法可根據住戶人數、收入與汽車擁有量的調查數據，或利用迴歸分析。輸出是一個<strong>出行矩陣</strong>：列為起點，欄為終點，對角線則為區內出行。</p>
+<p>矩陣由樣本擴展至總體，並加以平衡，使列與欄的總和與控制總數一致。分區不當——過於粗略或位置錯誤——會扭曲下游的一切。</p></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>出行產生模型</h2>
+  <div class="body"><p>出行產生可透過<strong>類別分析</strong>——每個規模或收入類別中每住戶或每人的平均出行率——或透過<strong>迴歸分析</strong>估算，後者以住戶特徵擬合出行數。典型模型將每日出行數對住戶人數與汽車擁有量進行迴歸，得出一個常數加上每個解釋變數的比率。</p>
+<p>係數並非事實；它們是擬合自某一次調查，並承襲其偏差。細小且不具代表性的樣本會產生看似精確但系統性錯誤的比率。使用前應將擬合比率與大型全市出行調查作比較，並在每個係數上保留單位——每住戶每日出行數。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">線性出行產生模型</span>
+      <div class="formula-expr formula-math">\[T = a + b_1 X_1 + b_2 X_2 + \dots\]</div>
+      <span class="formula-note">T 為每住戶或每人的出行數；X 為解釋變數；係數以最小二乘法擬合</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">類別出行率</span>
+      <div class="formula-expr formula-math">\[r = \frac{T}{H}\]</div>
+      <span class="formula-note">T 為該類別樣本的出行數，H 為住戶或人數；應用為 T_i = r × H_i</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>精確擬合不等於準確</b>
+  細小且同質的樣本能完美擬合迴歸線，卻同時錯誤代表總體——在預測中使用出行率前，務必以大型出行調查作驗證。
+</div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>分佈與方式選擇</h2>
+  <div class="body"><p>出行分佈決定產生的出行往哪裡去。<strong>重力模型</strong>按目的地的吸引力成正比、按到達成本成反比來分配出行，並以觀察所得的出行數據校準 deterrence 函數。</p>
+<p>方式選擇然後利用<strong>廣義成本</strong>——時間、票價、等候、舒適度與可靠度綜合——將每股流量分配至私家車、公共交通與步行。Logit 模型將每個選項的效用轉化為概率，因此輕微的成本變化會產生漸進式轉移，而非全有或全無的切換。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">重力模型</span>
+      <div class="formula-expr formula-math">\[T_{ij} = \frac{P_i A_j f(c_{ij})}{\sum_k A_k f(c_{ik})}\]</div>
+      <span class="formula-note">T_ij 為由 i 至 j 的出行，P_i 為產生量，A_j 為吸引量，f 為成本 c 的 deterrence 函數</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Logit 方式分擔</span>
+      <div class="formula-expr formula-math">\[P_m = \frac{e^{U_m}}{\sum_k e^{U_k}}\]</div>
+      <span class="formula-note">U 為某方式的效用，通常為負廣義成本</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>分配與網絡均衡</h2>
+  <div class="body"><p>分配將矩陣載入由節點、路段、分區與質心連接線組成的網絡。行程時間隨流量上升，因此每條路段會套用如 <strong>BPR</strong> 曲線的流量–延誤函數。</p>
+<p>全有或全無分配忽略擠塞，使最短路線超載；均衡分配則分散流量，直至沒有駕駛者可透過轉換路線改善，即 Wardrop 用戶均衡。SATURN 或 EMME 等軟件會迭代趨向該狀態，而結果必須與統計數據核對。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">BPR 流量–延誤函數</span>
+      <div class="formula-expr formula-math">\[t = t_0 \left[1 + \alpha \left(\frac{v}{c}\right)^\beta\right]\]</div>
+      <span class="formula-note">t₀ 為自由流時間，v 為流量，c 為容量；α ≈ 0.15 及 β ≈ 4 為常用預設值</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>建立分配網絡</h2>
+  <div class="body"><p>分配軟件在需要數學之前，先需要一個編碼網絡。分區透過<strong>質心連接線</strong>連接至節點，節點以路段連接，附有自由流速度、容量與長度，而出行矩陣則附加至分區。</p>
+<p>每個元素都是編碼錯誤可能隱藏之處：反向的單程路、缺失的連接線或零容量，都會無聲地破壞答案。工作流程就是紀律：建立網絡、編譯、載入矩陣、執行分配，然後在相信結果之前，將結果與統計數據及 GEH 統計量核對。方案選項亦以同樣方式測試——為選項編碼、分配，並與基準情況比較，而非與直覺比較。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">分配工作流程</span>
+      <div class="formula-expr formula-text">code network → compile → load matrix → assign → validate against counts</div>
+      <span class="formula-note">每個階段都需要檢查；結果的好壞取決於背後的編碼</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>泊車調查與周轉率</h2>
+  <div class="body"><p>泊車調查量度<strong>累積量</strong>——某一時刻停泊的車輛數目——以及<strong>時長</strong>，即每次停泊的長度。累積量隨車輛到達與離開而變化，而高峰累積量決定泊車供應的規模。時長區分短暫停留的購物者與長時間停留的通勤者，兩類群體需要不同的政策。</p>
+<p><strong>周轉率</strong>是某段時間內一個泊車位服務的不同車輛數目：高周轉率的短暫停泊位服務許多使用者，低周轉率的則全日只服務一名通勤者。執法、收費與時限均針對兩者之間的差距。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">泊車累積量</span>
+      <div class="formula-expr formula-math">\[A_t = A_{t-1} + \mathrm{arrivals}_t - \mathrm{departures}_t\]</div>
+      <span class="formula-note">在調查期間追蹤以找出高峰</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">泊車周轉率</span>
+      <div class="formula-expr formula-math">\[U = \frac{V}{S}\]</div>
+      <span class="formula-note">V 為期間內停泊的車輛，S 為泊車位；例如 100 個泊車位有 400 輛車，周轉率為 4</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>土地用途、驗證與判斷</h2>
+  <div class="body"><p>交通與土地用途互相塑造。更快捷的路段提升可達性，吸引發展，繼而產生交通：<strong>誘發需求</strong>。忽略這種回饋的模型會假設需求固定，從而美化道路方案。</p>
+<p>驗證將模型流量與統計數據比較，通常使用 <strong>GEH</strong> 統計量，它對規模不敏感且易於應用。規劃者亦會報告不確定性、測試情景，並追問誰承擔判斷錯誤的代價，因為規劃是關於未來的論證，而非對未來的量度。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">GEH 統計量</span>
+      <div class="formula-expr formula-math">\[\mathrm{GEH} = \sqrt{\frac{2 (M - C)^2}{M + C}}\]</div>
+      <span class="formula-note">M 為模型流量，C 為統計流量；低於 5 為良好，高於 10 表示有問題</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>分類交通量統計</dt><dd>按車輛類型、方向與時段記錄交通量的交通統計。</dd></div><div class="term"><dt>起訖矩陣</dt><dd>起點分區與終點分區之間出行數目的表格。</dd></div><div class="term"><dt>擴展係數</dt><dd>將樣本統計放大至總體或典型日的乘數。</dd></div><div class="term"><dt>BPR 函數</dt><dd>一種流量–延誤關係，以流量對容量比率得出路段行程時間。</dd></div><div class="term"><dt>重力模型</dt><dd>一種出行分佈模型，流量隨起點產生量與終點吸引量增加，並隨出行成本下降。</dd></div><div class="term"><dt>GEH 統計量</dt><dd>模型流量與統計流量差異的無尺度量度，5 為常用接受門檻。</dd></div><div class="term"><dt>出行率</dt><dd>每住戶、每人或每車的平均出行數目，用於類別分析以擴展分區總數。</dd></div><div class="term"><dt>泊車周轉率</dt><dd>某段時間內一個泊車位服務的車輛數目，即停泊量對泊車位的比率。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>以統計數據核對模型路段</h2>
+        <p class="problem">某路段自由流時間為 5.0 分鐘，容量為 5,000 veh/h。模型分配 4,500 veh/h 至該路段，採用 α = 0.15 及 β = 4。觀察統計為 3,800 veh/h。求模型行程時間與 GEH 統計量，然後判斷該路段的模型表現。</p>
+        <ol><li>計算 v/c = 4,500 / 5,000 = 0.9，所以 (v/c)^4 = 0.6561。</li><li>套用 BPR：t = 5.0 × (1 + 0.15 × 0.6561) = 5.0 × 1.0984 = 5.49 分鐘。</li><li>GEH = √[2 × (4,500 − 3,800)² / (4,500 + 3,800)] = √(980,000 / 8,300) = √118.1 = 10.9。</li><li>與常用範圍比較：低於 5 可接受，5 至 10 需調查，高於 10 表示擬合欠佳。</li><li>在使用預測前，調查該路段附近的分區載入、質心連接線與網絡編碼。</li></ol>
+        <div class="answer"><b>Answer</b>模型行程時間為 5.49 分鐘，GEH = 10.9，因此該路段未能通過常用驗證範圍。模型在此處分配過多流量，應在評估方案前找出原因。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>先說明調查目的，再說明方法：起訖點問題無法靠分類交通量統計回答，無論它多準確。</li><li>在擴展與抽樣題目中，寫出公式、代入數值，並評論覆蓋偏差——隨機誤差很少是全部原因。</li><li>在網絡題目中，討論均衡前先檢查 v/c 與流量–延誤函數，因為均衡結果取決於路段曲線。</li><li>說明每個出行產生係數的單位——每住戶每日出行數——因為在每日、每週與每年比率之間轉換會失分。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>哪種調查直接量度出行的起點與終點？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>泊車累積量調查</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>路口的分類交通量統計</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>車牌配對或路邊訪問調查</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>地點速度調查</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>只有追蹤或詢問個別出行的方法才能得出起訖點模式。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>在 BPR 函數中，行程時間隨流量上升，因為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>容量固定而 v/c 比率增加</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>自由流速度隨交通量增加</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>路段在荷載下變短</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>指數 β 為負</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>(v/c)^β 項隨流量接近容量而增大，使延誤高於自由流時間。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>模型流量與觀察流量之間的 GEH 值為 12，通常表示：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>統計與模型在正常誤差內吻合</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>路段擬合欠佳，需要調查</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>應重複調查直至 GEH 為零</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>模型異常準確</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>高於 10 的數值通常視為擬合欠佳，並促使檢查模型與數據。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q04</span><span>樣本量增至四倍，標準抽樣誤差大約減少至原來的：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>2</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>4</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>8</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>16</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>誤差與 1/√n 成比例，所以樣本四倍會將誤差減半。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q05</span><span>迴歸出行產生模型給出 T = 1.2 + 2.4 H，其中 H 為住戶人數。一個有 300 個住戶、平均 3.1 人的分區約產生：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>864 次出行</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>8 640 次出行</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1 110 次出行</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2 590 次出行</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>每住戶：1.2 + 2.4 × 3.1 = 8.64 次出行，300 個住戶合共約 2 590 次出行。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q06</span><span>一個有 80 個泊車位的停車場在 07:00 至 19:00 之間服務 240 輛車。其周轉率為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.33</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>3</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>8</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>19 200</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>周轉率為停泊量除以泊車位：240 / 80 = 3 輛車每位。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="transport-operations-management.zh-Hant.html"><span>Professional</span><b>運輸營運與管理</b></a><a class="related-card" href="design-of-transport-infrastructure.zh-Hant.html"><span>Core</span><b>運輸基礎設施設計</b></a><a class="related-card" href="transportation-highway-engineering.zh-Hant.html"><span>Core</span><b>運輸與公路工程</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="ai-iot.zh-Hant.html"><small>上一頁</small><b>AIoT</b></a><a class="next" href="infrastructure-management.zh-Hant.html"><small>下一頁</small><b>基礎設施管理</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">統計給出流量；訪問給出起點。</p><p class="margin-note">擴展同時放大誤差。</p><p class="margin-note">相信均衡前先檢查 v/c。</p><p class="margin-note">GEH 低於 5 是舒適區。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

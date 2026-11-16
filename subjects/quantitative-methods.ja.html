@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>エンジニアのための定量手法 — Civil Hub</title>
+<meta name="description" content="限られたデータからエンジニアがどのように結論を導くか：サンプリング、信頼区間、仮説検定、計画実験、回帰。測定にばらつきがあるときでも意思決定を誠実に保つ学問である。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/quantitative-methods.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="エンジニアのための定量手法 — Civil Hub">
+<meta property="og:description" content="限られたデータからエンジニアがどのように結論を導くか：サンプリング、信頼区間、仮説検定、計画実験、回帰。測定にばらつきがあるときでも意思決定を誠実に保つ学問である。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/quantitative-methods.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="quantitative-methods.html" data-alt-zh-hant="quantitative-methods.zh-Hant.html" data-alt-ja="quantitative-methods.ja.html" data-alt-ko="quantitative-methods.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">エンジニアのための定量手法</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">コア</p>
+          <h1>エンジニアのための定量手法</h1>
+          <p class="subject-sub">工学データによる実験、推論、意思決定</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>コア</li><li><b data-i18n="subject.read">Read</b>10 分</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>18</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M44 162 H296" stroke="currentColor" stroke-width="1.2"/><path d="M44 162 V34" stroke="currentColor" stroke-width="1.2"/><path d="M170 162 C120 162 118 52 170 52 C222 52 220 162 170 162" stroke="var(--accent)" stroke-width="1.5"/><path d="M80 162 V144" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M106 162 V128" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M132 162 V104" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M158 162 V78" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M184 162 V104" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M210 162 V128" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M236 162 V144" stroke="var(--line)" stroke-width="8" opacity="0.9"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">DISTRIBUTION</text></svg>
+          <figcaption>A distribution — centre, spread and tails</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">ばらつきこそがデータ</a></li><li><a href="#sec-2">サンプリングと中心極限定理</a></li><li><a href="#sec-3">信頼区間</a></li><li><a href="#sec-4">仮説検定</a></li><li><a href="#sec-5">2つの母集団の比較</a></li><li><a href="#sec-6">ANOVA と計画実験</a></li><li><a href="#sec-7">回帰と予測</a></li><li><a href="#sec-8">品質管理と工程能力</a></li><li><a href="#sec-9">カイ二乗検定：度数が語ること</a></li><li><a href="#sec-10">重回帰</a></li><li><a href="#sec-11">検出力、効果量、研究の計画</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">限られたデータからエンジニアがどのように結論を導くか：サンプリング、信頼区間、仮説検定、計画実験、回帰。測定にばらつきがあるときでも意思決定を誠実に保つ学問である。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="quantitative-methods" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>ばらつきこそがデータ</h2>
+  <div class="body"><p>測定値は、測っている対象が変化しなくてもばらつく。したがって工学データには中心と広がりが必要である：標本平均は母平均を推定し、標本標準偏差は測定値の平均からの典型的な距離を推定する。</p>
+<ul>
+<li>変動係数 CV = s / x̄ は、単位や平均の異なるデータセット間のばらつきを比較する。</li>
+<li>要約には必ず標本サイズと単位を添えて報告する。</li>
+<li>広がりのない平均はリスクを隠し、平均のない広がりは尺度を持たない。この二つ組がデータセットの誠実な最小限の記述である。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">標本平均</span>
+      <div class="formula-expr formula-math">\[\bar{x} = \frac{\sum x}{n}\]</div>
+      <span class="formula-note">測定値の合計を標本サイズで割ったもの</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">標本標準偏差</span>
+      <div class="formula-expr formula-math">\[s = \sqrt{\frac{\sum (x - \bar{x})^2}{n - 1}}\]</div>
+      <span class="formula-note">除数 n − 1 は標本からの推定によるバイアスを取り除く</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">変動係数</span>
+      <div class="formula-expr formula-math">\[\mathrm{CV} = \frac{s}{\bar{x}}\]</div>
+      <span class="formula-note">相対的なばらつきの無次元尺度</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>サンプリングと中心極限定理</h2>
+  <div class="body"><p>標本は母集団を代表する場合にのみ有用である。無作為抽出、独立性、一貫した測定方法が推論を妥当にする仮定であり、偏った標本は n を大きくしても救えない。</p>
+<ul>
+<li>平均の標準誤差は SE = s / √n であり、標本サイズの平方根に比例して小さくなる。</li>
+<li>中心極限定理によれば、母集団の形状にかかわらず、n が大きくなるにつれて標本平均の分布は正規に近づく。</li>
+<li>これが、データが正規でなくても中程度に大きな標本の平均に対して t および z の手続きが機能する理由である。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">平均の標準誤差</span>
+      <div class="formula-expr formula-math">\[\mathrm{SE} = \frac{s}{\sqrt{n}}\]</div>
+      <span class="formula-note">SE を半分にするには標本サイズを4倍にする必要がある</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>信頼区間</h2>
+  <div class="body"><p>信頼区間は推定値の周りに範囲を与える。母標準偏差が未知の平均の場合、区間は x̄ ± t s / √n であり、t は自由度 n − 1 の t 分布から求める。幅は信頼水準とばらつきが大きいほど広がり、標本サイズが大きいほど狭くなる。</p>
+<p>解釈を誤りやすい。95% 区間は、μ がこの特定の区間の内側にある確率が 95% であることを意味しない。この方法で作られた区間の 95% が μ を含むという意味である。区間はパラメータを推定するものであり、個々の測定値を推定するものではない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">平均の信頼区間</span>
+      <div class="formula-expr formula-math">\[\bar{x} \pm t\,\frac{s}{\sqrt{n}}\]</div>
+      <span class="formula-note">t は自由度 n − 1 の両側値</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>仮説検定</h2>
+  <div class="body"><p>仮説検定は、データが述べられた値と整合するかどうかを問う。帰無仮説 H0（効果なし、差なし）と対立仮説 H1 を設定し、有意水準 α を選び、検定統計量を計算する。平均の場合、t = (x̄ − μ0) / (s / √n) である。</p>
+<ul>
+<li>p 値は、H0 が真であると仮定したとき、観測された結果以上に極端な結果が得られる確率である。p &lt; α のとき H0 を棄却する。</li>
+<li>第1種の誤りは真の帰無仮説を棄却することであり、第2種の誤りは偽の帰無仮説を棄却できないことである。</li>
+<li>統計的有意性は実用的重要性ではない。微小で精密な差は有意でありながら無関係であり得る。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">1標本 t 統計量</span>
+      <div class="formula-expr formula-math">\[t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}\]</div>
+      <span class="formula-note">μ0 は仮説された平均；df = n − 1</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>2つの母集団の比較</h2>
+  <div class="body"><p>2つの設計、2つの供給者、2つの養生方法は、その平均によって比較される。</p>
+<ul>
+<li>分散が同程度の独立標本の場合、標準偏差をプールし、2標本 t 検定を用いる。自由度は n1 + n2 − 2 である。</li>
+<li>対応のある観測（同じ供試体の前後、またはマッチングされたペア）の場合、差を検定する。これによりペア間のばらつきが取り除かれる。</li>
+<li>p 値だけでなく、推定された差を信頼区間とともに報告する。</li>
+<li>0.2 MPa の有意な差は実在しても、仕様を変えるには小さすぎるかもしれない。区間は効果の大きさと精度の両方を示す。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">プール分散</span>
+      <div class="formula-expr formula-math">\[s_p^2 = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}\]</div>
+      <span class="formula-note">2つの母集団の分散が同程度であると仮定する</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">2標本 t 統計量</span>
+      <div class="formula-expr formula-math">\[t = \frac{\bar{x}_1 - \bar{x}_2}{s_p \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}\]</div>
+      <span class="formula-note">プール検定では df = n1 + n2 − 2</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>ANOVA と計画実験</h2>
+  <div class="body"><p>3つ以上の平均を比較するには、偽陽性の可能性を膨らませる t 検定の繰り返しではなく、分散分析を用いる。一元配置 ANOVA は全変動を群平均間の変動と群内の変動に分割する。F 比はそれらを比較し、大きな F は少なくとも1つの平均が異なることを示唆する。有意な F はどれが異なるかを示さない——事後比較がそれを示す。</p>
+<ul>
+<li>計画実験はさらに進む：実験順序を無作為化し、反復し、既知の nuisance 変動源をブロック化する。</li>
+<li>因子実験では因子水準のすべての組み合わせが試験されるため、主効果と交互作用を推定できる。</li>
+<li>交互作用とは、ある因子の効果が別の因子の水準に依存することを意味する。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">F 比、一元配置 ANOVA</span>
+      <div class="formula-expr formula-math">\[F = \frac{\mathrm{MS}_{\text{between}}}{\mathrm{MS}_{\text{within}}}\]</div>
+      <span class="formula-note">大きな F は群間変動が群内変動を支配していることを意味する</span>
+    </div></div><div class="table-wrap"><table><caption>一元配置 ANOVA 表</caption><thead><tr><th scope='col'>変動源</th><th scope='col'>平方和</th><th scope='col'>自由度</th><th scope='col'>平均平方</th><th scope='col'>F</th></tr></thead><tbody><tr><td>群間</td><td>SSB</td><td>k − 1</td><td>MSB = SSB / (k − 1)</td><td>F = MSB / MSW</td></tr><tr><td>群内</td><td>SSW</td><td>N − k</td><td>MSW = SSW / (N − k)</td><td>—</td></tr><tr><td>合計</td><td>SST</td><td>N − 1</td><td>—</td><td>—</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>回帰と予測</h2>
+  <div class="body"><p>回帰は応答 y と1つ以上の説明変数 x の関係を当てはめる。最小二乗直線 y = a + b x は残差平方和を最小化し、傾き b = S_xy / S_xx、切片 a = ȳ − b x̄ である。</p>
+<ul>
+<li>決定係数 r² はモデルによって説明される全変動の割合である。</li>
+<li>高い r² は因果関係を証明せず、観測範囲外での良好な予測を保証しない。</li>
+<li>残差に曲率、広がりの変化、外れ値がないか確認する。残差にパターンがあれば、モデルに何かが欠けている。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">最小二乗傾き</span>
+      <div class="formula-expr formula-math">\[b = \frac{S_{xy}}{S_{xx}}\]</div>
+      <span class="formula-note">S_xy は共分散和；S_xx は x の偏差の二乗和</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">決定係数</span>
+      <div class="formula-expr formula-math">\[r^2 = 1 - \frac{\mathrm{SS}_{\mathrm{res}}}{\mathrm{SS}_{\mathrm{tot}}}\]</div>
+      <span class="formula-note">当てはめたモデルによって説明される変動の割合</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>品質管理と工程能力</h2>
+  <div class="body"><p>管理図は、工程に組み込まれた共通原因変動と、何かが変化したことを示す特殊原因変動を分離する。</p>
+<ul>
+<li>平均管理図は中心線の両側に3標準誤差の管理限界を置いて標本平均をプロットし、範囲管理図はばらつきを追跡する。</li>
+<li>限界外の点、または片側に連続する点は、すべての測定値を調整するのではなく調査を促す。</li>
+<li>工程能力は仕様と工程の広がりを比較する：Cp = (USL − LSL) / (6σ)、Cpk は工程が中心からずれていることを考慮する。</li>
+<li>能力のある工程は精密かつ中心化されている。高い Cp と低い Cpk は、広がりは問題ないが設定が間違っていることを意味する。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">平均管理図の管理限界</span>
+      <div class="formula-expr formula-math">\[\mathrm{UCL},\, \mathrm{LCL} = \bar{x} \pm \frac{3\sigma}{\sqrt{n}}\]</div>
+      <span class="formula-note">σ は工程標準偏差、n は部分群サイズ</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">工程能力</span>
+      <div class="formula-expr formula-math">\[C_p = \frac{\mathrm{USL} - \mathrm{LSL}}{6\sigma}\]</div>
+      <span class="formula-note">USL と LSL は上限および下限仕様限界</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>カイ二乗検定：度数が語ること</h2>
+  <div class="body"><p>すべての問いが平均に関するものではない。データがカテゴリ内の<strong>度数</strong>である場合、カイ二乗の枠組みが t 検定と F 検定に取って代わる。</p>
+<ul>
+<li><strong>適合度検定</strong>は観測度数が仮説分布に従うかを問い、<strong>独立性検定</strong>は2つのカテゴリ変数が関連するかを度数の二次元表を用いて問う。</li>
+<li>どちらも観測度数を帰無仮説の下での期待度数と比較し、どちらも片側である：大きな不一致のみが問題となる。</li>
+<li>仮定が弱点である——カテゴリは相互排他的でなければならず、すべての期待度数は少なくとも5であるべきなので、検定前に疎なカテゴリを統合する。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">カイ二乗統計量</span>
+      <div class="formula-expr formula-math">\[\chi^2 = \sum_i \frac{(O_i - E_i)^2}{E_i}\]</div>
+      <span class="formula-note">大きな値は帰無モデルとの一致の悪さを示す</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">自由度</span>
+      <div class="formula-expr formula-math">\[\text{fit: } k - 1 - m; \qquad \text{table: } (r-1)(c-1)\]</div>
+      <span class="formula-note">m はデータから推定されたパラメータの数</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>観測度数ではなく期待度数</b>
+  カイ二乗近似には各セルでおおよそ5以上の期待度数が必要である。それ未満の場合はカテゴリを統合し、新しい自由度を明記する。
+</div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>重回帰</h2>
+  <div class="body"><p>ほとんどの工学的応答には複数の要因があるため、モデルは y = β₀ + β₁x₁ + β₂x₂ + … + ε となる。各係数は<strong>偏効果</strong>である：他の予測変数を固定したときの、その予測変数の1単位増加あたりの y の期待変化量。これは単純な2変数傾きとは異なる量であり、両者を混同することは典型的な試験の誤りである。</p>
+<ul>
+<li>通常の R² は予測変数を追加するたびに上昇する（無用なものでも）ため、重回帰では各追加パラメータにペナルティを与える<strong>調整済み R²</strong> を報告すべきである。</li>
+<li><strong>多重共線性</strong>——予測変数が強く相関しすぎてモデルがその効果を分離できない状態——を相関や分散膨張係数によって確認する。</li>
+<li>個々の係数を分析する前に、全体の F 検定でモデル全体を検定する。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">重回帰モデル</span>
+      <div class="formula-expr formula-math">\[y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \varepsilon\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">調整済み決定係数</span>
+      <div class="formula-expr formula-math">\[\bar{R}^2 = 1 - \frac{(1 - R^2)(n - 1)}{n - k - 1}\]</div>
+      <span class="formula-note">k 個の予測変数；予測変数がその地位に値する場合にのみ上昇する</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>検出力、効果量、研究の計画</h2>
+  <div class="body"><p>重要な効果を検出する機会がなかった研究では、非有意な結果はほとんど意味を持たない。<strong>検出力</strong>は、特定の対立仮説が真であるときに H₀ を棄却する確率であり、4つの量によって決まる：有意水準 α、真の効果量 δ、ノイズ σ、標本サイズ n。</p>
+<ul>
+<li>両側 z 検定の場合、必要な標本はおよそ (z_(α/2) + z_β)² σ² / δ² である。ここで 1 − β は目標検出力である。</li>
+<li>この式を予算として読む：検出しなければならない差を半分にすると標本は4倍になり、よりクリーンな測定方法（より小さな σ）は反復回数を増やすのと同じくらい価値がある。</li>
+<li>棄却できなかった場合は常に、検出力と仮定した効果量を述べる。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">両側 z 検定の標本サイズ</span>
+      <div class="formula-expr formula-math">\[n \approx \frac{(z_{\alpha/2} + z_\beta)^2 \sigma^2}{\delta^2}\]</div>
+      <span class="formula-note">β は第2種の誤り率なので、1 − β が検出力</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>標準誤差</dt><dd>推定量の標本分布の標準偏差であり、標本が母集団の値をどれだけ精密に推定するかを示す。</dd></div><div class="term"><dt>信頼区間</dt><dd>データから構築される値の範囲であり、繰り返し標本のうち定められた割合で真のパラメータを含む。</dd></div><div class="term"><dt>p 値</dt><dd>帰無仮説が真であると仮定したとき、データ以上に極端な結果が観測される確率。</dd></div><div class="term"><dt>第1種の誤り</dt><dd>実際には真である帰無仮説を棄却すること。その確率は有意水準 α である。</dd></div><div class="term"><dt>ANOVA</dt><dd>分散分析。全変動を群間と群内の部分に分割することで複数の群平均を比較する方法。</dd></div><div class="term"><dt>決定係数</dt><dd>回帰モデルによって説明される応答変動の割合であり、r² と書く。</dd></div><div class="term"><dt>適合度検定</dt><dd>観測度数が仮説分布またはモデルと一致するかどうかのカイ二乗検定。</dd></div><div class="term"><dt>検出力</dt><dd>指定された対立仮説が真であるときに、仮説検定が帰無仮説を棄却する確率。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>2つの養生方法の比較</h2>
+        <p class="problem">2つの養生方法をそれぞれ10個のコンクリート立方体で比較する。方法 A は平均強度 42.1 MPa、標準偏差 2.0 MPa を与え、方法 B は 40.3 MPa、標準偏差 1.8 MPa を与える。平均強度が異なるかどうかを5%有意水準で検定せよ。自由度18の臨界 t 値を 2.101 とする。</p>
+        <ol><li>仮説を述べる：H0: μA = μB；H1: μA ≠ μB。両側検定で α = 0.05、df = 10 + 10 − 2 = 18 を用いる。</li><li>プール分散：s_p² = [(9)(2.0²) + (9)(1.8²)] / 18 = (36.0 + 29.16) / 18 = 3.62、よって s_p = 1.90 MPa。</li><li>差の標準誤差：s_p √(1/10 + 1/10) = 1.90 × 0.447 = 0.850 MPa。</li><li>検定統計量：t = (42.1 − 40.3) / 0.850 = 2.12。</li><li>|t| = 2.12 は臨界値 2.101 より大きいので、H0 を棄却する。差は統計的に有意であるが、わずか 1.8 MPa であるため、実用的有意性には工学的判断が必要である。</li></ol>
+        <div class="answer"><b>Answer</b>5%水準で H0 を棄却する：平均強度は有意に異なる（t = 2.12、df = 18、p は 0.05 をわずかに下回る）。推定された差は 1.8 MPa であり、より大きな標本ならより精密な推定が得られる。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>電卓に触れる前に H0、H1、α を述べる。検定問題の得点の大半は正しい設定から来る。</li><li>信頼区間は、パラメータがこの区間の内側にある確率としてではなく、繰り返しサンプリングの観点で解釈する。</li><li>t や F の結果を信頼する前に、独立性、正規性、等分散の仮定を確認する。</li><li>有意な ANOVA の F は少なくとも1つの平均が異なることを示すが、どれかを示すわけではない。結論でそう述べる。</li><li>重回帰では、解釈するすべての係数の横に「他の予測変数を固定したとき」と書き添える。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>母平均の95%信頼区間とは：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>同じ方法で構築された区間の95%が真の平均を含む</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>標本平均が95%正確である</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>真の平均がこの区間内にある確率が95%である</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>標本値の95%がこの区間内にある</span></button></div>
+    <div class="quiz-explain"><b>Why</b>信頼水準はこの1つの区間に対する確率ではなく、方法の長期的な性能を表す。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>真の帰無仮説を棄却することを何と呼ぶか：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>第2種の誤り</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>検出力</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>サンプリングバイアス</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>第1種の誤り</span></button></div>
+    <div class="quiz-explain"><b>Why</b>第1種の誤りは偽陽性であり、その確率は選んだ有意水準 α に等しい。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>一元配置 ANOVA で大きな F 比は何を示すか：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>すべての群平均が等しい</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>標本サイズが小さすぎる</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>群間変動が群内変動に比べて大きい</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>母分散が確実に等しい</span></button></div>
+    <div class="quiz-explain"><b>Why</b>F は群間平均平方と群内平均平方の比であり、大きな値は少なくとも1つの平均が異なることを示唆する。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>ある工程が高い Cp と低い Cpk を持つ。これは工程が：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>管理外にあり停止すべきである</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>広く中心からずれている</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>狭いが仕様に対して中心からずれている</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>狭く完全に中心化されている</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Cp は広がりを公差と比較し、Cpk は平均が仕様帯の中心にないことにもペナルティを与える。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>3×4 分割表に独立性のカイ二乗検定を適用する。検定統計量の自由度はいくつか：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>12</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>7</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>6</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2</span></button></div>
+    <div class="quiz-explain"><b>Why</b>自由度は (r − 1)(c − 1) = 2 × 3 = 6 である。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>コンクリート強度をセメント量と水セメント比で重回帰するとき、水セメント比の係数は何を推定するか：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>両方の予測変数が同時に変化したときの強度の総変化</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>強度と比の相関</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>比のみで説明される変動の割合</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>セメント量を固定したときの、比の1単位変化あたりの強度変化</span></button></div>
+    <div class="quiz-explain"><b>Why</b>重回帰の係数は偏効果であり、単純な2変数傾きと異なり他の予測変数を固定する。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-statistics.ja.html"><span>Core</span><b>工学統計学</b></a><a class="related-card" href="ai-data-analysis.ja.html"><span>Computing</span><b>AIとデータ分析</b></a><a class="related-card" href="construction-materials.ja.html"><span>Core</span><b>建設材料</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="design-of-steel-structures.ja.html"><small>Previous</small><b>鋼構造設計</b></a><a class="next" href="machine-learning-smart-mobility.ja.html"><small>Next</small><b>スマートモビリティのための機械学習</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">SE を半分にするには n を4倍にする。</p><p class="margin-note">p は H0 が真である確率ではない。</p><p class="margin-note">測定する前に無作為化せよ。</p><p class="margin-note">CI はパラメータではなく方法についてのものである。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

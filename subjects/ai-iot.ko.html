@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIoT — Civil Hub</title>
+<meta name="description" content="센서, 소형 컴퓨터, 네트워크, 모델이 실제 제약 조건 아래에서 함께 동작한다. 이 과목은 가장 영리한 알고리즘보다 지연 시간, 에너지, 대역폭, 최신성, 그리고 이러한 트레이드오프가 연결된 인프라에 어떤 의미인지에 더 중점을 둔다.">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/ai-iot.ko.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="AIoT — Civil Hub">
+<meta property="og:description" content="센서, 소형 컴퓨터, 네트워크, 모델이 실제 제약 조건 아래에서 함께 동작한다. 이 과목은 가장 영리한 알고리즘보다 지연 시간, 에너지, 대역폭, 최신성, 그리고 이러한 트레이드오프가 연결된 인프라에 어떤 의미인지에 더 중점을 둔다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/ai-iot.ko.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="ai-iot.html" data-alt-zh-hant="ai-iot.zh-Hant.html" data-alt-ja="ai-iot.ja.html" data-alt-ko="ai-iot.ko.html" data-page-lang="ko" data-root="../" data-total="42" data-page="library" data-content-lang="ko">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">AIoT</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">컴퓨팅</p>
+          <h1>AIoT</h1>
+          <p class="subject-sub">센서, 임베디드 지능 및 연결된 인프라</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>컴퓨팅</li><li><b data-i18n="subject.read">Read</b>9 분</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>16</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">장치가 아닌 루프</a></li><li><a href="#sec-2">감지, 샘플링 및 마이크로컨트롤러</a></li><li><a href="#sec-3">네트워킹 선택</a></li><li><a href="#sec-4">MQTT를 넘어선 프로토콜</a></li><li><a href="#sec-5">엣지 또는 클라우드</a></li><li><a href="#sec-6">학습된 컨트롤러: 규칙에서 기울기로</a></li><li><a href="#sec-7">스트리밍, 큐 및 최신성</a></li><li><a href="#sec-8">소형 코어에서의 실시간 스케줄링</a></li><li><a href="#sec-9">디지털 트윈과 스마트 인프라</a></li><li><a href="#sec-10">설계 단계부터 보안과 프라이버시</a></li><li><a href="#sec-11">가상 감지와 숨겨진 상태</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">센서, 소형 컴퓨터, 네트워크, 모델이 실제 제약 조건 아래에서 함께 동작한다. 이 과목은 가장 영리한 알고리즘보다 지연 시간, 에너지, 대역폭, 최신성, 그리고 이러한 트레이드오프가 연결된 인프라에 어떤 의미인지에 더 중점을 둔다.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="ai-iot" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>장치가 아닌 루프</h2>
+  <div class="body"><p>AIoT는 추론을 데이터가 생성되는 곳 가까이에 둔다. 시스템은 트랜스듀서로 감지하고, 마이크로컨트롤러에서 신호를 컨디셔닝하며, 네트워크를 통해 전송하고, 결정에 따라 작동한다.</p>
+<p>일반 IoT와 구분되는 점은 모델이 결정을 내리며, 종종 장치 자체에서 이루어진다는 것이다. 설계 질문은 결코 정확도만이 아니다: 에너지, 지연 시간, 대역폭당 정확도이다.</p>
+<p>밀리초 단위로 보고하는 교량 변형 센서는 한 시간에 한 번 깨어나는 토양 프로브와 다른 문제를 해결한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">나이퀴스트 샘플링 규칙</span>
+      <div class="formula-expr formula-math">\[f_s &gt; 2 f_{\max}\]</div>
+      <span class="formula-note">관심 있는 최고 주파수의 두 배 이상으로 샘플링하라. 그렇지 않으면 빠른 진동이 거짓 느린 파동으로 에일리어싱된다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>감지, 샘플링 및 마이크로컨트롤러</h2>
+  <div class="body"><p>센서는 물리량을 전기 신호로 변환하고, <strong>ADC</strong>는 이를 고정된 <strong>샘플링 속도</strong>로 숫자로 바꾼다. 실제 판독값에는 노이즈와 드리프트가 있으므로 기준에 대해 교정하고 필터링하되, 모든 필터가 지연을 추가한다는 점을 기억하라.</p>
+<p>마이크로컨트롤러는 GPIO 핀, 타이머, 로컬 칩용 I²C 및 SPI와 같은 버스를 제공하며, 듀티 사이클링되어야 한다: 무선 및 감지가 전력 예산을 지배하므로 샘플 사이에 잠자는 것이 배터리를 수년간 지속하게 만든다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">ADC 분해능</span>
+      <div class="formula-expr formula-math">\[\Delta V = \frac{V_{\mathrm{ref}}}{2^n}\]</div>
+      <span class="formula-note">n비트 변환기의 최소 전압 단계; 실제 판독값은 보통 여러 단계이다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>네트워킹 선택</h2>
+  <div class="body"><p>모든 배포에 맞는 단일 무선은 없다. 링크 계층 위에서 <strong>MQTT</strong>는 일반적인 메시징 패턴이다: 장치는 <code>site/42/temperature</code>와 같은 토픽으로 <strong>브로커</strong>에 게시하고 구독자는 이를 수신한다.</p>
+<p>QoS 레벨 0, 1, 2는 중복과 전달 보장을 맞바꾸며, 보존 메시지는 늦은 구독자가 오래된 상태를 보는 것을 방지한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">MQTT로 판독값 게시</span>
+      <div class="formula-expr formula-text">client.publish(&#x27;site/42/strain&#x27;, payload, qos=1)
+client.subscribe(&#x27;site/42/command&#x27;)</div>
+      <span class="formula-note">qos=1은 최소 한 번 전달을 제공하므로 핸들러는 중복을 허용해야 한다</span>
+    </div></div><div class="table-wrap"><table><caption>일반적인 AIoT 배포를 위한 무선 옵션</caption><thead><tr><th scope='col'>무선</th><th scope='col'>일반 범위</th><th scope='col'>데이터 속도</th><th scope='col'>전력</th><th scope='col'>일반 용도</th></tr></thead><tbody><tr><td>Wi-Fi</td><td>수십 미터</td><td>높음</td><td>높음</td><td>카메라, 게이트웨이, 실내 센서</td></tr><tr><td>BLE</td><td>약 10 m</td><td>낮음</td><td>매우 낮음</td><td>웨어러블, 비콘, 휴대폰 링크</td></tr><tr><td>LoRaWAN</td><td>2–15 km</td><td>매우 낮음</td><td>매우 낮음</td><td>토양 프로브, 농촌 미터</td></tr><tr><td>NB-IoT</td><td>킬로미터</td><td>낮음</td><td>낮음</td><td>유틸리티 미터, 가로 시설물</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>MQTT를 넘어선 프로토콜</h2>
+  <div class="body"><p>MQTT만이 바이트를 이동하는 유일한 방법은 아니다. <strong>CoAP</strong>는 HTTP의 요청-응답 모델을 제한된 노드를 위해 UDP 위로 축소하며, 확인 가능한 메시지와 서버 푸시를 위한 관찰 모드를 갖는다. 이는 수다스러운 웹 앱보다 게이트웨이 뒤의 배터리 센서에 적합하다.</p>
+<p>일반 <strong>HTTP/REST</strong>는 디버깅과 통합이 쉽지만 메시지당 장황하다. <strong>WebSockets</strong>는 라이브 대시보드를 위해 지속적인 채널을 유지한다. <strong>AMQP</strong>는 게이트웨이 플릿을 위한 엔터프라이즈 라우팅을 추가한다.</p>
+<p>관습이 아닌 제약 조건으로 선택하라: 페이로드 및 헤더 오버헤드, 연결 상태, 전달 보장, 그리고 네트워크가 종단 간 IP인지 게이트웨이 변환이 필요한지. 항상 켜져 있는 TCP를 가정하는 프로토콜은 한 시간에 한 번 깨어나는 노드에 적합하지 않다.</p></div><div class="table-wrap"><table><caption>메시징 프로토콜 비교</caption><thead><tr><th scope='col'>프로토콜</th><th scope='col'>전송</th><th scope='col'>패턴</th><th scope='col'>최적 적합</th></tr></thead><tbody><tr><td>MQTT</td><td>TCP</td><td>토픽 기반 게시-구독</td><td>다수 장치에서 다수 애플리케이션으로의 텔레메트리</td></tr><tr><td>CoAP</td><td>UDP</td><td>요청-응답, 관찰</td><td>제한된 배터리 노드, 로컬 검색</td></tr><tr><td>HTTP/REST</td><td>TCP</td><td>요청-응답</td><td>클라우드 API 및 간단한 통합</td></tr><tr><td>WebSocket</td><td>TCP</td><td>지속적인 양방향</td><td>라이브 대시보드 및 원격 명령</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>엣지 또는 클라우드</h2>
+  <div class="body"><p>추론은 장치, 게이트웨이 또는 클라우드에서 실행될 수 있다. 더 가까이 밀면 지연 시간과 대역폭이 줄어들지만 모델 크기와 에너지가 제한된다. 종단 간 지연 시간은 단계의 합이며 가장 느린 단계가 지배한다.</p>
+<p><strong>모델 압축</strong>은 엣지 추론을 실용적으로 만든다: 양자화는 가중치를 32비트 대신 8비트로 저장하고, 가지치는 작은 가중치를 제거하며, 둘 다 약간의 정확도를 희생한다. 선택을 구호가 아닌 트레이드오프 곡선으로 다루어라.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">종단 간 지연 시간</span>
+      <div class="formula-expr formula-math">\[L = t_{\mathrm{sense}} + t_{\mathrm{queue}} + t_{\mathrm{compute}} + t_{\mathrm{network}}\]</div>
+      <span class="formula-note">각 단계를 측정하라; 잘못된 단계를 최적화하면 아무것도 얻지 못한다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">서비스 용량</span>
+      <div class="formula-expr formula-math">\[C = \frac{1}{t_{\mathrm{service}}}\]</div>
+      <span class="formula-note">서비스 시간이 초 단위일 때 초당 샘플 수</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>학습된 컨트롤러: 규칙에서 기울기로</h2>
+  <div class="body"><p>온디바이스 AI는 종종 비전 모델이 아닌 <strong>학습된 컨트롤러</strong>이다. 규칙 기반 계층은 고정 임계값으로 스위치를 켜고, 학습된 계층은 특징에서 <strong>선형 점수</strong>를 계산하고 <strong>시그모이드</strong> 함수로 확률로 변환한다.</p>
+<p>훈련은 <strong>교차 엔트로피 손실</strong>의 기울기를 따라 내려가며 가중치를 찾으며, 이는 확신에 찬 실수를 주저하는 실수보다 훨씬 더 처벌한다.</p>
+<p>워크플로는 수학만큼 중요하다: 작동하는 컨트롤러에서 레이블이 지정된 동작을 수집하고, 런타임에 동일한 특징을 추출하고, 오프라인으로 훈련한 다음, 작은 모델을 온라인으로 실행한다. 모델은 물리학이 아닌 결정 패턴을 학습하기 때문에 방을 이해하지 못한 채 교사의 행동을 재현한다. 이것이 바로 훈련 데이터가 엣지 케이스를 포함해야 하는 이유이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">선형 점수</span>
+      <div class="formula-expr formula-math">\[s = w_1 x_1 + w_2 x_2 + w_3 x_3 + b\]</div>
+      <span class="formula-note">특징 x는 최근 판독값에서 계산됨; s = 0은 결정 경계</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">시그모이드 확률</span>
+      <div class="formula-expr formula-math">\[p = \frac{1}{1 + e^{-s}}\]</div>
+      <span class="formula-note">p는 양성 클래스의 예측 확률</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">교차 엔트로피 손실</span>
+      <div class="formula-expr formula-math">\[l = -[y\ln p + (1-y)\ln(1-p)]\]</div>
+      <span class="formula-note">y ∈ {0, 1}은 레이블; 확신에 찬 오답은 큰 손실을 초래한다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">기울기 업데이트 단계</span>
+      <div class="formula-expr formula-math">\[w \leftarrow w - \eta (p - y) x\]</div>
+      <span class="formula-note">η는 학습률; 훈련 샘플당 한 번의 작은 단계</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>스트리밍, 큐 및 최신성</h2>
+  <div class="body"><p>센서 데이터는 지속적으로 도착하므로 AIoT 시스템은 큐잉 시스템이다. 도착률이 서비스율에 가까워지면 대기 시간이 폭발한다: 80% 활용도에서 큐는 이미 50%일 때보다 네 배 더 길다.</p>
+<p><strong>승인 제어</strong>는 큐가 가득 찼을 때 어떤 샘플을 버릴지 결정하며, 이것이 시스템이 과부하에서 스스로를 보호하는 방법이다. 또 다른 유용한 측정은 <strong>정보 나이</strong>, 즉 가장 최근에 처리된 샘플의 나이이다. 오래된 데이터에 대한 매우 정확한 추론은 최신의 대략적인 답변보다 나쁘다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">활용도</span>
+      <div class="formula-expr formula-math">\[\rho = \lambda t_{\mathrm{service}}\]</div>
+      <span class="formula-note">안정적인 큐를 위해 ρ는 1 미만이어야 한다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">리틀의 법칙</span>
+      <div class="formula-expr formula-math">\[L = \lambda W\]</div>
+      <span class="formula-note">시스템 내 평균 항목 수는 도착률 곱하기 시스템 내 평균 시간과 같다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">평균 대기 시간, M/M/1 큐</span>
+      <div class="formula-expr formula-math">\[L_q = \frac{\rho^2}{1 - \rho}\]</div>
+      <span class="formula-note">ρ가 1에 접근함에 따라 발산한다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>소형 코어에서의 실시간 스케줄링</h2>
+  <div class="body"><p>일정에 따라 샘플링, 전송 및 추론해야 하는 엣지 노드는 <strong>실시간 시스템</strong>이다: 각 작업에는 주기와 최악 실행 시간, 그리고 절대 놓쳐서는 안 되는 데드라인이 있다. 첫 번째 확인은 <strong>활용도</strong>, 즉 모든 작업에 대해 주기 대비 실행 시간의 합이다.</p>
+<p><strong>비율 단조</strong>는 가장 짧은 주기의 작업에 가장 높은 우선순위를 부여하며 고정 우선순위 방식 중 최적임이 증명되었다. <strong>최단 데드라인 우선</strong>은 남은 데드라인 순으로 정렬하며 단일 프로세서를 최대 활용도까지 바쁘게 유지할 수 있다.</p>
+<p>질문은 보통 작업 테이블을 주고 집합이 스케줄 가능한지 묻는다: 활용도를 계산하고, 경계와 비교하며, 비율 단조의 경우 각 작업의 응답 시간도 확인하라. 인프라 모니터링에서 데드라인을 놓치는 것은 알람 누락을 의미하므로 스케줄링은 사후 고려가 아닌 설계 제약이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">CPU 활용도</span>
+      <div class="formula-expr formula-math">\[U = \sum \frac{C_i}{T_i}\]</div>
+      <span class="formula-note">C_i 실행 시간, T_i 주기; U ≤ 1은 모든 스케줄러에 필요하다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">비율 단조 경계</span>
+      <div class="formula-expr formula-math">\[U \le n\,(2^{1/n} - 1)\]</div>
+      <span class="formula-note">비율 단조 스케줄링에서 n개 작업에 대한 충분 조건; ln 2 ≈ 0.693으로 수렴</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">EDF 경계</span>
+      <div class="formula-expr formula-math">\[U \le 1\]</div>
+      <span class="formula-note">단일 프로세서에서 최단 데드라인 우선에 대한 충분 필요 조건</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>디지털 트윈과 스마트 인프라</h2>
+  <div class="body"><p>디지털 트윈은 센서 데이터로 최신 상태를 유지하며 모니터링, 시뮬레이션 및 예측에 사용되는 모델이다. 인프라에서는 교량의 구조 건전성 모니터링, 상수도 네트워크의 누수 감지 또는 건물의 재실 제어로 나타난다.</p>
+<p>가치는 루프를 닫는 데 달려 있다: 베어링 고장을 예측하는 모델은 유지보수 시스템이 이에 따라 행동하지 않으면 쓸모가 없다. 트윈은 또한 데이터의 모든 약점을 물려받는다 — 드리프트, 누락된 판독값, 리노베이션 후 변경된 기준선.</p></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>설계 단계부터 보안과 프라이버시</h2>
+  <div class="body"><p>연결된 모든 센서는 공격 표면이다. 일반적인 실패는 기본 비밀번호, 서명되지 않은 펌웨어, 암호화되지 않은 링크, 이미 설치된 장치를 패치할 방법이 없다는 것이다.</p>
+<p>실용적인 방어는 장치 ID 및 상호 인증, 링크상의 TLS, 서명된 펌웨어 업데이트 및 네트워크 분할이며, 이로써 손상된 센서가 제어 시스템에 도달할 수 없다.</p>
+<p>프라이버시도 설계 제약이다: 최소한으로 수집하고, 엣지에서 집계하며, 개인 데이터를 필요 없는 곳에 두지 않는다. 아무도 집에 없을 때를 드러내는 스마트 수도 계량기는 단순한 유틸리티가 아닌 프라이버시 문제이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">엣지에서의 데이터 최소화</span>
+      <div class="formula-expr formula-text">send aggregate, not raw: (mean, count, timestamp)</div>
+      <span class="formula-note">더 적은 바이트와 개인 정보가 장치를 떠난다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>가상 감지와 숨겨진 상태</h2>
+  <div class="body"><p>알 가치가 있는 모든 것에 전용 센서가 있는 것은 아니다. <strong>가상 감지</strong>는 모델을 통해 관찰 가능한 신호에서 숨겨진 양을 추론한다: 카메라 이미지는 깊이를 산출하고, Wi-Fi 신호 강도 지문은 실내 위치를 산출하며, 스마트폰의 관성 판독값은 보행 속도를 산출한다. 패턴은 항상 관찰 가능한 신호 → 모델 → 숨겨진 상태이다.</p>
+<p>가상 센서는 하드웨어 비용을 절감하고 물리적 프로브가 도달할 수 없는 곳을 커버할 수 있지만 모델 오류와 드리프트를 물려받으므로 실제 값에 대해 주기적으로 재교정해야 한다. 출력을 신뢰도가 있는 추정치로 취급하고 폴백을 유지하라: 모델이 불확실할 때 잘못 행동하기보다 행동을 거부하라.</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>트랜스듀서</dt><dd>변형률이나 온도와 같은 한 형태의 에너지를 전기 신호로 변환하는 장치.</dd></div><div class="term"><dt>에일리어싱</dt><dd>신호가 최고 주파수에 비해 너무 느리게 샘플링될 때 생성되는 거짓 저주파 판독값.</dd></div><div class="term"><dt>엣지 추론</dt><dd>데이터를 클라우드로 보내는 대신 로컬 장치나 게이트웨이에서 훈련된 모델을 실행하는 것.</dd></div><div class="term"><dt>MQTT 브로커</dt><dd>게시된 메시지를 수신하고 토픽별로 구독자에게 전달하는 서버.</dd></div><div class="term"><dt>디지털 트윈</dt><dd>센서 데이터로 최신 상태를 유지하며 모니터링 및 예측에 사용되는 물리적 자산의 모델.</dd></div><div class="term"><dt>정보 나이</dt><dd>처리된 가장 최근 샘플의 나이로, 결정이 충분히 최신인지 판단하는 데 사용된다.</dd></div><div class="term"><dt>비율 단조 스케줄링</dt><dd>짧은 주기의 작업에 더 높은 우선순위를 부여하는 고정 우선순위 방식으로, 정적 우선순위 할당 중 최적이다.</dd></div><div class="term"><dt>가상 감지</dt><dd>전용 센서 대신 모델을 통해 관찰 가능한 신호에서 위치나 깊이와 같은 숨겨진 양을 추론하는 것.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>엣지가 스트림을 따라잡을 수 있는가?</h2>
+        <p class="problem">진동 센서가 초당 20개의 샘플을 생성한다. 엣지 모델은 샘플당 40ms가 걸린다. 클라우드 모델은 80ms의 컴퓨팅과 50ms의 네트워크 시간이 걸린다. 각 옵션의 서비스 용량, 엣지 활용도, 엣지 큐가 M/M/1 시스템으로 동작할 때 평균 대기 시간을 구하라. 어떤 배치가 작동하는가?</p>
+        <ol><li>엣지 용량 = 1 / 0.040 = 초당 25 샘플. 클라우드 용량 = 1 / 0.130 = 초당 7.7 샘플.</li><li>λ = 초당 20 샘플일 때 클라우드 활용도는 20 × 0.130 = 2.6으로 1을 초과하므로 클라우드 큐는 무한히 증가하고 평균 지연이 존재하지 않는다.</li><li>엣지 활용도는 ρ = 20 × 0.040 = 0.8로 안정적이지만 부하가 높다.</li><li>M/M/1 큐의 경우 L_q = ρ²/(1 − ρ) = 0.64/0.20 = 평균 3.2 샘플 대기.</li><li>평균 대기 시간 = L_q / λ = 3.2 / 20 = 0.16 s이므로 시스템 내 평균 시간은 약 0.16 + 0.04 = 0.20 s이다.</li></ol>
+        <div class="answer"><b>Answer</b>초당 20 샘플에서 안정적인 것은 엣지 배치뿐이다. 클라우드는 따라잡을 수 없으며, 엣지는 약 0.20 s의 평균 결정 나이를 제공하는데, 이는 진동 모니터링에 허용되지만 감지 속도가 증가하면 부하 분산이 필요할 것이다.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>아키텍처를 제안하기 전에 병목 단계를 명시하라; 지연 시간 및 에너지 질문은 제품 이름이 아닌 트레이드오프로 채점된다.</li><li>큐잉 질문에서는 먼저 ρ = λ t_service를 계산하라: ρ ≥ 1이면 큐가 불안정하고 평균 지연이 존재하지 않는다.</li><li>프로토콜을 명명하기 전에 범위, 데이터 속도 및 전력을 애플리케이션에 맞추고 대안이 왜 뒤지는지 말하라.</li><li>작업 테이블이 나타나면 먼저 U = Σ C_i/T_i를 계산한 다음 비율 단조 또는 EDF 경계를 적용하고 데드라인이 주기와 같다는 가정을 명시하라.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q01</span><span>배터리 구동 센서가 8km 떨어진 곳에서 시간당 몇 바이트를 보내야 한다. 가장 적합한 무선은?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>유선 이더넷 링크</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Wi-Fi</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>BLE</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>LoRaWAN</span></button></div>
+    <div class="quiz-explain"><b>Why</b>LoRaWAN은 매우 낮은 데이터 속도와 매우 낮은 전력으로 장거리를 위해 설계되었다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>신호에 최대 100Hz의 진동이 포함되어 있다. 에일리어싱을 피하는 최소 샘플링 속도는:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>초당 10 샘플</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>초당 50 샘플</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>초당 100 샘플</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>초당 200 샘플</span></button></div>
+    <div class="quiz-explain"><b>Why</b>나이퀴스트는 최고 주파수의 두 배 이상으로 샘플링해야 하므로 최소 초당 200 샘플이다.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>센서가 초당 20 샘플로 도착하고 엣지 서비스 시간이 40ms이다. 활용도는:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.4</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.8</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1.25</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2.0</span></button></div>
+    <div class="quiz-explain"><b>Why</b>ρ = λ t_service = 20 × 0.040 = 0.8로 1 미만이지만 큐가 빠르게 증가한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>모델을 32비트에서 8비트 가중치로 양자화하는 것은 주로:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>전송을 위해 모델을 암호화한다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>네트워크 연결 필요성을 제거한다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>모든 데이터셋에서 정확도를 높인다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>약간의 정확도 비용으로 메모리와 컴퓨팅을 줄인다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>비트 수가 적으면 메모리가 줄고 산술이 빨라지지만 가중치가 거칠어져 정확도가 보통 약간 떨어진다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>CoAP는 주로 다음을 위해 설계되었다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>클라우드의 배치 분석</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>고대역폭 비디오 스트리밍</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>UDP를 통한 소형 메시지를 사용하는 제한된 배터리 노드</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>데이터 센터 간 엔터프라이즈 메시지 라우팅</span></button></div>
+    <div class="quiz-explain"><b>Why</b>CoAP는 웹 요청-응답 패턴을 UDP 위로 축소하여 제한된 장치가 낮은 오버헤드로 작은 메시지를 교환할 수 있게 한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>두 주기 작업의 주기가 4ms와 10ms이고 실행 시간이 1ms와 2ms이다. 프로세서 활용도는:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.45</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.30</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.20</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>1.45</span></button></div>
+    <div class="quiz-explain"><b>Why</b>U = 1/4 + 2/10 = 0.25 + 0.20 = 0.45로 단일 프로세서 경계 1 미만이다.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.ko.html"><span>Computing</span><b>AI와 데이터 분석</b></a><a class="related-card" href="machine-learning.ko.html"><span>Computing</span><b>머신러닝</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="discovering-chinese-history-hk.ko.html"><small>Previous</small><b>홍콩에서 만나는 중국사</b></a><a class="next" href="traffic-surveys-planning.ko.html"><small>Next</small><b>교통 조사 및 교통 계획</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">ρ ≥ 1이면 큐는 결코 안정되지 않는다.</p><p class="margin-note">최고 주파수의 두 배 이상으로 샘플링하라.</p><p class="margin-note">압축한 다음 정확도 비용을 측정하라.</p><p class="margin-note">트윈은 센서만큼만 좋다.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

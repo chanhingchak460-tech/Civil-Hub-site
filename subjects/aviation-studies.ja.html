@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>航空とインフラ — Civil Hub</title>
+<meta name="description" content="航空機がどのように飛ぶのか、そしてそれを支える地上システムがどのように設計されているか：4つの力、揚力と失速、滑走路とターミナルの制約、航空交通の間隔分離、そして業界の環境面の説明。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/aviation-studies.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="航空とインフラ — Civil Hub">
+<meta property="og:description" content="航空機がどのように飛ぶのか、そしてそれを支える地上システムがどのように設計されているか：4つの力、揚力と失速、滑走路とターミナルの制約、航空交通の間隔分離、そして業界の環境面の説明。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/aviation-studies.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="aviation-studies.html" data-alt-zh-hant="aviation-studies.zh-Hant.html" data-alt-ja="aviation-studies.ja.html" data-alt-ko="aviation-studies.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">航空とインフラ</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">教養</p>
+          <h1>航空とインフラ</h1>
+          <p class="subject-sub">飛行の仕組みと空港の工学的設計</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>教養</li><li><b data-i18n="subject.read">Read</b>6 分</li><li><b data-i18n="subject.sections">Sections</b>9</li><li><b data-i18n="subject.formulas">Formulas</b>7</li><li><b data-i18n="subject.selfcheck">Self-check</b>5</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M60 104 L210 88 L286 104 L210 112 L182 104" stroke="currentColor" stroke-width="1.4"/><path d="M150 96 L172 62 L184 64 L170 98" stroke="currentColor" stroke-width="1.2"/><path d="M40 156 L300 132 M60 170 L300 150" stroke="var(--line)" stroke-width="1"/><path d="M64 158 h30 M120 154 h22 M180 148 h26 M240 142 h20" stroke="var(--faint)" stroke-width="1.2"/><circle cx="272" cy="52" r="26" stroke="var(--accent)" stroke-width="1.1"/><text x="170" y="188" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">FLIGHT & AIRPORTS</text></svg>
+          <figcaption>Flight path and runway approach</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">4つの力、1つの釣り合い</a></li><li><a href="#sec-2">迎え角と失速</a></li><li><a href="#sec-3">航法援助施設と計器進入</a></li><li><a href="#sec-4">飛行甲板とその計器</a></li><li><a href="#sec-5">空港は設計されたシステムである</a></li><li><a href="#sec-6">滑走路の標識、照明、空域</a></li><li><a href="#sec-7">航空交通管理と安全</a></li><li><a href="#sec-8">航空が経済的に重要な理由</a></li><li><a href="#sec-9">環境面の説明</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">航空機がどのように飛ぶのか、そしてそれを支える地上システムがどのように設計されているか：4つの力、揚力と失速、滑走路とターミナルの制約、航空交通の間隔分離、そして業界の環境面の説明。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="aviation-studies" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>4つの力、1つの釣り合い</h2>
+  <div class="body"><p>飛行は4つの力の釣り合いである：上向きの<strong>揚力</strong>、下向きの重量、飛行経路に沿った推力、そしてそれに抗する抗力。定常水平巡航では揚力は重量に等しく、推力は抗力に等しい。いずれかの不均衡は速度、高度、またはその両方を変化させる。</p>
+<ul>
+<li>揚力は空気密度、対気速度の二乗、翼面積とともに増加する。</li>
+<li>密度は高度とともに低下し、寒冷な空気では上昇する。</li>
+<li>したがって滑走路性能は、航空機だけでなくその日の気温と気圧に依存する。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">揚力</span>
+      <div class="formula-expr formula-math">\[L = \frac{1}{2} \rho V^2 S C_L\]</div>
+      <span class="formula-note">ρ 密度、V 対気速度、S 面積、C_L 揚力係数</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">定常水平飛行</span>
+      <div class="formula-expr formula-math">\[L = W, \quad T = D\]</div>
+      <span class="formula-note">W 重量、T 推力、D 抗力</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">抗力</span>
+      <div class="formula-expr formula-math">\[D = \frac{1}{2} \rho V^2 S C_D\]</div>
+      <span class="formula-note">C_D 抗力係数；全抗力は有害抗力と誘導抗力の部分を加える</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>迎え角と失速</h2>
+  <div class="body"><p><strong>迎え角</strong>は翼弦と流入する空気の間の角度である。揚力は、気流が上面に沿えなくなるまでそれとともに増加する。臨界角を超えると翼は<strong>失速</strong>し、揚力は急激に低下する。失速は速度ではなく角度の問題である。</p>
+<ul>
+<li>フラップとスラットは低速時の揚力を増やすが、その代償として余分な抗力を生むため、巡航時には引き込まれる。</li>
+<li><strong>誘導抗力</strong>は速度が上がると減少する。同じ揚力を得るためにより小さな迎え角で済むからである。</li>
+<li>したがって全抗力はある速度で最小となり、そのとき揚抗比が最大で航続距離が最長となる。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">揚抗比</span>
+      <div class="formula-expr formula-math">\[\frac{L}{D} = \frac{C_L}{C_D}\]</div>
+      <span class="formula-note">静止空気中で最良航続距離の速度で最大</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>航法援助施設と計器進入</h2>
+  <div class="body"><p>航空機は一連の援助施設によって航法を行う：</p>
+<ul>
+<li><strong>VOR</strong>は方位を放射し、受信機がラジアルを保持できるようにする。</li>
+<li><strong>DME</strong>は距離を追加する。</li>
+<li>衛星航法は地上局なしでどこでも位置を確定する。</li>
+<li><strong>計器着陸システム</strong>はローカライザーとグライドスロープのビームで最終進入を滑走路末端まで誘導する。</li>
+</ul>
+<p>計器進入は振り付けられた手順である：到着経路が公表された進入方式に接続し、航空機はローカライザーとグライドスロープを捕捉し、安定化ゲートが固定高度で速度と形態を確認する。決心高度で滑走路が見えなければ、進入は中止され、設計された復行手順が飛行される。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">計器進入の順序</span>
+      <div class="formula-expr formula-text">arrival → approach procedure → localiser intercept → glide slope → decision height</div>
+      <span class="formula-note">固定ゲートで安定化される；復行は設計された経路であり、失敗ではない</span>
+    </div></div><div class="table-wrap"><table><caption>航法援助施設の比較</caption><thead><tr><th scope='col'>援助施設</th><th scope='col'>提供するもの</th><th scope='col'>制限</th></tr></thead><tbody><tr><td>VOR</td><td>地上ビーコンからの方位</td><td>見通し距離、局ネットワーク</td></tr><tr><td>DME</td><td>局への斜距離</td><td>同一地点のビーコンが必要</td></tr><tr><td>GNSS</td><td>衛星によるどこでも位置</td><td>信号の脆弱性、完全性チェック</td></tr><tr><td>ILS</td><td>接地点までの水平・垂直誘導</td><td>各滑走路末端で高コスト</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>飛行甲板とその計器</h2>
+  <div class="body"><p>6つの基本計器がパイロットに航空機の状態を伝え、古典的な<strong>T配置</strong>に並ぶ：対気速度計、姿勢計、高度計、昇降計が上部に、方位と旋回協調が下部に配置される。現代のグラスコックピットはそれらを画面に統合するが、根底にある量は変わらない：速度、姿勢、高度、変化率、方位、旋回。</p>
+<p>計器は異なる物理原理で動作する — 速度にはピトー圧、高度には静圧、姿勢と方位にはジャイロ — そしてその独立性が重要である。1つが他と一致しないとき、パイロットは異常なものを信じるのではなく相互確認する；走査、解釈、検証がパネル全体の規律である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">6点T配置</span>
+      <div class="formula-expr formula-text">airspeed · attitude · altitude · vertical speed · heading · turn</div>
+      <span class="formula-note">すべての計器走査が網羅すべき6つの基本量</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>空港は設計されたシステムである</h2>
+  <div class="body"><p>空港は2つの流れを分離する：<strong>エアサイド</strong>の航空機 — 滑走路、誘導路、エプロン — と、ランドサイドの人と物、つまりターミナル、道路アクセス、手荷物システムである。保安と国境管理はその境界に位置する。</p>
+<ul>
+<li>滑走路の方位は卓越風に従う。航空機は向かい風で離着陸するからである。</li>
+<li>滑走路長は最も要求の厳しい航空機と最悪の条件によって決まる：高高度、高温、湿った表面、進入障害物はすべてそれを長くする。</li>
+<li>容量が単一の数値であることは稀である：滑走路の移動、スポット、チェックインカウンター、手荷物ベルトがそれぞれ制限を課し、空港の容量は最も厳しいものである。</li>
+</ul></div><div class="table-wrap"><table><caption>空港の構成要素とその制約</caption><thead><tr><th scope='col'>構成要素</th><th scope='col'>目的</th><th scope='col'>典型的な制約</th></tr></thead><tbody><tr><td>滑走路</td><td>離着陸</td><td>長さ、風、間隔</td></tr><tr><td>誘導路</td><td>エプロンへの移動</td><td>ピーク時の混雑</td></tr><tr><td>スポット</td><td>駐機と整備</td><td>ゲートの可用性</td></tr><tr><td>ターミナル</td><td>旅客処理</td><td>チェックイン、保安、国境</td></tr><tr><td>手荷物システム</td><td>仕分けと配送</td><td>ベルト容量、乗り継ぎ時間</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>滑走路の標識、照明、空域</h2>
+  <div class="body"><p>滑走路は物理的なシステムであると同時に視覚的なシステムでもある：</p>
+<ul>
+<li>標識は進入端、中心線、接地区域、目標点を識別する。</li>
+<li>照明は進入を誘導し、縁、中心線、末端を示し、パイロットが位置として読み取る色で示す。</li>
+<li>標識と塗装された停止位置は、航空機を活動滑走路周辺の保護区域の手前で停止させる。</li>
+</ul>
+<p>空港周辺では、<strong>空域</strong>が管理空域と非管理空域のクラスに組織され、定義されたサービスと進入規則があり、標準の出発・到着経路が滑走路を航空路網に接続する。標識、照明、空域はすべて、あるパイロットの意図が無線通話なしで他の全員に読み取れるように存在する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">滑走路の視覚環境</span>
+      <div class="formula-expr formula-text">markings → lighting → signs → holding points → protected surfaces</div>
+      <span class="formula-note">飛行甲板から位置と許可を読み取れるようにする層</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>航空交通管理と安全</h2>
+  <div class="body"><p><strong>航空交通管制</strong>は経路、高度、時間を割り当て、レーダーと衛星監視を用いて航空機を分離する。間隔基準が核心的な考え方である：2機の航空機が同時に同じ空域を占めてはならない。</p>
+<p>流れ管理は、航空機を空中で待機させるのではなく地上で出発を遅らせることでピークを平準化する；スロットは希少な滑走路時間を配分する。安全は非難ではなく報告を通じて管理される。事象は記録され、傾向が分析され、手順が変更されるため、健全なシステムは事故になる前にヒヤリハットから学ぶ。</p></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>航空が経済的に重要な理由</h2>
+  <div class="body"><p>航空輸送は重量では世界の貨物のわずかしか運ばないが、価値では多くを運ぶ。緊急、高価値、生鮮品を運ぶからである。旅客にとっては距離を圧縮し、それが観光、出張、各国にまたがる家族のつながりを支える。</p>
+<ul>
+<li>航空は直接、運航乗務員と地上乗務員の雇用を支え、間接的に製造、物流、観光を通じて支える。</li>
+<li>一部の地域にとって、接続性は世界経済に参加するか周辺化するかの違いである。</li>
+<li>ハブ空港は乗り継ぎ交通を少数のフライトバンクに集中させることでこれを増幅する。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>環境面の説明</h2>
+  <div class="body"><p>航空は世界の二酸化炭素排出量のおよそ2〜3%を生み出し、その非炭素効果 — 窒素酸化物、飛行機雲、雲の形成 — が気候影響を増す。<strong>騒音</strong>はもう一つの地域的負担であり、飛行経路の下で最も感じられる。</p>
+<p>手段は効率、燃料、運航である：</p>
+<ul>
+<li>新しいエンジンと機体は座席キロメートルあたりの燃焼が少ない。</li>
+<li><strong>持続可能な航空燃料</strong>はライフサイクル炭素を大幅に削減できるが、依然として希少で高コストである。</li>
+<li>より良い経路設定、連続降下、削減された地上走行は新しいハードウェアなしで燃料を節約する。</li>
+<li>空港はエネルギー、水、廃棄物、地上アクセスを通じて貢献する。</li>
+</ul>
+<p>旅客あたりの排出量は減少する一方で総交通量は増加するため、絶対排出量は両方に依存する。</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>揚力</dt><dd>飛行中の航空機を支える、気流に垂直な空気力。</dd></div><div class="term"><dt>迎え角</dt><dd>翼弦線と流入する気流の間の角度。</dd></div><div class="term"><dt>失速</dt><dd>迎え角が臨界値を超えたときに揚力が突然失われること。</dd></div><div class="term"><dt>誘導抗力</dt><dd>揚力を生み出す副産物として生じる抗力；速度が上がると減少する。</dd></div><div class="term"><dt>エアサイド</dt><dd>保安検査の先にある空港の部分で、航空機、滑走路、エプロンが位置する。</dd></div><div class="term"><dt>持続可能な航空燃料</dt><dd>非化石原料から作られ、ライフサイクル炭素排出量を低減するドロップイン燃料。</dd></div><div class="term"><dt>VOR</dt><dd>航空機が方位を読み取り保持できるようにする地上無線ビーコンで、古典的な航路航法援助施設の一つ。</dd></div><div class="term"><dt>計器着陸システム</dt><dd>滑走路末端までの精密進入を水平・垂直に誘導する電波ビーム。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>離陸揚力の推定</h2>
+        <p class="problem">航空機の翼面積は120 m²、離陸時の揚力係数は1.2である。空気密度が1.20 kg/m³の日、真対気速度80 m/sで引き起こす。揚力を推定し、質量56 000 kgの航空機の重量と比較せよ（g = 9.81 m/s²とする）。</p>
+        <ol><li>揚力方程式を適用する：L = ½ ρ V² S C_L = 0.5 × 1.20 × 80² × 120 × 1.2。</li><li>部分ごとに評価する：80² = 6400、次に0.5 × 1.20 × 6400 = 3840 N/m²の翼面積係数、したがって3840 × 120 × 1.2 = 552 960 N。</li><li>重量を計算する：W = m g = 56 000 × 9.81 = 549 360 N、約549 kN。</li><li>比較する：揚力は約553 kNで、重量約549 kNに対してわずかな余裕である。</li><li>妥当性確認：より低い密度、たとえば高温高高度の日では、同じ速度でも揚力は少なくなり、まさに離陸距離が増える理由である。</li></ol>
+        <div class="answer"><b>Answer</b>揚力は約553 kNで、航空機の重量約549 kNをわずかに上回るため、ほとんど余裕なく地面を離れることができる；その余裕が離陸性能が密度、質量、速度に敏感である理由である。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>計算の前に4つの力を描き、与えられた飛行状態でどの対が釣り合うかを述べよ。</li><li>性能問題では空気密度が変化するかを確認せよ：高度、温度、湿度はすべて揚力と滑走路長を変える。</li><li>持続可能性の問題では、旅客あたりの排出量と総排出量を分けよ。2つの傾向は逆方向に動くことがある。</li><li>制約を説明するときはエアサイドとランドサイドを区別し、すべての構成要素を列挙するのではなく実際のボトルネックを名指せ。</li><li>最小抗力速度が存在する理由を問う問題では、抗力を有害抗力（V²とともに増加）と誘導抗力（V²とともに減少）に分けよ。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 5 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q01</span><span>一定速度での定常水平飛行では、どの力の対が釣り合うか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>揚力は抗力に等しく、推力は重量に等しい</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>4つの力はすべて大きさが等しい</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>揚力は推力に等しく、重量は抗力に等しい</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>揚力は重量に等しく、推力は抗力に等しい</span></button></div>
+    <div class="quiz-explain"><b>Why</b>垂直加速度も速度変化もないため、揚力は重量と釣り合い、推力は抗力と釣り合う。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>翼型が失速するのは：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>迎え角が臨界角を超えて気流が剥離したとき</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>着陸のためにフラップが展開されたとき</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>航空機が最大着陸重量より重いとき</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>その速度が音速を超えたとき</span></button></div>
+    <div class="quiz-explain"><b>Why</b>臨界角を超えると境界層が剥離し、対気速度に関係なく揚力が急激に低下する。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>与えられた航空機と積載に対して、必要な滑走路長は一般に次のときに増加する：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>寒冷な日に空気密度が上昇する</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>空港が高高度にあり気温が高い</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>滑走路が乾燥して平坦である</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>航空機が強い向かい風で離陸する</span></button></div>
+    <div class="quiz-explain"><b>Why</b>薄く暖かい空気は揚力と推力を減らすため、より高い真対気速度とより長い滑走が必要となる。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>計器着陸システムのうち、航空機を滑走路中心線へ水平に誘導する構成要素は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>姿勢計</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>グライドスロープ</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>ローカライザー</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>DME</span></button></div>
+    <div class="quiz-explain"><b>Why</b>ローカライザービームが水平経路を、グライドスロープが垂直経路を定義し、両者でILSを形成する。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>与えられた重量での水平飛行では、全抗力は有害抗力と誘導抗力の和である。速度が増加すると：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>両方とも一定のままである</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>有害抗力は減少し、誘導抗力は増加する</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>有害抗力は増加し、誘導抗力は減少する</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>両方とも一緒に増加する</span></button></div>
+    <div class="quiz-explain"><b>Why</b>有害抗力は速度の二乗とともに増加し、誘導抗力は必要な迎え角が小さくなるため減少する；その和は最良航続距離の速度で最小となる。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="air-noise-pollution.ja.html"><span>Environmental</span><b>大気・騒音汚染</b></a><a class="related-card" href="construction-introduction.ja.html"><span>Core</span><b>建設入門</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="construction-introduction.ja.html"><small>Previous</small><b>建設入門</b></a><a class="next" href="advanced-structural-mechanics.ja.html"><small>Next</small><b>上級構造力学</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">揚力はV²とともに増加するため、速度が支配的である。</p><p class="margin-note">失速は角度であり、速度ではない。</p><p class="margin-note">最悪の日が滑走路の大きさを決める。</p><p class="margin-note">座席あたりが少ないことは総量が少ないことを意味しない。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

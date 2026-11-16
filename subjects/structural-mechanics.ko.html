@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>구조 역학 — Civil Hub</title>
+<meta name="description" content="구조의 문법: 하중이 부재를 통해 어떻게 전달되는지, 응력과 변형률이 어떻게 관계되는지, 그리고 보, 축, 기둥이 어떻게 파괴되는지. 이후의 모든 설계 과목의 기초가 된다.">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/structural-mechanics.ko.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="구조 역학 — Civil Hub">
+<meta property="og:description" content="구조의 문법: 하중이 부재를 통해 어떻게 전달되는지, 응력과 변형률이 어떻게 관계되는지, 그리고 보, 축, 기둥이 어떻게 파괴되는지. 이후의 모든 설계 과목의 기초가 된다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/structural-mechanics.ko.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="structural-mechanics.html" data-alt-zh-hant="structural-mechanics.zh-Hant.html" data-alt-ja="structural-mechanics.ja.html" data-alt-ko="structural-mechanics.ko.html" data-page-lang="ko" data-root="../" data-total="42" data-page="library" data-content-lang="ko">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">구조 역학</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">핵심</p>
+          <h1>구조 역학</h1>
+          <p class="subject-sub">구조물이 하중을 지지하는 방식과 변형되는 방식</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>핵심</li><li><b data-i18n="subject.read">Read</b>12 분</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>20</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M46 78 H294" stroke="currentColor" stroke-width="1.7"/><path d="M58 84 l-10 14 h20 z M282 84 l-10 14 h20 z" stroke="currentColor" stroke-width="1.2"/><path d="M80 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M76 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M108 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M104 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M136 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M132 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M164 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M160 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M192 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M188 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M220 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M216 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M248 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M244 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><text x="170" y="30" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">UDL  w</text><path d="M46 150 Q170 106 294 150" stroke="var(--accent)" stroke-width="1.4"/><path d="M46 150 H294" stroke="var(--line)" stroke-width="1"/><text x="170" y="178" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">BENDING MOMENT</text></svg>
+          <figcaption>Simply supported beam — load, shear and bending moment</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">자유물체도부터 시작하라</a></li><li><a href="#sec-2">응력, 변형률, 탄성계수</a></li><li><a href="#sec-3">축방향 변형과 적합성</a></li><li><a href="#sec-4">휨: 휨공식</a></li><li><a href="#sec-5">처짐과 강성 검토</a></li><li><a href="#sec-6">원형 축의 비틀림</a></li><li><a href="#sec-7">기둥과 탄성 좌굴</a></li><li><a href="#sec-8">인장시험에서 설계까지</a></li><li><a href="#sec-9">트러스와 영부재</a></li><li><a href="#sec-10">보의 전단응력</a></li><li><a href="#sec-11">조합 하중과 모어 원</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">구조의 문법: 하중이 부재를 통해 어떻게 전달되는지, 응력과 변형률이 어떻게 관계되는지, 그리고 보, 축, 기둥이 어떻게 파괴되는지. 이후의 모든 설계 과목의 기초가 된다.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="structural-mechanics" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>자유물체도부터 시작하라</h2>
+  <div class="body"><p>모든 구조 문제는 같은 방식으로 시작한다: 관심 있는 부분을 분리하고, 작용하는 모든 힘을 그리고, 평형을 적용한다. 자유물체도는 장식이 아니다 — 반력이나 부재력이 빠지면 이후의 숫자는 무의미하다.</p>
+<p>평면 구조에는 세 개의 독립적인 평형 방정식이 있다: ΣF_x = 0, ΣF_y = 0, ΣM = 0. 먼저 반력을 구한 다음, 필요한 단면에서 구조를 절단한다. 절단면의 내력은 항상 양의 방향으로 그린다: 축력 N, 전단력 V, 휨모멘트 M.</p>
+<p>구조가 <strong>정정</strong>이라는 것은 반력을 평형만으로 구할 수 있을 때이다. 추가 지지대는 부정정을 만들며, 해석에는 적합성 — 변형이 서로 맞아야 한다는 조건 — 이 필요하다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">평면 평형</span>
+      <div class="formula-expr formula-math">\[\sum F_x = 0, \quad \sum F_y = 0, \quad \sum M = 0\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>응력, 변형률, 탄성계수</h2>
+  <div class="body"><p>응력은 힘을 강도로 변환한다: 수직응력 σ = F/A는 단면에 수직으로 작용하고, 전단응력 τ는 단면을 따라 작용한다. 변형률은 단위 길이당 해당 변형으로, ε = ΔL/L이다.</p>
+<p>선형 탄성 재료의 경우, 응력과 변형률은 항복점까지 비례한다. 그 상수는 영계수 E = σ/ε로, 강도가 아닌 강성을 나타내는 척도이다. 재료는 강성이 높지만 약할 수도 있고, 유연하지만 강할 수도 있다 — 강은 강성과 강도가 모두 높고, 고무는 강성도 강도도 낮지만 매우 늘어난다.</p>
+<p>막대를 당기면 얇아지기도 한다. 푸아송비 ν = −ε_lateral/ε_axial가 그 효과를 나타내며, 탄성 상수를 연결한다: G = E / [2(1 + ν)]. 강의 ν 값은 약 0.30이고 콘크리트는 약 0.15–0.20이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">수직응력</span>
+      <div class="formula-expr formula-math">\[\sigma = \frac{F}{A}\]</div>
+      <span class="formula-note">단면에 수직인 힘, 단위는 뉴턴 매 제곱미터</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">영계수</span>
+      <div class="formula-expr formula-math">\[E = \frac{\sigma}{\varepsilon}\]</div>
+      <span class="formula-note">응력-변형률 곡선의 선형 탄성 부분의 기울기</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">전단계수</span>
+      <div class="formula-expr formula-math">\[G = \frac{E}{2(1 + \nu)}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>축방향 변형과 적합성</h2>
+  <div class="body"><p>길이 L, 단면적 A, 탄성계수 E인 등단면 막대가 축력 P를 받으면 길이가 ΔL = P L / (A E)만큼 변한다. 이것은 부정정 문제의 주력 도구이다: 각 부재의 신장을 미지의 힘으로 표현한 다음, 부재들이 여전히 같은 절점에서 만난다는 기하학적 조건을 부과한다.</p>
+<p>온도 변화는 자유 팽창 ΔL = α L ΔT를 추가한다. 그 팽창이 구속되면 부재는 열응력 σ = −E α ΔT를 발생시킨다. 더운 날 양단이 고정된 강 레일은 아무것도 접촉하지 않았는데도 압축 상태에 있다 — 온도가 아니라 움직임이 방지되었기 때문이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">축방향 변형</span>
+      <div class="formula-expr formula-math">\[\Delta L = \frac{P L}{A E}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">열응력, 완전 구속</span>
+      <div class="formula-expr formula-math">\[\sigma = -E \alpha \Delta T\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>휨: 휨공식</h2>
+  <div class="body"><p>휨모멘트는 단면에 걸쳐 응력 구배를 만든다. 중립축은 도심을 지나며, 한쪽 섬유는 압축, 다른 쪽은 인장 상태에 있다.</p>
+<p>휨공식은 σ = M y / I이며, 여기서 y는 중립축으로부터의 거리이고 I는 그 축에 대한 단면이차모멘트이다. 최대응력은 최외곽 섬유에서 발생하므로, 단면은 종종 탄성단면계수 Z = I / y_max로 설명되며, σ_max = M / Z가 된다.</p>
+<p>직사각형 보의 깊이를 두 배로 하면 I는 여덟 배가 된다. I = b h³ / 12이기 때문이다 — 깊이는 폭보다 훨씬 효율적이다. 전단력은 사라지지 않는다. 보에서 전단력은 포물선형 전단응력 분포를 만들며, 최외곽 섬유에서 0이고 중립축에서 최대이며, 직사각형의 경우 τ_max = 3V/(2A)이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">휨공식</span>
+      <div class="formula-expr formula-math">\[\sigma = \frac{M y}{I}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">탄성단면계수</span>
+      <div class="formula-expr formula-math">\[Z = \frac{I}{y_{\max}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">단면이차모멘트, 직사각형</span>
+      <div class="formula-expr formula-math">\[I = \frac{b h^3}{12}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>처짐과 강성 검토</h2>
+  <div class="body"><p>휨은 형상도 변화시킨다. 곡률은 모멘트와 EI v'' = M으로 관계되며, 여기서 EI는 휨강성이고 v는 횡변위이다. 두 번 적분하면 기울기와 처짐을 얻고, 상수는 지지 조건에서 결정된다.</p>
+<p>일반적인 경우의 결과는 기억할 가치가 있다:<br />
+- 중앙 집중하중 P를 받는 단순보: 중앙에서 δ = PL³/(48EI).<br />
+- 등분포하중 w를 받는 단순보: δ = 5wL⁴/(384EI).<br />
+- 단부 하중을 받는 캔틸레버: δ = PL³/(3EI).</p>
+<p>중첩법을 사용하면 응답이 선형인 경우 이 패턴들을 조합 하중에 대해 더할 수 있다. 처짐 한계는 특히 장경간 바닥과 세장한 지붕에서 강도보다 먼저 설계를 지배하는 경우가 많다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">보의 곡률</span>
+      <div class="formula-expr formula-math">\[E I v&#x27;&#x27; = M\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">중앙 집중하중 시 중앙 처짐</span>
+      <div class="formula-expr formula-math">\[\delta = \frac{P L^3}{48 E I}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">등분포하중 시 중앙 처짐</span>
+      <div class="formula-expr formula-math">\[\delta = \frac{5 w L^4}{384 E I}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>원형 축의 비틀림</h2>
+  <div class="body"><p>토크 T로 비틀린 원형 축은 반지름에 따라 선형으로 증가하는 전단응력을 발생시킨다: τ = T r / J, 여기서 J는 극단면이차모멘트이다. 고체 원의 경우 J = π d⁴ / 32이므로 τ_max = 16T/(π d³)이다.</p>
+<p>길이 L에 걸친 비틀림 각은 θ = T L / (G J)이다. 비틀림은 중공 축이 효율적인 이유이다: 비틀림 저항의 대부분이 외곽 섬유에 있으므로 중심 근처의 재료는 거의 기여하지 않는다.</p>
+<p>원형 단면만이 비틀림 하에서 평면을 유지한다; 비원형 단면은 뒤틀리며, 해석에는 다른 접근이 필요하다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">비틀림 전단응력</span>
+      <div class="formula-expr formula-math">\[\tau = \frac{T r}{J}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">비틀림 각</span>
+      <div class="formula-expr formula-math">\[\theta = \frac{T L}{G J}\]</div>
+      <span class="formula-note">일관된 단위에서 θ는 라디안</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>기둥과 탄성 좌굴</h2>
+  <div class="body"><p>세장한 압축 부재는 재료가 압괴되기 훨씬 전에 좌굴로 파괴될 수 있다. 오일러 하중은 P_cr = π² E I / (K L)²이며, 여기서 K는 단부 조건에 따라 달라진다:<br />
+- 핀-핀: K = 1.0<br />
+- 고정-고정: K = 0.5<br />
+- 고정-자유: K = 2.0<br />
+- 고정-핀: K = 0.7</p>
+<p>좌굴은 강도보다 세장비에 의해 지배된다. 짧고 뭉툭한 기둥은 항복하고, 길고 세장한 기둥은 좌굴한다. 전이는 세장비 λ = K L / r로 포착되며, 여기서 r은 회전반경이다.</p>
+<p>좌굴 하중은 I에 의존하므로, 가장 작은 I 방향의 좌굴이 설계를 지배한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">오일러 좌굴 하중</span>
+      <div class="formula-expr formula-math">\[P_{cr} = \frac{\pi^2 E I}{(K L)^2}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>인장시험에서 설계까지</h2>
+  <div class="body"><p>인장시험은 이론을 측정된 숫자로 바꾼다. 연강과 같은 연성 시편은 초기 선형 영역(E), 상부 및 하부 항복점, 평탄부, 극한 인장강도까지의 변형경화, 그리고 최종적으로 네킹과 파단을 보인다. 고강도 강은 항복 평탄부가 거의 없고 훨씬 적은 연신율로 파단될 수 있다.</p>
+<p>연성은 경고를 주고 힘의 재분배를 허용하기 때문에 중요하다. 설계는 안전율 또는 부분계수를 사용하여 작업응력을 관련 한계 이하로 유지하고, 사용성 검토는 처짐과 균열을 허용 가능한 수준으로 유지한다.</p>
+<p>강성 없는 강도, 또는 연성 없는 강성은 공학적 답으로 거의 받아들여지지 않는다.</p></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>트러스와 영부재</h2>
+  <div class="body"><p>트러스는 축력만 받는 핀접합 막대의 조립체이므로, 각 절점은 두 개의 평형 방정식을 만족해야 한다.</p>
+<p><strong>절점법</strong>은 트러스 주위를 돌며 각 절점에서 ΣF_x = 0과 ΣF_y = 0을 작성하며, 미지의 부재력이 최대 두 개인 곳에서 시작한다. <strong>단면법</strong>은 미지의 힘을 가진 부재를 최대 세 개까지 절단하고 모멘트를 취하여, 내부 부재에 한 번에 도달한다.</p>
+<p>영부재는 계산 전에 발견할 수 있다:<br />
+- 하중이 없는 절점에서 두 개의 비공선 부재만 만나면, 둘 다 영부재이다.<br />
+- 세 개의 부재가 만나고 두 개가 공선이면, 절점에 외부 하중이 작용하지 않는 한 세 번째 부재는 아무것도 받지 않는다.</p>
+<p>실험실 트러스에서 측정된 부재력을 작용 하중에 대해 도시하면 원점을 지나는 직선 위에 놓이며, 영부재는 거의 정확히 0으로 읽힌다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">단면법</span>
+      <div class="formula-expr formula-math">\[F = \frac{M_A}{r}\]</div>
+      <span class="formula-note">편리한 점에 대한 모멘트를 부재까지의 수직 거리로 나눈 값</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>보의 전단응력</h2>
+  <div class="body"><p>전단력 V가 작용하는 곳에서 전단응력은 깊이에 따라 변한다. 일반적인 결과는 τ = VQ/(Ib)이며, 여기서 Q는 고려 지점 너머 면적의 1차 모멘트이고 b는 그 지점의 폭이다.</p>
+<p>직사각형의 경우 분포는 포물선형이다: 최외곽 섬유에서 0이고 중립축에서 최대 τ_max = 3V/(2A)이다. I형 단면에서는 플랜지가 웨브로 흐름을 공급할 뿐이므로 거의 모든 전단을 웨브가 부담한다.</p>
+<p>전단은 세장한 보의 설계를 지배하는 경우가 드물지만, 짧고 깊은 부재, 연결부 상세, 그리고 높은 V가 구멍으로 감소된 단면과 만날 수 있는 지지부에서 중요하다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">횡전단응력</span>
+      <div class="formula-expr formula-math">\[\tau = \frac{V Q}{I b}\]</div>
+      <span class="formula-note">Q는 해당 지점 너머 면적의 1차 모멘트, b는 국부 폭</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">최대 전단응력, 직사각형</span>
+      <div class="formula-expr formula-math">\[\tau_{\max} = \frac{3 V}{2 A}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>조합 하중과 모어 원</h2>
+  <div class="body"><p>부재의 실제 지점은 보통 휨, 축방향, 비틀림 전단을 동시에 받는다. 축방향과 휨에 의한 직접응력 σ_x는 비틀림과 횡전단에 의한 전단응력 τ_xy와 결합된다; <strong>주응력</strong>은 아래에 주어지며, 최대 전단응력은 제곱근 항만이다.</p>
+<p>따라서 조합 토크와 휨을 받는 축은 둘 중 하나가 아닌 등가응력에 대해 검토된다. 모어 원은 상태를 그래픽으로 표시한다: 중심은 (σ_x + σ_y)/2이고 반지름은 √[((σ_x − σ_y)/2)² + τ_xy²]이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">주응력</span>
+      <div class="formula-expr formula-math">\[\sigma_{1,2} = \frac{\sigma_x + \sigma_y}{2} \pm \sqrt{\left(\frac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">최대 전단응력</span>
+      <div class="formula-expr formula-math">\[\tau_{\max} = \sqrt{\left(\frac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2}\]</div>
+      
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>중립축</dt><dd>휨 단면에서 응력이 0이고 섬유가 늘어나거나 줄어들지 않는 선.</dd></div><div class="term"><dt>단면이차모멘트</dt><dd>재료가 중립축으로부터 얼마나 떨어져 있는지를 나타내는 기하학적 척도; 휨 강성과 응력을 지배한다.</dd></div><div class="term"><dt>영계수</dt><dd>응력-변형률 곡선의 선형 부분의 기울기로, 강성을 나타낸다.</dd></div><div class="term"><dt>연성</dt><dd>재료가 파단 전에 소성 변형할 수 있는 능력.</dd></div><div class="term"><dt>부정정</dt><dd>평형 방정식보다 반력이 많은 구조로, 해석에 적합성이 필요하다.</dd></div><div class="term"><dt>세장비</dt><dd>유효 길이를 회전반경으로 나눈 값; 기둥에서 좌굴과 항복 중 어느 것이 지배하는지 예측한다.</dd></div><div class="term"><dt>휨강성</dt><dd>곱 EI로, 부재의 휨 변형에 대한 저항.</dd></div><div class="term"><dt>영부재</dt><dd>힘을 받지 않는 트러스 부재로, 계산 전에 절점 기하학으로 식별할 수 있다.</dd></div><div class="term"><dt>주응력</dt><dd>전단응력이 0인 평면에서의 극한 수직응력으로, 모어 원 작도로 구한다.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>목재 장선의 최대 휨응력</h2>
+        <p class="problem">경간 6.0 m의 단순 지지 목재 보가 자중을 포함하여 10 kN/m의 등분포하중을 받는다. 단면은 폭 150 mm, 깊이 300 mm이다. 최대 휨응력을 구하고 허용 휨응력이 18 MPa인 목재가 적합한지 판단하라.</p>
+        <ol><li>등분포하중을 받는 단순보의 최대 모멘트는 wL²/8 = 10 × 6.0² / 8 = 45 kNm = 45 × 10⁶ Nmm이다.</li><li>중립축에 대한 단면이차모멘트: I = b h³ / 12 = 150 × 300³ / 12 = 3.375 × 10⁸ mm⁴.</li><li>최외곽 섬유까지의 거리: y = h/2 = 150 mm.</li><li>σ_max = M y / I = (45 × 10⁶ × 150) / (3.375 × 10⁸) = 20.0 N/mm² = 20 MPa.</li><li>단면계수로 검산: Z = I / y = 2.25 × 10⁶ mm³이므로 σ = M/Z = 45 × 10⁶ / 2.25 × 10⁶ = 20 MPa.</li></ol>
+        <div class="answer"><b>Answer</b>최대 휨응력은 20 MPa로 허용값 18 MPa를 초과하므로, 이 장선은 휨에 대해 적합하지 않다; 더 깊은 단면이나 더 짧은 경간이 필요하다.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>공식집을 펴기 전에 평형 방정식을 작성하라; 대부분의 감점은 대수학이 아니라 빠진 반력에서 온다.</li><li>처짐 문제의 경우 먼저 표준 경우를 확인한 다음, 처음부터 유도하지 말고 중첩법을 사용하라.</li><li>단위를 일관되게 유지하라: 시작할 때 kN을 N으로, mm를 m로 변환하고, 모든 답의 단위를 명시하라.</li><li>기둥의 경우 좌굴과 항복을 모두 검토하고, 결론에서는 더 작은 강도를 사용하라.</li><li>트러스 문제에서는 먼저 영부재를 찾아라 — 제거하면 미지수가 두 개뿐인 절점이 드러나 여러 방정식을 절약하는 경우가 많다.</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Minimum imposed floor loads for buildings</h3>
+  <p class="ref-table-intro">Characteristic imposed (live) loads used when sizing floors, beams and columns of buildings in Hong Kong. qk is the uniformly distributed load and Qk is a concentrated load applied on plan over a 200 mm square.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Floor use / area class</th><th scope='col'>Distributed load qk (kPa)</th><th scope='col'>Concentrated load Qk (kN)</th></tr></thead><tbody><tr><td>Domestic floors and residential activities (Area Class 1)</td><td>2.0</td><td>2.0</td></tr><tr><td>Offices for general use (Area Class 2)</td><td>3.0</td><td>4.5</td></tr><tr><td>Classrooms, lecture rooms and computer rooms (Area Class 3A)</td><td>3.0</td><td>4.5</td></tr><tr><td>Restaurants, bars, canteens and fast-food shops (Area Class 3A)</td><td>4.0</td><td>4.5</td></tr><tr><td>Assembly areas without fixed seating; refuge floors (Area Class 3C)</td><td>5.0</td><td>4.5</td></tr><tr><td>Shops, supermarkets and department stores (Area Class 4)</td><td>5.0</td><td>4.5</td></tr><tr><td>Car parks for vehicles up to 3,000 kg gross (Area Class 6A)</td><td>3.0</td><td>20.0</td></tr></tbody></table></div>
+  <p class="ref-table-note">Values selected from Tables 3.2 and 3.4 of the Code of Practice for Dead and Imposed Loads 2011 (2021 Edition), Buildings Department; area class numbers follow Table 3.1. qk acts over the floor area and Qk is applied on plan over any square with a 200 mm side.</p>
+  <p class="ref-table-caveat">Simplified revision summary only. The code contains further floor uses, load-reduction rules and dynamic and barrier requirements; verify against the current code for actual design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>직사각형 보의 폭은 그대로 두고 깊이를 두 배로 늘렸다. 휨축에 대한 단면이차모멘트는:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>2배 커진다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>4배 커진다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>8배 커진다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>16배 커진다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>I = b h³/12이므로 h를 두 배로 하면 I는 2³ = 8배가 된다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>강봉이 양단 완전 구속된 상태에서 가열되었다. 옳은 설명은?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>강은 탄성이므로 응력이 발생하지 않는다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>어떤 온도 상승에서도 즉시 항복한다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>팽창하려 하므로 인장응력이 발생한다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>팽창이 방지되므로 압축응력이 발생한다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>자유 팽창이 방지되므로 부재는 압축을 받는다: σ = −EαΔT.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>핀-핀 기둥의 오일러 좌굴 하중은 다음에 비례한다:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>L²</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>1/L</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1/L²</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>L</span></button></div>
+    <div class="quiz-explain"><b>Why</b>P_cr = π²EI/(KL)²이므로 유효 길이의 제곱에 반비례한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q04</span><span>중앙 집중하중을 받는 단순보에서 최대 휨모멘트는 어디에서 발생하는가?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>경간 중앙</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>변곡점</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>지지점</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>경간의 1/4 지점</span></button></div>
+    <div class="quiz-explain"><b>Why</b>전단력이 경간 중앙에서 부호를 바꾸며, 모멘트는 PL/4로 최대가 된다.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>트러스의 하중이 없는 절점에서 두 개의 비공선 부재가 만난다. 그 부재력에 대해 무엇을 말할 수 있는가?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>두 부재 모두 같은 인장력을 받는다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>두 부재 모두 영부재이다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>한 부재는 인장, 다른 부재는 압축이다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>지지 반력 없이는 아무것도 말할 수 없다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>외부 하중이 없으면 절점에서 두 독립 방향의 평형에 의해 두 부재력이 모두 0이 된다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>단면적 A인 직사각형 보가 전단력 V를 받는다. 보의 최대 전단응력은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>V/A</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>2V/A</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1.5V/A</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>표면에서만 전단이 전달되므로 0</span></button></div>
+    <div class="quiz-explain"><b>Why</b>포물선형 전단 분포는 중립축에서 3V/(2A)로 최대가 되며, 이는 1.5V/A이다.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="advanced-structural-mechanics.ko.html"><span>Core</span><b>고급 구조 역학</b></a><a class="related-card" href="construction-materials.ko.html"><span>Core</span><b>건설 재료</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="leadership-teamwork.ko.html"><small>Previous</small><b>리더십과 팀워크</b></a><a class="next" href="ai-data-analysis.ko.html"><small>Next</small><b>AI와 데이터 분석</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2021). <i>Code of Practice for Dead and Imposed Loads 2011 (2021 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/DIL2011e.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/DIL2011e.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">자유물체도가 먼저 — 항상.</p><p class="margin-note">휨에는 깊이가 폭을 이긴다: I ∝ h³.</p><p class="margin-note">처짐이 강도보다 먼저 설계를 지배하는 경우가 많다.</p><p class="margin-note">연성은 보너스가 아니라 안전 기능이다.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

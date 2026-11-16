@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>工学統計学 — Civil Hub</title>
+<meta name="description" content="エンジニアのための不確実性の言語：サンプルを記述し、分布を選び、推定値に範囲を与え、主張を検定する。それは測定と現場での意思決定をつなぐ橋である。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/engineering-statistics.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="工学統計学 — Civil Hub">
+<meta property="og:description" content="エンジニアのための不確実性の言語：サンプルを記述し、分布を選び、推定値に範囲を与え、主張を検定する。それは測定と現場での意思決定をつなぐ橋である。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/engineering-statistics.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="engineering-statistics.html" data-alt-zh-hant="engineering-statistics.zh-Hant.html" data-alt-ja="engineering-statistics.ja.html" data-alt-ko="engineering-statistics.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">工学統計学</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">コア</p>
+          <h1>工学統計学</h1>
+          <p class="subject-sub">確率、推定、不確実性下の意思決定</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>コア</li><li><b data-i18n="subject.read">Read</b>11 分</li><li><b data-i18n="subject.sections">Sections</b>12</li><li><b data-i18n="subject.formulas">Formulas</b>20</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M44 162 H296" stroke="currentColor" stroke-width="1.2"/><path d="M44 162 V34" stroke="currentColor" stroke-width="1.2"/><path d="M170 162 C120 162 118 52 170 52 C222 52 220 162 170 162" stroke="var(--accent)" stroke-width="1.5"/><path d="M80 162 V144" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M106 162 V128" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M132 162 V104" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M158 162 V78" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M184 162 V104" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M210 162 V128" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M236 162 V144" stroke="var(--line)" stroke-width="8" opacity="0.9"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">DISTRIBUTION</text></svg>
+          <figcaption>A distribution — centre, spread and tails</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">サンプルの記述</a></li><li><a href="#sec-2">確率と確率変数</a></li><li><a href="#sec-3">正規分布</a></li><li><a href="#sec-4">二項分布とポアソン分布</a></li><li><a href="#sec-5">標本抽出と中心極限定理</a></li><li><a href="#sec-6">信頼区間</a></li><li><a href="#sec-7">仮説検定</a></li><li><a href="#sec-8">相関と回帰</a></li><li><a href="#sec-9">統計的品質管理</a></li><li><a href="#sec-10">寿命と待ち時間：指数分布と幾何分布</a></li><li><a href="#sec-11">カイ二乗適合度検定</a></li><li><a href="#sec-12">検出力とサンプルサイズ</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">エンジニアのための不確実性の言語：サンプルを記述し、分布を選び、推定値に範囲を与え、主張を検定する。それは測定と現場での意思決定をつなぐ橋である。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="engineering-statistics" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>サンプルの記述</h2>
+  <div class="body"><p>ほとんどのデータは2つの特徴で要約できる：どこに位置するか、どれだけばらついているか。<strong>平均</strong>はつり合い点であり、<strong>中央値</strong>は外れ値に強い影響を受けにくく、<strong>最頻値</strong>は最も頻繁に現れる値である。</p>
+<p>ばらつきについては、サンプルの<strong>標準偏差</strong>はnではなくn − 1で割ることで、サンプルが母集団の変動を過小評価する傾向を補正する。要約する前に必ずプロットせよ：ヒストグラムは平均では捉えられない歪み、隙間、外れ値を示す。</p>
+<ul>
+<li>平均と中央値を比較することは、歪みの簡単な確認である。</li>
+<li>変動係数（sをx̄で割ったもの）は、異なる尺度で測定された変数間のばらつきを比較する。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">サンプル平均</span>
+      <div class="formula-expr formula-math">\[\bar{x} = \frac{1}{n} \sum x_i\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">サンプル標準偏差</span>
+      <div class="formula-expr formula-math">\[s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n - 1}}\]</div>
+      <span class="formula-note">n − 1 自由度</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>確率と確率変数</h2>
+  <div class="body"><p>確率は事象に0から1の間の数を割り当てる。乗法規則は<strong>条件付き確率</strong>を導入する：P(A | B)はBが起こったという条件下でのAの確率である。P(A | B) = P(A)のとき事象は独立であり、そのときに限り同時確率はP(A) P(B)として因数分解される。</p>
+<p><strong>確率変数</strong>は結果を数値に写像する。その<strong>期待値</strong>E(X)は長期的な平均であり、分散Var(X)はその周りのばらつきを測る。</p>
+<ul>
+<li>変数をシフトすると平均は変わるが、ばらつきは変わらない。</li>
+<li>変数をスケーリングすると、ばらつきはスケール係数倍になる。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">条件付き確率</span>
+      <div class="formula-expr formula-math">\[P(A \mid B) = \frac{P(A \cap B)}{P(B)}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">線形変換</span>
+      <div class="formula-expr formula-math">\[E(aX + b) = a\,E(X) + b; \quad \mathrm{Var}(aX + b) = a^2\,\mathrm{Var}(X)\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>正規分布</h2>
+  <div class="body"><p><strong>正規分布</strong>N(μ, σ²)は対称で釣鐘型であり、平均と標準偏差だけで完全に決まる。値の約68%は平均から1標準偏差以内に、95%は2標準偏差以内に、99.7%は3標準偏差以内に収まる — <strong>経験則</strong>により、迅速な妥当性チェックが可能になる。</p>
+<p>表を使うには、まず標準化し、次にz値に対する裾の面積を求め、両側の質問では裾を組み合わせる。曲線を描き、求めたい面積を陰影付けし、表を読む前にラベルを付けよ；符号と裾の誤りが、理解不足ではなく、失点のほとんどを引き起こす。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">標準得点</span>
+      <div class="formula-expr formula-math">\[z = \frac{x - \mu}{\sigma}\]</div>
+      <span class="formula-note">xが平均から何標準偏差離れているか</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>二項分布とポアソン分布</h2>
+  <div class="body"><p><strong>二項分布</strong>は、同じ確率pを持つ固定回数の独立試行における成功回数を数える：固定のn、2つの結果、一定のp、独立性。その平均はnp、分散はnp(1 − p)である。</p>
+<p><strong>ポアソン分布</strong>は、一定の率λで独立に発生する事象の、固定された時間または空間の区間内での回数を数える；その平均と分散はともにλである。ポアソン分布はλ = npの二項分布の大n・小p極限であり、バッチあたりの欠陥や1時間あたりの通話のような稀な事象に適している。</p>
+<ul>
+<li>まず仮定を確認せよ：試行回数が固定でない場合は二項分布を排除する。</li>
+<li>率が大きく変動する場合はポアソン分布を排除する。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">二項確率</span>
+      <div class="formula-expr formula-math">\[P(X = x) = \binom{n}{x} p^x (1 - p)^{n - x}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">ポアソン確率</span>
+      <div class="formula-expr formula-math">\[P(X = x) = \frac{e^{-\lambda} \lambda^x}{x!}\]</div>
+      <span class="formula-note">二項分布を近似する場合、λ = np</span>
+    </div></div><div class="table-wrap"><table><caption>分布の選択</caption><thead><tr><th scope='col'>分布</th><th scope='col'>モデル化するもの</th><th scope='col'>パラメータ</th><th scope='col'>平均</th><th scope='col'>分散</th></tr></thead><tbody><tr><td>正規</td><td>中心周りの連続測定値</td><td>μ, σ</td><td>μ</td><td>σ²</td></tr><tr><td>二項</td><td>n回の独立試行における成功回数</td><td>n, p</td><td>np</td><td>np(1 − p)</td></tr><tr><td>ポアソン</td><td>区間内の稀な事象の回数</td><td>λ</td><td>λ</td><td>λ</td></tr><tr><td>t</td><td>σが未知のときの標準化された平均</td><td>自由度</td><td>0</td><td>ν/(ν − 2)</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>標本抽出と中心極限定理</h2>
+  <div class="body"><p>サンプルから計算された統計量はそれ自体が確率変数である：標本抽出を繰り返せば平均は変化する。平均の<strong>標本分布</strong>は平均μと<strong>標準誤差</strong>σ/√nを持ち、サンプルを4倍にすると標準誤差は半分になる。</p>
+<p><strong>中心極限定理</strong>は、nが大きければ母集団の形状にかかわらず標本平均は近似的に正規分布に従うことを述べ、これが正規分布に基づく手法が歪んだデータでも通用する理由である。おおよそ30個の観測で十分なことが多いが、強い歪みにはより多くが必要である。</p>
+<p>σが未知のときはsで置き換え、t分布を用いる。その重い裾が追加の不確実性を説明する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">平均の標準誤差</span>
+      <div class="formula-expr formula-math">\[\mathrm{SE} = \frac{\sigma}{\sqrt{n}}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>信頼区間</h2>
+  <div class="body"><p><strong>信頼区間</strong>は推定値の周りに範囲を与え、不確実性を述べる。σが既知のとき区間はx̄ ± z σ/√n；σが未知のときはsとn − 1自由度のt臨界値を用いる。</p>
+<p>95%区間は90%区間より広く、nが増えると狭くなる。解釈は単一の区間ではなく手法についてである：標本抽出を何度も繰り返せば、この方法で作られた区間の95%がμを含む。この特定の固定区間がμを含む確率が95%ということではない。</p>
+<p>区間は単位と信頼水準とともに報告せよ。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">信頼区間（σ既知）</span>
+      <div class="formula-expr formula-math">\[\bar{x} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">信頼区間（σ未知）</span>
+      <div class="formula-expr formula-math">\[\bar{x} \pm t_{\alpha/2,\,n-1} \frac{s}{\sqrt{n}}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>仮説検定</h2>
+  <div class="body"><p>検定はデータが<strong>帰無仮説</strong>H₀と整合するかを問う。H₀は通常、効果なしまたは差なしである。対立仮説を選び、有意水準αを設定し、検定統計量を計算して臨界値または<strong>p値</strong>と比較する。p &lt; αのときH₀を棄却する；棄却しないことはH₀が真であることを証明しない。</p>
+<p>2種類の誤りが可能である：<strong>第1種の誤り</strong>は真のH₀を棄却し、その確率はαであり、<strong>第2種の誤り</strong>は偽のH₀を棄却しないことである。信頼区間と両側検定は、区間が仮説値を除外するとき一致する。</p>
+<p>仮定 — 独立性、正規性、または大標本 — を述べよ。検定はそのモデルの良さにしかならないからである。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">1標本t統計量</span>
+      <div class="formula-expr formula-math">\[t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}\]</div>
+      <span class="formula-note">両側検定ではt_(α/2, n−1)と比較</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>相関と回帰</h2>
+  <div class="body"><p>相関係数rは−1から1の間で<strong>線形</strong>関係の強さと方向を測る。rがゼロに近いことは線形傾向がないことを意味し、関係がないことではない。また単一の外れ値がrを大きく動かしうる。相関は因果ではない。</p>
+<p>最小二乗回帰はŷ = a + b xを当てはめる。傾きはxの1単位あたりのyの単位を持ち、r²は説明される変動の割合である。</p>
+<p>観測範囲を超えて外挿してはならず、予測を信頼する前に残差プロットを確認せよ。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">回帰係数</span>
+      <div class="formula-expr formula-math">\[b = \frac{S_{xy}}{S_{xx}}, \quad a = \bar{y} - b\,\bar{x}\]</div>
+      <span class="formula-note">S_xyは補正された積和</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>統計的品質管理</h2>
+  <div class="body"><p>品質管理は同じ推論を生産に適用する。管理図はサンプル統計量をx̄ ± 3σ/√nのような限界に対してプロットし、共通原因変動と特殊原因シグナルを分離する；限界外の点、または片側に連続する点は、調整ではなく調査を促す。</p>
+<p>工程能力指数C_pkは規格幅を3σと比較し、工程が管理状態にあっても公差を満たせるかを示す。工程は安定していても能力不足でありうる：管理図は変動を記述し、能力はその変動を規格が要求するものと比較する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">管理図の限界</span>
+      <div class="formula-expr formula-math">\[\mathrm{UCL},\, \mathrm{LCL} = \bar{x} \pm \frac{3\sigma}{\sqrt{n}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">工程能力</span>
+      <div class="formula-expr formula-math">\[C_{pk} = \frac{\min(\mathrm{USL} - \mu,\, \mu - \mathrm{LSL})}{3\sigma}\]</div>
+      <span class="formula-note">USLとLSLは規格限界</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>寿命と待ち時間：指数分布と幾何分布</h2>
+  <div class="body"><p>ポアソン過程が率λで事象を生み出すとき、<strong>指数分布</strong>は次の事象までの時間をモデル化する：車両到着間の間隔、最初の欠陥までの時間、または部品の使用寿命。その密度はf(x) = λe^(−λx)、平均と標準偏差はともに1/λであり、累積形式F(x) = 1 − e^(−λx)は時間xまでの故障確率を与える。</p>
+<p><strong>無記憶性</strong>は過去が何の意味も持たないことを述べる：s時間生き残った部品は新品同様であり、P(X &gt; s + t | X &gt; s) = P(X &gt; t)である。実際の材料は劣化するので、それに依拠する前に仮定を検証せよ。</p>
+<p><strong>幾何分布</strong>は離散的ないとこである — 最初の成功までを含む試行回数で、平均は1/pである。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">指数分布の密度と累積分布関数</span>
+      <div class="formula-expr formula-math">\[f(x) = \lambda e^{-\lambda x}, \quad F(x) = 1 - e^{-\lambda x}\]</div>
+      <span class="formula-note">平均と標準偏差はともに1/λ</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">無記憶性</span>
+      <div class="formula-expr formula-math">\[P(X &gt; s + t \mid X &gt; s) = P(X &gt; t)\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">幾何確率</span>
+      <div class="formula-expr formula-math">\[P(X = x) = (1 - p)^{x-1} p\]</div>
+      <span class="formula-note">最初の成功までを含むx回の試行</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>カイ二乗適合度検定</h2>
+  <div class="body"><p>計数データには異なる検定が必要である。<strong>カイ二乗適合度検定</strong>は各カテゴリの観測度数を帰無仮説の下での期待度数と比較する；統計量が大きいことはモデルの適合が悪いことを意味する。二次元表に適用すると、同じ統計量が2つのカテゴリ変数間の<strong>独立性</strong>を検定する。</p>
+<p>自由度：完全に指定された分布ではk − 1、データから推定された各パラメータごとにさらに1を引く；r × c表では(r − 1)(c − 1)。</p>
+<p>検定は近似であるため、すべての期待度数が約5に達するまでカテゴリを併合し、常に割合ではなく度数を比較せよ。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">カイ二乗統計量</span>
+      <div class="formula-expr formula-math">\[\chi^2 = \sum_i \frac{(O_i - E_i)^2}{E_i}\]</div>
+      <span class="formula-note">O_iは観測度数、E_iはカテゴリiの期待度数</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">二次元表の期待度数</span>
+      <div class="formula-expr formula-math">\[E = \frac{\text{row total} \times \text{column total}}{\text{grand total}}\]</div>
+      
+    </div></div>
+<div class="callout callout--warning">
+  <b>小さいカテゴリを併合せよ</b>
+  期待度数が約5未満であるとカイ二乗統計量が膨らみ、p値が信頼できなくなる；まず隣接カテゴリを統合せよ。
+</div></section>
+<section class="note-section reveal" id="sec-12">
+  <h2><span class="sec-num">12</span>検出力とサンプルサイズ</h2>
+  <div class="body"><p>H₀を棄却しないことは、検定が効果を見つけられた場合にのみ情報を持つ。検定の<strong>検出力</strong>は対立仮説が真のときにH₀を棄却する確率である：検出力 = 1 − β、ここでβは第2種の誤り率である。それはサンプルサイズn、有意水準α、真の効果の大きさとともに増大し、データがノイズが多いほど低下する。</p>
+<p>平均の両側z検定では、差δを検出力1 − βで検出するのに必要なサンプルはおよそ(z_(α/2) + z_β)² σ² / δ²である。臨界値が二乗で入るため、効果の半分を検出するには4倍のサンプルが必要である。</p>
+<p>検定が有意でないときは検出力を報告せよ — 小さなサンプルからの帰無結果は何も証明しない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">必要なサンプルサイズ（両側z検定）</span>
+      <div class="formula-expr formula-math">\[n \approx \frac{(z_{\alpha/2} + z_\beta)^2 \sigma^2}{\delta^2}\]</div>
+      <span class="formula-note">δは検出する価値のある最小の差</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>標準誤差</dt><dd>サンプル統計量の標準偏差であり、推定値が繰り返しのサンプル間でどれだけ変動するかを示す。</dd></div><div class="term"><dt>信頼区間</dt><dd>母集団パラメータの妥当な値の範囲であり、95%などの信頼水準とともに報告される。</dd></div><div class="term"><dt>帰無仮説</dt><dd>効果なしまたは差なしというデフォルトの主張であり、有意性検定がそれに対する証拠を見つけようとするもの。</dd></div><div class="term"><dt>p値</dt><dd>帰無仮説が真であると仮定して計算された、観測結果と少なくとも同程度に極端な結果が得られる確率。</dd></div><div class="term"><dt>中心極限定理</dt><dd>大きなサンプルでは母集団の形状にかかわらず標本平均が近似的に正規分布に従うという結果。</dd></div><div class="term"><dt>第1種の誤り</dt><dd>実際には真である帰無仮説を棄却すること；その確率は有意水準αである。</dd></div><div class="term"><dt>無記憶性</dt><dd>将来の待ち時間がすでに経過した時間に依存しないという指数分布の特徴。</dd></div><div class="term"><dt>検出力</dt><dd>対立仮説が真のときに検定が正しく帰無仮説を棄却する確率であり、1 − βに等しい。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>コンクリート供試体強度の信頼区間とt検定</h2>
+        <p class="problem">9個のコンクリート供試体を28日で試験したところ、平均強度42.0 MPa、サンプル標準偏差3.0 MPaが得られた。規格目標は平均40 MPaである。平均強度の95%信頼区間を構築し、5%有意水準で平均強度が40 MPaと異なるか（両側）を検定せよ。</p>
+        <ol><li>モデルを述べる：n = 9、x̄ = 42.0 MPa、s = 3.0 MPaでσは未知なので、n − 1 = 8自由度のt分布を用いる。</li><li>標準誤差：SE = s/√n = 3.0/√9 = 1.0 MPa。</li><li>8自由度の95%両側区間の臨界値：t_(0.025, 8) = 2.306。</li><li>信頼区間：42.0 ± 2.306 × 1.0 = 42.0 ± 2.31、すなわち39.69 MPaから44.31 MPa。</li><li>検定統計量：t = (42.0 − 40.0) / 1.0 = 2.00、8自由度。</li><li>両側検定の臨界値も2.306であり、2.00 &lt; 2.306なのでH₀を棄却しない；p値は0.05より大きい。</li><li>妥当性チェック：区間39.7から44.3 MPaは40 MPaを含み、帰無仮説を棄却しないことと一致する。</li></ol>
+        <div class="answer"><b>Answer</b>平均強度の95%信頼区間は39.7から44.3 MPaである。両側t検定は8自由度でt = 2.00を与え、これは2.306より小さいため、5%水準で平均強度が40 MPaと異なると結論する十分な証拠はない。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>計算する前に帰無仮説と対立仮説および有意水準を書き、採択ではなく棄却しないと述べよ。</li><li>すべての質問をz値またはt値に変換し、陰影付きの面積とともに曲線を描け；誤りのほとんどは符号または裾の誤りである。</li><li>各分布の仮定 — 独立性、固定n、一定p、既知σ — を学べ。仮定の確認に点が与えられることが多い。</li><li>信頼区間は信頼水準と単位とともに報告し、1つのサンプルではなく手法の観点から解釈せよ。</li><li>カイ二乗の質問では、すべての期待度数が少なくとも5であることを確認し、表を読む前に自由度を述べよ。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q01</span><span>正規分布において、観測値のおよそどの割合が平均から1標準偏差以内に収まるか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>50%</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>68%</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>95%</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>99.7%</span></button></div>
+    <div class="quiz-explain"><b>Why</b>経験則により、1標準偏差以内に約68%、2標準偏差以内に95%、3標準偏差以内に99.7%が収まる。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>機会が多く欠陥率が小さいとき、バッチあたりに発生する稀な欠陥の数の自然なモデルとなる分布はどれか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>スチューデントのt</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>正規</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>二項</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>ポアソン</span></button></div>
+    <div class="quiz-explain"><b>Why</b>ポアソン分布は区間内の稀な事象の回数をモデル化し、二項分布の大n・小p極限である。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>母平均の95%信頼区間が(12.1, 15.9)である。正しい解釈はどれか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>母平均は95%の確実性で正確に14.0である</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>母平均が12.1と15.9の間にある確率は95%である</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>研究を何度も繰り返せば、この方法で作られた区間の約95%が母平均を含む</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>サンプル値の95%が12.1と15.9の間にある</span></button></div>
+    <div class="quiz-explain"><b>Why</b>信頼水準は手法の長期的な成功率を表し、この固定区間が平均を含む確率を表すのではない。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>仮説検定が有意水準0.05でp値0.03を返した。正しい結論はどれか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>帰無仮説は真である</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.03は小さいので帰無仮説を棄却しない</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>帰無仮説を棄却する；結果は5%水準で統計的に有意である</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>結論を出す前にサンプルサイズを増やす必要がある</span></button></div>
+    <div class="quiz-explain"><b>Why</b>0.03 &lt; 0.05なので、5%水準で帰無仮説は棄却される；小さいp値はH₀に反する証拠であり、H₀を支持する証拠ではない。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q05</span><span>交差点への連続する車両到着間の間隔が率λ = 4/分の指数分布に従う。次の間隔が1分を超える確率は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>e^(−4)</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>4 e^(−4)</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1/4</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>1 − e^(−4)</span></button></div>
+    <div class="quiz-explain"><b>Why</b>指数変数ではP(X &gt; t) = e^(−λt)；t = 1、λ = 4でこれはe^(−4)であり、0.02を少し下回る。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>適合度検定に6つのカテゴリがあり、仮説分布の1つのパラメータがデータから推定された。カイ二乗統計量の自由度はいくつか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>6</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>5</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>4</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>3</span></button></div>
+    <div class="quiz-explain"><b>Why</b>自由度はk − 1から推定された各パラメータにつき1を引いたものである：6 − 1 − 1 = 4。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.ja.html"><span>Computing</span><b>AIとデータ分析</b></a><a class="related-card" href="construction-materials.ja.html"><span>Core</span><b>建設材料</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="chinese-professional-communication.ja.html"><small>Previous</small><b>專業中文傳意</b></a><a class="next" href="data-analytics-r.ja.html"><small>Next</small><b>Rによるデータ分析</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">まずプロットし、それから計算せよ。</p><p class="margin-note">σが未知でnが小さい場合はtを用いる。</p><p class="margin-note">95%区間は1つのサンプルではなく手法についてである。</p><p class="margin-note">棄却しないことはH₀の証明ではない。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

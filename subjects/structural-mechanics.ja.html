@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>構造力学 — Civil Hub</title>
+<meta name="description" content="構造物の文法：荷重が部材を通してどのように伝わるか、応力とひずみがどう関係するか、梁・軸・柱がどのように破壊するか。これは後のすべての設計科目の基礎となる。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/structural-mechanics.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="構造力学 — Civil Hub">
+<meta property="og:description" content="構造物の文法：荷重が部材を通してどのように伝わるか、応力とひずみがどう関係するか、梁・軸・柱がどのように破壊するか。これは後のすべての設計科目の基礎となる。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/structural-mechanics.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="structural-mechanics.html" data-alt-zh-hant="structural-mechanics.zh-Hant.html" data-alt-ja="structural-mechanics.ja.html" data-alt-ko="structural-mechanics.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">構造力学</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">コア</p>
+          <h1>構造力学</h1>
+          <p class="subject-sub">構造物が荷重を支え、どのように変形するか</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>コア</li><li><b data-i18n="subject.read">Read</b>12 分</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>20</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M46 78 H294" stroke="currentColor" stroke-width="1.7"/><path d="M58 84 l-10 14 h20 z M282 84 l-10 14 h20 z" stroke="currentColor" stroke-width="1.2"/><path d="M80 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M76 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M108 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M104 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M136 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M132 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M164 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M160 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M192 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M188 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M220 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M216 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M248 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M244 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><text x="170" y="30" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">UDL  w</text><path d="M46 150 Q170 106 294 150" stroke="var(--accent)" stroke-width="1.4"/><path d="M46 150 H294" stroke="var(--line)" stroke-width="1"/><text x="170" y="178" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">BENDING MOMENT</text></svg>
+          <figcaption>Simply supported beam — load, shear and bending moment</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">まず自由物体図から始める</a></li><li><a href="#sec-2">応力、ひずみ、弾性係数</a></li><li><a href="#sec-3">軸変形と適合条件</a></li><li><a href="#sec-4">曲げ：曲げ応力式</a></li><li><a href="#sec-5">たわみと剛性の検討</a></li><li><a href="#sec-6">円形軸のねじり</a></li><li><a href="#sec-7">柱と弾性座屈</a></li><li><a href="#sec-8">引張試験から設計へ</a></li><li><a href="#sec-9">トラスとゼロ力部材</a></li><li><a href="#sec-10">梁のせん断応力</a></li><li><a href="#sec-11">複合荷重とモールの円</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">構造物の文法：荷重が部材を通してどのように伝わるか、応力とひずみがどう関係するか、梁・軸・柱がどのように破壊するか。これは後のすべての設計科目の基礎となる。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="structural-mechanics" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>まず自由物体図から始める</h2>
+  <div class="body"><p>構造のあらゆる問題は同じように始まる。注目する部分を切り出し、そこに作用するすべての力を描き、つり合いを適用する。自由物体図は飾りではない。反力や部材力が一つでも欠けていれば、その後に出る数値は無意味である。</p>
+<p>平面構造では独立なつり合い式が三つある：ΣF_x = 0、ΣF_y = 0、ΣM = 0。まずこれらで反力を求め、次に必要な断面で構造を切断する。切断面での内力は常に正の向きで描く：軸力N、せん断力V、曲げモーメントM。</p>
+<p>反力がつり合いだけで求められるとき、その構造は<strong>静定</strong>である。支点が余分にあると不静定となり、解くには適合条件、すなわち変形が互いに整合するという条件が必要になる。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">平面つり合い</span>
+      <div class="formula-expr formula-math">\[\sum F_x = 0, \quad \sum F_y = 0, \quad \sum M = 0\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>応力、ひずみ、弾性係数</h2>
+  <div class="body"><p>応力は力を強度に変換する：垂直応力σ = F/Aは断面に垂直に作用し、せん断応力τは断面に沿って作用する。ひずみはそれに対応する単位長さあたりの変形で、ε = ΔL/Lである。</p>
+<p>線形弾性材料では、応力とひずみは降伏点まで比例する。その定数がヤング係数E = σ/εであり、強さではなく剛性の尺度である。材料は剛くても弱く、あるいは柔らかくても強くなりうる。鋼は剛くも強くもあり、ゴムは剛くも強くもないが、非常によく伸びる。</p>
+<p>棒を引張ると細くなる。ポアソン比ν = −ε_lateral/ε_axialはその効果を表し、弾性定数を結びつける：G = E / [2(1 + ν)]。鋼のνは約0.30、コンクリートは約0.15〜0.20である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">垂直応力</span>
+      <div class="formula-expr formula-math">\[\sigma = \frac{F}{A}\]</div>
+      <span class="formula-note">断面に垂直な力、単位はニュートン毎平方メートル</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">ヤング係数</span>
+      <div class="formula-expr formula-math">\[E = \frac{\sigma}{\varepsilon}\]</div>
+      <span class="formula-note">応力–ひずみ曲線の線形弾性部分の勾配</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">せん断弾性係数</span>
+      <div class="formula-expr formula-math">\[G = \frac{E}{2(1 + \nu)}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>軸変形と適合条件</h2>
+  <div class="body"><p>長さL、断面積A、弾性係数Eの角柱棒が軸力Pを受けると、長さはΔL = P L / (A E)だけ変化する。これは不静定問題の主力である：各材の伸びを未知の力で表し、材が同じ節点で依然として接するという幾何学的条件を課す。</p>
+<p>温度変化は自由膨張ΔL = α L ΔTを加える。その膨張が拘束されると、部材には熱応力σ = −E α ΔTが生じる。暑い日に両端を固定された鋼のレールは、何も触れていなくても圧縮状態にある。妨げられたのは動きであり、温度ではない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">軸変形</span>
+      <div class="formula-expr formula-math">\[\Delta L = \frac{P L}{A E}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">熱応力（完全拘束）</span>
+      <div class="formula-expr formula-math">\[\sigma = -E \alpha \Delta T\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>曲げ：曲げ応力式</h2>
+  <div class="body"><p>曲げモーメントは断面にわたって応力勾配を生じる。中立軸は図心を通り、片側の繊維は圧縮、反対側は引張となる。</p>
+<p>曲げ応力式はσ = M y / Iであり、yは中立軸からの距離、Iはその軸まわりの断面二次モーメントである。最大応力は最外縁繊維で生じるため、断面はしばしば弾性断面係数Z = I / y_maxで表され、σ_max = M / Zとなる。</p>
+<p>長方形梁のせいを2倍にするとIは8倍になる。I = b h³ / 12だからである。せいは幅よりもはるかに効率的である。せん断力は消えない。梁では放物線状のせん断応力分布を生じ、最外縁繊維でゼロ、中立軸で最大となり、長方形ではτ_max = 3V/(2A)である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">曲げ応力式</span>
+      <div class="formula-expr formula-math">\[\sigma = \frac{M y}{I}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">弾性断面係数</span>
+      <div class="formula-expr formula-math">\[Z = \frac{I}{y_{\max}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">断面二次モーメント（長方形）</span>
+      <div class="formula-expr formula-math">\[I = \frac{b h^3}{12}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>たわみと剛性の検討</h2>
+  <div class="body"><p>曲げは形状も変化させる。曲率はモーメントとEI v'' = Mで関係づけられ、EIは曲げ剛性、vは横方向変位である。2回積分すると傾きとたわみが得られ、定数は支持条件から決まる。</p>
+<p>よくあるケースの結果は覚えておく価値がある：<br />
+- 中央集中荷重Pを受ける単純支持梁：中央でδ = PL³/(48EI)。<br />
+- 等分布荷重wを受ける単純支持梁：δ = 5wL⁴/(384EI)。<br />
+- 先端荷重を受ける片持ち梁：δ = PL³/(3EI)。</p>
+<p>重ね合わせにより、応答が線形である限り、複合荷重に対してこれらのパターンを加算できる。たわみ制限は、特に長スパンの床や細長い屋根で、強度より先に設計を支配することが多い。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">梁の曲率</span>
+      <div class="formula-expr formula-math">\[E I v&#x27;&#x27; = M\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">中央集中荷重時の中央たわみ</span>
+      <div class="formula-expr formula-math">\[\delta = \frac{P L^3}{48 E I}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">等分布荷重時の中央たわみ</span>
+      <div class="formula-expr formula-math">\[\delta = \frac{5 w L^4}{384 E I}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>円形軸のねじり</h2>
+  <div class="body"><p>トルクTでねじられる円形軸には、半径に比例して増大するせん断応力が生じる：τ = T r / J。ここでJは極断面二次モーメントである。中実円ではJ = π d⁴ / 32なので、τ_max = 16T/(π d³)となる。</p>
+<p>長さLにわたるねじれ角はθ = T L / (G J)である。中空軸が効率的なのはねじりのためである：ねじり抵抗の大部分は外側繊維にあり、中心付近の材料はほとんど寄与しない。</p>
+<p>ねじり下で平面を保つのは円形断面のみであり、非円形断面はそりを生じ、その解析には別の手法が必要である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">ねじりせん断応力</span>
+      <div class="formula-expr formula-math">\[\tau = \frac{T r}{J}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">ねじれ角</span>
+      <div class="formula-expr formula-math">\[\theta = \frac{T L}{G J}\]</div>
+      <span class="formula-note">一貫した単位ではθはラジアン</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>柱と弾性座屈</h2>
+  <div class="body"><p>細長い圧縮部材は、材料が圧壊するはるか前に座屈で破壊しうる。オイラー荷重はP_cr = π² E I / (K L)²であり、Kは端部条件に依存する：<br />
+- ピン–ピン：K = 1.0<br />
+- 固定–固定：K = 0.5<br />
+- 固定–自由：K = 2.0<br />
+- 固定–ピン：K = 0.7</p>
+<p>座屈は強度ではなく細長さで支配される。短くずんぐりした柱は降伏し、長く細長い柱は座屈する。その遷移は細長比λ = K L / rで表され、rは断面二次半径である。</p>
+<p>座屈荷重はIに依存するため、最小のIに対する座屈方向が設計を支配する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">オイラー座屈荷重</span>
+      <div class="formula-expr formula-math">\[P_{cr} = \frac{\pi^2 E I}{(K L)^2}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>引張試験から設計へ</h2>
+  <div class="body"><p>引張試験は理論を測定値に変える。軟鋼のような延性試験片は、初期の線形領域（E）、上下降伏点、プラトー、引張強さまでのひずみ硬化、そして最終的なくびれと破断を示す。高強度鋼は降伏プラトーをほとんど示さず、はるかに小さな伸びで破壊することがある。</p>
+<p>延性が重要であるのは、それが警告を与え、力の再配分を可能にするからである。設計では安全率または部分係数を用いて使用応力を関連する限界以下に保ち、使用性の検討でたわみやひび割れを許容範囲に保つ。</p>
+<p>剛性のない強度、または延性のない剛性は、工学の答えとして受け入れられることはほとんどない。</p></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>トラスとゼロ力部材</h2>
+  <div class="body"><p>トラスは軸力のみを伝えるピン接合棒の集合体であり、各節点は二つのつり合い式を満たさなければならない。</p>
+<p><strong>節点法</strong>はトラスを一周しながら各節点でΣF_x = 0とΣF_y = 0を立て、未知の棒力が最大二つである節点から始める。<strong>断面法</strong>は未知力の棒を三本以下で切断し、モーメントを取ることで、内部の棒に一手で到達する。</p>
+<p>ゼロ力部材は計算前に見つけられる：<br />
+- 無載荷節点に非共線の棒が二本だけ集まるなら、両方ともゼロ力である。<br />
+- 棒が三本集まり二本が共線なら、節点に外力が作用しない限り三本目は力を伝えない。</p>
+<p>実験室のトラスでは、測定した棒力を作用荷重に対してプロットすると原点を通る直線となり、ゼロ力棒はほぼ正確にゼロを示す。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">断面法</span>
+      <div class="formula-expr formula-math">\[F = \frac{M_A}{r}\]</div>
+      <span class="formula-note">都合のよい点まわりのモーメントを棒までの垂直距離で割ったもの</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>梁のせん断応力</h2>
+  <div class="body"><p>せん断力Vが作用する箇所では、せん断応力は深さ方向に変化する。一般式はτ = VQ/(Ib)であり、Qは考慮点より外側の面積の一次モーメント、bはその位置での幅である。</p>
+<p>長方形では分布は放物線状であり、最外縁繊維でゼロ、中立軸で最大τ_max = 3V/(2A)となる。I形断面ではせん断のほとんどすべてがウェブで伝えられる。フランジはそこへ流れを供給するだけだからである。</p>
+<p>せん断が細長い梁の設計を支配することはまれだが、短く深い部材、接合部の詳細、そして高いVが孔で減少した断面と出会う支点では重要である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">横せん断応力</span>
+      <div class="formula-expr formula-math">\[\tau = \frac{V Q}{I b}\]</div>
+      <span class="formula-note">Qは考慮点より外側の面積の一次モーメント、bはその位置の幅</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">最大せん断応力（長方形）</span>
+      <div class="formula-expr formula-math">\[\tau_{\max} = \frac{3 V}{2 A}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>複合荷重とモールの円</h2>
+  <div class="body"><p>部材内の実際の点は通常、曲げ、軸力、ねじりせん断を同時に受ける。軸力と曲げによる直応力σ_xは、ねじりと横せん断によるせん断応力τ_xyと組み合わされる。<strong>主応力</strong>は以下で与えられ、最大せん断応力は平方根の項のみである。</p>
+<p>したがって、複合トルクと曲げを受ける軸は、どちらか一方ではなく相当応力に対して検討される。モールの円は状態を図的に表す：中心は(σ_x + σ_y)/2、半径は√[((σ_x − σ_y)/2)² + τ_xy²]である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">主応力</span>
+      <div class="formula-expr formula-math">\[\sigma_{1,2} = \frac{\sigma_x + \sigma_y}{2} \pm \sqrt{\left(\frac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">最大せん断応力</span>
+      <div class="formula-expr formula-math">\[\tau_{\max} = \sqrt{\left(\frac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2}\]</div>
+      
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>中立軸</dt><dd>曲げを受ける断面で応力がゼロとなり、繊維が伸びも縮みもしない線。</dd></div><div class="term"><dt>断面二次モーメント</dt><dd>材料が中立軸からどれだけ離れているかを表す幾何学的尺度であり、曲げ剛性と応力を支配する。</dd></div><div class="term"><dt>ヤング係数</dt><dd>応力–ひずみ曲線の線形部分の勾配であり、剛性を表す。</dd></div><div class="term"><dt>延性</dt><dd>材料が破壊前に塑性変形できる能力。</dd></div><div class="term"><dt>不静定</dt><dd>反力がつり合い式より多い構造であり、解くには適合条件を必要とする。</dd></div><div class="term"><dt>細長比</dt><dd>有効長さを断面二次半径で割ったもの。柱が座屈と降伏のどちらで支配されるかを予測する。</dd></div><div class="term"><dt>曲げ剛性</dt><dd>積EIであり、部材の曲げ変形に対する抵抗。</dd></div><div class="term"><dt>ゼロ力部材</dt><dd>力を伝えないトラス棒であり、計算前に節点の幾何学から特定できる。</dd></div><div class="term"><dt>主応力</dt><dd>せん断応力がゼロとなる面における極値の垂直応力であり、モールの円の作図から求められる。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>木製根太の最大曲げ応力</h2>
+        <p class="problem">スパン6.0 mの単純支持木製梁が、自重を含む等分布荷重10 kN/mを受ける。断面は幅150 mm、せい300 mmである。最大曲げ応力を求め、許容曲げ応力18 MPaの木材が適切かどうかを述べよ。</p>
+        <ol><li>等分布荷重を受ける単純支持梁の最大モーメントはwL²/8 = 10 × 6.0² / 8 = 45 kNm = 45 × 10⁶ Nmm。</li><li>中立軸まわりの断面二次モーメント：I = b h³ / 12 = 150 × 300³ / 12 = 3.375 × 10⁸ mm⁴。</li><li>最外縁繊維までの距離：y = h/2 = 150 mm。</li><li>σ_max = M y / I = (45 × 10⁶ × 150) / (3.375 × 10⁸) = 20.0 N/mm² = 20 MPa。</li><li>断面係数による確認：Z = I / y = 2.25 × 10⁶ mm³、よってσ = M/Z = 45 × 10⁶ / 2.25 × 10⁶ = 20 MPa。</li></ol>
+        <div class="answer"><b>Answer</b>最大曲げ応力は20 MPaであり、許容値18 MPaを超えるため、この根太は曲げに対して不適切である。よりせいの大きい断面か、より短いスパンが必要である。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>公式集に触れる前にまずつり合い式を書く。失点のほとんどは代数ではなく、欠けた反力から生じる。</li><li>たわみの問題では、まず標準ケースを特定し、ゼロから導出するのではなく重ね合わせを使う。</li><li>単位を一貫させる：最初にkNをNに、mmをmに変換し、すべての答えに単位を明記する。</li><li>柱では座屈と降伏の両方を検討し、結論では小さい方の耐力を使う。</li><li>トラスの問題ではまずゼロ力部材を探す。それらを取り除くと未知数が二つだけの節点が現れ、いくつもの式を節約できることが多い。</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Minimum imposed floor loads for buildings</h3>
+  <p class="ref-table-intro">Characteristic imposed (live) loads used when sizing floors, beams and columns of buildings in Hong Kong. qk is the uniformly distributed load and Qk is a concentrated load applied on plan over a 200 mm square.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Floor use / area class</th><th scope='col'>Distributed load qk (kPa)</th><th scope='col'>Concentrated load Qk (kN)</th></tr></thead><tbody><tr><td>Domestic floors and residential activities (Area Class 1)</td><td>2.0</td><td>2.0</td></tr><tr><td>Offices for general use (Area Class 2)</td><td>3.0</td><td>4.5</td></tr><tr><td>Classrooms, lecture rooms and computer rooms (Area Class 3A)</td><td>3.0</td><td>4.5</td></tr><tr><td>Restaurants, bars, canteens and fast-food shops (Area Class 3A)</td><td>4.0</td><td>4.5</td></tr><tr><td>Assembly areas without fixed seating; refuge floors (Area Class 3C)</td><td>5.0</td><td>4.5</td></tr><tr><td>Shops, supermarkets and department stores (Area Class 4)</td><td>5.0</td><td>4.5</td></tr><tr><td>Car parks for vehicles up to 3,000 kg gross (Area Class 6A)</td><td>3.0</td><td>20.0</td></tr></tbody></table></div>
+  <p class="ref-table-note">Values selected from Tables 3.2 and 3.4 of the Code of Practice for Dead and Imposed Loads 2011 (2021 Edition), Buildings Department; area class numbers follow Table 3.1. qk acts over the floor area and Qk is applied on plan over any square with a 200 mm side.</p>
+  <p class="ref-table-caveat">Simplified revision summary only. The code contains further floor uses, load-reduction rules and dynamic and barrier requirements; verify against the current code for actual design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>長方形梁の幅を変えずにせいを2倍にすると、曲げ軸まわりの断面二次モーメントはどうなるか：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>2倍</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>4倍</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>8倍</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>16倍</span></button></div>
+    <div class="quiz-explain"><b>Why</b>I = b h³/12なので、hを2倍にするとIは2³ = 8倍になる。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>鋼棒が両端で完全に拘束され、加熱された。正しい記述はどれか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>鋼は弾性なので応力は生じない</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>どのような温度上昇でも直ちに降伏する</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>膨張しようとするため引張応力が生じる</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>膨張が妨げられるため圧縮応力が生じる</span></button></div>
+    <div class="quiz-explain"><b>Why</b>自由膨張が妨げられるため、部材は圧縮される：σ = −EαΔT。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>ピン–ピン柱のオイラー座屈荷重は何に比例するか：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>L²</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>1/L</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1/L²</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>L</span></button></div>
+    <div class="quiz-explain"><b>Why</b>P_cr = π²EI/(KL)²なので、有効長さの二乗に反比例して減少する。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q04</span><span>中央集中荷重を受ける単純支持梁で、最大曲げモーメントが生じるのは：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>中央</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>反曲点</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>支点</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>スパンの1/4点</span></button></div>
+    <div class="quiz-explain"><b>Why</b>せん断力は中央で符号を変え、そこでモーメントがPL/4の最大値に達する。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>トラスの無載荷節点に、非共線の棒が二本集まっている。それらの力について何が言えるか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>両方の棒が等しい引張力を受ける</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>両方の棒はゼロ力部材である</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>一方は引張、他方は圧縮である</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>支点反力なしでは何も言えない</span></button></div>
+    <div class="quiz-explain"><b>Why</b>外力がないため、節点での二つの独立方向のつり合いから両方の棒力はゼロになる。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>断面積Aの長方形梁がせん断力Vを受ける。梁の最大せん断応力は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>V/A</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>2V/A</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1.5V/A</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>せん断は表面でのみ伝えられるためゼロ</span></button></div>
+    <div class="quiz-explain"><b>Why</b>放物線状のせん断分布は中立軸で3V/(2A)、すなわち1.5V/Aで最大となる。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="advanced-structural-mechanics.ja.html"><span>Core</span><b>上級構造力学</b></a><a class="related-card" href="construction-materials.ja.html"><span>Core</span><b>建設材料</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="leadership-teamwork.ja.html"><small>Previous</small><b>リーダーシップとチームワーク</b></a><a class="next" href="ai-data-analysis.ja.html"><small>Next</small><b>AIとデータ分析</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2021). <i>Code of Practice for Dead and Imposed Loads 2011 (2021 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/DIL2011e.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/DIL2011e.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">まず自由物体図を — 常に。</p><p class="margin-note">曲げには幅よりせい：I ∝ h³。</p><p class="margin-note">たわみが強度より先に設計を支配することが多い。</p><p class="margin-note">延性は安全機能であり、おまけではない。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

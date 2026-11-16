@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>データ構造とアルゴリズム — Civil Hub</title>
+<meta name="description" content="データ構造の選択はコストに関する意思決定である。このページでは配列、リスト、スタック、キュー、ハッシュテーブル、木、グラフを扱い、続いてソート、探索、そしてそれらを比較するために用いるBig-Oの言語を扱う。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/data-structures-algorithms.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="データ構造とアルゴリズム — Civil Hub">
+<meta property="og:description" content="データ構造の選択はコストに関する意思決定である。このページでは配列、リスト、スタック、キュー、ハッシュテーブル、木、グラフを扱い、続いてソート、探索、そしてそれらを比較するために用いるBig-Oの言語を扱う。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/data-structures-algorithms.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="data-structures-algorithms.html" data-alt-zh-hant="data-structures-algorithms.zh-Hant.html" data-alt-ja="data-structures-algorithms.ja.html" data-alt-ko="data-structures-algorithms.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">データ構造とアルゴリズム</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">計算</p>
+          <h1>データ構造とアルゴリズム</h1>
+          <p class="subject-sub">適切な構造の選択とコストの測定</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>計算</li><li><b data-i18n="subject.read">Read</b>10 分</li><li><b data-i18n="subject.sections">Sections</b>12</li><li><b data-i18n="subject.formulas">Formulas</b>9</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="44" y="34" width="252" height="136" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M44 58 H296" stroke="var(--line)" stroke-width="1"/><circle cx="58" cy="46" r="2.5" fill="var(--accent)" stroke="none"/><path d="M64 78 h76" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 93 h120" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 108 h60" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 123 h144" stroke="var(--faint)" stroke-width="1.2"/><path d="M64 138 h96" stroke="var(--faint)" stroke-width="1.2"/><text x="64" y="160" font-family="var(--mono)" font-size="7" fill="currentColor" stroke="none" text-anchor="start" letter-spacing="0.18em">> RUN</text><path d="M118 155 h10" stroke="var(--accent)" stroke-width="1.4"/></svg>
+          <figcaption>A short program — input, logic, output</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">構造はアルゴリズムの一部である</a></li><li><a href="#sec-2">配列と連結リスト</a></li><li><a href="#sec-3">スタックとキュー</a></li><li><a href="#sec-4">ハッシュテーブル</a></li><li><a href="#sec-5">木とヒープ</a></li><li><a href="#sec-6">平衡と回転</a></li><li><a href="#sec-7">グラフとその探索方法</a></li><li><a href="#sec-8">貪欲法と最短経路</a></li><li><a href="#sec-9">ソート、探索、Big-O</a></li><li><a href="#sec-10">成長率とマスター定理</a></li><li><a href="#sec-11">再帰と時間・メモリのトレードオフ</a></li><li><a href="#sec-12">トポロジカル順序と閉路検出</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">データ構造の選択はコストに関する意思決定である。このページでは配列、リスト、スタック、キュー、ハッシュテーブル、木、グラフを扱い、続いてソート、探索、そしてそれらを比較するために用いるBig-Oの言語を扱う。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="data-structures-algorithms" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>構造はアルゴリズムの一部である</h2>
+  <div class="body"><p><strong>抽象データ型</strong>は契約である。すなわち操作とその意味を定め、実装については何も約束しない。<strong>データ構造</strong>はその契約を守る一つの方法であり、あらゆる実装は何かを犠牲にする — メモリのために時間を、速度のために汎用性を。</p>
+<ul>
+<li>ある値が存在するかを見つける: 未ソート配列では線形走査、ソート済み配列では対数探索、ハッシュテーブルでは平均定数時間の参照。</li>
+<li>コードを書く前に、プログラムが最も頻繁に行う操作を列挙せよ。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>配列と連結リスト</h2>
+  <div class="body"><p>配列は要素を連続したメモリに格納するため、添字アクセスは定数時間の算術で済むが、途中への挿入はそれ以降のすべてをずらす。<strong>連結リスト</strong>は互いを指すノードを格納する: 既知のノードへの挿入は定数時間だが、位置<code>k</code>に到達するには<code>k</code>個のノードをたどる必要があり、各ステップでキャッシュミスが起こりうる。</p>
+<ul>
+<li>添字による読み取りと反復には配列を、ランダムアクセスなしの接ぎ合わせや並べ替えにはリストを使う。</li>
+<li><strong>動的配列</strong>は容量を倍にすることで成長を償却し、末尾追加を平均O(1)にする。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>スタックとキュー</h2>
+  <div class="body"><p><strong>スタック</strong>は後入れ先出し（LIFO）である: 一端でpushとpopを行う。これは入れ子構造をモデル化する — 関数呼び出し、括弧の対応、深さ優先探索、undo履歴。<strong>キュー</strong>は先入れ先出し（FIFO）である: 後ろでenqueueし、前でdequeueする。これは公平なサービスと幅優先探索をモデル化する。たとえば出発点からの距離によって道路網を探索する場合などである。</p>
+<ul>
+<li>単純な配列キューは先頭が進むにつれて空間を浪費する; <strong>リングバッファ</strong>はそれを再利用する。</li>
+<li><strong>デック（両端キュー）</strong>は両端での操作を定数時間で可能にする。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>ハッシュテーブル</h2>
+  <div class="body"><p><strong>ハッシュテーブル</strong>は<code>h(key)</code>を計算してキーをバケットに写像し、平均定数時間の参照、挿入、削除を目指す。衝突は避けられない; <strong>分離連鎖法</strong>はバケットごとにリストを格納し、<strong>開番地法</strong>は固定の順序で他のスロットを探索する。</p>
+<ul>
+<li>性能は<strong>負荷率</strong>、すなわち格納されたキー数とバケット数の比に依存する。</li>
+<li>小さなテーブルと貧弱なハッシュ関数は、期待されるO(1)をO(n)に変えてしまう。</li>
+<li>反復順序に決して依存せず、負荷率がしきい値を超えたら倍に拡張して再ハッシュせよ。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">負荷率</span>
+      <div class="formula-expr formula-math">\[\alpha = \frac{n}{m}\]</div>
+      <span class="formula-note">m個のバケットにn個のキー; αは約0.75未満に保つ</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>木とヒープ</h2>
+  <div class="body"><p><strong>二分探索木</strong>は小さいキーを左に、大きいキーを右に保つため、探索コストは木の高さになる: 平衡ならO(log n)、退化すればO(n)。<strong>平衡木</strong>は挿入時に再平衡化し、対数の高さを保証する。</p>
+<ul>
+<li><strong>ヒープ</strong>は部分順序のみを保つ — 最小ヒープではすべての親がその子より小さい — これが優先度付きキューには十分である。</li>
+<li>pushとpopはO(log n)、極値の読み取りはO(1)で、構造は平坦な配列に格納される。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>平衡と回転</h2>
+  <div class="body"><p>探索木が対数時間であるのは<strong>平衡</strong>を保っている間だけである。<strong>AVL木</strong>は各ノードで二つの部分木の高さの差を1以内に保つ; 挿入がその規則を破ると、<strong>回転</strong>がそれを回復する。</p>
+<ul>
+<li>単一回転は外側に偏った形を修正し、二重回転は内側のジグザグ形を修正する。</li>
+<li>回転は局所的なポインタ操作である: 定数時間だが、親リンクと格納された高さを更新しなければならない。</li>
+<li><strong>赤黒木</strong>は規則を緩和し、挿入ごとに高々定数回の回転で済む彩色方式を用いる。</li>
+<li>試験では、まず不変条件を述べ、次に回転を適用し、最後にメタデータを更新せよ。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">AVL平衡係数</span>
+      <div class="formula-expr formula-math">\[\mathrm{BF} = h_L - h_R \in \{-1, 0, +1\}\]</div>
+      <span class="formula-note">挿入や削除で破られうる; 1回または2回の回転で回復する</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">ヒープの配列添字</span>
+      <div class="formula-expr formula-text">children of i: 2i + 1 and 2i + 2; parent: (i − 1) // 2</div>
+      <span class="formula-note">二分ヒープの0始まり配列レイアウト</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>グラフとその探索方法</h2>
+  <div class="body"><p>グラフは頂点と辺からなり、距離や移動時間のための重みを持つ。</p>
+<ul>
+<li><strong>隣接リスト</strong>は頂点ごとに隣接頂点を格納し、疎なネットワークに適する。</li>
+<li><strong>隣接行列</strong>はn²のメモリを使い、「辺は存在するか?」に定数時間で答えるため、密なグラフに適する。</li>
+<li><strong>幅優先探索</strong>は層ごとに探索し、すべての辺の重みが等しい場合に最短経路を見つける。</li>
+<li><strong>深さ優先探索</strong>は一つの枝を可能な限りたどり、閉路、連結成分、トポロジカル順序を明らかにする。</li>
+<li>重み付き最短経路にはダイクストラ法が必要で、優先度付きキューを用いて未訪問の最小コスト頂点を展開する。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>貪欲法と最短経路</h2>
+  <div class="body"><p><strong>貪欲</strong>アルゴリズムは局所的に最良の選択にコミットし、決して見直さない。これは問題が最適部分構造と安全な貪欲選択を持つ場合に機能する: 活動選択は最も早く終わる両立可能な活動を選び、ハフマン符号化は最もまれな二つの記号を繰り返し併合する。</p>
+<ul>
+<li>ダイクストラ法は貪欲な緩和である: 既知の距離が最小の未確定頂点を繰り返し確定し、その辺を緩和する。</li>
+<li>非負の重みが必要である; 負の辺がある場合はベルマン–フォード法を使い、これはすべての辺をn−1回緩和し、もう1回のパスで負閉路を検出する。</li>
+<li>貪欲アルゴリズムを正当化するよう求められたら、選択とそれがなぜ安全かを述べよ。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">辺の緩和</span>
+      <div class="formula-expr formula-math">\[d[v] = \min(d[v],\; d[u] + w(u,v))\]</div>
+      <span class="formula-note">uは確定済み、u→vは重みwの辺</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>ソート、探索、Big-O</h2>
+  <div class="body"><p><strong>Big-O</strong>は、定数や低次の項を無視して、コストが入力サイズとともにどのように増大するかを表す。これは成長率の言語であり、ストップウォッチではない: O(n²)のソートが小さな配列ではO(n log n)のソートに勝つことがあるのは、そのオーバーヘッドが小さいからである。</p>
+<ul>
+<li>比較ソートはΩ(n log n)を下回れない。</li>
+<li>マージソートはO(n log n)を保証し、安定だが追加メモリを必要とする。</li>
+<li>クイックソートは実際には高速だが、敵対的なピボットではO(n²)に劣化する。</li>
+<li>挿入ソートはほぼソート済みのデータに優れている。</li>
+<li><strong>二分探索</strong>は各ステップで範囲を半分にするため、対数回の比較で済む。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">二分探索の比較回数</span>
+      <div class="formula-expr formula-math">\[C \le \lceil \log_2 n \rceil + 1\]</div>
+      <span class="formula-note">n個の要素からなるソート済み配列に対して</span>
+    </div></div><div class="table-wrap"><table><caption>一般的な操作のコストと、それぞれが劣化する条件</caption><thead><tr><th scope='col'>操作</th><th scope='col'>構造</th><th scope='col'>典型的なコスト</th><th scope='col'>劣化する条件</th></tr></thead><tbody><tr><td>添字によるアクセス</td><td>配列</td><td>O(1)</td><td>添字が配列の範囲外</td></tr><tr><td>先頭への挿入</td><td>連結リスト</td><td>O(1)</td><td>まずノードを見つける必要がある</td></tr><tr><td>キーによる参照</td><td>ハッシュテーブル</td><td>平均O(1)</td><td>高い負荷率またはクラスタリング</td></tr><tr><td>探索</td><td>平衡探索木</td><td>O(log n)</td><td>木が退化する</td></tr><tr><td>ソート</td><td>マージソート</td><td>O(n log n)</td><td>マージのための追加メモリ</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>成長率とマスター定理</h2>
+  <div class="body"><p>漸化式は分割統治のコストを表し、<strong>マスター定理</strong>は分割・統合の仕事と葉で行われる仕事を比較することで、よくある形を解く。</p>
+<ul>
+<li>統合の項が支配的な場合、総コストは統合コストになる。</li>
+<li>葉が支配的な場合、葉のコストになる。</li>
+<li>両者が釣り合う場合、答えにはlogの因子が加わる。</li>
+<li>罠は代数ではなく記法にある: Oは上界、Ωは下界、Θはその両方を表し、これらは具体的な実行時間ではなく成長クラスを表す。</li>
+<li>試験前にlog n、√n、n、n log n、n²、2ⁿなどのクラスの順序を練習し、すべての答えを小さなケースで検証せよ。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">マスター定理の形</span>
+      <div class="formula-expr formula-math">\[T(n) = aT(n/b) + f(n)\]</div>
+      <span class="formula-note">f(n)とn^(log_b a)を比較する; より速く成長する方が総コストを決める</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>マスター定理を無理に適用しない</b>
+  これはT(n) = aT(n/b) + f(n)という形で、部分問題のサイズが等しい漸化式にのみ適用できる。不規則な分割の場合は、再帰木を描いて各レベルの和を求めよ。
+</div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>再帰と時間・メモリのトレードオフ</h2>
+  <div class="body"><p><strong>再帰</strong>関数はより小さな入力で自分自身を呼び出すことで問題を解く; 各呼び出しはコールスタックにフレームを追加するため、深さはメモリである。漸化式<code>T(n) = 2T(n/2) + O(n)</code>はO(n log n)に解け、一方、部分問題が繰り返される分岐する漸化式は指数関数的に爆発しうる。</p>
+<ul>
+<li><strong>動的計画法</strong>は各部分問題を一度だけ格納することでその爆発を除去する。</li>
+<li>メモ化はトップダウンの再帰を保ち結果をキャッシュする; ボトムアップ形式は依存順に表を埋める。</li>
+<li>どちらも時間を得るためにメモリを使うので、実装前に漸化式に繰り返しの仕事がないか調べよ。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">分割統治の漸化式</span>
+      <div class="formula-expr formula-math">\[T(n) = 2T(n/2) + O(n) \rightarrow O(n\log n)\]</div>
+      <span class="formula-note">等しいサイズの二つの半分と線形の仕事</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">動的計画法の漸化式</span>
+      <div class="formula-expr formula-math">\[r(n) = \max_{1 \le i \le n} (p(i) + r(n-i))\]</div>
+      <span class="formula-note">各部分問題は一度だけ解かれる</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-12">
+  <h2><span class="sec-num">12</span>トポロジカル順序と閉路検出</h2>
+  <div class="body"><p><strong>有向非巡回グラフ</strong>（DAG）は前提条件を持つタスクをモデル化し、<strong>トポロジカル順序</strong>はすべての辺が前方を指すように頂点を並べる。</p>
+<ul>
+<li>カーンのアルゴリズムは入次数がゼロの頂点を繰り返し除去する; 頂点が残ったまま処理が止まれば、グラフは閉路を含む。</li>
+<li>深さ優先探索は終了時刻を逆順にすることで同じ順序を与える。</li>
+<li>閉路検出とトポロジカルソートは、プログラム、依存関係の集合、組立順序が実行可能であることを示す必要があるときに現れる。</li>
+<li>スケジューリングの問題では、まず先行関係グラフを描き、入次数を計算し、キューをシミュレートせよ — 得られる順序は一つの有効な答えであり、必ずしも唯一のものではない。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">入次数の更新</span>
+      <div class="formula-expr formula-text">for each edge u→v: indegree[v] = indegree[v] − 1</div>
+      <span class="formula-note">uを除去した後; ゼロになった頂点はキューに入る</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>抽象データ型</dt><dd>実装から独立した、操作とその振る舞いの仕様。</dd></div><div class="term"><dt>負荷率</dt><dd>格納されたキー数をバケット数で割ったもの; ハッシュテーブルの性能を左右する。</dd></div><div class="term"><dt>二分探索木</dt><dd>小さいキーを左に、大きいキーを右に持つ木で、高さの時間で探索される。</dd></div><div class="term"><dt>ヒープ</dt><dd>親と子の間に部分順序を持つ木で、優先度付きキューの実装に用いられる。</dd></div><div class="term"><dt>Big-O</dt><dd>アルゴリズムのコストが入力サイズとともに増大する様子の漸近的上界を、定数因子まで含めて表したもの。</dd></div><div class="term"><dt>動的計画法</dt><dd>重複する部分問題の答えを格納して再利用することで問題を解く手法。</dd></div><div class="term"><dt>AVL木</dt><dd>各ノードが左右の部分木の高さの差を1以内に保つ自己平衡二分探索木。</dd></div><div class="term"><dt>トポロジカル順序</dt><dd>DAGの頂点の線形順序で、すべての辺が前の頂点から後の頂点を指すもの。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>連鎖法を用いたハッシュテーブルへの挿入</h2>
+        <p class="problem">ハッシュテーブルはm = 7個のバケットを持ち、分離連鎖法でh(k) = k mod 7を用い、キー25、38、41、7、52、61、33、14をこの順に、それぞれの連鎖の先頭に追加しながら挿入する。最終的なテーブル、その負荷率、および38と61を見つけるのに必要な比較回数を示せ。</p>
+        <ol><li>各キーのバケット添字: 25 → 4、38 → 3、41 → 6、7 → 0、52 → 3、61 → 5、33 → 5、14 → 0。</li><li>順に挿入し先頭に追加する: バケット4は25を持つ; バケット3は52 → 38に成長する; バケット6は41を持つ。</li><li>バケット5は33 → 61に成長する。61が33より先に挿入され、先頭追加は新しいキーを先頭に置くためである。同じ理由でバケット0は14 → 7に成長する。</li><li>最終的な連鎖: バケット0: 14 → 7; バケット3: 52 → 38; バケット4: 25; バケット5: 33 → 61; バケット6: 41; バケット1と2は空。</li><li>負荷率α = 8/7 ≈ 1.14なので、平均連鎖長は1ノードより長く、最長連鎖は2ノードである。</li><li>38を探す: バケット3を調べ、52（不一致）、次に38（一致）と比較するので2回の比較。61を探す: バケット5を調べ、33、次に61と比較するので、これも2回の比較。</li></ol>
+        <div class="answer"><b>Answer</b>連鎖は14 → 7（バケット0）、52 → 38（3）、25（4）、33 → 61（5）、41（6）であり、バケット1と2は空である。負荷率は8/7 ≈ 1.14で、どちらの探索も2回の比較で済む。1を超える負荷率はテーブルの拡張と再ハッシュを正当化し、それが期待されるO(1)の振る舞いを回復する。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>最悪ケースと平均ケースを別々に示せ; ハッシュテーブルがO(1)なのは平均のみである。</li><li>構造を使う前にその不変条件を述べよ — ヒープ順序、探索木順序、ソート済み配列 — なぜならすべての操作がそれに依存するからである。</li><li>再帰については、まず漸化式を書き、次にマスター定理で解くか引用せよ; コードから成長率を推測してはならない。</li><li>ダイクストラ法では距離表を描き、確定される順に頂点に印を付けよ; 確定前の頂点から決して緩和してはならない。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>連鎖法を用いたハッシュテーブルがm個のバケットにn個のキーを格納している。その最悪ケースの参照コストは:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>O(n)、すべてのキーが一つの連鎖に衝突しうるから</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>O(n log n)、ハッシュにはソートが必要だから</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>O(1)、ハッシュは常にバケットを直接見つけるから</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>O(log n)、各連鎖がソートされて保たれるから</span></button></div>
+    <div class="quiz-explain"><b>Why</b>良いハッシュ関数と低い負荷率では平均ケースはO(1)だが、最悪ケースではn個のキーからなる一つの連鎖を走査するまで退化する。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>グラフの幅優先探索を最も自然に実装する構造はどれか?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>スタック</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>キュー</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>二分探索木</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>最大ヒープ</span></button></div>
+    <div class="quiz-explain"><b>Why</b>BFSは頂点を発見された順に訪問するため、先入れ先出しのキューがフロンティアを正しい順序に保つ。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>メモ化が再帰アルゴリズムを高速化する主な理由は:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>基底ケースの必要性を取り除くから</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>すべての再帰呼び出しの深さを減らすから</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>重複する各部分問題の答えを格納して再利用するから</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>再帰の前に入力をソートするから</span></button></div>
+    <div class="quiz-explain"><b>Why</b>繰り返される部分問題は一度だけ解かれてキャッシュされ、メモリを犠牲にして指数関数的な仕事を多項式の仕事に変えうる。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q04</span><span>二分探索を配列に適用できるのは次の場合のみである:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>配列に重複した値が含まれない</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>配列がソートされている</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>配列が連結リストとして格納されている</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>配列の長さが2のべき乗である</span></button></div>
+    <div class="quiz-explain"><b>Why</b>二分探索は順序比較に基づいて範囲の半分を捨てるため、データはソートされている必要がある; 重複は問題なく、長さが2のべき乗である必要もない。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>ダイクストラ法が有効なのは次の場合のみである:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>グラフが隣接行列として格納されている</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>負閉路が存在しない</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>すべての辺の重みが非負である</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>グラフが木である</span></button></div>
+    <div class="quiz-explain"><b>Why</b>ダイクストラ法は確定した距離が後で改善されないことに依存しており、負の辺はそれを破りうる; 代わりにベルマン–フォード法が負の重みを扱う。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>カーンのアルゴリズムがすべての頂点を出力する前に停止した。これは次を証明する:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>グラフが閉路を含む</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>グラフが非連結である</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>グラフが負の辺の重みを持つ</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>グラフが木である</span></button></div>
+    <div class="quiz-explain"><b>Why</b>カーンのアルゴリズムは入次数ゼロの頂点を除去する; いくつかが残るなら、それらは閉路の中で互いを待っているので、トポロジカル順序は存在しない。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="programming-fundamentals.ja.html"><span>Computing</span><b>プログラミング基礎</b></a><a class="related-card" href="ai-data-analysis.ja.html"><span>Computing</span><b>AIとデータ分析</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="professional-english.ja.html"><small>Previous</small><b>プロフェッショナル英語</b></a><a class="next" href="transport-operations-management.ja.html"><small>Next</small><b>交通運用とマネジメント</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">構造より先に操作を列挙せよ。</p><p class="margin-note">ハッシュテーブルがO(1)なのは平均のみ。</p><p class="margin-note">平衡は対数、退化は線形を意味する。</p><p class="margin-note">再帰の深さはスタックメモリを消費する。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

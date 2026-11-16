@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI와 데이터 분석 — Civil Hub</title>
+<meta name="description" content="데이터는 그것에 던진 질문만큼만 가치가 있다. 이 페이지는 데이터셋을 기술하고, 회귀선을 적합하고 판정하며, 확신에 찬 답을 틀리게 만드는 품질 문제를 찾아내는 방법을 다룬다.">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/ai-data-analysis.ko.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="AI와 데이터 분석 — Civil Hub">
+<meta property="og:description" content="데이터는 그것에 던진 질문만큼만 가치가 있다. 이 페이지는 데이터셋을 기술하고, 회귀선을 적합하고 판정하며, 확신에 찬 답을 틀리게 만드는 품질 문제를 찾아내는 방법을 다룬다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/ai-data-analysis.ko.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="ai-data-analysis.html" data-alt-zh-hant="ai-data-analysis.zh-Hant.html" data-alt-ja="ai-data-analysis.ja.html" data-alt-ko="ai-data-analysis.ko.html" data-page-lang="ko" data-root="../" data-total="42" data-page="library" data-content-lang="ko">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">AI와 데이터 분석</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">컴퓨팅</p>
+          <h1>AI와 데이터 분석</h1>
+          <p class="subject-sub">데이터에서 패턴을 찾고 정직하게 해석하기</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>컴퓨팅</li><li><b data-i18n="subject.read">Read</b>8 분</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>12</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">모델보다 먼저 데이터</a></li><li><a href="#sec-2">데이터셋 요약하기</a></li><li><a href="#sec-3">상관은 기울기도 인과도 아니다</a></li><li><a href="#sec-4">최소제곱으로 직선 적합하기</a></li><li><a href="#sec-5">적합도 판정하기</a></li><li><a href="#sec-6">모델을 정직하게 검정하기</a></li><li><a href="#sec-7">데이터 품질의 함정</a></li><li><a href="#sec-8">출처, 편향, 추론 (SBI)</a></li><li><a href="#sec-9">분류: 점수가 결정이 되다</a></li><li><a href="#sec-10">특성 공학과 스케일링</a></li><li><a href="#sec-11">기준선과 정직한 비교</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">데이터는 그것에 던진 질문만큼만 가치가 있다. 이 페이지는 데이터셋을 기술하고, 회귀선을 적합하고 판정하며, 확신에 찬 답을 틀리게 만드는 품질 문제를 찾아내는 방법을 다룬다.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="ai-data-analysis" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>모델보다 먼저 데이터</h2>
+  <div class="body"><p>분석은 소프트웨어가 무엇을 할 수 있는지가 아니라 무엇이 기록되었는지에서 시작한다. 각 <strong>변수</strong>는 측정된 속성 — 압축강도, 염화물 함량, 분 단위 지연 — 이며, 그 유형이 허용되는 산술 연산을 정한다:</p>
+<ul>
+<li>명목형 라벨은 셀 수만 있다</li>
+<li>서열형은 순위를 매길 수 있다</li>
+<li>구간형 값은 뺄셈이 가능하다</li>
+<li>비율척도만이 진정한 영점을 가진다</li>
+</ul>
+<p>대부분의 공학 데이터는 더 큰 모집단에서 나온 <strong>표본</strong>이므로, 모든 요약값은 추정치다. 행이 어떻게 선택되었는지 물어야 한다. 편의 표본은 대상만큼이나 표본추출 방법을 측정한다.</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>데이터셋 요약하기</h2>
+  <div class="body"><p>첫 단계는 기술적이고 비용이 적게 든다: 중심, 산포, 형태. <strong>평균</strong>은 균형점이고, <strong>중앙값</strong>은 중간 값이며, <strong>최빈값</strong>은 가장 빈번한 범주다. 산포는 데이터와 같은 단위를 갖는 표준편차로, 또는 무차원이어서 변수 간 비교가 가능한 변동계수로 보고된다. 왜도는 평균을 긴 꼬리 쪽으로 끌어당기지만 중앙값은 거의 움직이지 않는다. 그래서 수리 비용과 강우량은 중앙값으로 인용된다. 어떤 요약값 옆에도 표본 크기를 함께 적어 두어야 한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">표본 평균</span>
+      <div class="formula-expr formula-math">\[\bar{x} = \frac{\sum x_i}{n}\]</div>
+      <span class="formula-note">n개의 관측값</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">표본 표준편차</span>
+      <div class="formula-expr formula-math">\[s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n - 1}}\]</div>
+      <span class="formula-note">n − 1은 표본 크기를 보정한다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">변동계수</span>
+      <div class="formula-expr formula-math">\[\mathrm{CV} = \frac{s}{\bar{x}}\]</div>
+      <span class="formula-note">무차원</span>
+    </div></div><div class="table-wrap"><table><caption>네 가지 요약 통계량과 각각이 오도하는 지점</caption><thead><tr><th scope='col'>통계량</th><th scope='col'>요약하는 대상</th><th scope='col'>오도하는 지점</th></tr></thead><tbody><tr><td>평균</td><td>모든 값의 균형점</td><td>극단값에 끌린다</td></tr><tr><td>중앙값</td><td>순위를 매겼을 때의 중간 값</td><td>대부분 값의 크기를 무시한다</td></tr><tr><td>표준편차</td><td>평균으로부터의 전형적 거리</td><td>대칭적 산포를 가정한다</td></tr><tr><td>변동계수</td><td>평균에 대한 상대적 산포</td><td>평균이 0에 가까울 때 불안정하다</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>상관은 기울기도 인과도 아니다</h2>
+  <div class="body"><p>먼저 그래프를 그려라. 두 변수가 뚜렷한 곡선을 따라가도 상관계수가 0에 가깝게 나올 수 있다. 피어슨 계수 r은 선형 연관성만 측정하기 때문이다. r은 단위가 없고 −1에서 +1까지이며 기울기가 아니다. r = 0.9라고 해서 x 한 단위당 y가 얼마나 변하는지는 알 수 없다. 상관은 인과도 아니다. 제3의 요인이 두 변수를 모두 이끌 수도 있고, 인과의 화살표가 거꾸로일 수도 있으며, 표본이 결과를 기준으로 선택되었을 수도 있다. 무작위화, 대조군 또는 자연실험이 있어야 인과적 문장을 쓸 수 있다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">피어슨 상관계수</span>
+      <div class="formula-expr formula-math">\[r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2 \cdot \sum (y_i - \bar{y})^2}}\]</div>
+      <span class="formula-note">−1 ≤ r ≤ +1; 선형 연관성만 탐지한다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>최소제곱으로 직선 적합하기</h2>
+  <div class="body"><p>단순 선형 회귀는 각 관측값과 직선 사이의 수직 거리 제곱합을 최소화하는 직선을 선택하여 ŷ = a + b x를 적합한다. 제곱은 양의 오차와 음의 오차를 동일하게 취급하고 큰 오차를 가장 강하게 벌하므로, 이상치 하나가 적합을 기울게 할 수 있다. 기울기 b는 x가 한 단위 증가할 때 y의 예측 변화량이다. 절편 a는 x = 0에서의 예측값인데, 이는 종종 측정 범위를 벗어나 물리적으로 무의미하다. 둘 다 단위와 함께 제시하고, 외삽한 예측을 마치 측정된 것처럼 제시해서는 안 된다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">최소제곱 기울기</span>
+      <div class="formula-expr formula-math">\[b = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^2}\]</div>
+      <span class="formula-note">x의 단위 변화당 y의 변화량</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">절편</span>
+      <div class="formula-expr formula-math">\[a = \bar{y} - b\,\bar{x}\]</div>
+      <span class="formula-note">적합된 직선은 ŷ = a + b x</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>적합도 판정하기</h2>
+  <div class="body"><p>결정계수 R²는 모델이 설명하는 y의 변동 비율이다. 1은 모든 점이 직선 위에 있음을, 0은 모델이 평균을 예측하는 것보다 나을 게 없음을 의미한다. R²는 모델의 형태가 옳은지에 대해서는 아무것도 말해주지 않는다. 좁은 범위에 적합된 곡선도 높은 점수를 받을 수 있다. 잔차 그림이 정직한 검정이다. 패턴이 보이면 모델이 잘못 지정된 것이고, 깔때기 모양이면 분산이 x에 따라 변하는 것이며, 매우 큰 잔차 몇 개는 영향력 있는 점을 표시한다. R²만이 아니라 전형적 오차를 보고하라.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">결정계수</span>
+      <div class="formula-expr formula-math">\[R^2 = 1 - \frac{\mathrm{SS}_{\mathrm{res}}}{\mathrm{SS}_{\mathrm{tot}}}\]</div>
+      <span class="formula-note">SS_res = Σ(yᵢ − ŷᵢ)²이고 SS_tot = Σ(yᵢ − ȳ)²</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>모델을 정직하게 검정하기</h2>
+  <div class="body"><p>모델은 보지 못한 데이터에서 성능을 발휘할 때만 유용하다. 튜닝 전에 <strong>테스트 세트</strong>를 분리하거나, 표본이 작으면 교차검증을 하라. 그렇지 않으면 모델이 훈련 행을 암기하여 뛰어나 보일 수 있다. 수치 예측의 경우 y의 단위를 갖는 평균절대오차 또는 평균제곱근오차를 보고하라. 평균제곱근오차는 큰 오차를 더 강하게 벌한다. 잘 선택된 테스트 세트에서의 낮은 오차는 증거이고, 훈련 세트에서의 낮은 오차는 산술일 뿐이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">평균제곱근오차</span>
+      <div class="formula-expr formula-math">\[\mathrm{RMSE} = \sqrt{\frac{1}{n} \sum (y_i - \hat{y}_i)^2}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>데이터 품질의 함정</h2>
+  <div class="body"><p>대부분의 모델링 실패는 데이터 실패다. <strong>결측값</strong>은 이유가 있어 결측일 수 있다 — 임계값 이상에서 포화되는 센서처럼 — 따라서 불완전한 행을 삭제하면 기술 대상 모집단이 조용히 바뀐다. <strong>이상치</strong>는 조사할 가치가 있다. 전사 오류는 수정 대상이지만, 진짜 극단값은 정보이다. <strong>누출</strong>은 예측 시점에는 존재하지 않을 정보를 예측 변수가 포함할 때 발생하며, 뛰어난 테스트 점수와 쓸모없는 배포 모델을 낳는다. 단위, 중복, 변동을 숨기는 반올림, 행 순서를 점검하라. 미래로 훈련된 모델은 예측이 아니다.</p></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>출처, 편향, 추론 (SBI)</h2>
+  <div class="body"><p>세 가지 질문이 분석을 정직하게 유지한다. <strong>출처</strong>: 누가, 어떤 기기로, 어떤 조건에서 숫자를 수집했는가? <strong>편향</strong>: 이 표본이 체계적으로 놓치는 이야기의 부분은 무엇인가 — 상한이 있는 센서, 편의에 따른 현장, "기타"로 합쳐진 범주? <strong>추론</strong>: 증거가 실제로 어디까지 미치며, 추정치 옆에 어떤 불확실성이 있어야 하는가? 마지막 질문이 바로 시험 답안이 잊는 것이다. 열 개 점에 적합된 기울기는 방향과 대략적 크기를 뒷받침할 뿐 정밀한 예측을 뒷받침하지 않는다. 표본 크기, 잔차 오차, 적합 범위를 명시하라.</p></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>분류: 점수가 결정이 되다</h2>
+  <div class="body"><p>결과가 범주일 때 — 불량 또는 양호, 합격 또는 불합격 — 모델은 점수를 출력하고 임계값이 이를 결정으로 바꾼다. <strong>로지스틱 회귀</strong>는 선형 점수를 시그모이드에 통과시켜 출력이 확률이 되게 한다. 0.5의 임계값은 기본값일 뿐 법칙이 아니며, 이를 움직이면 한 오류와 다른 오류를 맞바꾼다. 분류기는 정확도만이 아니라 <strong>혼동행렬</strong>로 판정하라. <strong>정밀도</strong>는 양성으로 표시된 사례 중 실제로 양성인 비율이고, <strong>재현율</strong>은 실제 양성 중 발견된 비율이다. 이 둘은 상반된 실수를 벌한다. 불균형 데이터에서는 아무것도 표시하지 않는 모델이 높은 정확도를 얻고 아무것도 찾지 못한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">로지스틱 확률</span>
+      <div class="formula-expr formula-math">\[p = \frac{1}{1 + e^{-s}}, \quad s = b_0 + b_1 x_1 + \cdots\]</div>
+      <span class="formula-note">선형 점수 s가 0과 1 사이의 확률로 매핑된다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">정밀도와 재현율</span>
+      <div class="formula-expr formula-math">\[\mathrm{precision} = \frac{TP}{TP + FP}, \quad \mathrm{recall} = \frac{TP}{TP + FN}\]</div>
+      <span class="formula-note">TP, FP, FN은 혼동행렬에서 나온다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>특성 공학과 스케일링</h2>
+  <div class="body"><p>모델에 넘기는 열이 모델의 절반이다. <strong>표준화</strong>는 변수를 0을 중심으로 하고 단위 표준편차로 재조정하여, 숫자가 큰 변수 하나가 적합을 지배하지 못하게 한다. 로그 변환은 비용과 농도처럼 오른쪽으로 치우친 변수를 길들인다. 원-핫 인코딩은 명목형 범주를 지시자 열로 바꾼다. <strong>훈련 세트에서만</strong> 계산한 통계량으로 스케일링하고 인코딩한 뒤, 동일한 변환을 테스트 세트에 적용하라. 모든 데이터로 먼저 스케일링하면 테스트 세트가 조용히 훈련으로 누출되어 모든 결과가 좋아 보인다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">표준화</span>
+      <div class="formula-expr formula-math">\[z = \frac{x - \mu}{\sigma}\]</div>
+      <span class="formula-note">μ와 σ는 훈련 세트의 평균과 표준편차</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>변환은 훈련 데이터에만 적합하라</b>
+  평균, 표준편차, 범주 수준은 훈련 분할에서 계산한 뒤 테스트 세트에 재사용하라. 그렇지 않으면 평가가 낙관적으로 된다.
+</div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>기준선과 정직한 비교</h2>
+  <div class="body"><p>어떤 모델도 추상적으로 좋거나 나쁘지 않다. <strong>기준선</strong>에 비추어 좋거나 나쁘다. 무엇이든 적합하기 전에, 가장 단순하고 방어 가능한 대안 — 과거 평균, 이전 기간의 값, 또는 단일 규칙 분류기 — 을 동일한 테스트 세트에서 점수화하여 모델 옆에 보고하라. 후보들은 동일한 분할과 동일한 지표로 비교하고, 단위를 문자 그대로 읽어야 할 때는 <strong>평균절대오차</strong>를 선호하라. 평균절대오차는 전형적 오차를 직접 보고하는 반면, 평균제곱근오차는 드문 큰 오차를 확대한다. 사소한 기준선을 이기지 못하는 모델은 아무리 영리해도 개선이 아니다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">평균절대오차</span>
+      <div class="formula-expr formula-math">\[\mathrm{MAE} = \frac{1}{n} \sum |y_i - \hat{y}_i|\]</div>
+      <span class="formula-note">y의 단위로 나타낸 전형적 오차</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>잔차</dt><dd>관측값과 적합된 모델이 예측한 값 사이의 수직 거리.</dd></div><div class="term"><dt>결정계수</dt><dd>적합된 모델이 설명하는 반응 변수의 변동 비율.</dd></div><div class="term"><dt>최소제곱</dt><dd>잔차 제곱합을 최소화하여 모수를 선택하는 적합 규칙.</dd></div><div class="term"><dt>표본</dt><dd>실제로 측정되었고 추정치가 산출되는 모집단의 부분집합.</dd></div><div class="term"><dt>이상치</dt><dd>나머지 데이터에서 멀리 떨어진 관측값으로, 기록 오류일 수도 있고 진짜 극단값일 수도 있다.</dd></div><div class="term"><dt>데이터 누출</dt><dd>예측이 이루어져야 하는 시점에는 이용할 수 없는 정보를 포함하는 예측 변수를 사용하는 것.</dd></div><div class="term"><dt>혼동행렬</dt><dd>진양성, 위양성, 위음성, 진음성을 표로 나타내어 분류기가 어디서 틀리는지 보여주는 표.</dd></div><div class="term"><dt>표준화</dt><dd>보통 훈련 세트에서 구한 통계량을 사용하여 변수를 평균 0, 표준편차 1로 재조정하는 것.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>양생 시간에 대한 강도 적합</h2>
+        <p class="problem">소규모 시험에서 콘크리트 강도 y (MPa)를 다섯 개 양생 기간 x일 후에 측정하였다: (1, 10), (2, 12), (3, 15), (4, 18), (5, 20). 최소제곱 직선을 적합하고, R²를 구하며, 기울기를 해석하라.</p>
+        <ol><li>요약: Σx = 15이므로 x̄ = 3일; Σy = 75이므로 ȳ = 15 MPa.</li><li>평균으로부터의 편차로부터 Σ(xᵢ − x̄)² = 4 + 1 + 0 + 1 + 4 = 10이고 Σ(xᵢ − x̄)(yᵢ − ȳ) = 10 + 3 + 0 + 3 + 10 = 26.</li><li>기울기: b = 26 / 10 = 2.60 MPa/일. 절편: a = ȳ − b x̄ = 15 − 2.60 × 3 = 7.2 MPa이므로 ŷ = 7.2 + 2.60x.</li><li>예측값은 9.8, 12.4, 15.0, 17.6, 20.2 MPa이고 잔차는 0.2, −0.4, 0, 0.4, −0.2이다. 그러면 SS_res = 0.40이고 SS_tot = 25 + 9 + 0 + 9 + 25 = 68.</li><li>R² = 1 − 0.40/68 = 0.994이므로, 이 직선은 이 다섯 양생 기간에서 강도 변동의 99.4%를 설명한다.</li></ol>
+        <div class="answer"><b>Answer</b>ŷ = 7.2 + 2.60x (MPa), R² = 0.994. 추가 하루마다 예측 강도가 약 2.6 MPa 더 높아지는 것과 연관되지만, 점이 다섯 개이고 범위가 1–5일에 불과하므로 이 직선을 28일 설계강도로 외삽해서는 안 된다.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>기울기의 단위(x 단위당 y 단위)와 절편의 단위를 제시하라 — 숫자만 쓰면 점수를 잃는다.</li><li>R²를 정확도라고 표현하지 마라. 이는 설명된 변동의 비율이지 정확한 예측의 백분율이 아니다.</li><li>어떤 적합을 옹호하기 전에 데이터를 그리고 그다음 잔차를 그려라. 잔차에 패턴이 있으면 모델이 틀린 것이다.</li><li>적합 범위와 표본 크기를 명시하고, 예측이 외삽인 경우를 밝혀라.</li><li>어떤 모델이 좋다고 주장하기 전에 동일한 테스트 세트에서 단순 기준선을 보고하라. 점수는 무언가에 상대적일 때만 의미가 있다.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>회귀가 양생 시간으로 콘크리트 강도를 예측하며 R² = 0.02를 보고한다. 가장 정확한 해석은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>관계는 반드시 인과적이다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>모델이 2% 정확도로 강도를 예측한다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>강도 변동의 약 2%가 양생 시간으로 설명된다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>기울기가 2% 틀렸다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>R²는 분산의 비율이지 정확한 예측의 백분율이 아니다. 여기서 직선은 평균을 예측하는 것보다 거의 나을 게 없다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>양생 시간에 대한 강도의 최소제곱 적합이 b = 2.6 MPa/일을 준다. 올바른 문장은?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>추가 하루마다 예측 강도가 2.6 MPa 더 높아지는 것과 연관된다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>강도가 하루에 2.6% 증가한다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>5일 후 강도는 2.6 MPa이다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>양생이 하루 추가될 때마다 2.6 MPa가 추가로 발생한다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>기울기는 x 한 단위당 예측 변화량이다. 연관은 인과의 증거가 아니며, 기울기는 백분율이 아니다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>한 모델이 콘크리트 타설 후에 기록된 연성 시험을 사용하여 28일 강도를 예측하고, 훈련 데이터와 테스트 데이터 모두에서 뛰어난 점수를 받는다. 가장 가능성 높은 결함은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>MPa와 kN 사이의 단위 불일치</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>예측 변수 수가 너무 적음</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>점수가 너무 좋으므로 과적합</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>예측이 필요할 때 예측 변수를 이용할 수 없으므로 데이터 누출</span></button></div>
+    <div class="quiz-explain"><b>Why</b>누출은 미래의 정보를 예측 변수에 들여보낸다. 모델은 뛰어나 보이지만 예측 시점에는 사용할 수 없다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>오른쪽으로 치우친 수리 비용 데이터에서 전형적 값과 그 산포를 가장 잘 설명하는 조합은?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>최빈값과 범위</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>평균과 변동계수</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>평균과 표준편차</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>중앙값과 사분위범위</span></button></div>
+    <div class="quiz-explain"><b>Why</b>중앙값과 사분위범위는 긴 꼬리에 저항하는 반면, 평균과 표준편차는 그에 끌린다.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>결함 탐지기가 400개 패널에 대해 실행된다. 60개를 표시했고 그중 45개가 실제로 결함이며, 25개의 실제 결함이 표시되지 않았다. 정밀도는:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>45/400</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>45/60</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>45/70</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>60/400</span></button></div>
+    <div class="quiz-explain"><b>Why</b>정밀도는 표시된 패널 중 실제로 결함이었던 비율이다: TP/(TP + FP) = 45/60 = 0.75.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>한 팀이 분할 전에 전체 데이터셋의 평균과 표준편차로 변수를 표준화한다. 예상되는 결과는:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>모델이 과소적합될 것이다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>기울기가 상관계수가 된다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>아무 일도 없다; 표준화는 결과를 바꿀 수 없다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>테스트 정보가 훈련으로 누출되어 평가가 낙관적으로 된다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>모든 행으로 변환을 계산하면 테스트 세트가 훈련 파이프라인에 영향을 주어 보고된 성능이 부풀려진다.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-statistics.ko.html"><span>Core</span><b>공학 통계</b></a><a class="related-card" href="programming-fundamentals.ko.html"><span>Computing</span><b>프로그래밍 기초</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="structural-mechanics.ko.html"><small>Previous</small><b>구조 역학</b></a><a class="next" href="air-noise-pollution.ko.html"><small>Next</small><b>대기 및 소음 오염</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">먼저 그리고, 그다음 적합하라.</p><p class="margin-note">r은 기울기가 아니다.</p><p class="margin-note">높은 R²가 모델을 옳게 만들지는 않는다.</p><p class="margin-note">각 숫자가 어디서 왔는지 물어라.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

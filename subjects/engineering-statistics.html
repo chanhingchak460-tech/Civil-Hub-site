@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engineering Statistics — Civil Hub</title>
+<meta name="description" content="The language of uncertainty for engineers: describing a sample, choosing a distribution, putting a range around an estimate and testing a claim. It is the ">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/engineering-statistics.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="Engineering Statistics — Civil Hub">
+<meta property="og:description" content="The language of uncertainty for engineers: describing a sample, choosing a distribution, putting a range around an estimate and testing a claim. It is the ">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/engineering-statistics.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="engineering-statistics.html" data-alt-zh-hant="engineering-statistics.zh-Hant.html" data-alt-ja="engineering-statistics.ja.html" data-alt-ko="engineering-statistics.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">Engineering Statistics</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Core</p>
+          <h1>Engineering Statistics</h1>
+          <p class="subject-sub">Probability, estimation and decisions under uncertainty</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Core</li><li><b data-i18n="subject.read">Read</b>11 min</li><li><b data-i18n="subject.sections">Sections</b>12</li><li><b data-i18n="subject.formulas">Formulas</b>20</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M44 162 H296" stroke="currentColor" stroke-width="1.2"/><path d="M44 162 V34" stroke="currentColor" stroke-width="1.2"/><path d="M170 162 C120 162 118 52 170 52 C222 52 220 162 170 162" stroke="var(--accent)" stroke-width="1.5"/><path d="M80 162 V144" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M106 162 V128" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M132 162 V104" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M158 162 V78" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M184 162 V104" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M210 162 V128" stroke="var(--line)" stroke-width="8" opacity="0.9"/><path d="M236 162 V144" stroke="var(--line)" stroke-width="8" opacity="0.9"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">DISTRIBUTION</text></svg>
+          <figcaption>A distribution — centre, spread and tails</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">Describing a sample</a></li><li><a href="#sec-2">Probability and random variables</a></li><li><a href="#sec-3">The normal distribution</a></li><li><a href="#sec-4">Binomial and Poisson</a></li><li><a href="#sec-5">Sampling and the central limit theorem</a></li><li><a href="#sec-6">Confidence intervals</a></li><li><a href="#sec-7">Hypothesis tests</a></li><li><a href="#sec-8">Correlation and regression</a></li><li><a href="#sec-9">Statistical quality control</a></li><li><a href="#sec-10">Lifetimes and waiting times: exponential and geometric</a></li><li><a href="#sec-11">Chi-square goodness-of-fit</a></li><li><a href="#sec-12">Power and sample size</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">The language of uncertainty for engineers: describing a sample, choosing a distribution, putting a range around an estimate and testing a claim. It is the bridge between measurements and decisions on site.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="engineering-statistics" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>Describing a sample</h2>
+  <div class="body"><p>Two features summarise most data: where it sits and how spread out it is. The <strong>mean</strong> is the balance point, the <strong>median</strong> resists outliers and the <strong>mode</strong> is the most frequent value.</p>
+<p>For spread, the sample <strong>standard deviation</strong> divides by n − 1 rather than n, correcting the tendency of a sample to understate variation in the population. Always plot before you summarise: a histogram shows skew, gaps and outliers that a mean cannot.</p>
+<ul>
+<li>Comparing mean and median is a quick skew check.</li>
+<li>The coefficient of variation, s divided by x̄, compares spread between variables measured on different scales.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Sample mean</span>
+      <div class="formula-expr formula-math">\[\bar{x} = \frac{1}{n} \sum x_i\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Sample standard deviation</span>
+      <div class="formula-expr formula-math">\[s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n - 1}}\]</div>
+      <span class="formula-note">n − 1 degrees of freedom</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Probability and random variables</h2>
+  <div class="body"><p>Probability assigns a number between 0 and 1 to an event. The multiplication rule introduces <strong>conditional probability</strong>: P(A | B) is the probability of A given that B has happened. Events are independent when P(A | B) = P(A), and only then does the joint probability factorise as P(A) P(B).</p>
+<p>A <strong>random variable</strong> maps outcomes to numbers. Its <strong>expectation</strong> E(X) is the long-run average and its variance Var(X) measures spread around it.</p>
+<ul>
+<li>Shifting a variable changes its mean but not its spread.</li>
+<li>Scaling it multiplies the spread by the scale factor.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Conditional probability</span>
+      <div class="formula-expr formula-math">\[P(A \mid B) = \frac{P(A \cap B)}{P(B)}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Linear transformations</span>
+      <div class="formula-expr formula-math">\[E(aX + b) = a\,E(X) + b; \quad \mathrm{Var}(aX + b) = a^2\,\mathrm{Var}(X)\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>The normal distribution</h2>
+  <div class="body"><p>The <strong>normal distribution</strong> N(μ, σ²) is symmetric and bell-shaped, fixed entirely by its mean and standard deviation. About 68% of values lie within one standard deviation of the mean, 95% within two and 99.7% within three — the <strong>empirical rule</strong>, which makes quick plausibility checks possible.</p>
+<p>To use tables, standardise first, then find the tail area for the z value and combine tails for two-sided questions. Draw the curve, shade the area you want and label it before reading a table; sign and tail errors, not misunderstanding, cause most lost marks.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Standard score</span>
+      <div class="formula-expr formula-math">\[z = \frac{x - \mu}{\sigma}\]</div>
+      <span class="formula-note">how many standard deviations x lies from the mean</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Binomial and Poisson</h2>
+  <div class="body"><p>The <strong>binomial</strong> distribution counts successes in a fixed number of independent trials with the same probability p: fixed n, two outcomes, constant p, independence. Its mean is np and its variance np(1 − p).</p>
+<p>The <strong>Poisson</strong> counts events in a fixed interval of time or space when they occur independently at a constant rate λ; its mean and variance are both λ. Poisson is the large-n, small-p limit of the binomial with λ = np, so it suits rare events such as defects per batch or calls per hour.</p>
+<ul>
+<li>Check the assumptions first: no fixed number of trials rules out the binomial.</li>
+<li>A strongly varying rate rules out the Poisson.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Binomial probability</span>
+      <div class="formula-expr formula-math">\[P(X = x) = \binom{n}{x} p^x (1 - p)^{n - x}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Poisson probability</span>
+      <div class="formula-expr formula-math">\[P(X = x) = \frac{e^{-\lambda} \lambda^x}{x!}\]</div>
+      <span class="formula-note">with λ = np when approximating the binomial</span>
+    </div></div><div class="table-wrap"><table><caption>Choosing a distribution</caption><thead><tr><th scope='col'>Distribution</th><th scope='col'>What it models</th><th scope='col'>Parameters</th><th scope='col'>Mean</th><th scope='col'>Variance</th></tr></thead><tbody><tr><td>Normal</td><td>continuous measurements around a centre</td><td>μ, σ</td><td>μ</td><td>σ²</td></tr><tr><td>Binomial</td><td>successes in n independent trials</td><td>n, p</td><td>np</td><td>np(1 − p)</td></tr><tr><td>Poisson</td><td>counts of rare events in an interval</td><td>λ</td><td>λ</td><td>λ</td></tr><tr><td>t</td><td>a standardised mean when σ is unknown</td><td>degrees of freedom</td><td>0</td><td>ν/(ν − 2)</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Sampling and the central limit theorem</h2>
+  <div class="body"><p>A statistic calculated from a sample is itself random: repeat the sampling and the mean changes. The <strong>sampling distribution</strong> of the mean has mean μ and <strong>standard error</strong> σ/√n, so quadrupling the sample halves the standard error.</p>
+<p>The <strong>central limit theorem</strong> says that for large n the sample mean is approximately normal whatever the population shape, which is why normal-based methods survive on skewed data. Roughly thirty observations is often enough, but heavy skew needs more.</p>
+<p>When σ is unknown, replace it with s and use the t distribution, whose heavier tails account for the extra uncertainty.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Standard error of the mean</span>
+      <div class="formula-expr formula-math">\[\mathrm{SE} = \frac{\sigma}{\sqrt{n}}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>Confidence intervals</h2>
+  <div class="body"><p>A <strong>confidence interval</strong> puts a range around an estimate and states the uncertainty. With σ known the interval is x̄ ± z σ/√n; with σ unknown use s and the t critical value with n − 1 degrees of freedom.</p>
+<p>A 95% interval is wider than a 90% one, and it narrows as n grows. The interpretation is about the method, not the single interval: if sampling were repeated many times, 95% of intervals built this way would contain μ. It is not a 95% probability that this particular fixed interval contains μ.</p>
+<p>Report the interval with units and its confidence level.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Confidence interval, σ known</span>
+      <div class="formula-expr formula-math">\[\bar{x} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Confidence interval, σ unknown</span>
+      <div class="formula-expr formula-math">\[\bar{x} \pm t_{\alpha/2,\,n-1} \frac{s}{\sqrt{n}}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Hypothesis tests</h2>
+  <div class="body"><p>A test asks whether the data are consistent with a <strong>null hypothesis</strong> H₀, usually no effect or no difference. Choose the alternative, set the significance level α, calculate a test statistic and compare it with a critical value or a <strong>p-value</strong>. Reject H₀ when p &lt; α; failing to reject does not prove H₀ true.</p>
+<p>Two errors are possible: a <strong>Type I error</strong> rejects a true H₀, with probability α, and a <strong>Type II error</strong> fails to reject a false H₀. A confidence interval and a two-sided test agree when the interval excludes the hypothesised value.</p>
+<p>State the assumptions — independence, normality or a large sample — because a test is only as good as its model.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">One-sample t statistic</span>
+      <div class="formula-expr formula-math">\[t = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}\]</div>
+      <span class="formula-note">compared with t_(α/2, n−1) for a two-sided test</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>Correlation and regression</h2>
+  <div class="body"><p>The correlation coefficient r measures the strength and direction of a <strong>linear</strong> relationship between −1 and 1. An r near zero means no linear trend, not no relationship, and a single outlier can move it a long way. Correlation is not causation.</p>
+<p>Least-squares regression fits ŷ = a + b x. The slope has units of y per unit of x, and r² is the proportion of variation explained.</p>
+<p>Do not extrapolate beyond the observed range, and check a residual plot before trusting a prediction.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Regression coefficients</span>
+      <div class="formula-expr formula-math">\[b = \frac{S_{xy}}{S_{xx}}, \quad a = \bar{y} - b\,\bar{x}\]</div>
+      <span class="formula-note">S_xy is the corrected sum of cross products</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Statistical quality control</h2>
+  <div class="body"><p>Quality control applies the same reasoning to production. A control chart plots sample statistics against limits such as x̄ ± 3σ/√n, separating common-cause variation from special-cause signals; a point outside a limit, or a run of points on one side, prompts investigation rather than adjustment.</p>
+<p>The capability index C_pk compares the specification width with 3σ and shows whether a process can meet tolerances even when it is in control. A process can be stable and still incapable: control charts describe variation, capability compares that variation with what the specification demands.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Control chart limits</span>
+      <div class="formula-expr formula-math">\[\mathrm{UCL},\, \mathrm{LCL} = \bar{x} \pm \frac{3\sigma}{\sqrt{n}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Process capability</span>
+      <div class="formula-expr formula-math">\[C_{pk} = \frac{\min(\mathrm{USL} - \mu,\, \mu - \mathrm{LSL})}{3\sigma}\]</div>
+      <span class="formula-note">USL and LSL are the specification limits</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>Lifetimes and waiting times: exponential and geometric</h2>
+  <div class="body"><p>When a Poisson process produces events at rate λ, the <strong>exponential distribution</strong> models the time until the next one: gaps between vehicle arrivals, time to the first defect, or a component's service life. Its density is f(x) = λe^(−λx), its mean and standard deviation are both 1/λ, and the cumulative form F(x) = 1 − e^(−λx) gives the probability of failure by time x.</p>
+<p>The <strong>memoryless property</strong> says the past counts for nothing: a part that has survived s hours is as good as new, P(X &gt; s + t | X &gt; s) = P(X &gt; t). Real materials age, so verify the assumption before relying on it.</p>
+<p>The <strong>geometric distribution</strong> is the discrete cousin — the number of trials up to and including the first success, with mean 1/p.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Exponential density and CDF</span>
+      <div class="formula-expr formula-math">\[f(x) = \lambda e^{-\lambda x}, \quad F(x) = 1 - e^{-\lambda x}\]</div>
+      <span class="formula-note">mean and standard deviation both equal 1/λ</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Memoryless property</span>
+      <div class="formula-expr formula-math">\[P(X &gt; s + t \mid X &gt; s) = P(X &gt; t)\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Geometric probability</span>
+      <div class="formula-expr formula-math">\[P(X = x) = (1 - p)^{x-1} p\]</div>
+      <span class="formula-note">x trials up to and including the first success</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>Chi-square goodness-of-fit</h2>
+  <div class="body"><p>Count data need a different test. The <strong>chi-square goodness-of-fit test</strong> compares the observed frequency in each category with the frequency expected under the null hypothesis; a large statistic means the model fits poorly. Applied to a two-way table, the same statistic tests <strong>independence</strong> between two categorical variables.</p>
+<p>Degrees of freedom: k − 1 for a fully specified distribution, minus one more for each parameter estimated from the data; for an r × c table, (r − 1)(c − 1).</p>
+<p>The test is approximate, so pool categories until every expected count reaches about 5, and always compare counts, never percentages.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Chi-square statistic</span>
+      <div class="formula-expr formula-math">\[\chi^2 = \sum_i \frac{(O_i - E_i)^2}{E_i}\]</div>
+      <span class="formula-note">O_i observed and E_i expected counts in category i</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Expected count in a two-way table</span>
+      <div class="formula-expr formula-math">\[E = \frac{\text{row total} \times \text{column total}}{\text{grand total}}\]</div>
+      
+    </div></div>
+<div class="callout callout--warning">
+  <b>Pool small categories</b>
+  Expected counts below about 5 inflate the chi-square statistic and make the p-value unreliable; merge neighbouring categories first.
+</div></section>
+<section class="note-section reveal" id="sec-12">
+  <h2><span class="sec-num">12</span>Power and sample size</h2>
+  <div class="body"><p>Failing to reject H₀ is informative only if the test could have found an effect. The <strong>power</strong> of a test is the probability of rejecting H₀ when the alternative is true: power = 1 − β, where β is the Type II error rate. It grows with the sample size n, the significance level α and the size of the true effect, and falls as the data get noisier.</p>
+<p>For a two-sided z test of a mean, the sample needed to detect a difference δ with power 1 − β is approximately (z_(α/2) + z_β)² σ² / δ². Because the critical values enter squared, detecting half the effect needs four times the sample.</p>
+<p>Report power when a test is not significant — a null result from a tiny sample proves nothing.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Required sample size, two-sided z test</span>
+      <div class="formula-expr formula-math">\[n \approx \frac{(z_{\alpha/2} + z_\beta)^2 \sigma^2}{\delta^2}\]</div>
+      <span class="formula-note">δ is the smallest difference worth detecting</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Standard error</dt><dd>The standard deviation of a sample statistic, showing how much an estimate would vary between repeated samples.</dd></div><div class="term"><dt>Confidence interval</dt><dd>A range of plausible values for a population parameter, reported with a confidence level such as 95%.</dd></div><div class="term"><dt>Null hypothesis</dt><dd>The default claim of no effect or no difference that a significance test tries to find evidence against.</dd></div><div class="term"><dt>p-value</dt><dd>The probability of a result at least as extreme as the observed one, calculated assuming the null hypothesis is true.</dd></div><div class="term"><dt>Central limit theorem</dt><dd>The result that the sample mean is approximately normally distributed for large samples, whatever the population shape.</dd></div><div class="term"><dt>Type I error</dt><dd>Rejecting a null hypothesis that is actually true; its probability is the significance level α.</dd></div><div class="term"><dt>Memoryless property</dt><dd>The feature of the exponential distribution that future waiting time does not depend on how long has already elapsed.</dd></div><div class="term"><dt>Power</dt><dd>The probability that a test correctly rejects the null hypothesis when the alternative is true, equal to 1 − β.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Confidence interval and t-test on cube strengths</h2>
+        <p class="problem">Nine concrete cubes are tested at 28 days and give a mean strength of 42.0 MPa with a sample standard deviation of 3.0 MPa. The specification target is a mean of 40 MPa. Construct a 95% confidence interval for the mean strength and test, at the 5% significance level, whether the mean strength differs from 40 MPa (two-sided).</p>
+        <ol><li>State the model: n = 9, x̄ = 42.0 MPa and s = 3.0 MPa with σ unknown, so use the t distribution with n − 1 = 8 degrees of freedom.</li><li>Standard error: SE = s/√n = 3.0/√9 = 1.0 MPa.</li><li>Critical value for a 95% two-sided interval with 8 degrees of freedom: t_(0.025, 8) = 2.306.</li><li>Confidence interval: 42.0 ± 2.306 × 1.0 = 42.0 ± 2.31, giving 39.69 MPa to 44.31 MPa.</li><li>Test statistic: t = (42.0 − 40.0) / 1.0 = 2.00, with 8 degrees of freedom.</li><li>Critical value for the two-sided test is also 2.306, and 2.00 &lt; 2.306, so fail to reject H₀; the p-value is above 0.05.</li><li>Sanity check: the interval 39.7 to 44.3 MPa contains 40 MPa, which agrees with failing to reject the null hypothesis.</li></ol>
+        <div class="answer"><b>Answer</b>The 95% confidence interval for the mean strength is 39.7 to 44.3 MPa. The two-sided t-test gives t = 2.00 with 8 degrees of freedom, which is less than 2.306, so there is insufficient evidence at the 5% level to conclude that the mean strength differs from 40 MPa.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>Write the null and alternative hypotheses and the significance level before calculating anything, and say fail to reject rather than accept.</li><li>Convert every question to a z or t value and draw the curve with the shaded area; most errors are sign or tail errors.</li><li>Learn the assumptions of each distribution — independence, fixed n, constant p, known σ — because marks are often for checking them.</li><li>Report a confidence interval with its confidence level and units, and interpret it in terms of the method rather than one sample.</li><li>For chi-square questions, check that every expected count is at least 5 and state the degrees of freedom before reading the table.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q01</span><span>In a normal distribution, approximately what proportion of observations lies within one standard deviation of the mean?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>50%</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>68%</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>95%</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>99.7%</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The empirical rule gives about 68% within one standard deviation, 95% within two and 99.7% within three.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>Which distribution is the natural model for the number of rare defects occurring per batch when there are many opportunities and a small defect rate?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Student&#x27;s t</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Normal</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Binomial</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Poisson</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The Poisson distribution models counts of rare events in an interval, and it is the large-n, small-p limit of the binomial.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>A 95% confidence interval for a population mean is (12.1, 15.9). Which interpretation is correct?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The population mean is exactly 14.0 with 95% certainty</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>There is a 95% probability that the population mean lies between 12.1 and 15.9</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>If the study were repeated many times, about 95% of intervals built this way would contain the population mean</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>95% of the sample values lie between 12.1 and 15.9</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The confidence level describes the long-run success of the method, not the probability that this fixed interval contains the mean.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>A hypothesis test returns a p-value of 0.03 at a significance level of 0.05. What is the correct conclusion?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The null hypothesis is true</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Fail to reject the null hypothesis because 0.03 is small</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Reject the null hypothesis; the result is statistically significant at the 5% level</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The sample size must be increased before any conclusion</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Since 0.03 &lt; 0.05, the null hypothesis is rejected at the 5% level; a small p-value is evidence against H₀, not for it.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q05</span><span>The gaps between successive vehicle arrivals at a junction follow an exponential distribution with rate λ = 4 per minute. The probability that the next gap exceeds one minute is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>e^(−4)</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>4 e^(−4)</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1/4</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>1 − e^(−4)</span></button></div>
+    <div class="quiz-explain"><b>Why</b>For an exponential variable, P(X &gt; t) = e^(−λt); with t = 1 and λ = 4 this is e^(−4), a little under 0.02.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>A goodness-of-fit test has six categories, and one parameter of the hypothesised distribution was estimated from the data. The chi-square statistic has how many degrees of freedom?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>6</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>5</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>4</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>3</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The degrees of freedom are k − 1 minus one for each estimated parameter: 6 − 1 − 1 = 4.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.html"><span>Computing</span><b>AI &amp; Data Analysis</b></a><a class="related-card" href="construction-materials.html"><span>Core</span><b>Construction Materials</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="chinese-professional-communication.html"><small>Previous</small><b>專業中文傳意</b></a><a class="next" href="data-analytics-r.html"><small>Next</small><b>Data Analytics with R</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">Plot first, then compute.</p><p class="margin-note">σ unknown and small n means use t.</p><p class="margin-note">A 95% interval is about the method, not one sample.</p><p class="margin-note">Fail to reject is not proof of H₀.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>水理学と水文学 — Civil Hub</title>
+<meta name="description" content="海へ向かう水：開水路の等流と不等流、Manningの式、比エネルギーと跳水、次に管路損失、降雨流出の連鎖、合理式と再現期間について述べる。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/hydraulics-hydrology.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="水理学と水文学 — Civil Hub">
+<meta property="og:description" content="海へ向かう水：開水路の等流と不等流、Manningの式、比エネルギーと跳水、次に管路損失、降雨流出の連鎖、合理式と再現期間について述べる。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/hydraulics-hydrology.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="hydraulics-hydrology.html" data-alt-zh-hant="hydraulics-hydrology.zh-Hant.html" data-alt-ja="hydraulics-hydrology.ja.html" data-alt-ko="hydraulics-hydrology.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">水理学と水文学</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">コア</p>
+          <h1>水理学と水文学</h1>
+          <p class="subject-sub">水路・管路網の流れと降雨流出過程</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>コア</li><li><b data-i18n="subject.read">Read</b>11 分</li><li><b data-i18n="subject.sections">Sections</b>10</li><li><b data-i18n="subject.formulas">Formulas</b>10</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M40 84 H300 M40 132 H300" stroke="currentColor" stroke-width="1.5"/><path d="M40 84 V132 M300 84 V132" stroke="currentColor" stroke-width="1.5"/><path d="M56 96 q40 -10 80 0 t80 0 t60 0" stroke="var(--accent)" stroke-width="1" opacity="0.85"/><path d="M56 106 q40 -10 80 0 t80 0 t60 0" stroke="var(--accent)" stroke-width="1" opacity="0.6699999999999999"/><path d="M56 118 q40 -10 80 0 t80 0 t60 0" stroke="var(--accent)" stroke-width="1" opacity="0.49"/><path d="M64 70 v10 M64 74 l-4 4 M64 74 l4 4" stroke="var(--faint)" stroke-width="1"/><text x="40" y="58" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">P₁</text><text x="310" y="58" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="end" letter-spacing="0.18em">P₂</text><text x="170" y="168" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PIPE FLOW</text></svg>
+          <figcaption>Pipe flow — pressure drop along the section</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">水の流れ方の2種類</a></li><li><a href="#sec-2">Manningの式</a></li><li><a href="#sec-3">比エネルギーと限界水深</a></li><li><a href="#sec-4">跳水</a></li><li><a href="#sec-5">管路網と摩擦</a></li><li><a href="#sec-6">不圧帯水層の井戸水理学</a></li><li><a href="#sec-7">流域、降雨、損失</a></li><li><a href="#sec-8">合理式</a></li><li><a href="#sec-9">単位ハイドログラフ</a></li><li><a href="#sec-10">再現期間と設計リスク</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">海へ向かう水：開水路の等流と不等流、Manningの式、比エネルギーと跳水、次に管路損失、降雨流出の連鎖、合理式と再現期間について述べる。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="hydraulics-hydrology" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>水の流れ方の2種類</h2>
+  <div class="body"><p><strong>開水路流れ</strong>は大気圧下の自由水面を持ち、重力によって駆動され、水深は上下しうる。<strong>管路流れ</strong>は満水で流れ、圧力勾配によって駆動され、断面は固定されている。開水路の水深は河床勾配と下流側の制御によって決まり、満水管の損失水頭は流量と粗度から決まる。</p>
+<p>水深・断面積・流速が区間に沿って変化しないとき、流れは<strong>等流</strong>である——重力と摩擦の平衡である。<strong>漸変流</strong>は堰の背後などのようにゆっくり変化し、<strong>急変流</strong>は跳水のように数水深の範囲で変化する。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Manningの式</h2>
+  <div class="body"><p>Manningの式は水路の形状、河床勾配、粗度係数から平均流速を推定する。摩擦は周辺に沿って作用するため、<strong>径深</strong> R = A/P（断面積を潤辺で割ったもの）を用いる。これは導出ではなく、測定値への当てはめである。</p>
+<p>粗度係数 n は経験的で、植生や河床の不規則性を吸収する。値は目安であり、滑らかなコンクリートで約0.012–0.015、土水路で0.020–0.030、植生のある河川ではより大きい。<code>1/n</code> の形はSI単位系にのみ適用される。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Manning流速</span>
+      <div class="formula-expr formula-math">\[V = \frac{1}{n} R^{2/3} S^{1/2}\]</div>
+      <span class="formula-note">SI単位系；Rはメートル、Sは勾配</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>比エネルギーと限界水深</h2>
+  <div class="body"><p><strong>比エネルギー</strong>は水路床に対する水の水頭であり、E = y + V²/(2g) である。単位幅流量 q が一定のとき、E–y 曲線は最小値を持つ放物線となり、そのエネルギーより上の任意のエネルギーに対して2つの可能な水深——<strong>交代水深</strong>——が存在する。最小値が<strong>限界水深</strong>であり、Fr = 1 のときである。</p>
+<p>Fr &lt; 1 のとき流れは<strong>常流</strong>（下流から制御される）、Fr &gt; 1 のとき<strong>射流</strong>（上流から制御される）である。堰などの<strong>制御</strong>は水深を限界水深に強制し、上流側の水面形を固定する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">比エネルギー</span>
+      <div class="formula-expr formula-math">\[E = y + \frac{V^2}{2g}\]</div>
+      <span class="formula-note">yは水深、Vは平均流速</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">限界水深（矩形断面）</span>
+      <div class="formula-expr formula-math">\[y_c = \left(\frac{q^2}{g}\right)^{1/3}\]</div>
+      <span class="formula-note">qは単位幅流量</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Froude数</span>
+      <div class="formula-expr formula-math">\[\mathrm{Fr} = \frac{V}{\sqrt{gD}}\]</div>
+      <span class="formula-note">Dは水力水深、A/T</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>跳水</h2>
+  <div class="body"><p>射流が障害物や下流水深の上昇に遭遇すると、短い乱流遷移を経て常流へと跳水する。水深は上昇し、流速は低下し、運動エネルギーの多くが熱として散逸する——これが、下流の河床を保護するために余水吐の下に跳水を設ける理由である。</p>
+<p>エネルギー損失は事前にわからないため、水深の変化は運動量から求められる。矩形断面では、<strong>共役水深</strong>は接近するFroude数の関係式に従い、損失は跳水の強さとともに急激に増大する。振動跳水は不安定であり、設計で避けるべきである。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">共役水深</span>
+      <div class="formula-expr formula-math">\[\frac{y_2}{y_1} = \frac{1}{2}\left(\sqrt{1 + 8\,\mathrm{Fr}_1^2} - 1\right)\]</div>
+      <span class="formula-note">矩形断面、接近Froude数 Fr₁</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>管路網と摩擦</h2>
+  <div class="body"><p>満水管では損失水頭は2つの部分からなる：長さと流速の二乗に比例する<strong>摩擦</strong>と、曲がり・弁・継手での<strong>形状損失</strong>であり、係数 K で表される。Darcy–Weisbachの式が標準形であり、f はMoody線図から求め、Reynolds数と相対粗度 ε/D に依存する。</p>
+<p>管路網では各接合点で連続式が成り立ち、各節点で単一の水頭が定まる。<strong>並列管路</strong>は同じ損失水頭を共有するため、流量は抵抗に反比例して分流する。<strong>直列管路</strong>は同じ流量を共有し、損失を加算する。大規模な管路網は、水頭が一致するまで流量を調整して反復的に解く。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Darcy–Weisbach損失水頭</span>
+      <div class="formula-expr formula-math">\[h_f = f\,\frac{L}{D}\,\frac{V^2}{2g}\]</div>
+      <span class="formula-note">fはMoody線図から</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>不圧帯水層の井戸水理学</h2>
+  <div class="body"><p>不圧帯水層の井戸で揚水すると<strong>動水低下円錐</strong>が生じる：放射状の流れが井戸に集中し、円錐上でDarcyの法則を積分すると、距離 r₁ と r₂ にある2つの観測井の水位で流量が表される：</p>
+<p><code>Q = π k (h₂² − h₁²) / ln(r₂/r₁)</code>,</p>
+<p>ここで k は透水係数、h は各井戸での飽和厚である。</p>
+<p>したがって揚水試験は、小さな試料ではなく原位置で実規模の k を測定する：一定流量で水位が安定するまで揚水し、h₁ と h₂ を読み取って k を解く。仮定には注意が必要である——水平放射状流れ、均質な帯水層、定常状態——なぜなら実際の低下は平衡に達するまで時間がかかり、成層地盤は均質性を静かに破るからである。同じ式を逆に解けば、井戸の揚水量を決めたり、隣接するボーリング孔での低下を予測したりでき、新たな取水が既存の取水から水を奪う可能性がある場合に重要となる。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">不圧帯水層の井戸流量</span>
+      <div class="formula-expr formula-math">\[Q = \frac{\pi k\,(h_2^2 - h_1^2)}{\ln(r_2/r_1)}\]</div>
+      <span class="formula-note">h₁ と h₂ は観測井 r₁ と r₂ での飽和厚</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>流域、降雨、損失</h2>
+  <div class="body"><p>水文学は降雨をある地点の流量に変換する。<strong>流域</strong>はその地点に排水する面積であり、その応答は面積、勾配、土壌、地被、降雨パターンに依存する。時間的に記録された降雨は<strong>ハイエトグラフ</strong>であり、流域から流出する流量は<strong>ハイドログラフ</strong>である。</p>
+<p>雨の一部のみが流出となる。水は遮断され、地表の窪地を満たし、土壌に<strong>浸透</strong>する。残りが<strong>有効降雨</strong>である。<strong>洪水到達時間</strong>は流域の最遠点から出口までの移動時間であり、ハイドログラフがどれだけ早くピークに達しうるかを決める。都市化による舗装はこれを短縮し、ピークを高める。</p></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>合理式</h2>
+  <div class="body"><p>小流域では、<strong>合理式</strong>は流出係数 C、設計継続時間に対する降雨強度 i、流域面積 A からピーク流量を推定する。係数は土壌、勾配、土地利用をまとめたもので、値は裸地の約0.1から不透水舗装の0.9に及ぶ。</p>
+<p>この方法は、流域全体が寄与するのに十分な継続時間の降雨を仮定するため、設計強度は洪水到達時間に対して取られる。<strong>ピーク流量のみ</strong>を与え——ハイドログラフも体積も与えない——C と選択した強度–継続時間–頻度曲線に敏感である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">合理式</span>
+      <div class="formula-expr formula-math">\[Q = \frac{C\,i\,A}{3.6}\]</div>
+      <span class="formula-note">Qはm³/s、iはmm/h、Aはkm²</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>単位ハイドログラフ</h2>
+  <div class="body"><p><strong>単位ハイドログラフ</strong>は、指定継続時間に流域全体へ一様に降った1単位（通常1 mm）の有効降雨によって生じる直接流出ハイドログラフである。仮定は流域が<strong>線形</strong>に応答することである：降雨が2倍なら流量も2倍となり、<strong>畳み込み</strong>によって降雨を加算し時間移動できる。</p>
+<p>これにより設計ハイドログラフを構築する：記録降雨を有効降雨ブロックに分離し、各ブロックに単位ハイドログラフを適用し、移動した応答を合計する。この方法は基底流量が一定で流域が不変であると仮定する。都市化、貯留、異なる降雨継続時間はいずれもこれを損なう。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">有効降雨の畳み込み</span>
+      <div class="formula-expr formula-math">\[Q(t) = \sum P(\tau)\,U(t - \tau)\]</div>
+      <span class="formula-note">Pは有効降雨、Uは単位ハイドログラフ</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>再現期間と設計リスク</h2>
+  <div class="body"><p><strong>再現期間</strong> T は、ある規模の事象間の平均間隔であり、スケジュールではない：100年確率の暴風雨は毎年1%の超過確率を持つ。50年の設計寿命では、そのような事象が少なくとも1回起こる確率は約39%である。</p>
+<p>設計暴風雨は、選択した継続時間と再現期間に対する<strong>強度–継続時間–頻度</strong>曲線から得られる。気候変動により、過去の曲線は出発点であり保証ではない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">n年間のリスク</span>
+      <div class="formula-expr formula-math">\[R = 1 - \left(1 - \frac{1}{T}\right)^n\]</div>
+      <span class="formula-note">年超過確率は p = 1/T</span>
+    </div></div><div class="table-wrap"><table><caption>Manning粗度係数の目安（プロジェクトの指針を確認のこと）</caption><thead><tr><th scope='col'>水路表面</th><th scope='col'>Manning n</th><th scope='col'>コメント</th></tr></thead><tbody><tr><td>滑らかなコンクリート</td><td>0.012–0.015</td><td>清潔、直線、仕上げ良好</td></tr><tr><td>土、直線で清潔</td><td>0.020–0.025</td><td>縁に多少の植生</td></tr><tr><td>砂礫床、自然河川</td><td>0.030–0.050</td><td>河床材料に強く依存</td></tr><tr><td>密な植生、氾濫原</td><td>0.050–0.150</td><td>範囲が広い；現場で確認</td></tr></tbody></table></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Froude数</dt><dd>流れの流速と浅水波の速度の比。1未満で常流、1超で射流。</dd></div><div class="term"><dt>径深</dt><dd>流水断面積を潤辺で割ったもので、Manningの式の長さスケールとして用いられる。</dd></div><div class="term"><dt>限界水深</dt><dd>比エネルギーが最小となり、Froude数が1に等しくなる水深。</dd></div><div class="term"><dt>跳水</dt><dd>射流から常流への急激な遷移であり、水深が上昇しエネルギーが散逸する。</dd></div><div class="term"><dt>洪水到達時間</dt><dd>流域の最遠点から水が出口に到達するまでの移動時間。</dd></div><div class="term"><dt>単位ハイドログラフ</dt><dd>指定継続時間に流域全体へ一様に降った1単位の有効降雨による直接流出ハイドログラフ。</dd></div><div class="term"><dt>再現期間</dt><dd>ある規模以上に等しいか超える事象間の平均間隔であり、年超過確率の逆数に等しい。</dd></div><div class="term"><dt>動水低下円錐</dt><dd>揚水井の周囲で地下水位が漏斗状に低下する領域であり、放射状の流れが集中する。</dd></div><div class="term"><dt>Chezy係数</dt><dd>Chezy式における粗度依存の流速係数であり、Manningのnと C = R^(1/6)/n で関係づけられる。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>矩形断面の等流</h2>
+        <p class="problem">幅3.0 mの矩形断面が、河床勾配0.001で水深1.2 mの等流を流れている。Manningのnは0.015である。流量、平均流速、Froude数を求め、流れが常流か射流かを述べよ。</p>
+        <ol><li>流水断面積 A = b y = 3.0 × 1.2 = 3.6 m²。潤辺 P = b + 2y = 3.0 + 2.4 = 5.4 m。</li><li>径深 R = A/P = 3.6/5.4 = 0.667 m、よって R^(2/3) = 0.763。</li><li>流速：V = (1/0.015)(0.763)(0.001^(1/2)) = (66.67)(0.763)(0.0316) = 1.61 m/s。</li><li>流量：Q = A V = 3.6 × 1.61 = 5.79 m³/s。</li><li>水力水深 D = A/T = 3.6/3.0 = 1.2 m、よって Fr = V/√(gD) = 1.61/√(9.81 × 1.2) = 1.61/3.43 = 0.47。</li><li>検算：q = 5.79/3.0 = 1.93 m²/s より y_c = (1.93²/9.81)^(1/3) = 0.724 m。実際の水深1.2 mは限界水深より上であり、常流と整合する。</li></ol>
+        <div class="answer"><b>Answer</b>Q ≈ 5.79 m³/s、V ≈ 1.61 m/s、Fr ≈ 0.47 であり、流れは常流である。水深は限界水深0.72 mを十分に上回り、区間は緩勾配にある。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>Manningの式を書くときはRとSの横に単位を添える；1/nの形はSI単位系のみ。</li><li>まず流れを分類する：Froude数と区間が等流か不等流かで適用する式が決まる。</li><li>ピーク流量法とハイドログラフ法を混同しない：合理式はピークを与え、単位ハイドログラフは形状を与える。</li><li>再現期間は確率として扱う；Tだけでなく設計寿命におけるリスクを述べる。</li><li>管路流れでは、損失水頭の計算の前にまず流動状態を特定する——層流は f = 64/Re、乱流はMoody線図が必要。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>矩形断面の流れのFroude数が0.5である。正しい記述はどれか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>流れは常流であり、下流の制御が水深に影響しうる</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>流れは限界流であり、比エネルギーが最大である</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Frが1未満なので流れは等流でなければならない</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>流れは射流であり、上流から制御される</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Frが1未満は常流（緩流）を意味し、じょう乱が上流へ伝わるため、堰などの下流の制御が水深を決める。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>余水吐の下に跳水を意図的に設ける主な目的は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>常流を射流に変える</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>減勢池から土砂を除去する</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>余水吐の放流能力を高める</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>運動エネルギーを散逸させ、下流の河床を保護する</span></button></div>
+    <div class="quiz-explain"><b>Why</b>跳水は高速の射流を低速の常流に変え、河床に到達する前にエネルギーの大部分を散逸させる。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>合理式の主な限界は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>1ヘクタール未満の流域には使えない</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>ピーク流量のみを与え、流域全体に一様な降雨を仮定する</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>適用する前に完全な単位ハイドログラフを必要とする</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>流域面積を完全に無視する</span></button></div>
+    <div class="quiz-explain"><b>Why</b>合理式はピーク流量を与えるが、ハイドログラフや流出体積は与えず、設計強度は流域全体が寄与することを仮定する。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>再現期間50年の暴風雨の年超過確率は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>50%</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>10%</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>2%</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>0.2%</span></button></div>
+    <div class="quiz-explain"><b>Why</b>p = 1/T = 1/50 = 0.02、すなわち任意の1年で2%；50年間で少なくとも1回起こる確率は約64%。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>層流管路流れのDarcy–Weisbach摩擦係数は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>相対粗度に等しい</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>64/Re</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.316/Re^(0.25)</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Reynolds数に依存しない</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Re ≈ 2000未満では流れは層流であり、f = 64/Re が厳密に成り立ち、壁面粗度に依存しない。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>不圧帯水層での揚水試験は2つの観測井を用いる。透水係数は次に比例する：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Q (h₂ − h₁) / (r₂ − r₁)</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Q r₁ r₂ / (h₁ h₂)</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Q / (2π r h)</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Q ln(r₂/r₁) / [π(h₂² − h₁²)]</span></button></div>
+    <div class="quiz-explain"><b>Why</b>井戸式 Q = πk(h₂² − h₁²)/ln(r₂/r₁) を変形すると k = Q ln(r₂/r₁)/[π(h₂² − h₁²)] となる。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="fluid-mechanics.ja.html"><span>Core</span><b>流体力学</b></a><a class="related-card" href="engineering-statistics.ja.html"><span>Core</span><b>工学統計学</b></a><a class="related-card" href="soil-mechanics.ja.html"><span>Core</span><b>土質力学</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="transport-operations-management.ja.html"><small>Previous</small><b>交通運用とマネジメント</b></a><a class="next" href="design-of-concrete-structures.ja.html"><small>Next</small><b>コンクリート構造設計</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">Fr &lt; 1：常流、下流で制御。</p><p class="margin-note">Manningのnは物理ではなく当てはめ。</p><p class="margin-note">合理式はピークを与え、体積は決して与えない。</p><p class="margin-note">100年暴風雨は1世紀に1回ではない。</p><p class="margin-note">跳水は意図的にエネルギーを散逸させる。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

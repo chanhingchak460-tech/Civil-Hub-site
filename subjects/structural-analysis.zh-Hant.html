@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>結構分析 — Civil Hub</title>
+<meta name="description" content="如何求出真實框架的內力與變形：靜不定度、虛功法、影響線、彎矩分配法及勁度法。它把結構草圖轉化為工程師能夠辯護的數字。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/structural-analysis.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="結構分析 — Civil Hub">
+<meta property="og:description" content="如何求出真實框架的內力與變形：靜不定度、虛功法、影響線、彎矩分配法及勁度法。它把結構草圖轉化為工程師能夠辯護的數字。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/structural-analysis.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="structural-analysis.html" data-alt-zh-hant="structural-analysis.zh-Hant.html" data-alt-ja="structural-analysis.ja.html" data-alt-ko="structural-analysis.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">結構分析</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">核心</p>
+          <h1>結構分析</h1>
+          <p class="subject-sub">框架、影響線、勁度與真實結構的行為</p>
+          <ul class="subject-facts"><li><b>類型</b>核心</li><li><b>閱讀</b>11 分鐘</li><li><b>章節</b>10</li><li><b>公式</b>13</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M80 160 V64 H260 V160" stroke="currentColor" stroke-width="1.7"/><path d="M70 160 h20 M250 160 h20" stroke="currentColor" stroke-width="1.2"/><path d="M80 160 l-8 12 h16 z M260 160 l-8 12 h16 z" stroke="currentColor" stroke-width="1"/><path d="M80 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M220 64 q18 -22 40 0" stroke="var(--accent)" stroke-width="1.2"/><path d="M104 100 q-20 14 0 28" stroke="var(--accent)" stroke-width="1"/><path d="M236 100 q20 14 0 28" stroke="var(--accent)" stroke-width="1"/><text x="170" y="44" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PORTAL FRAME</text></svg>
+          <figcaption>Portal frame — bending moments at the joints</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">靜不定度與穩定性</a></li><li><a href="#sec-2">虛功法與單位荷載法</a></li><li><a href="#sec-3">柔度法</a></li><li><a href="#sec-4">影響線</a></li><li><a href="#sec-5">彎矩分配法</a></li><li><a href="#sec-6">勁度法</a></li><li><a href="#sec-7">平面桁架的勁度分析</a></li><li><a href="#sec-8">框架行為與側移</a></li><li><a href="#sec-9">校核電腦模型</a></li><li><a href="#sec-10">從分析到設計</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">如何求出真實框架的內力與變形：靜不定度、虛功法、影響線、彎矩分配法及勁度法。它把結構草圖轉化為工程師能夠辯護的數字。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="structural-analysis" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>靜不定度與穩定性</h2>
+  <div class="body"><p>平衡為每個平面自由體提供三條獨立方程。數算桿件、節點及反力分量：對於剛接框架，靜不定度為 D_s = 3m + r − 3j。</p>
+<ul>
+<li>D_s = 0：反力可由平衡求得。</li>
+<li>D_s &gt; 0：尚餘該數量的多餘力。</li>
+<li>D_s &lt; 0：提示存在機構。</li>
+<li>內部鉸會減少數目。</li>
+</ul>
+<p>靜不定度只是算術，並非穩定性的證明。平行支承，或反力交於一點，可使靜定結構仍能自由移動，因此應先勾畫機構。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">平面框架靜不定度</span>
+      <div class="formula-expr formula-math">\[D_s = 3m + r - 3j\]</div>
+      <span class="formula-note">m 為桿件數，r 為反力分量數，j 為節點數；D_s &lt; 0 表示機構</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>虛功法與單位荷載法</h2>
+  <div class="body"><p>單位荷載法每次求一個位移。在所需點及方向施加虛擬單位荷載，求出內部虛擬力，然後將虛擬作用與真實作用的乘積沿結構求和。</p>
+<ul>
+<li>框架：Σ∫ M m / (EI) ds。</li>
+<li>桁架：Σ n N L / (A E)。</li>
+</ul>
+<p>符號依假設的虛擬方向而定：負結果表示位移與單位荷載方向相反。此法非常適合在選定點校核電腦結果。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">單位荷載法（框架）</span>
+      <div class="formula-expr formula-math">\[\Delta = \sum \int \frac{M m}{E I}\,\mathrm{d}s\]</div>
+      <span class="formula-note">M 及 m 分別為真實及虛擬彎矩</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">單位荷載法（桁架）</span>
+      <div class="formula-expr formula-math">\[\Delta = \sum \frac{n N L}{A E}\]</div>
+      <span class="formula-note">n 及 N 分別為虛擬及真實軸力</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>柔度法</h2>
+  <div class="body"><p>柔度（力）法處理靜不定結構時，會移除支承或內部作用，直至剩下一個靜定的<strong>釋放結構</strong>。未知量為多餘力 X；釋放的代價是必須使釋放結構的行為與真實結構一致。</p>
+<p>相容條件提供缺失的方程：每個釋放坐標處的位移（由施加荷載加上多餘力所引致）必須等於其真實值——通常為零。矩陣形式為 <code>f X + D = 0</code>，其中 <code>f_ij</code> 為 j 處單位多餘力在 i 坐標引起的位移，<code>D</code> 為荷載單獨在該處引起的位移。每個係數均由虛功求得。</p>
+<p>使用<strong>圖乘法</strong>時，將彎矩圖分解為面積及形心已知的簡單圖形。彎矩圖的斜率等於剪力，因此斜率在節點處改變的圖形必須分解——拋物線與三角形，而非一個想像的形狀。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">矩陣形式的相容方程</span>
+      <div class="formula-expr formula-math">\[\mathbf{f}\,\mathbf{X} + \mathbf{D} = 0\]</div>
+      <span class="formula-note">f 為柔度矩陣，X 為多餘力，D 為釋放結構在荷載下的位移</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">柔度係數</span>
+      <div class="formula-expr formula-math">\[f_{ij} = \sum \int \frac{m_i m_j}{E I}\,\mathrm{d}s\]</div>
+      <span class="formula-note">m_i 及 m_j 為 i 及 j 處單位多餘力引起的彎矩</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>影響線</h2>
+  <div class="body"><p>影響線顯示當單位荷載在結構上移動時，某一反應——反力、剪力、彎矩或撓度——如何變化。一旦已知該線，任何荷載列均可由疊加處理：將每個荷載乘以它下方的縱距並相加。將荷載置於最大縱距上可得出控制位置，因此適用於橋樑及吊車梁。</p>
+<p>Müller-Breslau 原理直接給出形狀：在關注點釋放結構，沿反應方向施加單位位移或轉角，所得的撓曲形狀即為影響線。對於簡支梁，截面下方的彎矩影響線縱距為 a b / L。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">簡支梁彎矩影響線縱距</span>
+      <div class="formula-expr formula-math">\[y = \frac{a b}{L}\]</div>
+      <span class="formula-note">a、b 由截面量至支承；L 為跨度</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>彎矩分配法</h2>
+  <div class="body"><p>彎矩分配法逐個節點求解靜不定梁及框架，無需聯立方程。鎖定每個節點，寫出由桿件荷載引起的固端彎矩，然後逐個釋放節點。不平衡彎矩按桿件勁度比例分配，部分傳遞至固定遠端；重複直至傳遞彎矩可忽略。</p>
+<ul>
+<li>對於常數 EI，遠端固定時勁度為 4EI/L，遠端鉸接時為 3EI/L。</li>
+<li>傳遞因數至固定端為 0.5，至鉸接端為零。</li>
+</ul>
+<p>開始時先確定符號約定：節點一側的負彎矩在另一側為正彎矩。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">分配因數</span>
+      <div class="formula-expr formula-math">\[\mathrm{DF} = \frac{k}{\sum k}\]</div>
+      <span class="formula-note">遠端固定時 k = 4EI/L，遠端鉸接時 k = 3EI/L</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">傳遞因數</span>
+      <div class="formula-expr formula-math">\[C = 0.5\]</div>
+      <span class="formula-note">常數 EI，遠端固定；鉸接端無傳遞</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>勁度法</h2>
+  <div class="body"><p>勁度法以節點位移為未知量。每根桿件以局部軸的勁度矩陣描述；矩陣旋轉至整體軸並組裝成 K u = F。桿件荷載轉化為等效節點力，解方程求 u，再由桿件位移求得桿端力。</p>
+<p>手算時，同一概念即為斜度撓度方程：M_AB = (4EI/L) θ_A + (2EI/L) θ_B + FEM_AB。它能處理任意幾何及支承條件，因此是框架分析軟件的基礎；模型的質量取決於其支承及性質。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">組裝勁度方程</span>
+      <div class="formula-expr formula-math">\[\mathbf{K}\,\mathbf{u} = \mathbf{F}\]</div>
+      <span class="formula-note">K 為整體勁度矩陣，u 為節點位移，F 為施加節點力</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">斜度撓度方程</span>
+      <div class="formula-expr formula-math">\[M_{AB} = \frac{4 E I}{L}\theta_A + \frac{2 E I}{L}\theta_B + \mathrm{FEM}_{AB}\]</div>
+      <span class="formula-note">θ 以弧度計；FEM 為桿件荷載引起的固端彎矩</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>平面桁架的勁度分析</h2>
+  <div class="body"><p>對於平面桁架，勁度法成為一套清晰的步驟。每根桿件是軸向勁度為 <code>EA/L</code> 的桿，其桿端力取決於沿桿軸分解的桿端位移差。在整體坐標中，桿件勁度矩陣為 <code>k = (EA/L) [[c², cs], [cs, s²]]</code>，其中 <code>c = cos α</code>、<code>s = sin α</code>，α 為桿件傾角。</p>
+<p>組裝時將每個 2 × 2 矩陣加到整體 K 中該桿件兩節點的自由度上；支承通過刪除受約束的行和列施加。解 <code>K u = F</code> 求節點位移，然後用 <code>N = (EA/L) [c s] (u_B − u_A)</code> 求每根桿件力，正值表示拉力。未說明拉力約定的桁架解答尚未完成。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">平面桁架桿件勁度矩陣</span>
+      <div class="formula-expr formula-math">\[k = \frac{EA}{L}\begin{bmatrix} c^2 &amp; cs \\ cs &amp; s^2 \end{bmatrix}\]</div>
+      <span class="formula-note">c = cos α，s = sin α；整體 x–y 坐標中的 2 × 2 矩陣</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">由桿端位移求桿件力</span>
+      <div class="formula-expr formula-math">\[N = \frac{EA}{L}\begin{bmatrix} c &amp; s \end{bmatrix}\left(\mathbf{u}_B - \mathbf{u}_A\right)\]</div>
+      <span class="formula-note">正 N 為拉力；u_A 及 u_B 為節點位移向量</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>框架行為與側移</h2>
+  <div class="body"><p>剛接框架通過柱與梁共同受彎來抵抗側向荷載。若框架可平移，側移會增加彎矩，結構對側移敏感；填充、支撐或核心可改變分析類別，必須納入考慮。側移框架需要二階分析或彎矩放大，因為 P-Δ 效應隨高度及軸力增長。</p>
+<p>初步選型時，門架法假設每根柱的中點及每根梁的跨中為反彎點，因此層剪力由各柱分擔。這是草算，不是設計方法，但能及早發現嚴重不平衡。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">固定柱腳柱的側向勁度</span>
+      <div class="formula-expr formula-math">\[K_{\mathrm{lat}} \approx \sum \frac{12 E I_c}{h^3}\]</div>
+      <span class="formula-note">初步估算；梁的約束會降低有效值</span>
+    </div></div><div class="table-wrap"><table><caption>選擇分析方法</caption><thead><tr><th scope='col'>方法</th><th scope='col'>未知量</th><th scope='col'>最適用於</th><th scope='col'>注意事項</th></tr></thead><tbody><tr><td>單位荷載／虛功法</td><td>一個位移</td><td>單點撓度校核</td><td>每次只能求一點</td></tr><tr><td>彎矩分配法</td><td>節點轉角</td><td>連續梁、小型框架</td><td>節點多或有側移時較慢</td></tr><tr><td>勁度矩陣法</td><td>節點位移</td><td>任何框架的電腦分析</td><td>模型錯誤、單位及釋放</td></tr><tr><td>二階分析</td><td>含 P-Δ 的位移</td><td>細長或側移框架</td><td>需要真實的初始缺陷</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>校核電腦模型</h2>
+  <div class="body"><p>無論模型是否合理，軟件都會返回數字。使用輸出前，先確認單位與軸向、支承與釋放，以及截面方向。</p>
+<ul>
+<li>檢查施加荷載總和等於反力總和。</li>
+<li>檢查每個鉸處彎矩回歸為零。</li>
+<li>檢查撓曲形狀與約束相符。</li>
+<li>關於勁度接近奇異的警告通常表示自由節點或機構。</li>
+<li>手算校核一根桿件——平衡、標準公式或已知影響線。</li>
+<li>細化網格並觀察答案是否改變；隨無關細化而變的結果尚未收斂。</li>
+</ul></div>
+<div class="callout callout--warning">
+  <b>圖形必須閉合</b>
+  彎矩圖在鉸處未回歸為零，即表示符號錯誤、釋放錯誤或荷載不平衡。
+</div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>從分析到設計</h2>
+  <div class="body"><p>分析給出作用，而非結論。組合荷載工況，取每根桿件沿長度的效應包絡，並分別檢查強度、穩定性及適用性。細長或對側移敏感的框架必須包括二階效應，移動荷載需要影響線或影響面來找出控制位置。</p>
+<p>記錄每個數字背後的荷載組合、符號約定及單位，因為截面設計取決於這三者。一套整齊、可追溯的設計作用是結構分析真正的交付成果。</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>靜不定度</dt><dd>超出單憑平衡所能確定的未知反力或桿件力的數目。</dd></div><div class="term"><dt>影響線</dt><dd>當單位荷載在結構上移動時，某一反應的圖線。</dd></div><div class="term"><dt>Müller-Breslau 原理</dt><dd>某一反應的影響線，等於沿該反應方向施加單位位移或轉角所引起的撓曲形狀。</dd></div><div class="term"><dt>分配因數</dt><dd>一根桿件所分擔的不平衡節點彎矩比例，與其勁度成正比。</dd></div><div class="term"><dt>傳遞因數</dt><dd>分配彎矩傳遞至桿件遠端的比例；常數 EI 且遠端固定時為 0.5。</dd></div><div class="term"><dt>側移框架</dt><dd>節點側向平移未受約束的框架，因此必須考慮二階效應。</dd></div><div class="term"><dt>柔度係數</dt><dd>某一釋放坐標處由另一處單位多餘力所引起的位移，用於建立相容方程。</dd></div><div class="term"><dt>圖乘法</dt><dd>將簡單彎矩圖的面積乘以形心處的縱距，以計算虛功積分。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>以彎矩分配法分析兩跨連續梁</h2>
+        <p class="problem">連續梁 ABC 有兩跨相等的 6.0 m 跨度，常數 EI，兩跨均承受 12 kN/m 的均布荷載。求中央支承 B 的負彎矩、三個垂直反力，以及 AB 跨的最大正彎矩。</p>
+        <ol><li>每跨在 B 的固端彎矩，遠端鉸接：w L² / 8 = 12 × 6.0² / 8 = 54 kNm 負彎矩。</li><li>B 處的分配因數：兩跨勁度均為 3EI/L，故各為 0.5。兩跨的固端彎矩在節點處的轉動方向相反，因此淨不平衡彎矩為零，無需分配或傳遞。</li><li>因此支承彎矩為 M_B = 54 kNm 負彎矩。對於 AB 跨：R_A = wL/2 − M_B/L = 36 − 9 = 27 kN；此跨對 B 的反力為 36 + 9 = 45 kN，另一跨加上相同值，故 R_B = 90 kN。</li><li>檢查垂直平衡：27 + 90 + 27 = 144 kN = 12 × 12 m。正確。</li><li>AB 跨的最大正彎矩發生在剪力為零處，即距 A 點 x = 27/12 = 2.25 m：M = 27 × 2.25 − 12 × 2.25²/2 = 30.4 kNm。</li></ol>
+        <div class="answer"><b>Answer</b>M_B = 54 kNm 負彎矩，R_A = R_C = 27 kN，R_B = 90 kN，AB 跨的最大正彎矩為 30.4 kNm，位於距 A 點 2.25 m 處。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>在選擇方法前，先數算靜不定度並勾畫撓曲形狀；方法取決於結構，而非習慣。</li><li>在虛功題目中，保持虛擬系統真正虛擬，並將其符號貫徹至答案；負位移是方向，不是錯誤。</li><li>對於影響線，先求出關鍵點的縱距；最大效應便是荷載乘以縱距的簡單疊加。</li><li>當給出電腦分析時，花兩分鐘檢查反力及彎矩圖，然後才在設計校核中使用任何輸出。</li><li>在力法解答中，先繪畫釋放結構及每個單位多餘力的彎矩圖，然後才寫出柔度矩陣；大多數錯誤是這些圖之間的符號錯誤。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>兩端固定的單跨梁，其靜不定度為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>1</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>2</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>3</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>6</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>有六個反力分量作用，而只有三條平衡方程可用，故靜不定度為 6 − 3 = 3。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>單位荷載法通過以下哪項確定位移？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>剪力圖的面積</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>真實力與真實勁度的乘積</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>虛擬內力乘以真實變形的總和</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>彎矩圖的斜率</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>虛擬單位荷載對真實變形作功，直接給出位移為 Σ∫Mm/EI 或 ΣnNL/AE。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>根據 Müller-Breslau 原理，支承處垂直反力的影響線是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>支承處單位荷載的彎矩圖</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>在支承處沿反力方向施加單位位移所產生的撓曲形狀</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>跨中單位荷載的剪力圖</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>桿件的曲率圖</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>釋放支承並沿反力方向施加單位位移，所產生的撓曲形狀等於反力影響線。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>在常數 EI 的彎矩分配法中，由節點傳遞至固定遠端的傳遞因數為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.25</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.5</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>1.0</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>當遠端固定且桿件為常數 EI 時，所施加彎矩的一半會傳遞；傳遞至鉸接端則為零。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q05</span><span>在柔度法中，未知多餘力的數目等於：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>桿件數</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>支承反力數</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>結構的節點數</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>靜不定度</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>每次釋放移除一個超出平衡的未知量，因此多餘力與靜不定度一一對應。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>簡支梁跨中荷載試驗給出荷載 P 及撓度 δ。若同一荷載產生兩倍撓度，反算的彈性模量將為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>不變</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>加倍</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>減至四分之一</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>減半</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>E = PL³/(48δI)，因此 δ 加倍會使計算所得的模量減半。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="structural-mechanics.zh-Hant.html"><span>Core</span><b>結構力學</b></a><a class="related-card" href="advanced-structural-mechanics.zh-Hant.html"><span>Core</span><b>高等結構力學</b></a><a class="related-card" href="design-of-steel-structures.zh-Hant.html"><span>Core</span><b>鋼結構設計</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="integrated-project-quality.zh-Hant.html"><small>上一頁</small><b>綜合項目與品質管理</b></a><a class="next" href="construction-management.zh-Hant.html"><small>下一頁</small><b>建造管理</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">D_s &gt; 0 表示需要相容條件。</p><p class="margin-note">影響線用於移動荷載。</p><p class="margin-note">每次釋放一個節點。</p><p class="margin-note">軟件輸出不是校核。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

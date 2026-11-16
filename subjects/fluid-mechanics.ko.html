@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>유체 역학 — Civil Hub</title>
+<meta name="description" content="정지 상태와 운동 상태의 유체가 구조물에 어떻게 힘을 가하는지, 그리고 물이 관, 수로, 기계를 통해 어떻게 흐르는지를 다룬다. 정수역학, 부력, 베르누이, 운동량, 마찰 손실, 경계층은 수공학을 위한 하나로 연결된 도구 모음을 이룬다.">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/fluid-mechanics.ko.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="유체 역학 — Civil Hub">
+<meta property="og:description" content="정지 상태와 운동 상태의 유체가 구조물에 어떻게 힘을 가하는지, 그리고 물이 관, 수로, 기계를 통해 어떻게 흐르는지를 다룬다. 정수역학, 부력, 베르누이, 운동량, 마찰 손실, 경계층은 수공학을 위한 하나로 연결된 도구 모음을 이룬다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/fluid-mechanics.ko.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="fluid-mechanics.html" data-alt-zh-hant="fluid-mechanics.zh-Hant.html" data-alt-ja="fluid-mechanics.ja.html" data-alt-ko="fluid-mechanics.ko.html" data-page-lang="ko" data-root="../" data-total="42" data-page="library" data-content-lang="ko">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">유체 역학</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">핵심</p>
+          <h1>유체 역학</h1>
+          <p class="subject-sub">압력, 흐름, 그리고 수중 물체에 작용하는 힘</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>핵심</li><li><b data-i18n="subject.read">Read</b>12 분</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>18</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M40 84 H300 M40 132 H300" stroke="currentColor" stroke-width="1.5"/><path d="M40 84 V132 M300 84 V132" stroke="currentColor" stroke-width="1.5"/><path d="M56 96 q40 -10 80 0 t80 0 t60 0" stroke="var(--accent)" stroke-width="1" opacity="0.85"/><path d="M56 106 q40 -10 80 0 t80 0 t60 0" stroke="var(--accent)" stroke-width="1" opacity="0.6699999999999999"/><path d="M56 118 q40 -10 80 0 t80 0 t60 0" stroke="var(--accent)" stroke-width="1" opacity="0.49"/><path d="M64 70 v10 M64 74 l-4 4 M64 74 l4 4" stroke="var(--faint)" stroke-width="1"/><text x="40" y="58" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">P₁</text><text x="310" y="58" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="end" letter-spacing="0.18em">P₂</text><text x="170" y="168" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PIPE FLOW</text></svg>
+          <figcaption>Pipe flow — pressure drop along the section</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">유체를 유체이게 하는 것</a></li><li><a href="#sec-2">정지 유체의 압력</a></li><li><a href="#sec-3">수중 표면에 작용하는 힘</a></li><li><a href="#sec-4">부력과 부양 안정성</a></li><li><a href="#sec-5">연속 방정식과 에너지 방정식</a></li><li><a href="#sec-6">운동량과 물체에 작용하는 힘</a></li><li><a href="#sec-7">관 흐름, 마찰 및 부차적 손실</a></li><li><a href="#sec-8">경계층, 박리 및 항력</a></li><li><a href="#sec-9">웨어: 상류 수위로부터의 유량</a></li><li><a href="#sec-10">작동 계측기로서의 벤투리 미터</a></li><li><a href="#sec-11">수치로 본 부양 안정성</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">정지 상태와 운동 상태의 유체가 구조물에 어떻게 힘을 가하는지, 그리고 물이 관, 수로, 기계를 통해 어떻게 흐르는지를 다룬다. 정수역학, 부력, 베르누이, 운동량, 마찰 손실, 경계층은 수공학을 위한 하나로 연결된 도구 모음을 이룬다.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="fluid-mechanics" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>유체를 유체이게 하는 것</h2>
+  <div class="body"><p>유체는 아무리 작은 전단에도 연속적으로 변형된다. 두 가지 물성이 지배적이다: 단위 부피당 질량인 밀도 ρ와 전단에 대한 저항인 <strong>동점성계수</strong> μ이다. 뉴턴 유체의 경우 전단응력은 속도 구배에 비례하며, μ가 그 상수이다.</p>
+<p>상온 근처의 물은 ρ ≈ 998 kg/m³, μ ≈ 1.0 × 10⁻³ Pa·s이고, 공기는 약 1.2 kg/m³, 1.8 × 10⁻⁵ Pa·s이다. <strong>운동점성계수</strong> ν = μ/ρ는 레이놀즈 수에 직접 나타나므로 편리하다.</p>
+<p>실제 유체는 고체 표면에 달라붙는다 — 즉 점착 조건 — 따라서 벽면에서 속도는 0이다. 이 한 가지 사실이 경계층과 공학에서의 대부분의 마찰을 만들어낸다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">뉴턴 전단응력</span>
+      <div class="formula-expr formula-math">\[\tau = \mu \frac{\mathrm{d}u}{\mathrm{d}y}\]</div>
+      <span class="formula-note">속도 구배 du/dy</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">운동점성계수</span>
+      <div class="formula-expr formula-math">\[\nu = \frac{\mu}{\rho}\]</div>
+      <span class="formula-note">단위 m²/s</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>정지 유체의 압력</h2>
+  <div class="body"><p>정지 유체에서 압력은 모든 방향으로 동일하게 작용하며, 깊이가 그 값을 결정한다: 자유 표면 아래에서 p = p₀ + ρ g h. 같은 깊이의 같은 유체는 용기의 모양과 무관하게 같은 압력을 가진다.</p>
+<p>액주계는 압력 차이를 액주 높이로 읽으며, <strong>압력 수두</strong> p/(ρg)는 물기둥 미터로 표시되어 산술을 고도와 같은 단위로 유지한다.</p>
+<p>유압 잭은 같은 원리를 사용한다: 작은 피스톤에 가한 적당한 압력이 훨씬 큰 면적으로 곱해진다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">정수압</span>
+      <div class="formula-expr formula-math">\[p = p_0 + \rho g h\]</div>
+      <span class="formula-note">자유 표면 아래</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>수중 표면에 작용하는 힘</h2>
+  <div class="body"><p>평면에 작용하는 힘은 도심에서의 압력에 면적을 곱한 것이다: F = ρ g h̄ A, 여기서 h̄는 도심의 깊이이다. 수평 바닥에서는 압력 곱하기 면적이며, 수직 수문에서는 압력이 깊이에 따라 증가하므로 합력은 더 아래에 작용한다.</p>
+<p>그 점이 <strong>압력 중심</strong>이며, y_cp = y_c + I_x/(y_c A)이고, y는 자유 표면에서 평면을 따라 측정한다. 깊이 d, 폭 b인 직사각형 수문의 경우 I_x = b d³/12이다.</p>
+<p>건조한 쪽도 평형에 포함시켜야 한다. 한쪽에 물, 다른 쪽에 공기가 있는 수문은 순힘을 받으며, 그 차이가 힌지가 견뎌야 하는 것이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">평면에 작용하는 힘</span>
+      <div class="formula-expr formula-math">\[F = \rho g \bar{h} A\]</div>
+      <span class="formula-note">도심의 깊이</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">압력 중심</span>
+      <div class="formula-expr formula-math">\[y_{cp} = y_c + \frac{I_x}{y_c A}\]</div>
+      <span class="formula-note">항상 도심보다 아래</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>부력과 부양 안정성</h2>
+  <div class="body"><p>아르키메데스: 부력은 배제된 유체의 무게와 같으며, F_B = ρ_fluid g V_displaced이고, 배제된 체적의 도심을 통해 작용한다. 유체보다 밀도가 큰 물체는 배제된 무게가 균형을 이룰 때까지 가라앉고, 부양하는 물체는 정확히 자기 무게만큼을 배제한다.</p>
+<p>똑바로 뜨는 것은 별개의 문제이다. 물체가 기울면 부력 중심이 이동하고 무게와 부력이 우력를 형성한다. <strong>경심고</strong> GM이 그 복원 효과를 측정한다: 양수이면 안정, 음수이면 전복된다.</p>
+<p>넓고 얕은 선체는 안정하고, 좁고 높은 선체는 그렇지 않다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">부력</span>
+      <div class="formula-expr formula-math">\[F_B = \rho_{\text{fluid}} g V_{\text{displaced}}\]</div>
+      <span class="formula-note">배제된 체적의 도심에서</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>연속 방정식과 에너지 방정식</h2>
+  <div class="body"><p>질량은 보존된다. 면적이 변하는 관을 통한 정상, 비압축성 흐름의 경우 Q = A₁V₁ = A₂V₂이므로, 축소부는 유체를 가속하고 넓은 단면은 감속한다.</p>
+<p><strong>베르누이 방정식</strong>은 정상, 무마찰 흐름에서 유선을 따라 압력, 속도, 고도를 연결한다: p/(ρg) + V²/(2g) + z = 상수. 각 항은 미터 단위의 수두 — 압력 수두, 속도 수두, 위치 수두 — 이다.</p>
+<p>이는 벤투리 미터(목부에서 더 높은 속도, 더 낮은 압력)와 피토관(속도 수두를 압력 차이로 변환)을 설명한다. 손실이나 펌프가 중요한 곳에서는 성립하지 않으며, 대부분의 실제 배관이 그렇다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">연속 방정식</span>
+      <div class="formula-expr formula-math">\[Q = A_1 V_1 = A_2 V_2\]</div>
+      <span class="formula-note">정상, 비압축성</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">베르누이 방정식</span>
+      <div class="formula-expr formula-math">\[\frac{p}{\rho g} + \frac{V^2}{2g} + z = \text{constant}\]</div>
+      <span class="formula-note">유선을 따라, 손실 없음</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>운동량과 물체에 작용하는 힘</h2>
+  <div class="body"><p>베르누이는 압력을 주고, <strong>운동량</strong>은 힘을 준다. 정상 흐름의 경우 유체에 작용하는 순힘은 운동량 변화율과 같다: ΣF = ρQ(V_out − V_in), 벡터로 취급한다. 같은 힘이 흐름을 바꾸는 대상 — 곡관, 축소관, 베인 — 에 반대 방향으로 작용한다.</p>
+<p>평판에 충돌하는 제트가 표준 사례이다: 제트를 수직으로 정지시키는 평판은 F = ρQV를 받고, 180° 회전시키는 반구형 컵은 약 두 배를 받으며, 이것이 펠턴 휠이 분할 버킷을 사용하는 이유이다. 측정된 힘은 제트가 퍼지고 흐름이 완전히 정상적이지 않기 때문에 이론값보다 작다.</p>
+<p>관 곡관의 경우 같은 평형이 앵커 힘을 주며, 종종 압력 항이 지배한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">운동량 평형</span>
+      <div class="formula-expr formula-math">\[\sum F = \rho Q (V_{\text{out}} - V_{\text{in}})\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">베인에 작용하는 제트의 힘</span>
+      <div class="formula-expr formula-math">\[F = \rho Q V (1 - \cos \theta)\]</div>
+      <span class="formula-note">90° 평판, 180° 컵</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>관 흐름, 마찰 및 부차적 손실</h2>
+  <div class="body"><p>실제 관은 마찰로 에너지를 잃는다. <strong>레이놀즈 수</strong> Re = ρVD/μ가 흐름 영역을 결정한다: 약 2000 미만은 층류, 약 4000 초과는 난류, 그 사이는 천이이다.</p>
+<p>층류는 f = 64/Re이고, 난류의 f는 Re와 상대 조도에 따라 <strong>무디 선도</strong> 또는 콜브룩 방정식에서 읽는다. <strong>다르시–바이스바흐</strong> 방정식은 f를 수두 손실로 변환한다: h_f = f L V²/(2gD). V가 제곱이므로 유량을 두 배로 하면 손실은 약 네 배가 된다 — 관 설계에서 가장 유용한 사실이다.</p>
+<p>피팅, 곡관, 밸브는 <strong>부차적 손실</strong> h_m = K V²/(2g)을 추가한다. 긴 관로는 마찰이 지배하고, 소형 플랜트는 종종 피팅이 지배한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">레이놀즈 수</span>
+      <div class="formula-expr formula-math">\[\mathrm{Re} = \frac{\rho V D}{\mu} = \frac{V D}{\nu}\]</div>
+      <span class="formula-note">점성에 대한 관성</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">다르시–바이스바흐 수두 손실</span>
+      <div class="formula-expr formula-math">\[h_f = \frac{f L V^2}{2 g D}\]</div>
+      <span class="formula-note">패닝 계수가 아님</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">부차적 손실</span>
+      <div class="formula-expr formula-math">\[h_m = \frac{K V^2}{2g}\]</div>
+      <span class="formula-note">경험적, 피팅당</span>
+    </div></div><div class="table-wrap"><table><caption>관 흐름 관계 한눈에 보기</caption><thead><tr><th scope='col'>양</th><th scope='col'>관계식</th><th scope='col'>용도</th></tr></thead><tbody><tr><td>층류 마찰 계수</td><td>f = 64/Re</td><td>Re 약 2000 미만</td></tr><tr><td>마찰 수두 손실</td><td>h_f = f L V²/(2gD)</td><td>긴 직관</td></tr><tr><td>부차적 손실</td><td>h_m = K V²/(2g)</td><td>피팅 및 밸브</td></tr><tr><td>펌프 수두</td><td>H = Δ(p/ρg + V²/2g + z) + 손실</td><td>에너지선</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>경계층, 박리 및 항력</h2>
+  <div class="body"><p>고체 경계에서 점착 조건은 벽면의 0에서 자유 흐름 값까지 속도가 상승하는 <strong>경계층</strong>을 만든다. 경계층은 얇은 층류로 시작하여 표면을 따라 성장하고, 임계 레이놀즈 수를 넘으면 난류로 변한다 — 더 두껍지만 벽 근처 유체가 더 빠르다.</p>
+<p>경계층은 급격한 역압력 구배를 따를 수 없으므로 박리되어 저압 후류를 남긴다. <strong>항력</strong>은 표면의 마찰과 그 후류의 압력 항력을 결합한다: C_D = F/(½ρV²A).</p>
+<p>유선형화는 박리를 지연시키고 압력 항력을 줄인다; 둔한 물체는 압력 항력이 지배한다. 같은 개념이 월류 흐름을 설명하며, 여기서 마루 형상이 월류수가 어떻게 떨어져 나가는지를 제어한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">항력 계수</span>
+      <div class="formula-expr formula-math">\[C_D = \frac{F}{\frac{1}{2} \rho V^2 A}\]</div>
+      <span class="formula-note">A는 정면 면적</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>웨어: 상류 수위로부터의 유량</h2>
+  <div class="body"><p>예연 웨어는 상류 수위를 유량 측정으로 변환한다. 폭 b인 직사각형 노치의 경우 Q = (2/3) C_d √(2g) b h^{3/2}; 전체 각도 α인 V노치의 경우 Q = (8/15) C_d √(2g) tan(α/2) h^{5/2}이며, h는 마루 또는 꼭짓점에서 측정한다.</p>
+<p>모서리는 날카로워야 <strong>월류수</strong>가 떨어져 나가며; 붙는 월류수는 유량 등식을 무효화한다. 교정은 log Q 대 log h를 도시한다: 기울기는 각각 1.5 또는 2.5로 읽혀야 하며, 절편이 유량 계수를 준다.</p>
+<p>90° 노치는 같은 수두에서 60° 노치보다 물을 덜 통과시킨다 — 각도를 좁히면 작은 유량에 대한 감도가 높아진다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">직사각형 웨어 유량</span>
+      <div class="formula-expr formula-math">\[Q = \frac{2}{3} C_d \sqrt{2g}\, b\, h^{3/2}\]</div>
+      <span class="formula-note">h는 마루 위, b는 노치 폭</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">V노치 웨어 유량</span>
+      <div class="formula-expr formula-math">\[Q = \frac{8}{15} C_d \sqrt{2g} \tan\frac{\alpha}{2}\, h^{5/2}\]</div>
+      <span class="formula-note">α는 전체 노치 각도, h는 꼭짓점에서</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>작동 계측기로서의 벤투리 미터</h2>
+  <div class="body"><p>벤투리는 측정된 압력 강하로부터 유량을 측정한다. 상류 면적 A₁과 목부 면적 A₂를 사용하여, 이상 유량은 연속 방정식과 베르누이 방정식에서 나온다; 마찰과 수축은 <strong>유량 계수</strong> C_d에 포함되며, 일반적으로 0.92–0.99이므로 Q = C_d A₂ √[2g Δh / (1 − (A₂/A₁)²)]이고, Δh는 피에조 수두 강하이다.</p>
+<p>실험실 교정은 Q 대 √Δh를 도시하고 기울기에서 C_d ≈ 0.96을 읽었으며, 유량 범위에 걸쳐 일정했다.</p>
+<p>미터를 따라 설치된 피에조미터 관은 압력 강하를 매핑하고 대부분이 디퓨저에서 회복됨을 보여준다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">벤투리 유량</span>
+      <div class="formula-expr formula-math">\[Q = C_d A_2 \sqrt{\frac{2 g \Delta h}{1 - (A_2/A_1)^2}}\]</div>
+      <span class="formula-note">Δh는 입구와 목부 사이의 피에조 수두 차</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>수치로 본 부양 안정성</h2>
+  <div class="body"><p>부양 물체의 안정성은 <strong>경심고</strong> GM = I/V − BG로 정량화되며, I는 수선면 면적의 2차 모멘트, V는 배제 체적, BG는 부력 중심 위의 무게 중심 높이이다. GM이 양수이면 경심이 G 위에 있어 작은 경사가 복원되고; GM이 음수이면 전복된다.</p>
+<p>10 m × 4 m이고 100 m³를 배제하는 직사각형 바지선은 I/V = (10 × 4³/12)/100 = 0.53 m이므로, G는 B 위 약 0.5 m 이내에 있어야 한다.</p>
+<p>넓고 얕은 선체는 용서하지만, 높고 좁은 하중은 그렇지 않다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">경심고</span>
+      <div class="formula-expr formula-math">\[\mathrm{GM} = \frac{I}{V} - \mathrm{BG}\]</div>
+      <span class="formula-note">안정 평형을 위해 양수</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>점성</dt><dd>전단에 대한 유체의 저항으로, 전단응력과 속도 구배 사이의 비례 상수로 측정된다.</dd></div><div class="term"><dt>압력 중심</dt><dd>수중 표면에서 합력 정수압이 작용하는 점; 도심 아래에 위치한다.</dd></div><div class="term"><dt>경심고</dt><dd>무게 중심과 경심 사이의 거리; 양수 값은 부양 물체를 안정하게 만든다.</dd></div><div class="term"><dt>레이놀즈 수</dt><dd>흐름이 층류인지 난류인지 예측하는 무차원 비율 ρVD/μ.</dd></div><div class="term"><dt>다르시 마찰 계수</dt><dd>다르시–바이스바흐 방정식의 무차원 계수 f로, 레이놀즈 수와 상대 조도의 함수이다.</dd></div><div class="term"><dt>경계층</dt><dd>표면 옆에서 속도가 벽면의 0에서 자유 흐름 값까지 상승하는 얇은 영역.</dd></div><div class="term"><dt>유량 계수</dt><dd>미터나 웨어를 통한 실제 유량과 이론 유량의 비율로, 수축과 마찰을 포함한다; 벤투리의 경우 일반적으로 0.92–0.99.</dd></div><div class="term"><dt>월류수</dt><dd>웨어 마루 위로 떨어져 나가는 물의 시트; 붙는 월류수는 웨어가 제대로 통기되지 않아 유량 등식이 실패함을 의미한다.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>상수도관의 마찰 수두 손실</h2>
+        <p class="problem">운동점성계수 ν = 1.0 × 10⁻⁶ m²/s인 물이 0.050 m³/s로 길이 200 m, 직경 150 mm 강관을 통해 흐른다. 다르시 마찰 계수를 0.020으로 가정한다. 속도를 구하고, 레이놀즈 수를 확인하고, 마찰 수두 손실을 계산하고, 그것이 나타내는 압력 강하를 구하라.</p>
+        <ol><li>단면적: A = πD²/4 = π × 0.15²/4 = 0.01767 m².</li><li>속도: V = Q/A = 0.050/0.01767 = 2.83 m/s.</li><li>레이놀즈 수: Re = VD/ν = (2.83 × 0.15)/(1.0 × 10⁻⁶) = 4.2 × 10⁵로, 4000보다 훨씬 크므로 흐름은 난류이고 f = 0.020은 타당하다.</li><li>마찰 수두 손실: h_f = f L V²/(2gD) = (0.020 × 200 × 2.83²)/(2 × 9.81 × 0.15) = 32.0/2.94 = 10.9 m.</li><li>압력 강하: Δp = ρ g h_f = 1000 × 9.81 × 10.9 = 1.07 × 10⁵ Pa ≈ 107 kPa.</li></ol>
+        <div class="answer"><b>Answer</b>속도는 2.83 m/s이고 Re ≈ 4.2 × 10⁵이므로 흐름은 난류이다. 마찰 수두 손실은 약 10.9 m이며, 이는 약 107 kPa의 압력 강하에 해당한다. 이는 관 100 m당 약 5.4 m의 수두로, 이 속도에서는 높지만 믿을 만하다.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>자유 물체도를 그리고 수문 양쪽의 압력을 표시하라; 건조한 쪽을 잊는 것이 가장 흔한 실수이다.</li><li>마찰 법칙을 선택하기 전에 레이놀즈 수를 확인하라 — 난류 흐름에 64/Re를 인용하면 즉시 감점된다.</li><li>베르누이 문제에서는 가정(정상, 비압축성, 무마찰, 유선을 따라)과 손실이 에너지선에 들어가는 위치를 명시하라.</li><li>단위를 일관되게 유지하라: mm를 m로 변환하고, 미터 단위 수두가 ρg를 통해 압력으로 변환됨을 기억하라.</li><li>웨어와 벤투리 교정 문제는 숫자 표가 아니라 log–log 또는 √Δh 도시를 원한다 — 예상 기울기(1.5 또는 2.5)를 인용하고 계수를 읽기 전에 비교하라.</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Manning roughness coefficient n for pipes and channels</h3>
+  <p class="ref-table-intro">Values of Manning&#x27;s n used with the Manning equation V = (1/n) R^(2/3) S^(1/2) to estimate velocity, and hence discharge, in pipes, culverts and open channels. The Best-to-Bad range shows how much judgement the choice of roughness needs.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Surface / channel type</th><th scope='col'>Best</th><th scope='col'>Good</th><th scope='col'>Fair</th><th scope='col'>Bad</th></tr></thead><tbody><tr><td>Uncoated cast-iron pipe</td><td>0.012</td><td>0.013</td><td>0.014</td><td>0.015</td></tr><tr><td>Concrete pipe</td><td>0.012</td><td>0.013</td><td>0.015</td><td>0.016</td></tr><tr><td>Vitrified sewer pipe</td><td>0.010</td><td>0.013</td><td>0.015</td><td>0.017</td></tr><tr><td>Brick in cement mortar; brick sewers</td><td>0.012</td><td>0.013</td><td>0.015</td><td>0.017</td></tr><tr><td>Neat cement surfaces</td><td>0.010</td><td>0.011</td><td>0.012</td><td>0.013</td></tr><tr><td>Earth canals, straight and uniform</td><td>0.017</td><td>0.020</td><td>0.0225</td><td>0.025</td></tr><tr><td>Clean straight natural stream, full stage, no rifts or deep pools</td><td>0.025</td><td>0.0275</td><td>0.030</td><td>0.033</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 13 of the Stormwater Drainage Manual (5th Edition, January 2018, incorporating Corrigenda No. 1/2022 and No. 2/2024), which credits Brater and King (1976). n is in s/m^(1/3).</p>
+  <p class="ref-table-caveat">Revision summary only. Roughness grows with age, sediment and vegetation, and the table is a guide rather than a design value; verify and justify n against the current manual for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>수직 직사각형 수문을 더 깊이 내려 도심 깊이가 두 배가 되었다. 수문에 작용하는 총 정수압 힘은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>두 배가 된다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>네 배가 된다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>절반이 된다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>동일하게 유지된다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>F = ρgh̄A이고 면적은 변하지 않으므로, 도심 깊이가 두 배가 되면 힘도 두 배가 된다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>정상 비압축성 흐름을 운반하는 수평 벤투리 미터에서 목부의 압력은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>관이 수평이기 때문에 같다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>목부에서 0이다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>면적이 더 작기 때문에 상류보다 높다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>속도가 더 높기 때문에 상류보다 낮다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>연속 방정식은 더 작은 목부에서 더 높은 속도를 주고, 베르누이는 속도 수두의 상승을 압력의 하강으로 변환한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>난류 관에서 마찰 계수가 거의 일정할 때 유량이 두 배가 되면 마찰 수두 손실은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>동일하다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>두 배가 된다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>약 네 배가 된다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>절반이 된다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>h_f ∝ V²이고 V는 Q와 함께 두 배가 되므로, 수두 손실은 약 네 배로 증가한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>배가 평형 상태로 떠 있다. 배에 작용하는 부력은:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>용골의 압력에 갑판 면적을 곱한 값</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>선박이 평형이기 때문에 0</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>항구가 배제한 물의 무게</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>선박과 탑재된 모든 것의 총 무게</span></button></div>
+    <div class="quiz-explain"><b>Why</b>부양 물체는 선박과 내용물의 총 무게와 같은 무게의 물을 배제하므로, 부력은 그 총 무게와 균형을 이룬다.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>예연 V노치 웨어의 경우 유량은 수두 h에 대해 어떻게 스케일되는가:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>h^{3/2}</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>h^{5/2}</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>h²</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>h^{1/2}</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Q = (8/15) C_d √(2g) tan(α/2) h^{5/2}이므로, V노치는 5/2 거듭제곱 법칙을 따르며 — 직사각형 웨어의 3/2보다 가파르다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>부양 물체의 무게 중심이 부력 중심 위 0.2 m에 있고 I/V = 0.6 m이다. 경심고는:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>−0.2 m</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.2 m</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.4 m</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>0.8 m</span></button></div>
+    <div class="quiz-explain"><b>Why</b>GM = I/V − BG = 0.6 − 0.2 = 0.4 m로 양수이므로 작은 경사각이 복원되고 물체는 안정하다.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="soil-mechanics.ko.html"><span>Core</span><b>흙의 역학</b></a><a class="related-card" href="engineering-geology.ko.html"><span>Core</span><b>공학 지질학</b></a><a class="related-card" href="air-noise-pollution.ko.html"><span>Environmental</span><b>대기 및 소음 오염</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="data-analytics-r.ko.html"><small>Previous</small><b>R을 활용한 데이터 분석</b></a><a class="next" href="soil-mechanics.ko.html"><small>Next</small><b>흙의 역학</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Drainage Services Department. (2018). <i>Stormwater Drainage Manual: Planning, Design and Management (5th Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.dsd.gov.hk/EN/Files/Technical_Manual/technical_manuals/SDM_2018_5th.pdf" rel="noopener">https://www.dsd.gov.hk/EN/Files/Technical_Manual/technical_manuals/SDM_2018_5th.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">같은 깊이, 같은 압력 — 탱크 모양은 무관하다.</p><p class="margin-note">마찰 법칙을 선택하기 전에 Re를 확인하라.</p><p class="margin-note">난류에서 h_f는 V²에 따라 증가한다.</p><p class="margin-note">유선형화는 압력 항력을 줄이지, 마찰 항력을 줄이지 않는다.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

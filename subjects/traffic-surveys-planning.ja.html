@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>交通調査と交通計画 — Civil Hub</title>
+<meta name="description" content="移動がどのように計測され、その後どのように予測されるかを扱う。分類別交通量調査と起終点調査、サンプリングと拡大、四段階需要モデル、ネットワーク配分、そして予測が現実的かどうかを決める土地利用のフィードバックを網羅する。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/traffic-surveys-planning.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="交通調査と交通計画 — Civil Hub">
+<meta property="og:description" content="移動がどのように計測され、その後どのように予測されるかを扱う。分類別交通量調査と起終点調査、サンプリングと拡大、四段階需要モデル、ネットワーク配分、そして予測が現実的かどうかを決める土地利用のフィードバックを網羅する。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/traffic-surveys-planning.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="traffic-surveys-planning.html" data-alt-zh-hant="traffic-surveys-planning.zh-Hant.html" data-alt-ja="traffic-surveys-planning.ja.html" data-alt-ko="traffic-surveys-planning.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">交通調査と交通計画</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">専門</p>
+          <h1>交通調査と交通計画</h1>
+          <p class="subject-sub">移動を測定し、計画する</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>専門</li><li><b data-i18n="subject.read">Read</b>9 分</li><li><b data-i18n="subject.sections">Sections</b>10</li><li><b data-i18n="subject.formulas">Formulas</b>10</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="176" cy="36" r="5" stroke="var(--accent)" stroke-width="1.4"/><path d="M176 41 V80" stroke="currentColor" stroke-width="1.3"/><path d="M176 62 l-30 34 M176 62 l30 34 M176 62 l-3 40" stroke="currentColor" stroke-width="1.2"/><path d="M40 168 H300" stroke="var(--line)" stroke-width="1"/><path d="M72 92 l104 76 M92 96 l120 72" stroke="var(--faint)" stroke-width="1"/><path d="M118 128 q10 10 4 22" stroke="var(--accent)" stroke-width="1"/><text x="132" y="152" font-family="var(--mono)" font-size="8" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">θ</text><text x="70" y="186" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">A</text><text x="264" y="186" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">B</text></svg>
+          <figcaption>Traverse geometry — angles and measured lines</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">計画は証拠の連鎖である</a></li><li><a href="#sec-2">計測と聞き取り調査</a></li><li><a href="#sec-3">サンプリング、拡大、誤差</a></li><li><a href="#sec-4">発生交通量とO–D行列</a></li><li><a href="#sec-5">発生交通量モデル</a></li><li><a href="#sec-6">分布と交通手段選択</a></li><li><a href="#sec-7">配分とネットワーク均衡</a></li><li><a href="#sec-8">配分ネットワークの構築</a></li><li><a href="#sec-9">駐車調査と回転率</a></li><li><a href="#sec-10">土地利用、検証、判断</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">移動がどのように計測され、その後どのように予測されるかを扱う。分類別交通量調査と起終点調査、サンプリングと拡大、四段階需要モデル、ネットワーク配分、そして予測が現実的かどうかを決める土地利用のフィードバックを網羅する。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="traffic-surveys-planning" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>計画は証拠の連鎖である</h2>
+  <div class="body"><p>交通計画は、何人がどこへどの交通手段でどのリンクを通って移動するかを予測し、需要が発生する前にインフラとサービスを適切な規模に整える。古典的な<strong>四段階モデル</strong>は、発生交通量、分布交通量、交通手段選択、配分の順に進む。</p>
+<p>各段階は異なる種類のデータを必要とし、最初の誤りは最後の巧妙なモデルでは修復されない。戦略計画は数十年先を見据え、戦術計画は数年先、運用計画は一季節先を見据える。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>計測と聞き取り調査</h2>
+  <div class="body"><p>基本となる道具は<strong>分類別交通量調査</strong>であり、一定期間にわたる車種別・方向別の交通量を記録する。調査は手作業、一時的な自動計測（チューブ、ループ、レーダー）、または常設で行うことができ、短時間の調査は係数を用いて代表的な一日に拡大される。</p>
+<p><strong>起終点（O–D）</strong>調査はトリップの起点と終点を尋ねる。路側インタビュー、ナンバープレート照合、GPS軌跡、携帯電話網データなどがある。速度調査は地点速度または旅行時間を測定し、駐車調査は累積台数と駐車時間を記録する。</p></div><div class="table-wrap"><table><caption>調査手法の選択</caption><thead><tr><th scope='col'>手法</th><th scope='col'>測定内容</th><th scope='col'>強み</th><th scope='col'>限界</th></tr></thead><tbody><tr><td>分類別交通量調査</td><td>車種別交通量</td><td>安価で再現可能</td><td>起点・終点がない</td></tr><tr><td>路側インタビュー</td><td>O–Dとトリップ目的</td><td>計画上の問いに答える</td><td>高コスト；停止車両に偏る</td></tr><tr><td>ナンバープレート照合</td><td>O–Dと旅行時間</td><td>大規模サンプル、インタビュー不要</td><td>プライバシー制約；ナンバー誤読</td></tr><tr><td>フローティングカー</td><td>旅行時間と遅延</td><td>経路全体、実交通</td><td>小規模サンプル；観測者効果</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>サンプリング、拡大、誤差</h2>
+  <div class="body"><p>どの調査もすべてを数えるわけではない。サンプルは母集団に拡大されるため、<strong>拡大係数</strong>はそのサンプリング誤差を伴う。サンプリング誤差はサンプルサイズの平方根に反比例して減少するため、サンプルを4倍にすると誤差は半分になる。</p>
+<p>カバレッジバイアスはランダム誤差よりも深刻である。平日ピークのみを数えたり、インタビューに応じた運転者だけを数えたりすると、選択された集団を測定することになる。中立月と中立日が重要であり、祝日は除外される。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">比率のサンプルサイズ</span>
+      <div class="formula-expr formula-math">\[n = \frac{z^2 p (1 - p)}{e^2}\]</div>
+      <span class="formula-note">95%信頼度でz ≈ 1.96、pは期待比率、eは許容誤差</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>発生交通量とO–D行列</h2>
+  <div class="body"><p>発生交通量は、世帯または開発が何トリップを発生させるかを推定する。世帯人数、所得、自動車保有別の調査データ、または回帰から求める。出力は<strong>トリップ行列</strong>であり、行が起点、列が終点、対角成分がゾーン内トリップを表す。</p>
+<p>行列はサンプルから母集団へ拡大され、行と列の合計がコントロール合計と一致するようにバランス調整される。粗すぎる、または位置が不適切なゾーニングは、下流のすべてを歪める。</p></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>発生交通量モデル</h2>
+  <div class="body"><p>発生交通量は、<strong>カテゴリー分析</strong>（各規模・所得階級の世帯または個人あたりの平均トリップ率）または<strong>回帰</strong>（世帯特性に対してトリップを当てはめる）のいずれかで推定される。典型的なモデルは、日トリップを世帯人数と自動車保有に回帰し、定数と各説明変数あたりの率を与える。</p>
+<p>係数は事実ではなく、1つの調査に当てはめられたものであり、そのバイアスを引き継ぐ。小規模で代表性のないサンプルは、精密に見えて体系的に誤った率を生む。使用前に、大規模な都市全体の交通調査と当てはめ率を比較し、単位（1世帯1日あたりのトリップ数）をすべての係数に付記しておくこと。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">線形発生交通量モデル</span>
+      <div class="formula-expr formula-math">\[T = a + b_1 X_1 + b_2 X_2 + \dots\]</div>
+      <span class="formula-note">Tは1世帯または1人あたりのトリップ数、Xは説明変数、係数は最小二乗法で当てはめ</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">カテゴリートリップ率</span>
+      <div class="formula-expr formula-math">\[r = \frac{T}{H}\]</div>
+      <span class="formula-note">Tはカテゴリーサンプルのトリップ数、Hは世帯または人数；T_i = r × H_iとして適用</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>精密な当てはめは正確な当てはめではない</b>
+  小規模で均質なサンプルは回帰直線に美しく当てはまる一方で、母集団を誤って表す。予測に使用する前に、必ず大規模な交通調査とトリップ率を検証すること。
+</div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>分布と交通手段選択</h2>
+  <div class="body"><p>分布交通量は、発生したトリップがどこへ向かうかを決める。<strong>重力モデル</strong>は、目的地の魅力度に比例し、到達コストに反比例してトリップを配分し、抑止関数は観測された旅行に対してキャリブレーションされる。</p>
+<p>次に交通手段選択は、<strong>一般化費用</strong>（時間、運賃、待ち時間、快適性、信頼性を統合）を用いて各流動を自動車、公共交通、徒歩に分割する。ロジットモデルは各選択肢の効用を確率に変換するため、小さな費用変化はオール・オア・ナッシングの切り替えではなく段階的なシフトを生む。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">重力モデル</span>
+      <div class="formula-expr formula-math">\[T_{ij} = \frac{P_i A_j f(c_{ij})}{\sum_k A_k f(c_{ik})}\]</div>
+      <span class="formula-note">T_ijはiからjへのトリップ、P_iは発生量、A_jは魅力度、fはコストcの抑止関数</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">ロジット分担率</span>
+      <div class="formula-expr formula-math">\[P_m = \frac{e^{U_m}}{\sum_k e^{U_k}}\]</div>
+      <span class="formula-note">Uは交通手段の効用であり、多くの場合、負の一般化費用</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>配分とネットワーク均衡</h2>
+  <div class="body"><p>配分は、行列をノード、リンク、ゾーン、セントロイドコネクタからなるネットワークに載せる。旅行時間は流動とともに増加するため、<strong>BPR</strong>曲線などの交通量–遅延関数が各リンクに適用される。</p>
+<p>全か無か配分は混雑を無視し、最短経路を過負荷にする。均衡配分は、経路を切り替えても改善できない運転者がいなくなるまで流動を分散させる。これはWardropの利用者均衡である。SATURNやEMMEなどのソフトウェアはその状態に向けて反復計算し、結果は観測交通量と照合して検証しなければならない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">BPR交通量–遅延関数</span>
+      <div class="formula-expr formula-math">\[t = t_0 \left[1 + \alpha \left(\frac{v}{c}\right)^\beta\right]\]</div>
+      <span class="formula-note">t₀は自由流旅行時間、vは流動、cは容量；α ≈ 0.15、β ≈ 4が一般的な既定値</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>配分ネットワークの構築</h2>
+  <div class="body"><p>配分ソフトウェアは数学よりも先にコード化されたネットワークを必要とする。ゾーンは<strong>セントロイドコネクタ</strong>によってノードに接続され、ノードは自由流速度、容量、長さを持つリンクとして結合され、トリップ行列がゾーンに付加される。</p>
+<p>各要素はコーディング誤差が潜む場所である。逆転した一方通行、欠落したコネクタ、容量ゼロは、静かに答えを破壊する。ワークフローが規律である。ネットワークを構築し、コンパイルし、行列を読み込み、配分を実行し、結果を観測交通量とGEH統計量に対して照合してから信じること。代替案も同じ方法で検証する。代替案をコード化し、配分し、直感ではなく基準ケースと比較する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">配分ワークフロー</span>
+      <div class="formula-expr formula-text">code network → compile → load matrix → assign → validate against counts</div>
+      <span class="formula-note">すべての段階で確認が必要；結果はその背後にあるコーディングの質を超えられない</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>駐車調査と回転率</h2>
+  <div class="body"><p>駐車調査は<strong>累積台数</strong>（ある時点で駐車している車両数）と<strong>駐車時間</strong>（各駐車の長さ）を測定する。累積台数は車両の到着と出発に伴って変化し、ピーク累積台数が駐車供給量を決める。駐車時間は短時間滞在の買い物客と長時間滞在の通勤者を分け、両グループには異なる政策が必要である。</p>
+<p><strong>回転率</strong>は、ある期間に1つの駐車スペースが扱う異なる車両の数である。回転率の高い短時間スペースは多くの利用者にサービスを提供し、回転率の低いスペースは1人の通勤者に一日中サービスを提供する。取締り、料金設定、時間制限はすべてこの2つのギャップを対象とする。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">駐車累積台数</span>
+      <div class="formula-expr formula-math">\[A_t = A_{t-1} + \mathrm{arrivals}_t - \mathrm{departures}_t\]</div>
+      <span class="formula-note">調査期間を通じて追跡し、ピークを見つける</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">駐車回転率</span>
+      <div class="formula-expr formula-math">\[U = \frac{V}{S}\]</div>
+      <span class="formula-note">Vは期間中の駐車車両数、Sはスペース数；例：100スペースに400台なら回転率は4</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>土地利用、検証、判断</h2>
+  <div class="body"><p>交通と土地利用は互いを形作る。高速なリンクはアクセシビリティを高め、それが開発を誘引し、それが交通を発生させる。これが<strong>誘発需要</strong>である。このフィードバックを無視するモデルは、需要を固定と仮定することで道路計画を過大評価する。</p>
+<p>検証はモデル化された流動を観測交通量と比較し、しばしば<strong>GEH</strong>統計量を用いる。これはスケールに鈍感で適用が容易である。計画者は不確実性を報告し、シナリオを検証し、誤った場合のコストを誰が負うかを問う。なぜなら計画は未来についての議論であり、未来の測定ではないからである。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">GEH統計量</span>
+      <div class="formula-expr formula-math">\[\mathrm{GEH} = \sqrt{\frac{2 (M - C)^2}{M + C}}\]</div>
+      <span class="formula-note">Mはモデル流動、Cは観測流動；5未満は良好、10超は問題の兆候</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>分類別交通量調査</dt><dd>車種、方向、時間帯別に交通量を記録する交通調査。</dd></div><div class="term"><dt>O–D行列</dt><dd>起点ゾーンと終点ゾーン間のトリップを表す表。</dd></div><div class="term"><dt>拡大係数</dt><dd>サンプル調査を母集団または代表的な一日に拡大する乗数。</dd></div><div class="term"><dt>BPR関数</dt><dd>流動容量比の関数としてリンク旅行時間を与える交通量–遅延関係。</dd></div><div class="term"><dt>重力モデル</dt><dd>流動が起点の発生量と終点の魅力度に比例し、旅行コストに反比例する分布交通量モデル。</dd></div><div class="term"><dt>GEH統計量</dt><dd>モデル流動と観測流動の差のスケールフリーな指標で、5が一般的な許容閾値。</dd></div><div class="term"><dt>トリップ率</dt><dd>1世帯、1人、または1台あたりの平均トリップ数で、カテゴリー分析でゾーン合計を拡大するのに用いる。</dd></div><div class="term"><dt>駐車回転率</dt><dd>ある期間に1つの駐車スペースが扱う車両数であり、駐車台数をスペース数で割った比率。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>モデル化されたリンクを観測値と照合する</h2>
+        <p class="problem">あるリンクの自由流旅行時間は5.0分、容量は5,000台/時である。モデルはα = 0.15、β = 4を用いて4,500台/時を配分した。観測交通量は3,800台/時である。モデル旅行時間とGEH統計量を求め、このリンクに対するモデルを評価せよ。</p>
+        <ol><li>v/c = 4,500 / 5,000 = 0.9を計算し、(v/c)^4 = 0.6561となる。</li><li>BPRを適用：t = 5.0 × (1 + 0.15 × 0.6561) = 5.0 × 1.0984 = 5.49分。</li><li>GEH = √[2 × (4,500 − 3,800)² / (4,500 + 3,800)] = √(980,000 / 8,300) = √118.1 = 10.9。</li><li>通常の基準と比較する：5未満は許容、5〜10は調査が必要、10超は当てはまりが悪いことを示す。</li><li>予測を使用する前に、リンク周辺のゾーン負荷、セントロイドコネクタ、ネットワークコーディングを調査する。</li></ol>
+        <div class="answer"><b>Answer</b>モデル旅行時間は5.49分、GEH = 10.9であり、このリンクは通常の検証基準を満たさない。モデルはここで流動を過大配分しており、計画評価の前に原因を特定すべきである。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>手法の前に調査目的を述べること。O–Dの問いは、どれほど正確な分類別交通量調査でも答えられない。</li><li>拡大とサンプリングの問題では、式を書き、代入し、カバレッジバイアスに言及すること。ランダム誤差だけが問題のすべてであることは稀である。</li><li>ネットワークの問題では、均衡を論じる前にv/cと交通量–遅延関数を確認すること。均衡結果はリンク曲線に依存する。</li><li>発生交通量の各係数の単位（1世帯1日あたりのトリップ数）を明記すること。日、週、年の率を切り替えると点数を失う。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>トリップの起点と終点を直接測定する調査はどれか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>駐車累積台数調査</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>交差点での分類別交通量調査</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>ナンバープレート照合または路側インタビュー調査</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>地点速度調査</span></button></div>
+    <div class="quiz-explain"><b>Why</b>個々のトリップを追跡または尋ねる手法のみが起終点パターンを与える。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>BPR関数において、旅行時間が流動とともに増加するのはなぜか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>容量が固定でv/c比が増加するから</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>自由流速度が交通量とともに増加するから</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>負荷時にリンクが短くなるから</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>指数βが負だから</span></button></div>
+    <div class="quiz-explain"><b>Why</b>(v/c)^βの項は流動が容量に近づくにつれて増大し、自由流旅行時間を超える遅延を生む。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>モデル流動と観測流動の間のGEH値12は通常何を意味するか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>観測とモデルが通常の誤差範囲内で一致する</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>リンクの当てはまりが悪く調査が必要である</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>GEHがゼロになるまで調査を繰り返すべきである</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>モデルが異常に正確である</span></button></div>
+    <div class="quiz-explain"><b>Why</b>10を超える値は通常、当てはまりが悪いとされ、モデルとデータの確認を促す。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q04</span><span>サンプルサイズを4倍にすると、標準サンプリング誤差は約何分の1になるか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>2</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>4</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>8</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>16</span></button></div>
+    <div class="quiz-explain"><b>Why</b>誤差は1/√nに比例するため、サンプルを4倍にすると誤差は半分になる。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q05</span><span>回帰発生交通量モデルがT = 1.2 + 2.4 H（Hは世帯人数）を与える。平均3.1人の300世帯のゾーンが発生するのは約何トリップか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>864トリップ</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>8 640トリップ</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1 110トリップ</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2 590トリップ</span></button></div>
+    <div class="quiz-explain"><b>Why</b>1世帯あたり：1.2 + 2.4 × 3.1 = 8.64トリップ、300世帯では合計約2 590トリップ。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q06</span><span>80スペースの駐車場が07:00から19:00の間に240台の車両を扱う。その回転率は？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.33</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>3</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>8</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>19 200</span></button></div>
+    <div class="quiz-explain"><b>Why</b>回転率は駐車台数をスペース数で割ったもの：240 / 80 = 期間中1スペースあたり3台。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="transport-operations-management.ja.html"><span>Professional</span><b>交通運用とマネジメント</b></a><a class="related-card" href="design-of-transport-infrastructure.ja.html"><span>Core</span><b>交通インフラ設計</b></a><a class="related-card" href="transportation-highway-engineering.ja.html"><span>Core</span><b>交通・道路工学</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="ai-iot.ja.html"><small>Previous</small><b>AIoT</b></a><a class="next" href="infrastructure-management.ja.html"><small>Next</small><b>インフラマネジメント</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">計測は流動を与え、インタビューは起点を与える。</p><p class="margin-note">拡大は誤差も倍にする。</p><p class="margin-note">均衡を信じる前にv/cを確認せよ。</p><p class="margin-note">GEHが5未満なら安心領域。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

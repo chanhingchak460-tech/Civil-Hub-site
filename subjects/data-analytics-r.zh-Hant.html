@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R 數據分析 — Civil Hub</title>
+<meta name="description" content="R 能將一份測量數據的試算表，轉化為站得住腳的論證：整理數據、描述數據、繪圖、擬合模型，然後預測。這門技能大部分在於這些步驟的次序，以及在於別人能夠重新執行的腳本。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/data-analytics-r.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="R 數據分析 — Civil Hub">
+<meta property="og:description" content="R 能將一份測量數據的試算表，轉化為站得住腳的論證：整理數據、描述數據、繪圖、擬合模型，然後預測。這門技能大部分在於這些步驟的次序，以及在於別人能夠重新執行的腳本。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/data-analytics-r.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="data-analytics-r.html" data-alt-zh-hant="data-analytics-r.zh-Hant.html" data-alt-ja="data-analytics-r.ja.html" data-alt-ko="data-analytics-r.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">R 數據分析</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">計算</p>
+          <h1>R 數據分析</h1>
+          <p class="subject-sub">清理、繪圖及模擬真實數據</p>
+          <ul class="subject-facts"><li><b>類型</b>計算</li><li><b>閱讀</b>9 分鐘</li><li><b>章節</b>10</li><li><b>公式</b>14</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="76" cy="136" r="2.6" stroke="currentColor" stroke-width="1.1"/><circle cx="104" cy="118" r="2.6" stroke="currentColor" stroke-width="1.1"/><circle cx="124" cy="128" r="2.6" stroke="currentColor" stroke-width="1.1"/><circle cx="150" cy="96" r="2.6" stroke="currentColor" stroke-width="1.1"/><circle cx="172" cy="104" r="2.6" stroke="currentColor" stroke-width="1.1"/><circle cx="196" cy="78" r="2.6" stroke="currentColor" stroke-width="1.1"/><circle cx="224" cy="62" r="2.6" stroke="currentColor" stroke-width="1.1"/><circle cx="256" cy="54" r="2.6" stroke="currentColor" stroke-width="1.1"/><path d="M64 146 L268 46" stroke="var(--accent)" stroke-width="1.3"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">TREND</text></svg>
+          <figcaption>Data and a fitted trend</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">由數據框開始</a></li><li><a href="#sec-2">用動詞整理，而非用迴圈</a></li><li><a href="#sec-3">追查缺失值與離群值</a></li><li><a href="#sec-4">圖表是關於數據的論證</a></li><li><a href="#sec-5">迴歸：一條擬合直線，而非定律</a></li><li><a href="#sec-6">時間序列、季節性與 ARIMA</a></li><li><a href="#sec-7">別人能夠執行的腳本</a></li><li><a href="#sec-8">R 中的假設檢定</a></li><li><a href="#sec-9">合併與重塑表格</a></li><li><a href="#sec-10">用 glm() 的廣義線性模型</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">R 能將一份測量數據的試算表，轉化為站得住腳的論證：整理數據、描述數據、繪圖、擬合模型，然後預測。這門技能大部分在於這些步驟的次序，以及在於別人能夠重新執行的腳本。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="data-analytics-r" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>由數據框開始</h2>
+  <div class="body"><p><strong>數據框</strong>（data frame）是工作的單位：每一行是一個觀測，每一列是一個變數。R 將每一列保留為向量，所以測量值保持數值型，而類別則應為因子（factor）。</p>
+<p><code>read.csv()</code> 只負責讀取檔案；之後用 <code>str()</code> 和 <code>head()</code> 檢查其形狀。<strong>整潔數據</strong>（tidy data）是指每個個案一行、每個變數一列、每個儲存格一個值。日後大部分的麻煩——數字被匯入成文字、日期被儲存成字元——都在這裏看得見，及早修正比事後修補模型便宜得多。</p>
+<p>先描述，後建模。<code>summary()</code> 給出範圍、四分位數和缺失值數目；<code>mean()</code>、<code>median()</code>、<code>sd()</code> 和 <code>IQR()</code> 給出你將會引用的數字。平均值遠離中位數，暗示有偏態或離群觀測。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Read, inspect, describe</span>
+      <pre class="formula-code"><code>pm &lt;- read.csv(&#x27;data/pm.csv&#x27;)
+str(pm); dim(pm); head(pm)
+summary(pm$value); sd(pm$value, na.rm = TRUE)</code></pre>
+      <span class="formula-note">relative paths keep the script portable</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>用動詞整理，而非用迴圈</h2>
+  <div class="body"><p>數據整理是一連串細小的<strong>動詞</strong>，每個只做一件事：<br />
+- <code>filter()</code> 保留行<br />
+- <code>select()</code> 保留列<br />
+- <code>mutate()</code> 新增一列<br />
+- <code>arrange()</code> 排序<br />
+- <code>group_by()</code> 配合 <code>summarise()</code> 為每組給出一行摘要</p>
+<p>管道 <code>|&amp;gt;</code> 將每一步的結果傳入下一步，所以程式碼按推理次序閱讀。如果某一步難以命名，它就是在做兩件事，應該拆分。<code>group_by()</code> 配合 <code>summarise()</code> 亦取代了大部分手寫的類別迴圈。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">一個小型的分組管道</span>
+      <pre class="formula-code"><code>daily &lt;- pm |&gt;
+  filter(!is.na(value)) |&gt;
+  mutate(month = format(date, &#x27;%m&#x27;)) |&gt;
+  group_by(month) |&gt;
+  summarise(mean_pm = mean(value), n = n())</code></pre>
+      <span class="formula-note">每月一行，平均值旁邊附有計數</span>
+    </div></div><div class="table-wrap"><table><caption>常見數據任務及執行它們的工具</caption><thead><tr><th scope='col'>任務</th><th scope='col'>工具</th><th scope='col'>注意事項</th></tr></thead><tbody><tr><td>讀取表格</td><td>read.csv()</td><td>先檢查 str()</td></tr><tr><td>保留行</td><td>filter()</td><td>以某一列為條件</td></tr><tr><td>新增一列</td><td>mutate()</td><td>長度必須相符</td></tr><tr><td>按組摘要</td><td>summarise()</td><td>在 group_by() 之後</td></tr><tr><td>擬合直線</td><td>lm()</td><td>檢查殘差</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>追查缺失值與離群值</h2>
+  <div class="body"><p>缺失值並非中性：它們會縮小樣本，而且如果集中在某個時段或某個地點，就會令平均值出現偏差。用 <code>mean(is.na(x))</code> 計算它們，然後決定是捨棄、插補還是建模處理——並把決定記錄下來。</p>
+<p><strong>離群值</strong>同樣需要決定。一個讀數是其他讀數的二十倍，可能是真實事件，也可能是輸入錯誤，兩者應有不同的處理。箱形圖顯示形狀；對數尺度有時能馴服長尾。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">缺失值的比例</span>
+      <div class="formula-expr formula-text">mean(is.na(x))</div>
+      <span class="formula-note">由 0 到 1 的比例，而非計數</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>圖表是關於數據的論證</h2>
+  <div class="body"><p><strong>圖形語法</strong>（grammar of graphics）將圖表拆分為數據、美學映射和幾何物件。在 <code>ggplot()</code> 中，<code>aes()</code> 說明哪個變數控制 x、y、顏色或形狀，而 geom 說明繪畫什麼。改變幾何物件就改變了論斷。</p>
+<p>顏色應該編碼一個變數，而非作裝飾。<code>facet_wrap()</code> 製作小多圖，通常比五條疊加的線更清晰。為兩軸加上標籤，並在標題寫出重點；<code>ggsave()</code> 令圖表可重現。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">以映射顏色繪製的點</span>
+      <div class="formula-expr formula-text">ggplot(pm, aes(x = date, y = value, colour = site)) +
+  geom_point() +
+  labs(x = &#x27;Date&#x27;, y = &#x27;PM2.5 (µg/m³)&#x27;)</div>
+      <span class="formula-note">顏色編碼地點</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>迴歸：一條擬合直線，而非定律</h2>
+  <div class="body"><p><code>lm(y ~ x, data = pm)</code> 擬合最小平方直線。斜率是 x 每改變一個單位時 y 的預期變化，所以其單位很重要，而其正負號必須在物理上合理。R² 是模型所解釋的 y 變異比例，而非模型正確的概率。</p>
+<p>務必檢查<strong>殘差</strong>：曲線表示關係並非線性，扇形表示變異數改變，而少數極端點可能主導擬合。相關不等於因果，而超出觀測範圍的外推並非證據。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">簡單線性模型</span>
+      <div class="formula-expr formula-math">\[y = \beta_0 + \beta_1 x + \varepsilon\]</div>
+      <span class="formula-note">ε 收集直線未能解釋的部分</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">決定係數</span>
+      <div class="formula-expr formula-math">\[R^2 = 1 - \frac{\mathrm{SSE}}{\mathrm{SST}}\]</div>
+      <span class="formula-note">所解釋的變異比例</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>時間序列、季節性與 ARIMA</h2>
+  <div class="body"><p>時間序列是有序的，所以相鄰數值彼此相關，而普通迴歸的假設會失效。用 <code>ts(x, frequency = 12)</code> 轉換月度數據，然後繪圖：趨勢、重複的<strong>季節性</strong>和雜訊應該可見。<code>decompose()</code> 將序列拆分成這些部分。</p>
+<p>當序列的平均值、變異數和自相關不隨時間漂移時，它就是<strong>平穩</strong>（stationary）的。差分可移除趨勢；自相關和偏自相關圖隨後提示 ARIMA(p, d, q) 的階數：p 個自迴歸項、d 次差分、q 個移動平均項。<code>auto.arima()</code> 進行搜尋，而 <code>forecast()</code> 報告數值及逐漸擴闊的預測區間——沒有該區間的預測只是半個答案。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">加法分解</span>
+      <div class="formula-expr formula-math">\[y_t = T_t + S_t + E_t\]</div>
+      <span class="formula-note">趨勢、季節和餘項</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">一階差分</span>
+      <div class="formula-expr formula-math">\[\Delta y_t = y_t - y_{t-1}\]</div>
+      <span class="formula-note">移除線性趨勢</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">ARIMA 模型</span>
+      <div class="formula-expr formula-math">\[\varphi(B)(1 - B)^d y_t = \theta(B)\,\varepsilon_t\]</div>
+      <span class="formula-note">B 是後移運算子</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>別人能夠執行的腳本</h2>
+  <div class="body"><p>結果的好壞取決於背後的腳本。在任何模擬之前用 <code>set.seed()</code> 設定種子，透過相對路徑讀取數據，並且絕不手動編輯原始檔案——將清理工作保留為程式碼。將輸出儲存在與輸入不同的資料夾。</p>
+<p>註解說明「為何」，將冗長的工作拆分成函數，並記錄套件版本。一份簡短的 readme 說明如何執行腳本，是分析的一部分：<strong>可重現</strong>的腳本令數字可被核實。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">固定隨機種子</span>
+      <pre class="formula-code"><code>set.seed(1234)</code></pre>
+      <span class="formula-note">相同種子，相同模擬樣本</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>R 中的假設檢定</h2>
+  <div class="body"><p>R 將經典檢定包裝成一行指令，而紀律與紙上一樣：在執行任何東西之前先陳述虛無假設。<code>t.test(x, mu = 40)</code> 檢定單一樣本是否等於某個值，<code>t.test(x, y)</code> 比較兩組，而 <code>paired = TRUE</code> 則轉為檢定差值。<code>chisq.test(table)</code> 處理計數，而 <code>aov()</code> 擬合變異數分析。</p>
+<p>整體閱讀輸出：p 值回答顯著性，置信區間顯示效應的大小，而自由度說明背後有多少證據。一個極小的 p 值配以極微小的區間，可能在統計上顯著，但在實際上無關重要。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">單樣本和雙樣本 t 檢定</span>
+      <div class="formula-expr formula-text">t.test(x, mu = 40)
+t.test(x, y, alternative = &#x27;two.sided&#x27;, paired = FALSE)</div>
+      <span class="formula-note">明確陳述 alternative 和 paired；預設值可能悄悄改變檢定</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>合併與重塑表格</h2>
+  <div class="body"><p>真實的分析很少以單一 tidy 檔案的形式出現。<strong>合併</strong>（joins）以共用的鍵組合表格：<code>left_join(a, b, by = 'site')</code> 保留 a 的每一行，並從 b 帶入相符的列，而 <code>inner_join()</code> 只保留兩者皆有的行，<code>anti_join()</code> 找出沒有相符的行——這是找出缺失地點的工具。</p>
+<p><strong>重塑</strong>（reshaping）在寬和長佈局之間移動相同的值。<code>pivot_longer()</code> 將多個列收集成鍵值行，而 <code>pivot_wider()</code> 將它們展開回去。長格式正是 <code>ggplot()</code> 和分組摘要所需的。每次合併前後都要檢查行數，因為重複的鍵會悄悄令行數倍增。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">合併與樞紐轉換</span>
+      <pre class="formula-code"><code>readings &lt;- left_join(sites, readings, by = &#x27;site&#x27;)
+long &lt;- readings |&gt;
+  pivot_longer(cols = starts_with(&#x27;month&#x27;), names_to = &#x27;month&#x27;, values_to = &#x27;value&#x27;)</code></pre>
+      <span class="formula-note">樞紐轉換後每個地點-月份一行</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>用 glm() 的廣義線性模型</h2>
+  <div class="body"><p>二元結果——合格或不合格、有缺陷或完好——無法由普通最小平方妥善擬合，因為直線會預測出 0 和 1 以外的概率。<code>glm(y ~ x, family = binomial)</code> 擬合<strong>邏輯迴歸</strong>，它將線性分數通過 sigmoid 函數，令預測值保持在 0 與 1 之間。</p>
+<p><code>predict(model, newdata, type = 'response')</code> 返回概率；沒有 <code>type = 'response'</code> 則返回對數勝算（log-odds），容易誤讀。用你選定的閾值將概率轉為類別，並報告少數類別的準確率和召回率，而非整體準確率。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">邏輯連結</span>
+      <div class="formula-expr formula-math">\[p = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x)}}\]</div>
+      <span class="formula-note">sigmoid 將線性分數映射到 (0, 1)</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">擬合與預測</span>
+      <pre class="formula-code"><code>fit &lt;- glm(pass ~ strength, data = cubes, family = binomial)
+pred &lt;- predict(fit, newdata = new_cubes, type = &#x27;response&#x27;)</code></pre>
+      <span class="formula-note">type = &#x27;response&#x27; 給出概率，而非對數勝算</span>
+    </div></div>
+<div class="callout callout--tip">
+  <b>明確要求概率</b>
+  對二項式 glm 使用 predict() 時，除非你設定 type = &#x27;response&#x27;，否則會返回對數勝算；忘記這個參數會將 0.80 變成 −1.39。
+</div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>數據框</dt><dd>一個表格，其中每一列是一個變數，每一行是一個觀測，是 R 中的基本工作物件。</dd></div><div class="term"><dt>整潔數據</dt><dd>每個個案一行、每個變數一列、每個儲存格一個值的佈局。</dd></div><div class="term"><dt>管道</dt><dd>將一步的結果作為下一步的第一個參數傳遞的運算子，令程式碼按執行次序閱讀。</dd></div><div class="term"><dt>殘差</dt><dd>觀測值與擬合模型預測值之間的差。</dd></div><div class="term"><dt>平穩性</dt><dd>時間序列的一種性質，其平均值、變異數和自相關不隨時間改變。</dd></div><div class="term"><dt>決定係數</dt><dd>R²，即擬合模型所解釋的反應變數總變異比例。</dd></div><div class="term"><dt>廣義線性模型</dt><dd>用 glm() 擬合的模型，將線性分數連結到非正態結果，例如用於二元反應的邏輯迴歸。</dd></div><div class="term"><dt>左合併</dt><dd>一種表格合併，保留第一張表的每一行，並加入第二張表中相符的列。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>讀取並詮釋每日讀數的摘要</h2>
+        <p class="problem">一個檔案載有來自一個監測儀的十個每日 PM2.5 讀數（µg/m³）：18.0、21.5、19.2、24.8、60.1、22.3、20.6、23.4、19.9、21.0。在 R 中讀取這些值，並計算平均值、中位數、標準差和四分位距。說明這些數字對這個監測儀的典型一天有何含意。</p>
+        <ol><li>將檔案讀入數據框並取出該列：d &lt;- read.csv(&#x27;pm.csv&#x27;); x &lt;- d$value。用 length(x) 確認 n = 10。</li><li>平均值：sum(x)/length(x) = 250.8/10 = 25.1 µg/m³。</li><li>中位數：中間兩個值是 21.0 和 21.5，所以中位數是 21.25 ≈ 21.3 µg/m³。</li><li>標準差：偏差平方和約為 1398，所以樣本變異數是 1398/9 ≈ 155.3，而 sd ≈ 12.5 µg/m³。</li><li>四分位數：Q1 = 20.1，Q3 = 23.1，所以 IQR = 3.0 µg/m³。</li><li>比較平均值 25.1 與中位數 21.3。移除單一讀數 60.1 後，平均值為 21.2，幾乎正好等於中位數。</li></ol>
+        <div class="answer"><b>Answer</b>平均值 25.1 µg/m³，中位數 21.3 µg/m³，標準差 12.5 µg/m³，IQR 3.0 µg/m³。十天的其中九天都接近 21 µg/m³，所以平均值被一個尖峰拉高，而中位數更能描述典型的一天；標準差亦被同一點所誇大。報告中心值時務必同時報告離散程度。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>說明每個摘要統計量假設了什麼：平均值對極端值敏感，中位數則否。</li><li>當被要求詮釋迴歸斜率時，給出它的單位，並檢查其正負號在物理上是否合理。</li><li>對於時間序列問題，指出趨勢、季節週期，以及序列在引用 ARIMA 階數前是否需要差分。</li><li>在任何報告中提及可重現性（種子、相對路徑、已儲存的腳本）；這是能得分的句子，而非填充。</li><li>在 t.test() 中明確設定 alternative = 和 paired = ——預設值會悄悄改變檢定的意義。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q01</span><span>在 base R 中，哪個函數擬合線性迴歸模型？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>read.csv()</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>lm()</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>glm()</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>plot()</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>lm() 以最小平方擬合線性模型；glm() 擬合廣義線性模型，其餘的則做完全不同的工作。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>在如 pm |&gt; filter(value &gt; 0) 的管道中，filter 接收：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>只有列名</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>pm 數據框作為其第一個參數</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>全域環境</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>磁碟上檔案的副本</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>管道將左邊的物件放入右邊函數的第一個參數，在此即為數據框。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>一個時間序列有明顯的上升趨勢。哪一步最直接令它更接近平穩？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>在圖表加上標題</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>計算平均值</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>在迴歸中擬合更多項</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>取一階差分</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>差分移除趨勢，令差分後序列的平均值不再漂移，這就是 ARIMA 中的 d 項。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q04</span><span>group_by(month) 之後接 summarise(mean_pm = mean(value)) 會返回：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>每個月一行</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>整個數據框一行</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>每個月一列</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>每個原始觀測一行</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>每一組被壓縮成一行摘要，所以結果的行數等於不同月份的數目。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>哪一行指令檢定 x 的平均值是否等於 40？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>t.test(mu = x, 40)</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>t.test(x, mu = 40)</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>t.test(x, y = 40)</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>t.test(x ~ 40)</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>t.test(x, mu = 40) 對假設平均值 40 執行單樣本 t 檢定；其他形式誤用參數。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>一個寬表格每個月有一列。將它轉為每個月一行、並有月份名稱和讀數兩列的函數是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>spread()</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>left_join()</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>pivot_wider()</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>pivot_longer()</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>pivot_longer() 將多個列收集成鍵值行，產生長而整潔的佈局。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-statistics.zh-Hant.html"><span>Core</span><b>工程統計學</b></a><a class="related-card" href="ai-data-analysis.zh-Hant.html"><span>Computing</span><b>人工智能與數據分析</b></a><a class="related-card" href="programming-fundamentals.zh-Hant.html"><span>Computing</span><b>程式設計基礎</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="engineering-statistics.zh-Hant.html"><small>上一頁</small><b>工程統計學</b></a><a class="next" href="fluid-mechanics.zh-Hant.html"><small>下一頁</small><b>流體力學</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">每個個案一行，每個變數一列。</p><p class="margin-note">先描述，後建模。</p><p class="margin-note">沒有離散程度的平均值只是半個摘要。</p><p class="margin-note">模擬之前先 set.seed()。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

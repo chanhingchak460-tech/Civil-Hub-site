@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>流體力學 — Civil Hub</title>
+<meta name="description" content="靜止與運動中的流體如何對結構施加力，以及水如何流經管道、渠道和機械。靜水壓力、浮力、伯努利方程、動量、摩擦損失和邊界層構成水務工程中相互關聯的工具集。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/fluid-mechanics.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="流體力學 — Civil Hub">
+<meta property="og:description" content="靜止與運動中的流體如何對結構施加力，以及水如何流經管道、渠道和機械。靜水壓力、浮力、伯努利方程、動量、摩擦損失和邊界層構成水務工程中相互關聯的工具集。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/fluid-mechanics.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="fluid-mechanics.html" data-alt-zh-hant="fluid-mechanics.zh-Hant.html" data-alt-ja="fluid-mechanics.ja.html" data-alt-ko="fluid-mechanics.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">流體力學</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">核心</p>
+          <h1>流體力學</h1>
+          <p class="subject-sub">壓力、流動與水中物體所受的力</p>
+          <ul class="subject-facts"><li><b>類型</b>核心</li><li><b>閱讀</b>12 分鐘</li><li><b>章節</b>11</li><li><b>公式</b>18</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M40 84 H300 M40 132 H300" stroke="currentColor" stroke-width="1.5"/><path d="M40 84 V132 M300 84 V132" stroke="currentColor" stroke-width="1.5"/><path d="M56 96 q40 -10 80 0 t80 0 t60 0" stroke="var(--accent)" stroke-width="1" opacity="0.85"/><path d="M56 106 q40 -10 80 0 t80 0 t60 0" stroke="var(--accent)" stroke-width="1" opacity="0.6699999999999999"/><path d="M56 118 q40 -10 80 0 t80 0 t60 0" stroke="var(--accent)" stroke-width="1" opacity="0.49"/><path d="M64 70 v10 M64 74 l-4 4 M64 74 l4 4" stroke="var(--faint)" stroke-width="1"/><text x="40" y="58" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">P₁</text><text x="310" y="58" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="end" letter-spacing="0.18em">P₂</text><text x="170" y="168" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">PIPE FLOW</text></svg>
+          <figcaption>Pipe flow — pressure drop along the section</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">流體的定義</a></li><li><a href="#sec-2">靜止流體中的壓力</a></li><li><a href="#sec-3">潛沒表面上的力</a></li><li><a href="#sec-4">浮力與浮動穩定性</a></li><li><a href="#sec-5">連續性與能量方程</a></li><li><a href="#sec-6">動量與物體上的力</a></li><li><a href="#sec-7">管道流動、摩擦與局部損失</a></li><li><a href="#sec-8">邊界層、分離與阻力</a></li><li><a href="#sec-9">堰：由上游水位推算流量</a></li><li><a href="#sec-10">文丘里流量計作為工作儀表</a></li><li><a href="#sec-11">浮動穩定性的數值計算</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      <li><a href="#design-reference">設計參考</a></li>
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">靜止與運動中的流體如何對結構施加力，以及水如何流經管道、渠道和機械。靜水壓力、浮力、伯努利方程、動量、摩擦損失和邊界層構成水務工程中相互關聯的工具集。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="fluid-mechanics" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>流體的定義</h2>
+  <div class="body"><p>流體在剪切力作用下會持續變形，無論剪切力多小。兩個主要性質：密度 ρ（單位體積質量）和<strong>動力黏度</strong> μ（抗剪切阻力）。對於牛頓流體，剪應力與速度梯度成正比，μ 為常數。</p>
+<p>室溫附近的水 ρ ≈ 998 kg/m³，μ ≈ 1.0 × 10⁻³ Pa·s；空氣約為 1.2 kg/m³ 和 1.8 × 10⁻⁵ Pa·s。<strong>運動黏度</strong> ν = μ/ρ 便於使用，因為它直接出現在雷諾數中。</p>
+<p>真實流體會黏附在固體表面——無滑移條件——因此壁面處速度為零。這一事實產生了邊界層和工程中的大部分摩擦。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">牛頓剪應力</span>
+      <div class="formula-expr formula-math">\[\tau = \mu \frac{\mathrm{d}u}{\mathrm{d}y}\]</div>
+      <span class="formula-note">速度梯度 du/dy</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">運動黏度</span>
+      <div class="formula-expr formula-math">\[\nu = \frac{\mu}{\rho}\]</div>
+      <span class="formula-note">單位 m²/s</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>靜止流體中的壓力</h2>
+  <div class="body"><p>靜止流體中壓力在各方向相等，深度決定其值：自由表面以下 p = p₀ + ρ g h。同一流體在同一深度具有相同壓力，與容器形狀無關。</p>
+<p>測壓管以液柱高度讀取壓差，<strong>壓力水頭</strong> p/(ρg)（以米水柱表示）使算術單位與高程一致。</p>
+<p>液壓千斤頂利用相同原理：小活塞上的適度壓力乘以大得多的面積。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">靜水壓力</span>
+      <div class="formula-expr formula-math">\[p = p_0 + \rho g h\]</div>
+      <span class="formula-note">自由表面以下</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>潛沒表面上的力</h2>
+  <div class="body"><p>平面上的力等於其形心處壓力乘以面積：F = ρ g h̄ A，其中 h̄ 為形心深度。在水平底面上即壓力乘面積；在垂直閘門上壓力隨深度增加，因此合力作用點較低。</p>
+<p>該點為<strong>壓力中心</strong>，y_cp = y_c + I_x/(y_c A)，y 沿平面從自由表面量起。對於深度 d、寬度 b 的矩形閘門，I_x = b d³/12。</p>
+<p>平衡中需考慮乾側。一側有水另一側有空氣的閘門受到淨力，該差值即鉸鏈必須抵抗的力。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">平面上的力</span>
+      <div class="formula-expr formula-math">\[F = \rho g \bar{h} A\]</div>
+      <span class="formula-note">形心深度</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">壓力中心</span>
+      <div class="formula-expr formula-math">\[y_{cp} = y_c + \frac{I_x}{y_c A}\]</div>
+      <span class="formula-note">總是在形心之下</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>浮力與浮動穩定性</h2>
+  <div class="body"><p>阿基米德原理：浮力等於排開流體的重量，F_B = ρ_fluid g V_displaced，作用於排開體積的形心。密度大於流體的物體下沉直至排開重量與其平衡；浮體排開恰好等於自身重量。</p>
+<p>直立浮動是另一個問題。當物體傾斜時，浮心移動，重量和浮力形成力偶。<strong>穩心高度</strong> GM 衡量該恢復效應：正值穩定，負值傾覆。</p>
+<p>寬而淺的船體穩定；窄而高的不穩定。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">浮力</span>
+      <div class="formula-expr formula-math">\[F_B = \rho_{\text{fluid}} g V_{\text{displaced}}\]</div>
+      <span class="formula-note">作用於排開體積形心</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>連續性與能量方程</h2>
+  <div class="body"><p>質量守恆。對於通過變化面積的穩定不可壓縮流動，Q = A₁V₁ = A₂V₂，因此收縮處流速增加，較寬處減慢。</p>
+<p><strong>伯努利方程</strong>關聯穩定無摩擦流動沿流線的壓力、速度和高度：p/(ρg) + V²/(2g) + z = 常數。每項為以米計的水頭——壓力水頭、速度水頭和位置水頭。</p>
+<p>它解釋了文丘里流量計（喉部速度較高、壓力較低）和皮託管，後者將速度水頭轉化為壓差。凡有損失或泵的地方它不適用，而大多數實際管道正是如此。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">連續性</span>
+      <div class="formula-expr formula-math">\[Q = A_1 V_1 = A_2 V_2\]</div>
+      <span class="formula-note">穩定、不可壓縮</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">伯努利方程</span>
+      <div class="formula-expr formula-math">\[\frac{p}{\rho g} + \frac{V^2}{2g} + z = \text{constant}\]</div>
+      <span class="formula-note">沿流線，無損失</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>動量與物體上的力</h2>
+  <div class="body"><p>伯努利給出壓力；<strong>動量</strong>給出力。對於穩定流，流體上的淨力等於其動量變化率，ΣF = ρQ(V_out − V_in)，按向量處理。相同的力反向作用於使流動轉向的物體——彎頭、漸縮管或葉片。</p>
+<p>射流衝擊平板是標準情況：平板垂直阻擋射流感受到 F = ρQV，而半球形杯使其轉向 180° 感受到約兩倍，這就是佩爾頓輪使用分水鬥的原因。實測力較小，因為射流擴散且流動從不完全穩定。</p>
+<p>對於管道彎頭，同樣的平衡給出錨固力，通常由壓力項主導。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">動量平衡</span>
+      <div class="formula-expr formula-math">\[\sum F = \rho Q (V_{\text{out}} - V_{\text{in}})\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">射流對葉片的作用力</span>
+      <div class="formula-expr formula-math">\[F = \rho Q V (1 - \cos \theta)\]</div>
+      <span class="formula-note">90° 平板，180° 杯</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>管道流動、摩擦與局部損失</h2>
+  <div class="body"><p>實際管道因摩擦損失能量。<strong>雷諾數</strong> Re = ρVD/μ 決定流態：低於約 2000 為層流，高於約 4000 為湍流，之間為過渡區。</p>
+<p>層流 f = 64/Re；湍流 f 取決於 Re 和相對粗糙度，從<strong>莫迪圖</strong>或科爾布魯克方程讀取。<strong>達西-魏斯巴赫</strong>方程將 f 轉化為水頭損失，h_f = f L V²/(2gD)。由於 V 是平方，流量加倍大致使損失變為四倍——這是管道設計中最有用的事實。</p>
+<p>管件、彎頭和閥門增加<strong>局部損失</strong>，h_m = K V²/(2g)。長管道以摩擦為主；緊湊裝置常以管件為主。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">雷諾數</span>
+      <div class="formula-expr formula-math">\[\mathrm{Re} = \frac{\rho V D}{\mu} = \frac{V D}{\nu}\]</div>
+      <span class="formula-note">慣性力與黏性力之比</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">達西-魏斯巴赫水頭損失</span>
+      <div class="formula-expr formula-math">\[h_f = \frac{f L V^2}{2 g D}\]</div>
+      <span class="formula-note">不是範寧因子</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">局部損失</span>
+      <div class="formula-expr formula-math">\[h_m = \frac{K V^2}{2g}\]</div>
+      <span class="formula-note">經驗值，每個管件</span>
+    </div></div><div class="table-wrap"><table><caption>管道流動關係一覽</caption><thead><tr><th scope='col'>量</th><th scope='col'>關係</th><th scope='col'>用途</th></tr></thead><tbody><tr><td>層流摩擦因子</td><td>f = 64/Re</td><td>Re 低於約 2000</td></tr><tr><td>摩擦水頭損失</td><td>h_f = f L V²/(2gD)</td><td>長直管道</td></tr><tr><td>局部損失</td><td>h_m = K V²/(2g)</td><td>管件和閥門</td></tr><tr><td>泵水頭</td><td>H = Δ(p/ρg + V²/2g + z) + losses</td><td>能量線</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>邊界層、分離與阻力</h2>
+  <div class="body"><p>在固體邊界處，無滑移條件產生<strong>邊界層</strong>，速度從壁面處的零升至自由流值。它開始時薄且為層流，沿表面增長，超過臨界雷諾數後轉為湍流——更厚，但近壁流體速度更快。</p>
+<p>邊界層無法跟隨尖銳逆壓梯度，因此分離並留下低壓尾流。<strong>阻力</strong>結合表面摩擦和尾流的壓力阻力：C_D = F/(½ρV²A)。</p>
+<p>流線型延緩分離並減少壓力阻力；鈍體則以壓力阻力為主。同樣的概念解釋堰流，其中堰頂形狀控制水舌如何躍離。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">阻力係數</span>
+      <div class="formula-expr formula-math">\[C_D = \frac{F}{\frac{1}{2} \rho V^2 A}\]</div>
+      <span class="formula-note">A 為迎風面積</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>堰：由上游水位推算流量</h2>
+  <div class="body"><p>薄壁堰將上游水位轉化為流量測量。對於寬度 b 的矩形缺口，Q = (2/3) C_d √(2g) b h^{3/2}；對於總角度 α 的 V 形缺口，Q = (8/15) C_d √(2g) tan(α/2) h^{5/2}，h 從堰頂或頂點量起。</p>
+<p>邊緣必須尖銳以使<strong>水舌</strong>躍離；貼附水舌使率定失效。率定曲線繪製 log Q 對 log h：斜率應分別為 1.5 或 2.5，截距給出流量係數。</p>
+<p>相同水頭下 90° 缺口比 60° 缺口過流量少——減小角度提高小流量的靈敏度。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">矩形堰流量</span>
+      <div class="formula-expr formula-math">\[Q = \frac{2}{3} C_d \sqrt{2g}\, b\, h^{3/2}\]</div>
+      <span class="formula-note">h 為堰頂以上水頭，b 為缺口寬度</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">V 形堰流量</span>
+      <div class="formula-expr formula-math">\[Q = \frac{8}{15} C_d \sqrt{2g} \tan\frac{\alpha}{2}\, h^{5/2}\]</div>
+      <span class="formula-note">α 為總缺口角度，h 從頂點量起</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>文丘里流量計作為工作儀表</h2>
+  <div class="body"><p>文丘里流量計由測得的壓降計量流量。上游面積 A₁ 和喉部面積 A₂，理想流量由連續性和伯努利方程得出；摩擦和收縮歸入<strong>流量係數</strong> C_d，通常為 0.92–0.99，因此 Q = C_d A₂ √[2g Δh / (1 − (A₂/A₁)²)]，Δh 為測壓管水頭差。</p>
+<p>實驗室率定繪製 Q 對 √Δh，從斜率讀取 C_d ≈ 0.96，在流量範圍內恆定。</p>
+<p>沿流量計的測壓管繪製壓降，顯示大部分在擴散段恢復。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">文丘里流量</span>
+      <div class="formula-expr formula-math">\[Q = C_d A_2 \sqrt{\frac{2 g \Delta h}{1 - (A_2/A_1)^2}}\]</div>
+      <span class="formula-note">Δh 為進口與喉部測壓管水頭差</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>浮動穩定性的數值計算</h2>
+  <div class="body"><p>浮體穩定性由<strong>穩心高度</strong> GM = I/V − BG 量化，其中 I 為水線面面積二次矩，V 為排開體積，BG 為重心在浮心之上的高度。正 GM 表示穩心在 G 之上，小角度橫傾可恢復；負 GM 傾覆。</p>
+<p>10 m × 4 m 排開 100 m³ 的矩形駁船，I/V = (10 × 4³/12)/100 = 0.53 m，因此 G 必須保持在 B 以上約半米內。</p>
+<p>寬而淺的船體容錯；高而窄的載荷不容。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">穩心高度</span>
+      <div class="formula-expr formula-math">\[\mathrm{GM} = \frac{I}{V} - \mathrm{BG}\]</div>
+      <span class="formula-note">穩定平衡時為正</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>黏度</dt><dd>流體抗剪切變形的能力，以剪應力與速度梯度之比衡量。</dd></div><div class="term"><dt>壓力中心</dt><dd>潛沒表面上合力靜水壓力作用點；位於形心之下。</dd></div><div class="term"><dt>穩心高度</dt><dd>重心與穩心之間的距離；正值使浮體穩定。</dd></div><div class="term"><dt>雷諾數</dt><dd>無量綱比值 ρVD/μ，用於預測流動是層流還是湍流。</dd></div><div class="term"><dt>達西摩擦因子</dt><dd>達西-魏斯巴赫方程中的無量綱因子 f，是雷諾數和相對粗糙度的函數。</dd></div><div class="term"><dt>邊界層</dt><dd>表面附近速度從壁面處零升至自由流值的薄層區域。</dd></div><div class="term"><dt>流量係數</dt><dd>流量計或堰的實際流量與理論流量之比，包含收縮和摩擦；文丘里流量計通常為 0.92–0.99。</dd></div><div class="term"><dt>水舌</dt><dd>從堰頂躍離的水片；貼附水舌表示堰通風不良，率定失效。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>供水主管中的摩擦水頭損失</h2>
+        <p class="problem">運動黏度 ν = 1.0 × 10⁻⁶ m²/s 的水以 0.050 m³/s 流經直徑 150 mm、長 200 m 的鋼管。取達西摩擦因子為 0.020。求流速、檢查雷諾數、計算摩擦水頭損失，並說明其代表的壓降。</p>
+        <ol><li>橫截面積：A = πD²/4 = π × 0.15²/4 = 0.01767 m²。</li><li>流速：V = Q/A = 0.050/0.01767 = 2.83 m/s。</li><li>雷諾數：Re = VD/ν = (2.83 × 0.15)/(1.0 × 10⁻⁶) = 4.2 × 10⁵，遠高於 4000，因此流動為湍流，f = 0.020 合理。</li><li>摩擦水頭損失：h_f = f L V²/(2gD) = (0.020 × 200 × 2.83²)/(2 × 9.81 × 0.15) = 32.0/2.94 = 10.9 m。</li><li>壓降：Δp = ρ g h_f = 1000 × 9.81 × 10.9 = 1.07 × 10⁵ Pa ≈ 107 kPa。</li></ol>
+        <div class="answer"><b>Answer</b>流速為 2.83 m/s，Re ≈ 4.2 × 10⁵，因此流動為湍流。摩擦水頭損失約 10.9 m，相當於約 107 kPa 的壓降。即每 100 m 管道約 5.4 m 水頭，在此流速下偏高但可信。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>繪製自由體圖並標出閘門兩側的壓力；忘記乾側是最常見的錯誤。</li><li>選擇摩擦定律前檢查雷諾數——對湍流引用 64/Re 會立即失分。</li><li>在伯努利問題中，說明假設（穩定、不可壓縮、無摩擦、沿流線）以及損失在能量線中的位置。</li><li>保持單位一致：將 mm 轉換為 m，並記住以米計的水頭通過 ρg 轉換為壓力。</li><li>堰和文丘里率定問題要求對數-對數或 √Δh 圖，而非數字表格——引用預期斜率（1.5 或 2.5）並在讀取係數前進行比較。</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Manning roughness coefficient n for pipes and channels</h3>
+  <p class="ref-table-intro">Values of Manning&#x27;s n used with the Manning equation V = (1/n) R^(2/3) S^(1/2) to estimate velocity, and hence discharge, in pipes, culverts and open channels. The Best-to-Bad range shows how much judgement the choice of roughness needs.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Surface / channel type</th><th scope='col'>Best</th><th scope='col'>Good</th><th scope='col'>Fair</th><th scope='col'>Bad</th></tr></thead><tbody><tr><td>Uncoated cast-iron pipe</td><td>0.012</td><td>0.013</td><td>0.014</td><td>0.015</td></tr><tr><td>Concrete pipe</td><td>0.012</td><td>0.013</td><td>0.015</td><td>0.016</td></tr><tr><td>Vitrified sewer pipe</td><td>0.010</td><td>0.013</td><td>0.015</td><td>0.017</td></tr><tr><td>Brick in cement mortar; brick sewers</td><td>0.012</td><td>0.013</td><td>0.015</td><td>0.017</td></tr><tr><td>Neat cement surfaces</td><td>0.010</td><td>0.011</td><td>0.012</td><td>0.013</td></tr><tr><td>Earth canals, straight and uniform</td><td>0.017</td><td>0.020</td><td>0.0225</td><td>0.025</td></tr><tr><td>Clean straight natural stream, full stage, no rifts or deep pools</td><td>0.025</td><td>0.0275</td><td>0.030</td><td>0.033</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 13 of the Stormwater Drainage Manual (5th Edition, January 2018, incorporating Corrigenda No. 1/2022 and No. 2/2024), which credits Brater and King (1976). n is in s/m^(1/3).</p>
+  <p class="ref-table-caveat">Revision summary only. Roughness grows with age, sediment and vegetation, and the table is a guide rather than a design value; verify and justify n against the current manual for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>垂直矩形閘門下降使其形心深度加倍。其上的總靜水壓力：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>加倍</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>變為四倍</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>減半</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>保持不變</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>F = ρgh̄A，面積不變，因此形心深度加倍使力加倍。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>在輸送穩定不可壓縮流動的水平文丘里流量計中，喉部壓力：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>相同，因為管道水平</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>喉部為零</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>高於上游，因為面積較小</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>低於上游，因為速度較高</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>連續性給出較小喉部處速度較高，伯努利方程將速度水頭的增加轉化為壓力下降。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>如果湍流管道中的流量加倍而摩擦因子大致不變，摩擦水頭損失變為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>相同</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>兩倍</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>約四倍</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>一半</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>h_f ∝ V²，V 隨 Q 加倍，因此水頭損失增加約四倍。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>船隻平衡浮動。作用其上的浮力等於：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>龍骨處壓力乘以甲板面積</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>零，因為船處於平衡</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>港口排開水的重量</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>船隻及船上所有物品的總重量</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>浮體排開水的重量等於船隻及其內容物的總重量，因此浮力平衡該總重量。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>對於薄壁 V 形缺口堰，流量隨水頭 h 的變化關係為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>h^{3/2}</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>h^{5/2}</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>h²</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>h^{1/2}</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>Q = (8/15) C_d √(2g) tan(α/2) h^{5/2}，因此 V 形缺口遵循 5/2 冪律——比矩形堰的 3/2 更陡。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>浮體重心在浮心之上 0.2 m，I/V = 0.6 m。其穩心高度為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>−0.2 m</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.2 m</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.4 m</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>0.8 m</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>GM = I/V − BG = 0.6 − 0.2 = 0.4 m，為正，因此小角度橫傾可恢復，物體穩定。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="soil-mechanics.zh-Hant.html"><span>Core</span><b>土力學</b></a><a class="related-card" href="engineering-geology.zh-Hant.html"><span>Core</span><b>工程地質學</b></a><a class="related-card" href="air-noise-pollution.zh-Hant.html"><span>Environmental</span><b>空氣與噪音污染</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="data-analytics-r.zh-Hant.html"><small>上一頁</small><b>R 數據分析</b></a><a class="next" href="soil-mechanics.zh-Hant.html"><small>下一頁</small><b>土力學</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2>參考文獻</h2>
+  <ol class="reference-list">
+    <li>Drainage Services Department. (2018). <i>Stormwater Drainage Manual: Planning, Design and Management (5th Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.dsd.gov.hk/EN/Files/Technical_Manual/technical_manuals/SDM_2018_5th.pdf" rel="noopener">https://www.dsd.gov.hk/EN/Files/Technical_Manual/technical_manuals/SDM_2018_5th.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">同深度，同壓力——水箱形狀無關。</p><p class="margin-note">選擇摩擦定律前檢查 Re。</p><p class="margin-note">湍流中 h_f 隨 V² 增長。</p><p class="margin-note">流線型減少壓力阻力，而非摩擦阻力。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

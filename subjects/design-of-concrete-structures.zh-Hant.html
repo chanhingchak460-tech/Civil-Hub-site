@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>混凝土結構設計 — Civil Hub</title>
+<meta name="description" content="鋼筋混凝土設計將所需強度轉化為鋼筋面積、鋼筋直徑及保護層。它將極限狀態載荷與彎曲、剪力、樓板及柱的驗算聯繫起來，最後以細部設計及適用性作結。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-concrete-structures.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="混凝土結構設計 — Civil Hub">
+<meta property="og:description" content="鋼筋混凝土設計將所需強度轉化為鋼筋面積、鋼筋直徑及保護層。它將極限狀態載荷與彎曲、剪力、樓板及柱的驗算聯繫起來，最後以細部設計及適用性作結。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-concrete-structures.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="design-of-concrete-structures.html" data-alt-zh-hant="design-of-concrete-structures.zh-Hant.html" data-alt-ja="design-of-concrete-structures.ja.html" data-alt-ko="design-of-concrete-structures.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">混凝土結構設計</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">核心</p>
+          <h1>混凝土結構設計</h1>
+          <p class="subject-sub">按香港實務設計鋼筋混凝土構件</p>
+          <ul class="subject-facts"><li><b>類型</b>核心</li><li><b>閱讀</b>12 分鐘</li><li><b>章節</b>11</li><li><b>公式</b>12</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M136 48 H204" stroke="currentColor" stroke-width="2"/><path d="M136 152 H204" stroke="currentColor" stroke-width="2"/><path d="M148 56 V144 M192 56 V144" stroke="currentColor" stroke-width="1.4"/><path d="M148 56 l44 0" stroke="var(--line)" stroke-width="1"/><path d="M158 22 V44 M154 40 l4 5 4 -5" stroke="var(--accent)" stroke-width="1.1"/><path d="M170 22 V44 M166 40 l4 5 4 -5" stroke="var(--accent)" stroke-width="1.1"/><path d="M182 22 V44 M178 40 l4 5 4 -5" stroke="var(--accent)" stroke-width="1.1"/><path d="M204 96 l18 -10 l-6 20 l16 6" stroke="var(--accent)" stroke-width="1"/><text x="170" y="178" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">CYLINDER TEST</text></svg>
+          <figcaption>Cylinder compression test — platens and failure</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">混凝土的極限狀態設計</a></li><li><a href="#sec-2">單筋截面的彎曲</a></li><li><a href="#sec-3">連續梁的彎矩係數</a></li><li><a href="#sec-4">翼緣梁及受壓鋼筋</a></li><li><a href="#sec-5">有效翼緣寬度及 T 形梁設計順序</a></li><li><a href="#sec-6">剪力及箍筋</a></li><li><a href="#sec-7">單向及雙向樓板</a></li><li><a href="#sec-8">柱：軸向載荷及細長比</a></li><li><a href="#sec-9">保護層、耐久性及細部設計</a></li><li><a href="#sec-10">彎矩重分配及細部設計組合</a></li><li><a href="#sec-11">適用性：撓度及裂縫</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      <li><a href="#design-reference">設計參考</a></li>
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">鋼筋混凝土設計將所需強度轉化為鋼筋面積、鋼筋直徑及保護層。它將極限狀態載荷與彎曲、剪力、樓板及柱的驗算聯繫起來，最後以細部設計及適用性作結。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="design-of-concrete-structures" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>混凝土的極限狀態設計</h2>
+  <div class="body"><p>混凝土抗壓能力強但抗拉能力弱，因此鋼筋會放置在構件否則會開裂的位置。<strong>極限狀態設計</strong>以分別施加於載荷和材料的分項係數取代單一整體安全係數。</p>
+<ul>
+<li>在<strong>極限極限狀態</strong>（ULS）下，構件不得倒塌。</li>
+<li>在<strong>適用性極限狀態</strong>（SLS）下，正常使用時的撓度和裂縫必須保持在可接受範圍內。</li>
+<li>混凝土特徵強度 <code>f_cu</code> 為 28 天立方體強度；<code>f_y</code> 為鋼筋的特徵屈服強度。</li>
+</ul>
+<p>切勿混淆兩種狀態。一個截面可以通過 ULS 但仍然下撓或開裂至不可接受的程度，而 SLS 驗算對倒塌隻字不提。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">設計載荷</span>
+      <div class="formula-expr formula-math">\[w_u = 1.4G_k + 1.6Q_k\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>單筋截面的彎曲</h2>
+  <div class="body"><p>矩形截面在彎曲下的設計基於混凝土中的應力塊和鋼筋中的拉力。<strong>K 值</strong>衡量混凝土受應力的程度：</p>
+<p><code>K = M / (f_cu b d²)</code></p>
+<p>其中 <code>b</code> 為截面寬度，<code>d</code> 為<strong>有效深度</strong>，從受壓面量度至受拉鋼筋形心。</p>
+<ul>
+<li>低於極限 <code>K′ = 0.156</code> 時，截面可採用單筋。</li>
+<li>力臂為 <code>z = d [0.5 + √(0.25 − K/0.9)]</code>，上限為 <code>0.95d</code>。</li>
+<li>鋼筋面積由 <code>A_s = M / (0.87 f_y z)</code> 得出。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">K 值</span>
+      <div class="formula-expr formula-math">\[K = \frac{M}{f_{cu} b d^2}\]</div>
+      <span class="formula-note">M 以 N mm 為單位，f_cu 以 N/mm² 為單位，b 及 d 以 mm 為單位</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">力臂</span>
+      <div class="formula-expr formula-math">\[z = d\left[0.5 + \sqrt{0.25 - \frac{K}{0.9}}\right] \le 0.95d\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">所需受拉鋼筋</span>
+      <div class="formula-expr formula-math">\[A_s = \frac{M}{0.87 f_y z}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>連續梁的彎矩係數</h2>
+  <div class="body"><p>對於均布載荷下的連續梁，當滿足三個條件時，可用表列的<strong>彎矩係數</strong>代替完整的彈性分析：</p>
+<ul>
+<li>各跨長度差異不超過最長跨的約 15%，</li>
+<li>載荷基本上為均布，</li>
+<li>活載荷不超過恆載荷。</li>
+</ul>
+<p>設計彎矩則為 <code>M = β F L</code>，其中 <code>F = w L</code> 為該跨的總設計載荷，β 為該位置的係數。典型值為：外支座 0.04F，端跨近跨中 0.075F，第一內支座 0.086F，內跨跨中及內支座 0.063F。第一內支座彎矩最大，這就是該處頂部鋼筋最重的原因；相關剪力可從同一表格或各跨的自由體得出。</p>
+<p>這些係數假設整體式構造及梁沿線剛度相當均勻。嚴重加腋或不規則框架則需改用彈性分析。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">由係數得出的設計彎矩</span>
+      <div class="formula-expr formula-math">\[M = \beta F L\]</div>
+      <span class="formula-note">F = w L 為該跨的總設計載荷；β 取決於位置</span>
+    </div></div><div class="table-wrap"><table><caption>典型連續梁彎矩係數（均布載荷，跨長相近）</caption><thead><tr><th scope='col'>位置</th><th scope='col'>F = w L 的係數 β</th></tr></thead><tbody><tr><td>外支座</td><td>0.04</td></tr><tr><td>端跨近跨中</td><td>0.075</td></tr><tr><td>第一內支座</td><td>0.086</td></tr><tr><td>內跨跨中</td><td>0.063</td></tr><tr><td>內支座</td><td>0.063</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>翼緣梁及受壓鋼筋</h2>
+  <div class="body"><p>與樓板一起澆築的梁作用如 T 形或 L 形截面，因為一部分樓板寬度加入了受壓區。<strong>有效翼緣寬度</strong>限制為跨長及梁間距的某個分數，因此只有靠近腹板的樓板才計入。</p>
+<p>檢查應力塊的位置：其深度為 <code>s = 2(d − z)</code>。若 <code>s</code> 不超過翼緣厚度 <code>h_f</code>，則截面按全翼緣寬度的矩形行為，慣用的 <code>K</code> 及 <code>z</code> 表達式適用。若應力塊伸入腹板，則按真正的 T 形截面設計。</p>
+<p>當 <code>K</code> 超過 <code>K′</code> 時，加深梁或添加受壓鋼筋，其面積由超額彎矩及鋼筋層之間的深度確定。</p></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>有效翼緣寬度及 T 形梁設計順序</h2>
+  <div class="body"><p>T 形梁只將部分樓板計作翼緣。腹板每側的懸挑限制為約 0.2 倍至相鄰梁的淨距加上 0.1 倍有效跨長，而對於邊梁（L 形梁），跨長項減至該值的約 85%。以梁格間距 4 m、跨長 5 m 計算，有效翼緣寬度為 680 mm，加上 250 mm 腹板後總寬為 930 mm——遠小於全間距。</p>
+<p>設計順序則固定為：</p>
+<ul>
+<li>以翼緣寬度計算 K，</li>
+<li>求 z，</li>
+<li>檢查應力塊深度 <code>s = 2(d − z)</code>。</li>
+</ul>
+<p>若 s 保持在翼緣厚度 h_f 之內，則截面按寬度 b_f 的矩形設計；若 s 伸入腹板，則腹板中的壓力必須另行處理。翼緣與腹板寬度比保持在約 4 以下，並按腹板面積而非整個翼緣檢查最小鋼筋。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">有效翼緣寬度，內 T 形梁</span>
+      <div class="formula-expr formula-math">\[b_{\mathrm{eff}} = b_w + 0.2\,b_1 + 0.1\,\ell\]</div>
+      <span class="formula-note">b₁ 為腹板間淨距，ℓ 為有效跨長；對於邊梁，跨長項減至約 0.85</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">應力塊深度檢查</span>
+      <div class="formula-expr formula-math">\[s = 2(d - z)\]</div>
+      <span class="formula-note">若 s ≤ h_f，則截面行為如寬度 b_f 的矩形</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>剪力及箍筋</h2>
+  <div class="body"><p>剪力部分由混凝土承擔，部分由<strong>箍筋</strong>（橫向鋼筋）承擔。施加的應力為 <code>v = V/(b_v d)</code>，在距支座面 <code>d</code> 處的截面驗算。混凝土貢獻 <code>v_c</code> 來自規範表格，取決於縱向鋼筋比率及混凝土等級。</p>
+<p>超額部分由箍筋承擔：<code>A_sv/s_v ≥ (v − v_c) b_v / (0.87 f_yv)</code>。間距在支座附近剪力峰值處收緊，且應力必須低於約 <code>0.8√f_cu</code> 的壓碎極限。</p>
+<p>箍筋還約束混凝土、固定主筋並保持鋼筋籠整體，因此規範要求即使計算不需箍筋也須設置最小箍筋面積。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">所需箍筋面積</span>
+      <div class="formula-expr formula-math">\[\frac{A_{sv}}{s_v} \ge \frac{(v - v_c)b_v}{0.87 f_{yv}}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>單向及雙向樓板</h2>
+  <div class="body"><p>當樓板支承於兩對邊時為<strong>單向</strong>，當長跨約小於短跨的兩倍時為<strong>雙向</strong>。雙向樓板在兩個方向彎曲，因此每條板帶只承擔部分載荷。</p>
+<p>厚度通常由撓度而非彎曲決定。簡支樓板的基本跨高比約為 20，連續樓板約為 26，並按所配鋼筋調整。連續樓板可使用表列的<strong>彎矩係數</strong>代替框架分析。</p>
+<p>在主筋垂直方向添加分佈鋼筋以控制裂縫，並檢查柱周圍的<strong>沖切剪力</strong>，該處集中反力可能沖穿薄樓板。</p></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>柱：軸向載荷及細長比</h2>
+  <div class="body"><p>主要承受軸向載荷的短柱名義承載力為</p>
+<p><code>N = 0.4 f_cu A_c + 0.75 f_y A_sc</code>，</p>
+<p>其中 <code>A_c</code> 為淨混凝土面積，<code>A_sc</code> 為鋼筋面積。係數考慮了立方體與構件強度差異及應變相容性。</p>
+<p>細長比改變情況：細長柱會彎曲，該撓度產生的額外彎矩會加到施加彎矩上。設計需驗算兩個方向的細長比，施加最小偏心距並考慮雙軸彎曲。</p>
+<p>細部設計仍然適用：鋼筋至少約 1%，最多 4–6%，矩形截面最少四根鋼筋，箍筋間距不超過十二倍鋼筋直徑或最小尺寸。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">短柱軸向承載力</span>
+      <div class="formula-expr formula-math">\[N = 0.4f_{cu}A_c + 0.75f_yA_{sc}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>保護層、耐久性及細部設計</h2>
+  <div class="body"><p><strong>名義保護層</strong>是從表面到鋼筋外緣的距離。它使水和氯化物遠離鋼筋，並在火災中保護鋼筋，因此暴露環境和耐火極限決定其數值。</p>
+<p>鋼筋還必須發揮其力。錨固長度隨鋼筋直徑和應力增加，約為 <code>l_b = f_y φ / (4 f_b)</code>，其中 <code>f_b</code> 為設計粘结應力。搭接更長，因為兩根鋼筋共用一段混凝土長度。</p>
+<p>保持鋼筋間距足夠讓骨料通過，並將箍筋彎鉤繞主筋。細部設計是計算變得可建造的環節：鋼筋必須放得下、能固定並被密實混凝土包圍。</p></div><div class="table-wrap"><table><caption>按暴露條件的指示性名義保護層（典型範圍；以項目規範為準）</caption><thead><tr><th scope='col'>暴露條件</th><th scope='col'>典型名義保護層（mm）</th><th scope='col'>主要威脅</th></tr></thead><tbody><tr><td>輕微：乾燥、受保護室內</td><td>25–30</td><td>碳化</td></tr><tr><td>中等：潮濕、有遮蓋</td><td>35–40</td><td>碳化及水分</td></tr><tr><td>嚴重：乾濕交替</td><td>45–50</td><td>氯化物滲入</td></tr><tr><td>非常嚴重：海洋或除冰鹽</td><td>55–60</td><td>氯化物加火災</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>彎矩重分配及細部設計組合</h2>
+  <div class="body"><p>由於配筋良好的混凝土截面具有延性，支座處的彈性峰值彎矩可以<strong>重分配</strong>——削減並在別處重新平衡——前提是截面具有轉動能力。當中和軸保持較淺，即 <code>x/d ≤ 0.5</code> 時，允許最多約 30% 的重分配，並在 <code>x/d = 0.6</code> 時線性減至零。</p>
+<p>重分配在支座處換取經濟性，但要求延性：配筋較少且抗剪能力充足的截面符合條件；配筋過重的截面則不符合。</p>
+<p>細部設計隨後鎖定分析：</p>
+<ul>
+<li>鋼筋面積必須介於約 0.13% b h 的最小值與約 4% 毛混凝土面積的最大值之間。</li>
+<li>在低彎矩區截斷鋼筋。</li>
+<li>保持間距足夠近以控制裂縫，又足夠寬讓骨料通過。</li>
+<li>錨固或彎折每根其力必須傳入混凝土的鋼筋。</li>
+</ul>
+<p>鋼筋在仍需要它的地方終止，就是設計出來的裂縫。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">重分配及中和軸限制</span>
+      <div class="formula-expr formula-math">\[\frac{x}{d} \le 0.6 - 0.33\,\beta\]</div>
+      <span class="formula-note">β 為重分配的彎矩分數；β = 0.3 給出 x/d ≤ 0.5</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">最小受拉鋼筋</span>
+      <div class="formula-expr formula-math">\[A_{s,\min} \approx 0.0013\,b\,h\]</div>
+      <span class="formula-note">約毛截面的 0.13%；最大值約 4%</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>適用性：撓度及裂縫</h2>
+  <div class="body"><p>撓度通過限制跨高比或按跨度/250 等限值計算來控制。徐變和收縮會增加短期彈性撓度，因此持續載荷需要長期估算。</p>
+<p>裂縫通過在受拉面附近分佈鋼筋及限制鋼筋間距來控制。計算寬度形式為</p>
+<p><code>w_k = 3 a_cr ε_m / [1 + 2(a_cr − c_min)/(h − x)]</code>，</p>
+<p>其中 <code>a_cr</code> 為至最近鋼筋的距離，<code>ε_m</code> 為平均應變，<code>c_min</code> 為最小保護層，<code>x</code> 為中和軸深度。</p>
+<p>保持鋼筋應力適中及鋼筋間距緊密，寬度通常保持在 0.3 mm 限值附近。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">裂縫寬度</span>
+      <div class="formula-expr formula-math">\[w_k = \frac{3a_{cr}\varepsilon_m}{1 + 2\frac{a_{cr} - c_{min}}{h - x}}\]</div>
+      
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>特徵強度</dt><dd>預期不超過指定小比例試驗結果低於此值的強度。</dd></div><div class="term"><dt>有效深度</dt><dd>從受壓面至受拉鋼筋形心的距離。</dd></div><div class="term"><dt>力臂</dt><dd>混凝土壓力合力與鋼筋拉力之間的距離，上限為 0.95d。</dd></div><div class="term"><dt>K 值</dt><dd>彎矩除以 f_cu b d 平方；顯示截面能否採用單筋。</dd></div><div class="term"><dt>名義保護層</dt><dd>從混凝土表面至鋼筋外緣的指定距離，由耐久性及防火決定。</dd></div><div class="term"><dt>沖切剪力</dt><dd>柱或載荷周圍的集中剪力，可能將一塊樓板沖穿支承。</dd></div><div class="term"><dt>彎矩重分配</dt><dd>故意將部分彈性支座彎矩轉移至跨中，僅在截面具有轉動延性時允許。</dd></div><div class="term"><dt>有效翼緣寬度</dt><dd>計作 T 形或 L 形梁受壓翼緣的有限樓板寬度，由跨長及梁間距決定。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>設計矩形梁的受拉鋼筋</h2>
+        <p class="problem">一條簡支梁寬 250 mm、深 500 mm，承受設計極限彎矩 200 kNm。有效深度為 450 mm，f_cu = 30 N/mm²，f_y = 500 N/mm²。確定截面能否採用單筋，並求所需受拉鋼筋面積。提出實用的鋼筋排列。</p>
+        <ol><li>K = M / (f_cu b d²) = (200 × 10⁶) / (30 × 250 × 450²) = 0.132。</li><li>與 K′ = 0.156 比較：K 較小，因此無需受壓鋼筋。</li><li>z = d [0.5 + √(0.25 − K/0.9)] = 450 [0.5 + √(0.25 − 0.1463)] = 450 × 0.822 = 370 mm。</li><li>檢查上限：0.95d = 427 mm，因此採用計算得的 z = 370 mm。</li><li>A_s = M / (0.87 f_y z) = (200 × 10⁶) / (0.87 × 500 × 370) = 1243 mm²。</li><li>檢查最小鋼筋：約 b × h 的 0.13% = 0.0013 × 250 × 500 = 163 mm²，因此彎曲要求控制。</li><li>合理性檢查：配置 4 H20 鋼筋，A_s = 1256 mm²。100A_s/(b d) = 1.12%，低於約 4% 的最大值。</li></ol>
+        <div class="answer"><b>Answer</b>在受拉區配置 4 H20 鋼筋（1256 mm²）；K = 0.132 低於 K′，因此該梁單筋配置足夠。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>在使用 K 之前將所有數值轉換為牛頓和毫米，然後以 kNm、mm² 或 MPa 陳述最終答案。</li><li>始終將 K 與 K′ 比較；需要受壓鋼筋的梁與單筋梁的計算不同。</li><li>將力臂上限設為 0.95d 並說明上限——考官會給檢查分。</li><li>在答案中區分 ULS 和 SLS：強度驗算與撓度或裂縫驗算被標記為不同要求。</li><li>使用彎矩係數前，說明三個條件——跨長相近、均布載荷、活載荷不超過恆載荷——並對照題目檢查。</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Minimum percentages of reinforcement in beams</h3>
+  <p class="ref-table-intro">Minimum reinforcement required by the concrete code to control cracking and ensure ductility. The percentages scale with the steel yield strength through the factor αmin, which reduces the minimum as fy rises.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Situation</th><th scope='col'>Percentage definition</th><th scope='col'>fy = 250 N/mm²</th><th scope='col'>fy = 500 N/mm²</th></tr></thead><tbody><tr><td>Sections subjected mainly to pure tension</td><td>100As/Ac</td><td>0.8αmin</td><td>0.45αmin</td></tr><tr><td>Rectangular section in flexure</td><td>100As/Ac</td><td>0.24αmin</td><td>0.13αmin</td></tr><tr><td>Flanged beam, web in tension, bw/b &lt; 0.4</td><td>100As/bwh</td><td>0.32αmin</td><td>0.18αmin</td></tr><tr><td>Flanged beam, web in tension, bw/b ≥ 0.4</td><td>100As/bwh</td><td>0.24αmin</td><td>0.13αmin</td></tr><tr><td>Flanged beam, flange in tension (T-beam)</td><td>100As/bwh</td><td>0.48αmin</td><td>0.26αmin</td></tr><tr><td>Compression reinforcement, general rule</td><td>100Asc/Acc</td><td>0.4</td><td>0.4</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 9.1 of the Code of Practice for the Structural Use of Concrete 2013 (2020 Edition). αmin = 40 fcu^(2/3) / fy but not less than 1.0; As is the tension reinforcement area, Ac the concrete area, bw the web width and h the overall depth.</p>
+  <p class="ref-table-caveat">Revision summary only. Minimum percentages may need increasing to satisfy ductility requirements, and spacing, anchorage and detailing rules also apply; verify against the current code for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q01</span><span>無彎矩重分配的單筋矩形截面在彎曲下，當 K 不超過約多少時為滿意？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.045</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.156</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.402</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>1.000</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>K′ = 0.156 是慣用限值；超過則需受壓區鋼筋或更深的截面。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>梁中剪力箍筋的主要結構目的是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>在混凝土能力被超過後抵抗斜拉力</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>減少長期撓度</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>將梁錨固到柱中</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>增加抗彎矩能力</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>混凝土承擔部分剪力；箍筋承擔超額部分，規範還規定最小箍筋面積用於約束和固定。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>鋼筋的名義保護層主要由什麼決定？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>構件跨度</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>截面中鋼筋數量</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>僅骨料尺寸</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>耐久性暴露及耐火性</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>保護層保護鋼筋免受腐蝕並在火災中隔熱，因此暴露等級和耐火時限決定其數值。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q04</span><span>在雙向樓板作用中，載荷由：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>完全由短跨承擔</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>兩個方向彎曲承擔</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>僅由薄膜作用承擔</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>僅由長邊梁承擔</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>當長跨約小於短跨的兩倍時，樓板在兩個方向彎曲並分擔載荷。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>使用簡化係數時，承受跨內總載荷 F 的連續梁第一內支座的設計彎矩約為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.040 F L</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.075 F L</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>0.086 F L</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>0.100 F L</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>第一內支座吸引約 0.086F L，是係數中最大的，這就是該處頂部鋼筋峰值的原因。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>對於 x/d = 0.5 的截面，可採用的最大彎矩重分配約為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>10%</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>20%</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>30%</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>50%</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>當 x/d ≤ 0.5 時重分配上限約 30%，並隨 x/d 接近 0.6 線性減至零。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="design-of-steel-structures.zh-Hant.html"><span>Core</span><b>鋼結構設計</b></a><a class="related-card" href="construction-materials.zh-Hant.html"><span>Core</span><b>建造材料</b></a><a class="related-card" href="structural-mechanics.zh-Hant.html"><span>Core</span><b>結構力學</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="hydraulics-hydrology.zh-Hant.html"><small>上一頁</small><b>水力学與水文學</b></a><a class="next" href="transportation-highway-engineering.zh-Hant.html"><small>下一頁</small><b>運輸與公路工程</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2>參考文獻</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2020). <i>Code of Practice for the Structural Use of Concrete 2013 (2020 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/CoP_SUC2013e.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/CoP_SUC2013e.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">z 上限為 0.95d——力臂不能無限增長。</p><p class="margin-note">K 超過 0.156 意味著需要受壓鋼筋或更深的梁。</p><p class="margin-note">保護層是耐久性決定，不是圖紙細節。</p><p class="margin-note">箍筋做混凝土做不到的工作：斜拉力。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

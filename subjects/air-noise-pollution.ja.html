@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大気・騒音汚染 — Civil Hub</title>
+<meta name="description" content="私たちが呼吸する空気と耳にする音は、どちらもエネルギー問題であり、濃度とデシベルで測定され、汚染物質が発生源から受容体へどのように移動するかを理解することで制御されます。このページでは、大気質の単位と拡散、続いて環境騒音について扱います。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/air-noise-pollution.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="大気・騒音汚染 — Civil Hub">
+<meta property="og:description" content="私たちが呼吸する空気と耳にする音は、どちらもエネルギー問題であり、濃度とデシベルで測定され、汚染物質が発生源から受容体へどのように移動するかを理解することで制御されます。このページでは、大気質の単位と拡散、続いて環境騒音について扱います。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/air-noise-pollution.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="air-noise-pollution.html" data-alt-zh-hant="air-noise-pollution.zh-Hant.html" data-alt-ja="air-noise-pollution.ja.html" data-alt-ko="air-noise-pollution.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">大気・騒音汚染</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">環境</p>
+          <h1>大気・騒音汚染</h1>
+          <p class="subject-sub">私たちが呼吸し聴くものを測定・モデル化・管理する</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>環境</li><li><b data-i18n="subject.read">Read</b>9 分</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>12</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M44 66 H164 V134 H44 Z" stroke="currentColor" stroke-width="1.3"/><circle cx="64" cy="88" r="3" stroke="var(--faint)" stroke-width="1"/><circle cx="86" cy="104" r="2" stroke="var(--faint)" stroke-width="1"/><circle cx="104" cy="82" r="4" stroke="var(--faint)" stroke-width="1"/><circle cx="126" cy="112" r="2.5" stroke="var(--faint)" stroke-width="1"/><circle cx="146" cy="92" r="3" stroke="var(--faint)" stroke-width="1"/><path d="M188 86 q16 -8 32 0 q-16 8 -32 0" stroke="var(--accent)" stroke-width="1.2" opacity="1.0"/><path d="M230 86 q16 -8 32 0 q-16 8 -32 0" stroke="var(--accent)" stroke-width="1.2" opacity="0.8"/><path d="M188 102 q16 -8 32 0 q-16 8 -32 0" stroke="var(--accent)" stroke-width="1.2" opacity="0.78"/><path d="M230 102 q16 -8 32 0 q-16 8 -32 0" stroke="var(--accent)" stroke-width="1.2" opacity="0.5800000000000001"/><path d="M188 118 q16 -8 32 0 q-16 8 -32 0" stroke="var(--accent)" stroke-width="1.2" opacity="0.56"/><path d="M230 118 q16 -8 32 0 q-16 8 -32 0" stroke="var(--accent)" stroke-width="1.2" opacity="0.36000000000000004"/><text x="170" y="184" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">AIR / ACOUSTICS</text></svg>
+          <figcaption>Particles and sound — source, path, receiver</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">発生源・経路・受容体</a></li><li><a href="#sec-2">空気中の物質を測定する</a></li><li><a href="#sec-3">拡散：ガウスプルーム</a></li><li><a href="#sec-4">プルームモデルが仮定するもの</a></li><li><a href="#sec-5">大気汚染の制御</a></li><li><a href="#sec-6">大気質管理と健康の勘定</a></li><li><a href="#sec-7">音は圧力の変動</a></li><li><a href="#sec-8">周波数、重み付け、Aスケール</a></li><li><a href="#sec-9">時間にわたる騒音の平均化：Leq</a></li><li><a href="#sec-10">交通騒音の予測</a></li><li><a href="#sec-11">騒音制御と障壁</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">私たちが呼吸する空気と耳にする音は、どちらもエネルギー問題であり、濃度とデシベルで測定され、汚染物質が発生源から受容体へどのように移動するかを理解することで制御されます。このページでは、大気質の単位と拡散、続いて環境騒音について扱います。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="air-noise-pollution" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>発生源・経路・受容体</h2>
+  <div class="body"><p>大気と騒音の問題は一つの構造を共有しています。何かが排出し、その排出物が移動・変化し、受容体が曝露されるという構造です。制御はどの段階でも行えます。<br />
+- <strong>発生源</strong>: よりクリーンな燃料、プロセスの変更<br />
+- <strong>経路</strong>: より高い煙突、障壁<br />
+- <strong>受容体</strong>: 断熱、土地利用の分離</p>
+<p>最も早い段階の選択肢が通常最も安価です。高い煙突は処理装置ではありません。同じ質量をより大きな体積に広げることで地上濃度を下げるのです。汚染物質は希釈されるのであって、破壊されるのではありません。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>空気中の物質を測定する</h2>
+  <div class="body"><p>濃度は質量対体積（μg/m³）または体積分率（ppmまたはppb）で報告され、25 °C、1 atmにおけるモル体積24.45 Lを用いて気体のモル質量を通じて関連付けられます。測定器は数値と同じくらい重要です。<br />
+- <strong>重量法サンプラー</strong>: ろ過した粒子状物質を秤量する。基準法<br />
+- <strong>リアルタイムモニター</strong>: 数秒ごとに読み取る。校正が必要<br />
+- <strong>パッシブ拡散チューブ</strong>: 安価。数週間にわたって積算</p>
+<p>平均化時間は結果の一部です。1時間のピークと年間平均は異なる影響を表します。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">体積分率から質量濃度へ</span>
+      <div class="formula-expr formula-math">\[C\,(\mu\mathrm{g}/\mathrm{m}^3) = \frac{C\,(\mathrm{ppm}) \times M \times 1000}{24.45}\]</div>
+      <span class="formula-note">Mはg/mol単位のモル質量。25 °C、1 atmで24.45 L/mol</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>拡散：ガウスプルーム</h2>
+  <div class="body"><p>放出されると、プルームは乱流によって広がります。標準的なスクリーニングモデルは、濃度を風向方向および鉛直方向にガウス分布として扱い、距離とともに増大し<strong>大気安定度</strong>に依存する広がりパラメータσyとσzを用います。安定度はクラスA（非常に不安定、強い対流）からクラスF（非常に安定、晴天・静穏）まで等級付けされます。不安定な空気は強く混合し地上ピークを下げますが、安定した夜間はプルームを地面近くに閉じ込めます。<strong>有効煙突高さ</strong>Hは、浮力と運動量によるプルームの上昇を物理的な煙突高さに加えたもので、濃度はHに対してほぼ指数関数的に減少するため支配的です。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">ガウスプルーム、地上中心線</span>
+      <div class="formula-expr formula-math">\[C = \frac{Q}{\pi u \sigma_y \sigma_z} \exp\left(-\frac{H^2}{2 \sigma_z^2}\right)\]</div>
+      <span class="formula-note">Qはg/s、uはm/s、σyとσzはm、Hは有効高さ</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>プルームモデルが仮定するもの</h2>
+  <div class="body"><p>ガウスモデルはスクリーニングツールです。定常風、平坦な地形、建物によるダウンウォッシュなし、化学反応なし、単一の発生源を仮定するため、適合性を証明するよりも選択肢を比較するのに最適です。これらの仮定が成り立たない場合、誤差は大きくなります。谷や街路峡谷は汚染物質を閉じ込め、逆転層は混合層の深さを制限し、反応は風下でオゾンなどの二次汚染物質を生成します。実際の評価では、地形補正、測定されたバックグラウンド、モニタリングを追加します。</p></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>大気汚染の制御</h2>
+  <div class="body"><p>制御の選択肢は、防止、捕集、希釈に分類されます。<br />
+- <strong>防止</strong>: よりクリーンな燃料、低NOxバーナー、プロセスの変更、エネルギー効率<br />
+- <strong>捕集</strong>: 粗い粉塵にはサイクロン。微粒子には電気集塵機とバグフィルター。可溶性ガスには湿式スクラバー。車両には触媒コンバーター<br />
+- <strong>希釈</strong>: 高い煙突 — 最後の手段であり、局所的な問題を地域的な問題に変える</p>
+<p>立地の決定と緩衝地帯は計画的な制御であり、しばしば最も効果的です。</p></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>大気質管理と健康の勘定</h2>
+  <div class="body"><p>測定は目標と比較されるために存在します。大気質管理は各汚染物質（粒子状物質、二酸化窒素、オゾン、二酸化硫黄の年間および短期の限度）に<strong>目標</strong>を設定し、測定濃度を簡単な区分と健康アドバイスに変換する指数を通じて比較を公表します。健康の勘定は目標がなぜ重要かを説明します。微粒子は深部肺に到達し、オゾンは気道を刺激し、負担は子ども、高齢者、既に心臓や肺の疾患を持つ人に最も大きくかかります。したがって管理は排出だけでなく曝露にも働きかけます。排出インベントリが発生源を特定し、拡散モデリングが誰が曝露されているかを地図化し、制御計画が最も曝露の高い発生源を最初に削減します。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">大気質管理サイクル</span>
+      <div class="formula-expr formula-text">inventory → monitor → model → compare with objectives → control → monitor</div>
+      <span class="formula-note">ループは繰り返される。目標と健康の証拠がターゲットを設定する</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>音は圧力の変動</h2>
+  <div class="body"><p>音は空気圧の小さく速い変動です。耳は非常に広い範囲に応答するため、レベルは対数で表されます。音圧レベルは測定された圧力を20 μPa（ほぼ聴覚閾値）の基準と比較します。圧力が2倍になると6 dB増加し、10倍になると20 dB増加します。音源の加算は算術ではなくエネルギーを用います。等しいレベルの2つの独立した音源はデシベル値を2倍にするのではなく3 dB増加させるため、レベルはエネルギーを合計することで結合されます。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">音圧レベル</span>
+      <div class="formula-expr formula-math">\[L_p = 20 \log_{10}\left(\frac{p}{p_0}\right)\]</div>
+      <span class="formula-note">p₀ = 20 μPa。結果はデシベル</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">非干渉性音源の加算</span>
+      <div class="formula-expr formula-math">\[L_{\text{total}} = 10 \log_{10}\left(\sum 10^{L_i/10}\right)\]</div>
+      
+    </div></div><div class="table-wrap"><table><caption>レベルの変化が圧力と知覚される大きさで何を意味するか</caption><thead><tr><th scope='col'>レベルの変化</th><th scope='col'>圧力比</th><th scope='col'>パワー比</th><th scope='col'>どのように聞こえるか</th></tr></thead><tbody><tr><td>+3 dB</td><td>1.41 ×</td><td>2 ×</td><td>かろうじて知覚できる</td></tr><tr><td>+10 dB</td><td>3.16 ×</td><td>10 ×</td><td>2倍の大きさ</td></tr><tr><td>−10 dB</td><td>0.32 ×</td><td>0.1 ×</td><td>半分の大きさ</td></tr><tr><td>+20 dB</td><td>10 ×</td><td>100 ×</td><td>4倍の大きさ</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>周波数、重み付け、Aスケール</h2>
+  <div class="body"><p>耳は平坦ではありません。中周波数を最もよく聞き、低周波数は苦手で、この感度はレベルによって変化します。測定器は<strong>オクターブまたは3分の1オクターブバンド</strong>で測定し、耳を模倣した<strong>周波数重み付け</strong>を適用します。<strong>A特性重み付け</strong>は環境騒音の標準であり、70 dB(A)と表記された交通騒音レベルは、聴覚が弱い領域であらかじめ減衰されています。バンドレベルを結合することはエネルギーの合計です。各バンドレベルにA特性重み付けを加え、結果をデシベルから変換し直し、合計し、再び変換します。A特性重み付けされた合計は、重み付けされていない合計よりもほぼ常に低くなります。なぜなら深い低音バンドは耳がほとんど気づかない大きなエネルギーを運ぶからです。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">バンドからのA特性重み付け合計</span>
+      <div class="formula-expr formula-math">\[L_A = 10 \log_{10}\left(\sum_i 10^{(L_i + A_i)/10}\right)\]</div>
+      <span class="formula-note">LᵢはdB単位のバンドレベル、AᵢはそのバンドのdB単位のA特性重み付け補正</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>時間にわたる騒音の平均化：Leq</h2>
+  <div class="body"><p>環境騒音は決して定常ではないため、<strong>等価騒音レベル</strong>Leqで要約されます。これは測定期間にわたって同じ音響エネルギーを届ける一定レベルです。対数平均であり、常に最も騒がしい期間に支配されます。他の記述子はエネルギーではなく分布を表します。L10は10%の時間に超過されるレベル、L90は90%の時間に超過され、しばしばバックグラウンドとして取られます。合計とバックグラウンドから音源レベルを求めるには、エネルギーを差し引きます。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">等価連続レベル</span>
+      <div class="formula-expr formula-math">\[L_{\mathrm{eq}} = 10 \log_{10}\left(\frac{1}{T} \sum t_i\, 10^{L_i/10}\right)\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">バックグラウンド減算による音源レベル</span>
+      <div class="formula-expr formula-math">\[L_s = 10 \log_{10}\left(10^{L_t/10} - 10^{L_b/10}\right)\]</div>
+      <span class="formula-note">L_tは合計、L_bはバックグラウンド</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>交通騒音の予測</h2>
+  <div class="body"><p>道路交通騒音は測定されるよりも予測されることが多く、交通流量と<strong>L10</strong>のようなパーセンタイルレベル（1時間の10%で超過されるレベルで、交通流のより騒がしい部分を追跡する）との関係を用います。一般的な形式は、時間流量の対数の10倍を定数に加えるため、流量が2倍になると約3 dB増加します。次に距離と広がりが適用されます。道路のような線音源は距離が2倍になるごとに約3 dB減少します。予測レベルは設計（障壁の高さ、ファサード断熱、後退距離）に用いられるため、予測はその交通データ、速度、地盤条件を明記しなければなりません。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">交通騒音、L10（1時間）</span>
+      <div class="formula-expr formula-math">\[L_{10} = 42.2 + 10 \log_{10} q\]</div>
+      <span class="formula-note">qは中程度の速度での1時間あたりの軽車両。速度、勾配、大型車に対して補正が適用される</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">線音源の距離補正</span>
+      <div class="formula-expr formula-math">\[L_2 = L_1 - 10 \log_{10}\left(\frac{r_2}{r_1}\right)\]</div>
+      <span class="formula-note">道路は線音源。距離が2倍になると約3 dBのコスト</span>
+    </div></div><div class="table-wrap"><table><caption>騒音記述子とそれぞれの役割</caption><thead><tr><th scope='col'>記述子</th><th scope='col'>意味</th><th scope='col'>典型的な用途</th></tr></thead><tbody><tr><td>Lmax</td><td>期間内の最高レベル</td><td>単一イベントのチェック</td></tr><tr><td>Leq</td><td>期間にわたるエネルギー平均</td><td>適合性と迷惑度</td></tr><tr><td>L10</td><td>10%の時間に超過されるレベル</td><td>交通騒音、交通流のピーク</td></tr><tr><td>L90</td><td>90%の時間に超過されるレベル</td><td>バックグラウンドレベル</td></tr><tr><td>Lden</td><td>昼・夕・夜の重み付け平均</td><td>長期の年間指標</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>騒音制御と障壁</h2>
+  <div class="body"><p>制御は同じ発生源・経路・受容体の論理に従います。発生源ではより静かな設備と囲い、経路では障壁と土堤、受容体ではより良い窓ガラスと換気です。障壁は音をその上端を越えて回折させることで機能するため、視線を遮り、それを越えて延びなければなりません。余分に移動する距離、経路差δがフレネル数を設定し、挿入損失は実用的な上限までそれとともに増大します。低周波数は端を容易に回り込むため、障壁は低周波数で最も弱くなります。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">フレネル数</span>
+      <div class="formula-expr formula-math">\[N = \frac{2 \delta}{\lambda}\]</div>
+      <span class="formula-note">δはm単位の経路差。λ = c / f</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">障壁減衰、前川近似</span>
+      <div class="formula-expr formula-math">\[\mathrm{IL} \approx 10 \log_{10}(3 + 20 N)\]</div>
+      <span class="formula-note">N ≥ 0。実際の障壁は材料と漏れに依存する</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Leq</dt><dd>実際の変動する騒音と同じ音響エネルギーを、明示された期間にわたって届ける定常音レベル。</dd></div><div class="term"><dt>デシベル</dt><dd>測定された量と基準値の対数比。聴覚が非常に広い範囲に応答するために用いられる。</dd></div><div class="term"><dt>パスキル安定度クラス</dt><dd>放出されたプルームを大気がどれだけ強く混合するかを表すAからFまでの等級。</dd></div><div class="term"><dt>有効煙突高さ</dt><dd>物理的な煙突高さに浮力と運動量によるプルームの上昇を加えたもので、拡散モデルでは放出高さとして扱われる。</dd></div><div class="term"><dt>挿入損失</dt><dd>障壁、囲い、スクリーンの設置によって受容体での音圧レベルが減少する量。</dd></div><div class="term"><dt>PM2.5</dt><dd>空気力学的直径2.5 μm未満の浮遊粒子で、深部肺に到達するのに十分小さい。</dd></div><div class="term"><dt>A特性重み付け</dt><dd>耳の感度を模倣して1つの数値が知覚される大きさに近似するようにする周波数重み付けで、dB(A)として報告される。</dd></div><div class="term"><dt>L10</dt><dd>測定期間の10%で超過される騒音レベルで、道路交通騒音の標準記述子として用いられる。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>煙突からの地上濃度</h2>
+        <p class="problem">煙突がQ = 50 g/sで二酸化硫黄を放出しています。風速は4 m/s、有効放出高さはH = 60 m、風下2 kmの受容体での広がりパラメータはσy = 250 m、σz = 150 mです。プルーム中心線上の地上濃度を推定してください。</p>
+        <ol><li>中心線上ではy = 0、地上ではz = 0なので、風横方向の項は1であり、2つの鉛直項は同じ指数の2倍に加算されます。結果はC = Q / (π u σy σz) · exp[−H²/(2σz²)]です。</li><li>分母: π × 4 × 250 × 150 = 4.712 × 10⁵ m³/s。</li><li>指数: H²/(2σz²) = 60² / (2 × 150²) = 3600 / 45 000 = 0.080、したがってexp(−0.080) = 0.923。</li><li>するとC = (50 × 0.923) / (4.712 × 10⁵) = 9.79 × 10⁻⁵ g/m³、10⁶を掛けると97.9 μg/m³になります。</li><li>妥当性チェック: Cは1/uに比例するため、風速が2倍になれば値は約49 μg/m³に半減します。100 μg/m³付近の値は典型的な24時間大気質目標をはるかに超えるため、放出には制御またはより大きな有効高さが必要です。</li></ol>
+        <div class="answer"><b>Answer</b>地上中心線濃度は約98 μg/m³であり、典型的な24時間目標を大きく超えるため、プルームモデルはこの煙突を受け入れるのではなく、排出制御または再設計のためにフラグを立てます。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>ガイドラインと比較する前にppmをμg/m³に（またはその逆に）変換し、仮定した温度と圧力を明記すること。</li><li>レベルはエネルギーとして加算する。2つの等しい音源は+3 dBを与え、数値を2倍にすることは決してなく、音源より10 dB低いバックグラウンドはそれを約0.4 dBしか変えない。</li><li>障壁の問題では、まず経路差δを求める。波長はλ = c/fから導かれる。</li><li>平均化時間を明記すること。1時間のピーク、8時間のLeq、年間平均は互換ではない。</li><li>常にレベルに記述子と期間を付けること。70 dB(A) L10(1h)は70 dB(A) Leq(8h)とは異なる事実であり、レベルはエネルギーとして加算し、決して算術で加算しない。</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Hong Kong Air Quality Objectives</h3>
+  <p class="ref-table-intro">Statutory concentration limits for ambient air pollutants under the Air Pollution Control Ordinance (Cap. 311). They provide the benchmark for air quality assessment and are reviewed at least once every five years; the current set took effect on 11 April 2025.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Pollutant</th><th scope='col'>Averaging time</th><th scope='col'>Concentration limit (µg/m³)</th><th scope='col'>Exceedances allowed per year</th></tr></thead><tbody><tr><td>Sulphur dioxide</td><td>10-minute</td><td>500</td><td>3</td></tr><tr><td>Sulphur dioxide</td><td>24-hour</td><td>40</td><td>3</td></tr><tr><td>Nitrogen dioxide</td><td>1-hour</td><td>200</td><td>18</td></tr><tr><td>Nitrogen dioxide</td><td>Annual</td><td>40</td><td>Not applicable</td></tr><tr><td>Respirable suspended particulates (PM10)</td><td>24-hour</td><td>75</td><td>9</td></tr><tr><td>Fine suspended particulates (PM2.5)</td><td>Annual</td><td>15</td><td>Not applicable</td></tr><tr><td>Ozone</td><td>8-hour</td><td>160</td><td>9</td></tr><tr><td>Carbon monoxide</td><td>1-hour</td><td>30,000</td><td>0</td></tr></tbody></table></div>
+  <p class="ref-table-note">Hong Kong Air Quality Objectives as published by the Environmental Protection Department, in force from 11 April 2025. Gaseous pollutant concentrations are referenced to 293 K and 101.325 kPa; PM10 and PM2.5 refer to particles of nominal aerodynamic diameter 10 µm or less and 2.5 µm or less respectively.</p>
+  <p class="ref-table-caveat">Revision summary only. Several pollutants have other averaging times, annual limits and measurement conventions, and the objectives are periodically reviewed; check the current EPD table for assessment work.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q01</span><span>2台の同一のコンプレッサーがそれぞれ近くの点で85 dBを発生しています。結合レベルは約:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>91 dB</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>85 dB</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>170 dB</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>88 dB</span></button></div>
+    <div class="quiz-explain"><b>Why</b>独立した音源はエネルギーを加算し、エネルギーが2倍になると10 log₁₀2 ≈ 3 dB増加するため、合計は約88 dBです。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>自由音場で点音源から2倍の距離に移動すると、音圧レベルは約:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>−6 dB</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>−10 dB</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>−20 dB</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>−3 dB</span></button></div>
+    <div class="quiz-explain"><b>Why</b>圧力は距離とともに減少するため、L₂ = L₁ − 20 log₁₀(r₂/r₁) = L₁ − 6 dB（2倍の場合）です。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>Leqについて正しい記述はどれか？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>測定されたレベルの算術平均である</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>期間にわたって同じ音響エネルギーを届ける定常レベルである</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>測定中に記録された最高レベルである</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>90%の時間に超過されるレベルである</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Leqはエネルギー平均であるため、騒がしい期間が支配します。90%の時間に超過されるレベルはL90です。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q04</span><span>ガウスプルームモデルで、放出率、有効高さ、安定度が同じまま風速が2倍になると、地上中心線濃度は:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>4倍になる</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>半分になる</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>2倍になる</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>同じままである</span></button></div>
+    <div class="quiz-explain"><b>Why</b>濃度は風速に反比例し、同じ質量をより大きな空気体積に希釈します。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>他の条件が同じで道路の交通流量が2倍になると、L10は約:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>1 dB</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>3 dB</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>10 dB</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>20 dB</span></button></div>
+    <div class="quiz-explain"><b>Why</b>L10は10 log₁₀ qとともに上昇し、qが2倍になると10 log₁₀ 2 ≈ 3 dB増加します。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>A特性重み付けレベルが重み付けされていないレベルと異なる主な理由は:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>圧力をパワーに変換する</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>すべてのバンドのエネルギーを等しく加算する</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>耳が鈍感な低周波数を減衰させる</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>期間の最も騒がしい1秒だけを数える</span></button></div>
+    <div class="quiz-explain"><b>Why</b>A特性重み付けは人間の聴覚に合わせて低周波数バンドの寄与を減らすため、A特性重み付け合計は通常低くなります。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="fluid-mechanics.ja.html"><span>Core</span><b>流体力学</b></a><a class="related-card" href="construction-introduction.ja.html"><span>Core</span><b>建設入門</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="ai-data-analysis.ja.html"><small>Previous</small><b>AIとデータ分析</b></a><a class="next" href="construction-introduction.ja.html"><small>Next</small><b>建設入門</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Environmental Protection Department. (2025). <i>Hong Kong Air Quality Objectives</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.epd.gov.hk/epd/english/environmentinhk/air/air_quality_objectives/air_quality_objectives.html" rel="noopener">https://www.epd.gov.hk/epd/english/environmentinhk/air/air_quality_objectives/air_quality_objectives.html</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">希釈は破壊ではない。</p><p class="margin-note">2つの等しい音源は3 dBを加算する。</p><p class="margin-note">障壁は低周波数で最も弱い。</p><p class="margin-note">数値の前に単位を揃える。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

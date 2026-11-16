@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>공학 측량 — Civil Hub</title>
+<meta name="description" content="현장에서 위치와 높이를 측정하고 계산하며 설정하는 방법: 레벨측량, 트래버스 조정, 좌표, 토털스테이션, GNSS 및 곡선. 지상 관측값을 시공 가능한 수치로 바꾸는 과목이다.">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/surveying.ko.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="공학 측량 — Civil Hub">
+<meta property="og:description" content="현장에서 위치와 높이를 측정하고 계산하며 설정하는 방법: 레벨측량, 트래버스 조정, 좌표, 토털스테이션, GNSS 및 곡선. 지상 관측값을 시공 가능한 수치로 바꾸는 과목이다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/surveying.ko.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="surveying.html" data-alt-zh-hant="surveying.zh-Hant.html" data-alt-ja="surveying.ja.html" data-alt-ko="surveying.ko.html" data-page-lang="ko" data-root="../" data-total="42" data-page="library" data-content-lang="ko">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">공학 측량</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">핵심</p>
+          <h1>공학 측량</h1>
+          <p class="subject-sub">지반의 측정, 계산 및 설정</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>핵심</li><li><b data-i18n="subject.read">Read</b>12 분</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>20</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="176" cy="36" r="5" stroke="var(--accent)" stroke-width="1.4"/><path d="M176 41 V80" stroke="currentColor" stroke-width="1.3"/><path d="M176 62 l-30 34 M176 62 l30 34 M176 62 l-3 40" stroke="currentColor" stroke-width="1.2"/><path d="M40 168 H300" stroke="var(--line)" stroke-width="1"/><path d="M72 92 l104 76 M92 96 l120 72" stroke="var(--faint)" stroke-width="1"/><path d="M118 128 q10 10 4 22" stroke="var(--accent)" stroke-width="1"/><text x="132" y="152" font-family="var(--mono)" font-size="8" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">θ</text><text x="70" y="186" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">A</text><text x="264" y="186" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="start" letter-spacing="0.18em">B</text></svg>
+          <figcaption>Traverse geometry — angles and measured lines</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">먼저 기준점, 그다음 세부</a></li><li><a href="#sec-2">레벨측량: 야장은 반드시 맞아야 한다</a></li><li><a href="#sec-3">각, 방위각 및 전원 방위각 관례</a></li><li><a href="#sec-4">정해진 순서의 트래버스 계산</a></li><li><a href="#sec-5">현장 측량 방법의 선택</a></li><li><a href="#sec-6">토털스테이션, EDM 및 GNSS</a></li><li><a href="#sec-7">곡선과 설정</a></li><li><a href="#sec-8">오차, 폐합 및 기록 추적</a></li><li><a href="#sec-9">좌표와 편거로부터의 면적과 체적</a></li><li><a href="#sec-10">실무에서의 두 말뚝 시험</a></li><li><a href="#sec-11">접선각에 의한 곡선 설정</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">현장에서 위치와 높이를 측정하고 계산하며 설정하는 방법: 레벨측량, 트래버스 조정, 좌표, 토털스테이션, GNSS 및 곡선. 지상 관측값을 시공 가능한 수치로 바꾸는 과목이다.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="surveying" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>먼저 기준점, 그다음 세부</h2>
+  <div class="body"><p>모든 측량은 이미 알고 있는 점을 기준으로 새로운 점을 결정한다. 알고 있는 점들이 <strong>기준점(control)</strong> 을 이루고, 나머지 전부는 <strong>세부(detail)</strong> 이다. 기준점은 그에 의존하는 작업보다 더 조밀하고 정확해야 한다. 이후의 모든 측정이 그 오차를 물려받기 때문이다.</p>
+<p>작업 원칙은 <strong>전체에서 부분으로(whole to part)</strong> 이다. 즉 좌표를 가진 수평 기준점과 환산표고를 가진 수준점으로 골격을 구축한 뒤, 그 골격에서 세부를 채운다. 좌표에는 원점이, 높이에는 기준면이 필요하므로 둘 다 명시해야 한다. 세부에서 시작해 위로 올라가는 측량은 스스로를 검증할 방법이 없다.</p>
+<p><strong>정확도(accuracy)</strong> 는 결과가 진값에 얼마나 가까운지를, <strong>정밀도(precision)</strong> 는 얼마나 반복 가능한지를 뜻한다. 진값에서 벗어난 촘촘한 측정값 묶음은 정밀하지만 편향되어 있다.</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>레벨측량: 야장은 반드시 맞아야 한다</h2>
+  <div class="body"><p>레벨측량은 높이 차를 측정한다. 두 표척 사이에 기계를 세우면, 그 시준선이 <strong>시준고(height of collimation)</strong> 를 정의한다. 기계를 세운 뒤의 첫 읽음은 알고 있는 표고의 점에 대한 <strong>후시(back sight)</strong> 이고, <strong>중간시(intermediate sight)</strong> 는 기계를 옮기지 않는 사이의 점들을 위치시키며, <strong>전시(fore sight)</strong> 는 기계를 옮기기 전의 마지막 읽음이다. 그 표척은 이후 <strong>이기점(change point)</strong> 으로 남으므로 안정된 곳에 놓여야 한다.</p>
+<p>야장 기록 방식은 두 가지가 주를 이룬다:<br />
+- <strong>시준고</strong> 방식: 후시를 알고 있는 표고에 한 번 더한 뒤, 그 높이에서 나머지 모든 읽음을 뺀다.<br />
+- <strong>승강</strong> 방식: 연속된 읽음을 비교하며 느리지만 모든 중간시를 검산한다.</p>
+<p>시준 오차와 곡률을 상쇄하도록 후시와 전시 거리를 균형 있게 하고, 시준 거리를 짧게 유지하며, 약 0.5 m 이하의 읽음은 피한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">시준고</span>
+      <div class="formula-expr formula-math">\[\mathrm{HI} = \mathrm{RL} + \mathrm{BS}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">승강</span>
+      <div class="formula-expr formula-math">\[\text{rise} = \mathrm{BS} - \mathrm{FS}\]</div>
+      <span class="formula-note">음수 결과는 강(내려감)이다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>각, 방위각 및 전원 방위각 관례</h2>
+  <div class="body"><p>방향은 북쪽에서 시계 방향으로 측정한다. <strong>전원 방위각(whole-circle bearing)</strong> 은 0°에서 360°까지이고, <strong>환산 방위각(reduced bearing)</strong> 은 같은 방향을 북쪽 또는 남쪽에서 동쪽 또는 서쪽으로 표기한다. 후시점에서 전시점으로 시준선을 시계 방향으로 돌린 각이 <strong>우각(angle to the right)</strong> 이며, 대부분의 데이터 로거가 기대하는 관례이다.</p>
+<p>닫힌 다각형의 각은 정해진 합을 이루므로, 측정 합과 이론 합의 차이가 <strong>각오차(angular misclosure)</strong> 이다. n변형의 내각 합은 (n − 2) × 180°이다.</p>
+<p>방위각을 이어가는 것은 장부 정리와 같다. 이전 측선의 역방위각(정방위각 ± 180°)을 취하고, 우각을 더한 뒤, 필요하면 360°를 뺀다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">내각 합</span>
+      <div class="formula-expr formula-math">\[\sum \theta = (n - 2) \times 180^{\circ}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">방위각 전달</span>
+      <div class="formula-expr formula-math">\[\mathrm{WCB}_{\text{next}} = \mathrm{WCB}_{\text{back}} + \theta_{\text{right}}\]</div>
+      <span class="formula-note">WCB_back은 이전 방위각 ± 180°이다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>정해진 순서의 트래버스 계산</h2>
+  <div class="body"><p>트래버스는 측점 사슬을 따라 각과 거리를 측정한다. 다음 순서로 계산한다:<br />
+- 각을 조정한다<br />
+- 방위각을 도형 전체로 전달한다<br />
+- 각 측선을 <strong>위거(latitude)</strong> 와 <strong>경거(departure)</strong> 라 불리는 북쪽 및 동쪽 성분으로 변환한다<br />
+- 합산하여 폐합을 검사한다<br />
+- 잔차를 배분한다</p>
+<p>각오차는 각각이 동일한 노력으로 관측되었으므로 각에 균등하게 배분한다. 좌표 오차의 벡터 합이 <strong>선형오차(linear misclosure)</strong> 이고, 총 길이에 대한 그 크기가 <strong>상대정밀도(relative precision)</strong> 이다.</p>
+<p><strong>보우디치(Bowditch)</strong> (컴퍼스) 규칙은 좌표 보정을 측선 길이에 비례하여 배분하므로 짧은 측선은 적게 움직인다. 이 가중은 각 오차와 거리 오차가 비슷할 때 적합하다. 거리 정확도가 더 높으면 다른 가중이 필요하다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">각오차</span>
+      <div class="formula-expr formula-math">\[e_\theta = \sum \theta_{\text{measured}} - (n - 2) \times 180^{\circ}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">위거와 경거</span>
+      <div class="formula-expr formula-math">\[\Delta N = d \cdot \cos \theta, \quad \Delta E = d \cdot \sin \theta\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">보우디치 보정</span>
+      <div class="formula-expr formula-math">\[C = -\frac{e\,d_i}{\sum d}\]</div>
+      <span class="formula-note">e는 해당 성분의 폐합차이다</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>현장 측량 방법의 선택</h2>
+  <div class="body"><p>작업마다 요구하는 기하가 다르다. 방사법은 한 측점에서 모든 것이 보일 때 빠르고, 교회법은 목표점을 점유할 필요가 없으며, 트래버스는 새로운 기준점을 구축하고, GNSS는 개활지에 적합하지만 수관과 반사에는 취약하다.</p></div><div class="table-wrap"><table><caption>현장 측량 방법 비교</caption><thead><tr><th scope='col'>방법</th><th scope='col'>제공하는 것</th><th scope='col'>최적 용도</th><th scope='col'>주의할 점</th></tr></thead><tbody><tr><td>방사법</td><td>한 측점에서의 세부</td><td>개활지</td><td>가려진 점</td></tr><tr><td>교회법</td><td>미점유 점</td><td>제방, 위험한 물체</td><td>좁은 절개지</td></tr><tr><td>후방교회법</td><td>측점 위치</td><td>자유 측점</td><td>불량한 기하</td></tr><tr><td>트래버스</td><td>새 기준점</td><td>회랑, 시가지</td><td>각 및 선형 폐합</td></tr><tr><td>정적 GNSS</td><td>고정밀 기준점</td><td>개방된 하늘, 긴 기선</td><td>차폐, 다중경로</td></tr><tr><td>RTK GNSS</td><td>세부 및 설정</td><td>개활지, 신속 작업</td><td>기준계 변환, 수관</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>토털스테이션, EDM 및 GNSS</h2>
+  <div class="body"><p><strong>토털스테이션</strong>은 전자 데오돌라이트, EDM, 컴퓨터를 결합한다. EDM은 변조 신호의 시간을 측정하여 사거리를 얻은 뒤, 대기 조건, 기기 및 반사경 상수, 주기 오차에 대해 보정한다. 수평거리는 사거리와 천정각으로부터 구해지고, 높이는 기기고와 목표고를 고려하면 같은 관측으로부터 얻어진다.</p>
+<p><strong>GNSS</strong>는 위성까지의 거리를 측정한다. 코드(의사거리) 해는 미터 수준을, 반송파 위상 해는 <strong>정수 모호성(integer ambiguity)</strong> 을 해결한 뒤 센티미터 수준에 도달하며, 두 수신기가 함께 관측해야 한다. 기준점에는 정적, 세부에는 RTK를 쓴다.</p>
+<p>GNSS 위치는 지역 격자가 아닌 전지구 기준계를 기준으로 하므로, 변환과 독립적인 높이 검사가 방법에 포함되어야 한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">결합 거리와 방위각</span>
+      <div class="formula-expr formula-math">\[d = \sqrt{\Delta N^2 + \Delta E^2}, \quad \theta = \arctan\left(\frac{\Delta E}{\Delta N}\right)\]</div>
+      <span class="formula-note">θ를 표기하기 전에 사분면을 확인한다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">삼각 고저측량</span>
+      <div class="formula-expr formula-math">\[H_B = H_A + i + d \cdot \cos z - t\]</div>
+      <span class="formula-note">i 기기고, t 목표고</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>곡선과 설정</h2>
+  <div class="body"><p>평면 선형은 직선을 <strong>원곡선</strong>으로 연결하며, 흔히 그 사이에 반경이 변하는 완화곡선을 둔다. 반경 R, 편각 θ인 곡선에서 접선 길이는 곡선의 시작과 끝을 정하고, 호 길이는 중심선을 따라 <strong>통과 측점거리(through chainage)</strong> 를 준다.</p>
+<p><strong>접선각(tangential angle)</strong> 에 의한 설정은 간단한 사실에 기초한다. 접선과 현 사이의 각은 그 현이 중심에서 이루는 각의 절반과 같다. <strong>종곡선</strong>은 종단경사를 포물선으로 연결하며, 길이는 K값을 통한 정지시거로 정한다.</p>
+<p>설정은 기준점으로부터 설계를 지상에 배치하는 것으로, 보통 좌표에 의해 이루어진다. 기준점을 점유하고 기준 물체로 방향을 잡은 뒤, 계산된 방위각과 거리를 돌려 설정한다. 그 자체가 설정된 점에서 설정하지 말라.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">접선 길이</span>
+      <div class="formula-expr formula-math">\[T = R \cdot \tan\left(\frac{\theta}{2}\right)\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">원곡선 길이</span>
+      <div class="formula-expr formula-math">\[L = R \cdot \theta_{\mathrm{rad}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">종곡선 길이</span>
+      <div class="formula-expr formula-math">\[L = K \cdot A\]</div>
+      <span class="formula-note">A는 종단경사 변화량(퍼센트)</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>오차, 폐합 및 기록 추적</h2>
+  <div class="body"><p>오차는 실수와 같지 않다. <strong>과실(blunder)</strong> 은 자릿수 전위, 표척 오독 같은 중대한 실수이며, 여유 측정이 이를 발견한다. 조정이 이를 감추어서는 안 된다. <strong>계통 오차</strong>는 같은 부호로 반복되어 보정하거나 절차로 상쇄하고, <strong>우연 오차</strong>는 흩어지며 평균으로 줄어든다.</p>
+<p>두 말뚝 시험, 정·반 관측, 균형 시준은 이러한 거동을 예측 가능하게 한다. 모든 측량에는 정확도 진술이 필요하며, 보통 허용값과 비교한 폐합차로 제시한다.</p>
+<p>과실을 잡을 수 있을 만큼 여유 측정을 기록하고, 계산이 추적 가능하도록 야장은 잉크로 유지한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">허용 폐합차</span>
+      <div class="formula-expr formula-math">\[E_{\text{allow}} = c \cdot \sqrt{n}\]</div>
+      <span class="formula-note">c는 요구 정확도 등급에 따른다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">상대정밀도</span>
+      <div class="formula-expr formula-math">\[1 : \frac{\sum d}{e}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>좌표와 편거로부터의 면적과 체적</h2>
+  <div class="body"><p>면적은 좌표 또는 편거로부터 구한다. <strong>배면적(double area)</strong> 공식은 다각형 둘레의 교차곱을 합산하며, 좌표를 순서대로 취하고 마지막 점을 첫 점에 닫는다. 불규칙 경계의 경우 등간격 편거를 <strong>사다리꼴 규칙</strong>으로 적분하거나, 포물선 호를 맞추는 <strong>심프슨 규칙</strong>을 쓰며, 후자는 홀수 개의 편거를 필요로 한다.</p>
+<p>토공 체적은 단면적으로부터 구한다. 단면적법은 두 단면을 평균하여 길이를 곱하고, 중앙 단면적을 알면 각주공식이 이를 정교화한다. 깊은 굴착의 경우 격자점 표고를 모서리, 변, 내부점에 각각 1, 2, 4배 가중하여 평균한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">좌표로부터의 배면적</span>
+      <div class="formula-expr formula-math">\[2A = \left|\sum E_i (N_{i+1} - N_{i-1})\right|\]</div>
+      <span class="formula-note">닫힌 다각형을 순서대로 합산한다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">사다리꼴 규칙</span>
+      <div class="formula-expr formula-math">\[A \approx d\left(\frac{h_1}{2} + h_2 + \cdots + h_{n-1} + \frac{h_n}{2}\right)\]</div>
+      <span class="formula-note">d는 공통 편거 간격</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">심프슨 규칙</span>
+      <div class="formula-expr formula-math">\[A \approx \frac{d}{3}\left(h_1 + h_n + 4\sum h_{\mathrm{even}} + 2\sum h_{\mathrm{odd}}\right)\]</div>
+      <span class="formula-note">홀수 개의 편거가 필요하다</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">단면적법 체적</span>
+      <div class="formula-expr formula-math">\[V = \frac{L (A_1 + A_2)}{2}\]</div>
+      <span class="formula-note">평균 단면적 곱하기 길이</span>
+    </div></div><div class="table-wrap"><table><caption>면적 및 체적 규칙 비교</caption><thead><tr><th scope='col'>규칙</th><th scope='col'>적합한 경우</th><th scope='col'>주의할 점</th></tr></thead><tbody><tr><td>좌표(배면적)</td><td>직선 변 필지</td><td>점을 순서대로 나열하고 도형을 닫는다</td></tr><tr><td>사다리꼴</td><td>임의 편거 간격</td><td>곡선 경계를 과소평가한다</td></tr><tr><td>심프슨</td><td>매끄러운 불규칙 경계</td><td>편거 수가 홀수여야 하고 간격이 같아야 한다</td></tr><tr><td>단면적</td><td>균일 단면</td><td>면적이 비선형으로 변하면 과대평가한다</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>실무에서의 두 말뚝 시험</h2>
+  <div class="body"><p>레벨측량은 시준선이 수평이라고 가정한다. <strong>시준 오차</strong>는 이를 기울게 한다. 두 말뚝 시험이 그 기울기를 찾는다.</p>
+<p>말뚝을 약 30–40 m 간격으로 세우고 그 중간에 기계를 세운다. 두 거리가 같으므로 시준선이 기울어도 참 높이 차는 유지된다. 그런 다음 한 말뚝 너머 몇 미터에 기계를 세우고 두 표척을 다시 읽는다. 두 겉보기 높이 차의 차이가 말뚝 간격 하나에 대한 시준 오차이므로, 기기를 조정하거나 읽음을 보정한다.</p>
+<p>균형 잡힌 후시와 전시 거리는 모든 노선에서 같은 상쇄를 이루며, 이것이 정밀 레벨측량의 상시 규칙인 이유이다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">두 말뚝 시험의 시준 오차</span>
+      <div class="formula-expr formula-math">\[e = (a_2 - b_2) - (a_1 - b_1)\]</div>
+      <span class="formula-note">근접 설치와 중간 설치의 겉보기 높이 차의 차이</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>접선각에 의한 곡선 설정</h2>
+  <div class="body"><p>원곡선은 접선으로부터 <strong>접선각</strong>에 의해 설정된다. 접선점에서 접선과 임의의 현 사이의 각은 그 현이 중심에서 이루는 각의 절반과 같다.</p>
+<p>반경 R에서 전현 c에 대한 접선각은 c/(2R) 라디안이다. 연속된 현은 누적되므로, 각 점은 접선으로부터 누적 총각을 돌리고 현 거리를 놓아 설정한다. 완화곡선도 반경이 변하는 현을 사용하여 같은 방식으로 설정된다. 산술은 동일하고 곡선을 따라 반경만 변한다.</p>
+<p>이 방법은 먼 쪽 접선점에서 스스로 검산된다. 총 편각이 편각의 절반과 같아야 한다.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">접선각</span>
+      <div class="formula-expr formula-math">\[\delta = \frac{c}{2R}\]</div>
+      <span class="formula-note">라디안; 도로 바꾸려면 180/π를 곱한다</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>기준점(Control)</dt><dd>알려진 좌표와 높이를 가진 측점의 망으로, 다른 모든 작업의 기준이 된다.</dd></div><div class="term"><dt>환산표고(Reduced level)</dt><dd>명시된 수직 기준면에 대한 점의 높이.</dd></div><div class="term"><dt>전원 방위각(Whole-circle bearing)</dt><dd>북쪽에서 시계 방향으로 측정하여 0°에서 360° 사이로 표기한 방향.</dd></div><div class="term"><dt>각오차(Angular misclosure)</dt><dd>닫힌 도형에서 측정된 각의 합과 이론 합의 차이.</dd></div><div class="term"><dt>보우디치 규칙(Bowditch rule)</dt><dd>좌표 폐합차를 각 트래버스 측선 길이에 비례하여 배분하는 조정.</dd></div><div class="term"><dt>정수 모호성(Integer ambiguity)</dt><dd>위성과 수신기 사이의 반송파 파장의 미지 정수 개수로, 센티미터 위치에 도달하려면 이를 해결해야 한다.</dd></div><div class="term"><dt>통과 측점거리(Through chainage)</dt><dd>고정 원점에서 노선 중심선을 따라 측정한 거리로, 그 위의 임의 점을 참조하는 데 쓰인다.</dd></div><div class="term"><dt>두 말뚝 시험(Two-peg test)</dt><dd>두 말뚝 사이 중간과 한쪽 말뚝 근처에서 관측한 높이 차를 비교하여 시준 오차를 정량화하는 레벨측량 검사.</dd></div><div class="term"><dt>접선각(Tangential angle)</dt><dd>접선과 곡선점에 이르는 현 사이의 각으로, 그 현이 이루는 중심각의 절반과 같다.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>4측점 트래버스의 폐합 및 조정</h2>
+        <p class="problem">닫힌 고리 트래버스가 A, B, C, D를 거쳐 A로 돌아온다. 네 우각은 각각 90°00′02″로 측정되었다. AB의 방위각은 090°00′00″으로 고정되어 있고, 측정값은 AB = 100.010 m, BC = 60.000 m, CD = 99.990 m, DA = 60.000 m이다. 각을 조정하고 방위각과 좌표를 계산한 뒤, 보우디치 조정을 적용하라. 점 A는 N 1000.000 m, E 500.000 m에 고정되어 있다.</p>
+        <ol><li>측정 각 합 = 4 × 90°00′02″ = 360°00′08″. 이론 합 = (4 − 2) × 180° = 360°00′00″이므로 각오차는 +8″이다. 허용값 20″√4 = 40″이므로 작업은 통과한다.</li><li>−8″을 균등 배분한다. 각당 보정 −2″. 조정된 모든 각은 정확히 90°00′00″이며, 이는 우연한 산포가 아닌 하나의 계통적 원인을 시사한다.</li><li>방위각 전달: WCB_BC = 090° + 90° = 180°, WCB_CD = 270°, WCB_DA = 000°.</li><li>측선 분해: ΔN = d cos θ, ΔE = d sin θ. 위거: BC = −60.000, DA = +60.000, 나머지는 0이므로 ΣΔN = 0. 경거: AB = +100.010, CD = −99.990이므로 ΣΔE = +0.020 m.</li><li>선형오차 = √(0² + 0.020²) = 0.020 m, 총 길이 320.000 m에 대해 상대정밀도 1 : 16 000. 각 경거 보정 = −0.020 × d / 320: AB −0.00625 m, BC −0.00375 m, CD −0.00625 m, DA −0.00375 m.</li><li>보정된 경거: AB +100.00375, BC −0.00375, CD −99.99625, DA −0.00375, 합은 0. 보정된 위거는 변하지 않으며 역시 합은 0.</li><li>보정된 성분을 좌표에 더한다: B (1000.000, 600.004), C (940.000, 600.000), D (940.000, 500.004), A (1000.000, 500.000)로 닫힌다.</li><li>검산: 반올림 후 폐합 좌표가 A를 정확히 재현하고, 폐합차는 이탈 방향과 평행한 측선에 의해 발생했으며, 이는 거리 의존 오차가 보여야 할 모습이다.</li></ol>
+        <div class="answer"><b>Answer</b>각오차 +8″(허용 40″ 이내)를 0으로 조정; 선형오차 20 mm, 정밀도 약 1 : 16 000, 보우디치로 제거; 조정된 고리는 A에서 N 1000.000 m, E 500.000 m로 닫힌다.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>계산 전에 야장 검산을 하라: ΣBS − ΣFS는 첫 환산표고와 마지막 환산표고의 차와 같아야 한다.</li><li>어떤 트래버스든 항상 각오차를 먼저 계산하라. 각이 닫히기 전에는 방위각을 신뢰할 수 없다.</li><li>일관된 축 순서를 유지하라: N을 E보다 먼저, 방위각은 atan2(ΔE, ΔN)에서 구하고 그 반대로 하지 말라.</li><li>허용 폐합차를 명시하고 명시적으로 비교하라. 비교하지 않은 폐합차는 산술이 맞아도 점수를 거의 받지 못한다.</li><li>좌표 면적 문제: N과 E 열로 배면적 표를 작성하고 교차곱하라. 부호 하나만 틀려도 면적뿐 아니라 다각형의 방향이 뒤집힌다.</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Hong Kong 1980 Geodetic Datum and HK1980 Grid parameters</h3>
+  <p class="ref-table-intro">Defining parameters of the HK80 datum and the local HK1980 Grid, a Transverse Mercator system used for cadastral, engineering and large-scale mapping in Hong Kong. They are the constants entered into coordinate transformations and checks.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Parameter</th><th scope='col'>Value</th><th scope='col'>Notes</th></tr></thead><tbody><tr><td>Geodetic datum</td><td>Hong Kong 1980 (HK80)</td><td>Local datum for HK1980 Grid coordinates</td></tr><tr><td>Reference ellipsoid</td><td>International Hayford (1910); a = 6 378 388 m, 1/f = 297.0</td><td>Semi-major axis and flattening</td></tr><tr><td>Datum origin (Trigonometrical Zero)</td><td>22° 18&#x27; 12.82&quot; N, 114° 10&#x27; 18.75&quot; E</td><td>Old trig station at the Hong Kong Observatory</td></tr><tr><td>Map projection</td><td>Transverse Mercator</td><td>Conformal cylindrical projection</td></tr><tr><td>Projection origin (old Trig 2, Patridge Hill)</td><td>22° 18&#x27; 43.68&quot; N, 114° 10&#x27; 42.80&quot; E</td><td>Reference station for the grid origin</td></tr><tr><td>Grid coordinates of the projection origin</td><td>819 069.80 mN, 836 694.05 mE</td><td>Northing and easting of the origin</td></tr><tr><td>Scale factor</td><td>Unity (1.0) along the central meridian</td><td>At old Trig 2; the UTM grids in Hong Kong use 0.9996</td></tr></tbody></table></div>
+  <p class="ref-table-note">Parameters from the Datum Parameters and Projection Parameters tables in the Explanatory Notes on Geodetic Datums in Hong Kong, Survey and Mapping Office, Lands Department (1995, minor revision 2023).</p>
+  <p class="ref-table-caveat">Revision summary only. Use the current transformation parameters, projection formulae and worked examples published by the Survey and Mapping Office; the grid coordinates quoted refer to the projection origin, not to any local benchmark.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q01</span><span>시준고 방식에서 중간점의 환산표고는 어떻게 구하는가?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>후시에 중간시를 더한다</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>후시와 전시를 평균한다</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>알고 있는 표고에 중간시를 더한다</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>시준고에서 중간시를 뺀다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>시준고는 시준선의 표고이므로, 모든 표척 읽음을 여기서 빼면 지반점에 도달한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q02</span><span>닫힌 트래버스의 다섯 내각 합이 540°00′40″이다. 각오차는 얼마인가?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>−40″</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>+40″</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>+1°40′</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>0, 왜냐하면 (5 − 2) × 180° = 540°이기 때문이다</span></button></div>
+    <div class="quiz-explain"><b>Why</b>이론 합은 (5 − 2) × 180° = 540°00′00″이므로 측정값에서 이론값을 빼면 +40″이다.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q03</span><span>보우디치 규칙에서 트래버스 측선에 적용되는 보정은?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>측선 방위각에 비례</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>길이와 무관하게 모든 측선에 동일</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>긴 측선보다 짧은 측선에서 더 큼</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>측선 길이에 비례</span></button></div>
+    <div class="quiz-explain"><b>Why</b>보우디치는 폐합차를 거리에 비례하여 배분하므로 짧은 측선은 비례적으로 작은 보정을 받는다.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>센티미터 수준의 측량 위치를 얻을 수 있는 GNSS 관측값은?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>C/A 코드의 의사거리</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>반송파의 도플러 변이</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>정수 모호성을 해결한 반송파 위상</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>방송 궤도력(almanac)</span></button></div>
+    <div class="quiz-explain"><b>Why</b>코드 거리는 미터 수준을 주지만, 반송파 위상은 수 밀리미터까지 측정되며 정수 사이클 모호성을 확정하면 정밀 거리가 된다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q05</span><span>면적 계산을 위한 심프슨 규칙은 편거 수가 어떻게 되어야 하는가?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>홀수</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>간격이 같다면 임의의 수</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>4의 배수</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>짝수</span></button></div>
+    <div class="quiz-explain"><b>Why</b>심프슨 규칙은 구간을 두 개씩 묶어 포물선 호를 맞추므로, 편거 수(양 끝 포함)가 홀수여야 한다.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>두 말뚝 시험에서 레벨을 먼저 두 말뚝의 중간에 세우는 이유는?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>관측된 높이 차에서 시준 오차가 상쇄되도록</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>읽음이 최대가 되도록</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>이기점 없이 표척을 읽을 수 있도록</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>굴절과 곡률이 상쇄되도록</span></button></div>
+    <div class="quiz-explain"><b>Why</b>시준 거리가 같으면 기울어진 시준선이 두 읽음을 동등하게 오염시키므로 참 높이 차는 유지된다.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-geology.ko.html"><span>Core</span><b>공학 지질학</b></a><a class="related-card" href="construction-introduction.ko.html"><span>Core</span><b>건설 입문</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="soil-mechanics.ko.html"><small>Previous</small><b>흙의 역학</b></a><a class="next" href="integrated-project-quality.ko.html"><small>Next</small><b>통합 프로젝트 및 품질 관리</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Survey and Mapping Office, Lands Department. (2023). <i>Explanatory Notes on Geodetic Datums in Hong Kong (minor revision 2023)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.geodetic.gov.hk/common/data/pdf/explanatorynotes.pdf" rel="noopener">https://www.geodetic.gov.hk/common/data/pdf/explanatorynotes.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">기준점 먼저 — 세부는 스스로를 검증하지 못한다.</p><p class="margin-note">승강 방식은 모든 중간시를 검산한다.</p><p class="margin-note">좌표를 건드리기 전에 각을 조정하라.</p><p class="margin-note">곡률과 시준 오차를 상쇄하려면 시준을 균형 있게 하라.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

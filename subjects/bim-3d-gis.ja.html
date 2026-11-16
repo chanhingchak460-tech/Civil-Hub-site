@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BIMと3D GIS — Civil Hub</title>
+<meta name="description" content="ビルディングインフォメーションモデルは個々の資産を豊富なデータで記述し、3D GISはそれらが位置する地面を記述する。両者を統合するには、オープン標準、共通データ環境、および共有座標系が必要である。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/bim-3d-gis.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="BIMと3D GIS — Civil Hub">
+<meta property="og:description" content="ビルディングインフォメーションモデルは個々の資産を豊富なデータで記述し、3D GISはそれらが位置する地面を記述する。両者を統合するには、オープン標準、共通データ環境、および共有座標系が必要である。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/bim-3d-gis.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="bim-3d-gis.html" data-alt-zh-hant="bim-3d-gis.zh-Hant.html" data-alt-ja="bim-3d-gis.ja.html" data-alt-ko="bim-3d-gis.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">BIMと3D GIS</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">専門</p>
+          <h1>BIMと3D GIS</h1>
+          <p class="subject-sub">ビルディングインフォメーションモデルと空間データの統合</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>専門</li><li><b data-i18n="subject.read">Read</b>8 分</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>5</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M120 96 L170 66 L220 96 L170 126 Z" stroke="currentColor" stroke-width="1.4"/><path d="M120 96 V146 L170 176 V126 M220 96 V146 L170 176" stroke="currentColor" stroke-width="1.4"/><circle cx="120" cy="96" r="2.6" fill="var(--accent)" stroke="none"/><circle cx="220" cy="96" r="2.6" fill="var(--accent)" stroke="none"/><circle cx="170" cy="66" r="2.6" fill="var(--accent)" stroke="none"/><circle cx="170" cy="126" r="2.6" fill="var(--accent)" stroke="none"/><circle cx="120" cy="146" r="2.6" fill="var(--accent)" stroke="none"/><circle cx="220" cy="146" r="2.6" fill="var(--accent)" stroke="none"/><circle cx="170" cy="176" r="2.6" fill="var(--accent)" stroke="none"/><text x="170" y="42" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">INFORMATION MODEL</text></svg>
+          <figcaption>An information model — elements and relationships</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">BIMは情報モデルであり、図面ではない</a></li><li><a href="#sec-2">BIMの次元</a></li><li><a href="#sec-3">IFCとオープンな交換</a></li><li><a href="#sec-4">CityGMLとセマンティック都市モデル</a></li><li><a href="#sec-5">共通データ環境</a></li><li><a href="#sec-6">GISデータモデルと3D都市モデル</a></li><li><a href="#sec-7">点群から竣工モデルへ</a></li><li><a href="#sec-8">座標系とジオリファレンス</a></li><li><a href="#sec-9">3D分析とWeb GIS</a></li><li><a href="#sec-10">デジタルツインと相互運用性</a></li><li><a href="#sec-11">BIMとGISデータの統合</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">ビルディングインフォメーションモデルは個々の資産を豊富なデータで記述し、3D GISはそれらが位置する地面を記述する。両者を統合するには、オープン標準、共通データ環境、および共有座標系が必要である。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="bim-3d-gis" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>BIMは情報モデルであり、図面ではない</h2>
+  <div class="body"><p><strong>ビルディングインフォメーションモデル</strong>は、壁、スラブ、配管、空間などのオブジェクトの集合であり、各オブジェクトはジオメトリ、関係性、属性を保持する。各オブジェクトが一度だけ定義されるため、同じモデルから図面、集計表、数量、調整チェック、引き渡しデータを生成できる。</p>
+<p><strong>フェデレーテッドモデル</strong>は、各作成者が自身のファイルの管理を維持しながら、専門分野のモデルを1つの調整環境に統合する。モデルの品質、命名、情報構造は、図面そのものと同じくらい重要である。</p>
+<p>モデルは完成時に運用者に引き渡される記録でもあるため、その情報は建設する人だけでなく、使用する人によって定義されるべきである。</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>BIMの次元</h2>
+  <div class="body"><p>情報モデルは<strong>次元</strong>によって記述される。3次元はジオメトリを与え、より高次の次元は他の人が使用する情報を追加する。</p>
+<ul>
+<li>番号付けは正式な標準ではなくコミュニケーションの手段であるため、プロジェクトごとに各次元の意味を合意する必要がある。</li>
+<li>高次の次元の価値は低次の次元に依存する。</li>
+<li>不適切な命名と調整不足のオブジェクトに基づいて構築された集計表やコストモデルは、自信に満ちているが誤った答えを生み出す。</li>
+</ul></div><div class="table-wrap"><table><caption>各BIM次元が追加するもの</caption><thead><tr><th scope='col'>次元</th><th scope='col'>追加されるもの</th><th scope='col'>典型的な用途</th></tr></thead><tbody><tr><td>3D</td><td>ジオメトリと空間関係</td><td>干渉チェックと視覚的レビュー</td></tr><tr><td>4D</td><td>時間と施工順序</td><td>工程計画と現場計画</td></tr><tr><td>5D</td><td>コストと数量</td><td>計測と見積り</td></tr><tr><td>6D</td><td>持続可能性とエネルギー データ</td><td>性能と炭素の検討</td></tr><tr><td>7D</td><td>運用と保守のデータ</td><td>資産引き渡しとファシリティマネジメント</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>IFCとオープンな交換</h2>
+  <div class="body"><p><strong>IFC</strong>（Industry Foundation Classes）は、建築モデルを交換するためのオープンでベンダー中立なスキーマである。壁、空間、プロパティなどのエンティティとそれらの関係を定義するため、あるツールで作成されたモデルを意味を失うことなく別のツールで読むことができる。</p>
+<ul>
+<li>交換は<strong>モデルビュー定義</strong>によって制御され、調整や数量算出などの目的に必要なスキーマのサブセットを選択する。</li>
+<li>プロパティセットは受信側が必要とする属性を保持し、分類システムはオブジェクトを作業分解構成と整合させる。</li>
+<li>IFCはネイティブ形式を置き換えるものではなく、それらの間の契約である。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>CityGMLとセマンティック都市モデル</h2>
+  <div class="body"><p><strong>CityGML</strong>は3D都市モデルのオープン標準である。建物、地形、道路、植生などの主題クラスを持ち、ブロックモデルから完全な内部まで段階的な詳細度で整理される。設計・施工のために1つの建物の構成要素を記述するIFCとは異なり、CityGMLは分析と管理のために多数の資産とそのコンテキストを記述する。</p>
+<p>オブジェクトは表面だけでなくセマンティクスも持つため、単なるメッシュではなく、洪水レベル以上のすべての住宅階を問い合わせることができる。2つのスキーマは重複するが1対1で対応しないため、変換には定義されたマッピングが必要であり、すべての変換は途中で何らかの情報を失う。</p></div><div class="table-wrap"><table><caption>2つのスキーマ、2つの役割</caption><thead><tr><th scope='col'>側面</th><th scope='col'>IFC</th><th scope='col'>CityGML</th></tr></thead><tbody><tr><td>範囲</td><td>1つの資産の構成要素とプロパティ</td><td>都市全体の主題：建物、地形、道路</td></tr><tr><td>詳細</td><td>施工レベルの要素</td><td>主題ごとの段階的な詳細度</td></tr><tr><td>ジオメトリ</td><td>ソリッド、しばしばパラメトリックな構成要素</td><td>サーフェスベース、テクスチャ付き</td></tr><tr><td>主な利用者</td><td>設計、施工、引き渡し</td><td>計画、分析、管理</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>共通データ環境</h2>
+  <div class="body"><p><strong>共通データ環境</strong>（CDE）は、プロジェクト情報の唯一の合意された情報源である。モデルと文書は<strong>コンテナ</strong>に保持され、作業中、共有、公開、アーカイブという管理された状態を経る。共有または公開された情報のみが他者によって信頼され得る。</p>
+<ul>
+<li>情報要件（どの情報を、どの形式で、いつまでに）は作業開始前に定義され、提供計画は誰が提供するかを示す。</li>
+<li>バージョン管理、命名、ステータスコードはどのファイルが最新かを示し、調整における最も古い問題を解決する。</li>
+<li>複数の組織が貢献する場合、環境は各コンテナを誰がいつ承認したかも記録するため、責任は追跡可能なままである。</li>
+</ul></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>GISデータモデルと3D都市モデル</h2>
+  <div class="body"><p><strong>GIS</strong>は空間データモデルで世界を記述する。<strong>ベクター</strong>モデルはポイント、ライン、ポリゴンを属性とトポロジーとともに格納し、ネットワークや境界に適している。<strong>ラスター</strong>モデルはグリッドセルを格納し、地形や画像などの連続表面に適している。<strong>TIN</strong>は地形を三角形分割された表面として表現する。</p>
+<p>3次元都市モデルは高さ、屋根、詳細を追加し、<strong>詳細度</strong>によって段階付けられる。単純なブロックモデル、次に屋根形状、次に詳細なファサードである。都市モデルと建築モデルは同じ場所を異なるスケールで記述するため、両者は分離されるのではなく、ますますリンクされるようになっている。GISは位置、スケール、多数のデータセットに強く、BIMは個々の資産とそのプロパティに強い。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">ラスターセル数</span>
+      <div class="formula-expr formula-math">\[N = \frac{W \times H}{c^2}\]</div>
+      <span class="formula-note">WとHは範囲の寸法、cはセルサイズ。cを半分にするとセル数は4倍になる</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>点群から竣工モデルへ</h2>
+  <div class="body"><p>既存構造物は図面と一致しないことが多いため、取得は<strong>レーザースキャニング</strong>またはフォトグラメトリから始まり、<strong>点群</strong>（数百万の測定座標）を生成する。タイムオブフライトスキャナはレーザーパルスの往復時間から各距離を導出し、密度はスキャン解像度に従う。点間隔を半分にすると保存される点数は4倍になる。</p>
+<p>点群をモデルに変換するのが<strong>スキャン・トゥ・BIM</strong>である。スキャンを1つの座標系に位置合わせし、ノイズを除去し、点を構造物、地面、設備に分類し、モデル要素をトレースまたは自動フィットする。プロセスは自動化と判断の組み合わせであり、ソフトウェアが提案し、エンジニアが確認し、モデルは点群に残されたすべての誤差を継承する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">タイムオブフライト距離</span>
+      <div class="formula-expr formula-math">\[R = \frac{c \Delta t}{2}\]</div>
+      <span class="formula-note">cは光速、Δtは往復時間。係数2は帰路を考慮する</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">点密度</span>
+      <div class="formula-expr formula-math">\[\rho = \frac{N}{A}\]</div>
+      <span class="formula-note">面積AあたりのN点。細かいグリッドは小さな特徴に適するが、ストレージが急速に増大する</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>座標系とジオリファレンス</h2>
+  <div class="body"><p>BIMモデルはローカル座標で作成されるが、インフラは<strong>座標参照系</strong>に存在する。地理座標系は測地系上の緯度と経度を使用し、投影座標系はそれをメートル単位のグリッドに平坦化する。両者を組み合わせるには、平行移動、回転、スケールを伴う変換が必要である。</p>
+<p><code>E = E_0 + s(x cos θ − y sin θ)</code><br />
+<code>N = N_0 + s(x sin θ + y cos θ)</code></p>
+<p>ここで<code>(x, y)</code>はモデル座標、<code>θ</code>はモデル北からグリッド北への回転、<code>s</code>はスケール、<code>(E_0, N_0)</code>は平行移動である。符号を間違えたり測地系が古かったりすると、モデルは数メートルずれ、その上のすべての資産が誤差を継承する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">モデルからグリッドへの変換</span>
+      <div class="formula-expr formula-math">\[E = E_0 + s(x\cos\theta - y\sin\theta), \quad N = N_0 + s(x\sin\theta + y\cos\theta)\]</div>
+      <span class="formula-note">θはモデル北からグリッド北まで測定。地図投影ではsはほぼ1</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>3D分析とWeb GIS</h2>
+  <div class="body"><p>3D GISは<strong>分析</strong>でその価値を発揮する。<strong>可視領域</strong>はある点から見える地形を示し、影モデルは提案された塔の日照をテストし、洪水シミュレーションは暴風雨がどの地下入口に到達するかをチェックし、視線チェックはクレーンがリフトゾーンに到達できるかを確認する。各分析には地形表面、資産モデル、正しく共有された座標系が必要である。</p>
+<p>Web GISはシーンサービスを通じてこれらをブラウザに移し、関係者はデスクトップライセンスなしでレビューできる。BIMビューアも建築モデルに対して同様のことを行い、両者はますます1つのダッシュボードに埋め込まれている。Webを介して移動するのは公開されチェックされたバージョンであり、作業ファイルではない。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">合成尺度係数</span>
+      <div class="formula-expr formula-math">\[\text{grid distance} = \text{ground distance} \times \mathrm{CSF}\]</div>
+      <span class="formula-note">CSFは投影尺度係数と高さ係数を組み合わせる。測量測定はGISに入力する前にグリッド距離に換算される</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>デジタルツインと相互運用性</h2>
+  <div class="body"><p><strong>デジタルツイン</strong>は資産とともに最新の状態に保たれたモデルである。竣工ジオメトリ、資産データ、ライブセンサー readings を1つの環境に統合する。建設ではなく運用と保守を支援するため、モデル、GIS、資産台帳間の一貫した識別子に依存する。</p>
+<p><strong>相互運用性</strong>が実用的な限界である。ジオメトリは転送されても、プロパティ、単位、材料、分類は失われる可能性があるため、交換は定義された目的とチェックルールセットに対してテストされる。干渉チェックと自動チェックは競合と不適合を発見するが、それは書かれたルールに対してのみである。</p></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>BIMとGISデータの統合</h2>
+  <div class="body"><p>統合は主にデータの問題であり、視覚的な問題ではない。2つの世界は<strong>識別子</strong>を共有する必要がある。建物や構成要素は資産台帳、GISフィーチャ、モデルで同じ参照を持たなければ、すべての更新が分岐する。</p>
+<p>ETLパイプラインはIFCクラスをGISスキーマにマッピングし、分析に不要な施工詳細を削除し、変換された内容をログに記録する。屋内GISは同じロジックを建物内部に拡張する。部屋、経路、センサーはフロアプランに参照される。</p>
+<p>統合の実用的なテストは往復である。資産台帳を変更し、その変更が手動の再入力なしにGISビューとBIMビューの両方に現れることを確認する。</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>フェデレーテッドモデル</dt><dd>調整のために別々の専門分野モデルから組み立てられた統合モデルで、作成権限はソースファイルに保持される。</dd></div><div class="term"><dt>IFC</dt><dd>ソフトウェアツール間でビルディングインフォメーションモデルを交換するためのオープンでベンダー中立なデータスキーマ。</dd></div><div class="term"><dt>共通データ環境</dt><dd>プロジェクト情報の合意された唯一の情報源であり、作業中、共有、公開、アーカイブの管理された状態を持つ。</dd></div><div class="term"><dt>詳細度</dt><dd>3D都市モデルが表現する幾何学的およびセマンティックな詳細の段階的な尺度で、ブロックモデルから詳細なファサードまで。</dd></div><div class="term"><dt>ジオリファレンス</dt><dd>測量およびGISデータと整合するように、モデルを座標参照系に位置付けること。</dd></div><div class="term"><dt>デジタルツイン</dt><dd>竣工データと継続的なセンサー情報を通じて物理的資産とともに最新の状態に保たれたモデル。</dd></div><div class="term"><dt>干渉チェック</dt><dd>専門分野間の物理的または空間的な競合についてフェデレーテッドモデルを自動チェックすること。</dd></div><div class="term"><dt>CityGML</dt><dd>セマンティック3D都市モデルのオープン標準で、建物、地形、インフラを主題と詳細度によって記述する。</dd></div><div class="term"><dt>スキャン・トゥ・BIM</dt><dd>点群を位置合わせ、分類し、竣工情報モデルにトレースするワークフロー。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>ローカルモデルのジオリファレンス</h2>
+        <p class="problem">建築モデルはメートル単位のローカル座標を使用している。柱の中心はx = 120.000 m、y = 45.000 mにある。モデルは、モデル北からグリッド北への回転30°、スケール係数0.9996、グリッド東距500 000.000 mおよび北距100 000.000 mへの平行移動でプロジェクトグリッド上に配置する必要がある。柱のグリッド座標を求め、原点からの距離がスケールを除いて保存されることを確認せよ。</p>
+        <ol><li>cos 30° = 0.866025、sin 30° = 0.5。</li><li>東オフセット：x cos θ − y sin θ = 120 × 0.866025 − 45 × 0.5 = 103.923 − 22.500 = 81.423 m。</li><li>北オフセット：x sin θ + y cos θ = 120 × 0.5 + 45 × 0.866025 = 60.000 + 38.971 = 98.971 m。</li><li>スケールを適用：0.9996 × 81.423 = 81.390 m、0.9996 × 98.971 = 98.931 m。</li><li>平行移動を加算：E = 500 081.390 m、N = 100 098.931 m。</li><li>健全性チェック：ローカルオフセット長は√(120² + 45²) = 128.160 m。スケール後は128.109 mとなり、変換後のオフセットは√(81.390² + 98.931²) = 128.108 mで、丸め誤差の範囲で一致する。</li></ol>
+        <div class="answer"><b>Answer</b>柱はグリッド東距500 081.390 m、北距100 098.931 mにある。チェックにより、回転とスケールが一貫して適用されたことが確認される。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>モデルと情報を区別する：ジオメトリ、プロパティ、関係性、ステータスは別々の質問である。</li><li>CDEの質問では、状態を挙げ、その状態の情報を誰が信頼できるかを述べる。</li><li>座標変換では、平行移動を加える前に回転とスケールを別々に書く。符号の誤りが明らかになる。</li><li>統合の質問では、まず共有識別子と座標系を挙げる。他のすべてはこれらの2つの選択の下流にある。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>IFCの主な目的は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>4D施工順序を自動生成する</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>点群と地形表面を保存する</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>意味を失うことなく異なるソフトウェアツール間で建築モデルを交換する</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>共通データ環境を置き換える</span></button></div>
+    <div class="quiz-explain"><b>Why</b>IFCはベンダー中立のスキーマであるため、モデルはエンティティとプロパティを保ったまま作成ツールとチェックツール間を移動できる。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>共通データ環境において、共有状態の情報は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>クライアントのアーカイブ専用</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>まだ開発中で未チェック</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>チェック済みで他の専門分野が調整に利用可能</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>プロジェクト全体で凍結</span></button></div>
+    <div class="quiz-explain"><b>Why</b>共有情報はチェックされ、他者が使用できるようにリリースされる。一方、公開情報は定義された目的のために承認される。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q03</span><span>詳細度1の3D都市モデルは通常何を示すか：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>内部の部屋と家具</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>平らな屋根を持つ単純なブロックモデル</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>屋根形状と建物部分</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>詳細なファサード、窓、ドア</span></button></div>
+    <div class="quiz-explain"><b>Why</b>LOD1はブロックモデルの段階であり、屋根形状はLOD2、詳細なファサードはLOD3で登場する。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q04</span><span>地形標高のような連続表面に最も適したGISデータモデルはどれか：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>リレーショナルテーブル</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>ベクターポイント</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>ベクターポリゴン</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>ラスターグリッド</span></button></div>
+    <div class="quiz-explain"><b>Why</b>ラスターは各グリッドセルに値を格納するため、標高、温度、画像などの連続フィールドに適している。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>CityGMLは最も正確には次のように記述される：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>地図を公開するためのWebサービス</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>単一の建物の構成要素を交換するためのベンダー中立スキーマ</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>セマンティック3D都市モデルのオープン標準</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>レーザースキャンファイル形式</span></button></div>
+    <div class="quiz-explain"><b>Why</b>CityGMLはセマンティックオブジェクトと詳細度で都市全体の主題をモデル化し、建物レベルの焦点を持つIFCを補完する。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q06</span><span>レーザーパルスが3.33 ns後に戻ってくる。光速を3 × 10⁸ m/sとすると、測定距離はおよそ：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>1000 m</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>0.5 m</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1.0 m</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>2.0 m</span></button></div>
+    <div class="quiz-explain"><b>Why</b>R = cΔt/2 = (3 × 10⁸ × 3.33 × 10⁻⁹)/2 ≈ 0.5 m。往復で光が移動した距離が半分になる。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="bim-management.ja.html"><span>Professional</span><b>BIMマネジメント</b></a><a class="related-card" href="surveying.ja.html"><span>Core</span><b>測量学</b></a><a class="related-card" href="integrated-project-quality.ja.html"><span>Professional</span><b>統合プロジェクト・品質管理</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="geotechnical-design.ja.html"><small>Previous</small><b>地盤工学設計</b></a><a class="next" href="service-learning.ja.html"><small>Next</small><b>サービスラーニング</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">オブジェクトはデータを持つが、線は持たない。</p><p class="margin-note">調整のためにフェデレートし、作成権限を統合しない。</p><p class="margin-note">IFCはツール間の契約である。</p><p class="margin-note">回転、次にスケール、次に平行移動。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

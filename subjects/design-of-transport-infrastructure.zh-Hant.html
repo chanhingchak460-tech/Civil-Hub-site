@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>運輸基礎設施設計 — Civil Hub</title>
+<meta name="description" content="路口同鐵路線嘅規模係按佢哋要提供嘅容量嚟釐定，而唔係按佢哋佔用嘅空間。呢一頁涵蓋優先路口、迴旋處、燈號容量、鐵路班次間距，以及將呢啲元素連繫埋一齊嘅標準。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-transport-infrastructure.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="運輸基礎設施設計 — Civil Hub">
+<meta property="og:description" content="路口同鐵路線嘅規模係按佢哋要提供嘅容量嚟釐定，而唔係按佢哋佔用嘅空間。呢一頁涵蓋優先路口、迴旋處、燈號容量、鐵路班次間距，以及將呢啲元素連繫埋一齊嘅標準。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-transport-infrastructure.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="design-of-transport-infrastructure.html" data-alt-zh-hant="design-of-transport-infrastructure.zh-Hant.html" data-alt-ja="design-of-transport-infrastructure.ja.html" data-alt-ko="design-of-transport-infrastructure.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">運輸基礎設施設計</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">核心</p>
+          <h1>運輸基礎設施設計</h1>
+          <p class="subject-sub">路口、鐵路與支撐人流物流的基礎設施</p>
+          <ul class="subject-facts"><li><b>類型</b>核心</li><li><b>閱讀</b>10 分鐘</li><li><b>章節</b>11</li><li><b>公式</b>11</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M56 170 H298" stroke="currentColor" stroke-width="1.2"/><path d="M86 170 V64" stroke="currentColor" stroke-width="1.6"/><path d="M78 64 H190" stroke="currentColor" stroke-width="1.6"/><path d="M86 64 L160 40" stroke="currentColor" stroke-width="1.3"/><path d="M160 40 V86" stroke="var(--faint)" stroke-width="1"/><path d="M152 86 h16 v10 h-16 z" stroke="currentColor" stroke-width="1.1"/><path d="M86 110 H190" stroke="var(--line)" stroke-width="1.1"/><path d="M210 170 V112 H282 V170" stroke="currentColor" stroke-width="1.4"/><path d="M222 128 H270" stroke="var(--line)" stroke-width="1"/><path d="M222 146 H270" stroke="var(--line)" stroke-width="1"/><text x="170" y="192" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">SITE & CRANE</text></svg>
+          <figcaption>Site operations — crane and frame</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">設計係一個容量問題</a></li><li><a href="#sec-2">優先路口：間隙接受</a></li><li><a href="#sec-3">迴旋處：環流流量決定入口容量</a></li><li><a href="#sec-4">燈號：飽和流量同綠燈比率</a></li><li><a href="#sec-5">現場量度飽和流量</a></li><li><a href="#sec-6">行人同單車使用者都係設計對象</a></li><li><a href="#sec-7">鐵路容量係班次間距計算</a></li><li><a href="#sec-8">鐵路容量數字：提供量與使用量</a></li><li><a href="#sec-9">車站同轉車站</a></li><li><a href="#sec-10">交通影響評估：範圍同步驟</a></li><li><a href="#sec-11">標準、模型同判斷</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">路口同鐵路線嘅規模係按佢哋要提供嘅容量嚟釐定，而唔係按佢哋佔用嘅空間。呢一頁涵蓋優先路口、迴旋處、燈號容量、鐵路班次間距，以及將呢啲元素連繫埋一齊嘅標準。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="design-of-transport-infrastructure" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>設計係一個容量問題</h2>
+  <div class="body"><p>交通設施係為設計年份嘅需求而設計，並以每小時<strong>客車單位</strong>（pcu）表示，而唔係以原始車輛數目表示，因為重型貨車佔用嘅道路空間比私家車多。關鍵比率係<strong>飽和度</strong>，即需求除以容量；關鍵輸出係延誤同排隊長度。</p>
+<p>單靠容量並唔能夠決定路口類型。安全、土地、行人、成本同周邊網絡都會約束答案，所以標準提供嘅係佈局選項，而唔係單一解決方案。</p></div><div class="table-wrap"><table><caption>路口類型及其容量決定因素</caption><thead><tr><th scope='col'>類型</th><th scope='col'>容量驅動因素</th><th scope='col'>優點</th><th scope='col'>缺點</th></tr></thead><tbody><tr><td>優先路口</td><td>主要道路交通流中嘅間隙接受</td><td>便宜、緊湊、易於建造</td><td>當主要交通流增加時，次要支路會失效</td></tr><tr><td>燈號控制路口</td><td>飽和流量同綠燈比率</td><td>可處理多種流向同行人</td><td>接近容量時延誤急劇上升</td></tr><tr><td>標準迴旋處</td><td>環流流量同入口幾何設計</td><td>自我調節，適合轉向流量</td><td>佔地面積大，入口容量受限</td></tr><tr><td>迷你迴旋處</td><td>可跨越島嶼嘅入口幾何設計</td><td>細小、便宜、保持低車速</td><td>容易超載，車道紀律較弱</td></tr><tr><td>立體交叉</td><td>自由流連接線容量</td><td>容量極高，無衝突點</td><td>成本高、佔地多、造成分隔</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>優先路口：間隙接受</h2>
+  <div class="body"><p>喺讓路路口，次要支路必須喺主要交通流中搵到間隙。因此，當衝突流量上升時，佢嘅容量就會下降，而呢個下降嘅形態遵循<strong>間隙接受</strong>理論：駕駛者需要一個<strong>臨界間隙</strong>先可以駛出，而後續車輛則以<strong>跟隨時間</strong>跟隨。</p>
+<p>實際結論係，次要引道係瓶頸，其容量對主要道路流量、視距同轉向比例都很敏感。額外嘅次要車道或拓寬車道只有在車道（而非間隙）成為限制時才有幫助。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">次要支路容量（間隙接受）</span>
+      <div class="formula-expr formula-math">\[C = \frac{q e^{-q t_c/3600}}{1 - e^{-q t_f/3600}}\]</div>
+      <span class="formula-note">q 為衝突主要流量（pcu/h），t_c 為臨界間隙，t_f 為跟隨時間（秒）</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>迴旋處：環流流量決定入口容量</h2>
+  <div class="body"><p>迴旋處入口需讓路予<strong>環流流量</strong>，因此入口容量係環道上現有交通量嘅函數。以下線性形式嘅經驗模型係根據觀察行為擬合得出；係數取決於入口幾何設計，而唔係通用常數。</p>
+<p>幾何設計很重要，因為它控制車速同間隙接受。入口偏轉、入口寬度、拓寬長度同島嶼半徑都會改變車輛進入嘅速度。迷你迴旋處簡化了交叉點，但由於其島嶼可跨越且車道共享，它可能很快超載。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">迴旋處入口容量</span>
+      <div class="formula-expr formula-math">\[C_{\mathrm{entry}} = a - b\,q_c\]</div>
+      <span class="formula-note">q_c 為環流流量（pcu/h）；a 同 b 根據入口幾何擬合</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>燈號：飽和流量同綠燈比率</h2>
+  <div class="body"><p>燈號引道在綠燈完全利用時以其<strong>飽和流量</strong>放行——在理想條件下每車道約為 1,800 至 2,000 pcu/h。在週期長度為 C、有效綠燈為 g 嘅情況下，容量等於飽和流量乘以綠燈比率。</p>
+<p><strong>流量比率</strong> y = q/s 衡量需求所需嘅飽和流量比例，而<strong>飽和度</strong> X = q/c 則比較需求與容量。損失時間——每個階段嘅起步同清空時間——就係為何短週期會浪費較大比例嘅綠燈，以及為何 Webster 公式會喺呢種浪費同長週期嘅延誤之間作出取捨。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">引道容量</span>
+      <div class="formula-expr formula-math">\[c = s \left( \frac{g}{C} \right)\]</div>
+      <span class="formula-note">s 單位為 pcu/h，g 為有效綠燈，C 為週期長度（相同時間單位）</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Webster 最優週期</span>
+      <div class="formula-expr formula-math">\[C_o = \frac{1.5L + 5}{1 - Y}\]</div>
+      <span class="formula-note">L 為每週期總損失時間，Y 為關鍵流量比率之和</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>現場量度飽和流量</h2>
+  <div class="body"><p>飽和流量最好係量度得出，而唔係假設。現場方法計算<strong>飽和週期</strong>內駛離嘅車輛——即綠燈結束時仍有排隊嘅時段——並且需要至少約五架排隊車輛才可靠。首幾架車輛會被排除，因為它們仍在克服<strong>起步損失時間</strong>，所以只有穩定車頭時距部分才計算在內：</p>
+<p><code>s = 3600 n / t_g</code>，</p>
+<p>其中 n 為在長度為 t_g 嘅飽和綠燈部分內計算嘅車輛數目。</p>
+<ul>
+<li>坡度、轉彎半徑、車道寬度同車輛組合各自都需要修正係數。</li>
+<li>量度必須在引道嘅代表性車道（直行或混合車道，而非專用轉向車道）上平均足夠多嘅週期——因為一分鐘嘅擠塞並唔係飽和流量。</li>
+<li>在路口情況允許下，直接量度勝過經驗調整方程，所以手冊規定詳細燈號計劃應採用直接量度。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">現場飽和流量</span>
+      <div class="formula-expr formula-math">\[s = \frac{3600\,n}{t_g}\]</div>
+      <span class="formula-note">n 為飽和綠燈部分內嘅車輛數目，t_g 單位為秒；排除每個排隊嘅首幾架車輛</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>行人同單車使用者都係設計對象</h2>
+  <div class="body"><p>每個路口同時都係行人過路處。由車輛掃掠路徑決定嘅轉角半徑可能會延長過路距離，促使人們在能夠過路嘅地方過路，而唔係在指定地點過路。較小嘅半徑、避車島、水平過路處同合理嘅階段劃分可以保持過路距離短且可見。</p>
+<p>單車使用者需要連續且可預測嘅空間。若單車徑在路口終止，或位於轉向車輛必須穿越嘅位置，就會重新造成原本要消除嘅衝突。設計標準通過車道連續性、視距包絡線同燈號階段劃分來處理呢個問題。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">過路處燈號時間檢查</span>
+      <div class="formula-expr formula-math">\[t_{\mathrm{needed}} = \frac{L}{v} + t_s\]</div>
+      <span class="formula-note">設計步行速度通常取約 1.2 m/s</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>鐵路容量係班次間距計算</h2>
+  <div class="body"><p>在鐵路上，容量係每小時通過某一點嘅列車數目，所以一切都歸結為<strong>最小班次間距</strong>。信號系統為每列車定義<strong>阻塞時間</strong>，而車站則增加<strong>停站時間</strong>加上加速離開及清空月台嘅時間。</p>
+<p>一階車站班次間距係停站時間加加速時間加制動時間加列車及清空通過時間，再加上信號餘裕。每小時列車數目則由該班次間距得出。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">最小車站班次間距</span>
+      <div class="formula-expr formula-math">\[h_{\min} \approx t_{\mathrm{dwell}} + \frac{v}{a} + \frac{v}{b} + \frac{L_{\mathrm{train}} + L_{\mathrm{clear}}}{v} + t_{\mathrm{margin}}\]</div>
+      <span class="formula-note">v 單位為 m/s，加速度單位為 m/s²，長度單位為 m，得出 h 單位為秒</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">由班次間距得出路線容量</span>
+      <div class="formula-expr formula-math">\[C = \frac{3600}{h} c_{\mathrm{train}}\]</div>
+      <span class="formula-note">c_train 為一列車嘅擠迫容量（乘客數）</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>鐵路容量數字：提供量與使用量</h2>
+  <div class="body"><p>鐵路容量計算由車輛開始。一輛車嘅容量結合座位同站立空間：</p>
+<p><code>C_vehicle = S_seats + A_stand × ρ</code>，</p>
+<p>其中 ρ 為站立密度，正常規劃中約為每平方米 4 名乘客。一列六卡車、每卡 150 個座位並提供 45 平方米站立空間，每卡約載 330 人，每列車約載 1,980 人。</p>
+<p><strong>提供</strong>路線容量為 <code>C_offered = c_train × 3600 / h</code>；<strong>使用</strong>容量則應用約 1.1 嘅<strong>設計載荷因子</strong>以反映實際擠迫情況：<code>C_utilised = C_offered × F_load</code>。135 秒嘅繁忙時間班次間距然後提供約每小時 52,800 名乘客。</p>
+<p>最小班次間距設定上限：車站班次間距（停站加清空時間，乘以安全係數）通常起約束作用，但亦必須檢查制動嘅線路班次間距：</p>
+<p><code>h_way ≈ [v/a + (L_train + L_clear)/v] × f_safety</code>。較大嘅班次間距決定時間表，而路線容量則由此得出——所以節省 5 秒停站時間就係實際嘅容量增益。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">車輛容量</span>
+      <div class="formula-expr formula-math">\[C_{\mathrm{vehicle}} = S_{\mathrm{seats}} + A_{\mathrm{stand}}\,\rho\]</div>
+      <span class="formula-note">ρ 為站立密度，規劃中約為 4 人/m²</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">使用路線容量</span>
+      <div class="formula-expr formula-math">\[C_{\mathrm{utilised}} = C_{\mathrm{offered}}\,F_{\mathrm{load}}\]</div>
+      <span class="formula-note">F_load 為設計載荷因子，約為 1.1</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">最小線路班次間距</span>
+      <div class="formula-expr formula-math">\[h_{\mathrm{way}} \approx \left[\frac{v}{a} + \frac{L_{\mathrm{train}} + L_{\mathrm{clear}}}{v}\right] f_{\mathrm{safety}}\]</div>
+      <span class="formula-note">制動時間加列車及清空通過時間，乘以安全係數</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>車站同轉車站</h2>
+  <div class="body"><p>車站係一種容量設施。月台寬度、樓梯、自動扶梯同閘機各有其流量率，而最慢嘅環節決定轉乘時間。一個簡單嘅兩個月台車站可以容忍較長嘅停站時間；繁忙嘅轉車站則需要更寬嘅月台、更多垂直交通路線同無障礙通道。</p>
+<p>轉車站設計要在步行距離同擠迫之間取捨。一條長但有良好指示嘅步行路線可能勝過一條短但擁擠嘅路線，而同月台轉乘係最強嘅連接方式，因為它完全消除咗層級變化。導向同無障礙設計必須從一開始就納入設計，而唔係最後添加。</p></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>交通影響評估：範圍同步驟</h2>
+  <div class="body"><p><strong>交通影響評估</strong>（TIA）探討擬議發展對周邊交通網絡嘅影響，並遵循固定範圍。</p>
+<ul>
+<li>設定研究區域同預測年份——通常為開幕年同設計年。</li>
+<li>根據土地用途估算出行產生同吸引。</li>
+<li>按模式同路線將出行分配到網絡。</li>
+<li>測試發展將影響嘅路口、過路處同出入口。</li>
+<li>以<strong>飽和度</strong>判斷路口表現：引道應保持低於約 85–90%，以便排隊可以恢復。</li>
+<li>涵蓋出入口幾何設計、服務車輛、上落客以及對巴士同行人嘅影響。</li>
+<li>當網絡失效時，設計並重新測試緩解措施——階段劃分、車道變更、出入口管理——並報告剩餘影響供當局權衡。</li>
+</ul>
+<p>TIA 嘅好壞取決於其出行率：借用其他城市嘅出行率，或假設而非調查得出嘅模式分擔，會產生看似自信但意義不大嘅數字。</p></div>
+<div class="callout callout--warning">
+  <b>出行率決定一切</b>
+  基於借用出行率同未經核實模式分擔嘅 TIA，會從軟性輸入產生精確輸出；在捍衛結論之前，必須說明每個出行率嘅來源。
+</div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>標準、模型同判斷</h2>
+  <div class="body"><p>設計指南提供幾何設計、容量方程同安全準則。交通模型補充方程無法做到嘅嘢：隨時間變化嘅需求、路口之間蔓延嘅排隊，以及一條超載引道對整個網絡嘅影響。</p>
+<p>經驗方法快捷但假設均勻條件；模擬捕捉相互作用但需要校準。工程師調和兩者，陳述假設並根據觀察流量驗證模型。軟件輸出係證據，而唔係決定：佈局仍然必須安全、可建造，並為使用者所接受。</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>飽和度</dt><dd>引道需求與容量嘅比率；數值接近 1 表示排隊容易增長。</dd></div><div class="term"><dt>飽和流量</dt><dd>車道組在綠燈完全利用時嘅放行率，通常每車道約 1,800 pcu/h。</dd></div><div class="term"><dt>臨界間隙</dt><dd>駕駛者在進入路口前願意接受嘅衝突交通中嘅最小間隙。</dd></div><div class="term"><dt>環流流量</dt><dd>已經在迴旋處環道上行駛嘅交通，進入嘅車流必須讓路予它。</dd></div><div class="term"><dt>阻塞時間</dt><dd>一段軌道為一列車預留嘅時間，包括接近同清空，決定信號班次間距。</dd></div><div class="term"><dt>停站時間</dt><dd>列車在月台停留供乘客上落嘅時間。</dd></div><div class="term"><dt>起步損失時間</dt><dd>排隊首幾架車輛越過停止線所需嘅額外秒數，在量度飽和流量時會被排除。</dd></div><div class="term"><dt>設計載荷因子</dt><dd>將標稱車輛容量轉換為容量規劃中假設載荷嘅因子，以計及擠迫情況。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>固定班次間距嘅地鐵路線容量</h2>
+        <p class="problem">一條地鐵路線運行六卡列車，每卡長 20 米。停站時間為 30 秒，線路速度為 45 公里/小時，加速同服務制動均約為 1.0 m/s²，列車加安全清空距離為 145 米，信號同性能餘裕為 10 秒。計算最小車站班次間距、每小時列車數目，以及若每列車載 1,200 名乘客嘅路線容量。</p>
+        <ol><li>換算線路速度：45 km/h = 12.5 m/s。</li><li>加速同制動各需 v/a = 12.5 / 1.0 = 12.5 秒。</li><li>列車同清空距離通過一點需 (145 m) / (12.5 m/s) = 11.6 秒。</li><li>最小班次間距 = 30 + 12.5 + 12.5 + 11.6 + 10 = 76.6 秒，向上取整為 77 秒。</li><li>每小時列車數目 = 3600 / 77 = 46.8，所以可實現嘅服務為整數 46 列車/小時。</li><li>路線容量 = 46 × 1,200 = 55,200 乘客/小時/方向。</li><li>合理性檢查：每小時 40,000 名乘客嘅需求將使用 40,000 / 55,200 = 72% 嘅路線容量，留下有用嘅恢復空間。</li></ol>
+        <div class="answer"><b>Answer</b>最小車站班次間距約為 77 秒，提供每小時 46 列車，路線容量為每小時每方向 55,200 名乘客。停站時間同停啟週期主導班次間距，所以將停站時間減少 5 秒將提升容量約每小時 3 列車。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>將需求轉換為 pcu/h，並在比較路口選項之前說明飽和度。</li><li>對於燈號容量，將飽和流量乘以綠燈比率；為一個階段增加綠燈必然從另一個階段取走。</li><li>對於鐵路問題，逐項以秒計算，並保持 v、a 同長度嘅單位一致。</li><li>當模型同手動計算不一致時，在選擇信任哪一個之前解釋每個背後嘅假設。</li><li>在飽和流量問題中，在將計數除以飽和綠燈時間之前排除起步車輛；包括它們會低估 s。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>一個車道組嘅飽和流量為 1,800 pcu/h，在 90 秒週期中獲得 30 秒有效綠燈。其容量為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>600 pcu/h</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>900 pcu/h</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1,800 pcu/h</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>300 pcu/h</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>容量 = s × g / C = 1,800 × 30 / 90 = 600 pcu/h。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>當迴旋處嘅環流流量增加時，每個入口引道嘅容量：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>減少</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>保持不變</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>僅主要引道增加</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>增加</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>進入嘅交通必須讓路予環道，所以環流流量越繁忙，可接受嘅間隙越少，入口容量下降。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>假設優先路口駕駛者嘅臨界間隙較大將會：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>僅影響主要道路容量</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>增加次要支路容量</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>減少次要支路容量</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>對容量無影響</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>堅持較大間隙嘅駕駛者接受嘅間隙較少，所以駛出嘅車輛較少，次要支路容量下降。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>一條最小班次間距為 80 秒嘅地鐵最多可以運行：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>每小時 80 列車</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>每小時 36 列車</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>每小時 45 列車</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>每小時 60 列車</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>每小時列車數目 = 3600 / 80 = 45。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q05</span><span>當使用路邊方法量度飽和流量時，從計數中排除嘅車輛係：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>信號轉變前嘅最後一架車輛</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>所有重型車輛</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>綠燈結束後越過嘅車輛</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>每個排隊嘅首幾架車輛，仍在克服起步損失</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>只有穩定車頭時距部分才計算，所以在除以飽和綠燈時間之前排除排隊嘅起步部分。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>一列地鐵列車載 1,800 名乘客，以 120 秒班次間距運行。其提供路線容量為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>每小時 54,000 名乘客</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>每小時 216,000 名乘客</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>每小時 15 名乘客</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>每小時 1,800 名乘客</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>C_offered = c_train × 3600 / h = 1,800 × 3600 / 120 = 每小時 54,000 名乘客。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="transport-operations-management.zh-Hant.html"><span>Professional</span><b>運輸營運與管理</b></a><a class="related-card" href="transportation-highway-engineering.zh-Hant.html"><span>Core</span><b>運輸與公路工程</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="artificial-intelligence.zh-Hant.html"><small>上一頁</small><b>人工智能</b></a><a class="next" href="engineers-in-society.zh-Hant.html"><small>下一頁</small><b>社會中的工程師</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">容量係綠燈比率乘以飽和流量。</p><p class="margin-note">迴旋處入口讓路予環道。</p><p class="margin-note">鐵路容量係 3600 除以班次間距。</p><p class="margin-note">停站時間通常係最便宜嘅容量增益。</p><p class="margin-note">標準設定幾何設計；模型測試相互作用。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

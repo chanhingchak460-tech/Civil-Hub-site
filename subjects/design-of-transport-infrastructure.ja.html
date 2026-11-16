@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>交通インフラ設計 — Civil Hub</title>
+<meta name="description" content="交差点や鉄道線は、占有する空間ではなく、提供すべき容量によって規模が決まる。本ページでは、優先交差点、ラウンドアバウト、信号容量、鉄道の運転時隔、およびそれらを支える基準について扱う。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-transport-infrastructure.ja.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="交通インフラ設計 — Civil Hub">
+<meta property="og:description" content="交差点や鉄道線は、占有する空間ではなく、提供すべき容量によって規模が決まる。本ページでは、優先交差点、ラウンドアバウト、信号容量、鉄道の運転時隔、およびそれらを支える基準について扱う。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/design-of-transport-infrastructure.ja.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="design-of-transport-infrastructure.html" data-alt-zh-hant="design-of-transport-infrastructure.zh-Hant.html" data-alt-ja="design-of-transport-infrastructure.ja.html" data-alt-ko="design-of-transport-infrastructure.ko.html" data-page-lang="ja" data-root="../" data-total="42" data-page="library" data-content-lang="ja">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">交通インフラ設計</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">コア</p>
+          <h1>交通インフラ設計</h1>
+          <p class="subject-sub">交差点、鉄道、移動を支えるインフラ</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>コア</li><li><b data-i18n="subject.read">Read</b>10 分</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>11</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M56 170 H298" stroke="currentColor" stroke-width="1.2"/><path d="M86 170 V64" stroke="currentColor" stroke-width="1.6"/><path d="M78 64 H190" stroke="currentColor" stroke-width="1.6"/><path d="M86 64 L160 40" stroke="currentColor" stroke-width="1.3"/><path d="M160 40 V86" stroke="var(--faint)" stroke-width="1"/><path d="M152 86 h16 v10 h-16 z" stroke="currentColor" stroke-width="1.1"/><path d="M86 110 H190" stroke="var(--line)" stroke-width="1.1"/><path d="M210 170 V112 H282 V170" stroke="currentColor" stroke-width="1.4"/><path d="M222 128 H270" stroke="var(--line)" stroke-width="1"/><path d="M222 146 H270" stroke="var(--line)" stroke-width="1"/><text x="170" y="192" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">SITE & CRANE</text></svg>
+          <figcaption>Site operations — crane and frame</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">設計は容量の問題である</a></li><li><a href="#sec-2">優先交差点：ギャップ受容</a></li><li><a href="#sec-3">ラウンドアバウト：環道交通量が流入容量を決める</a></li><li><a href="#sec-4">信号：飽和交通流率と青時間比</a></li><li><a href="#sec-5">現地での飽和交通流率の測定</a></li><li><a href="#sec-6">歩行者と自転車利用者は設計対象のユーザーである</a></li><li><a href="#sec-7">鉄道容量は運転時隔の計算である</a></li><li><a href="#sec-8">数値で見る鉄道容量：提供容量と利用容量</a></li><li><a href="#sec-9">駅と乗換施設</a></li><li><a href="#sec-10">交通影響評価：範囲と手順</a></li><li><a href="#sec-11">基準、モデル、判断</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">交差点や鉄道線は、占有する空間ではなく、提供すべき容量によって規模が決まる。本ページでは、優先交差点、ラウンドアバウト、信号容量、鉄道の運転時隔、およびそれらを支える基準について扱う。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="design-of-transport-infrastructure" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>設計は容量の問題である</h2>
+  <div class="body"><p>交通施設は、生の車両数ではなく、1時間あたりの<strong>乗用車換算台数</strong>で表される設計年次需要に対して設計される。大型貨物車は乗用車より多くの道路空間を占めるためである。重要な比率は需要を容量で割った<strong>飽和度</strong>であり、重要な出力は遅延と待ち行列長である。</p>
+<p>容量だけでは交差点形式を選べない。安全性、用地、歩行者、コスト、周辺ネットワークがすべて答えを制約する。だからこそ基準は一つの解ではなく、複数のレイアウトを提示するのである。</p></div><div class="table-wrap"><table><caption>交差点形式とその容量を支配する要因</caption><thead><tr><th scope='col'>形式</th><th scope='col'>容量の支配要因</th><th scope='col'>長所</th><th scope='col'>短所</th></tr></thead><tbody><tr><td>優先交差点</td><td>主要道路の交通流におけるギャップ受容</td><td>安価、コンパクト、施工が簡単</td><td>主要交通量が増えると従道路が破綻する</td></tr><tr><td>信号交差点</td><td>飽和交通流率と青時間比</td><td>多くの交通動線と歩行者を処理できる</td><td>容量付近で遅延が急増する</td></tr><tr><td>標準ラウンドアバウト</td><td>環道交通量と流入部の幾何構造</td><td>自己調整的、転向交通に適する</td><td>大きな占有面積、流入容量に上限</td></tr><tr><td>ミニラウンドアバウト</td><td>走行可能な島を持つ流入部の幾何構造</td><td>小さく安価、速度を低く保てる</td><td>すぐに過負荷、車線規律が弱い</td></tr><tr><td>立体交差</td><td>自由流リンクの容量</td><td>非常に高い容量、交錯なし</td><td>コスト、用地取得、分断</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>優先交差点：ギャップ受容</h2>
+  <div class="body"><p>一時停止・譲り合い交差点では、従道路が主要交通流の中にギャップを見つけなければならない。したがってその容量は、交錯する交通量が増えるにつれて低下し、その低下の形は<strong>ギャップ受容</strong>理論に従う。運転者は出る前に<strong>臨界ギャップ</strong>を必要とし、後続車両は<strong>追従時間</strong>で続く。</p>
+<p>実務的な結論は、従道路アプローチがボトルネックであり、その容量は主要道路の交通量、視距、転向比率に敏感であるということだ。追加の従道路車線やテーパーは、制約がギャップではなく車線である場合にのみ役立つ。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">従道路容量（ギャップ受容）</span>
+      <div class="formula-expr formula-math">\[C = \frac{q e^{-q t_c/3600}}{1 - e^{-q t_f/3600}}\]</div>
+      <span class="formula-note">qは交錯する主要交通量（pcu/h）、t_cは臨界ギャップ、t_fは追従時間（秒）</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>ラウンドアバウト：環道交通量が流入容量を決める</h2>
+  <div class="body"><p>ラウンドアバウトの流入部は<strong>環道交通量</strong>に譲るため、流入容量はすでに環道にある交通の関数である。以下の線形式の経験モデルは観測された挙動に適合させたものであり、係数は普遍的な定数ではなく流入部の幾何構造に依存する。</p>
+<p>幾何構造が重要であるのは、それが速度とギャップ受容を支配するからだ。流入部の偏向、流入幅、テーパー長、島の半径はすべて、車両がどれだけ速く流入できるかを変える。ミニラウンドアバウトは交差点を単純化するが、島が走行可能で車線が共有されるため、すぐに過負荷になりうる。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">ラウンドアバウト流入容量</span>
+      <div class="formula-expr formula-math">\[C_{\mathrm{entry}} = a - b\,q_c\]</div>
+      <span class="formula-note">q_cは環道交通量（pcu/h）、aとbは流入部の幾何構造に適合させた係数</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>信号：飽和交通流率と青時間比</h2>
+  <div class="body"><p>信号アプローチは、青時間が完全に使われている間、その<strong>飽和交通流率</strong>で流出する。理想的な条件下では車線あたりおよそ1,800〜2,000 pcu/hである。サイクル長C、有効青時間gのとき、容量は飽和交通流率に青時間比を掛けたものである。</p>
+<p><strong>流率比</strong> y = q/s は需要がどれだけの飽和交通流率を必要とするかを測り、<strong>飽和度</strong> X = q/c は需要と容量を比較する。損失時間（各現示の起動とクリアランス）があるため、短いサイクルは青時間のより大きな割合を浪費し、Websterの式はその浪費と長いサイクルの遅延をトレードオフする。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">アプローチ容量</span>
+      <div class="formula-expr formula-math">\[c = s \left( \frac{g}{C} \right)\]</div>
+      <span class="formula-note">sはpcu/h、gは有効青時間、Cはサイクル長（同じ時間単位）</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Webster最適サイクル</span>
+      <div class="formula-expr formula-math">\[C_o = \frac{1.5L + 5}{1 - Y}\]</div>
+      <span class="formula-note">Lは1サイクルあたりの総損失時間、Yは臨界流率比の合計</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>現地での飽和交通流率の測定</h2>
+  <div class="body"><p>飽和交通流率は仮定するよりも測定するのが最善である。現地手法は<strong>飽和サイクル</strong>（待ち行列が残ったまま青時間が終わる期間）中に流出する車両を数え、信頼できるためには少なくとも約5台の待ち行列車両が必要である。最初の数台はまだ<strong>起動損失時間</strong>を克服しているため除外し、定常的な車頭時間の部分のみを数える：</p>
+<p><code>s = 3600 n / t_g</code>、</p>
+<p>ここでnは長さt_gの青時間の飽和部分で数えた車両数である。</p>
+<ul>
+<li>勾配、転向半径、車線幅、車種構成はそれぞれ補正係数を正当化する。</li>
+<li>測定は、アプローチの代表的な車線（専用転向車線ではなく直進車線または混合車線）で十分なサイクルを平均しなければならない。1分間の混雑は飽和交通流率ではないからである。</li>
+<li>交差点がそれを正当化する場合、直接測定は経験的な補正式に勝る。だからこそマニュアルは詳細な信号計画に対してそれを規定している。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">現地飽和交通流率</span>
+      <div class="formula-expr formula-math">\[s = \frac{3600\,n}{t_g}\]</div>
+      <span class="formula-note">nは青時間の飽和部分で数えた車両数、t_gは秒。各待ち行列の最初の数台は除外する</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>歩行者と自転車利用者は設計対象のユーザーである</h2>
+  <div class="body"><p>すべての交差点は歩行者の横断箇所でもある。車両の掃引軌跡で決まる隅角半径は横断距離を長くし、人々を本来横断すべき場所ではなく横断できる場所で横断させる。小さな半径、避難島、レベル横断、適切な現示は、横断を短く見通しよく保つ。</p>
+<p>自転車利用者には連続的で予測可能な空間が必要である。交差点で途切れる自転車車線、または転向車両が必ず横切る位置にある自転車車線は、取り除くはずだった交錯を再現してしまう。設計基準は車線の連続性、視距包絡線、信号現示によってこれに対処する。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">横断部の信号タイミング照査</span>
+      <div class="formula-expr formula-math">\[t_{\mathrm{needed}} = \frac{L}{v} + t_s\]</div>
+      <span class="formula-note">設計上の歩行速度はしばしば約1.2 m/sとされる</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>鉄道容量は運転時隔の計算である</h2>
+  <div class="body"><p>鉄道では、容量は1時間に1地点を通過する列車数であるため、すべては<strong>最小運転時隔</strong>に帰着する。信号は各列車に<strong>閉塞時間</strong>を定義し、駅は<strong>停車時間</strong>に加えて発進してホームを空けるまでの時間を加える。</p>
+<p>一次近似の駅運転時隔は、停車時間＋加速時間＋制動時間＋列車とクリアランスが通過する時間に、信号余裕を加えたものである。1時間あたりの列車数はその運転時隔から導かれる。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">最小駅運転時隔</span>
+      <div class="formula-expr formula-math">\[h_{\min} \approx t_{\mathrm{dwell}} + \frac{v}{a} + \frac{v}{b} + \frac{L_{\mathrm{train}} + L_{\mathrm{clear}}}{v} + t_{\mathrm{margin}}\]</div>
+      <span class="formula-note">vはm/s、加速度はm/s²、長さはm、hは秒で得られる</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">運転時隔からの線路容量</span>
+      <div class="formula-expr formula-math">\[C = \frac{3600}{h} c_{\mathrm{train}}\]</div>
+      <span class="formula-note">c_trainは1列車の限界乗車人員（人）</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>数値で見る鉄道容量：提供容量と利用容量</h2>
+  <div class="body"><p>鉄道容量の計算は車両から積み上げる。車両の容量は座席と立席を合わせたものである：</p>
+<p><code>C_vehicle = S_seats + A_stand × ρ</code>、</p>
+<p>ここでρは立席密度であり、通常の計画では1平方メートルあたり約4人である。150席の車両がそれぞれ45 m²の立席空間を提供する6両編成の列車は、1両あたり約330人、1列車あたり1,980人を運ぶ。</p>
+<p><strong>提供</strong>線路容量は <code>C_offered = c_train × 3600 / h</code> であり、<strong>利用</strong>容量は実際の混雑を反映する約1.1の<strong>設計乗車率</strong>を適用する：<code>C_utilised = C_offered × F_load</code>。135秒のピーク時運転時隔は、約52,800人/時を提供する。</p>
+<p>最小運転時隔が上限を定める。駅運転時隔（停車時間＋クリアランス時間に安全率を掛けたもの）が通常は支配的だが、制動による運転時隔も確認しなければならない：</p>
+<p><code>h_way ≈ [v/a + (L_train + L_clear)/v] × f_safety</code>。大きい方の運転時隔がダイヤを支配し、線路容量はそこから導かれる。したがって5秒の停車時間短縮は実際の容量増加である。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">車両容量</span>
+      <div class="formula-expr formula-math">\[C_{\mathrm{vehicle}} = S_{\mathrm{seats}} + A_{\mathrm{stand}}\,\rho\]</div>
+      <span class="formula-note">ρは立席密度、計画では約4人/m²</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">利用線路容量</span>
+      <div class="formula-expr formula-math">\[C_{\mathrm{utilised}} = C_{\mathrm{offered}}\,F_{\mathrm{load}}\]</div>
+      <span class="formula-note">F_loadは設計乗車率、約1.1</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">最小路線運転時隔</span>
+      <div class="formula-expr formula-math">\[h_{\mathrm{way}} \approx \left[\frac{v}{a} + \frac{L_{\mathrm{train}} + L_{\mathrm{clear}}}{v}\right] f_{\mathrm{safety}}\]</div>
+      <span class="formula-note">制動時間＋列車とクリアランスが通過する時間に安全率を掛けたもの</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>駅と乗換施設</h2>
+  <div class="body"><p>駅は容量装置である。ホーム幅、階段、エスカレーター、改札はそれぞれ流率を持ち、最も遅いリンクが乗換時間を決める。単純な2面ホームの駅は長い停車時間を許容するが、混雑する乗換駅にはより広いホーム、より多くの垂直移動経路、バリアフリーアクセスが必要である。</p>
+<p>乗換設計は歩行距離と混雑をトレードオフする。長くても案内の良い歩行は、短くても混雑した歩行に勝ることがあり、対面乗換はレベルチェンジを完全に取り除くため最も強力な接続である。案内表示とアクセシビリティは後付けではなく設計に組み込まなければならない。</p></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>交通影響評価：範囲と手順</h2>
+  <div class="body"><p><strong>交通影響評価</strong>（TIA）は、提案開発が周辺交通ネットワークに何をもたらすかを問い、固定された範囲に従う。</p>
+<ul>
+<li>調査対象地域と対象年次（通常は開業年と設計年）を設定する。</li>
+<li>土地利用から発生交通量と集中交通量を推定する。</li>
+<li>交通をモードと経路ごとにネットワークへ配分する。</li>
+<li>開発が影響する交差点、横断部、アクセス点を検証する。</li>
+<li>交差点性能を<strong>飽和度</strong>で判断する。アプローチは待ち行列が回復できるよう約85〜90%未満に保つべきである。</li>
+<li>アクセス幾何構造、サービス車両、乗降、バスと歩行者への影響を網羅する。</li>
+<li>ネットワークが破綻する場合、緩和策（段階的整備、車線変更、アクセス管理）を設計・再検証し、当局が判断できるよう残存影響を報告する。</li>
+</ul>
+<p>TIAはその発生原単位の質を超えられない。他の都市から借用した原単位や、調査せずに仮定したモード分担は、自信ありげに見えるがほとんど意味のない数値を生む。</p></div>
+<div class="callout callout--warning">
+  <b>発生原単位がすべてを決める</b>
+  借用した発生原単位と検証されていないモード分担に基づくTIAは、軟らかい入力から精密な出力を生む。結論を擁護する前に、すべての原単位の出典を明示せよ。
+</div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>基準、モデル、判断</h2>
+  <div class="body"><p>設計ガイドは幾何構造、容量式、安全基準を与える。交通モデルは式ができないことを加える。時間依存の需要、交差点間で広がる待ち行列、1つの過負荷アプローチがネットワーク全体に及ぼす影響である。</p>
+<p>経験的手法は速いが一様な条件を仮定する。シミュレーションは相互作用を捉えるがキャリブレーションを要する。技術者は両者を整合させ、仮定を明示し、モデルを観測交通量に対して検証する。ソフトウェアの出力は証拠であり決定ではない。レイアウトは依然として安全で、施工可能で、利用者に受け入れられるものでなければならない。</p></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>飽和度</dt><dd>アプローチにおける需要と容量の比。1に近い値は待ち行列が容易に増大することを意味する。</dd></div><div class="term"><dt>飽和交通流率</dt><dd>車線群の青時間が完全に使われている間の流出率。通常、車線あたり約1,800 pcu/h。</dd></div><div class="term"><dt>臨界ギャップ</dt><dd>運転者が交差点に進入する前に受け入れる、交錯交通における最小のギャップ。</dd></div><div class="term"><dt>環道交通量</dt><dd>ラウンドアバウトの環道をすでに走行している交通。流入交通はこれに譲らなければならない。</dd></div><div class="term"><dt>閉塞時間</dt><dd>1列車のために軌道区間が予約される時間。接近とクリアランスを含み、信号運転時隔を定める。</dd></div><div class="term"><dt>停車時間</dt><dd>列車がホームに停車し、乗客が乗降する時間。</dd></div><div class="term"><dt>起動損失時間</dt><dd>待ち行列の最初の車両が停止線を通過するのに要する余分な秒数。飽和交通流率の測定時には除外する。</dd></div><div class="term"><dt>設計乗車率</dt><dd>名目車両容量を容量計画で仮定する乗車量に変換する係数。混雑を考慮する。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>固定運転時隔を持つ地下鉄の線路容量</h2>
+        <p class="problem">地下鉄路線は6両編成で、各車両は長さ20 mである。停車時間は30秒、路線速度は45 km/h、加速度と常用制動はともに約1.0 m/s²、列車と安全クリアランスは145 m、信号と性能の余裕は10秒である。最小駅運転時隔、1時間あたりの列車数、各列車が1,200人を運ぶ場合の線路容量を計算せよ。</p>
+        <ol><li>路線速度を換算する：45 km/h = 12.5 m/s。</li><li>加速と制動はそれぞれ v/a = 12.5 / 1.0 = 12.5秒かかる。</li><li>列車とクリアランスが1地点を通過するのに (145 m) / (12.5 m/s) = 11.6秒かかる。</li><li>最小運転時隔 = 30 + 12.5 + 12.5 + 11.6 + 10 = 76.6秒、切り上げて77秒。</li><li>1時間あたりの列車数 = 3600 / 77 = 46.8、したがって達成可能なサービスは整数の46列車/時である。</li><li>線路容量 = 46 × 1,200 = 55,200人/時/方向。</li><li>妥当性確認：40,000人/時の需要は線路容量の40,000 / 55,200 = 72%を使用し、回復のための有用な余裕を残す。</li></ol>
+        <div class="answer"><b>Answer</b>最小駅運転時隔は約77秒で、46列車/時、線路容量は55,200人/時/方向となる。停車時間と発停サイクルが運転時隔を支配するため、停車時間を5秒短縮すれば容量はおよそ3列車/時増加する。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>交差点形式を比較する前に、需要をpcu/hに換算し飽和度を明示する。</li><li>信号容量では飽和交通流率に青時間比を掛ける。ある現示に青時間を追加すれば、別の現示から必ず奪うことになる。</li><li>鉄道の問題では秒単位で項ごとに計算し、v、a、長さの単位を一貫させる。</li><li>モデルとマニュアル計算が一致しない場合、どちらを信頼するかを選ぶ前にそれぞれの仮定を説明する。</li><li>飽和交通流率の問題では、車両数を飽和青時間で割る前に起動車両を除外する。含めるとsを過小評価する。</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>ある車線群の飽和交通流率が1,800 pcu/hで、90秒サイクルの中で有効青時間30秒を受ける。その容量は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>600 pcu/h</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>900 pcu/h</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1,800 pcu/h</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>300 pcu/h</span></button></div>
+    <div class="quiz-explain"><b>Why</b>容量 = s × g / C = 1,800 × 30 / 90 = 600 pcu/h。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q02</span><span>ラウンドアバウトの環道交通量が増加すると、各流入部の容量は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>減少する</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>一定である</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>主要流入部のみ増加する</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>増加する</span></button></div>
+    <div class="quiz-explain"><b>Why</b>流入交通は環道に譲らなければならないため、環道交通量が多いほど受け入れ可能なギャップが減り、流入容量は低下する。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>優先交差点で運転者の臨界ギャップを大きく仮定すると：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>主要道路容量のみに影響する</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>従道路容量が増加する</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>従道路容量が減少する</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>容量に影響しない</span></button></div>
+    <div class="quiz-explain"><b>Why</b>より大きなギャップを要求する運転者はそれを受け入れる頻度が低いため、流出する車両が減り、従道路容量は低下する。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>最小運転時隔80秒の地下鉄が運行できる最大列車数は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>80列車/時</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>36列車/時</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>45列車/時</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>60列車/時</span></button></div>
+    <div class="quiz-explain"><b>Why</b>1時間あたりの列車数 = 3600 / 80 = 45。</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q05</span><span>路側手法で飽和交通流率を測定する際、計数から除外する車両は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>信号が変わる前の最後の車両</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>すべての大型車</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>青時間終了後に通過する車両</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>各待ち行列の最初の数台で、まだ起動損失を克服している車両</span></button></div>
+    <div class="quiz-explain"><b>Why</b>定常的な車頭時間の部分のみを数えるため、飽和青時間で割る前に待ち行列の起動部分を除外する。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>1,800人を運ぶ地下鉄列車が120秒の運転時隔で運行する。その提供線路容量は：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>54,000人/時</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>216,000人/時</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>15人/時</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>1,800人/時</span></button></div>
+    <div class="quiz-explain"><b>Why</b>C_offered = c_train × 3600 / h = 1,800 × 3600 / 120 = 54,000人/時。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="transport-operations-management.ja.html"><span>Professional</span><b>交通運用とマネジメント</b></a><a class="related-card" href="transportation-highway-engineering.ja.html"><span>Core</span><b>交通・道路工学</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="artificial-intelligence.ja.html"><small>Previous</small><b>人工知能</b></a><a class="next" href="engineers-in-society.ja.html"><small>Next</small><b>社会におけるエンジニア</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">容量は青時間比×飽和交通流率。</p><p class="margin-note">ラウンドアバウト流入部は環道に譲る。</p><p class="margin-note">鉄道容量は3600を運転時隔で割ったもの。</p><p class="margin-note">停車時間はしばしば最も安価に得られる容量である。</p><p class="margin-note">基準は幾何構造を定め、モデルは相互作用を検証する。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

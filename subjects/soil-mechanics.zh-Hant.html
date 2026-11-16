@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>土力學 — Civil Hub</title>
+<meta name="description" content="土壤是三相材料，其強度和沉降取決於有效應力、排水和應力歷史。本頁連接相關係、分類試驗、固結理論和抗剪強度，這些都是基礎和邊坡設計的基礎。">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/soil-mechanics.zh-Hant.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="土力學 — Civil Hub">
+<meta property="og:description" content="土壤是三相材料，其強度和沉降取決於有效應力、排水和應力歷史。本頁連接相關係、分類試驗、固結理論和抗剪強度，這些都是基礎和邊坡設計的基礎。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/soil-mechanics.zh-Hant.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="soil-mechanics.html" data-alt-zh-hant="soil-mechanics.zh-Hant.html" data-alt-ja="soil-mechanics.ja.html" data-alt-ko="soil-mechanics.ko.html" data-page-lang="zh-Hant" data-root="../" data-total="42" data-page="library" data-content-lang="zh-Hant">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">筆記庫</a><span class="sep">/</span>
+        <span aria-current="page">土力學</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">核心</p>
+          <h1>土力學</h1>
+          <p class="subject-sub">有效應力、固結、抗剪強度與土壓力</p>
+          <ul class="subject-facts"><li><b>類型</b>核心</li><li><b>閱讀</b>13 分鐘</li><li><b>章節</b>11</li><li><b>公式</b>21</li><li><b>測驗</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M60 128 H280" stroke="currentColor" stroke-width="1.6"/><path d="M92 128 V104 H248 V128" stroke="currentColor" stroke-width="1.5"/><path d="M120 60 V100 M148 60 V100 M176 60 V100 M204 60 V100 M232 60 V100" stroke="var(--accent)" stroke-width="1.1"/><path d="M120 56 l4 6 4 -6 M148 56 l4 6 4 -6 M176 56 l4 6 4 -6 M204 56 l4 6 4 -6 M232 56 l4 6 4 -6" stroke="var(--accent)" stroke-width="1"/><path d="M36 140 H304" stroke="var(--line)" stroke-width="1"/><path d="M44 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M66 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M88 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M110 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M132 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M154 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M176 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M198 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M220 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M242 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M264 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M286 140 l-6 9" stroke="var(--line)" stroke-width="0.8"/><path d="M170 128 C140 146 126 160 126 176 M170 128 C200 146 214 160 214 176" stroke="var(--line)" stroke-width="1.1"/><text x="170" y="190" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">STRESS BULB</text></svg>
+          <figcaption>Footing pressure — the stress bulb below</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title">本頁內容</p>
+  <ol><li><a href="#sec-1">三相圖景</a></li><li><a href="#sec-2">分類與阿特貝格界限</a></li><li><a href="#sec-3">壓實</a></li><li><a href="#sec-4">有效應力與滲流</a></li><li><a href="#sec-5">固結與沉降</a></li><li><a href="#sec-6">抗剪強度與莫爾–庫侖</a></li><li><a href="#sec-7">擋土牆上的土壓力</a></li><li><a href="#sec-8">承載力與邊坡穩定性</a></li><li><a href="#sec-9">滲透性：常水頭與變水頭</a></li><li><a href="#sec-10">解讀固結儀：由 t90 求 c_v</a></li><li><a href="#sec-11">三軸試驗：UU、CU 和 CD</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms">關鍵詞</a></li>
+      <li><a href="#worked-example">計算示例</a></li>
+      <li><a href="#exam-tips">應試方法</a></li>
+      <li><a href="#design-reference">設計參考</a></li>
+      <li><a href="#self-check">自我測驗</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">土壤是三相材料，其強度和沉降取決於有效應力、排水和應力歷史。本頁連接相關係、分類試驗、固結理論和抗剪強度，這些都是基礎和邊坡設計的基礎。</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>進度只儲存在此瀏覽器。</span>
+        <button class="mark-btn" type="button" data-mark="soil-mechanics" aria-pressed="false" data-label-off="標記為已溫習" data-label-on="✓ 已溫習">標記為已溫習</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>三相圖景</h2>
+  <div class="body"><p>土壤是由顆粒組成的骨架，顆粒間隙中充滿水和空氣。孔隙體積為 V_v = V_w + V_a，相關係比較這些體積和重量。</p>
+<ul>
+<li>孔隙比 e = V_v/V_s 衡量鬆散程度；孔隙率 n = e/(1+e) 是同一概念，表示為體積分數。</li>
+<li>含水量 w = W_w/W_s 比較水的質量與固體的質量，飽和度 S_r = V_w/V_v 表示孔隙被水填充的程度。</li>
+<li>石英顆粒的比重 G_s 約為 2.65。</li>
+<li>單位重量由相圖得出：濕密度 γ = (G_s + e S_r) γ_w/(1+e)，乾密度 γ_d = γ/(1+w) = G_s γ_w/(1+e)。</li>
+</ul>
+<p>保持一致性可避免後續錯誤。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">孔隙比</span>
+      <div class="formula-expr formula-math">\[e = \frac{V_v}{V_s}\]</div>
+      <span class="formula-note">孔隙體積除以固體體積</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">乾單位重量</span>
+      <div class="formula-expr formula-math">\[\gamma_d = \frac{G_s \gamma_w}{1 + e}\]</div>
+      <span class="formula-note">亦等於 γ/(1+w)</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>分類與阿特貝格界限</h2>
+  <div class="body"><p>粗粒土按篩分分析分類，細粒土按比重計試驗分類。級配曲線給出 D₁₀、D₃₀ 和 D₆₀，均勻係數 C_u = D₆₀/D₁₀：數值高表示級配良好。</p>
+<p>對於細粒土，<strong>阿特貝格界限</strong>標誌著行為發生變化的含水量。</p>
+<ul>
+<li>液限 LL 是土壤停止流動的含水量（落錐試驗中 20 mm 錐入深度）。</li>
+<li>塑限 PL 是 3 mm 土條斷裂的含水量。</li>
+<li>塑性指數 PI = LL − PL 衡量塑性行為的範圍。</li>
+</ul>
+<p>高 PI 表示壓縮性黏土，塑性圖可區分粉土和黏土。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">塑性指數</span>
+      <div class="formula-expr formula-math">\[\mathrm{PI} = \mathrm{LL} - \mathrm{PL}\]</div>
+      <span class="formula-note">塑性範圍的寬度</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">均勻係數</span>
+      <div class="formula-expr formula-math">\[C_u = \frac{D_{60}}{D_{10}}\]</div>
+      <span class="formula-note">級配曲線的跨度</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>壓實</h2>
+  <div class="body"><p>壓實通過排出空氣使土壤密實，通常使用壓路機。實驗室普羅克特試驗在幾個含水量下壓實樣品，並繪製乾密度對含水量的曲線，得到在<strong>最佳含水量</strong>處達到峰值的曲線。</p>
+<p>太乾則顆粒相互鎖定；太濕則水佔據土壤本應填充的孔隙。</p>
+<p>壓實提高強度和承載力，減少沉降和滲透性，這就是為什麼填土分薄層鋪設並壓實至規定的相對壓實度，而不是簡單傾倒。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">相對壓實度</span>
+      <div class="formula-expr formula-math">\[\mathrm{RC} = \frac{\gamma_d(\text{field})}{\gamma_d(\text{max, lab})}\]</div>
+      <span class="formula-note">通常以百分比表示</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>有效應力與滲流</h2>
+  <div class="body"><p>強度和沉降由<strong>有效應力</strong>控制：σ' = σ − u，其中 σ 是上方土壤和水重量產生的總應力，u 是孔隙水壓力。相同的總應力和不同的孔隙壓力會產生完全不同的行為。</p>
+<ul>
+<li>在地下水位以下，u = ρ_w g h，有效應力使用浮單位重量 γ' = γ_sat − γ_w。</li>
+<li>在地下水位以上，毛細水可產生負孔隙壓力並暫時提高 σ'。</li>
+<li>滲流增加一個力。達西定律給出 v = k i 和 q = k i A，梯度 i = Δh/L。</li>
+<li>當向上滲流接近浮重量時，有效應力降至零：<strong>臨界水力梯度</strong>為 i_c = (G_s − 1)/(1 + e)，超過此值土壤會沸騰並可能開始管湧。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">有效應力</span>
+      <div class="formula-expr formula-math">\[\sigma&#x27; = \sigma - u\]</div>
+      <span class="formula-note">由骨架承擔</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">達西定律</span>
+      <div class="formula-expr formula-math">\[v = k i\]</div>
+      <span class="formula-note">滲透係數</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">臨界水力梯度</span>
+      <div class="formula-expr formula-math">\[i_c = \frac{G_s - 1}{1 + e}\]</div>
+      <span class="formula-note">有效應力降至零</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>固結與沉降</h2>
+  <div class="body"><p>固結是飽和黏土在超孔隙水壓力消散時隨時間發生的壓縮。荷載最初由水承擔；隨著排水，壓力轉移到土壤骨架，孔隙比下降，產生沉降。</p>
+<p>固結儀試驗分級加載樣品，並繪製孔隙比對對數壓力的曲線。原始壓縮線的斜率是壓縮指數 C_c，前期固結壓力標誌著曾承受的最大應力。<strong>超固結比</strong> OCR 比較該應力與當前應力；超固結黏土的沉降要小得多。</p>
+<p>沉降按 s_c = C_c H/(1 + e₀) · log₁₀((σ'₀ + Δσ)/σ'₀) 計算，速率取決於固結係數 c_v。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">一維沉降</span>
+      <div class="formula-expr formula-math">\[s_c = \frac{C_c H}{1 + e_0} \log_{10}\left(\frac{\sigma&#x27;_0 + \Delta \sigma}{\sigma&#x27;_0}\right)\]</div>
+      <span class="formula-note">土層厚度</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>抗剪強度與莫爾–庫侖</h2>
+  <div class="body"><p>抗剪強度是顆粒間滑動的阻力。<strong>莫爾–庫侖</strong>準則為 τ_f = c' + σ' tan φ'，其中 c' 是有效黏聚力，φ' 是有效摩擦角，σ' 是破壞面上的有效法向應力。</p>
+<ul>
+<li>繪製 τ_f 對 σ' 的圖，截距為 c'，斜率為 tan φ'。</li>
+<li>破壞時的莫爾圓與該包絡線相切，破壞面與大主應力面成 45° + φ'/2。</li>
+<li>鬆砂的 φ' 接近 30°，密砂更大。</li>
+<li>飽和軟黏土在不排水條件下剪切時表現為 φ_u = 0，其強度為不排水抗剪強度 s_u。</li>
+<li>直剪盒沿強制平面剪切樣品；三軸試驗在受控圍壓下加載圓柱形樣品，並可測量孔隙壓力，因此總參數和有效參數均可獲得。</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">莫爾–庫侖準則</span>
+      <div class="formula-expr formula-math">\[\tau_f = c&#x27; + \sigma&#x27; \tan \varphi&#x27;\]</div>
+      <span class="formula-note">排水、有效應力形式</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>擋土牆上的土壓力</h2>
+  <div class="body"><p>牆後的土壓力取決於牆的移動程度。無移動時土壤處於靜止狀態：σ'_h = K₀ σ'_v，K₀ ≈ 1 − sin φ'。</p>
+<ul>
+<li>如果牆向外屈服，土壤達到<strong>主動</strong>狀態，K_a = tan²(45° − φ'/2)。</li>
+<li>將牆推入土壤會動員<strong>被動</strong>抗力，K_p = tan²(45° + φ'/2)，通常大幾倍。</li>
+<li>水壓力必須單獨添加。</li>
+</ul>
+<p>無法排水的牆會產生土壤骨架從未感受到的孔隙壓力，這是常見的破壞原因。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">主動土壓力係數</span>
+      <div class="formula-expr formula-math">\[K_a = \tan^2\left(45^{\circ} - \frac{\varphi&#x27;}{2}\right)\]</div>
+      <span class="formula-note">牆遠離土壤移動</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">被動土壓力係數</span>
+      <div class="formula-expr formula-math">\[K_p = \tan^2\left(45^{\circ} + \frac{\varphi&#x27;}{2}\right)\]</div>
+      <span class="formula-note">牆推入土壤</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>承載力與邊坡穩定性</h2>
+  <div class="body"><p>當基礎下方的土壤發生剪切時，基礎破壞。承載力方程結合三項：q_ult = c N_c + q N_q + 0.5 γ B N_γ，其中 N 係數取決於 φ'，q 是基礎底面的超載。容許壓力是 q_ult 除以約 3 的<strong>安全係數</strong>。</p>
+<p>當驅動剪力超過可用強度時，邊坡破壞；穩定性為 FoS = 抗力/驅動力。</p>
+<p>排水是最有力的槓桿：降低地下水位提高有效應力並降低孔隙壓力，這就是為什麼許多邊坡破壞發生在大雨之後。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">承載力</span>
+      <div class="formula-expr formula-math">\[q_{\text{ult}} = c N_c + q N_q + 0.5 \gamma B N_\gamma\]</div>
+      <span class="formula-note">N 係數由 φ&#x27; 得出</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">安全係數</span>
+      <div class="formula-expr formula-math">\[\mathrm{FoS} = \frac{\text{resisting shear}}{\text{driving shear}}\]</div>
+      <span class="formula-note">設計中為 1.5 至 3</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>滲透性：常水頭與變水頭</h2>
+  <div class="body"><p><strong>常水頭</strong>試驗適用於粗粒土：在長度 L、面積 A 的圓柱體中，在水頭差 Δh 下收集並計時穩定流，得出 k = QL/(A Δh t)。對粗砂進行的實驗室試驗在溫度校正 k₂₀ = k_T η_T/η₂₀ 後得出 k₂₀ ≈ 7.9 × 10⁻³ m/s。</p>
+<p>細粒土通過的水太少，無法計量，因此<strong>變水頭</strong>試驗觀察面積為 a 的測壓管通過樣品排水：k = (a L)/(A t) ln(h₁/h₂)。花崗岩風化土和火山岩風化土的樣品分別給出 1.8 × 10⁻⁸ 和 5.8 × 10⁻⁸ m/s——比砂慢九個數量級，這就是為什麼排水設計必須了解土壤。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">常水頭滲透性</span>
+      <div class="formula-expr formula-math">\[k = \frac{Q L}{A \Delta h t}\]</div>
+      <span class="formula-note">在時間 t 內收集的穩定流</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">變水頭滲透性</span>
+      <div class="formula-expr formula-math">\[k = \frac{a L}{A t} \ln\frac{h_1}{h_2}\]</div>
+      <span class="formula-note">a 是測壓管面積，h₁ 和 h₂ 是初始和最終水頭</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">溫度校正</span>
+      <div class="formula-expr formula-math">\[k_{20} = k_T \frac{\eta_T}{\eta_{20}}\]</div>
+      <span class="formula-note">黏度校正至標準 20 °C 值</span>
+    </div></div><div class="table-wrap"><table><caption>典型滲透係數</caption><thead><tr><th scope='col'>土壤</th><th scope='col'>k (m/s)</th><th scope='col'>適用試驗</th></tr></thead><tbody><tr><td>潔淨礫石</td><td>10⁻² – 1</td><td>常水頭</td></tr><tr><td>粗砂（實驗室）</td><td>7.9 × 10⁻³</td><td>常水頭</td></tr><tr><td>細砂</td><td>10⁻⁵ – 10⁻³</td><td>常水頭或變水頭</td></tr><tr><td>粉土</td><td>10⁻⁸ – 10⁻⁵</td><td>變水頭</td></tr><tr><td>花崗岩風化土（實驗室）</td><td>1.8 × 10⁻⁸</td><td>變水頭</td></tr><tr><td>黏土</td><td>低於 10⁻⁹</td><td>變水頭或固結儀</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>解讀固結儀：由 t90 求 c_v</h2>
+  <div class="body"><p>沉降量來自 C_c，但速率需要<strong>固結係數</strong> c_v。繪製壓縮量對時間平方根的曲線：早期讀數位於一條直線上，其反向延長至零得到校正原點，第二條橫坐標大 1.15 倍的直線與曲線相交於 <strong>t90</strong>，即 90% 固結的時間。</p>
+<p>則 c_v = T_v H²/t90，其中 T_90 = 0.848，H 是排水路徑——雙向排水時為樣品高度的一半。</p>
+<p>伴隨的<strong>體積壓縮係數</strong>將沉降與單位應力增量聯繫起來，在實驗室中，隨著黏土變硬，較高的壓力增量給出較低的 t90。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">固結係數</span>
+      <div class="formula-expr formula-math">\[c_v = \frac{T_v H^2}{t_{90}}\]</div>
+      <span class="formula-note">H 是最長排水路徑</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">90% 固結時的時間因數</span>
+      <div class="formula-expr formula-math">\[T_{90} = 0.848\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">體積壓縮係數</span>
+      <div class="formula-expr formula-math">\[m_v = \frac{\Delta e}{(1 + e_0) \Delta \sigma&#x27;}\]</div>
+      <span class="formula-note">單位有效應力增量的體積應變</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>三軸試驗：UU、CU 和 CD</h2>
+  <div class="body"><p>三軸壓力室控制排水，這是區分三種標準試驗的關鍵。</p>
+<ul>
+<li><strong>不固結不排水（UU）</strong>：任何階段均不排水，因此快速且便宜；飽和黏土此時表現為 φ_u ≈ 0，其強度為不排水抗剪強度 s_u = (σ₁ − σ₃)/2，僅適用於不排水條件。</li>
+<li><strong>固結不排水（CU）</strong>：樣品在圍壓下固結，然後在不排水條件下剪切同時測量孔隙壓力，因此可得出有效參數 c′ 和 φ′。</li>
+<li><strong>固結排水（CD）</strong>：全程排水，緩慢剪切，給出砂的真實排水強度和黏土的長期行為。</li>
+</ul>
+<p>對粒狀土進行的實驗室 CD 試驗返回 c′ = 0 和 φ′ ≈ 40°。</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">不排水抗剪強度，UU</span>
+      <div class="formula-expr formula-math">\[s_u = \frac{\sigma_1 - \sigma_3}{2}\]</div>
+      <span class="formula-note">總應力下破壞莫爾圓的半徑</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2>關鍵詞</h2>
+        <dl><div class="term"><dt>孔隙比</dt><dd>孔隙體積除以固體體積，是衡量土壤鬆散或密實程度的基本指標。</dd></div><div class="term"><dt>塑性指數</dt><dd>細粒土表現塑性行為的含水量範圍，等於 LL − PL。</dd></div><div class="term"><dt>有效應力</dt><dd>總應力減去孔隙水壓力；它是土壤骨架承擔的應力，控制強度和壓縮。</dd></div><div class="term"><dt>超固結比</dt><dd>過去的最大有效應力除以當前有效應力，顯示黏土曾被預壓的程度。</dd></div><div class="term"><dt>壓縮指數</dt><dd>固結儀試驗中孔隙比對對數壓力圖上原始壓縮線的斜率。</dd></div><div class="term"><dt>安全係數</dt><dd>可用抗剪阻力與導致破壞所需剪應力之比。</dd></div><div class="term"><dt>固結係數</dt><dd>參數 c_v，控制固結土層中超孔隙水壓力消散和沉降進行的速度。</dd></div><div class="term"><dt>變水頭試驗</dt><dd>細粒土的滲透性試驗，測壓管通過樣品排水，由水位隨時間下降確定 k。</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker">計算示例</span>
+        <h2>新路堤下黏土層的沉降</h2>
+        <p class="problem">一層 4.0 m 厚的正常固結黏土層，初始孔隙比為 1.10，壓縮指數為 0.35。中深度處的初始有效垂直應力為 100 kPa。路堤增加 40 kPa 的均勻應力增量。估算該層的最終固結沉降。</p>
+        <ol><li>沉降公式為 s_c = [C_c H/(1 + e₀)] · log₁₀[(σ&#x27;₀ + Δσ)/σ&#x27;₀]。</li><li>代入數值：s_c = [0.35 × 4.0/(1 + 1.10)] × log₁₀[(100 + 40)/100]。</li><li>係數為 1.40/2.10 = 0.6667 m。</li><li>應力比為 140/100 = 1.40，log₁₀(1.40) = 0.1461。</li><li>因此 s_c = 0.6667 × 0.1461 = 0.0974 m ≈ 97 mm。</li><li>合理性檢查：軟正常固結黏土在 40% 應力增量下產生低於 100 mm 的沉降是合理的；厚度加倍的土層沉降約為兩倍。</li></ol>
+        <div class="answer"><b>Answer</b>最終固結沉降約為 97 mm，隨超孔隙壓力消散隨時間達到。不僅是量值，速率也必須根據結構對差異移動的容許度進行檢查。</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2>應試方法</h2>
+        <ul><li>在進行任何強度或沉降計算之前，繪製土壤剖面並計算每個層邊界的總應力、孔隙壓力和有效應力。</li><li>說明試驗給出的是總應力參數還是有效應力參數；大多數抗剪強度錯誤來自混淆兩者。</li><li>對於沉降問題，同時給出量值和排水路徑，因為厚度和滲透性控制其發生速度。</li><li>檢查單位：應力用 kPa，單位重量用 kN/m³，土層厚度用米；1000 倍的因子很容易出現。</li><li>對於 t90，使用時間平方根圖和 1.15 偏移線——從原始曲線上的猜測主固結終點引用 c_v 是經典的失分點。</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Presumed allowable bearing pressure for foundations on sands and gravels</h3>
+  <p class="ref-table-intro">Presumed allowable vertical bearing pressures for shallow foundations on non-cohesive soils, used for preliminary footing sizing once the soil category has been established from SPT results and description.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Soil category</th><th scope='col'>Description</th><th scope='col'>SPT N value</th><th scope='col'>Presumed allowable bearing pressure (kPa)</th></tr></thead><tbody><tr><td>4(a)</td><td>Very dense; requires pick for excavation</td><td>&gt; 50</td><td>500</td></tr><tr><td>4(b)</td><td>Dense; requires pick for excavation, 50 mm peg hard to drive</td><td>30 - 50</td><td>300</td></tr><tr><td>4(c)</td><td>Medium dense</td><td>10 - 30</td><td>100</td></tr><tr><td>4(d)</td><td>Loose; can be excavated with a spade, 50 mm peg easily driven</td><td>4 - 10</td><td>&lt; 100</td></tr></tbody></table></div>
+  <p class="ref-table-note">Table 1 of GEO Technical Guidance Note No. 53 (Issue 2, dated 17 April 2026). The presumed values assume founding at least 1 m below ground surface, groundwater not higher than 1 m below ground, granular material that is siliceous and non-crushable, and a maximum total settlement of 30 mm.</p>
+  <p class="ref-table-caveat">Revision summary only. Settlement and serviceability must be assessed, and foundations larger than 6 m or with different groundwater or founding conditions need separate bearing capacity and settlement checks; verify against the current guidance for design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2>自我測驗</h2>
+    <p class="quiz-score" data-score>0 / 6 正確</p>
+  </div>
+  <p>先作答，再查看解釋。錯誤答案比熟悉的一頁更有用。</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>飽和土壤中某點的有效應力是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>與地下水位無關</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>總應力加上孔隙壓力</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>總應力減去孔隙壓力</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>始終等於孔隙壓力</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>σ&#x27; = σ − u，控制強度和壓縮的是有效應力，而不是單獨的總應力。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q02</span><span>某土壤的液限為 45%，塑限為 20%。其塑性指數為：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>0.25%</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>2.25%</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>25%</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>65%</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>PI = LL − PL = 45 − 20 = 25%，即塑性範圍的寬度。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q03</span><span>固結儀試驗測量飽和黏土樣品的壓縮。孔隙比對對數壓力圖上原始線的斜率是：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>壓縮指數</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>均勻係數</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>滲透係數</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>固結係數</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>該斜率是壓縮指數 C_c，用於沉降公式；c_v 描述速率，而非量值。</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>哪種變化最能提高黏土邊坡的安全係數？</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>增加孔隙水壓力</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>提高地下水位</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>降低地下水位並排乾邊坡</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>在坡頂增加重量</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>排水降低孔隙壓力，提高有效應力，從而增加滑動面上的可用抗剪強度。</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>在變水頭試驗中，測壓管水位從 1.20 m 降至 0.60 m。滲透性計算使用：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>直接使用 0.60 m 的水頭差</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>h₁/h₂ 比值的自然對數</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>水頭比的平方根</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>僅使用經過的時間</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>變水頭滲透性為 k = (aL/At) ln(h₁/h₂)，因此進入的是初始與最終水頭比的對數，而不是差值。</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q06</span><span>對飽和黏土進行不固結不排水三軸試驗，在總應力方面給出：</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>φ_u ≈ 0 和 s_u = (σ₁ − σ₃)/2</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>真實有效參數 c′ 和 φ′</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>沒有可用的強度參數</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>與排水試驗相同的結果</span></button></div>
+    <div class="quiz-explain"><b>解釋</b>沒有固結或排水，破壞包絡線在總應力中是水平的：φ_u ≈ 0，強度為不排水抗剪強度。</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="engineering-geology.zh-Hant.html"><span>Core</span><b>工程地質學</b></a><a class="related-card" href="fluid-mechanics.zh-Hant.html"><span>Core</span><b>流體力學</b></a><a class="related-card" href="construction-materials.zh-Hant.html"><span>Core</span><b>建造材料</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="fluid-mechanics.zh-Hant.html"><small>上一頁</small><b>流體力學</b></a><a class="next" href="surveying.zh-Hant.html"><small>下一頁</small><b>工程測量</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2>參考文獻</h2>
+  <ol class="reference-list">
+    <li>Geotechnical Engineering Office, Civil Engineering and Development Department. (2026). <i>GEO Technical Guidance Note No. 53: Supplementary Guidelines for Foundation Design and Construction (Issue 2)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.cedd.gov.hk/filemanager/eng/content_427/TGN%2053_Issue%202.pdf" rel="noopener">https://www.cedd.gov.hk/filemanager/eng/content_427/TGN%2053_Issue%202.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">有效應力才是關鍵。</p><p class="margin-note">先總應力，再孔隙壓力，然後 σ′。</p><p class="margin-note">排水提高強度。</p><p class="margin-note">水是大多數邊坡破壞的背後原因。</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

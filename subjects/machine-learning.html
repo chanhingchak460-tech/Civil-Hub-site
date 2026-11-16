@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Machine Learning — Civil Hub</title>
+<meta name="description" content="How models learn patterns from data, and how to tell whether one is any good. It covers regression, classification, validation, the metrics that match a re">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/machine-learning.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="Machine Learning — Civil Hub">
+<meta property="og:description" content="How models learn patterns from data, and how to tell whether one is any good. It covers regression, classification, validation, the metrics that match a re">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/machine-learning.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="machine-learning.html" data-alt-zh-hant="machine-learning.zh-Hant.html" data-alt-ja="machine-learning.ja.html" data-alt-ko="machine-learning.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">Machine Learning</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Computing</p>
+          <h1>Machine Learning</h1>
+          <p class="subject-sub">Models that learn from data, and how to judge them</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Computing</li><li><b data-i18n="subject.read">Read</b>9 min</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>10</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M48 158 H294 M48 158 V36" stroke="currentColor" stroke-width="1.2"/><circle cx="72" cy="130" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="92" cy="142" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="112" cy="108" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="132" cy="120" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="152" cy="92" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="172" cy="100" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="192" cy="76" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="212" cy="86" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="232" cy="58" r="3" stroke="var(--faint)" stroke-width="1.1"/><circle cx="252" cy="66" r="3" stroke="var(--faint)" stroke-width="1.1"/><path d="M66 138 L260 54" stroke="var(--accent)" stroke-width="1.4"/><text x="170" y="186" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">REG RESSION</text></svg>
+          <figcaption>Scatter and regression line</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">Learning is fitting a function</a></li><li><a href="#sec-2">Regression and classification</a></li><li><a href="#sec-3">Training: loss and gradients</a></li><li><a href="#sec-4">Validation and leakage</a></li><li><a href="#sec-5">Metrics that match the question</a></li><li><a href="#sec-6">Overfitting and regularisation</a></li><li><a href="#sec-7">Neural networks</a></li><li><a href="#sec-8">Ethics and deployment</a></li><li><a href="#sec-9">Tree ensembles: the tabular champion</a></li><li><a href="#sec-10">Hyperparameter tuning done honestly</a></li><li><a href="#sec-11">Unsupervised learning: clustering and PCA</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">How models learn patterns from data, and how to tell whether one is any good. It covers regression, classification, validation, the metrics that match a real question, overfitting, neural networks and the ethics of deploying a model.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="machine-learning" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>Learning is fitting a function</h2>
+  <div class="body"><p>Machine learning fits a function from examples instead of writing rules by hand.</p>
+<ul>
+<li><strong>Supervised learning</strong>: each example carries a label; regression predicts a number, classification a category.</li>
+<li><strong>Unsupervised</strong> methods look for structure without labels — clustering, dimension reduction.</li>
+<li><strong>Reinforcement</strong> learning learns actions from reward.</li>
+</ul>
+<p>The estimate is only as good as the sample: biased or unrepresentative data produce a confident model that is wrong in deployment.</p></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Regression and classification</h2>
+  <div class="body"><p>Linear regression fits a straight line to a numeric outcome by least squares; the error term collects what the line misses. For a yes/no decision, logistic regression passes a linear score through the <strong>sigmoid</strong> to give a probability between 0 and 1.</p>
+<p>The score defines a boundary at zero; the output is a probability, not a verdict. A threshold converts it into a class, trading false positives against false negatives.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Linear regression</span>
+      <div class="formula-expr formula-math">\[y = \beta_0 + \beta_1 x + \varepsilon\]</div>
+      <span class="formula-note">ε is the part of y the line does not explain</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Logistic (sigmoid) model</span>
+      <div class="formula-expr formula-math">\[p = \frac{1}{1 + e^{-s}}, \quad s = w \cdot x + b\]</div>
+      <span class="formula-note">p is a probability; the class comes from a chosen threshold</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>Training: loss and gradients</h2>
+  <div class="body"><p>Training chooses parameters that make predictions close to the labels.</p>
+<ul>
+<li>A <strong>loss function</strong> measures the gap — squared error for regression, cross-entropy for classification.</li>
+<li><strong>Gradient descent</strong> nudges each weight against the gradient of the loss.</li>
+<li>The learning rate is the critical choice: too small and training crawls, too large and the loss jumps around or diverges.</li>
+<li>Mini-batches trade noisy gradients for speed; one pass over the data is an epoch.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Gradient descent update</span>
+      <div class="formula-expr formula-math">\[w \leftarrow w - \eta \frac{\partial L}{\partial w}\]</div>
+      <span class="formula-note">η is the learning rate; each step is opposite to the gradient</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Validation and leakage</h2>
+  <div class="body"><p>A model scored on the data it learned from is marking its own homework. Split into training, validation and test sets; fit on training, choose hyperparameters on validation, and touch the test set once at the end. <strong>k-fold cross-validation</strong> rotates the validation fold so the estimate uses every row.</p>
+<p><strong>Leakage</strong> is the silent killer: scaling before the split, duplicate records across sets, or features recorded after the outcome. Time-ordered data must be split by time, not at random.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Stratified split and fit</span>
+      <div class="formula-expr formula-text">X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.2, stratify=y)
+model.fit(X_tr, y_tr)
+score = model.score(X_te, y_te)</div>
+      <span class="formula-note">stratify keeps the class balance in both parts; fit only on the training rows</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Metrics that match the question</h2>
+  <div class="body"><p>Accuracy is the first metric and often the wrong one. With 1,000 cases of which 60 are positive, a model that always says no scores 94% accuracy and catches nothing.</p>
+<ul>
+<li>A <strong>confusion matrix</strong> separates true positives, false positives, false negatives and true negatives, from which <strong>precision</strong> and <strong>recall</strong> follow.</li>
+<li><strong>F1</strong> balances the two, while ROC-AUC measures ranking across all thresholds.</li>
+<li>Regression metrics differ: RMSE penalises large errors, MAE keeps the original units, and R² is the variation explained.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Precision and recall</span>
+      <div class="formula-expr formula-math">\[\mathrm{precision} = \frac{TP}{TP + FP}, \quad \mathrm{recall} = \frac{TP}{TP + FN}\]</div>
+      <span class="formula-note">precision punishes false alarms; recall punishes missed positives</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">F1 score</span>
+      <div class="formula-expr formula-math">\[F_1 = \frac{2 \cdot \mathrm{precision} \cdot \mathrm{recall}}{\mathrm{precision} + \mathrm{recall}}\]</div>
+      <span class="formula-note">the harmonic mean, so a poor value on either side drags it down</span>
+    </div></div><div class="table-wrap"><table><caption>Classification metrics and the trap in each one</caption><thead><tr><th scope='col'>Metric</th><th scope='col'>What it answers</th><th scope='col'>Trap if used alone</th></tr></thead><tbody><tr><td>Accuracy</td><td>Share of all cases correct</td><td>Dominated by the majority class</td></tr><tr><td>Precision</td><td>Of those flagged, how many were right</td><td>Ignores missed positives</td></tr><tr><td>Recall</td><td>Of real positives, how many were found</td><td>Ignores false alarms</td></tr><tr><td>F1</td><td>Balance of the two</td><td>Hides the cost of each error type</td></tr><tr><td>ROC-AUC</td><td>Ranking quality across thresholds</td><td>No decision at a chosen threshold</td></tr></tbody></table></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>Overfitting and regularisation</h2>
+  <div class="body"><p><strong>Overfitting</strong> is learning the training set rather than the pattern: training error keeps falling while validation error rises. It comes from a model that is too flexible for the amount of data.</p>
+<p>The cure is more data, a simpler model, or <strong>regularisation</strong> that adds a penalty for large weights. Dropout, early stopping and augmentation are other forms of restraint. Underfitting is the opposite failure, and no amount of tuning fixes a model that cannot express the pattern.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Regularised loss (L2)</span>
+      <div class="formula-expr formula-math">\[L_{\mathrm{reg}} = L + \lambda \sum w^2\]</div>
+      <span class="formula-note">λ controls how strongly large weights are punished</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Neural networks</h2>
+  <div class="body"><p>A neural network stacks layers of weighted sums and non-linear activations; depth lets it represent interactions that a linear model cannot. ReLU is the common activation, and <strong>backpropagation</strong> computes the gradients that gradient descent needs.</p>
+<p>Convolutional layers exploit local structure in images, and sequence models handle ordered data. Networks need more data and compute than classical models, and they remain hard to interpret, which matters when a decision affects a person.</p></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>Ethics and deployment</h2>
+  <div class="body"><p>A good test score is not permission to deploy. Ask who is represented in the training data, whether errors fall unevenly on groups, and who can challenge a decision.</p>
+<p><strong>Distribution shift</strong> means the world moves after training, so performance decays and must be monitored. Document the data, the metric and the limits, and keep a human in the loop where the cost of error is high. A model is a component in a system, and the system carries the responsibility.</p></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Tree ensembles: the tabular champion</h2>
+  <div class="body"><p>A <strong>decision tree</strong> splits the data on simple threshold questions and predicts the average or majority in the leaves. Trees overfit easily, so ensembles pool many of them: <strong>random forests</strong> grow trees on bootstrapped samples with random feature subsets, while <strong>gradient boosting</strong> builds trees sequentially, each one fitted to the errors of the ensemble so far.</p>
+<p>For tabular data — the tables of measurements common in engineering — boosted trees such as XGBoost and LightGBM are usually the first model to try: they handle missing values and mixed units, need little tuning, and beat deep networks on most small and medium tables. The main knobs are the learning rate, tree depth and number of trees; a small learning rate with many trees is the default recipe.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Boosting ensemble</span>
+      <div class="formula-expr formula-math">\[\hat{y} = \sum_{m=1}^{M} \eta \, h_m(x)\]</div>
+      <span class="formula-note">each tree h_m is fitted to the remaining errors; η is the learning rate</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>Hyperparameter tuning done honestly</h2>
+  <div class="body"><p>Hyperparameters — depth, learning rate, regularisation strength — are chosen by trial, and each trial spends information from the data it is scored on. Tune on the <strong>validation</strong> fold, not the test set: using the test set repeatedly turns it into part of the training procedure and its final score stops being an unbiased estimate.</p>
+<ul>
+<li><strong>Cross-validation</strong> is the workhorse: split the training data into folds, train on all but one, validate on the held-out fold and rotate.</li>
+<li>With imbalanced classes, use <strong>stratified</strong> folds so each fold keeps the same class proportions.</li>
+<li>Report the mean and spread of the fold scores rather than the best one.</li>
+<li>When a model's result matters, wrap the whole search in an outer loop of nested cross-validation.</li>
+</ul></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Stratified k-fold search</span>
+      <div class="formula-expr formula-text">skf = StratifiedKFold(n_splits=5, shuffle=True)
+grid = GridSearchCV(pipe, param_grid, cv=skf, scoring=&#x27;f1&#x27;)
+grid.fit(X_train, y_train)
+final_score = grid.score(X_test, y_test)</div>
+      <span class="formula-note">tuning uses folds of the training data only; the test set is touched once</span>
+    </div></div>
+<div class="callout callout--warning">
+  <b>The test set is spent on contact</b>
+  Every decision made after looking at the test set — a threshold, a feature, a model family — makes that score optimistic; budget exactly one look.
+</div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>Unsupervised learning: clustering and PCA</h2>
+  <div class="body"><p>Without labels, models look for structure.</p>
+<ul>
+<li><strong>k-means</strong> clustering assigns each point to the nearest centroid and recomputes the centroids until the assignment stops changing; it minimises the within-cluster squared distance, so the number of clusters k is a modelling choice, and an elbow plot of the objective against k suggests where adding clusters stops paying.</li>
+<li><strong>Principal component analysis</strong> finds the directions of largest variance and projects the data onto them, compressing many correlated columns into a few components. The share of variance kept measures what the projection preserves; drop components when the cumulative share plateaus.</li>
+</ul>
+<p>Clustering results are exploratory — validate them against a downstream purpose rather than quoting a score.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">k-means objective</span>
+      <div class="formula-expr formula-math">\[\mathrm{SSE} = \sum_j \sum_{x \in C_j} \lVert x - \mu_j \rVert^2\]</div>
+      <span class="formula-note">the sum of squared distances from each point to its cluster centroid</span>
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Supervised learning</dt><dd>Learning a mapping from inputs to known labels, covering regression for numbers and classification for categories.</dd></div><div class="term"><dt>Overfitting</dt><dd>Fitting the training data so closely that the model performs poorly on new data.</dd></div><div class="term"><dt>Precision</dt><dd>The share of flagged cases that are genuinely positive, TP divided by TP plus FP.</dd></div><div class="term"><dt>Recall</dt><dd>The share of genuine positives that the model found, TP divided by TP plus FN.</dd></div><div class="term"><dt>Cross-validation</dt><dd>Repeatedly splitting the training data so each part serves once as validation, giving a more stable performance estimate.</dd></div><div class="term"><dt>Regularisation</dt><dd>A penalty on model complexity or large weights that reduces overfitting.</dd></div><div class="term"><dt>Distribution shift</dt><dd>A change in the data seen in deployment compared with the training data, causing performance to decay.</dd></div><div class="term"><dt>Ensemble learning</dt><dd>Combining many base models, such as trees, to reduce variance or bias and improve predictions.</dd></div><div class="term"><dt>Clustering</dt><dd>Grouping unlabelled data so that points in the same group are more similar to each other than to points in other groups.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Reading a screening model&#x27;s confusion matrix</h2>
+        <p class="problem">A model screens 1,000 structural inspections. In reality 60 components are defective. The model flags 50 components; 40 of those are truly defective, 10 are not, and 20 defective components are missed. Compute accuracy, precision, recall and F1, and say which metric should guide the decision.</p>
+        <ol><li>Label the counts: TP = 40, FP = 10, FN = 20, TN = 930.</li><li>Accuracy = (TP + TN) / total = (40 + 930) / 1000 = 0.97.</li><li>Precision = TP / (TP + FP) = 40 / 50 = 0.80.</li><li>Recall = TP / (TP + FN) = 40 / 60 = 0.667.</li><li>F1 = 2 × 0.80 × 0.667 / (0.80 + 0.667) = 0.727.</li></ol>
+        <div class="answer"><b>Answer</b>Accuracy is 97%, precision 0.80, recall 0.67 and F1 0.73. The headline accuracy hides that one in three defects is missed, so recall should drive the decision: lower the threshold to find more defects, accepting more false alarms, and report both metrics together.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>Draw the confusion matrix before computing any classification metric; the arithmetic is easier and errors are visible.</li><li>Name the metric the question actually needs, and explain in one sentence why accuracy would mislead.</li><li>If a validation score looks unusually good, check for leakage before reporting it as a result.</li><li>For tabular engineering data, fit a gradient-boosted tree before a neural network; it is usually stronger and needs less tuning.</li></ul>
+      </section>
+
+      
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q01</span><span>A model reports 97% accuracy on a dataset where only 3% of cases are positive. The main risk is that:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Accuracy is dominated by the majority class and hides missed positives</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The model has certainly overfitted</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The test set was too large</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Precision must equal recall</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Predicting the majority class everywhere gives high accuracy while finding no positives, so precision and recall are needed.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>Which dataset should be used to give the final, unbiased performance estimate?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>All the data combined</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The training set</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The validation set used for tuning</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The test set, touched once at the end</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Tuning on validation leaks information; the held-out test set gives the only clean estimate.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q03</span><span>Training loss keeps falling while validation loss rises. This indicates:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Overfitting</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>A perfectly generalising model</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>That the learning rate is too small</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Underfitting</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The model is memorising the training data and losing generalisation, which is the signature of overfitting.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q04</span><span>A gradient descent learning rate that is far too large usually causes:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>The test set to leak into training</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Features to become standardised</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The loss to oscillate or diverge</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Faster convergence to the global minimum</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Each step overshoots the minimum, so the loss jumps or grows instead of settling.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q05</span><span>Gradient boosting differs from a random forest mainly because:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Its trees share no features with each other</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>It cannot handle missing values</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>Each new tree is fitted to the errors of the ensemble so far</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>It never uses a learning rate</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Boosting grows trees sequentially, each correcting the residuals left by the previous ensemble, while a forest grows trees independently.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q06</span><span>k-means clustering assigns points to clusters by:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Random assignment that never changes</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The order the points arrive in</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The label predicted by a supervised classifier</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>The nearest centroid, recomputed each iteration</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Each iteration assigns every point to its nearest centroid, then moves the centroids to the mean of their assigned points.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="ai-data-analysis.html"><span>Computing</span><b>AI &amp; Data Analysis</b></a><a class="related-card" href="artificial-intelligence.html"><span>Computing</span><b>Artificial Intelligence</b></a><a class="related-card" href="machine-learning-smart-mobility.html"><span>Computing</span><b>Machine Learning for Smart Mobility</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="infrastructure-management.html"><small>Previous</small><b>Infrastructure Management</b></a></nav>
+      
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">Never test on training data.</p><p class="margin-note">Accuracy hides imbalance.</p><p class="margin-note">Regularise or simplify; more data is better.</p><p class="margin-note">Models decay after deployment.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>

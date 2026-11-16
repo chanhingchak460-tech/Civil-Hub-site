@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Structural Mechanics — Civil Hub</title>
+<meta name="description" content="The grammar of structures: how loads travel through members, how stress and strain relate, and how beams, shafts and columns fail. It underpins every later">
+<meta name="theme-color" content="#f5f2ea">
+<link rel="canonical" href="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/structural-mechanics.html">
+<meta property="og:site_name" content="Civil Hub">
+<meta property="og:title" content="Structural Mechanics — Civil Hub">
+<meta property="og:description" content="The grammar of structures: how loads travel through members, how stress and strain relate, and how beams, shafts and columns fail. It underpins every later">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/subjects/structural-mechanics.html">
+<meta property="og:image" content="https://chanhingchak460-tech.github.io/Civil-Hub-site/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-alt-en="structural-mechanics.html" data-alt-zh-hant="structural-mechanics.zh-Hant.html" data-alt-ja="structural-mechanics.ja.html" data-alt-ko="structural-mechanics.ko.html" data-page-lang="en" data-root="../" data-total="42" data-page="library" data-content-lang="en">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="../index.html" aria-label="Civil Hub home">
+      <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+      <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="../library.html" aria-current="page" data-i18n="nav.library">Library</a>
+      <a href="../lab.html" data-i18n="nav.lab">Lab</a>
+      <a href="../formulas.html" data-i18n="nav.formulas">Formula sheet</a>
+      <a href="../about.html" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="header-tools">
+      <label class="lang-switch">
+        <span class="visually-hidden" data-i18n="common.language">Language</span>
+        <select data-lang-switch aria-label="Language">
+          <option value="en">EN</option>
+          <option value="zh-Hant">繁中</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </label>
+      <button class="search-btn" type="button" data-open-search aria-label="Search the library"><span data-i18n="header.search">Search</span> <kbd>/</kbd></button>
+      <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-label="Toggle menu"><span data-i18n="header.menu">Menu</span></button>
+    </div>
+    <div class="progress-mini" title="Revision progress saved in this browser">
+      <span class="ring" data-progress-bar aria-hidden="true"></span>
+      <span><span data-progress-count>0</span> / <span data-progress-total>42</span> <span data-i18n="header.revised">revised</span></span>
+    </div>
+  </div>
+</header>
+<main id="main">
+
+<article class="subject">
+  <header class="subject-hero">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="../library.html">Library</a><span class="sep">/</span>
+        <span aria-current="page">Structural Mechanics</span>
+      </nav>
+      <div class="subject-hero-grid">
+        <div>
+          <p class="eyebrow">Core</p>
+          <h1>Structural Mechanics</h1>
+          <p class="subject-sub">How structures carry load, and how they deform</p>
+          <ul class="subject-facts"><li><b data-i18n="subject.type">Type</b>Core</li><li><b data-i18n="subject.read">Read</b>12 min</li><li><b data-i18n="subject.sections">Sections</b>11</li><li><b data-i18n="subject.formulas">Formulas</b>20</li><li><b data-i18n="subject.selfcheck">Self-check</b>6</li></ul>
+        </div>
+        <figure class="subject-art">
+          <svg viewBox="0 0 340 200" role="img" aria-hidden="true" class="" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M46 78 H294" stroke="currentColor" stroke-width="1.7"/><path d="M58 84 l-10 14 h20 z M282 84 l-10 14 h20 z" stroke="currentColor" stroke-width="1.2"/><path d="M80 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M76 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M108 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M104 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M136 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M132 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M164 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M160 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M192 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M188 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M220 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M216 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><path d="M248 40 V74" stroke="var(--faint)" stroke-width="1"/><path d="M244 70 l4 6 4 -6" stroke="var(--faint)" stroke-width="1"/><text x="170" y="30" font-family="var(--mono)" font-size="7" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">UDL  w</text><path d="M46 150 Q170 106 294 150" stroke="var(--accent)" stroke-width="1.4"/><path d="M46 150 H294" stroke="var(--line)" stroke-width="1"/><text x="170" y="178" font-family="var(--mono)" font-size="6" fill="var(--faint)" stroke="none" text-anchor="middle" letter-spacing="0.18em">BENDING MOMENT</text></svg>
+          <figcaption>Simply supported beam — load, shear and bending moment</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap subject-layout">
+    
+<aside class="toc" aria-label="On this page">
+  <p class="toc-title" data-i18n="subject.toc">On this page</p>
+  <ol><li><a href="#sec-1">Start with a free body diagram</a></li><li><a href="#sec-2">Stress, strain and the elastic modulus</a></li><li><a href="#sec-3">Axial deformation and compatibility</a></li><li><a href="#sec-4">Bending: the flexure formula</a></li><li><a href="#sec-5">Deflection and the stiffness check</a></li><li><a href="#sec-6">Torsion in circular shafts</a></li><li><a href="#sec-7">Columns and elastic buckling</a></li><li><a href="#sec-8">From the tensile test to design</a></li><li><a href="#sec-9">Trusses and zero-force members</a></li><li><a href="#sec-10">Shear stress in beams</a></li><li><a href="#sec-11">Combined loading and Mohr&#x27;s circle</a></li></ol>
+  
+    <ol class="toc-secondary">
+      <li><a href="#key-terms" data-i18n="subject.key_terms">Key terms</a></li>
+      <li><a href="#worked-example" data-i18n="subject.worked">Worked example</a></li>
+      <li><a href="#exam-tips" data-i18n="subject.exam">Exam method</a></li>
+      <li><a href="#design-reference" data-i18n="subject.toc2">Design reference</a></li>
+      <li><a href="#self-check" data-i18n="subject.quiz">Self-check</a></li>
+    </ol>
+</aside>
+    <div class="subject-main">
+      <p class="lede">The grammar of structures: how loads travel through members, how stress and strain relate, and how beams, shafts and columns fail. It underpins every later design subject.</p>
+      <p class="lang-notice" data-lang-notice hidden></p>
+
+      <div class="progress-panel">
+        <span>Your progress is stored only in this browser.</span>
+        <button class="mark-btn" type="button" data-mark="structural-mechanics" aria-pressed="false" data-label-off="Mark as revised" data-label-on="✓ Revised">Mark as revised</button>
+      </div>
+
+      
+<section class="note-section reveal" id="sec-1">
+  <h2><span class="sec-num">01</span>Start with a free body diagram</h2>
+  <div class="body"><p>Every structural question begins the same way: isolate the part you care about, draw every force acting on it, and apply equilibrium. A free body diagram is not decoration — if a reaction or a member force is missing, the numbers that follow are meaningless.</p>
+<p>For a planar structure there are three independent equilibrium equations: ΣF_x = 0, ΣF_y = 0 and ΣM = 0. Use them to find reactions first, then cut the structure at the section you need. The internal forces at a cut are always drawn in their positive sense: axial force N, shear force V and bending moment M.</p>
+<p>A structure is <strong>statically determinate</strong> when the reactions can be found from equilibrium alone. Extra supports make it indeterminate, and the solution then needs compatibility — the requirement that deformations fit together.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Planar equilibrium</span>
+      <div class="formula-expr formula-math">\[\sum F_x = 0, \quad \sum F_y = 0, \quad \sum M = 0\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-2">
+  <h2><span class="sec-num">02</span>Stress, strain and the elastic modulus</h2>
+  <div class="body"><p>Stress converts a force into an intensity: normal stress σ = F/A acts perpendicular to the section, while shear stress τ acts along it. Strain is the corresponding deformation per unit length, ε = ΔL/L.</p>
+<p>For a linear elastic material, stress and strain are proportional up to the yield point. The constant is Young's modulus E = σ/ε, a measure of stiffness rather than strength. A material can be stiff but weak, or flexible but strong — steel is both stiff and strong; rubber is neither stiff nor strong, but it is very extensible.</p>
+<p>When a bar is pulled, it also gets thinner. Poisson's ratio ν = −ε_lateral/ε_axial captures that effect, and it links the elastic constants: G = E / [2(1 + ν)]. The value of ν for steel is about 0.30 and for concrete about 0.15–0.20.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Normal stress</span>
+      <div class="formula-expr formula-math">\[\sigma = \frac{F}{A}\]</div>
+      <span class="formula-note">force perpendicular to the section, in newtons per square metre</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Young&#x27;s modulus</span>
+      <div class="formula-expr formula-math">\[E = \frac{\sigma}{\varepsilon}\]</div>
+      <span class="formula-note">slope of the linear elastic part of the stress–strain curve</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Shear modulus</span>
+      <div class="formula-expr formula-math">\[G = \frac{E}{2(1 + \nu)}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-3">
+  <h2><span class="sec-num">03</span>Axial deformation and compatibility</h2>
+  <div class="body"><p>A prismatic bar of length L, area A and modulus E carrying axial force P changes length by ΔL = P L / (A E). This is the workhorse of indeterminate problems: write the elongation of each member in terms of the unknown force, then impose the geometric condition that the members still meet at the same joint.</p>
+<p>Temperature change adds a free expansion ΔL = α L ΔT. If that expansion is restrained, the member develops a thermal stress σ = −E α ΔT. A steel rail fixed at both ends on a hot day is in compression even though nothing touched it — the movement was prevented, not the temperature.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Axial deformation</span>
+      <div class="formula-expr formula-math">\[\Delta L = \frac{P L}{A E}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Thermal stress, fully restrained</span>
+      <div class="formula-expr formula-math">\[\sigma = -E \alpha \Delta T\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-4">
+  <h2><span class="sec-num">04</span>Bending: the flexure formula</h2>
+  <div class="body"><p>Bending moment produces a stress gradient across a section. The neutral axis passes through the centroid; fibres on one side are in compression and on the other in tension.</p>
+<p>The flexure formula is σ = M y / I, where y is the distance from the neutral axis and I is the second moment of area about that axis. The maximum stress occurs at the extreme fibre, so a section is often described by its elastic section modulus Z = I / y_max, giving σ_max = M / Z.</p>
+<p>Doubling the depth of a rectangular beam increases I eightfold, because I = b h³ / 12 — depth is far more efficient than width. Shear force does not disappear. In a beam it produces a parabolic shear stress distribution, zero at the extreme fibres and maximum at the neutral axis, with τ_max = 3V/(2A) for a rectangle.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Flexure formula</span>
+      <div class="formula-expr formula-math">\[\sigma = \frac{M y}{I}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Elastic section modulus</span>
+      <div class="formula-expr formula-math">\[Z = \frac{I}{y_{\max}}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Second moment of area, rectangle</span>
+      <div class="formula-expr formula-math">\[I = \frac{b h^3}{12}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-5">
+  <h2><span class="sec-num">05</span>Deflection and the stiffness check</h2>
+  <div class="body"><p>Bending also changes shape. The curvature is related to the moment by EI v'' = M, where EI is the flexural rigidity and v is the transverse displacement. Integrating twice gives slope and deflection; the constants come from the supports.</p>
+<p>For common cases the results are worth remembering:<br />
+- Simply supported beam with central point load P: δ = PL³/(48EI) at midspan.<br />
+- Simply supported beam with uniformly distributed load w: δ = 5wL⁴/(384EI).<br />
+- Cantilever with end load: δ = PL³/(3EI).</p>
+<p>Superposition lets you add these patterns for combined loading, provided the response stays linear. Deflection limits often control design before strength does, especially for long-span floors and slender roofs.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Beam curvature</span>
+      <div class="formula-expr formula-math">\[E I v&#x27;&#x27; = M\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Midspan deflection, central point load</span>
+      <div class="formula-expr formula-math">\[\delta = \frac{P L^3}{48 E I}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Midspan deflection, uniformly distributed load</span>
+      <div class="formula-expr formula-math">\[\delta = \frac{5 w L^4}{384 E I}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-6">
+  <h2><span class="sec-num">06</span>Torsion in circular shafts</h2>
+  <div class="body"><p>A circular shaft twisted by torque T develops shear stress that grows linearly with radius: τ = T r / J, where J is the polar second moment of area. For a solid circle J = π d⁴ / 32, so τ_max = 16T/(π d³).</p>
+<p>The angle of twist over length L is θ = T L / (G J). Torsion is the reason hollow shafts are efficient: most of the torsional resistance lives in the outer fibres, so material near the centre contributes little.</p>
+<p>Only circular sections stay plane under torsion; non-circular sections warp, and their analysis needs a different approach.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Torsional shear stress</span>
+      <div class="formula-expr formula-math">\[\tau = \frac{T r}{J}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Angle of twist</span>
+      <div class="formula-expr formula-math">\[\theta = \frac{T L}{G J}\]</div>
+      <span class="formula-note">θ in radians for consistent units</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-7">
+  <h2><span class="sec-num">07</span>Columns and elastic buckling</h2>
+  <div class="body"><p>A slender compression member can fail by buckling long before the material crushes. The Euler load is P_cr = π² E I / (K L)², where K depends on end conditions:<br />
+- Pinned-pinned: K = 1.0<br />
+- Fixed-fixed: K = 0.5<br />
+- Fixed-free: K = 2.0<br />
+- Fixed-pinned: K = 0.7</p>
+<p>Buckling is governed by slenderness rather than strength. Short, stocky columns yield; long, slender columns buckle. The transition is captured by a slenderness ratio λ = K L / r, where r is the radius of gyration.</p>
+<p>Because the buckling load depends on I, the direction of buckling with the smallest I controls the design.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Euler buckling load</span>
+      <div class="formula-expr formula-math">\[P_{cr} = \frac{\pi^2 E I}{(K L)^2}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-8">
+  <h2><span class="sec-num">08</span>From the tensile test to design</h2>
+  <div class="body"><p>The tensile test turns the theory into measured numbers. A ductile specimen such as mild steel shows an initial linear region (E), an upper and lower yield point, a plateau, strain hardening to the ultimate tensile strength, and finally necking and fracture. A high-strength steel may show almost no yield plateau and fail with much less elongation.</p>
+<p>Ductility matters because it gives warning and allows redistribution of force. Design uses a factor of safety or partial factors to keep working stress below the relevant limit, and serviceability checks keep deflection and cracking acceptable.</p>
+<p>Strength without stiffness, or stiffness without ductility, is rarely an acceptable engineering answer.</p></div></section>
+<section class="note-section reveal" id="sec-9">
+  <h2><span class="sec-num">09</span>Trusses and zero-force members</h2>
+  <div class="body"><p>A truss is an assembly of pin-jointed bars carrying only axial force, so each joint must satisfy two equilibrium equations.</p>
+<p>The <strong>method of joints</strong> works round the truss writing ΣF_x = 0 and ΣF_y = 0 at each joint, starting where at most two bar forces are unknown. The <strong>method of sections</strong> cuts through no more than three bars with unknown forces and takes moments, which reaches interior bars in one move.</p>
+<p>Zero-force members can be spotted before any arithmetic:<br />
+- If only two non-collinear bars meet at an unloaded joint, both are zero-force.<br />
+- If three bars meet and two are collinear, the third carries nothing unless an external load acts at the joint.</p>
+<p>In the laboratory truss, measured bar forces plotted against applied load fall on straight lines through the origin, and the zero bars read almost exactly zero.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Method of sections</span>
+      <div class="formula-expr formula-math">\[F = \frac{M_A}{r}\]</div>
+      <span class="formula-note">moment about a convenient point divided by the perpendicular distance to the bar</span>
+    </div></div></section>
+<section class="note-section reveal" id="sec-10">
+  <h2><span class="sec-num">10</span>Shear stress in beams</h2>
+  <div class="body"><p>Where a shear force V acts, the shear stress varies through the depth. The general result is τ = VQ/(Ib), where Q is the first moment of the area beyond the point considered and b is the width there.</p>
+<p>For a rectangle the distribution is parabolic: zero at the extreme fibres and a maximum at the neutral axis of τ_max = 3V/(2A). In an I-section almost all of the shear is carried by the web, because the flanges only feed flow into it.</p>
+<p>Shear rarely governs a slender beam's design, but it matters for short, deep members, for connection detailing, and at supports, where a high V may meet a section reduced by holes.</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Transverse shear stress</span>
+      <div class="formula-expr formula-math">\[\tau = \frac{V Q}{I b}\]</div>
+      <span class="formula-note">Q is the first moment of area beyond the point, b the local width</span>
+    </div>
+    <div class="formula">
+      <span class="formula-name">Maximum shear stress, rectangle</span>
+      <div class="formula-expr formula-math">\[\tau_{\max} = \frac{3 V}{2 A}\]</div>
+      
+    </div></div></section>
+<section class="note-section reveal" id="sec-11">
+  <h2><span class="sec-num">11</span>Combined loading and Mohr&#x27;s circle</h2>
+  <div class="body"><p>Real points in a member usually carry bending, axial and torsional shear at once. The direct stress σ_x from axial and bending combines with shear τ_xy from torsion and transverse shear; the <strong>principal stresses</strong> are given below, and the maximum shear stress is the square-root term alone.</p>
+<p>A shaft under combined torque and bending is therefore checked against an equivalent stress rather than one or the other. Mohr's circle plots the states graphically: centre at (σ_x + σ_y)/2 and radius √[((σ_x − σ_y)/2)² + τ_xy²].</p></div><div class="formula-list">
+    <div class="formula">
+      <span class="formula-name">Principal stresses</span>
+      <div class="formula-expr formula-math">\[\sigma_{1,2} = \frac{\sigma_x + \sigma_y}{2} \pm \sqrt{\left(\frac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2}\]</div>
+      
+    </div>
+    <div class="formula">
+      <span class="formula-name">Maximum shear stress</span>
+      <div class="formula-expr formula-math">\[\tau_{\max} = \sqrt{\left(\frac{\sigma_x - \sigma_y}{2}\right)^2 + \tau_{xy}^2}\]</div>
+      
+    </div></div></section>
+
+      <section class="key-terms" id="key-terms">
+        <h2 data-i18n="subject.key_terms">Key terms</h2>
+        <dl><div class="term"><dt>Neutral axis</dt><dd>The line in a bending section where stress is zero and fibres neither lengthen nor shorten.</dd></div><div class="term"><dt>Second moment of area</dt><dd>A geometric measure of how far material sits from the neutral axis; it governs bending stiffness and stress.</dd></div><div class="term"><dt>Young&#x27;s modulus</dt><dd>The slope of the linear part of the stress–strain curve, describing stiffness.</dd></div><div class="term"><dt>Ductility</dt><dd>The ability of a material to deform plastically before fracture.</dd></div><div class="term"><dt>Statically indeterminate</dt><dd>A structure with more reactions than equilibrium equations, requiring compatibility to solve.</dd></div><div class="term"><dt>Slenderness ratio</dt><dd>Effective length divided by radius of gyration; it predicts whether buckling or yielding controls a column.</dd></div><div class="term"><dt>Flexural rigidity</dt><dd>The product EI, the resistance of a member to bending deformation.</dd></div><div class="term"><dt>Zero-force member</dt><dd>A truss bar that carries no force, identifiable from joint geometry before any calculation.</dd></div><div class="term"><dt>Principal stress</dt><dd>The extreme normal stress on planes where the shear stress is zero, found from the Mohr circle construction.</dd></div></dl>
+      </section>
+
+      <section class="worked" id="worked-example">
+        <span class="worked-kicker" data-i18n="subject.worked">Worked example</span>
+        <h2>Maximum bending stress in a timber joist</h2>
+        <p class="problem">A simply supported timber beam spans 6.0 m and carries a uniformly distributed load of 10 kN/m, including its own weight. Its cross-section is 150 mm wide by 300 mm deep. Find the maximum bending stress and state whether a timber with an allowable bending stress of 18 MPa is adequate.</p>
+        <ol><li>Maximum moment for a simply supported beam with a UDL is wL²/8 = 10 × 6.0² / 8 = 45 kNm = 45 × 10⁶ Nmm.</li><li>Second moment of area about the neutral axis: I = b h³ / 12 = 150 × 300³ / 12 = 3.375 × 10⁸ mm⁴.</li><li>Distance to the extreme fibre: y = h/2 = 150 mm.</li><li>σ_max = M y / I = (45 × 10⁶ × 150) / (3.375 × 10⁸) = 20.0 N/mm² = 20 MPa.</li><li>Sanity check with the section modulus: Z = I / y = 2.25 × 10⁶ mm³, so σ = M/Z = 45 × 10⁶ / 2.25 × 10⁶ = 20 MPa.</li></ol>
+        <div class="answer"><b>Answer</b>The maximum bending stress is 20 MPa, which exceeds the 18 MPa allowable value, so the joist is not adequate for bending; a deeper section or a shorter span is needed.</div>
+      </section>
+
+      <section class="exam-tips" id="exam-tips">
+        <h2 data-i18n="subject.exam">Exam method</h2>
+        <ul><li>Write the equilibrium equations before touching a formula sheet; most lost marks come from a missing reaction, not from algebra.</li><li>For deflection questions, identify the standard case first, then use superposition rather than deriving from scratch.</li><li>Keep units consistent: convert kN to N and mm to m at the start, and state the unit of every answer.</li><li>For columns, check both buckling and yielding, and use the smaller capacity in the conclusion.</li><li>In truss questions, hunt for zero-force members first — removing them often exposes a joint with only two unknowns and saves several equations.</li></ul>
+      </section>
+
+      
+<section class="design-reference" id="design-reference">
+  <h2>Hong Kong design reference</h2>
+  <p class="design-reference-lede">Values and criteria from current Hong Kong design codes and guidance, condensed for revision. Always confirm against the source document before using them in a design.</p>
+  
+<div class="ref-table">
+  <h3>Minimum imposed floor loads for buildings</h3>
+  <p class="ref-table-intro">Characteristic imposed (live) loads used when sizing floors, beams and columns of buildings in Hong Kong. qk is the uniformly distributed load and Qk is a concentrated load applied on plan over a 200 mm square.</p>
+  <div class="table-wrap"><table><thead><tr><th scope='col'>Floor use / area class</th><th scope='col'>Distributed load qk (kPa)</th><th scope='col'>Concentrated load Qk (kN)</th></tr></thead><tbody><tr><td>Domestic floors and residential activities (Area Class 1)</td><td>2.0</td><td>2.0</td></tr><tr><td>Offices for general use (Area Class 2)</td><td>3.0</td><td>4.5</td></tr><tr><td>Classrooms, lecture rooms and computer rooms (Area Class 3A)</td><td>3.0</td><td>4.5</td></tr><tr><td>Restaurants, bars, canteens and fast-food shops (Area Class 3A)</td><td>4.0</td><td>4.5</td></tr><tr><td>Assembly areas without fixed seating; refuge floors (Area Class 3C)</td><td>5.0</td><td>4.5</td></tr><tr><td>Shops, supermarkets and department stores (Area Class 4)</td><td>5.0</td><td>4.5</td></tr><tr><td>Car parks for vehicles up to 3,000 kg gross (Area Class 6A)</td><td>3.0</td><td>20.0</td></tr></tbody></table></div>
+  <p class="ref-table-note">Values selected from Tables 3.2 and 3.4 of the Code of Practice for Dead and Imposed Loads 2011 (2021 Edition), Buildings Department; area class numbers follow Table 3.1. qk acts over the floor area and Qk is applied on plan over any square with a 200 mm side.</p>
+  <p class="ref-table-caveat">Simplified revision summary only. The code contains further floor uses, load-reduction rules and dynamic and barrier requirements; verify against the current code for actual design.</p>
+</div>
+</section>
+      
+<section class="quiz" id="self-check" data-quiz>
+  <div class="quiz-head">
+    <h2 data-i18n="subject.quiz">Self-check</h2>
+    <p class="quiz-score" data-score>0 / 6 correct</p>
+  </div>
+  <p>Answer first, then reveal. A wrong answer is more useful than a familiar page.</p>
+  
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q01</span><span>A rectangular beam is doubled in depth while its width stays the same. Its second moment of area about the bending axis becomes:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>2 times larger</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>4 times larger</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>8 times larger</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>16 times larger</span></button></div>
+    <div class="quiz-explain"><b>Why</b>I = b h³/12, so doubling h multiplies I by 2³ = 8.</div>
+  </div>
+  <div class="quiz-q" data-correct="3">
+    <h3><span class="q-num">Q02</span><span>A steel bar is fully restrained at both ends and heated. Which statement is correct?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>It develops no stress because steel is elastic</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>It yields immediately at any temperature rise</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>It develops tensile stress because it wants to expand</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>It develops compressive stress because expansion is prevented</span></button></div>
+    <div class="quiz-explain"><b>Why</b>Free expansion is prevented, so the member is pushed into compression: σ = −EαΔT.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q03</span><span>The Euler buckling load of a pinned-pinned column is proportional to:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>L²</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>1/L</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1/L²</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>L</span></button></div>
+    <div class="quiz-explain"><b>Why</b>P_cr = π²EI/(KL)², so it falls with the square of the effective length.</div>
+  </div>
+  <div class="quiz-q" data-correct="0">
+    <h3><span class="q-num">Q04</span><span>In a simply supported beam under a central point load, the maximum bending moment occurs at:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Midspan</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>The point of contraflexure</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>The supports</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Quarter span</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The shear changes sign at midspan, where the moment reaches its peak of PL/4.</div>
+  </div>
+  <div class="quiz-q" data-correct="1">
+    <h3><span class="q-num">Q05</span><span>At an unloaded joint of a truss, two non-collinear bars meet. What can be said about their forces?</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>Both bars carry equal tension</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>Both bars are zero-force members</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>One bar is in tension and the other in compression</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Nothing can be said without the support reactions</span></button></div>
+    <div class="quiz-explain"><b>Why</b>With no external load, equilibrium in the two independent directions at the joint forces both bar forces to zero.</div>
+  </div>
+  <div class="quiz-q" data-correct="2">
+    <h3><span class="q-num">Q06</span><span>A rectangular beam of cross-sectional area A carries a shear force V. The maximum shear stress in the beam is:</span></h3>
+    <div class="quiz-options"><button class="quiz-option" type="button"><span class="marker">A</span><span>V/A</span></button><button class="quiz-option" type="button"><span class="marker">B</span><span>2V/A</span></button><button class="quiz-option" type="button"><span class="marker">C</span><span>1.5V/A</span></button><button class="quiz-option" type="button"><span class="marker">D</span><span>Zero, because shear is only carried at the surface</span></button></div>
+    <div class="quiz-explain"><b>Why</b>The parabolic shear distribution peaks at the neutral axis at 3V/(2A), which is 1.5V/A.</div>
+  </div>
+</section>
+      
+<section class="related">
+  <h2>Read next</h2>
+  <div class="related-grid">
+    <a class="related-card" href="advanced-structural-mechanics.html"><span>Core</span><b>Advanced Structural Mechanics</b></a><a class="related-card" href="construction-materials.html"><span>Core</span><b>Construction Materials</b></a>
+  </div>
+</section>
+      <nav class="pager" aria-label="Subject pagination"><a href="leadership-teamwork.html"><small>Previous</small><b>Leadership &amp; Teamwork</b></a><a class="next" href="ai-data-analysis.html"><small>Next</small><b>AI &amp; Data Analysis</b></a></nav>
+      
+<section class="page-references" id="references">
+  <h2 data-i18n="subject.refs">References</h2>
+  <ol class="reference-list">
+    <li>Buildings Department. (2021). <i>Code of Practice for Dead and Imposed Loads 2011 (2021 Edition)</i>. Government of the Hong Kong Special Administrative Region. <a href="https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/DIL2011e.pdf" rel="noopener">https://www.bd.gov.hk/doc/en/resources/codes-and-references/code-and-design-manuals/DIL2011e.pdf</a></li>
+  </ol>
+</section>
+    </div>
+    <aside class="margin-col" aria-label="Margin notes">
+      <p class="margin-label">Margin notes</p>
+      <p class="margin-note">Free body first — always.</p><p class="margin-note">Depth beats width for bending: I ∝ h³.</p><p class="margin-note">Deflection often governs before strength.</p><p class="margin-note">Ductility is a safety feature, not a bonus.</p>
+    </aside>
+  </div>
+</article>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-wordmark" aria-hidden="true">Civil Hub</p>
+        <span class="footer-brandline">
+          <span class="wordmark-seal" aria-hidden="true"><svg viewBox="0 0 40 40" role="img" aria-hidden="true" class="logo-svg" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="18" r="4.6" stroke="#f5f2ea" stroke-width="2.1"/><path d="M11 15.2 H29" stroke="#f5f2ea" stroke-width="2.1"/><path d="M12.6 15.2 Q20 5.6 27.4 15.2" stroke="#f5f2ea" stroke-width="2.1"/><path d="M7.5 34 Q20 24.4 32.5 34" stroke="#f5f2ea" stroke-width="2.1"/></svg></span>
+          <span class="wordmark-text"><b>Civil Hub</b><small>Revision library</small></span>
+        </span>
+        <p data-i18n="footer.tagline">A quiet place to revise civil engineering. Compact notes, worked examples and self-checks.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.browse">Browse</h4>
+        <ul>
+          <li><a href="../library.html" data-i18n="footer.all_notes">All notes</a></li>
+          <li><a href="../lab.html" data-i18n="footer.lab">Lab sheets</a></li>
+          <li><a href="../formulas.html" data-i18n="footer.formulas">Formula sheet</a></li>
+          <li><a href="../index.html#how" data-i18n="footer.how">How to use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer.elsewhere">Elsewhere</h4>
+        <ul>
+          <li><a href="../about.html" data-i18n="footer.about">About &amp; disclaimer</a></li>
+          <li><a href="https://github.com/chanhingchak460-tech/Civil-Hub-site" rel="noopener" data-i18n="footer.github">GitHub repository</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="disclaimer-inline" data-i18n="footer.disclaimer">Civil Hub is a supplementary revision aid. It is not a substitute for lectures, laboratories, tutorials or official course materials, and it creates no obligation on the reader or the author. Verify everything against your own course notes before relying on it.</p>
+      <span class="copy">© <span data-year-now>2026</span> Civil Hub · Made for quiet study</span>
+    </div>
+  </div>
+</footer>
+
+<div class="search-overlay" data-search-overlay hidden>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="Search the library">
+    <div class="search-top">
+      <input type="search" placeholder="Search the library…" aria-label="Search notes" autocomplete="off" spellcheck="false">
+      <button class="search-close" type="button" data-close-search>Esc</button>
+    </div>
+    <p class="search-hint">Search a subject, a topic or a formula · Press Esc to close</p>
+    <ul class="search-results" data-search-results></ul>
+    <p class="search-empty" data-search-empty hidden>No matches. Try a broader word.</p>
+  </div>
+</div>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script><script src="../js/i18n.js" defer></script><script src="../js/app.js" defer></script>
+</body>
+</html>
